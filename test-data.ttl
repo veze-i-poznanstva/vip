@@ -1,0 +1,7 @@
+@prefix : <http://poderopedia.com/vocab/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+:person1 a foaf:Person ;
+    foaf:firstName "Juan" ;
+    :firstLastName "Pérez" ;
+    :hasGender :Male .
