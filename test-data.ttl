@@ -1,7 +1,75 @@
-@prefix : <http://poderopedia.com/vocab/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix ex: <http://example.org/ontologija/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix : <http://poderopedia.com/vocab/> .
 
-:person1 a foaf:Person ;
-    foaf:firstName "Juan" ;
-    :firstLastName "Pérez" ;
-    :hasGender :Male .
+#########################################################
+# People
+#########################################################
+
+ex:Sinisa_Mali a foaf:Person ;
+    foaf:name "Siniša Mali"@sr ;
+    foaf:firstName "Siniša" ;
+    :firstLastName "Mali" ;
+    dbo:birthDate "1972-08-25"^^xsd:date ;
+    dbo:birthPlace "Beograd, Srbija"@sr ;
+    dbo:party "Srpska napredna stranka"@sr ;
+    ex:hasAcademicOrganizationParticipant ex:Peta_Beogradska_Gimnazija, ex:Ekonomski_fakultet_University_of_Belgrade ;
+    ex:hasDocumentURL <https://sr.wikipedia.org/wiki/Синиша_Мали> .
+
+ex:Ana_Brnabic a foaf:Person ;
+    foaf:name "Ana Brnabić"@sr ;
+    foaf:firstName "Ana" ;
+    :firstLastName "Brnabić" ;
+    dbo:birthDate "1975-09-28"^^xsd:date ;
+    dbo:birthPlace "Beograd, Srbija"@sr ;
+    dbo:party "Srpska napredna stranka"@sr ;
+    ex:hasAcademicOrganizationParticipant ex:Peta_Beogradska_Gimnazija, ex:Northwood_University_Michigan ;
+    ex:hasDocumentURL <https://sr.wikipedia.org/wiki/Ана_Брнабић> .
+
+#########################################################
+# Academic Organizations
+#########################################################
+
+ex:Peta_Beogradska_Gimnazija a :AcademicOrganization ;
+    foaf:name "Peta beogradska gimnazija"@sr ;
+    dbo:location "Beograd, Srbija"@sr .
+
+ex:Ekonomski_fakultet_University_of_Belgrade a :AcademicOrganization ;
+    foaf:name "Ekonomski fakultet Univerziteta u Beogradu"@sr ;
+    dbo:location "Beograd, Srbija"@sr .
+
+ex:Northwood_University_Michigan a :AcademicOrganization ;
+    foaf:name "Northwood University, Mičigen, SAD"@sr ;
+    dbo:location "Midland, Mičigen, SAD"@sr .
+
+#########################################################
+# Diplomas
+#########################################################
+
+ex:Osnovne_ekonomije a :Diploma ;
+    rdfs:label "Osnovne ekonomije"@sr .
+
+ex:Master_ekonomije a :Diploma ;
+    rdfs:label "Master ekonomije"@sr .
+
+ex:MBA a :Diploma ;
+    rdfs:label "MBA"@sr .
+
+ex:BBA_poslovna_administracija a :Diploma ;
+    rdfs:label "BBA"@sr .
+
+#########################################################
+# Qualified Relationship: PoliticalConnection
+#########################################################
+
+_:rel a :PoliticalConnection ;
+    ex:personParticipant ex:Ana_Brnabic ;
+    ex:personParticipant ex:Sinisa_Mali ;
+    ex:hasDocumentURL <https://sr.wikipedia.org/wiki/Ана_Брнабић>,
+                      <https://www.istinomer.rs/akter/ana-brnabic/>,
+                      <https://sr.wikipedia.org/wiki/Синиша_Мали> ;
+    rdfs:comment "Oboje su članovi Srpske napredne stranke i sarađivali su u različitim državnim funkcijama"@sr .
