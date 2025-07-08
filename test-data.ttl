@@ -30,6 +30,94 @@ ex:Ana_Brnabic a foaf:Person ;
     ex:hasAcademicOrganizationParticipant ex:Peta_Beogradska_Gimnazija, ex:Northwood_University_Michigan ;
     ex:hasDocumentURL <https://sr.wikipedia.org/wiki/Ана_Брнабић> .
 
+    ex:Ivan_Bosnjak a foaf:Person ;
+    foaf:name "Ivan Bošnjak"@sr ;
+    foaf:firstName "Ivan" ;
+    :firstLastName "Bošnjak" ;
+    ex:hasDocumentURL <https://www.istinomer.rs/akter/ivan-bosnjak/>, 
+                      <https://www.krik.rs/tag/ivan-bosnjak/> .
+
+#########################################################
+# Qualified Relationship: BusinessAndPoliticalConnection
+#########################################################
+
+_:relAB a :BusinessAndPoliticalConnection ;
+    ex:personParticipant ex:Ana_Brnabic, ex:Ivan_Bosnjak ;
+    ex:hasDocumentURL <https://www.istinomer.rs/akter/ana-brnabic/>, 
+                      <https://www.istinomer.rs/akter/ivan-bosnjak/> ;
+    rdfs:comment "Ana Brnabić i Ivan Bošnjak su povezani kroz poslovne i političke veze, naročito u okviru Milenijum tima i saradnje sa državnim strukturama."@sr .
+
+
+
+
+#########################################################
+# Company
+#########################################################
+
+ex:Milenijum_Tim a :Company ;
+    foaf:name "Milenijum tim"@sr ;
+    dbo:foundationDate "2003-09-04"^^xsd:date ;
+    dbo:industry "Građevinarstvo"@sr ;
+    dbo:location "Beograd, Srbija"@sr ;
+    ex:hasDocumentURL <https://sr.wikipedia.org/wiki/Milenijum_tim>, 
+                      <https://www.companywall.rs/firma/millennium-team-doo-beograd/MMksspYq> .
+
+
+
+#########################################################
+# Ownership Relationship
+#########################################################
+
+_:relOwnership a :Ownership ;
+    ex:owner ex:Ivan_Bosnjak ;
+    ex:ownedCompany ex:Milenijum_Tim ;
+    rdfs:comment "Ivan Bošnjak je suvlasnik kompanije Milenijum tim sa udelom od 50%."@sr ;
+    ex:hasDocumentURL <https://sr.wikipedia.org/wiki/Milenijum_tim>,
+                      <https://www.companywall.rs/firma/millennium-team-doo-beograd/MMksspYq> .
+
+
+#########################################################
+# Qualified Relationship: LeadershipRole
+#########################################################
+
+_:relNALED a :LeadershipRole ;
+    ex:personParticipant ex:Ivan_Bosnjak ;
+    ex:organizationParticipant ex:NALED ;
+    :role "Član Izvršnog odbora i menadžer za razvoj članstva"@sr ;
+    ex:hasDocumentURL <https://naled.rs/htdocs/Files/15388/II-Kvartalni-izvestaj_2024.pdf>,
+                      <https://www.uzmiracun.rs/vest-otvorene-wifi-zone-u-titelu-i-bakom-petrovcu-1345> ;
+    rdfs:comment "Ivan Bošnjak je bio član Izvršnog odbora NALED-a i menadžer za razvoj članstva, aktivno učestvujući u lokalnom ekonomskom razvoju."@sr .
+
+_:relNALED a :LeadershipRole ;
+    ex:personParticipant ex:Ana_Brnabic ;
+    ex:organizationParticipant ex:NALED ;
+    :role "Osnivač, potpredsednik i predsednik Upravnog odbora"@sr ;
+    :roleStartDate "2006-01-01"^^xsd:date ;
+    :roleEndDate "2017-04-01"^^xsd:date ;
+    ex:hasDocumentURL <https://naled.rs/o-naled-u/vesti/ana-brnabic-novi-predsednik-upravnog-odbora-naleda/>,
+                      <https://sr.wikipedia.org/wiki/Ана_Брнабић> ;
+    rdfs:comment "Ana Brnabić je bila jedna od osnivača NALED-a, potom potpredsednik i predsednik Upravnog odbora do ulaska u Vladu Srbije."@sr .
+
+
+#########################################################
+# Non=profit Organizations
+#########################################################                     
+
+ex:NALED a :NonProfitOrganization, :ProgrammaticOrganization ;
+    foaf:name "Nacionalna alijansa za lokalni ekonomski razvoj (NALED)"@sr ;
+    dbo:foundationDate "2006-01-01"^^xsd:date ;
+    dbo:location "Beograd, Srbija"@sr ;
+    rdfs:comment """
+        NALED je najveća privatno-javna asocijacija u Srbiji koja okuplja preko 300 kompanija, lokalnih samouprava i nevladinih organizacija.
+    """@sr ;
+    ex:hasDocumentURL <https://sr.wikipedia.org/wiki/Nacionalna_alijansa_za_lokalni_ekonomski_razvoj>,
+                      <https://naled.rs/o-nama>,
+                      <https://naled.rs> .
+
+
+
+
+
 #########################################################
 # Academic Organizations
 #########################################################
