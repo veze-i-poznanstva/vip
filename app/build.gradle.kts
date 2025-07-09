@@ -103,9 +103,21 @@ tasks.register<JavaExec>("validateShacl") {
     workingDir = projectDir.parentFile
 }
 
+tasks.register<JavaExec>("validateVeracity") {
+    group = "rdf"
+    description = "Validates veracity - checks if items have URLs from multiple domains"
+    
+    classpath = sourceSets.main.get().runtimeClasspath
+    mainClass.set("vip.VeracityValidatorKt")
+    
+    val file = project.findProperty("file") as String? ?: "test-data.ttl"
+    args = listOf(file)
+    workingDir = projectDir.parentFile
+}
+
 tasks.register("validateAll") {
     group = "rdf"
     description = "Runs all validation checks"
     
-    dependsOn("validate", "checkConsistency", "analyzeSchema", "checkBestPractices")
+    dependsOn("validate", "checkConsistency", "analyzeSchema", "checkBestPractices", "validateVeracity")
 }
