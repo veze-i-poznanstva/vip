@@ -9,6 +9,7 @@ A comprehensive toolkit for validating, analyzing, and checking RDF/OWL ontologi
 - 📊 **Schema Metrics Analysis** - Analyze ontology complexity and statistics
 - ✅ **Best Practices Checker** - Validate against RDF/OWL best practices
 - 🛡️ **SHACL Validation** - Validate data against SHACL shape constraints
+- 🔗 **Veracity Validation** - Validate each entity is sustantiated by at least 2 URLs from multiple domains and check accessibility
 - 🎯 **Comprehensive Validation** - Run all validation checks together
 
 ## Quick Start
@@ -38,6 +39,9 @@ All validation tools are located in the `app` subproject. Use the following comm
 # Schema metrics analysis
 ./gradlew :app:analyzeSchema -Pfile=schema.ttl
 
+# Veracity validation (URL domain diversity and accessibility)
+./gradlew :app:validateVeracity -Pfile=test-data.ttl
+
 # Run all validations
 ./gradlew :app:validateAll -Pfile=schema.ttl
 ```
@@ -58,7 +62,9 @@ vip/
         ├── OWLConsistencyChecker.kt  # OWL consistency checking
         ├── SchemaMetrics.kt      # Ontology metrics analysis
         ├── BestPracticesChecker.kt   # Best practices validation
-        └── SHACLValidator.kt     # SHACL constraint validation
+        ├── SHACLValidator.kt     # SHACL constraint validation
+        ├── VeracityValidator.kt  # Veracity validation (URL checks)
+        └── VeracityValidation.kt # Core veracity validation logic
 ```
 
 ## Validation Tools
@@ -141,6 +147,43 @@ Provides detailed analysis and metrics about the ontology structure.
 - Property characteristics analysis
 - Complexity metrics (restrictions, disjoint classes, etc.)
 - Schema density calculations
+
+### 6. Veracity Validator (`VeracityValidator.kt`)
+
+Validates data veracity by ensuring items have multiple sources from different domains and that all URLs are accessible.
+
+**Usage:**
+```bash
+./gradlew :app:validateVeracity -Pfile=test-data.ttl
+```
+
+**Validation Rules:**
+1. **Multiple Domain Sources** - Every item with `hasDocumentURL` must have URLs from at least 2 different domains
+2. **URL Accessibility** - Every URL must be accessible (respond with HTTP 200)
+
+**Features:**
+- Extracts and normalizes domains (removes www prefix)
+- Checks URL accessibility using HEAD requests with 10-second timeout
+- Follows redirects automatically
+- Reports specific HTTP status codes or error messages for failed URLs
+- Validates all resources with `hasDocumentURL` properties
+
+**Output Example:**
+```
+=== Veracity Validation Report ===
+
+Checking: test-data.ttl
+Rules:
+  1. Every item must have at least 2 URLs from different domains
+  2. Every URL must be accessible (respond with HTTP 200)
+
+✗ Validation FAILED
+
+Errors found:
+  1. http://example.org/Entity has only 1 URL
+  2. http://example.org/Entity has URLs from only 1 domain(s): example.org
+  3. http://example.org/Entity has inaccessible URLs: https://broken.url (HTTP 404)
+```
 
 ## Schema Overview
 

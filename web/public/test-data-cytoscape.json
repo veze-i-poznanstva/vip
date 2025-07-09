@@ -1,0 +1,335 @@
+[
+  {
+    "data": {
+      "id": "northwood_university_michigan",
+      "label": "Northwood University, Mičigen, SAD",
+      "type": "instance",
+      "nodeType": "organization",
+      "uri": "http://example.org/ontologija/Northwood_University_Michigan"
+    }
+  },
+  {
+    "data": {
+      "id": "naled",
+      "label": "Nacionalna alijansa za lokalni ekonomski razvoj (NALED)",
+      "type": "instance",
+      "nodeType": "organization",
+      "uri": "http://example.org/ontologija/NALED"
+    }
+  },
+  {
+    "data": {
+      "id": "mt_gastel",
+      "label": "MT Gastel",
+      "type": "instance",
+      "nodeType": "organization",
+      "uri": "http://example.org/ontologija/MT_Gastel"
+    }
+  },
+  {
+    "data": {
+      "id": "ekonomski_fakultet_university_of_belgrade",
+      "label": "Ekonomski fakultet Univerziteta u Beogradu",
+      "type": "instance",
+      "nodeType": "organization",
+      "uri": "http://example.org/ontologija/Ekonomski_fakultet_University_of_Belgrade"
+    }
+  },
+  {
+    "data": {
+      "id": "sinisa_mali",
+      "label": "Siniša Mali",
+      "type": "instance",
+      "nodeType": "person",
+      "uri": "http://example.org/ontologija/Sinisa_Mali"
+    }
+  },
+  {
+    "data": {
+      "id": "master_ekonomije",
+      "label": "Master ekonomije",
+      "type": "instance",
+      "nodeType": "default",
+      "uri": "http://example.org/ontologija/Master_ekonomije"
+    }
+  },
+  {
+    "data": {
+      "id": "ana_brnabic",
+      "label": "Ana Brnabić",
+      "type": "instance",
+      "nodeType": "person",
+      "uri": "http://example.org/ontologija/Ana_Brnabic"
+    }
+  },
+  {
+    "data": {
+      "id": "osnovne_ekonomije",
+      "label": "Osnovne ekonomije",
+      "type": "instance",
+      "nodeType": "default",
+      "uri": "http://example.org/ontologija/Osnovne_ekonomije"
+    }
+  },
+  {
+    "data": {
+      "id": "mv_investment",
+      "label": "MV Investment",
+      "type": "instance",
+      "nodeType": "organization",
+      "uri": "http://example.org/ontologija/MV_Investment"
+    }
+  },
+  {
+    "data": {
+      "id": "bba_poslovna_administracija",
+      "label": "BBA",
+      "type": "instance",
+      "nodeType": "default",
+      "uri": "http://example.org/ontologija/BBA_poslovna_administracija"
+    }
+  },
+  {
+    "data": {
+      "id": "milenijum_tim",
+      "label": "Milenijum tim",
+      "type": "instance",
+      "nodeType": "organization",
+      "uri": "http://example.org/ontologija/Milenijum_Tim"
+    }
+  },
+  {
+    "data": {
+      "id": "milenijum_propertiz",
+      "label": "Milenijum propertiz",
+      "type": "instance",
+      "nodeType": "organization",
+      "uri": "http://example.org/ontologija/Milenijum_Propertiz"
+    }
+  },
+  {
+    "data": {
+      "id": "mba",
+      "label": "MBA",
+      "type": "instance",
+      "nodeType": "default",
+      "uri": "http://example.org/ontologija/MBA"
+    }
+  },
+  {
+    "data": {
+      "id": "mostogradnja_ing",
+      "label": "Mostogradnja ING",
+      "type": "instance",
+      "nodeType": "organization",
+      "uri": "http://example.org/ontologija/Mostogradnja_ING"
+    }
+  },
+  {
+    "data": {
+      "id": "roberts_milenijum",
+      "label": "Roberts Milenijum",
+      "type": "instance",
+      "nodeType": "organization",
+      "uri": "http://example.org/ontologija/Roberts_Milenijum"
+    }
+  },
+  {
+    "data": {
+      "id": "milenijum_adria",
+      "label": "Milenijum Adria",
+      "type": "instance",
+      "nodeType": "organization",
+      "uri": "http://example.org/ontologija/Milenijum_Adria"
+    }
+  },
+  {
+    "data": {
+      "id": "milenijum_picaroti",
+      "label": "Milenijum Picaroti",
+      "type": "instance",
+      "nodeType": "organization",
+      "uri": "http://example.org/ontologija/Milenijum_Picaroti"
+    }
+  },
+  {
+    "data": {
+      "id": "peta_beogradska_gimnazija",
+      "label": "Peta beogradska gimnazija",
+      "type": "instance",
+      "nodeType": "organization",
+      "uri": "http://example.org/ontologija/Peta_Beogradska_Gimnazija"
+    }
+  },
+  {
+    "data": {
+      "id": "milenijum_resorts",
+      "label": "Milenijum resorts",
+      "type": "instance",
+      "nodeType": "organization",
+      "uri": "http://example.org/ontologija/Milenijum_Resorts"
+    }
+  },
+  {
+    "data": {
+      "id": "ivan_bosnjak",
+      "label": "Ivan Bošnjak",
+      "type": "instance",
+      "nodeType": "person",
+      "uri": "http://example.org/ontologija/Ivan_Bosnjak"
+    }
+  },
+  {
+    "data": {
+      "id": "stojan_vujko",
+      "label": "Stojan  Vujko",
+      "type": "resource",
+      "nodeType": "default",
+      "uri": "http://example.org/ontologija/Stojan_Vujko"
+    }
+  },
+  {
+    "data": {
+      "id": "edge0",
+      "label": "subsidiary of",
+      "source": "mv_investment",
+      "target": "milenijum_tim"
+    }
+  },
+  {
+    "data": {
+      "id": "edge1",
+      "label": "subsidiary of",
+      "source": "mostogradnja_ing",
+      "target": "milenijum_tim"
+    }
+  },
+  {
+    "data": {
+      "id": "edge2",
+      "label": "subsidiary of",
+      "source": "milenijum_resorts",
+      "target": "milenijum_tim"
+    }
+  },
+  {
+    "data": {
+      "id": "edge3",
+      "label": "subsidiary of",
+      "source": "milenijum_picaroti",
+      "target": "milenijum_tim"
+    }
+  },
+  {
+    "data": {
+      "id": "edge4",
+      "label": "owned by",
+      "source": "milenijum_tim",
+      "target": "stojan_vujko"
+    }
+  },
+  {
+    "data": {
+      "id": "edge5",
+      "label": "subsidiary of",
+      "source": "milenijum_adria",
+      "target": "milenijum_tim"
+    }
+  },
+  {
+    "data": {
+      "id": "edge6",
+      "label": "subsidiary of",
+      "source": "roberts_milenijum",
+      "target": "milenijum_tim"
+    }
+  },
+  {
+    "data": {
+      "id": "edge7",
+      "label": "attended",
+      "source": "ana_brnabic",
+      "target": "northwood_university_michigan"
+    }
+  },
+  {
+    "data": {
+      "id": "edge8",
+      "label": "attended",
+      "source": "ana_brnabic",
+      "target": "peta_beogradska_gimnazija"
+    }
+  },
+  {
+    "data": {
+      "id": "edge9",
+      "label": "subsidiary of",
+      "source": "milenijum_propertiz",
+      "target": "milenijum_tim"
+    }
+  },
+  {
+    "data": {
+      "id": "edge10",
+      "label": "subsidiary of",
+      "source": "mt_gastel",
+      "target": "milenijum_tim"
+    }
+  },
+  {
+    "data": {
+      "id": "edge11",
+      "label": "attended",
+      "source": "sinisa_mali",
+      "target": "peta_beogradska_gimnazija"
+    }
+  },
+  {
+    "data": {
+      "id": "edge12",
+      "label": "attended",
+      "source": "sinisa_mali",
+      "target": "ekonomski_fakultet_university_of_belgrade"
+    }
+  },
+  {
+    "data": {
+      "id": "edge13",
+      "label": "leadership role",
+      "source": "ana_brnabic",
+      "target": "naled"
+    }
+  },
+  {
+    "data": {
+      "id": "edge14",
+      "label": "leadership role",
+      "source": "ivan_bosnjak",
+      "target": "naled"
+    }
+  },
+  {
+    "data": {
+      "id": "edge15",
+      "label": "political connection",
+      "source": "sinisa_mali",
+      "target": "ana_brnabic"
+    }
+  },
+  {
+    "data": {
+      "id": "edge16",
+      "label": "owns",
+      "source": "ivan_bosnjak",
+      "target": "milenijum_tim"
+    }
+  },
+  {
+    "data": {
+      "id": "edge17",
+      "label": "business connection",
+      "source": "ivan_bosnjak",
+      "target": "ana_brnabic"
+    }
+  }
+]

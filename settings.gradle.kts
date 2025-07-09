@@ -13,3 +13,4 @@ plugins {
 
 rootProject.name = "vip"
 include("app")
+include("web")

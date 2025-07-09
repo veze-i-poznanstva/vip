@@ -27,6 +27,9 @@ dependencies {
     // Logging
     implementation("org.slf4j:slf4j-simple:2.0.9")
     
+    // JSON
+    implementation("com.google.code.gson:gson:2.10.1")
+    
     // Testing
     testImplementation(kotlin("test"))
 }
@@ -120,4 +123,17 @@ tasks.register("validateAll") {
     description = "Runs all validation checks"
     
     dependsOn("validate", "checkConsistency", "analyzeSchema", "checkBestPractices", "validateVeracity")
+}
+
+tasks.register<JavaExec>("ttlToCytoscape") {
+    group = "rdf"
+    description = "Convert TTL file to Cytoscape JSON format"
+    
+    classpath = sourceSets.main.get().runtimeClasspath
+    mainClass.set("vip.TtlToCytoscapeKt")
+    
+    val inputFile = project.findProperty("input") as String? ?: "test-data.ttl"
+    val outputFile = project.findProperty("output") as String? ?: "web/public/test-data-cytoscape.json"
+    args = listOf(inputFile, outputFile)
+    workingDir = projectDir.parentFile
 }

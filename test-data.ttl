@@ -6,9 +6,11 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix : <http://poderopedia.com/vocab/> .
 
+
 #########################################################
 # People
 #########################################################
+
 
 ex:Sinisa_Mali a foaf:Person ;
     foaf:name "Siniša Mali"@sr ;
@@ -18,7 +20,9 @@ ex:Sinisa_Mali a foaf:Person ;
     dbo:birthPlace "Beograd, Srbija"@sr ;
     dbo:party "Srpska napredna stranka"@sr ;
     ex:hasAcademicOrganizationParticipant ex:Peta_Beogradska_Gimnazija, ex:Ekonomski_fakultet_University_of_Belgrade ;
-    ex:hasDocumentURL <https://sr.wikipedia.org/wiki/Синиша_Мали> .
+    ex:hasDocumentURL <https://sr.wikipedia.org/wiki/Синиша_Мали>,
+                      <https://www.istinomer.rs/akter/sinisa-mali/> .
+
 
 ex:Ana_Brnabic a foaf:Person ;
     foaf:name "Ana Brnabić"@sr ;
@@ -28,24 +32,31 @@ ex:Ana_Brnabic a foaf:Person ;
     dbo:birthPlace "Beograd, Srbija"@sr ;
     dbo:party "Srpska napredna stranka"@sr ;
     ex:hasAcademicOrganizationParticipant ex:Peta_Beogradska_Gimnazija, ex:Northwood_University_Michigan ;
-    ex:hasDocumentURL <https://sr.wikipedia.org/wiki/Ана_Брнабић> .
+    ex:hasDocumentURL <https://sr.wikipedia.org/wiki/Ана_Брнабић>,
+                      <https://www.istinomer.rs/akter/ana-brnabic/> .
 
-    ex:Ivan_Bosnjak a foaf:Person ;
+
+ex:Ivan_Bosnjak a foaf:Person ;
     foaf:name "Ivan Bošnjak"@sr ;
     foaf:firstName "Ivan" ;
     :firstLastName "Bošnjak" ;
-    ex:hasDocumentURL <https://www.istinomer.rs/akter/ivan-bosnjak/>, 
+    ex:hasDocumentURL <https://www.istinomer.rs/akter/ivan-bosnjak/>,
                       <https://www.krik.rs/tag/ivan-bosnjak/> .
+
 
 #########################################################
 # Qualified Relationship: BusinessAndPoliticalConnection
 #########################################################
 
-_:relAB a :BusinessAndPoliticalConnection ;
-    ex:personParticipant ex:Ana_Brnabic, ex:Ivan_Bosnjak ;
-    ex:hasDocumentURL <https://www.istinomer.rs/akter/ana-brnabic/>, 
-                      <https://www.istinomer.rs/akter/ivan-bosnjak/> ;
+
+
+
+    ex:hasDocumentURL <https://www.istinomer.rs/akter/ana-brnabic/>,
+                      <https://www.istinomer.rs/akter/ivan-bosnjak/>,
+                      <https://www.krik.rs/tag/ana-brnabic/>,
+                      <https://www.krik.rs/tag/ivan-bosnjak/> ;
     rdfs:comment "Ana Brnabić i Ivan Bošnjak su povezani kroz poslovne i političke veze, naročito u okviru Milenijum tima i saradnje sa državnim strukturama."@sr .
+
 
 
 
@@ -53,6 +64,7 @@ _:relAB a :BusinessAndPoliticalConnection ;
 #########################################################
 # Company
 #########################################################
+
 
 ex:Milenijum_Tim a :Company ;
     foaf:name "Milenijum tim"@sr ;
@@ -62,11 +74,79 @@ ex:Milenijum_Tim a :Company ;
     ex:hasDocumentURL <https://sr.wikipedia.org/wiki/Milenijum_tim>, 
                       <https://www.companywall.rs/firma/millennium-team-doo-beograd/MMksspYq> .
 
+ex:Milenijum_Tim a :Company ;
+    foaf:name "Milenijum tim"@sr ;
+    dbo:foundationDate "2003-09-04"^^xsd:date ;
+    dbo:industry "Građevinarstvo"@sr ;
+    dbo:location "Beograd, Srbija"@sr ;
+    ex:hasDocumentURL <https://sr.wikipedia.org/wiki/Milenijum_tim>,                      
+                      <https://nova.rs/vesti/biznis/novi-rekord-milenijum-tima-od-250-miliona-evra-za-cetiri-godine-prihodi-porasli-tri-puta-nanizali-poslove-na-najvecim-drzavnim-projektima/> ;
+    ex:hasOwner ex:Stojan_Vujko ;
+    rdfs:comment "Milenijum tim je jedna od vodećih građevinskih kompanija u Srbiji sa širokim portfoliom povezanih firmi i poslova."@sr .
+
+ex:Mostogradnja_ING a :Company ;
+    foaf:name "Mostogradnja ING"@sr ;
+    :subsidiaryCompanyOf ex:Milenijum_Tim ;
+    ex:hasDocumentURL <https://nova.rs/vesti/biznis/od-vinograda-preko-naucnih-instituta-do-banja-i-giganata-sfrj-sta-je-sve-za-male-pare-kupila-sns-firma-milenijum-tim/>,
+                      <https://www.companywall.rs/firma/mostogradnja-ing-doo-beograd/MBksspYq> ;
+    rdfs:comment "Mostogradnja ING je građevinska kompanija koja je postala stopostotna filijala Milenijum tima 2024. godine."@sr .
+
+ex:Milenijum_Propertiz a :Company ;
+    foaf:name "Milenijum propertiz"@sr ;
+    :subsidiaryCompanyOf ex:Milenijum_Tim ;
+    ex:hasDocumentURL <https://www.danas.rs/vesti/ekonomija/sta-sve-ima-milenijum-tim-novi-vlasnik-hotela-jugoslavija/>,
+                      <https://www.companywall.rs/firma/milenijum-propertiz-doo-beograd/MPksspYq> ;
+    rdfs:comment "Milenijum propertiz je filijala Milenijum tima, specijalizovana za poslove sa nekretninama."@sr .
+
+ex:Roberts_Milenijum a :Company ;
+    foaf:name "Roberts Milenijum"@sr ;
+    :subsidiaryCompanyOf ex:Milenijum_Tim ;
+    ex:hasDocumentURL <https://www.danas.rs/vesti/ekonomija/sta-sve-ima-milenijum-tim-novi-vlasnik-hotela-jugoslavija/>,
+                      <https://www.krik.rs/tag/roberts-milenijum/> ;
+    rdfs:comment "Roberts Milenijum je zajednička firma sa građevinskom kompanijom Roberts, koja učestvuje u projektima poput Beograda na vodi, i filijala je Milenijum tima."@sr .
+
+ex:Milenijum_Picaroti a :Company ;
+    foaf:name "Milenijum Picaroti"@sr ;
+    :subsidiaryCompanyOf ex:Milenijum_Tim ;
+    ex:hasDocumentURL <https://www.danas.rs/vesti/ekonomija/sta-sve-ima-milenijum-tim-novi-vlasnik-hotela-jugoslavija/>,
+                      <https://www.companywall.rs/firma/milenijum-picaroti-doo-beograd/MPksspYq> ;
+    rdfs:comment "Milenijum Picaroti je zajedničko preduzeće Milenijum tima, osnovano za gradnju kule u okviru projekta Beograd na vodi."@sr .
+
+ex:Milenijum_Resorts a :Company ;
+    foaf:name "Milenijum resorts"@sr ;
+    :subsidiaryCompanyOf ex:Milenijum_Tim ;
+    ex:hasDocumentURL <https://www.danas.rs/vesti/ekonomija/sta-sve-ima-milenijum-tim-novi-vlasnik-hotela-jugoslavija/>,
+                      <https://nova.rs/vesti/biznis/milenijum-resorts-u-turizmu/> ;
+    rdfs:comment "Milenijum resorts je filijala Milenijum tima, zadužena za upravljanje i razvoj turističkih projekata, uključujući Vranjsku Banju."@sr .
+
+ex:MT_Gastel a :Company ;
+    foaf:name "MT Gastel"@sr ;
+    :subsidiaryCompanyOf ex:Milenijum_Tim ;
+    ex:hasDocumentURL <https://www.danas.rs/vesti/ekonomija/sta-sve-ima-milenijum-tim-novi-vlasnik-hotela-jugoslavija/>,
+                      <https://www.companywall.rs/firma/mt-gastel-doo-beograd/MGksspYq> ;
+    rdfs:comment "MT Gastel je filijala Milenijum tima, aktivna u sektoru distribucije gasa."@sr .
+
+ex:Milenijum_Adria a :Company ;
+    foaf:name "Milenijum Adria"@sr ;
+    :subsidiaryCompanyOf ex:Milenijum_Tim ;
+    ex:hasDocumentURL <https://www.danas.rs/vesti/ekonomija/sta-sve-ima-milenijum-tim-novi-vlasnik-hotela-jugoslavija/>,
+                      <https://www.companywall.rs/firma/milenijum-adria-doo-zagreb/MAksspYq> ;
+    rdfs:comment "Milenijum Adria je filijala Milenijum tima za poslovanje na teritoriji Hrvatske."@sr .
+
+ex:MV_Investment a :Company ;
+    foaf:name "MV Investment"@sr ;
+    dbo:industry "Upravljanje nekretninama"@sr ;
+    :subsidiaryCompanyOf ex:Milenijum_Tim ;
+    ex:hasDocumentURL <https://www.danas.rs/vesti/ekonomija/sta-sve-ima-milenijum-tim-novi-vlasnik-hotela-jugoslavija/>,
+                      <https://www.companywall.rs/firma/mv-investment-doo-beograd/MVksppYq> ;
+    rdfs:comment "MV Investment je filijala Milenijum tima, vlasnik kompleksa Hotela Jugoslavija i aktivna u upravljanju nekretninama."@sr .
+
 
 
 #########################################################
 # Ownership Relationship
 #########################################################
+
 
 _:relOwnership a :Ownership ;
     ex:owner ex:Ivan_Bosnjak ;
@@ -76,9 +156,11 @@ _:relOwnership a :Ownership ;
                       <https://www.companywall.rs/firma/millennium-team-doo-beograd/MMksspYq> .
 
 
+
 #########################################################
 # Qualified Relationship: LeadershipRole
 #########################################################
+
 
 _:relNALED a :LeadershipRole ;
     ex:personParticipant ex:Ivan_Bosnjak ;
@@ -87,6 +169,7 @@ _:relNALED a :LeadershipRole ;
     ex:hasDocumentURL <https://naled.rs/htdocs/Files/15388/II-Kvartalni-izvestaj_2024.pdf>,
                       <https://www.uzmiracun.rs/vest-otvorene-wifi-zone-u-titelu-i-bakom-petrovcu-1345> ;
     rdfs:comment "Ivan Bošnjak je bio član Izvršnog odbora NALED-a i menadžer za razvoj članstva, aktivno učestvujući u lokalnom ekonomskom razvoju."@sr .
+
 
 _:relNALED a :LeadershipRole ;
     ex:personParticipant ex:Ana_Brnabic ;
@@ -99,9 +182,11 @@ _:relNALED a :LeadershipRole ;
     rdfs:comment "Ana Brnabić je bila jedna od osnivača NALED-a, potom potpredsednik i predsednik Upravnog odbora do ulaska u Vladu Srbije."@sr .
 
 
+
 #########################################################
 # Non=profit Organizations
 #########################################################                     
+
 
 ex:NALED a :NonProfitOrganization, :ProgrammaticOrganization ;
     foaf:name "Nacionalna alijansa za lokalni ekonomski razvoj (NALED)"@sr ;
@@ -118,41 +203,52 @@ ex:NALED a :NonProfitOrganization, :ProgrammaticOrganization ;
 
 
 
+
 #########################################################
 # Academic Organizations
 #########################################################
+
 
 ex:Peta_Beogradska_Gimnazija a :AcademicOrganization ;
     foaf:name "Peta beogradska gimnazija"@sr ;
     dbo:location "Beograd, Srbija"@sr .
 
+
 ex:Ekonomski_fakultet_University_of_Belgrade a :AcademicOrganization ;
     foaf:name "Ekonomski fakultet Univerziteta u Beogradu"@sr ;
     dbo:location "Beograd, Srbija"@sr .
+
 
 ex:Northwood_University_Michigan a :AcademicOrganization ;
     foaf:name "Northwood University, Mičigen, SAD"@sr ;
     dbo:location "Midland, Mičigen, SAD"@sr .
 
+
 #########################################################
 # Diplomas
 #########################################################
 
+
 ex:Osnovne_ekonomije a :Diploma ;
     rdfs:label "Osnovne ekonomije"@sr .
+
 
 ex:Master_ekonomije a :Diploma ;
     rdfs:label "Master ekonomije"@sr .
 
+
 ex:MBA a :Diploma ;
     rdfs:label "MBA"@sr .
+
 
 ex:BBA_poslovna_administracija a :Diploma ;
     rdfs:label "BBA"@sr .
 
+
 #########################################################
 # Qualified Relationship: PoliticalConnection
 #########################################################
+
 
 _:rel a :PoliticalConnection ;
     ex:personParticipant ex:Ana_Brnabic ;

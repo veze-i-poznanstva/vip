@@ -17,7 +17,9 @@ fun main(args: Array<String>) {
     try {
         println("=== Veracity Validation Report ===\n")
         println("Checking: $filename")
-        println("Rule: Every item must have at least 2 URLs from different domains")
+        println("Rules:")
+        println("  1. Every item must have at least 2 URLs from different domains")
+        println("  2. Every URL must be accessible (respond with HTTP 200)")
         println()
         
         // Load the RDF data
@@ -30,7 +32,7 @@ fun main(args: Array<String>) {
         val result = validator.validate(model)
         
         if (result.isValid) {
-            println("✓ All items have URLs from at least 2 different domains")
+            println("✓ All validation rules passed")
             println("\nValidation PASSED")
         } else {
             println("✗ Validation FAILED")
