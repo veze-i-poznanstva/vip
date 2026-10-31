@@ -366,8 +366,9 @@ Podaci žive u `data/` u dve vrste datoteka:
   više, menja se samo ona.
 - `data/cases/<slucaj>.ttl`, po jedna za svaki istraživani slučaj: veze među entitetima, svaka sa
   datumima, ulogama i dokazima. `milenijum-tim.ttl` sadrži vlasničke i radne veze građevinske
-  grupe; `peta-beogradska-gimnazija.ttl` sadrži razred koji je stigao do vlade. Recenzent pročita
-  jednu datoteku slučaja i vidi celu priču sa izvorima.
+  grupe; `peta-beogradska-gimnazija.ttl` sadrži razred koji je stigao do vlade;
+  `alo-media-system.ttl` sadrži vlasništvo nad izdavačem tabloida Alo. Recenzent pročita jednu
+  datoteku slučaja i vidi celu priču sa izvorima.
 
 Radite sa AI agentom za programiranje? Nalepite prompt iz
 [docs/agent-prompt.sr.md](docs/agent-prompt.sr.md) kao prvu poruku: on instalira alate, forkuje

@@ -1,0 +1,29 @@
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix dbo:     <http://dbpedia.org/ontology/> .
+@prefix rs:      <https://w3id.org/vip/rs/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix :        <http://poderopedia.com/vocab/> .
+@prefix vip:     <https://w3id.org/vip/vocab#> .
+
+# Alo media system
+# Matična datoteka entiteta: tip, imena, identifikatori i izvori koji potvrđuju identitet.
+# Home file of this entity: type, names, identifiers and the sources for its identity.
+# Veze se nalaze u data/cases/. Connections live in data/cases/.
+
+rs:Alo_Media_System a :Company ;
+    foaf:name "Alo media system"@sr ;
+    :alias "Alo media system doo Beograd"@sr, "Dnevne novine Alo"@sr ;
+    dbo:foundationDate "2017-03-27"^^xsd:date ;
+    dbo:industry "Izdavanje novina"@sr ;
+    dbo:location "Beograd, Srbija"@sr ;
+    rdfs:comment "Izdavač tabloida Alo!. Osnovana u martu 2017. pod imenom Dnevne novine Alo, preimenovana u Alo media system u junu 2019; matični broj 21276081, sedište Kosovska 26, Beograd. Preko zavisnih društava (Best Media Team, INI media) od kraja 2025. kupuje lokalne televizije, radio stanice i portale."@sr ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://www.companywall.rs/firma/alo-media-system/MMfsPqfD> ; :hasDocumentType vip:registryRecord ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Registarski podaci (APR preko CompanyWall): puni naziv, matični broj 21276081, PIB 109964527, osnovana 27.3.2017, Kosovska 26/3, direktor Dragan Lazić."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://serbia.mom-gmr.org/sr/mediji/detail/outlet/alo/> ; :hasDocumentType vip:registryRecord ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Media Ownership Monitor Srbija: 'Kompanija Alo media system osnovana je u martu 2017. pod imenom Dnevne novine Alo', preimenovana u junu 2019."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://anem.org.rs/en/strane/cilj-je-zastrasivanje-na-lokalu-i-spaljena-zemlja-kakvu-ulogu-imaju-ispostave-klonovi-informera-i-aloa> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "ANEM, 2026: 'The publisher of the newspaper Alo is Alo Media System Belgrade', povezana sa devet preduzeća (tri sestrinska, šest zavisnih)."@sr ] .

@@ -1,0 +1,36 @@
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix dbo:     <http://dbpedia.org/ontology/> .
+@prefix rs:      <https://w3id.org/vip/rs/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix :        <http://poderopedia.com/vocab/> .
+@prefix vip:     <https://w3id.org/vip/vocab#> .
+
+# Slučaj: Alo media system — vlasnik tabloida Alo i njegove medijske kupovine
+# Case: Alo media system — the owner of the tabloid Alo and his media acquisitions
+#
+# Obuhvata: Sašu Blagojevića i kompaniju Alo media system, izdavača tabloida Alo!.
+# Osobe i organizacije su deklarisane u data/entities/, ovde su samo veze među njima.
+# People and organisations are declared in data/entities/; this file holds only the connections.
+# Konvencije zapisa: videti README.md / PROCITAJME.md, odeljak "Doprinos podacima".
+
+rs:SasaBlagojevic_AloMediaSystem a vip:OwnershipConnection ;
+    vip:owner rs:Sasa_Blagojevic ;
+    vip:ownedCompany rs:Alo_Media_System ;
+    vip:ownershipShare 100.0 ;
+    rdfs:comment "Saša Blagojević je jedini vlasnik (100%) kompanije Alo media system, izdavača tabloida Alo!, od jula 2017, kada je Ringier Axel Springer prodao Alo njegovoj firmi Dnevne novine Alo."@sr ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://www.companywall.rs/firma/alo-media-system/MMfsPqfD> ; :hasDocumentType vip:registryRecord ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Registarski podaci: 'Vlasnik (osnivač): Saša Blagojević (100,00%)'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://serbia.mom-gmr.org/sr/vlasnik/individual-owners/detail/owner/owner/show/sasa-blagojevic-2/> ; :hasDocumentType vip:registryRecord ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Media Ownership Monitor Srbija, profil vlasnika: Alo Media System 100%, Alo! 100% preko Alo Media System; 'Blagojević je 2017. godine kupio dnevne novine Alo'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://serbia.mom-gmr.org/sr/mediji/detail/outlet/alo/> ; :hasDocumentType vip:registryRecord ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Media Ownership Monitor Srbija, profil medija: 'Vlasnik dnevnih novina Alo je Saša Blagojević preko svoje kompanije Dnevne novine Alo, od jula 2017.'"@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://safejournalists.net/sr/vlasnik-tabloida-alo-za-manje-od-mesec-dana-kupio-dve-televizije-i-radio-za-skoro-200-000-evra/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Raskrikavanje/SafeJournalists, januar 2026: 'Saša Blagojević ... od 2017. godine je vlasnik kompanije Alo Media System.'"@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://anem.org.rs/en/strane/cilj-je-zastrasivanje-na-lokalu-i-spaljena-zemlja-kakvu-ulogu-imaju-ispostave-klonovi-informera-i-aloa> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "ANEM, 2026: 'The owner of the \"umbrella\" (parent) company Alo Media System is Saša Blagojević', sa udelima u više od 30 firmi."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://en.wikipedia.org/wiki/Alo!> ; :hasDocumentType vip:encyclopediaArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Enciklopedijski članak o listu Alo!: 'Owner: Saša Blagojević'."@sr ] .

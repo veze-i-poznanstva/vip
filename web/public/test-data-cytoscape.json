@@ -145,6 +145,15 @@
   },
   {
     "data": {
+      "id": "alo_media_system",
+      "label": "Alo media system",
+      "type": "instance",
+      "nodeType": "organization",
+      "uri": "https://w3id.org/vip/rs/Alo_Media_System"
+    }
+  },
+  {
+    "data": {
       "id": "mt_gastel",
       "label": "MT Gastel",
       "type": "instance",
@@ -182,17 +191,17 @@
   {
     "data": {
       "id": "edge0",
-      "label": "ownership connection",
-      "source": "stojan_vujko",
-      "target": "milenijum_tim"
+      "label": "alumni",
+      "source": "sinisa_mali",
+      "target": "peta_beogradska_gimnazija"
     }
   },
   {
     "data": {
       "id": "edge1",
-      "label": "ownership connection",
-      "source": "ivan_bosnjak",
-      "target": "milenijum_tim"
+      "label": "political connection",
+      "source": "sinisa_mali",
+      "target": "sns"
     }
   },
   {
@@ -200,12 +209,36 @@
       "id": "edge2",
       "label": "alumni",
       "source": "sinisa_mali",
-      "target": "peta_beogradska_gimnazija"
+      "target": "ekonomski_fakultet_university_of_belgrade"
     }
   },
   {
     "data": {
       "id": "edge3",
+      "label": "ownership connection",
+      "source": "sasa_blagojevic",
+      "target": "alo_media_system"
+    }
+  },
+  {
+    "data": {
+      "id": "edge4",
+      "label": "ownership connection",
+      "source": "stojan_vujko",
+      "target": "milenijum_tim"
+    }
+  },
+  {
+    "data": {
+      "id": "edge5",
+      "label": "ownership connection",
+      "source": "ivan_bosnjak",
+      "target": "milenijum_tim"
+    }
+  },
+  {
+    "data": {
+      "id": "edge6",
       "label": "poslovni i politički partneri",
       "source": "ana_brnabic",
       "target": "ivan_bosnjak"
@@ -213,15 +246,7 @@
   },
   {
     "data": {
-      "id": "edge4",
-      "label": "political connection",
-      "source": "sinisa_mali",
-      "target": "sns"
-    }
-  },
-  {
-    "data": {
-      "id": "edge5",
+      "id": "edge7",
       "label": "alumni",
       "source": "mihailo_jovanovic",
       "target": "peta_beogradska_gimnazija"
@@ -229,7 +254,7 @@
   },
   {
     "data": {
-      "id": "edge6",
+      "id": "edge8",
       "label": "chair of the board, founder, vice chair of the board",
       "source": "ana_brnabic",
       "target": "naled"
@@ -237,15 +262,7 @@
   },
   {
     "data": {
-      "id": "edge7",
-      "label": "alumni",
-      "source": "sinisa_mali",
-      "target": "ekonomski_fakultet_university_of_belgrade"
-    }
-  },
-  {
-    "data": {
-      "id": "edge8",
+      "id": "edge9",
       "label": "executive board member, manager",
       "source": "ivan_bosnjak",
       "target": "naled"
@@ -253,7 +270,7 @@
   },
   {
     "data": {
-      "id": "edge9",
+      "id": "edge10",
       "label": "alumni",
       "source": "ana_brnabic",
       "target": "peta_beogradska_gimnazija"
@@ -261,7 +278,7 @@
   },
   {
     "data": {
-      "id": "edge10",
+      "id": "edge11",
       "label": "political connection",
       "source": "ana_brnabic",
       "target": "sns"
@@ -269,7 +286,7 @@
   },
   {
     "data": {
-      "id": "edge11",
+      "id": "edge12",
       "label": "alumni",
       "source": "ana_brnabic",
       "target": "northwood_university_michigan"
@@ -277,17 +294,9 @@
   },
   {
     "data": {
-      "id": "edge12",
-      "label": "subsidiary company of",
-      "source": "milenijum_picaroti",
-      "target": "milenijum_tim"
-    }
-  },
-  {
-    "data": {
       "id": "edge13",
       "label": "subsidiary company of",
-      "source": "mt_gastel",
+      "source": "milenijum_picaroti",
       "target": "milenijum_tim"
     }
   },
@@ -303,7 +312,7 @@
     "data": {
       "id": "edge15",
       "label": "subsidiary company of",
-      "source": "mv_investment",
+      "source": "mt_gastel",
       "target": "milenijum_tim"
     }
   },
@@ -311,7 +320,7 @@
     "data": {
       "id": "edge16",
       "label": "subsidiary company of",
-      "source": "milenijum_adria",
+      "source": "mv_investment",
       "target": "milenijum_tim"
     }
   },
@@ -319,7 +328,7 @@
     "data": {
       "id": "edge17",
       "label": "subsidiary company of",
-      "source": "roberts_milenijum",
+      "source": "milenijum_adria",
       "target": "milenijum_tim"
     }
   },
@@ -327,13 +336,21 @@
     "data": {
       "id": "edge18",
       "label": "subsidiary company of",
-      "source": "mostogradnja_ing",
+      "source": "roberts_milenijum",
       "target": "milenijum_tim"
     }
   },
   {
     "data": {
       "id": "edge19",
+      "label": "subsidiary company of",
+      "source": "mostogradnja_ing",
+      "target": "milenijum_tim"
+    }
+  },
+  {
+    "data": {
+      "id": "edge20",
       "label": "subsidiary company of",
       "source": "milenijum_propertiz",
       "target": "milenijum_tim"

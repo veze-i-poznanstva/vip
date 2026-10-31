@@ -21,6 +21,10 @@
         vip:archivedOn     "2024-11-09"^^xsd:date;
         vip:hasArchiveURL  <http://web.archive.org/web/20241109195604/https://www.fininfo.hr/Poduzece/Pregled/millennium-adria/Detaljno/780814> .
 
+<https://en.wikipedia.org/wiki/Alo!>
+        vip:archivedOn     "2026-04-13"^^xsd:date;
+        vip:hasArchiveURL  <http://web.archive.org/web/20260413190045/https://en.wikipedia.org/wiki/Alo!> .
+
 <https://luftika.rs/milenijum-tim-vranjska-banja/>
         vip:archivedOn     "2022-06-28"^^xsd:date;
         vip:hasArchiveURL  <http://web.archive.org/web/20220628185341/https://luftika.rs/milenijum-tim-vranjska-banja/> .
@@ -56,6 +60,10 @@
 <https://en.wikipedia.org/wiki/Northwood_University>
         vip:archivedOn     "2026-08-03"^^xsd:date;
         vip:hasArchiveURL  <http://web.archive.org/web/20260803122447/https://en.wikipedia.org/wiki/Northwood_University> .
+
+<https://www.companywall.rs/firma/alo-media-system/MMfsPqfD>
+        vip:archivedOn     "2026-10-31"^^xsd:date;
+        vip:hasArchiveURL  <https://web.archive.org/web/20261031150928/https://www.companywall.rs/firma/alo-media-system/MMfsPqfD> .
 
 <https://www.danas.rs/vesti/ekonomija/milenijum-timhotel-jugoslavija/>
         vip:archivedOn     "2025-03-17"^^xsd:date;
@@ -176,6 +184,10 @@
 <https://www.wikidata.org/wiki/Q11160995>
         vip:archivedOn     "2025-11-04"^^xsd:date;
         vip:hasArchiveURL  <http://web.archive.org/web/20251104160959/https://www.wikidata.org/wiki/Q11160995> .
+
+<https://anem.org.rs/en/strane/cilj-je-zastrasivanje-na-lokalu-i-spaljena-zemlja-kakvu-ulogu-imaju-ispostave-klonovi-informera-i-aloa>
+        vip:archivedOn     "2026-10-31"^^xsd:date;
+        vip:hasArchiveURL  <https://web.archive.org/web/20261031150814/https://anem.org.rs/en/strane/cilj-je-zastrasivanje-na-lokalu-i-spaljena-zemlja-kakvu-ulogu-imaju-ispostave-klonovi-informera-i-aloa> .
 
 <https://forbes.n1info.rs/vesti/vlasnici-milenijum-tima-kupili-hotel-jugoslavija/>
         vip:archivedOn     "2026-03-11"^^xsd:date;

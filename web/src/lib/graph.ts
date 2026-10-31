@@ -88,3 +88,8 @@ export function egoGraph(index: GraphIndex, focus: string): Element[] {
 export function expand(index: GraphIndex, shown: Set<string>, id: string): Set<string> {
   return new Set([...shown, ...neighbours(index, [id])]);
 }
+
+/** The trail of focus nodes with the new one last; a node revisited moves to the end rather than repeating. */
+export function pushTrail(trail: string[], id: string): string[] {
+  return [...trail.filter((t) => t !== id), id];
+}

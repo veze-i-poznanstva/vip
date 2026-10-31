@@ -7,7 +7,7 @@
   /** The node drawn in the centre of a concentric layout and marked with the `focus` class. */
   export let focusId: string | null = null;
 
-  const dispatch = createEventDispatcher<{ nodeDoubleClick: string }>();
+  const dispatch = createEventDispatcher<{ nodeClick: string; nodeDoubleClick: string }>();
 
   function layoutOptions(name: string): cytoscape.LayoutOptions {
     const base = { name, animate: true, animationDuration: 500, fit: true, padding: 50 };
@@ -74,12 +74,7 @@
       wheelSensitivity: 0.2
     });
 
-    cy.on('tap', 'node', (evt) => {
-      const node = evt.target;
-      console.log('Node clicked:', node.data());
-      console.log('Node type:', node.data('nodeType'));
-      console.log('Node classes:', node.classes());
-    });
+    cy.on('tap', 'node', (evt) => dispatch('nodeClick', evt.target.id()));
 
     cy.on('tap', 'edge', (evt) => {
       const edge = evt.target;

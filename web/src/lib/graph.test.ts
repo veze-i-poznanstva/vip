@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { buildIndex, egoGraph, expand, fold, search, subgraph } from './graph';
+import { buildIndex, egoGraph, expand, fold, pushTrail, search, subgraph } from './graph';
 
 describe('fold', () => {
   it('lowercases and strips diacritics so "brnabic" matches "Ana Brnabić"', () => {
@@ -58,5 +58,15 @@ describe('expand', () => {
     expect([...expand(index, shown, 'ivan')].sort()).toEqual(['ana', 'ivan', 'naled', 'sinisa']);
     expect(shown.size).toBe(3);
     expect(subgraph(index, expand(index, shown, 'ivan')).map((e) => e.data.id).sort()).toEqual(['ana', 'e1', 'e2', 'e3', 'ivan', 'naled', 'sinisa']);
+  });
+});
+
+describe('pushTrail', () => {
+  it('appends the new focus, drops a later copy of the same node, and leaves the input untouched', () => {
+    const trail = ['ana', 'ivan'];
+    expect(pushTrail(trail, 'sinisa')).toEqual(['ana', 'ivan', 'sinisa']);
+    expect(pushTrail(trail, 'ana')).toEqual(['ivan', 'ana']);
+    expect(pushTrail(trail, 'ivan')).toEqual(['ana', 'ivan']);
+    expect(trail).toEqual(['ana', 'ivan']);
   });
 });

@@ -369,7 +369,8 @@ Data lives in `data/` in two kinds of file:
   changes only that file.
 - `data/cases/<case>.ttl`, one per investigated case: the connections between entities, each
   with dates, roles and evidence. `milenijum-tim.ttl` holds the construction group's ownership and
-  work ties; `peta-beogradska-gimnazija.ttl` holds the school class that reached the government.
+  work ties; `peta-beogradska-gimnazija.ttl` holds the school class that reached the government;
+  `alo-media-system.ttl` holds the ownership of the tabloid Alo's publisher.
   A reviewer reads one case file and sees a whole story with its sources.
 
 Working with an AI coding agent? Paste the prompt in [docs/agent-prompt.md](docs/agent-prompt.md)

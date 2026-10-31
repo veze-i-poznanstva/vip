@@ -27,6 +27,7 @@
   "instructions.text": "Click and drag to pan • Scroll to zoom • Click nodes/edges for details • Try different layouts",
   "search.placeholder": "Search a person or organization...",
   "search.none": "No matches",
-  "search.hint": "Showing {label} and its direct connections. Double-click a node to add its connections.",
-  "showAll": "Show all"
+  "search.hint": "Showing {label} and its direct connections. Click a node to make it the centre; double-click to add its connections.",
+  "showAll": "Show all",
+  "trail": "Trail"
 }

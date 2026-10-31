@@ -4,7 +4,7 @@
   import type { ElementDefinition } from 'cytoscape';
   import { language, resolveLanguage, supportedLanguages, t } from './lib/i18n';
   import type { Language } from './lib/i18n';
-  import { buildIndex, egoGraph, expand, search, subgraph } from './lib/graph';
+  import { buildIndex, egoGraph, expand, pushTrail, search, subgraph } from './lib/graph';
   import type { Element, GraphIndex, GraphNode } from './lib/graph';
 
   let graph: CytoscapeGraph;
@@ -19,20 +19,29 @@
   let query = '';
   let focus: GraphNode | null = null;
   let shown = new Set<string>();
+  /** Every node that has been the centre this session, oldest first. */
+  let trail: GraphNode[] = [];
   $: suggestions = focus && query === focus.label ? [] : search(index, query).slice(0, 8);
   $: shownElements = focus ? subgraph(index, shown) : (elements as unknown as Element[]);
   $: explorerLayout = focus ? 'concentric' : selectedLayout;
 
+  /** Makes the node the centre: its neighbourhood replaces the canvas and it joins the trail. */
   function choose(node: GraphNode) {
     focus = node;
     query = node.label;
     shown = new Set(egoGraph(index, node.id).filter((e) => !('source' in e.data)).map((e) => String(e.data.id)));
+    trail = pushTrail(trail.map((n) => n.id), node.id).map((id) => index.nodes.get(id)!);
   }
 
   function showAll() {
     focus = null;
     query = '';
     shown = new Set();
+  }
+
+  function onNodeClick(event: CustomEvent<string>) {
+    const node = index.nodes.get(event.detail);
+    if (node && node.id !== focus?.id) choose(node);
   }
 
   function onNodeDoubleClick(event: CustomEvent<string>) {
@@ -294,10 +303,21 @@
         layout={explorerLayout}
         focusId={focus?.id ?? null}
         style={graphStyle}
+        on:nodeClick={onNodeClick}
         on:nodeDoubleClick={onNodeDoubleClick}
       />
     {/if}
   </div>
+
+  {#if trail.length > 0}
+    <nav class="trail" aria-label={$t('trail')}>
+      <span class="trail-label">{$t('trail')}:</span>
+      {#each trail as node, i (node.id)}
+        {#if i > 0}<span class="trail-sep">›</span>{/if}
+        <button type="button" class:current={node.id === focus?.id} on:click={() => choose(node)}>{node.label}</button>
+      {/each}
+    </nav>
+  {/if}
 
   <div class="info">
     <div class="legend">
@@ -409,6 +429,41 @@
   .suggestions .none {
     padding: 0.4rem 0.6rem;
     color: #868e96;
+  }
+
+  .trail {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.4rem 1rem;
+    background: #f8f9fa;
+    border-top: 1px solid #dee2e6;
+    font-size: 0.9rem;
+  }
+
+  .trail-label {
+    font-weight: 600;
+    color: #495057;
+  }
+
+  .trail-sep {
+    color: #adb5bd;
+  }
+
+  .trail button {
+    border: none;
+    background: none;
+    padding: 0.2rem 0.4rem;
+    color: #1c7ed6;
+    cursor: pointer;
+    font-size: inherit;
+  }
+
+  .trail button.current {
+    color: #212529;
+    font-weight: 600;
+    cursor: default;
   }
 
   .controls {
