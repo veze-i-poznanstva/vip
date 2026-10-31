@@ -1,0 +1,22 @@
+# Owner in office / Vlasnik na funkciji
+# A person who owns a company, in whole or in part, also holds a position in a government
+# organisation. A possible conflict of interest between the business and the office.
+# Osoba koja je vlasnik ili suvlasnik firme istovremeno ima položaj u državnoj organizaciji.
+# Mogući sukob interesa između posla i funkcije.
+PREFIX :    <http://poderopedia.com/vocab/>
+PREFIX vip: <https://w3id.org/vip/vocab#>
+PREFIX bio: <http://purl.org/vocab/bio/0.1/>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT ?person ?company ?office ?role
+WHERE {
+  ?ownership a vip:OwnershipConnection ;
+             vip:owner ?person ;
+             vip:ownedCompany ?company .
+  ?post a :WorkConnection ;
+        bio:participant ?person ;
+        :hasEconomicOrganizationParticipant ?office .
+  ?office a :GovernmentOrganization .
+  OPTIONAL { ?post :hasWorkRole ?role }
+}
+ORDER BY ?person ?company ?office

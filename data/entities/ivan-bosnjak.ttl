@@ -1,0 +1,22 @@
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix dbo:     <http://dbpedia.org/ontology/> .
+@prefix rs:      <https://w3id.org/vip/rs/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix :        <http://poderopedia.com/vocab/> .
+@prefix vip:     <https://w3id.org/vip/vocab#> .
+
+# Ivan Bošnjak
+# Matična datoteka entiteta: tip, imena, identifikatori i izvori koji potvrđuju identitet.
+# Home file of this entity: type, names, identifiers and the sources for its identity.
+# Veze se nalaze u data/cases/. Connections live in data/cases/.
+
+rs:Ivan_Bosnjak a foaf:Person ;
+    foaf:name "Ivan Bošnjak"@sr ;
+    foaf:firstName "Ivan" ;
+    :firstLastName "Bošnjak" ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://www.istinomer.rs/akter/ivan-bosnjak/> ; :hasDocumentType vip:factCheckProfile ; :hasDocumentStatus vip:published ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.krik.rs/tag/ivan-bosnjak/> ; :hasDocumentType vip:webPage ; :hasDocumentStatus vip:published ] .

@@ -1,0 +1,71 @@
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix dbo:     <http://dbpedia.org/ontology/> .
+@prefix rs:      <https://w3id.org/vip/rs/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix :        <http://poderopedia.com/vocab/> .
+@prefix vip:     <https://w3id.org/vip/vocab#> .
+
+# Slučaj: Milenijum tim — građevinska grupa, njeni vlasnici i veze sa vlašću
+# Case: Milenijum Tim — the construction group, its owners and their ties to power
+#
+# Obuhvata: Ivana Bošnjaka i Stojana Vujka, kompaniju Milenijum tim sa zavisnim društvima,
+# vlasničke udele, NALED i radne veze Ivana Bošnjaka i Ane Brnabić sa NALED-om.
+# Osobe i organizacije su deklarisane u data/entities/, ovde su samo veze među njima.
+# People and organisations are declared in data/entities/; this file holds only the connections.
+# Konvencije zapisa: videti README.md / PROCITAJME.md, odeljak "Doprinos podacima".
+
+rs:AnaBrnabic_IvanBosnjak a :Connection ;
+    rdfs:label "poslovni i politički partneri"@sr ;
+    bio:participant rs:Ana_Brnabic, rs:Ivan_Bosnjak ;
+    rdfs:comment "Ana Brnabić i Ivan Bošnjak su povezani kroz poslovne i političke veze, naročito u okviru Milenijum tima i saradnje sa državnim strukturama."@sr ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://www.istinomer.rs/akter/ana-brnabic/> ; :hasDocumentType vip:factCheckProfile ; :hasDocumentStatus vip:published ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.istinomer.rs/akter/ivan-bosnjak/> ; :hasDocumentType vip:factCheckProfile ; :hasDocumentStatus vip:published ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.krik.rs/tag/ana-brnabic/> ; :hasDocumentType vip:webPage ; :hasDocumentStatus vip:published ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.krik.rs/tag/ivan-bosnjak/> ; :hasDocumentType vip:webPage ; :hasDocumentStatus vip:published ] .
+
+rs:IvanBosnjak_MilenijumTim a vip:OwnershipConnection ;
+    vip:owner rs:Ivan_Bosnjak ;
+    vip:ownedCompany rs:Milenijum_Tim ;
+    vip:ownershipShare 50.0 ;
+    rdfs:comment "Ivan Bošnjak je suvlasnik kompanije Milenijum tim sa udelom od 50%."@sr ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://www.companywall.rs/firma/millennium-team-doo-beograd/MMksspYq> ; :hasDocumentType vip:registryRecord ; :hasDocumentStatus vip:published ] ,
+        [ a :Documentation ; :hasDocumentURL <https://en.wikipedia.org/wiki/Millennium_Team> ; :hasDocumentType vip:encyclopediaArticle ; :hasDocumentStatus vip:published ] ,
+        [ a :Documentation ; :hasDocumentURL <https://sr.wikipedia.org/wiki/Milenijum_tim> ; :hasDocumentType vip:encyclopediaArticle ; :hasDocumentStatus vip:removed ] .
+
+rs:StojanVujko_MilenijumTim a vip:OwnershipConnection ;
+    vip:owner rs:Stojan_Vujko ;
+    vip:ownedCompany rs:Milenijum_Tim ;
+    rdfs:comment "Stojan Vujko je suvlasnik kompanije Milenijum tim."@sr ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://www.companywall.rs/firma/millennium-team-doo-beograd/MMksspYq> ; :hasDocumentType vip:registryRecord ; :hasDocumentStatus vip:published ] ,
+        [ a :Documentation ; :hasDocumentURL <https://en.wikipedia.org/wiki/Millennium_Team> ; :hasDocumentType vip:encyclopediaArticle ; :hasDocumentStatus vip:published ] .
+
+rs:IvanBosnjak_NALED a :WorkConnection ;
+    bio:participant rs:Ivan_Bosnjak ;
+    :hasEconomicOrganizationParticipant rs:NALED ;
+    :hasWorkRole vip:executiveBoardMember, :manager ;
+    rdfs:comment "Ivan Bošnjak je bio član Izvršnog odbora NALED-a i menadžer za razvoj članstva, aktivno učestvujući u lokalnom ekonomskom razvoju."@sr ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://naled.rs/htdocs/Files/15388/II-Kvartalni-izvestaj_2024.pdf> ; :hasDocumentType vip:officialDocument ; :hasDocumentStatus vip:published ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.uzmiracun.rs/vest-otvorene-wifi-zone-u-titelu-i-bakom-petrovcu-1345> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ] .
+
+rs:AnaBrnabic_NALED a :WorkConnection ;
+    bio:participant rs:Ana_Brnabic ;
+    :hasEconomicOrganizationParticipant rs:NALED ;
+    :hasWorkRole vip:founder, vip:boardViceChair, vip:boardChair ;
+    :connectionStartDate "2006-01-01"^^xsd:date ;
+    :connectionEndDate "2017-04-01"^^xsd:date ;
+    rdfs:comment "Ana Brnabić je bila jedna od osnivača NALED-a, potom potpredsednik i predsednik Upravnog odbora do ulaska u Vladu Srbije."@sr ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://naled.rs/vest-premijerka-obisla-zaposlene-u-naled-u-2421> ; :hasDocumentType vip:webPage ; :hasDocumentStatus vip:published ;
+          rdfs:comment "NALED, jul 2019: poseta premijerke, 'prva od kako je sa mesta predsednice Upravnog odbora NALED-a izabrana za ministarku'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.kurir.rs/vesti/politika/2864945/ovo-je-biografija-nove-premijerke-ana-brnabic-prva-zena-na-celu-vlade-srbije-u-istoriji> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Biografija, jun 2017: učestvuje u osnivanju NALED-a 2006, potpredsednica UO od 2013, predsednica UO od aprila 2016."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://sr.wikipedia.org/wiki/Ана_Брнабић> ; :hasDocumentType vip:encyclopediaArticle ; :hasDocumentStatus vip:published ] ,
+        [ a :Documentation ; :hasDocumentURL <https://naled.rs/o-naled-u/vesti/ana-brnabic-novi-predsednik-upravnog-odbora-naleda/> ; :hasDocumentType vip:webPage ; :hasDocumentStatus vip:removed ;
+          rdfs:comment "Sajt NALED-a preusmerava ovu adresu na stranicu greške (404); nikada nije arhivirana."@sr ] .

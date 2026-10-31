@@ -1,0 +1,40 @@
+# Nepotism / Nepotizam
+# A spouse, partner, kum or family member of someone who leads an organisation holds a job at
+# that same organisation. Each match names the leader, the relative, how they are related and
+# the organisation. A lead for a reporter, not a finding: the appointment may be legitimate.
+# Supružnik, partner, kum ili član porodice osobe koja vodi organizaciju radi u toj istoj
+# organizaciji. Svaki pogodak imenuje rukovodioca, srodnika, vrstu veze i organizaciju. Trag za
+# novinara, ne zaključak: postavljenje može biti opravdano.
+PREFIX :    <http://poderopedia.com/vocab/>
+PREFIX vip: <https://w3id.org/vip/vocab#>
+PREFIX bio: <http://purl.org/vocab/bio/0.1/>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT ?leader ?leaderRole ?relative ?relation ?relativeRole ?organization
+WHERE {
+  ?lead a :WorkConnection ;
+        bio:participant ?leader ;
+        :hasEconomicOrganizationParticipant ?organization ;
+        :hasWorkRole ?leaderRole .
+  ?leader a foaf:Person .
+  VALUES ?leaderRole { :ceo :director :manager vip:founder vip:boardChair vip:boardViceChair vip:executiveBoardMember }
+
+  ?job a :WorkConnection ;
+       bio:participant ?relative ;
+       :hasEconomicOrganizationParticipant ?organization .
+  ?relative a foaf:Person .
+  OPTIONAL { ?job :hasWorkRole ?relativeRole }
+  FILTER (?relative != ?leader)
+
+  {
+    ?tie a :SentimentalRelationshipConnection ; bio:participant ?leader, ?relative .
+    BIND ("spouse or partner" AS ?relation)
+  } UNION {
+    ?tie a vip:GodparentConnection ; bio:participant ?leader, ?relative .
+    BIND ("kum" AS ?relation)
+  } UNION {
+    ?leader (:hasParent|:hasChild|:hasSibling|^:hasParent|^:hasChild) ?relative .
+    BIND ("family" AS ?relation)
+  }
+}
+ORDER BY ?organization ?leader ?relative

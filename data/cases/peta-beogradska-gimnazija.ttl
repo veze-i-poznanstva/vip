@@ -1,0 +1,69 @@
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix dbo:     <http://dbpedia.org/ontology/> .
+@prefix rs:      <https://w3id.org/vip/rs/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix :        <http://poderopedia.com/vocab/> .
+@prefix vip:     <https://w3id.org/vip/vocab#> .
+
+# Slučaj: Peta beogradska gimnazija — razred koji je stigao do vlade
+# Case: Fifth Belgrade Gymnasium — the class that reached the government
+#
+# Obuhvata: Sinišu Malog, Anu Brnabić, Mihaila Jovanovića i Sašu Blagojevića, njihovu
+# zajedničku školu, dalje obrazovanje i članstvo u Srpskoj naprednoj stranci.
+# Osobe i organizacije su deklarisane u data/entities/, ovde su samo veze među njima.
+# People and organisations are declared in data/entities/; this file holds only the connections.
+# Konvencije zapisa: videti README.md / PROCITAJME.md, odeljak "Doprinos podacima".
+
+rs:SinisaMali_SNS a :PoliticalConnection ;
+    :personParticipant rs:Sinisa_Mali ;
+    :politicalParticipant rs:SNS ;
+    rdfs:comment "Siniša Mali je funkcioner Srpske napredne stranke."@sr ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://sr.wikipedia.org/wiki/Синиша_Мали> ; :hasDocumentType vip:encyclopediaArticle ; :hasDocumentStatus vip:published ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.istinomer.rs/akter/sinisa-mali/> ; :hasDocumentType vip:factCheckProfile ; :hasDocumentStatus vip:published ] .
+
+rs:AnaBrnabic_SNS a :PoliticalConnection ;
+    :personParticipant rs:Ana_Brnabic ;
+    :politicalParticipant rs:SNS ;
+    rdfs:comment "Ana Brnabić je funkcioner Srpske napredne stranke."@sr ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://sr.wikipedia.org/wiki/Ана_Брнабић> ; :hasDocumentType vip:encyclopediaArticle ; :hasDocumentStatus vip:published ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.istinomer.rs/akter/ana-brnabic/> ; :hasDocumentType vip:factCheckProfile ; :hasDocumentStatus vip:published ] .
+
+rs:SinisaMali_PetaGimnazija a :AlumniEducationalConnection ;
+    :hasStudent rs:Sinisa_Mali ;
+    :hasAcademicOrganization rs:Peta_Beogradska_Gimnazija ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://sr.wikipedia.org/wiki/Синиша_Мали> ; :hasDocumentType vip:encyclopediaArticle ; :hasDocumentStatus vip:published ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.alo.rs/vesti/politika/2184894/ekskluzivno-ekipa-alo-sa-ministrima-i-njihovom-razrednom-u-petoj-beogradskoj-posle-30-godina-sinisa-i-mihailo-od-skolskih-do-ministarskih-klupa-video.html> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ] .
+
+rs:SinisaMali_EkonomskiFakultet a :AlumniEducationalConnection ;
+    :hasStudent rs:Sinisa_Mali ;
+    :hasAcademicOrganization rs:Ekonomski_fakultet_University_of_Belgrade ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://sr.wikipedia.org/wiki/Синиша_Мали> ; :hasDocumentType vip:encyclopediaArticle ; :hasDocumentStatus vip:published ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.istinomer.rs/akter/sinisa-mali/> ; :hasDocumentType vip:factCheckProfile ; :hasDocumentStatus vip:published ] .
+
+rs:AnaBrnabic_PetaGimnazija a :AlumniEducationalConnection ;
+    :hasStudent rs:Ana_Brnabic ;
+    :hasAcademicOrganization rs:Peta_Beogradska_Gimnazija ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://sr.wikipedia.org/wiki/Ана_Брнабић> ; :hasDocumentType vip:encyclopediaArticle ; :hasDocumentStatus vip:published ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.istinomer.rs/akter/ana-brnabic/> ; :hasDocumentType vip:factCheckProfile ; :hasDocumentStatus vip:published ] .
+
+rs:AnaBrnabic_Northwood a :AlumniEducationalConnection ;
+    :hasStudent rs:Ana_Brnabic ;
+    :hasAcademicOrganization rs:Northwood_University_Michigan ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://sr.wikipedia.org/wiki/Ана_Брнабић> ; :hasDocumentType vip:encyclopediaArticle ; :hasDocumentStatus vip:published ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.istinomer.rs/akter/ana-brnabic/> ; :hasDocumentType vip:factCheckProfile ; :hasDocumentStatus vip:published ] .
+
+rs:MihailoJovanovic_PetaGimnazija a :AlumniEducationalConnection ;
+    :hasStudent rs:Mihailo_Jovanovic ;
+    :hasAcademicOrganization rs:Peta_Beogradska_Gimnazija ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://www.alo.rs/vesti/politika/2184894/ekskluzivno-ekipa-alo-sa-ministrima-i-njihovom-razrednom-u-petoj-beogradskoj-posle-30-godina-sinisa-i-mihailo-od-skolskih-do-ministarskih-klupa-video.html> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.youtube.com/watch?v=tHgNZtQdGrg&t=5s> ; :hasDocumentType vip:videoRecording ; :hasDocumentStatus vip:published ] .

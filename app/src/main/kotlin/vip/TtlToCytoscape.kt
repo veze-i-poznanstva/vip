@@ -1,11 +1,12 @@
 package vip
 
 import org.apache.jena.rdf.model.*
+import org.apache.jena.riot.RDFDataMgr
 import org.apache.jena.vocabulary.RDF
 import org.apache.jena.vocabulary.RDFS
-import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import java.io.File
+import java.io.PrintStream
 import kotlin.system.exitProcess
 
 data class CytoscapeElement(
@@ -24,277 +25,193 @@ data class ElementData(
 )
 
 fun main(args: Array<String>) {
-    if (args.size != 2) {
-        println("Usage: ttlToCytoscape <input.ttl> <output.json>")
-        println("Example: ttlToCytoscape test-data.ttl web/public/test-data-cytoscape.json")
-        exitProcess(1)
+    exitProcess(runTtlToCytoscape(args, System.out, System.err))
+}
+
+/** The command line as a function: returns the exit status and writes only to the given streams. */
+fun runTtlToCytoscape(args: Array<String>, out: PrintStream, err: PrintStream): Int {
+    if (args.size < 2 || args.size > 3) {
+        err.println("Usage: ttlToCytoscape <data-dir-or-file> <output.json> [schema.ttl]")
+        err.println("Example: ttlToCytoscape data web/public/test-data-cytoscape.json schema.ttl")
+        return 1
     }
 
     val inputFile = File(args[0])
     val outputFile = File(args[1])
+    val schemaFile = File(args.getOrElse(2) { "schema.ttl" })
 
-    if (!inputFile.exists()) {
-        println("Error: Input file '${inputFile.path}' not found")
-        exitProcess(1)
+    for (f in listOf(inputFile, schemaFile)) {
+        if (!f.exists()) {
+            err.println("Error: file '${f.path.printable()}' not found")
+            return 1
+        }
     }
-
-    // Create output directory if needed
-    outputFile.parentFile?.mkdirs()
 
     try {
-        println("Converting ${inputFile.path} to Cytoscape format...")
-        
-        // Load RDF model
-        val model = ModelFactory.createDefaultModel()
-        model.read(inputFile.inputStream(), null, "TTL")
-        
-        val elements = convertModelToCytoscape(model)
-        
-        // Write JSON output
+        outputFile.parentFile?.mkdirs()
+        out.println("Converting ${inputFile.path.printable()} to Cytoscape format using vocabulary ${schemaFile.path.printable()}...")
+
+        val data = loadDataSet(inputFile).merged
+        val schema = RDFDataMgr.loadModel(schemaFile.path)
+        val elements = convertModelToCytoscape(data, schema)
+
         val gson = GsonBuilder().setPrettyPrinting().create()
-        val json = gson.toJson(elements)
-        outputFile.writeText(json)
-        
+        outputFile.writeText(gson.toJson(elements))
+
         val nodeCount = elements.count { it.data.source == null }
         val edgeCount = elements.count { it.data.source != null }
-        println("Successfully converted to ${outputFile.path}")
-        println("Created $nodeCount nodes and $edgeCount edges")
-        
+        out.println("Successfully converted to ${outputFile.path.printable()}")
+        out.println("Created $nodeCount nodes and $edgeCount edges")
+        return 0
     } catch (e: Exception) {
-        println("Error converting file: ${e.message}")
-        e.printStackTrace()
-        exitProcess(1)
+        err.println("Error converting file: ${(e.message ?: e.toString()).printable()}")
+        return 1
     }
 }
 
-fun convertModelToCytoscape(model: Model): List<CytoscapeElement> {
-    val elements = mutableListOf<CytoscapeElement>()
-    val nodeIds = mutableSetOf<String>()
-    
-    // Process all resources as potential nodes
-    val subjects = model.listSubjects()
-        while (subjects.hasNext()) {
-            val subject = subjects.next()
-            if (subject.isURIResource) {
-                val nodeId = createNodeId(subject.uri)
-                if (!nodeIds.contains(nodeId)) {
-                    nodeIds.add(nodeId)
-                    val nodeElement = createNodeElement(subject, model)
-                    elements.add(nodeElement)
-                }
-            }
-        }
-        
-        // Process objects that might not be subjects (but filter out URLs and types)
-        val statements = model.listStatements()
-        while (statements.hasNext()) {
-            val stmt = statements.next()
-            val obj = stmt.`object`
-            
-            if (obj.isURIResource && !stmt.predicate.uri.contains("hasDocumentURL") && stmt.predicate != RDF.type) {
-                val objResource = obj.asResource()
-                val uri = objResource.uri
-                
-                // Skip URLs and type definitions
-                if (!uri.startsWith("http://www.") && !uri.startsWith("https://www.") && 
-                    !uri.startsWith("https://sr.wikipedia.org") && !uri.startsWith("https://naled.rs") &&
-                    !uri.contains("companywall.rs") && !uri.contains("danas.rs") && 
-                    !uri.contains("istinomer.rs") && !uri.contains("krik.rs") &&
-                    !uri.contains("nova.rs") && !uri.contains("uzmiracun.rs")) {
-                    
-                    val nodeId = createNodeId(uri)
-                    if (!nodeIds.contains(nodeId)) {
-                        nodeIds.add(nodeId)
-                        val nodeElement = createNodeElement(objResource, model)
-                        elements.add(nodeElement)
-                    }
-                }
-            }
-        }
-        
-        // Create edges (excluding type declarations and literal properties)
-        var edgeCounter = 0
-        val stmts = model.listStatements()
-        while (stmts.hasNext()) {
-            val stmt = stmts.next()
-            
-            // Skip type declarations, literal objects, and document URLs
-            if (stmt.predicate != RDF.type && stmt.`object`.isURIResource && stmt.subject.isURIResource &&
-                !stmt.predicate.uri.contains("hasDocumentURL")) {
-                val sourceId = createNodeId(stmt.subject.uri)
-                val targetId = createNodeId(stmt.`object`.asResource().uri)
-                val edgeLabel = getLabel(stmt.predicate)
-                
-                val edgeElement = CytoscapeElement(
-                    data = ElementData(
-                        id = "edge${edgeCounter++}",
-                        source = sourceId,
-                        target = targetId,
-                        label = edgeLabel
-                    )
-                )
-                elements.add(edgeElement)
-            }
-        }
-        
-        // Handle qualified relationships with blank nodes (like NALED leadership roles)
-        val blankNodes = model.listSubjects().toList().filter { it.isAnon }
-        for (blankNode in blankNodes) {
-            val typeStmts = model.listStatements(blankNode, RDF.type, null as RDFNode?)
-            val types = typeStmts.toList().map { it.`object`.toString() }
-            
-            if (types.any { it.contains("LeadershipRole") || it.contains("Connection") || it.contains("Ownership") }) {
-                // Extract participants (can be multiple)
-                val persons = mutableListOf<Resource>()
-                val organizations = mutableListOf<Resource>()
-                var owner: Resource? = null
-                var company: Resource? = null
-                
-                val props = model.listStatements(blankNode, null, null as RDFNode?)
-                while (props.hasNext()) {
-                    val prop = props.next()
-                    if (prop.predicate.uri.contains("personParticipant") && prop.`object`.isURIResource) {
-                        persons.add(prop.`object`.asResource())
-                    } else if (prop.predicate.uri.contains("organizationParticipant") && prop.`object`.isURIResource) {
-                        organizations.add(prop.`object`.asResource())
-                    } else if (prop.predicate.uri.contains("owner") && prop.`object`.isURIResource) {
-                        owner = prop.`object`.asResource()
-                    } else if (prop.predicate.uri.contains("ownedCompany") && prop.`object`.isURIResource) {
-                        company = prop.`object`.asResource()
-                    }
-                }
-                
-                // Create edges for person-organization relationships
-                for (person in persons) {
-                    for (organization in organizations) {
-                        val roleLabel = if (types.any { it.contains("LeadershipRole") }) "leadership role" else "connected to"
-                        val edgeElement = CytoscapeElement(
-                            data = ElementData(
-                                id = "edge${edgeCounter++}",
-                                source = createNodeId(person.uri),
-                                target = createNodeId(organization.uri),
-                                label = roleLabel
-                            )
-                        )
-                        elements.add(edgeElement)
-                    }
-                }
-                
-                // Create edges for person-person connections (like BusinessAndPoliticalConnection)
-                if (persons.size >= 2 && organizations.isEmpty()) {
-                    // Determine connection type based on the relationship type
-                    val connectionLabel = when {
-                        types.any { it.contains("BusinessAndPoliticalConnection") } -> "business connection"
-                        types.any { it.contains("PoliticalConnection") } -> "political connection"
-                        else -> "connected to"
-                    }
-                    
-                    // Connect all persons to each other
-                    for (i in persons.indices) {
-                        for (j in i + 1 until persons.size) {
-                            val edgeElement = CytoscapeElement(
-                                data = ElementData(
-                                    id = "edge${edgeCounter++}",
-                                    source = createNodeId(persons[i].uri),
-                                    target = createNodeId(persons[j].uri),
-                                    label = connectionLabel
-                                )
-                            )
-                            elements.add(edgeElement)
-                        }
-                    }
-                }
-                
-                if (owner != null && company != null) {
-                    val edgeElement = CytoscapeElement(
-                        data = ElementData(
-                            id = "edge${edgeCounter++}",
-                            source = createNodeId(owner.uri),
-                            target = createNodeId(company.uri),
-                            label = "owns"
-                        )
-                    )
-                    elements.add(edgeElement)
-                }
-            }
-        }
-        
-        return elements
-}
+/**
+ * Turns instance data into a graph for the viewer, guided by the vocabulary.
+ *
+ * Nodes are the agents (people and organizations). Edges come from two places: every
+ * connection resource becomes an edge between each pair of its participants, labelled by its own
+ * label, its work roles or its type; and every direct object property between two agents becomes
+ * an edge labelled by the property. Connections, documentation and plain URLs never become nodes.
+ */
+fun convertModelToCytoscape(data: Model, schema: Model): List<CytoscapeElement> =
+    GraphBuilder(data, schema).build()
 
-fun createNodeElement(resource: Resource, model: Model): CytoscapeElement {
-    val nodeId = createNodeId(resource.uri)
-    val label = getResourceLabel(resource, model)
-    val types = getResourceTypes(resource, model)
-    val nodeType = determineNodeType(types, resource.uri)
-    
-    return CytoscapeElement(
+private class GraphBuilder(private val data: Model, private val schema: Model) {
+    private val inferred: InfModel = ModelFactory.createRDFSModel(schema, data)
+    // Only declared resources become nodes: a participant that the data never types is not an
+    // agent just because the vocabulary's range axiom would make it one.
+    private val agents: List<Resource> = instancesOf(Vocab.AGENT).filter { it.isURIResource && isDeclared(it) }
+    // Ids are derived from the URI's local name; when two URIs would collide, the later ones get a
+    // hash suffix so a look-alike URI can never graft its edges onto a real person's node.
+    private val nodeIds: Map<String, String> = run {
+        val taken = mutableSetOf<String>()
+        agents.map { it.uri }.sorted().associateWith { uri ->
+            val plain = createNodeId(uri)
+            (if (plain in taken) plain + "_" + Integer.toHexString(uri.hashCode()) else plain).also { taken.add(it) }
+        }
+    }
+    private fun nodeId(resource: Resource): String = nodeIds.getValue(resource.uri)
+    private var edgeCounter = 0
+
+    fun build(): List<CytoscapeElement> {
+        val nodes = agents.map(::nodeElement)
+        val edges = connectionEdges() + directEdges()
+        return nodes + dedupe(edges)
+    }
+
+    private fun instancesOf(classUri: String): List<Resource> =
+        inferred.listSubjectsWithProperty(RDF.type, inferred.createResource(classUri)).toList()
+            .filter { data.containsResource(it) }
+
+    private fun isDeclared(resource: Resource): Boolean = data.contains(resource, RDF.type, null as RDFNode?)
+
+    private fun isA(resource: Resource, classUri: String): Boolean =
+        inferred.contains(resource, RDF.type, inferred.createResource(classUri))
+
+    private fun nodeElement(agent: Resource): CytoscapeElement = CytoscapeElement(
         data = ElementData(
-            id = nodeId,
-            label = label,
-            type = if (types.isNotEmpty()) "instance" else "resource",
-            nodeType = nodeType,
-            uri = resource.uri
+            id = nodeId(agent),
+            label = labelOf(agent) ?: extractLabelFromUri(agent.uri),
+            type = "instance",
+            nodeType = nodeTypeOf(agent),
+            uri = agent.uri
         )
     )
-}
 
-fun getResourceLabel(resource: Resource, model: Model): String {
-    // Try to find a label property
-    val labelProps = listOf(
-        "http://xmlns.com/foaf/0.1/name",
-        RDFS.label.uri,
-        "http://purl.org/dc/terms/title"
-    )
-    
-    for (prop in labelProps) {
-        val stmt = model.getProperty(resource, model.getProperty(prop))
-        if (stmt != null) {
-            return stmt.`object`.toString().replace("@sr", "").replace("\"", "")
-        }
-    }
-    
-    // Fallback to extracting from URI
-    return extractLabelFromUri(resource.uri)
-}
-
-fun getResourceTypes(resource: Resource, model: Model): List<String> {
-    val types = mutableListOf<String>()
-    val typeStmts = model.listStatements(resource, RDF.type, null as RDFNode?)
-    
-    while (typeStmts.hasNext()) {
-        val stmt = typeStmts.next()
-        if (stmt.`object`.isURIResource) {
-            types.add(stmt.`object`.asResource().uri)
-        }
-    }
-    
-    return types
-}
-
-fun determineNodeType(types: List<String>, uri: String): String {
-    // Check types for categorization
-    val typeString = types.joinToString(" ")
-    
-    return when {
-        typeString.contains("Person") -> "person"
-        typeString.contains("Company") -> "organization"
-        typeString.contains("Organization") -> "organization"
-        typeString.contains("Connection") || typeString.contains("Role") -> "relationship"
-        typeString.contains("Academic") -> "academic"
-        uri.contains("Party") || uri.contains("stranka") -> "party"
+    private fun nodeTypeOf(agent: Resource): String = when {
+        isA(agent, Vocab.PERSON) -> "person"
+        isA(agent, Vocab.POLITICAL_ORGANIZATION) -> "party"
+        isA(agent, Vocab.ACADEMIC_ORGANIZATION) -> "academic"
+        isA(agent, Vocab.ORGANIZATION) -> "organization"
         else -> "default"
+    }
+
+    private fun connectionEdges(): List<CytoscapeElement> =
+        instancesOf(Vocab.CONNECTION).flatMap { connection ->
+            val participants = inferred.listObjectsOfProperty(connection, inferred.createProperty(Vocab.PARTICIPANT))
+                .toList()
+                .filter { it.isURIResource }
+                .map { it.asResource() }
+                .distinct()
+                .filter { it.uri in nodeIds }
+                .sortedWith(compareBy({ !isA(it, Vocab.PERSON) }, { it.uri }))
+            val label = connectionLabel(connection)
+            participants.indices.flatMap { i ->
+                (i + 1 until participants.size).map { j -> edge(participants[i], participants[j], label) }
+            }
+        }
+
+    /** Only properties the vocabulary declares become edges: a made-up predicate is not a fact. */
+    private fun directEdges(): List<CytoscapeElement> =
+        data.listStatements().toList()
+            .filter { it.predicate != RDF.type && it.subject.isURIResource && it.`object`.isURIResource }
+            .filter { it.subject.uri in nodeIds && it.`object`.asResource().uri in nodeIds }
+            .filter { schema.containsResource(it.predicate) }
+            .map { edge(it.subject, it.`object`.asResource(), propertyLabel(it.predicate)) }
+
+    private fun edge(from: Resource, to: Resource, label: String) = CytoscapeElement(
+        data = ElementData(
+            id = "edge${edgeCounter++}",
+            source = nodeId(from),
+            target = nodeId(to),
+            label = label
+        )
+    )
+
+    /** One edge per unordered pair and label, so symmetric properties are not drawn twice. */
+    private fun dedupe(edges: List<CytoscapeElement>): List<CytoscapeElement> =
+        edges.distinctBy { setOf(it.data.source, it.data.target) to it.data.label }
+
+    /** Own label, else its work roles, else the label of its most specific declared type. */
+    private fun connectionLabel(connection: Resource): String {
+        labelOf(connection)?.let { return it }
+        val roles = data.listObjectsOfProperty(connection, data.createProperty(Vocab.HAS_WORK_ROLE)).toList()
+            .filter { it.isResource }
+            .mapNotNull { schemaLabel(it.asResource()) }
+            .sorted()
+        if (roles.isNotEmpty()) return roles.joinToString(", ").lowercase()
+        val declaredTypes = data.listObjectsOfProperty(connection, RDF.type).toList().filter { it.isURIResource }
+        val typeLabel = declaredTypes.firstNotNullOfOrNull { schemaLabel(it.asResource()) }
+            ?: declaredTypes.firstOrNull()?.let { extractLabelFromUri(it.asResource().uri) }
+        return (typeLabel ?: "connected to").lowercase()
+    }
+
+    private fun propertyLabel(property: Property): String =
+        (schemaLabel(property) ?: extractLabelFromUri(property.uri)).lowercase()
+
+    /** Languages in order of preference for a node's own name; a literal in no listed language ranks last. */
+    private val preferredLanguages = listOf("sr", "en")
+
+    /**
+     * The entity's own name, chosen the same way on every run: by the first property that has one,
+     * then by language preference, then alphabetically, so the export never flips between names.
+     */
+    private fun labelOf(resource: Resource): String? =
+        listOf(Vocab.NAME, RDFS.label.uri, "http://purl.org/dc/terms/title")
+            .firstNotNullOfOrNull { p ->
+                data.listStatements(resource, data.createProperty(p), null as RDFNode?).toList()
+                    .map { it.`object` }.filter { it.isLiteral }.map { it.asLiteral() }
+                    .minWithOrNull(compareBy({ preferredLanguages.indexOf(it.language).let { i -> if (i < 0) preferredLanguages.size else i } }, { it.lexicalForm }))
+                    ?.lexicalForm
+            }
+
+    private fun schemaLabel(resource: Resource, language: String = "en"): String? {
+        val labels = schema.listStatements(resource, RDFS.label, null as RDFNode?).toList().map { it.`object`.asLiteral() }
+        return (labels.firstOrNull { it.language == language } ?: labels.firstOrNull())?.lexicalForm
     }
 }
 
 fun createNodeId(uri: String): String {
-    // Convert URI to a valid Cytoscape node ID
     val id = uri
         .substringAfterLast("/")
         .substringAfterLast("#")
         .replace(Regex("[^a-zA-Z0-9_]"), "_")
         .lowercase()
-    
+
     // If ID is empty or just underscores, use a hash of the full URI
     return if (id.isBlank() || id.all { it == '_' }) {
         "node_" + uri.hashCode().toString().replace("-", "n")
@@ -308,22 +225,10 @@ fun extractLabelFromUri(uri: String): String {
         .substringAfterLast("/")
         .substringAfterLast("#")
         .replace("_", " ")
-        .split(Regex("(?=[A-Z])"))
+        .split(Regex("(?<=[a-z0-9])(?=[A-Z])"))
         .joinToString(" ")
+        .replace(Regex("\\s+"), " ")
         .trim()
-    
-    return label.ifEmpty { uri }
-}
 
-fun getLabel(property: Property): String {
-    val uri = property.uri
-    return when {
-        uri.contains("subsidiaryCompanyOf") -> "subsidiary of"
-        uri.contains("hasOwner") -> "owned by"
-        uri.contains("personParticipant") -> "involves"
-        uri.contains("organizationParticipant") -> "connected to"
-        uri.contains("party") -> "member of"
-        uri.contains("hasAcademicOrganizationParticipant") -> "attended"
-        else -> extractLabelFromUri(uri)
-    }
+    return label.ifEmpty { uri }
 }

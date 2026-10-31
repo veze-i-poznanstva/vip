@@ -6,19 +6,25 @@ import org.apache.jena.riot.RDFDataMgr
 import org.apache.jena.vocabulary.OWL
 import org.apache.jena.vocabulary.RDF
 import org.apache.jena.vocabulary.RDFS
+import java.io.PrintStream
 import kotlin.system.exitProcess
 
 data class ValidationIssue(val severity: Severity, val message: String)
 enum class Severity { ERROR, WARNING, INFO }
 
 fun main(args: Array<String>) {
+    exitProcess(runBestPracticesChecker(args, System.out, System.err))
+}
+
+/** The command line as a function: returns the exit status and writes only to the given streams. */
+fun runBestPracticesChecker(args: Array<String>, out: PrintStream, err: PrintStream): Int {
     if (args.isEmpty()) {
-        System.err.println("Usage: BestPracticesChecker <schema-file>")
-        exitProcess(1)
+        err.println("Usage: BestPracticesChecker <schema-file>")
+        return 1
     }
     
     try {
-        println("=== OWL/RDF Best Practices Check ===\n")
+        out.println("=== OWL/RDF Best Practices Check ===\n")
         
         val model = ModelFactory.createOntologyModel(OntModelSpec.OWL_DL_MEM)
         RDFDataMgr.read(model, args[0])
@@ -26,27 +32,27 @@ fun main(args: Array<String>) {
         val issues = mutableListOf<ValidationIssue>()
         
         // Run all checks
-        checkMissingAnnotations(model, issues)
-        checkNamingConventions(model, issues)
-        checkOrphanClasses(model, issues)
-        checkPropertyUsage(model, issues)
-        checkMultipleInheritance(model, issues)
-        checkURIPatterns(model, issues)
-        checkLanguageTags(model, issues)
-        checkDeprecatedElements(model, issues)
+        checkMissingAnnotations(out, model, issues)
+        checkNamingConventions(out, model, issues)
+        checkOrphanClasses(out, model, issues)
+        checkPropertyUsage(out, model, issues)
+        checkMultipleInheritance(out, model, issues)
+        checkURIPatterns(out, model, issues)
+        checkLanguageTags(out, model, issues)
+        checkDeprecatedElements(out, model, issues)
         
-        // Report results
-        printReport(issues)
+        // Report results; errors make the check fail, warnings and suggestions do not
+        printReport(out, issues)
+        return if (issues.any { it.severity == Severity.ERROR }) 1 else 0
         
     } catch (e: Exception) {
-        System.err.println("Error: ${e.message}")
-        e.printStackTrace()
-        exitProcess(1)
+        err.println("Error: ${(e.message ?: e.toString()).printable()}")
+        return 1
     }
 }
 
-private fun checkMissingAnnotations(model: org.apache.jena.ontology.OntModel, issues: MutableList<ValidationIssue>) {
-    println("Checking for missing annotations...")
+private fun checkMissingAnnotations(out: PrintStream, model: org.apache.jena.ontology.OntModel, issues: MutableList<ValidationIssue>) {
+    out.println("Checking for missing annotations...")
     
     // Check classes for labels and comments
     model.listClasses().asSequence()
@@ -77,8 +83,8 @@ private fun checkMissingAnnotations(model: org.apache.jena.ontology.OntModel, is
         }
 }
 
-private fun checkNamingConventions(model: org.apache.jena.ontology.OntModel, issues: MutableList<ValidationIssue>) {
-    println("Checking naming conventions...")
+private fun checkNamingConventions(out: PrintStream, model: org.apache.jena.ontology.OntModel, issues: MutableList<ValidationIssue>) {
+    out.println("Checking naming conventions...")
     
     // Check class names (should start with uppercase)
     model.listClasses().asSequence()
@@ -107,8 +113,8 @@ private fun checkNamingConventions(model: org.apache.jena.ontology.OntModel, iss
         }
 }
 
-private fun checkOrphanClasses(model: org.apache.jena.ontology.OntModel, issues: MutableList<ValidationIssue>) {
-    println("Checking for orphan classes...")
+private fun checkOrphanClasses(out: PrintStream, model: org.apache.jena.ontology.OntModel, issues: MutableList<ValidationIssue>) {
+    out.println("Checking for orphan classes...")
     
     model.listClasses().asSequence()
         .filter { it.isURIResource }
@@ -139,8 +145,8 @@ private fun checkOrphanClasses(model: org.apache.jena.ontology.OntModel, issues:
         }
 }
 
-private fun checkPropertyUsage(model: org.apache.jena.ontology.OntModel, issues: MutableList<ValidationIssue>) {
-    println("Checking property usage...")
+private fun checkPropertyUsage(out: PrintStream, model: org.apache.jena.ontology.OntModel, issues: MutableList<ValidationIssue>) {
+    out.println("Checking property usage...")
     
     model.listAllOntProperties().asSequence()
         .filter { it.isURIResource }
@@ -163,8 +169,8 @@ private fun checkPropertyUsage(model: org.apache.jena.ontology.OntModel, issues:
         }
 }
 
-private fun checkMultipleInheritance(model: org.apache.jena.ontology.OntModel, issues: MutableList<ValidationIssue>) {
-    println("Checking multiple inheritance...")
+private fun checkMultipleInheritance(out: PrintStream, model: org.apache.jena.ontology.OntModel, issues: MutableList<ValidationIssue>) {
+    out.println("Checking multiple inheritance...")
     
     model.listClasses().asSequence()
         .filter { it.isURIResource }
@@ -177,8 +183,8 @@ private fun checkMultipleInheritance(model: org.apache.jena.ontology.OntModel, i
         }
 }
 
-private fun checkURIPatterns(model: org.apache.jena.ontology.OntModel, issues: MutableList<ValidationIssue>) {
-    println("Checking URI patterns...")
+private fun checkURIPatterns(out: PrintStream, model: org.apache.jena.ontology.OntModel, issues: MutableList<ValidationIssue>) {
+    out.println("Checking URI patterns...")
     
     val namespaces = model.listNameSpaces().toSet()
     val mainNamespace = namespaces.firstOrNull { ns ->
@@ -202,8 +208,8 @@ private fun checkURIPatterns(model: org.apache.jena.ontology.OntModel, issues: M
     }
 }
 
-private fun checkLanguageTags(model: org.apache.jena.ontology.OntModel, issues: MutableList<ValidationIssue>) {
-    println("Checking language tags...")
+private fun checkLanguageTags(out: PrintStream, model: org.apache.jena.ontology.OntModel, issues: MutableList<ValidationIssue>) {
+    out.println("Checking language tags...")
     
     val languageTags = mutableSetOf<String>()
     
@@ -235,8 +241,8 @@ private fun checkLanguageTags(model: org.apache.jena.ontology.OntModel, issues: 
         }
 }
 
-private fun checkDeprecatedElements(model: org.apache.jena.ontology.OntModel, issues: MutableList<ValidationIssue>) {
-    println("Checking for deprecated elements...")
+private fun checkDeprecatedElements(out: PrintStream, model: org.apache.jena.ontology.OntModel, issues: MutableList<ValidationIssue>) {
+    out.println("Checking for deprecated elements...")
     
     // Check for deprecated properties
     model.listStatements(null, RDF.type, OWL.DeprecatedProperty).asSequence()
@@ -253,41 +259,41 @@ private fun checkDeprecatedElements(model: org.apache.jena.ontology.OntModel, is
         }
 }
 
-private fun printReport(issues: List<ValidationIssue>) {
-    println("\n=== Validation Report ===")
+private fun printReport(out: PrintStream, issues: List<ValidationIssue>) {
+    out.println("\n=== Validation Report ===")
     
     val errors = issues.filter { it.severity == Severity.ERROR }
     val warnings = issues.filter { it.severity == Severity.WARNING }
     val info = issues.filter { it.severity == Severity.INFO }
     
     if (issues.isEmpty()) {
-        println("\n✓ No issues found! Your schema follows best practices.")
+        out.println("\n✓ No issues found! Your schema follows best practices.")
     } else {
         if (errors.isNotEmpty()) {
-            println("\n❌ Errors (${errors.size}):")
-            errors.forEach { println("  - ${it.message}") }
+            out.println("\n❌ Errors (${errors.size}):")
+            errors.forEach { out.println("  - ${it.message.printable()}") }
         }
         
         if (warnings.isNotEmpty()) {
-            println("\n⚠️  Warnings (${warnings.size}):")
-            warnings.take(10).forEach { println("  - ${it.message}") }
+            out.println("\n⚠️  Warnings (${warnings.size}):")
+            warnings.take(10).forEach { out.println("  - ${it.message.printable()}") }
             if (warnings.size > 10) {
-                println("  ... and ${warnings.size - 10} more warnings")
+                out.println("  ... and ${warnings.size - 10} more warnings")
             }
         }
         
         if (info.isNotEmpty()) {
-            println("\nℹ️  Information (${info.size}):")
-            info.take(5).forEach { println("  - ${it.message}") }
+            out.println("\nℹ️  Information (${info.size}):")
+            info.take(5).forEach { out.println("  - ${it.message.printable()}") }
             if (info.size > 5) {
-                println("  ... and ${info.size - 5} more suggestions")
+                out.println("  ... and ${info.size - 5} more suggestions")
             }
         }
         
-        println("\nSummary:")
-        println("  Total issues: ${issues.size}")
-        println("  Errors: ${errors.size}")
-        println("  Warnings: ${warnings.size}")
-        println("  Info: ${info.size}")
+        out.println("\nSummary:")
+        out.println("  Total issues: ${issues.size}")
+        out.println("  Errors: ${errors.size}")
+        out.println("  Warnings: ${warnings.size}")
+        out.println("  Info: ${info.size}")
     }
 }

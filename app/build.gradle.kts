@@ -12,14 +12,10 @@ dependencies {
     implementation("org.apache.jena:apache-jena-libs:4.10.0")
     
     // OWL API
-    implementation("net.sourceforge.owlapi:owlapi-distribution:5.5.0")
     
     // Reasoners
-    implementation("net.sourceforge.owlapi:org.semanticweb.hermit:1.4.5.519")
-    implementation("com.github.galigator.openllet:openllet-jena:2.6.5")
     
     // SHACL
-    implementation("org.topbraid:shacl:1.4.2")
     
     // Kotlin stdlib
     implementation(kotlin("stdlib"))
@@ -40,6 +36,8 @@ application {
 
 tasks.test {
     useJUnitPlatform()
+    // Tests load the real vocabulary from the repository root.
+    workingDir = projectDir.parentFile
 }
 
 // RDF Validation tasks
@@ -101,39 +99,112 @@ tasks.register<JavaExec>("validateShacl") {
     mainClass.set("vip.SHACLValidatorKt")
     
     val shapes = project.findProperty("shapes") as String? ?: "schema.ttl"
-    val data = project.findProperty("data") as String? ?: shapes
+    val data = project.findProperty("data") as String? ?: "data"
     args = listOf(shapes, data)
     workingDir = projectDir.parentFile
 }
 
 tasks.register<JavaExec>("validateVeracity") {
     group = "rdf"
-    description = "Validates veracity - checks if items have URLs from multiple domains"
+    description = "Checks the sourcing rule: two documents from two domains per entity and connection, each reachable live or through an archived copy"
     
     classpath = sourceSets.main.get().runtimeClasspath
     mainClass.set("vip.VeracityValidatorKt")
     
-    val file = project.findProperty("file") as String? ?: "test-data.ttl"
-    args = listOf(file)
+    val file = project.findProperty("data") as String? ?: "data"
+    val schema = project.findProperty("schema") as String? ?: "schema.ttl"
+    val archives = project.findProperty("archives") as String? ?: "archives.ttl"
+    args = listOf(file, schema, archives)
     workingDir = projectDir.parentFile
+    mustRunAfter("archiveSources", "checkArchives")
+}
+
+tasks.register<JavaExec>("archiveSources") {
+    group = "rdf"
+    description = "Records an archived copy (Wayback Machine) for every cited document that has none; run locally and commit archives.ttl"
+    
+    classpath = sourceSets.main.get().runtimeClasspath
+    mainClass.set("vip.SourceArchiverKt")
+    
+    val file = project.findProperty("data") as String? ?: "data"
+    val archives = project.findProperty("archives") as String? ?: "archives.ttl"
+    args = listOf(file, archives)
+    workingDir = projectDir.parentFile
+}
+
+tasks.register<JavaExec>("checkArchives") {
+    group = "rdf"
+    description = "Fails if any cited document has no archive record (what CI runs; never contacts the archive)"
+    
+    classpath = sourceSets.main.get().runtimeClasspath
+    mainClass.set("vip.SourceArchiverKt")
+    
+    val file = project.findProperty("data") as String? ?: "data"
+    val archives = project.findProperty("archives") as String? ?: "archives.ttl"
+    args = listOf(file, archives, "--check")
+    workingDir = projectDir.parentFile
+}
+
+tasks.register<JavaExec>("checkDataLayout") {
+    group = "rdf"
+    description = "Checks the data layout: entities under entities/, connections under cases/, one home file per entity, nothing referenced that no file or the vocabulary declares"
+    
+    classpath = sourceSets.main.get().runtimeClasspath
+    mainClass.set("vip.DataLayoutCheckKt")
+    
+    val data = project.findProperty("data") as String? ?: "data"
+    val schema = project.findProperty("schema") as String? ?: "schema.ttl"
+    args = listOf(data, schema)
+    workingDir = projectDir.parentFile
+}
+
+tasks.register<JavaExec>("checkRedFlags") {
+    group = "rdf"
+    description = "Runs every red-flag rule in rules/ over the data and prints the leads (never fails)"
+    
+    classpath = sourceSets.main.get().runtimeClasspath
+    mainClass.set("vip.RedFlagsKt")
+    
+    val data = project.findProperty("data") as String? ?: "data"
+    val schema = project.findProperty("schema") as String? ?: "schema.ttl"
+    val rules = project.findProperty("rules") as String? ?: "rules"
+    args = listOf(data, schema, rules)
+    workingDir = projectDir.parentFile
+}
+
+tasks.register("validateSchema") {
+    group = "rdf"
+    description = "Runs every check that concerns the ontology itself (syntax, consistency, best practices, metrics)"
+    
+    dependsOn("validate", "checkConsistency", "checkBestPractices", "analyzeSchema")
+}
+
+tasks.register("validateData") {
+    group = "rdf"
+    description = "Runs every check that concerns instance data (data layout, SHACL shapes, archive records, veracity of sources)"
+    
+    // Locally, missing archive records are created; on CI they fail the build so they get committed.
+    val onCi = System.getenv("CI") == "true"
+    dependsOn("checkDataLayout", "validateShacl", if (onCi) "checkArchives" else "archiveSources", "validateVeracity")
 }
 
 tasks.register("validateAll") {
     group = "rdf"
-    description = "Runs all validation checks"
+    description = "Runs all validation checks on schema and data"
     
-    dependsOn("validate", "checkConsistency", "analyzeSchema", "checkBestPractices", "validateVeracity")
+    dependsOn("validateSchema", "validateData")
 }
 
 tasks.register<JavaExec>("ttlToCytoscape") {
     group = "rdf"
-    description = "Convert TTL file to Cytoscape JSON format"
+    description = "Converts the data directory (or one TTL file) to Cytoscape JSON for the web viewer"
     
     classpath = sourceSets.main.get().runtimeClasspath
     mainClass.set("vip.TtlToCytoscapeKt")
     
-    val inputFile = project.findProperty("input") as String? ?: "test-data.ttl"
+    val inputFile = project.findProperty("input") as String? ?: "data"
     val outputFile = project.findProperty("output") as String? ?: "web/public/test-data-cytoscape.json"
-    args = listOf(inputFile, outputFile)
+    val schema = project.findProperty("schema") as String? ?: "schema.ttl"
+    args = listOf(inputFile, outputFile, schema)
     workingDir = projectDir.parentFile
 }

@@ -2,32 +2,67 @@
   import { onMount } from 'svelte';
   import CytoscapeGraph from './lib/CytoscapeGraph.svelte';
   import type { ElementDefinition } from 'cytoscape';
+  import { language, resolveLanguage, supportedLanguages, t } from './lib/i18n';
+  import type { Language } from './lib/i18n';
+  import { buildIndex, egoGraph, expand, search, subgraph } from './lib/graph';
+  import type { Element, GraphIndex, GraphNode } from './lib/graph';
 
   let graph: CytoscapeGraph;
   let selectedLayout = 'cose';
   let elements: ElementDefinition[] = [];
   let loading = true;
   let error = '';
+
+  // The explorer: a search picks a focus node; the canvas then shows its neighbourhood and
+  // grows by double-clicking nodes. Without a focus the whole dataset is shown, as the demo did.
+  let index: GraphIndex = buildIndex([]);
+  let query = '';
+  let focus: GraphNode | null = null;
+  let shown = new Set<string>();
+  $: suggestions = focus && query === focus.label ? [] : search(index, query).slice(0, 8);
+  $: shownElements = focus ? subgraph(index, shown) : (elements as unknown as Element[]);
+  $: explorerLayout = focus ? 'concentric' : selectedLayout;
+
+  function choose(node: GraphNode) {
+    focus = node;
+    query = node.label;
+    shown = new Set(egoGraph(index, node.id).filter((e) => !('source' in e.data)).map((e) => String(e.data.id)));
+  }
+
+  function showAll() {
+    focus = null;
+    query = '';
+    shown = new Set();
+  }
+
+  function onNodeDoubleClick(event: CustomEvent<string>) {
+    if (focus) shown = expand(index, shown, event.detail);
+  }
   
-  const layouts = [
-    { value: 'cose', label: 'Force-directed (COSE)' },
-    { value: 'circle', label: 'Circle' },
-    { value: 'concentric', label: 'Concentric' },
-    { value: 'breadthfirst', label: 'Hierarchical' },
-    { value: 'grid', label: 'Grid' },
-    { value: 'random', label: 'Random' }
-  ];
+  const layouts = ['cose', 'circle', 'concentric', 'breadthfirst', 'grid', 'random'];
+
+  // The language comes from ?lang=, then the last choice on this browser, then the browser itself.
+  const stored = (key: string): string | null => { try { return localStorage.getItem(key); } catch { return null; } };
+  language.set(resolveLanguage(supportedLanguages as unknown as string[], [
+    new URLSearchParams(location.search).get('lang'), stored('lang'), ...navigator.languages
+  ]) as Language);
+  $: {
+    document.documentElement.lang = $language;
+    document.title = $t('app.title');
+    try { localStorage.setItem('lang', $language); } catch { /* private mode: the choice lasts the session */ }
+  }
 
   onMount(async () => {
     try {
       console.log('Fetching graph data...');
       const response = await fetch('/test-data-cytoscape.json');
       if (!response.ok) {
-        throw new Error(`Failed to load data: ${response.statusText}`);
+        throw new Error($t('error.load', { status: response.statusText }));
       }
       const data = await response.json();
       console.log('Loaded data:', data.length, 'elements');
       elements = data;
+      index = buildIndex(data);
       loading = false;
     } catch (e) {
       console.error('Error loading graph data:', e);
@@ -62,8 +97,26 @@
   });
 
   const graphStyle = [
+    // Default node style (must come first)
     {
-      selector: 'node[nodeType="person"]',
+      selector: 'node',
+      style: {
+        'background-color': '#95a5a6',
+        'shape': 'ellipse',
+        'width': 60,
+        'height': 60,
+        'label': 'data(label)',
+        'text-valign': 'center',
+        'text-halign': 'center',
+        'color': '#fff',
+        'text-outline-width': 2,
+        'text-outline-color': '#95a5a6',
+        'font-size': '10px'
+      }
+    },
+    // Specific node type styles (must come after default)
+    {
+      selector: 'node[nodeType = "person"]',
       style: {
         'background-color': '#4a90e2',
         'shape': 'ellipse',
@@ -80,7 +133,7 @@
       }
     },
     {
-      selector: 'node[nodeType="organization"]',
+      selector: 'node[nodeType = "organization"]',
       style: {
         'background-color': '#7ed321',
         'shape': 'rectangle',
@@ -98,7 +151,7 @@
       }
     },
     {
-      selector: 'node[nodeType="academic"]',
+      selector: 'node[nodeType = "academic"]',
       style: {
         'background-color': '#f39c12',
         'shape': 'round-rectangle',
@@ -116,7 +169,7 @@
       }
     },
     {
-      selector: 'node[nodeType="party"]',
+      selector: 'node[nodeType = "party"]',
       style: {
         'background-color': '#e74c3c',
         'shape': 'diamond',
@@ -129,22 +182,6 @@
         'text-outline-width': 2,
         'text-outline-color': '#e74c3c',
         'font-size': '11px'
-      }
-    },
-    {
-      selector: 'node',
-      style: {
-        'background-color': '#95a5a6',
-        'shape': 'ellipse',
-        'width': 60,
-        'height': 60,
-        'label': 'data(label)',
-        'text-valign': 'center',
-        'text-halign': 'center',
-        'color': '#fff',
-        'text-outline-width': 2,
-        'text-outline-color': '#95a5a6',
-        'font-size': '10px'
       }
     },
     {
@@ -173,6 +210,16 @@
       }
     },
     {
+      selector: 'node.focus',
+      style: {
+        'border-width': 5,
+        'border-color': '#333',
+        'width': 100,
+        'height': 100,
+        'font-size': '14px'
+      }
+    },
+    {
       selector: ':selected',
       style: {
         'background-color': '#ff6b6b',
@@ -184,77 +231,102 @@
   ];
 
   function handleLayoutChange() {
-    graph?.runLayout(selectedLayout);
+    if (!focus) graph?.runLayout(selectedLayout);
   }
 
 </script>
 
 <main>
   <div class="header">
-    <h1>VIP Graph Visualizer</h1>
+    <h1>{$t('app.title')}</h1>
+    <div class="search">
+      <input type="search" bind:value={query} placeholder={$t('search.placeholder')} aria-label={$t('search.placeholder')} autocomplete="off" />
+      {#if query.trim().length >= 2 && !(focus && query === focus.label)}
+        <ul class="suggestions">
+          {#each suggestions as node (node.id)}
+            <li><button type="button" on:click={() => choose(node)}>{node.label}</button></li>
+          {:else}
+            <li class="none">{$t('search.none')}</li>
+          {/each}
+        </ul>
+      {/if}
+      {#if focus}
+        <button type="button" on:click={showAll}>{$t('showAll')}</button>
+      {/if}
+    </div>
     <div class="controls">
       <div class="control-group">
-        <label for="layout-select">Layout:</label>
+        <label for="layout-select">{$t('layout')}:</label>
         <select id="layout-select" bind:value={selectedLayout} on:change={handleLayoutChange}>
           {#each layouts as layout}
-            <option value={layout.value}>{layout.label}</option>
+            <option value={layout}>{$t('layout.' + layout)}</option>
           {/each}
         </select>
       </div>
       <div class="control-group">
-        <button on:click={() => graph?.fit()} title="Fit graph to viewport">
-          <span>🔍</span> Fit to View
+        <button on:click={() => graph?.fit()} title={$t('fit.hint')}>
+          <span>🔍</span> {$t('fit')}
         </button>
-        <button on:click={() => graph?.resetZoom()} title="Reset zoom to 100%">
-          <span>🔄</span> Reset Zoom
+        <button on:click={() => graph?.resetZoom()} title={$t('resetZoom.hint')}>
+          <span>🔄</span> {$t('resetZoom')}
         </button>
+      </div>
+      <div class="control-group">
+        <label for="language-select">{$t('language')}:</label>
+        <select id="language-select" bind:value={$language}>
+          {#each supportedLanguages as code}
+            <option value={code}>{$t('language.' + code)}</option>
+          {/each}
+        </select>
       </div>
     </div>
   </div>
   
   <div class="graph-container">
     {#if loading}
-      <div class="loading">Loading graph data...</div>
+      <div class="loading">{$t('loading')}</div>
     {:else if error}
-      <div class="error">Error: {error}</div>
+      <div class="error">{$t('error', { message: error })}</div>
     {:else}
-      <CytoscapeGraph 
+      <CytoscapeGraph
         bind:this={graph}
-        elements={elements} 
-        layout={selectedLayout}
+        elements={shownElements}
+        layout={explorerLayout}
+        focusId={focus?.id ?? null}
         style={graphStyle}
+        on:nodeDoubleClick={onNodeDoubleClick}
       />
     {/if}
   </div>
 
   <div class="info">
     <div class="legend">
-      <h3>Legend</h3>
+      <h3>{$t('legend')}</h3>
       <div class="legend-items">
         <div class="legend-item">
           <div class="legend-box person-node"></div>
-          <span>People</span>
+          <span>{$t('legend.people')}</span>
         </div>
         <div class="legend-item">
           <div class="legend-box org-node"></div>
-          <span>Organizations</span>
+          <span>{$t('legend.organizations')}</span>
         </div>
         <div class="legend-item">
           <div class="legend-box academic-node"></div>
-          <span>Academic</span>
+          <span>{$t('legend.academic')}</span>
         </div>
         <div class="legend-item">
           <div class="legend-box party-node"></div>
-          <span>Political Party</span>
+          <span>{$t('legend.party')}</span>
         </div>
         <div class="legend-item">
           <div class="legend-line"></div>
-          <span>Relationships</span>
+          <span>{$t('legend.relationships')}</span>
         </div>
       </div>
     </div>
     <div class="instructions">
-      <p><strong>Instructions:</strong> Click and drag to pan • Scroll to zoom • Click nodes/edges for details • Try different layouts</p>
+      <p><strong>{$t('instructions')}:</strong> {focus ? $t('search.hint', { label: focus.label }) : $t('instructions.text')}</p>
     </div>
   </div>
 </main>
@@ -285,6 +357,58 @@
     margin: 0;
     font-size: 1.5rem;
     color: #333;
+  }
+
+  .search {
+    position: relative;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    flex: 1;
+    max-width: 32rem;
+    margin: 0 1rem;
+  }
+
+  .search input {
+    flex: 1;
+    padding: 0.4rem 0.6rem;
+    font-size: 1rem;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+  }
+
+  .suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    margin: 0.2rem 0 0;
+    padding: 0;
+    list-style: none;
+    background: #fff;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  }
+
+  .suggestions button {
+    width: 100%;
+    text-align: left;
+    padding: 0.4rem 0.6rem;
+    border: none;
+    background: none;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+
+  .suggestions button:hover {
+    background: #f1f3f5;
+  }
+
+  .suggestions .none {
+    padding: 0.4rem 0.6rem;
+    color: #868e96;
   }
 
   .controls {

@@ -1,0 +1,21 @@
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix dbo:     <http://dbpedia.org/ontology/> .
+@prefix rs:      <https://w3id.org/vip/rs/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix :        <http://poderopedia.com/vocab/> .
+@prefix vip:     <https://w3id.org/vip/vocab#> .
+
+# Peta beogradska gimnazija
+# Matična datoteka entiteta: tip, imena, identifikatori i izvori koji potvrđuju identitet.
+# Home file of this entity: type, names, identifiers and the sources for its identity.
+# Veze se nalaze u data/cases/. Connections live in data/cases/.
+
+rs:Peta_Beogradska_Gimnazija a :AcademicOrganization ;
+    foaf:name "Peta beogradska gimnazija"@sr ;
+    dbo:location "Beograd, Srbija"@sr ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://sr.wikipedia.org/wiki/Пета_београдска_гимназија> ; :hasDocumentType vip:encyclopediaArticle ; :hasDocumentStatus vip:published ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.wikidata.org/wiki/Q11160995> ; :hasDocumentType vip:registryRecord ; :hasDocumentStatus vip:published ] .

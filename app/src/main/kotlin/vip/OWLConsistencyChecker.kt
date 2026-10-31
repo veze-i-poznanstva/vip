@@ -5,44 +5,50 @@ import org.apache.jena.ontology.OntModelSpec
 import org.apache.jena.rdf.model.ModelFactory
 import org.apache.jena.reasoner.ValidityReport
 import org.apache.jena.riot.RDFDataMgr
+import java.io.PrintStream
 import kotlin.system.exitProcess
 
 fun main(args: Array<String>) {
+    exitProcess(runOwlConsistencyChecker(args, System.out, System.err))
+}
+
+/** The command line as a function: returns the exit status and writes only to the given streams. */
+fun runOwlConsistencyChecker(args: Array<String>, out: PrintStream, err: PrintStream): Int {
     if (args.isEmpty()) {
-        System.err.println("Usage: OWLConsistencyChecker <owl-file>")
-        exitProcess(1)
+        err.println("Usage: OWLConsistencyChecker <owl-file>")
+        return 1
     }
     
     try {
-        println("=== OWL Consistency Check ===\n")
+        out.println("=== OWL Consistency Check ===\n")
         
         // Load ontology
         val model = ModelFactory.createOntologyModel(OntModelSpec.OWL_DL_MEM)
         RDFDataMgr.read(model, args[0])
         
-        println("Loaded ${model.size()} triples")
+        out.println("Loaded ${model.size()} triples")
         
         // Create OWL reasoner (fallback to built-in)
-        println("Initializing reasoner...")
+        out.println("Initializing reasoner...")
         val reasoner = try {
             // Try to use OWL reasoner
             ReasonerRegistry.getOWLReasoner()
         } catch (e: Exception) {
             // Fallback to RDFS reasoner
-            println("OWL reasoner not available, using RDFS reasoner")
+            out.println("OWL reasoner not available, using RDFS reasoner")
             ReasonerRegistry.getRDFSReasoner()
         }
         val infModel = ModelFactory.createInfModel(reasoner, model)
         
         // Validate
-        println("Checking consistency...")
+        out.println("Checking consistency...")
         val validity = infModel.validate()
         
         if (validity.isValid) {
-            println("\n✓ Ontology is consistent!")
+            out.println("\n✓ Ontology is consistent!")
             
             // Check for unsatisfiable classes
-            println("\nChecking for unsatisfiable classes...")
+            out.println("\nChecking for unsatisfiable classes...")
             val unsatisfiableClasses = mutableListOf<String>()
             
             model.listClasses().asSequence()
@@ -54,38 +60,37 @@ fun main(args: Array<String>) {
                         // More sophisticated check would involve reasoning
                         val localName = ontClass.localName
                         if (localName != null && !localName.startsWith("Thing")) {
-                            println("  ⚠ Potentially empty class: $localName")
+                            out.println("  ⚠ Potentially empty class: ${localName.printable()}")
                         }
                     }
                 }
             
             if (unsatisfiableClasses.isEmpty()) {
-                println("  ✓ No obviously unsatisfiable classes found")
+                out.println("  ✓ No obviously unsatisfiable classes found")
             }
             
             // Check for consistency issues
-            checkCommonIssues(model)
-            
+            checkCommonIssues(out, model)
+            return 0
         } else {
-            println("\n✗ Ontology is inconsistent!")
+            out.println("\n✗ Ontology is inconsistent!")
             validity.reports?.let { reports ->
                 reports.forEachRemaining { report ->
-                    println("\nProblem: ${report.description}")
-                    println("Type: ${report.type}")
+                    out.println("\nProblem: ${report.description.printable()}")
+                    out.println("Type: ${report.type.toString().printable()}")
                 }
             }
-            exitProcess(1)
+            return 1
         }
         
     } catch (e: Exception) {
-        System.err.println("Error: ${e.message}")
-        e.printStackTrace()
-        exitProcess(1)
+        err.println("Error: ${(e.message ?: e.toString()).printable()}")
+        return 1
     }
 }
 
-private fun checkCommonIssues(model: org.apache.jena.ontology.OntModel) {
-    println("\nChecking for common issues...")
+private fun checkCommonIssues(out: PrintStream, model: org.apache.jena.ontology.OntModel) {
+    out.println("\nChecking for common issues...")
     
     // Check for circular dependencies
     var circularCount = 0
@@ -99,13 +104,13 @@ private fun checkCommonIssues(model: org.apache.jena.ontology.OntModel) {
             
             // Simple circular check
             if (ontClass.uri in superClasses) {
-                println("  ⚠ Potential circular dependency: ${ontClass.localName}")
+                out.println("  ⚠ Potential circular dependency: ${ontClass.localName.printable()}")
                 circularCount++
             }
         }
     
     if (circularCount == 0) {
-        println("  ✓ No obvious circular dependencies found")
+        out.println("  ✓ No obvious circular dependencies found")
     }
     
     // Check for multiple inheritance issues
@@ -115,9 +120,9 @@ private fun checkCommonIssues(model: org.apache.jena.ontology.OntModel) {
         .toList()
     
     if (complexInheritance.isNotEmpty()) {
-        println("\n  ⚠ Classes with complex inheritance (>3 superclasses):")
+        out.println("\n  ⚠ Classes with complex inheritance (>3 superclasses):")
         complexInheritance.forEach { 
-            println("    - ${it.localName}: ${it.listSuperClasses(true).toList().size} superclasses")
+            out.println("    - ${it.localName.printable()}: ${it.listSuperClasses(true).toList().size} superclasses")
         }
     }
 }

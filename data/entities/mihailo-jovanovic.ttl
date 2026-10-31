@@ -1,0 +1,24 @@
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix dbo:     <http://dbpedia.org/ontology/> .
+@prefix rs:      <https://w3id.org/vip/rs/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix :        <http://poderopedia.com/vocab/> .
+@prefix vip:     <https://w3id.org/vip/vocab#> .
+
+# Mihailo Jovanović
+# Matična datoteka entiteta: tip, imena, identifikatori i izvori koji potvrđuju identitet.
+# Home file of this entity: type, names, identifiers and the sources for its identity.
+# Veze se nalaze u data/cases/. Connections live in data/cases/.
+
+rs:Mihailo_Jovanovic a foaf:Person ;
+    foaf:name "Mihailo Jovanović"@sr ;
+    foaf:firstName "Mihailo" ;
+    :firstLastName "Jovanović" ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://www.istinomer.rs/akter/mihailo-jovanovic/> ; :hasDocumentType vip:factCheckProfile ; :hasDocumentStatus vip:published ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.ite.gov.rs/tekst/sr/150/direktor.php> ; :hasDocumentType vip:officialDocument ; :hasDocumentStatus vip:published ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.alo.rs/vesti/politika/2184894/ekskluzivno-ekipa-alo-sa-ministrima-i-njihovom-razrednom-u-petoj-beogradskoj-posle-30-godina-sinisa-i-mihailo-od-skolskih-do-ministarskih-klupa-video.html> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.youtube.com/watch?v=tHgNZtQdGrg&t=5s> ; :hasDocumentType vip:videoRecording ; :hasDocumentStatus vip:published ] .

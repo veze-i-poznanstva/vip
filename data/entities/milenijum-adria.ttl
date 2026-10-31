@@ -1,0 +1,27 @@
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix dbo:     <http://dbpedia.org/ontology/> .
+@prefix rs:      <https://w3id.org/vip/rs/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix :        <http://poderopedia.com/vocab/> .
+@prefix vip:     <https://w3id.org/vip/vocab#> .
+
+# Millennium Adria
+# Matična datoteka entiteta: tip, imena, identifikatori i izvori koji potvrđuju identitet.
+# Home file of this entity: type, names, identifiers and the sources for its identity.
+# Veze se nalaze u data/cases/. Connections live in data/cases/.
+
+rs:Milenijum_Adria a :Company ;
+    foaf:name "Millennium Adria"@sr ;
+    :alias "Milenijum Adria" ;
+    :hasTaxId "53546365408" ;
+    dbo:location "Split, Hrvatska"@sr ;
+    :subsidiaryCompanyOf rs:Milenijum_Tim ;
+    rdfs:comment "Milenijum Adria je filijala Milenijum tima za poslovanje na teritoriji Hrvatske."@sr ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://www.danas.rs/vesti/ekonomija/sta-sve-ima-milenijum-tim-novi-vlasnik-hotela-jugoslavija/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.fininfo.hr/Poduzece/Pregled/millennium-adria/Detaljno/780814> ; :hasDocumentType vip:registryRecord ; :hasDocumentStatus vip:published ] ,
+        [ a :Documentation ; :hasDocumentURL <https://nova.rs/vesti/politika/sta-je-milenijum-tim-sns-fabrika-za-izvlacenje-para/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.companywall.rs/firma/milenijum-adria-doo-zagreb/MAksspYq> ; :hasDocumentType vip:registryRecord ; :hasDocumentStatus vip:removed ] .

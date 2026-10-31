@@ -1,0 +1,27 @@
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix dbo:     <http://dbpedia.org/ontology/> .
+@prefix rs:      <https://w3id.org/vip/rs/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix :        <http://poderopedia.com/vocab/> .
+@prefix vip:     <https://w3id.org/vip/vocab#> .
+
+# MV Investment
+# Matična datoteka entiteta: tip, imena, identifikatori i izvori koji potvrđuju identitet.
+# Home file of this entity: type, names, identifiers and the sources for its identity.
+# Veze se nalaze u data/cases/. Connections live in data/cases/.
+
+rs:MV_Investment a :Company ;
+    foaf:name "MV Investment"@sr ;
+    dbo:industry "Upravljanje nekretninama"@sr ;
+    :subsidiaryCompanyOf rs:Milenijum_Tim ;
+    rdfs:comment "MV Investment je filijala Milenijum tima, vlasnik kompleksa Hotela Jugoslavija i aktivna u upravljanju nekretninama."@sr ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://www.danas.rs/vesti/ekonomija/sta-sve-ima-milenijum-tim-novi-vlasnik-hotela-jugoslavija/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ] ,
+        [ a :Documentation ; :hasDocumentURL <https://forbes.n1info.rs/vesti/vlasnici-milenijum-tima-kupili-hotel-jugoslavija/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.danas.rs/vesti/ekonomija/milenijum-timhotel-jugoslavija/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ] ,
+        [ a :Documentation ; :hasDocumentURL <https://24sedam.rs/biznis/privreda/290129/mv-investment-kupio-hotel-jugoslavija/vest> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ] ,
+        [ a :Documentation ; :hasDocumentURL <https://rs.bloombergadria.com/ekonomija/srbija/55076/milenijum-tim-kupio-hotel-jugoslaviju-i-najavio-400-miliona-evra-ulaganja/news> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.companywall.rs/firma/mv-investment-doo-beograd/MVksppYq> ; :hasDocumentType vip:registryRecord ; :hasDocumentStatus vip:removed ] .

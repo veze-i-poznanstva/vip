@@ -1,0 +1,26 @@
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix dbo:     <http://dbpedia.org/ontology/> .
+@prefix rs:      <https://w3id.org/vip/rs/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix :        <http://poderopedia.com/vocab/> .
+@prefix vip:     <https://w3id.org/vip/vocab#> .
+
+# Saša Blagojević
+# Matična datoteka entiteta: tip, imena, identifikatori i izvori koji potvrđuju identitet.
+# Home file of this entity: type, names, identifiers and the sources for its identity.
+# Veze se nalaze u data/cases/. Connections live in data/cases/.
+
+rs:Sasa_Blagojevic a foaf:Person ;
+    foaf:name "Saša Blagojević"@sr ;
+    foaf:firstName "Saša" ;
+    :firstLastName "Blagojević" ;
+    rdfs:comment "Vlasnik tabloida Alo! (Alo Media System) i televizije Studio B (Global Media Technology), većinski vlasnik Maxim Media Plus (radio stanice Hit FM, Karolina, Lola, JAT, TDI). Ranije direktor i suvlasnik marketinške agencije Trilenium."@sr ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://www.cenzolovka.rs/tag/sasa-blagojevic/> ; :hasDocumentType vip:webPage ; :hasDocumentStatus vip:published ] ,
+        [ a :Documentation ; :hasDocumentURL <https://serbia.mom-gmr.org/sr/vlasnik/individual-owners/detail/owner/owner/show/sasa-blagojevic-2/> ; :hasDocumentType vip:registryRecord ; :hasDocumentStatus vip:published ] ,
+        [ a :Documentation ; :hasDocumentURL <https://serbia.mom-gmr.org/sr/mediji/detail/outlet/alo/> ; :hasDocumentType vip:registryRecord ; :hasDocumentStatus vip:published ] ,
+        [ a :Documentation ; :hasDocumentURL <https://montenegro.mom-gmr.org/cg/vlasnici/pojedinci/detail/owner/owner/show/sasa-blagojevic-3/> ; :hasDocumentType vip:registryRecord ; :hasDocumentStatus vip:published ] ,
+        [ a :Documentation ; :hasDocumentURL <https://safejournalists.net/sr/vlasnik-tabloida-alo-za-manje-od-mesec-dana-kupio-dve-televizije-i-radio-za-skoro-200-000-evra/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ] .

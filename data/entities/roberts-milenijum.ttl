@@ -1,0 +1,27 @@
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix dbo:     <http://dbpedia.org/ontology/> .
+@prefix rs:      <https://w3id.org/vip/rs/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix :        <http://poderopedia.com/vocab/> .
+@prefix vip:     <https://w3id.org/vip/vocab#> .
+
+# Roberts Millennium
+# Matična datoteka entiteta: tip, imena, identifikatori i izvori koji potvrđuju identitet.
+# Home file of this entity: type, names, identifiers and the sources for its identity.
+# Veze se nalaze u data/cases/. Connections live in data/cases/.
+
+rs:Roberts_Milenijum a :Company ;
+    foaf:name "Roberts Millennium"@sr ;
+    :alias "Roberts Milenijum" ;
+    :hasTaxId "111802832" ;
+    :subsidiaryCompanyOf rs:Milenijum_Tim ;
+    rdfs:comment "Roberts Milenijum je zajednička firma sa građevinskom kompanijom Roberts, koja učestvuje u projektima poput Beograda na vodi, i filijala je Milenijum tima."@sr ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://www.danas.rs/vesti/ekonomija/sta-sve-ima-milenijum-tim-novi-vlasnik-hotela-jugoslavija/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ] ,
+        [ a :Documentation ; :hasDocumentURL <https://pretraga.pkspartner.rs/sr/kompanija/0e55cb2461a3e2c0/roberts-millennium-doo> ; :hasDocumentType vip:registryRecord ; :hasDocumentStatus vip:published ] ,
+        [ a :Documentation ; :hasDocumentURL <https://poslovi.infostud.com/posao/Inzenjer-tehnicke-pripreme/Roberts-Millennium-doo/432801> ; :hasDocumentType vip:webPage ; :hasDocumentStatus vip:published ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.belgradewaterfront.com/en/news/the-main-works-commence-for-bw-metropolitan/> ; :hasDocumentType vip:webPage ; :hasDocumentStatus vip:published ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.krik.rs/tag/roberts-milenijum/> ; :hasDocumentType vip:webPage ; :hasDocumentStatus vip:removed ] .

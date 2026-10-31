@@ -1,0 +1,26 @@
+# Schoolmates in power / Školski drugovi na vlasti
+# Two people who went to the same school are both tied, through work or politics, to the same
+# organisation. A pattern worth a second look when the organisation is public or the roles are
+# appointed; shared schooling alone proves nothing.
+# Dve osobe koje su išle u istu školu obe su, kroz posao ili politiku, vezane za istu
+# organizaciju. Obrazac vredan drugog pogleda kada je organizacija javna ili su uloge
+# imenovane; samo zajednička škola ne dokazuje ništa.
+PREFIX :    <http://poderopedia.com/vocab/>
+PREFIX vip: <https://w3id.org/vip/vocab#>
+PREFIX bio: <http://purl.org/vocab/bio/0.1/>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT ?personA ?personB ?school ?organization
+WHERE {
+  ?schoolingA a :EducationalConnection ; :hasStudent ?personA ; :hasAcademicOrganization ?school .
+  ?schoolingB a :EducationalConnection ; :hasStudent ?personB ; :hasAcademicOrganization ?school .
+  FILTER (STR(?personA) < STR(?personB))
+
+  ?tieA bio:participant ?personA, ?organization .
+  ?tieB bio:participant ?personB, ?organization .
+  { ?tieA a :WorkConnection } UNION { ?tieA a :PoliticalConnection }
+  { ?tieB a :WorkConnection } UNION { ?tieB a :PoliticalConnection }
+  ?organization a foaf:Organization .
+  FILTER (?organization != ?school)
+}
+ORDER BY ?organization ?personA ?personB

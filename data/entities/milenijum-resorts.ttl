@@ -1,0 +1,26 @@
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix dbo:     <http://dbpedia.org/ontology/> .
+@prefix rs:      <https://w3id.org/vip/rs/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix :        <http://poderopedia.com/vocab/> .
+@prefix vip:     <https://w3id.org/vip/vocab#> .
+
+# Milenijum resorts
+# Matična datoteka entiteta: tip, imena, identifikatori i izvori koji potvrđuju identitet.
+# Home file of this entity: type, names, identifiers and the sources for its identity.
+# Veze se nalaze u data/cases/. Connections live in data/cases/.
+
+rs:Milenijum_Resorts a :Company ;
+    foaf:name "Milenijum resorts"@sr ;
+    :subsidiaryCompanyOf rs:Milenijum_Tim ;
+    rdfs:comment "Milenijum resorts je filijala Milenijum tima, zadužena za upravljanje i razvoj turističkih projekata, uključujući Vranjsku Banju."@sr ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://www.danas.rs/vesti/ekonomija/sta-sve-ima-milenijum-tim-novi-vlasnik-hotela-jugoslavija/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ] ,
+        [ a :Documentation ; :hasDocumentURL <https://nova.rs/vesti/biznis/zavrsetak-hotela-u-vranjskoj-banji-za-koje-dobija-drzavnu-subvenciju-milenijum-tim-odlozio-za-2026-godinu/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ] ,
+        [ a :Documentation ; :hasDocumentURL <https://luftika.rs/milenijum-tim-vranjska-banja/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ] ,
+        [ a :Documentation ; :hasDocumentURL <https://jugmedia.rs/milenijum-timu-iz-beograda-10-bespovratnih-miliona-evra-za-investiranje-u-vranjskoj-banji/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ] ,
+        [ a :Documentation ; :hasDocumentURL <https://millenniumteam.rs/en/news/investment-in-tourism-vranjska-banja-resort-is-the-largest-current-project-in-the-south-of-serbia/> ; :hasDocumentType vip:webPage ; :hasDocumentStatus vip:published ] ,
+        [ a :Documentation ; :hasDocumentURL <https://nova.rs/vesti/biznis/milenijum-resorts-u-turizmu/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:removed ] .
