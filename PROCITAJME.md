@@ -370,10 +370,11 @@ Podaci žive u `data/` u dve vrste datoteka:
   `alo-media-system.ttl` sadrži vlasništvo nad izdavačem tabloida Alo. Recenzent pročita jednu
   datoteku slučaja i vidi celu priču sa izvorima.
 
-Radite sa AI agentom za programiranje? Nalepite prompt iz
-[docs/agent-prompt.sr.md](docs/agent-prompt.sr.md) kao prvu poruku: on instalira alate, forkuje
-repozitorijum i vodi vas kroz dodavanje slučaja sa proverenim izvorima, tražeći dozvolu za svaki
-korak, na srpskom.
+Radite sa AI agentom za programiranje? Nalepite prompt za brzi početak iz
+[docs/agent-prompt.sr.md](docs/agent-prompt.sr.md) kao prvu poruku: on objašnjava ceo put,
+instalira alate, forkuje repozitorijum i vodi vas kroz dodavanje osoba i veza sa proverenim
+izvorima, tražeći dozvolu za svaki korak, na srpskom. Donesite slučaj, ili ga pustite da izabere
+srpskog političara i prati veze.
 
 Kako doprineti slučaj:
 

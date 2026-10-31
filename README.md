@@ -373,9 +373,11 @@ Data lives in `data/` in two kinds of file:
   `alo-media-system.ttl` holds the ownership of the tabloid Alo's publisher.
   A reviewer reads one case file and sees a whole story with its sources.
 
-Working with an AI coding agent? Paste the prompt in [docs/agent-prompt.md](docs/agent-prompt.md)
-as your first message: it installs the tools, forks the repository and walks you through adding a
-case with verified sources, asking your permission at every step, in Serbian.
+Working with an AI coding agent? Paste the quickstart prompt in
+[docs/agent-prompt.md](docs/agent-prompt.md) as your first message: it explains the journey,
+installs the tools, forks the repository and walks you through adding people and connections with
+verified sources, asking your permission at every step, in Serbian. Bring a case, or let it pick a
+Serbian politician and follow the links.
 
 To contribute a case:
 
