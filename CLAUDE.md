@@ -31,7 +31,9 @@ record must say what the source says, with its attribution, and nothing more.
 The build proves form and reachability, not that: read each source before citing it, quote the
 passage on the document's `rdfs:comment`, and check that it means this person (same-named people
 get separate URIs, `rs:Ivan_Bosnjak_Milenijum_Tim` and `rs:Ivan_Bosnjak_Zrenjanin` are two men).
-A citation found wrong stays with `vip:removed` and a comment saying why.
+A citation found wrong stays with `vip:removed` and a comment saying why. Corrections: `?ispravka=1`
+opens the page. VIP is a secondary source: a wrong source is corrected at the source first, then VIP
+follows; a record that misstates its source is our error and is fixed directly.
 
 Same-named people get separate URIs told apart by public facts. `vip:wikipediaArticle` is the
 article about the entity, never a page it is only cited in. Never record a JMBG or personal tax number.

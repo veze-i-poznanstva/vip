@@ -9,7 +9,8 @@
 četbotu u pregledaču koji će ti prvo pomoći da instaliraš desktop verziju. On podešava alate,
 forkuje repozitorijum i vodi te, na srpskom, kroz dodavanje veza sa izvorima.
 
-**[Otvori graf](https://veze-i-poznanstva.github.io/vip/?lang=sr)**
+**[Otvori graf](https://veze-i-poznanstva.github.io/vip/?lang=sr)** ·
+**[Informacija nije tačna?](https://veze-i-poznanstva.github.io/vip/?lang=sr&ispravka=1)**
 
 VIP (Veze i poznanstva) je otvorena, mašinski proverljiva mapa o tome ko je s kim povezan među
 uticajnim ljudima u Srbiji, i preko čega.

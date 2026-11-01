@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { issueUrl, reportPrompt } from './report';
+import { issueUrl, reportPrompt, wantsCorrection, withoutCorrection } from './report';
 
 describe('reportPrompt', () => {
   const prompt = reportPrompt({ subject: 'Ana Brnabić', uri: 'https://w3id.org/vip/rs/Ana_Brnabic' }, 'Pogrešan datum.');
@@ -41,5 +41,17 @@ describe('issueUrl', () => {
   it('includes the address of the record when known', () => {
     const url = new URL(issueUrl({ subject: 'A', uri: 'https://w3id.org/vip/rs/A' }, ''));
     expect(url.searchParams.get('body')).toContain('https://w3id.org/vip/rs/A');
+  });
+});
+
+describe('the corrections address', () => {
+  it('recognises the address that opens the corrections page', () => {
+    expect(wantsCorrection('?lang=sr&ispravka=1')).toBe(true);
+    expect(wantsCorrection('?lang=sr')).toBe(false);
+  });
+
+  it('drops it when the page is closed, keeping the rest', () => {
+    expect(withoutCorrection('?lang=sr&ispravka=1')).toBe('?lang=sr');
+    expect(withoutCorrection('?ispravka=1')).toBe('');
   });
 });

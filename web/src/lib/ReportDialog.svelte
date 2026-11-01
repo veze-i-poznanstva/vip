@@ -27,6 +27,12 @@
 
 <dialog bind:this={dialog} on:close={() => dispatch('close')}>
   <h2>{$t('report.title')}</h2>
+  <p>{$t('report.intro')}</p>
+  <p>{$t('report.secondary')}</p>
+  <ul>
+    <li><strong>{$t('report.case.source')}</strong> {$t('report.case.source.text')}</li>
+    <li><strong>{$t('report.case.ours')}</strong> {$t('report.case.ours.text')}</li>
+  </ul>
   <p class="subject">{report.subject}</p>
   <label>
     {$t('report.what')}
@@ -50,8 +56,9 @@
 <style>
   dialog {
     box-sizing: border-box;
-    width: min(38rem, calc(100vw - 2rem));
+    width: min(40rem, calc(100vw - 2rem));
     max-height: calc(100vh - 2rem);
+    overflow-y: auto;
     padding: 1.25rem 1.5rem;
     color: #212529;
     background: #fff;
@@ -80,7 +87,17 @@
   }
 
   .subject {
+    margin-top: 1rem;
     font-weight: 600;
+  }
+
+  ul {
+    margin: 0.25rem 0;
+    padding-left: 1.2rem;
+  }
+
+  li {
+    margin-bottom: 0.4rem;
   }
 
   label {

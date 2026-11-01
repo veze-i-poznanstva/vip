@@ -4,6 +4,7 @@
   import EntityPicker from './lib/EntityPicker.svelte';
   import ReportDialog from './lib/ReportDialog.svelte';
   import AboutDialog from './lib/AboutDialog.svelte';
+  import { wantsCorrection, withoutCorrection } from './lib/report';
   import type { ReportSubject } from './lib/report';
   import type { ElementDefinition } from 'cytoscape';
   import { language, resolveLanguage, supportedLanguages, t } from './lib/i18n';
@@ -119,6 +120,11 @@
   let report: ReportSubject | null = null;
   let about = false;
 
+  function closeReport() {
+    report = null;
+    history.replaceState(null, '', location.pathname + withoutCorrection(location.search));
+  }
+
   function reportNode(id: string) {
     const node = index.nodes.get(id);
     if (!node) return;
@@ -190,6 +196,7 @@
       elements = data;
       index = buildIndex(data);
       loading = false;
+      if (wantsCorrection(location.search)) report = { subject: $t('report.general') };
       const linked = readPathQuery(location.search);
       if (linked.from && linked.to && index.nodes.has(linked.from) && index.nodes.has(linked.to)) {
         connecting = true;
@@ -404,7 +411,7 @@
       {/if}
     </div>
     <button type="button" class="link" on:click={() => (about = true)}>{$t('about')}</button>
-    <button type="button" class="link" on:click={() => (report = { subject: $t('report.general') })}>{$t('report')}</button>
+    <button type="button" class="link strong" on:click={() => (report = { subject: $t('report.general') })}>{$t('report.title')}</button>
     <select id="language-select" aria-label={$t('language')} bind:value={$language}>
       {#each supportedLanguages as code}
         <option value={code} aria-label={$t('language.' + code)}>{code.toUpperCase()}</option>
@@ -528,7 +535,7 @@
   </div>
   {/if}
   {#if report}
-    <ReportDialog {report} on:close={() => (report = null)} />
+    <ReportDialog {report} on:close={closeReport} />
   {/if}
   {#if about}
     <AboutDialog on:close={() => (about = false)} />
@@ -605,6 +612,10 @@
     font-size: 0.9rem;
     white-space: nowrap;
     cursor: pointer;
+  }
+
+  button.link.strong {
+    font-weight: 600;
   }
 
   button.link:hover {

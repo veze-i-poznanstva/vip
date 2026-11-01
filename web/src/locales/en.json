@@ -45,7 +45,7 @@
   "about": "About",
   "report": "Report an error",
   "report.general": "General report",
-  "report.title": "Report an error",
+  "report.title": "Information wrong?",
   "report.what": "What is wrong?",
   "report.send": "Send a report",
   "report.send.text": "The simplest way. It opens a prepared report on GitHub, which needs a free account.",
@@ -60,5 +60,11 @@
   "about.sources": "Every entity and connection cites public documents with archived copies. Corrections are welcome through Report an error.",
   "about.updated": "Data last updated: {date}.",
   "about.code": "Code and data",
-  "about.contribute": "Contribute with AI"
+  "about.contribute": "Contribute with AI",
+  "report.intro": "Every claim here cites at least two public sources, listed with the record.",
+  "report.secondary": "VIP is a secondary source: it collects what reputable media and official registries have published, and does not investigate or decide what is true. So the first step depends on where the error is.",
+  "report.case.source": "The source is wrong.",
+  "report.case.source.text": "Ask the outlet or registry that published it to correct or remove it. When the source no longer says it, VIP follows: a claim left without two sources is taken down.",
+  "report.case.ours": "VIP misreports its source.",
+  "report.case.ours.text": "If our record says something its sources do not, or confuses two people, that is our mistake. Report it below and we will fix it."
 }

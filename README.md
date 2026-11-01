@@ -9,7 +9,8 @@
 that will first help you install a desktop version. It sets up the tools, forks the repository and
 guides you, in Serbian, through adding sourced connections.
 
-**[Open the graph](https://veze-i-poznanstva.github.io/vip/)**
+**[Open the graph](https://veze-i-poznanstva.github.io/vip/)** ·
+**[Information wrong?](https://veze-i-poznanstva.github.io/vip/?lang=en&ispravka=1)**
 
 VIP (Veze i poznanstva, connections and acquaintances) is an open, machine-checkable map of who is
 connected to whom among people of influence in Serbia, and through what.
