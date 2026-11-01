@@ -15,7 +15,7 @@
 # zajedničku školu, dalje obrazovanje i članstvo u Srpskoj naprednoj stranci.
 # Osobe i organizacije su deklarisane u data/entities/, ovde su samo veze među njima.
 # People and organisations are declared in data/entities/; this file holds only the connections.
-# Konvencije zapisa: videti README.md / PROCITAJME.md, odeljak "Doprinos podacima".
+# Konvencije zapisa: videti docs/data-guide.sr.md (see docs/data-guide.md).
 
 rs:SinisaMali_SNS a :PoliticalConnection ;
     :personParticipant rs:Sinisa_Mali ;

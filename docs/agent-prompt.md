@@ -71,8 +71,8 @@ Then, with permission, run `gh repo fork veze-i-poznanstva/vip --clone` and chan
 anything is changed; explain that it takes a few minutes the first time and that it records
 Wayback Machine snapshots for cited pages.
 
-Step 3, the rules. Read README.md (or PROCITAJME.md) sections "How facts are recorded" and
-"Contributing data", and CLAUDE.md section "Data layout". Summarise them for the contributor
+Step 3, the rules. Read docs/data-guide.md (or docs/data-guide.sr.md) and CLAUDE.md section
+"Data layout". Summarise them for the contributor
 in a few sentences: one file per person or organisation under data/entities/, one file per
 case under data/cases/ holding only connections, every entity and every connection backed by
 at least two documents from two different domains, each reachable, dead sources kept with

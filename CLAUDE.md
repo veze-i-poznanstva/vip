@@ -6,7 +6,8 @@ everything under `~/code/ghdl/`). THE `gh` TOOL ON THIS MACHINE IS SIGNED IN AS 
 MUST NEVER PUSH, COMMENT OR OPEN PULL REQUESTS HERE. THE ONLY IDENTITY IN THESE REPOSITORIES IS
 `danluddlum <350449005+danluddlum@users.noreply.github.com>`.**
 
-Guidance for Claude Code when working in this repository. Keep it in step with README.md.
+Guidance for Claude Code when working in this repository. README.md is a short front page; detail
+lives in docs/ (`why-connections`, `data-guide`, `tools`). Keep this file in step with them.
 
 ## What this is
 

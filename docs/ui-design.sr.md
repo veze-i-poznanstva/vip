@@ -156,8 +156,8 @@ Inkrementi jedan i dva sami donose vrednost i mogu se pregledati nezavisno.
   zapis nije transliteracija slovo po slovo i dalje traže alias u podacima.
 - **Veze sa mnogo učesnika.** Upravni odbor je jedna veza sa mnogo učesnika. Prikaz kao čvor
   je ispravan, ali se vizuelno razlikuje od parnih ivica. Potreban je vizuelni tretman.
-- **Status demoa.** README označava veb modul kao samo demo. Kada se isporuči treći inkrement,
-  modul postaje interfejs proizvoda i README to treba da kaže.
+- **Status demoa.** [Alati](tools.sr.md) označavaju veb modul kao samo demo. Kada se isporuči treći inkrement,
+  modul postaje interfejs proizvoda i ta stranica to treba da kaže.
 - **Testiranje platna.** Iscrtavanje u Cytoscape-u je teško jedinično testirati. Izgradnju
   grafa (čvorovi, ivice, susedstvo, svođenje, stanje traga) treba držati u običnim TypeScript
   modulima sa Vitest testovima, a Svelte komponente ostaviti kao tanke ljuske za iscrtavanje.
