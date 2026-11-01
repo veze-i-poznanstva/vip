@@ -1,5 +1,6 @@
 package vip
 
+import org.apache.jena.rdf.model.Model
 import org.apache.jena.rdf.model.ModelFactory
 import org.apache.jena.riot.RDFDataMgr
 import java.io.File
@@ -15,16 +16,21 @@ fun runVeracityValidator(
     args: Array<String>,
     out: PrintStream,
     err: PrintStream,
-    validation: VeracityValidation = VeracityValidation()
+    validation: VeracityValidation = VeracityValidation(),
+    changedSince: (String) -> Set<File>? = { gitChangedSince(it) }
 ): Int {
-    if (args.isEmpty()) {
-        err.println("Usage: VeracityValidator <data-dir-or-file> [schema-file] [archives-file]")
+    val sinceAt = args.indexOf("--since")
+    val since = if (sinceAt >= 0) args.getOrNull(sinceAt + 1) else null
+    val positional = if (sinceAt >= 0) args.toList().subList(0, sinceAt) else args.toList()
+    if (positional.isEmpty() || (sinceAt >= 0 && since == null)) {
+        err.println("Usage: VeracityValidator <data-dir-or-file> [schema-file] [archives-file] [--since <git-ref>]")
+        err.println("  --since  check reachability only for URLs in files changed since that reference")
         return 1
     }
 
-    val filename = args[0]
-    val schemaFile = args.getOrNull(1)
-    val archivesFile = args.getOrNull(2)
+    val filename = positional[0]
+    val schemaFile = positional.getOrNull(1)
+    val archivesFile = positional.getOrNull(2)
 
     try {
         out.println("=== Veracity Validation Report ===\n")
@@ -37,7 +43,9 @@ fun runVeracityValidator(
         out.println()
 
         // Load the RDF data together with the archive records, which are keyed by document URL
-        val model = ModelFactory.createDefaultModel().add(loadDataSet(File(filename)).merged)
+        val dataSet = loadDataSet(File(filename))
+        val model = ModelFactory.createDefaultModel().add(dataSet.merged)
+        if (since != null) restrictToChanges(dataSet, since, changedSince(since), validation, out)
         if (archivesFile != null) {
             val archives = File(archivesFile)
             if (!archives.exists()) throw IllegalArgumentException("archives file '$archivesFile' not found")
@@ -68,3 +76,18 @@ fun runVeracityValidator(
         return 1
     }
 }
+
+/** Limits live checks to URLs cited in changed files; without a usable base, everything is checked. */
+private fun restrictToChanges(dataSet: DataSet, since: String, changed: Set<File>?, validation: VeracityValidation, out: PrintStream) {
+    if (changed == null) {
+        out.println("Could not compare with ${since.printable()}: full check of every URL\n")
+        return
+    }
+    val all = dataSet.models.values.flatMap(::citedUrls).toSet()
+    val live = dataSet.models.filterKeys { it.canonicalFile in changed }.values.flatMap(::citedUrls).toSet()
+    validation.liveCheckOnly = live
+    out.println("Live checks: ${live.size} of ${all.size} URLs, those in files changed since ${since.printable()}\n")
+}
+
+private fun citedUrls(model: Model): List<String> =
+    model.listObjectsOfProperty(model.createProperty(Vocab.HAS_DOCUMENT_URL)).toList().filter { it.isURIResource }.map { it.asResource().uri }

@@ -3,6 +3,11 @@ import { svelte } from '@sveltejs/vite-plugin-svelte'
 
 export default defineConfig({
   plugins: [svelte()],
+  // Relative, so the page works on any address, including a project site under /vip/.
+  base: './',
+  define: {
+    __BUILD_DATE__: JSON.stringify(new Date().toISOString().slice(0, 10))
+  },
   publicDir: 'public',
   server: {
     host: 'localhost',

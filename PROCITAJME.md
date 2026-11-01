@@ -9,6 +9,8 @@
 četbotu u pregledaču koji će ti prvo pomoći da instaliraš desktop verziju. On podešava alate,
 forkuje repozitorijum i vodi te, na srpskom, kroz dodavanje veza sa izvorima.
 
+**[Otvori graf](https://veze-i-poznanstva.github.io/vip/?lang=sr)**
+
 VIP (Veze i poznanstva) je otvorena, mašinski proverljiva mapa o tome ko je s kim povezan među
 uticajnim ljudima u Srbiji, i preko čega.
 
@@ -64,7 +66,9 @@ Potrebna je samo Java 17 ili novija; build preuzima sve ostalo.
 
 Otvorite <http://localhost:5173/?lang=sr>, ili <http://localhost:5173/> za engleski. Ukucajte ime u
 polje za pretragu, kliknite na čvor da ga stavite u središte, dvostrukim klikom dodajte njegove
-veze, a zadržite pokazivač na čvoru da pročitate njegov opis.
+veze, a zadržite pokazivač na čvoru da pročitate njegov opis. Dugme Poveži pored polja za pretragu
+traži Od i Do, kao uputstva na mapi, i prikazuje najkraće putanje između njih.
+Filter na dnu skriva osobe, organizacije, ustanove ili stranke.
 
 ## Licenca
 

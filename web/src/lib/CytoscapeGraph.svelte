@@ -15,6 +15,11 @@
 
   function layoutOptions(name: string): cytoscape.LayoutOptions {
     const base = { name, animate: true, animationDuration: 500, fit: true, padding: 50 };
+    if (name === 'breadthfirst' && focusId) {
+      // A path reads left to right, which also suits a wide canvas.
+      const leftToRight = (_: unknown, position: cytoscape.Position) => ({ x: position.y * 1.6, y: position.x });
+      return { ...base, animate: false, roots: [focusId], spacingFactor: 1.1, transform: leftToRight } as cytoscape.LayoutOptions;
+    }
     if (name !== 'concentric') return base as cytoscape.LayoutOptions;
     return { ...base, concentric: (node: cytoscape.NodeSingular) => (node.id() === focusId ? 2 : 1), levelWidth: () => 1, minNodeSpacing: 40 } as cytoscape.LayoutOptions;
   }
@@ -66,6 +71,7 @@
 
   let container: HTMLDivElement;
   let cy: Core;
+  let resizeObserver: ResizeObserver | undefined;
 
   onMount(() => {
     cy = cytoscape({
@@ -85,6 +91,13 @@
       console.log('Edge clicked:', edge.data());
     });
 
+    // The canvas changes size when panels open below it; keep the graph inside it.
+    resizeObserver = new ResizeObserver(() => {
+      cy.resize();
+      cy.fit(undefined, 80);
+    });
+    resizeObserver.observe(container);
+
     cy.on('mouseover', 'node', (evt) => {
       const at = evt.renderedPosition;
       dispatch('nodeHover', {
@@ -103,15 +116,18 @@
   });
 
   // React to changes in elements prop
-  $: if (cy && elements.length > 0) {
+  $: if (cy) {
     console.log('Updating graph with', elements.length, 'elements');
     cy.elements().remove();
     cy.add(elements);
     markFocus();
-    cy.layout(layoutOptions(layout)).run();
+    const running = cy.layout(layoutOptions(layout));
+    running.one('layoutstop', () => cy.fit(undefined, 80));
+    running.run();
   }
 
   onDestroy(() => {
+    resizeObserver?.disconnect();
     if (cy) {
       cy.destroy();
     }
@@ -128,6 +144,12 @@
   export function runLayout(layoutName: string) {
     if (cy) {
       cy.layout(layoutOptions(layoutName)).run();
+    }
+  }
+
+  export function zoomBy(factor: number) {
+    if (cy) {
+      cy.zoom({ level: cy.zoom() * factor, renderedPosition: { x: cy.width() / 2, y: cy.height() / 2 } });
     }
   }
 

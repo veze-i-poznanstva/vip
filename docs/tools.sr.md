@@ -14,10 +14,10 @@ Validatori, pravila za crvene zastavice, pregledač i build. Nazad na [PROCITAJM
 | `archives.ttl` | Snimak iz arhiva za svaki citirani dokument, održava ga build |
 | `app/` | Kotlin alati za validaciju i konverziju |
 | `rules/` | Obrasci crvenih zastavica kao SPARQL upiti, po jedan u datoteci |
-| `web/` | Pregledač grafa u pretraživaču, **samo demo** |
+| `web/` | Pregledač grafa u pretraživaču, objavljen na <https://veze-i-poznanstva.github.io/vip/> |
 
-Modul `web/` postoji da vizuelno pokaže podatke. Nije deo lanca validacije i ne daje nikakve
-garancije. Proizvod su validatori u `app/`.
+Modul `web/` prikazuje podatke čitaocima i objavljuje se kao sajt pri svakom zelenom push-u na
+`main`. Nije deo lanca validacije; validatori u `app/` odlučuju šta se računa.
 
 ## Brzi početak
 
@@ -140,6 +140,13 @@ između snimanja zbog ograničenja arhiva. Zapisi se upisuju u `archives.ttl`.
 `verify` lokalno pokreće arhiver, a na CI proveru, pa doprinos koji citira novi izvor ne može
 proći CI dok taj izvor nije arhiviran i zapis komitovan.
 
+Dostupnost se proverava uživo samo za adrese u datotekama sa podacima promenjenim od osnove, što
+je podrazumevano `origin/main`, pa opterećenje drugih sajtova ostaje malo. Drugu osnovu birate sa
+`-PverifyBase=<ref>`, a proveru svih adresa sa `-PverifyFull`. Ako se osnova ne može pronaći,
+proveravaju se sve adrese. Nedeljno pokretanje na CI-ju proverava sve adrese, jer izvori nestaju i
+kada niko ne menja datoteku. Sve ostalo, uključujući pravilo dva domena, uvek pokriva ceo skup
+podataka.
+
 ### Provera rasporeda podataka
 
 Čuva doslednost rasporeda podataka. Osobe i organizacije se deklarišu, tj. dobijaju svoj tip,
@@ -205,7 +212,7 @@ zadatak ih ispisuje i uvek vraća 0. Novo pravilo se dodaje kao `.rq` datoteka u
 redovi komentara objašnjavaju pravilo na engleskom i srpskom; jedinični testovi pokreću svako
 pravilo nad primerom koji mora da se poklopi i jednim koji ne sme.
 
-## Pregledač grafa (demo)
+## Pregledač grafa
 
 Modul `web/` je Svelte aplikacija koja prikazuje podatke kao Cytoscape graf. Osobe, firme,
 stranke i akademske ustanove su čvorovi različitih oblika, a veze su označene ivice. Podaci se
@@ -222,8 +229,7 @@ nikad ne pojavljuju u grafu.
 
 Zatim se pregledač pokreće sa `npm install` i `npm run dev` u folderu `web/`, ili kroz Gradle
 sa `./gradlew :web:npmDev`. Pregledač govori engleski i srpski; jezik se bira prekidačem u
-zaglavlju ili sa `?lang=sr` u adresi. Pregledač služi da pokaže kako podaci izgledaju. Crtanje
-grafa nije testirano i pregledač nije namenjen za produkciju.
+zaglavlju ili sa `?lang=sr` u adresi. Logika je testirana; samo crtanje grafa nije.
 
 ## Jezici
 
@@ -255,7 +261,7 @@ Sve što uslovljava objavljivanje pokreće se jednim Gradle zadatkom:
 
 On izvršava jedinične testove, sve provere šeme (`:app:validateSchema`), sve provere podataka
 (`:app:validateData`: raspored, SHACL, zapisi o arhivi i verodostojnost), pravila za crvene
-zastavice, izvoz podataka u Cytoscape JSON i izgradnju demo pregledača nad tim svežim izvozom. Samo dva redosleda su bitna i
+zastavice, izvoz podataka u Cytoscape JSON i izgradnju pregledača nad tim svežim izvozom. Samo dva redosleda su bitna i
 oba su obezbeđena: arhiviranje pre verodostojnosti, izvoz pre izgradnje pregledača; ostalo može
 ići paralelno. Ako bilo koji korak padne, pada i ceo lanac,
 pa crven `verify` znači da podaci ili kod nisu spremni za objavljivanje.
@@ -270,7 +276,7 @@ Manji ulazi za svakodnevni rad:
 ./gradlew :app:test            # samo jedinični testovi, bez mreže
 ./gradlew :app:validateSchema  # sintaksa, OWL konzistentnost, dobra praksa, metrike
 ./gradlew :app:validateData    # raspored podataka, SHACL oblici, zapisi o arhivi, verodostojnost
-./gradlew :web:npmDev          # lokalno pokretanje demo pregledača
+./gradlew :web:npmDev          # lokalno pokretanje pregledača
 ```
 
 Ključne biblioteke: Apache Jena 4.10.0 (RDF, RDFS i OWL rezonovanje, SHACL), Gson 2.10.1, Kotlin 1.9.21.

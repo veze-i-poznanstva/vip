@@ -14,10 +14,10 @@ The validators, the red-flag rules, the viewer and the build. Back to the [READM
 | `archives.ttl` | Archive snapshot per cited document, maintained by the build |
 | `app/` | Kotlin validation and conversion tools |
 | `rules/` | Red-flag patterns as SPARQL queries, one per file |
-| `web/` | Browser graph viewer, **demo only** |
+| `web/` | Browser graph viewer, published at <https://veze-i-poznanstva.github.io/vip/> |
 
-The `web/` module exists to demonstrate the data visually. It is not part of the validation
-pipeline and carries no guarantees. The validators in `app/` are the product.
+The `web/` module shows the data to readers and is published as a site on every green push to
+`main`. It is not part of the validation pipeline; the validators in `app/` decide what counts.
 
 ## Quick start
 
@@ -139,6 +139,12 @@ Now, pausing between captures to respect the archive's rate limit. Records are w
 `verify` runs the archiver locally and the check on CI, so a contribution that cites a new source
 cannot pass CI until that source has been archived and the record committed.
 
+Reachability is checked live only for URLs in data files changed since the base, by default
+`origin/main`, so a build's load on other sites stays small. Pick another base with
+`-PverifyBase=<ref>` or check every URL with `-PverifyFull`. If the base cannot be found, every URL
+is checked. A weekly CI run checks every URL, because sources die without anyone changing a file.
+Everything else, including the two-domain rule, always covers the whole dataset.
+
 ### Data layout check
 
 Keeps the data layout coherent. People and organisations are declared, that is given their type,
@@ -205,7 +211,7 @@ the task prints them and always exits 0. To add a rule, drop a `.rq` file into `
 comment lines explain it in English and Serbian; the unit tests run each rule against a fixture
 that must match and one that must not.
 
-## Web viewer (demo)
+## Web viewer
 
 The `web/` module is a Svelte application that renders the data as a Cytoscape graph. People,
 companies, parties and academic institutions are drawn as differently shaped nodes and
@@ -222,8 +228,7 @@ Documentation and plain URLs never appear in the graph.
 
 Then run the viewer with `npm install` and `npm run dev` inside `web/`, or through Gradle with
 `./gradlew :web:npmDev`. The viewer speaks English and Serbian; the switch in the header or
-`?lang=sr` in the address picks the language. The viewer is a demonstration of what the data looks
-like. Its graph rendering is not tested and it is not intended for production use.
+`?lang=sr` in the address picks the language. Its logic is tested; the graph drawing itself is not.
 
 ## Languages
 
@@ -256,7 +261,7 @@ Everything that gates a release runs from one Gradle task:
 
 It runs the unit tests, every schema check (`:app:validateSchema`), every data check
 (`:app:validateData`: data layout, SHACL, archive records and veracity), the red-flag rules, the
-export of the data to Cytoscape JSON, and the build of the demo viewer against that fresh export. Only two orderings
+export of the data to Cytoscape JSON, and the build of the viewer against that fresh export. Only two orderings
 matter and both are enforced: archiving before veracity, export before the viewer build; the
 rest may run in parallel. The pipeline fails
 if any step fails, so a red `verify` means the data or the code is not fit to publish.
@@ -271,7 +276,7 @@ Smaller entry points for day-to-day work:
 ./gradlew :app:test            # unit tests only, no network needed
 ./gradlew :app:validateSchema  # syntax, OWL consistency, best practices, metrics
 ./gradlew :app:validateData    # data layout, SHACL shapes, archive records, veracity of sources
-./gradlew :web:npmDev          # run the demo viewer locally
+./gradlew :web:npmDev          # run the viewer locally
 ```
 
 Key libraries: Apache Jena 4.10.0 (RDF, RDFS and OWL reasoning, SHACL), Gson 2.10.1, Kotlin 1.9.21.

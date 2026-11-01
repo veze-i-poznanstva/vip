@@ -36,13 +36,19 @@ class VeracityValidation(
     /** Each URL is checked once per validator, however many entities cite it. */
     private val checked = mutableMapOf<String, Pair<Boolean, String>>()
 
+    /** When set, only these URLs go to the network; the rest were checked when they were cited. */
+    var liveCheckOnly: Set<String>? = null
+
     /** The host that counts for the two-domains rule: lowercase, without a leading www or a trailing dot. */
     fun extractDomain(urlString: String): String {
         val host = try { URL(urlString).host } catch (e: Exception) { return "" }
         return host.lowercase().removeSuffix(".").removePrefix("www.")
     }
 
-    fun checkUrlAccessibility(urlString: String): Pair<Boolean, String> = checked.getOrPut(urlString) { urlChecker(urlString) }
+    fun checkUrlAccessibility(urlString: String): Pair<Boolean, String> {
+        if (liveCheckOnly?.contains(urlString) == false) return Pair(true, "not rechecked")
+        return checked.getOrPut(urlString) { urlChecker(urlString) }
+    }
 
     /**
      * URLs of every Documentation node attached to the resource, through any property.

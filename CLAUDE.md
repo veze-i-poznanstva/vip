@@ -16,7 +16,7 @@ between people and organisations in Serbia, built to support criminal and journa
 investigation. It is RDF/Turtle on the PoderVocab ontology (`schema.ttl`, prefix `:` =
 `http://poderopedia.com/vocab/`) plus the project's own additions (prefix `vip:` =
 `https://w3id.org/vip/vocab#`). Instance data uses `rs:` = `https://w3id.org/vip/rs/`.
-Kotlin tools validate it; a Svelte viewer in `web/` is a demo only. Licence: DACL 0.1
+Kotlin tools validate it; a Svelte viewer in `web/` is published to GitHub Pages on green pushes to main. Licence: DACL 0.1
 (`LICENSE.md`); `schema.ttl`'s PoderVocab terms keep Poderopedia's licence.
 
 ## The sourcing rule
@@ -62,7 +62,7 @@ role when periods differ. Rules drop known non-overlap and report `overlapping` 
 ./gradlew :app:validateData      # checkDataLayout, validateShacl, archiveSources|checkArchives, validateVeracity
 ./gradlew :app:checkDataLayout -Pdata=data
 ./gradlew :app:validateShacl -Pshapes=schema.ttl -Pdata=data
-./gradlew :app:validateVeracity -Pdata=data -Pschema=schema.ttl -Parchives=archives.ttl
+./gradlew :app:validateVeracity -Pdata=data -Pschema=schema.ttl -Parchives=archives.ttl   # live checks only for files changed since -PverifyBase (origin/main); -PverifyFull checks all
 ./gradlew :app:archiveSources    # locally: record Wayback snapshots for new citations; commit archives.ttl
 ./gradlew :app:checkArchives     # what CI runs (CI=true): fail if a citation has no record, never contacts the archive
 ./gradlew :app:ttlToCytoscape -Pinput=data -Poutput=web/public/test-data-cytoscape.json -Pschema=schema.ttl

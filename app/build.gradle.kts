@@ -114,7 +114,10 @@ tasks.register<JavaExec>("validateVeracity") {
     val file = project.findProperty("data") as String? ?: "data"
     val schema = project.findProperty("schema") as String? ?: "schema.ttl"
     val archives = project.findProperty("archives") as String? ?: "archives.ttl"
-    args = listOf(file, schema, archives)
+    // Live checks cover files changed since the base; -PverifyFull, or VERIFY_FULL on the weekly CI run, checks every URL.
+    val full = project.hasProperty("verifyFull") || System.getenv("VERIFY_FULL") == "true"
+    val base = project.findProperty("verifyBase") as String? ?: System.getenv("VERIFY_BASE")?.takeIf { it.isNotBlank() } ?: "origin/main"
+    args = listOf(file, schema, archives) + if (full) emptyList() else listOf("--since", base)
     workingDir = projectDir.parentFile
     mustRunAfter("archiveSources", "checkArchives")
 }

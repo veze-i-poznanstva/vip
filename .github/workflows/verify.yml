@@ -5,6 +5,9 @@ name: verify
 on:
   push:
   pull_request:
+  schedule:
+    - cron: '17 4 * * 1' # weekly: sources die on their own, so every URL is rechecked
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -15,9 +18,34 @@ jobs:
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          fetch-depth: 0 # the build compares with the base to check only changed sources
       - uses: actions/setup-java@cf277c60eb25467037889841efdb72551f06f6c3 # v4
         with:
           distribution: temurin
           java-version: '17'
       - uses: gradle/actions/setup-gradle@48b5f213c81028ace310571dc5ec0fbbca0b2947 # v4
       - run: ./gradlew verify --no-daemon --console=plain
+        env:
+          VERIFY_BASE: ${{ github.event.pull_request.base.sha || github.event.before }}
+          VERIFY_FULL: ${{ github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' }}
+      - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        with:
+          path: web/dist
+
+  # The public site is the viewer that verify just built, so a red build never publishes.
+  publish:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: verify
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - id: deploy
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1

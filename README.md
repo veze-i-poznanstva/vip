@@ -9,6 +9,8 @@
 that will first help you install a desktop version. It sets up the tools, forks the repository and
 guides you, in Serbian, through adding sourced connections.
 
+**[Open the graph](https://veze-i-poznanstva.github.io/vip/)**
+
 VIP (Veze i poznanstva, connections and acquaintances) is an open, machine-checkable map of who is
 connected to whom among people of influence in Serbia, and through what.
 
@@ -64,7 +66,9 @@ Java 17 or newer is the only requirement; the build downloads the rest.
 
 Open <http://localhost:5173/>, or <http://localhost:5173/?lang=sr> for Serbian. Type a name into the
 search box, click a node to make it the centre, double-click to add its connections, and rest the
-pointer on a node to read its description.
+pointer on a node to read its description. The Connect button next to the search box takes a
+From and a To, like directions in a map, and shows the shortest paths between them. The
+Filter at the bottom hides people, organisations, institutions or parties.
 
 ## License
 

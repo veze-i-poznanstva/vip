@@ -148,8 +148,7 @@ Increments one and two deliver value on their own and can be reviewed independen
 - **Connections with many participants.** A board of directors is one connection with many
   participants. Rendering it as a node is correct but visually different from pairwise edges.
   Needs a visual treatment.
-- **Demo status.** [Tools](tools.md) marks the web module as demo only. Once increment three ships,
-  the module becomes the product's interface and that page should say so.
+- **Status.** The viewer is published as the project's site; the increments above remain open.
 - **Testing the canvas.** Cytoscape rendering is hard to unit test. Keep graph construction
   (nodes, edges, adjacency, folding, trail state) in plain TypeScript modules with Vitest
   tests, and leave the Svelte components as thin rendering shells.

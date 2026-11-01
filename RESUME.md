@@ -96,6 +96,14 @@ Unresolved: no registry record for MT Gastel; CompanyWall page for MB 20183209 s
 Still open from that review: exporter pairwise edges, archive snapshot identity check, publication contract (reviewer,
 status), `vip:ownershipShare` bounds. Full source re-read of the 21 entities is still not done.
 
+## Published site, 1 November 2026
+
+The viewer publishes to https://veze-i-poznanstva.github.io/vip/ from `.github/workflows/verify.yml`
+(job `publish`, only after a green push to main). Pages source is set to GitHub Actions. Reports go
+to GitHub Issues until the user picks a project email address. `verify` live-checks only URLs in
+files changed since the base; a weekly CI run checks all. End-to-end clicks were run from a scratch
+Playwright script, not kept in the repository.
+
 ## What is left, in the order agreed with the user
 
 1. **Human review of the data**: each old source should be read to confirm it supports the exact
