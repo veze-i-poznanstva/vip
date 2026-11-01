@@ -20,6 +20,7 @@ class RedFlagsTest {
         @prefix vip: <https://w3id.org/vip/vocab#> .
         @prefix foaf: <http://xmlns.com/foaf/0.1/> .
         @prefix bio: <http://purl.org/vocab/bio/0.1/> .
+        @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
     """.trimIndent()
 
     private fun matches(rule: String, ttl: String): List<Map<String, String>> {
@@ -106,5 +107,91 @@ class RedFlagsTest {
         assertEquals("nepotism", rule.name)
         assertEquals("Nepotism / Nepotizam", rule.explanation.lineSequence().first())
         assertEquals(3, rules.size)
+    }
+
+    private fun ownerInOffice(ownership: String, post: String) = matches("owner-in-office", """
+        ex:A a foaf:Person . ex:Firm a :Company . ex:Ministry a :GovernmentOrganization .
+        ex:A_Firm a vip:OwnershipConnection ; vip:owner ex:A ; vip:ownedCompany ex:Firm $ownership .
+        ex:A_Ministry a :WorkConnection ; bio:participant ex:A ; :hasEconomicOrganizationParticipant ex:Ministry $post .
+    """)
+
+    @Test
+    fun `owner in office drops a case where ownership ended before the office began`() {
+        val found = ownerInOffice(
+            """; :connectionStartDate "1995"^^xsd:gYear ; :connectionEndDate "2000"^^xsd:gYear""",
+            """; :connectionStartDate "2020-03"^^xsd:gYearMonth ; :connectionEndDate "2022-01-15"^^xsd:date"""
+        )
+        assertEquals(emptyList(), found)
+    }
+
+    @Test
+    fun `owner in office drops a case where the office ended before ownership began`() {
+        assertEquals(emptyList(), ownerInOffice("""; :connectionStartDate "2020"^^xsd:gYear""", """; :connectionEndDate "2010"^^xsd:gYear"""))
+    }
+
+    @Test
+    fun `owner in office says the periods overlap only when all four dates show it`() {
+        val found = ownerInOffice(
+            """; :connectionStartDate "2005"^^xsd:gYear ; :connectionEndDate "2021"^^xsd:gYear""",
+            """; :connectionStartDate "2020"^^xsd:gYear ; :connectionEndDate "2022"^^xsd:gYear"""
+        )
+        assertEquals("overlapping", found.single()["overlap"])
+    }
+
+    @Test
+    fun `owner in office keeps a case with missing dates and marks the overlap unknown`() {
+        assertEquals("unknown", ownerInOffice("", "").single()["overlap"])
+        assertEquals("unknown", ownerInOffice("""; :connectionStartDate "2005"^^xsd:gYear""", """; :connectionStartDate "2020"^^xsd:gYear""").single()["overlap"])
+    }
+
+    private fun schoolmates(attendanceA: String, attendanceB: String, tieA: String = "", tieB: String = "") = matches("schoolmates-in-power", """
+        ex:A a foaf:Person . ex:B a foaf:Person . ex:School a :AcademicOrganization . ex:Party a :PoliticalOrganization .
+        ex:A_School a :AlumniEducationalConnection ; :hasStudent ex:A ; :hasAcademicOrganization ex:School $attendanceA .
+        ex:B_School a :AlumniEducationalConnection ; :hasStudent ex:B ; :hasAcademicOrganization ex:School $attendanceB .
+        ex:A_Party a :PoliticalConnection ; :personParticipant ex:A ; :politicalParticipant ex:Party $tieA .
+        ex:B_Party a :PoliticalConnection ; :personParticipant ex:B ; :politicalParticipant ex:Party $tieB .
+    """)
+
+    @Test
+    fun `schoolmates in power drops people who were at the school in different years`() {
+        assertEquals(emptyList(), schoolmates(
+            """; :connectionStartDate "1970"^^xsd:gYear ; :connectionEndDate "1974"^^xsd:gYear""",
+            """; :connectionStartDate "2010"^^xsd:gYear ; :connectionEndDate "2014"^^xsd:gYear"""
+        ))
+    }
+
+    @Test
+    fun `schoolmates in power drops people whose ties to the organisation never overlapped`() {
+        assertEquals(emptyList(), schoolmates("", "",
+            """; :connectionStartDate "1990"^^xsd:gYear ; :connectionEndDate "1995"^^xsd:gYear""",
+            """; :connectionStartDate "2010"^^xsd:gYear"""
+        ))
+    }
+
+    @Test
+    fun `schoolmates in power reports the school and organisation overlaps separately`() {
+        val found = schoolmates(
+            """; :connectionStartDate "1987"^^xsd:gYear ; :connectionEndDate "1991"^^xsd:gYear""",
+            """; :connectionStartDate "1988"^^xsd:gYear ; :connectionEndDate "1992"^^xsd:gYear"""
+        ).single()
+        assertEquals("overlapping", found["schoolOverlap"])
+        assertEquals("unknown", found["organizationOverlap"])
+    }
+
+    private fun nepotism(leaderJob: String, relativeJob: String) = matches("nepotism", """
+        ex:A a foaf:Person . ex:B a foaf:Person . ex:Org a foaf:Organization .
+        ex:A_Org a :WorkConnection ; bio:participant ex:A ; :hasEconomicOrganizationParticipant ex:Org ; :hasWorkRole :ceo $leaderJob .
+        ex:B_Org a :WorkConnection ; bio:participant ex:B ; :hasEconomicOrganizationParticipant ex:Org ; :hasWorkRole :advisor $relativeJob .
+        ex:AB a :Marriage ; :hasSpouse ex:A, ex:B .
+    """)
+
+    @Test
+    fun `nepotism drops jobs that never overlapped and labels the rest`() {
+        assertEquals(emptyList(), nepotism("""; :connectionEndDate "2000"^^xsd:gYear""", """; :connectionStartDate "2005"^^xsd:gYear"""))
+        assertEquals("unknown", nepotism("", "").single()["overlap"])
+        assertEquals("overlapping", nepotism(
+            """; :connectionStartDate "2000"^^xsd:gYear ; :connectionEndDate "2010"^^xsd:gYear""",
+            """; :connectionStartDate "2005"^^xsd:gYear ; :connectionEndDate "2008"^^xsd:gYear"""
+        ).single()["overlap"])
     }
 }

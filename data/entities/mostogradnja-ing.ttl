@@ -15,9 +15,11 @@
 
 rs:Mostogradnja_ING a :Company ;
     foaf:name "Mostogradnja ING"@sr ;
-    :subsidiaryCompanyOf rs:Milenijum_Tim ;
-    rdfs:comment "Mostogradnja ING je građevinska kompanija koja je postala stopostotna filijala Milenijum tima 2024. godine."@sr ;
+    dbo:foundationDate "2020-11-24"^^xsd:date ;
+    rdfs:comment "Mostogradnja ING je građevinska kompanija osnovana 24. novembra 2020, matični broj 21634166. U decembru 2024. kupila je imovinu preduzeća Mostogradnja u stečaju; to je kupovina imovine, a ne trenutak kada je sama prešla u vlasništvo Milenijum tima. Vlasništvo je u data/cases/milenijum-tim.ttl."@sr ;
     :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://www.companywall.rs/firma/mostogradnja-ing-doo/MMxEWFnzR> ; :hasDocumentType vip:registryRecord ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Registar: osnovana 24.11.2020, matični broj 21634166."@sr ] ,
         [ a :Documentation ; :hasDocumentURL <https://nova.rs/vesti/biznis/od-vinograda-preko-naucnih-instituta-do-banja-i-giganata-sfrj-sta-je-sve-za-male-pare-kupila-sns-firma-milenijum-tim/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ] ,
         [ a :Documentation ; :hasDocumentURL <https://n1info.rs/biznis/milenijum-tim-kupio-mostogradnju-u-stecaju-za-10-miliona-evra/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ] ,
         [ a :Documentation ; :hasDocumentURL <https://www.danas.rs/vesti/ekonomija/beogradsko-gradjevinsko-preduzece-mostogradnja-postalo-vlasnistvo-milenijum-tima/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ] ,

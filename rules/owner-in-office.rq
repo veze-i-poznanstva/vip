@@ -3,12 +3,16 @@
 # organisation. A possible conflict of interest between the business and the office.
 # Osoba koja je vlasnik ili suvlasnik firme istovremeno ima položaj u državnoj organizaciji.
 # Mogući sukob interesa između posla i funkcije.
+# Time: a case whose dates show the two periods never met is dropped. The rest carry a status:
+# "overlapping" when all four dates are recorded and the years meet, "unknown" when any is missing.
+# Vreme: slučaj čiji datumi pokazuju da se periodi nikad nisu dodirnuli se izostavlja. Ostali nose
+# status: "overlapping" kada su sva četiri datuma zabeležena i godine se dodiruju, "unknown" inače.
 PREFIX :    <http://poderopedia.com/vocab/>
 PREFIX vip: <https://w3id.org/vip/vocab#>
 PREFIX bio: <http://purl.org/vocab/bio/0.1/>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 
-SELECT DISTINCT ?person ?company ?office ?role
+SELECT DISTINCT ?person ?company ?office ?role ?overlap
 WHERE {
   ?ownership a vip:OwnershipConnection ;
              vip:owner ?person ;
@@ -18,5 +22,13 @@ WHERE {
         :hasEconomicOrganizationParticipant ?office .
   ?office a :GovernmentOrganization .
   OPTIONAL { ?post :hasWorkRole ?role }
+
+  OPTIONAL { ?ownership :connectionStartDate ?ownedStart }
+  OPTIONAL { ?ownership :connectionEndDate ?ownedEnd }
+  OPTIONAL { ?post :connectionStartDate ?postStart }
+  OPTIONAL { ?post :connectionEndDate ?postEnd }
+  FILTER (!(BOUND(?ownedEnd) && BOUND(?postStart) && SUBSTR(STR(?ownedEnd), 1, 4) < SUBSTR(STR(?postStart), 1, 4)))
+  FILTER (!(BOUND(?postEnd) && BOUND(?ownedStart) && SUBSTR(STR(?postEnd), 1, 4) < SUBSTR(STR(?ownedStart), 1, 4)))
+  BIND (IF(BOUND(?ownedStart) && BOUND(?ownedEnd) && BOUND(?postStart) && BOUND(?postEnd), "overlapping", "unknown") AS ?overlap)
 }
 ORDER BY ?person ?company ?office

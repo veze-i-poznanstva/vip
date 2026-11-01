@@ -20,6 +20,7 @@ rs:SasaBlagojevic_AloMediaSystem a vip:OwnershipConnection ;
     vip:owner rs:Sasa_Blagojevic ;
     vip:ownedCompany rs:Alo_Media_System ;
     vip:ownershipShare 100.0 ;
+    :connectionStartDate "2017-07"^^xsd:gYearMonth ;
     rdfs:comment "Saša Blagojević je jedini vlasnik (100%) kompanije Alo media system, izdavača tabloida Alo!, od jula 2017, kada je Ringier Axel Springer prodao Alo njegovoj firmi Dnevne novine Alo."@sr ;
     :hasDocumentation
         [ a :Documentation ; :hasDocumentURL <https://www.companywall.rs/firma/alo-media-system/MMfsPqfD> ; :hasDocumentType vip:registryRecord ; :hasDocumentStatus vip:published ;

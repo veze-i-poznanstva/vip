@@ -26,6 +26,7 @@ object Vocab {
     const val HAS_ARCHIVE_URL = VIP + "hasArchiveURL"
     const val ARCHIVED_ON = VIP + "archivedOn"
     const val REMOVED = VIP + "removed"
+    const val OWNER = VIP + "owner"
 
     const val PARTICIPANT = BIO + "participant"
 }

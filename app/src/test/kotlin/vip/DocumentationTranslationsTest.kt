@@ -33,4 +33,10 @@ class DocumentationTranslationsTest {
     /** The heading levels in order, so a dropped or added section is caught but wording is free. */
     private fun outline(file: File): List<Int> =
         file.readLines().mapNotNull { line -> Regex("^(#{1,6}) ").find(line)?.groupValues?.get(1)?.length }
+
+    @Test
+    fun `the agent prompt box is the same English text on both language pages`() {
+        fun box(file: File): String = file.readText().substringAfter("````text\n").substringBefore("\n````")
+        assertEquals(box(File("docs/agent-prompt.md")), box(File("docs/agent-prompt.sr.md")))
+    }
 }

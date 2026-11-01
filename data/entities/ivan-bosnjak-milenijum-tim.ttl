@@ -1,0 +1,32 @@
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix dbo:     <http://dbpedia.org/ontology/> .
+@prefix rs:      <https://w3id.org/vip/rs/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix :        <http://poderopedia.com/vocab/> .
+@prefix vip:     <https://w3id.org/vip/vocab#> .
+
+# Ivan Bošnjak, suvlasnik Milenijum tima (rođen 1980) / co-owner of Millennium Team (born 1980)
+# Nije isto lice kao državni sekretar Ivan Bošnjak (rođen 1974), videti ivan-bosnjak-zrenjanin.ttl.
+# Not the state secretary of the same name (born 1974), see ivan-bosnjak-zrenjanin.ttl.
+# Matična datoteka entiteta: tip, imena, identifikatori i izvori koji potvrđuju identitet.
+# Home file of this entity: type, names, identifiers and the sources for its identity.
+# Veze se nalaze u data/cases/. Connections live in data/cases/.
+
+rs:Ivan_Bosnjak_Milenijum_Tim a foaf:Person ;
+    foaf:name "Ivan Bošnjak (Milenijum tim)"@sr ;
+    foaf:firstName "Ivan" ;
+    :firstLastName "Bošnjak" ;
+    dbo:birthPlace "Beograd, Srbija"@sr ;
+    rdfs:comment "Privrednik, rođen 1980. u Beogradu, jedan od osnivača i suvlasnika Milenijum tima, potpredsednik Privredne komore Srbije od juna 2025. Nije isto lice kao političar Ivan Bošnjak (rođen 1974. u Melencima), državni sekretar i bivši gradonačelnik Zrenjanina."@sr ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://sr.wikipedia.org/wiki/Ivan_Bo%C5%A1njak_(privrednik)> ; :hasDocumentType vip:encyclopediaArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Zaseban članak o privredniku: rođen 1980. u Beogradu, jedan od osnivača i suvlasnika Milenijum tima, potpredsednik PKS od juna 2025."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://millenniumteam.rs/en/news/ivan-bosnjak-elected-vice-president-of-the-serbian-chamber-of-commerce/> ; :hasDocumentType vip:webPage ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Sajt kompanije, 26. jun 2025: co-founder and Deputy General Manager of Millennium Team."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://vreme.com/vesti/milenijum-tim-brat-sinise-malog-poslovi-bez-veze-sa-drzavom/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Vreme, 26. januar 2026: suvlasnik potvrđuje na sudu da je član SNS, a da nikada nije imao funkciju u stranci."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.krik.rs/tag/ivan-bosnjak/> ; :hasDocumentType vip:webPage ; :hasDocumentStatus vip:published ;
+          rdfs:comment "KRIK, oznaka sa tekstovima o Milenijum timu; stranica sama ne navodi uloge."@sr ] .

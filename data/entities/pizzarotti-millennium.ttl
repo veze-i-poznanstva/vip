@@ -8,16 +8,21 @@
 @prefix :        <http://poderopedia.com/vocab/> .
 @prefix vip:     <https://w3id.org/vip/vocab#> .
 
-# Milenijum Picaroti
+# Pizzarotti Millennium
 # Matična datoteka entiteta: tip, imena, identifikatori i izvori koji potvrđuju identitet.
 # Home file of this entity: type, names, identifiers and the sources for its identity.
 # Veze se nalaze u data/cases/. Connections live in data/cases/.
 
-rs:Milenijum_Picaroti a :Company ;
-    foaf:name "Milenijum Picaroti"@sr ;
-    :subsidiaryCompanyOf rs:Milenijum_Tim ;
-    rdfs:comment "Milenijum Picaroti je zajedničko preduzeće Milenijum tima, osnovano za gradnju kule u okviru projekta Beograd na vodi."@sr ;
+rs:Pizzarotti_Millennium a :Company ;
+    foaf:name "Pizzarotti Millennium"@sr ;
+    :alias "Milenijum Picaroti"@sr, "Pizzarotti Millennium d.o.o. Beograd-Novi Beograd"@sr ;
+    dbo:foundationDate "2018-12-13"^^xsd:date ;
+    rdfs:comment "Pizzarotti Millennium je preduzeće preko kog italijanski Pizzarotti nastupa u Srbiji, izvođač kule u Beogradu na vodi. Osnovano 13. decembra 2018, matični broj 21440639. Većinski vlasnik je Pizzarotti SA sa 96%; Milenijum tim ima 4% i nije matično društvo. Mediji ga nazivaju i Milenijum Picaroti."@sr ;
     :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://www.companywall.rs/firma/pizzarotti-millennium-doo/MMx04LqfY> ; :hasDocumentType vip:registryRecord ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Registar: osnovano 13.12.2018, matični broj 21440639, vlasnici Pizzarotti SA 96%, Millennium Team 4%."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.danas.rs/vesti/ekonomija/firma-koja-gradi-beograd-na-vodi-u-korupcijskom-skandalu/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Danas, 10. decembar 2021: U Srbiji Pizzarotti nastupa preko preduzeća Pizzarotti Milennium."@sr ] ,
         [ a :Documentation ; :hasDocumentURL <https://www.danas.rs/vesti/ekonomija/sta-sve-ima-milenijum-tim-novi-vlasnik-hotela-jugoslavija/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ] ,
         [ a :Documentation ; :hasDocumentURL <https://vreme.com/drustvo/poslovi-milenijum-tima-na-red-dosla-i-sanacija-leve-obale-save/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ] ,
         [ a :Documentation ; :hasDocumentURL <https://www.companywall.rs/firma/milenijum-picaroti-doo-beograd/MPksspYq> ; :hasDocumentType vip:registryRecord ; :hasDocumentStatus vip:removed ] .

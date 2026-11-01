@@ -12,26 +12,17 @@
 # Case: Milenijum Tim — the construction group, its owners and their ties to power
 #
 # Obuhvata: Ivana Bošnjaka i Stojana Vujka, kompaniju Milenijum tim sa zavisnim društvima,
-# vlasničke udele, NALED i radne veze Ivana Bošnjaka i Ane Brnabić sa NALED-om.
+# vlasničke udele, NALED i radne veze Ivana Bošnjaka (suvlasnika, rođenog 1980) i Ane Brnabić sa NALED-om.
 # Osobe i organizacije su deklarisane u data/entities/, ovde su samo veze među njima.
 # People and organisations are declared in data/entities/; this file holds only the connections.
 # Konvencije zapisa: videti README.md / PROCITAJME.md, odeljak "Doprinos podacima".
 
-rs:AnaBrnabic_IvanBosnjak a :Connection ;
-    rdfs:label "poslovni i politički partneri"@sr ;
-    bio:participant rs:Ana_Brnabic, rs:Ivan_Bosnjak ;
-    rdfs:comment "Ana Brnabić i Ivan Bošnjak su povezani kroz poslovne i političke veze, naročito u okviru Milenijum tima i saradnje sa državnim strukturama."@sr ;
-    :hasDocumentation
-        [ a :Documentation ; :hasDocumentURL <https://www.istinomer.rs/akter/ana-brnabic/> ; :hasDocumentType vip:factCheckProfile ; :hasDocumentStatus vip:published ] ,
-        [ a :Documentation ; :hasDocumentURL <https://www.istinomer.rs/akter/ivan-bosnjak/> ; :hasDocumentType vip:factCheckProfile ; :hasDocumentStatus vip:published ] ,
-        [ a :Documentation ; :hasDocumentURL <https://www.krik.rs/tag/ana-brnabic/> ; :hasDocumentType vip:webPage ; :hasDocumentStatus vip:published ] ,
-        [ a :Documentation ; :hasDocumentURL <https://www.krik.rs/tag/ivan-bosnjak/> ; :hasDocumentType vip:webPage ; :hasDocumentStatus vip:published ] .
-
 rs:IvanBosnjak_MilenijumTim a vip:OwnershipConnection ;
-    vip:owner rs:Ivan_Bosnjak ;
+    vip:owner rs:Ivan_Bosnjak_Milenijum_Tim ;
     vip:ownedCompany rs:Milenijum_Tim ;
     vip:ownershipShare 50.0 ;
-    rdfs:comment "Ivan Bošnjak je suvlasnik kompanije Milenijum tim sa udelom od 50%."@sr ;
+    :connectionStartDate "2003-09-04"^^xsd:date ;
+    rdfs:comment "Ivan Bošnjak je jedan od osnivača i suvlasnik kompanije Milenijum tim, osnovane 4. septembra 2003. Udeo od 50% je aktuelno stanje u registru; udeo pri osnivanju nije poznat."@sr ;
     :hasDocumentation
         [ a :Documentation ; :hasDocumentURL <https://www.companywall.rs/firma/millennium-team-doo-beograd/MMksspYq> ; :hasDocumentType vip:registryRecord ; :hasDocumentStatus vip:published ] ,
         [ a :Documentation ; :hasDocumentURL <https://en.wikipedia.org/wiki/Millennium_Team> ; :hasDocumentType vip:encyclopediaArticle ; :hasDocumentStatus vip:published ] ,
@@ -40,32 +31,187 @@ rs:IvanBosnjak_MilenijumTim a vip:OwnershipConnection ;
 rs:StojanVujko_MilenijumTim a vip:OwnershipConnection ;
     vip:owner rs:Stojan_Vujko ;
     vip:ownedCompany rs:Milenijum_Tim ;
-    rdfs:comment "Stojan Vujko je suvlasnik kompanije Milenijum tim."@sr ;
+    vip:ownershipShare 50.0 ;
+    :connectionStartDate "2003-09-04"^^xsd:date ;
+    rdfs:comment "Stojan Vujko je jedan od osnivača i suvlasnik kompanije Milenijum tim, osnovane 4. septembra 2003. Udeo od 50% je aktuelno stanje u registru; udeo pri osnivanju nije poznat."@sr ;
     :hasDocumentation
         [ a :Documentation ; :hasDocumentURL <https://www.companywall.rs/firma/millennium-team-doo-beograd/MMksspYq> ; :hasDocumentType vip:registryRecord ; :hasDocumentStatus vip:published ] ,
         [ a :Documentation ; :hasDocumentURL <https://en.wikipedia.org/wiki/Millennium_Team> ; :hasDocumentType vip:encyclopediaArticle ; :hasDocumentStatus vip:published ] .
 
 rs:IvanBosnjak_NALED a :WorkConnection ;
-    bio:participant rs:Ivan_Bosnjak ;
+    bio:participant rs:Ivan_Bosnjak_Milenijum_Tim ;
     :hasEconomicOrganizationParticipant rs:NALED ;
-    :hasWorkRole vip:executiveBoardMember, :manager ;
-    rdfs:comment "Ivan Bošnjak je bio član Izvršnog odbora NALED-a i menadžer za razvoj članstva, aktivno učestvujući u lokalnom ekonomskom razvoju."@sr ;
+    :hasWorkRole vip:executiveBoardMember ;
+    rdfs:comment "Ivan Bošnjak, suvlasnik Milenijum tima, bio je član Izvršnog odbora NALED-a. Period nije poznat, osim da je članstvo završeno pre jula 2019. Izvor je jedan: Nova.rs preuzima navod KRIK-a."@sr ;
     :hasDocumentation
-        [ a :Documentation ; :hasDocumentURL <https://naled.rs/htdocs/Files/15388/II-Kvartalni-izvestaj_2024.pdf> ; :hasDocumentType vip:officialDocument ; :hasDocumentStatus vip:published ] ,
-        [ a :Documentation ; :hasDocumentURL <https://www.uzmiracun.rs/vest-otvorene-wifi-zone-u-titelu-i-bakom-petrovcu-1345> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ] .
+        [ a :Documentation ; :hasDocumentURL <https://www.krik.rs/koruptivne-veze-milenijum-tim-ustupio-audi-i-stan-bratu-sinise-malog/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "KRIK, 22. jul 2019: Bošnjak je bio član Izvršnog odbora NALED-a i sa Vujkom sedi u upravi Sportskog društva Crvena zvezda."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://nova.rs/vesti/hronika/suvlasnik-milenijum-tima-bosnjak-zakupac-plantaze-u-leskovcu/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Nova.rs, 28. januar 2021: ista rečenica o suvlasniku Milenijum tima; nije nezavisna potvrda KRIK-a."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://naled.rs/htdocs/Files/15388/II-Kvartalni-izvestaj_2024.pdf> ; :hasDocumentType vip:officialDocument ; :hasDocumentStatus vip:removed ;
+          rdfs:comment "Povučeno 1. novembra 2026: izveštaj navodi imenjaka, državnog sekretara, među predstavnicima ministarstva; ne potkrepljuje ovu vezu."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.uzmiracun.rs/vest-otvorene-wifi-zone-u-titelu-i-bakom-petrovcu-1345> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:removed ;
+          rdfs:comment "Povučeno 1. novembra 2026: članak navodi imenjaka kao državnog sekretara, a menadžer za razvoj članstva u NALED-u je Višnja Račić. Raniji navod o toj ulozi bio je pogrešan."@sr ] .
 
-rs:AnaBrnabic_NALED a :WorkConnection ;
+rs:AnaBrnabic_NALED_Osnivanje a :WorkConnection ;
     bio:participant rs:Ana_Brnabic ;
     :hasEconomicOrganizationParticipant rs:NALED ;
-    :hasWorkRole vip:founder, vip:boardViceChair, vip:boardChair ;
-    :connectionStartDate "2006-01-01"^^xsd:date ;
-    :connectionEndDate "2017-04-01"^^xsd:date ;
-    rdfs:comment "Ana Brnabić je bila jedna od osnivača NALED-a, potom potpredsednik i predsednik Upravnog odbora do ulaska u Vladu Srbije."@sr ;
+    :hasWorkRole vip:founder ;
+    :connectionStartDate "2006"^^xsd:gYear ;
+    rdfs:comment "Ana Brnabić je aktivno učestvovala u osnivanju NALED-a 2006. godine."@sr ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://www.kurir.rs/vesti/politika/2864945/ovo-je-biografija-nove-premijerke-ana-brnabic-prva-zena-na-celu-vlade-srbije-u-istoriji> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Biografija, jun 2017: Aktivno učestvuje u osnivanju NALED-a 2006."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://sr.wikipedia.org/wiki/Ана_Брнабић> ; :hasDocumentType vip:encyclopediaArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Aktivno je učestvovala u osnivanju alijanse 2006. godine."@sr ] .
+
+rs:AnaBrnabic_NALED_Potpredsednica a :WorkConnection ;
+    bio:participant rs:Ana_Brnabic ;
+    :hasEconomicOrganizationParticipant rs:NALED ;
+    :hasWorkRole vip:boardViceChair ;
+    :connectionStartDate "2013"^^xsd:gYear ;
+    :connectionEndDate "2016-04"^^xsd:gYearMonth ;
+    rdfs:comment "Ana Brnabić je bila potpredsednica Upravnog odbora NALED-a od 2013. do izbora za predsednicu u aprilu 2016."@sr ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://www.kurir.rs/vesti/politika/2864945/ovo-je-biografija-nove-premijerke-ana-brnabic-prva-zena-na-celu-vlade-srbije-u-istoriji> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Biografija, jun 2017: potpredsednica Upravnog odbora NALED-a od 2013, od aprila 2016. i predsednica."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://capitalsummit.naled.rs/ana-brnabic.php> ; :hasDocumentType vip:webPage ; :hasDocumentStatus vip:published ;
+          rdfs:comment "NALED, skup u aprilu 2015: Ana Brnabić, VP, NALED."@sr ] .
+
+rs:AnaBrnabic_NALED_Predsednica a :WorkConnection ;
+    bio:participant rs:Ana_Brnabic ;
+    :hasEconomicOrganizationParticipant rs:NALED ;
+    :hasWorkRole vip:boardChair ;
+    :connectionStartDate "2016-04"^^xsd:gYearMonth ;
+    :connectionEndDate "2016-08"^^xsd:gYearMonth ;
+    rdfs:comment "Ana Brnabić je bila predsednica Upravnog odbora NALED-a od aprila 2016. do izbora za ministarku u avgustu 2016."@sr ;
     :hasDocumentation
         [ a :Documentation ; :hasDocumentURL <https://naled.rs/vest-premijerka-obisla-zaposlene-u-naled-u-2421> ; :hasDocumentType vip:webPage ; :hasDocumentStatus vip:published ;
-          rdfs:comment "NALED, jul 2019: poseta premijerke, 'prva od kako je sa mesta predsednice Upravnog odbora NALED-a izabrana za ministarku'."@sr ] ,
+          rdfs:comment "NALED, 18. jul 2019: sa mesta predsednice Upravnog odbora NALED-a izabrana za ministarku državne uprave i lokalne samouprave."@sr ] ,
         [ a :Documentation ; :hasDocumentURL <https://www.kurir.rs/vesti/politika/2864945/ovo-je-biografija-nove-premijerke-ana-brnabic-prva-zena-na-celu-vlade-srbije-u-istoriji> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
-          rdfs:comment "Biografija, jun 2017: učestvuje u osnivanju NALED-a 2006, potpredsednica UO od 2013, predsednica UO od aprila 2016."@sr ] ,
-        [ a :Documentation ; :hasDocumentURL <https://sr.wikipedia.org/wiki/Ана_Брнабић> ; :hasDocumentType vip:encyclopediaArticle ; :hasDocumentStatus vip:published ] ,
+          rdfs:comment "Biografija, jun 2017: od aprila 2016. predsednica Upravnog odbora."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://en.wikipedia.org/wiki/Ana_Brnabi%C4%87> ; :hasDocumentType vip:encyclopediaArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Ministarka od 11. avgusta 2016."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.diplomacyandcommerce.rs/naled-has-chosen-a-new-president-and-members-of-the-board-of-directors/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Diplomacy and Commerce, 3. oktobar 2016: novi predsednik umesto ministarke Ane Brnabić je Goran Kovačević."@sr ] ,
         [ a :Documentation ; :hasDocumentURL <https://naled.rs/o-naled-u/vesti/ana-brnabic-novi-predsednik-upravnog-odbora-naleda/> ; :hasDocumentType vip:webPage ; :hasDocumentStatus vip:removed ;
           rdfs:comment "Sajt NALED-a preusmerava ovu adresu na stranicu greške (404); nikada nije arhivirana."@sr ] .
+
+rs:MilenijumTim_MilenijumResorts a vip:OwnershipConnection ;
+    vip:owner rs:Milenijum_Tim ;
+    vip:ownedCompany rs:Milenijum_Resorts ;
+    vip:ownershipShare 100.0 ;
+    rdfs:comment "Milenijum tim je jedini vlasnik (100%) društva Millennium Resorts. Datum sticanja nije poznat."@sr ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://www.companywall.rs/firma/drustvo--za-inzenjering-i-usluge-millennium-resorts-doo-beograd/MMxxIjkxY> ; :hasDocumentType vip:registryRecord ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Registar: vlasnik Millennium Team doo Beograd, 100%."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://n1info.rs/biznis/cime-se-sve-bavi-novi-vlasnik-hotela-jugoslavija-milenijum-tim-od-bolnice-do-gradjevine/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "N1, 23. mart 2024: grupu čini Milenijum tim i još 14 zavisnih društava prema završnim računima za 2022. Na listi je Milenijum rizort."@sr ] .
+
+rs:MilenijumTim_MTGastel a vip:OwnershipConnection ;
+    vip:owner rs:Milenijum_Tim ;
+    vip:ownedCompany rs:MT_Gastel ;
+    vip:ownershipShare 100.0 ;
+    rdfs:comment "MT Gastel je zavisno društvo Milenijum tima, sa udelom 100% prema bazi EMIS iz septembra 2025. Registarski zapis nije pronađen. KRIK je 2019. kao vlasnike naveo Bošnjaka i Vujka lično, pa ni datum ni put sticanja nisu utvrđeni."@sr ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://n1info.rs/biznis/cime-se-sve-bavi-novi-vlasnik-hotela-jugoslavija-milenijum-tim-od-bolnice-do-gradjevine/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "N1, 23. mart 2024: grupu čini Milenijum tim i još 14 zavisnih društava prema završnim računima za 2022. Na listi je MT Gastel."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.emis.cn/php/company-profile/YU/Millennium_Team_DOO_Beograd_en_2585748.html> ; :hasDocumentType vip:registryRecord ; :hasDocumentStatus vip:published ;
+          rdfs:comment "EMIS, profil ažuriran 30.9.2025: Mt Gastel D.O.O. Beograd 100%. Komercijalna baza, ne zvanični registar."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.krik.rs/koruptivne-veze-milenijum-tim-ustupio-audi-i-stan-bratu-sinise-malog/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "KRIK, 22. jul 2019: Bošnjak i Vujko su vlasnici i MT gastela, koji se bavi distribucijom gasa."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://vreme.com/drustvo/poslovi-milenijum-tima-na-red-dosla-i-sanacija-leve-obale-save/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Vreme, 2. oktobar 2025: Milenijum tim ima i firmu za distribuciju gasa MT Gastel."@sr ] .
+
+rs:MilenijumTim_MilenijumAdria a vip:OwnershipConnection ;
+    vip:owner rs:Milenijum_Tim ;
+    vip:ownedCompany rs:Milenijum_Adria ;
+    vip:ownershipShare 100.0 ;
+    :connectionStartDate "2020"^^xsd:gYear ;
+    rdfs:comment "Milenijum tim je jedini osnivač društva Millennium Adria, osnovanog 2020."@sr ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://www.fininfo.hr/Poduzece/Pregled/millennium-adria/Detaljno/780814> ; :hasDocumentType vip:registryRecord ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Fininfo: MILLENIUM TEAM DOO BEOGRAD, jedini osnivač d.o.o."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://n1info.rs/biznis/cime-se-sve-bavi-novi-vlasnik-hotela-jugoslavija-milenijum-tim-od-bolnice-do-gradjevine/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "N1, 23. mart 2024: grupu čini Milenijum tim i još 14 zavisnih društava prema završnim računima za 2022. Na listi je Milenijum Adria."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.danas.rs/vesti/ekonomija/sta-sve-ima-milenijum-tim-novi-vlasnik-hotela-jugoslavija/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Danas, 25. mart 2024: biznisom u Hrvatskoj bave se preko firme Milenijum Adria."@sr ] .
+
+rs:MilenijumTim_MilleniumProperties a vip:OwnershipConnection ;
+    vip:owner rs:Milenijum_Tim ;
+    vip:ownedCompany rs:Milenijum_Propertiz ;
+    vip:ownershipShare 26.0 ;
+    rdfs:comment "Milenijum tim ima manjinski udeo od 26% u društvu Millennium Properties; ostali vlasnici su IFG Properties Limited (40%) i Axel Capital Limited (34%), čiji stvarni vlasnici nisu poznati. Direktor je Ivan Bošnjak. Nije zavisno društvo. KRIK je 2019. naveo Bošnjaka i Vujka kao vlasnike, a firma nije na N1 listi zavisnih društava."@sr ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://www.companywall.rs/firma/millennium-properties-doo-beograd/MMsCs0qC> ; :hasDocumentType vip:registryRecord ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Registar: IFG Properties Limited 40%, Axel Capital Limited 34%, Millennium Team 26%; direktor Ivan Bošnjak."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.krik.rs/koruptivne-veze-milenijum-tim-ustupio-audi-i-stan-bratu-sinise-malog/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "KRIK, 22. jul 2019: Bošnjak i Vujko vlasnici su i firme Millennium properties koja trguje nekretninama."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.danas.rs/vesti/ekonomija/sta-sve-ima-milenijum-tim-novi-vlasnik-hotela-jugoslavija/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Danas, 25. mart 2024: navodi Milenijum propertiz među firmama u kojima udeo imaju Milenijum tim ili njegovi vlasnici."@sr ] .
+
+rs:MilenijumTim_PizzarottiMillennium a vip:OwnershipConnection ;
+    vip:owner rs:Milenijum_Tim ;
+    vip:ownedCompany rs:Pizzarotti_Millennium ;
+    vip:ownershipShare 4.0 ;
+    rdfs:comment "Milenijum tim ima manjinski udeo od 4% u preduzeću Pizzarotti Millennium; većinski vlasnik je Pizzarotti SA sa 96%. Nije zavisno društvo."@sr ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://www.companywall.rs/firma/pizzarotti-millennium-doo/MMx04LqfY> ; :hasDocumentType vip:registryRecord ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Registar: Pizzarotti SA 96%, Millennium Team 4%."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.danas.rs/vesti/ekonomija/firma-koja-gradi-beograd-na-vodi-u-korupcijskom-skandalu/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Danas, 10. decembar 2021: suvlasnik u preduzeću sa četiri odsto građevinska firma Milenijum tim."@sr ] .
+
+rs:MilenijumTim_RobertsMillennium_Suvlasnistvo a vip:OwnershipConnection ;
+    vip:owner rs:Milenijum_Tim ;
+    vip:ownedCompany rs:Roberts_Milenijum ;
+    vip:ownershipShare 50.0 ;
+    :connectionStartDate "2019-12-26"^^xsd:date ;
+    :connectionEndDate "2022-07"^^xsd:gYearMonth ;
+    rdfs:comment "Milenijum tim je od osnivanja imao 50% društva Roberts Millennium; drugu polovinu držala je Roberts Constructions Serbia Pty Limited iz Australije."@sr ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://n1info.rs/biznis/cime-se-sve-bavi-novi-vlasnik-hotela-jugoslavija-milenijum-tim-od-bolnice-do-gradjevine/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "N1, 23. mart 2024: 50 odsto je u suvlasništvu Milenijum tima, druga polovina je u vlasništvu Roberts Constructions Serbia Pty Limited."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.danas.rs/vesti/ekonomija/prijatelji-milenijum-tima-ne-placaju-turske-radnike/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Danas, 12. mart 2021: prema registru, Roberts i Milenijum tim imaju zajedničko preduzeće Roberts Milenium."@sr ] .
+
+rs:MilenijumTim_RobertsMillennium_Vlasnistvo a vip:OwnershipConnection ;
+    vip:owner rs:Milenijum_Tim ;
+    vip:ownedCompany rs:Roberts_Milenijum ;
+    vip:ownershipShare 100.0 ;
+    :connectionStartDate "2022-07"^^xsd:gYearMonth ;
+    :connectionEndDate "2024-12-03"^^xsd:date ;
+    rdfs:comment "Milenijum tim je u julu 2022. preuzeo 100% društva Roberts Millennium, koje je izbrisano iz registra 3. decembra 2024."@sr ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://n1info.rs/biznis/cime-se-sve-bavi-novi-vlasnik-hotela-jugoslavija-milenijum-tim-od-bolnice-do-gradjevine/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "N1, 23. mart 2024: Milenijum tim preuzima 100 procentno vlasništvo u julu 2022."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.companywall.rs/firma/roberts-millennium-doo/MMx15PUYY> ; :hasDocumentType vip:registryRecord ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Registar: vlasnik Millennium Team 100%, neaktivan, izbrisan 3.12.2024."@sr ] .
+
+rs:MilenijumTim_MVInvestment a vip:OwnershipConnection ;
+    vip:owner rs:Milenijum_Tim ;
+    vip:ownedCompany rs:MV_Investment ;
+    vip:ownershipShare 100.0 ;
+    :connectionStartDate "2022-11-04"^^xsd:date ;
+    rdfs:comment "Milenijum tim je jedini vlasnik društva MV Investment od 4. novembra 2022."@sr ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://n1info.rs/biznis/cime-se-sve-bavi-novi-vlasnik-hotela-jugoslavija-milenijum-tim-od-bolnice-do-gradjevine/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "N1, 23. mart 2024: kupovinom 100 odsto udela u kompaniji MV Investment; u vlasništvu Milenijum tima je od 4. novembra 2022."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://n1info.rs/biznis/prodaje-se-hotel-jugoslavija/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "N1, 20. februar 2024: MV Investment je u stoprocentnom vlasništvu Milenijum tima."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://forbes.n1info.rs/vesti/vlasnici-milenijum-tima-kupili-hotel-jugoslavija/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Forbes Srbija, 22. mart 2024: MV Investment je ćerka firma Milenijum tima."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://biznis.rs/vesti/srbija/rusenje-hotela-jugoslavija-od-hipo-alpe-adrija-banke-do-milenijum-tima-preko-paname-grcke-i-kipra/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Biznis.rs, 18. novembar 2024: vlasnik kompanije MV Investment je Milenijum tim."@sr ] .
+
+rs:MilenijumTim_MostogradnjaING a vip:OwnershipConnection ;
+    vip:owner rs:Milenijum_Tim ;
+    vip:ownedCompany rs:Mostogradnja_ING ;
+    vip:ownershipShare 100.0 ;
+    rdfs:comment "Milenijum tim je jedini vlasnik društva Mostogradnja ING. Datum sticanja nije poznat; društvo je osnovano 24. novembra 2020."@sr ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://www.companywall.rs/firma/mostogradnja-ing-doo/MMxEWFnzR> ; :hasDocumentType vip:registryRecord ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Registar: vlasnik Millennium Team 100%."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://n1info.rs/biznis/milenijum-tim-kupio-mostogradnju-u-stecaju-za-10-miliona-evra/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "N1, 25. decembar 2024: Mostogradnja ING u stoprocentnom vlasništvu Milenijum tima, zavisno društvo."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.danas.rs/vesti/ekonomija/beogradsko-gradjevinsko-preduzece-mostogradnja-postalo-vlasnistvo-milenijum-tima/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Danas, 13. februar 2025: Mostogradnja ING, u vlasništvu firme Milenijum tim."@sr ] .

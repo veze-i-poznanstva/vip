@@ -2,6 +2,10 @@
 
 *English version: [README.md](README.md)*
 
+**Želite da dodate podatke uz pomoć AI agenta?** Počnite od
+[prompta za brzi početak](docs/agent-prompt.sr.md): nalepite ga svom agentu za programiranje, ili četbotu u pregledaču koji će
+vam prvo pomoći da instalirate desktop verziju, i on podešava alate, forkuje repozitorijum i vodi vas kroz dodavanje veza sa izvorima, na srpskom.
+
 ## Svrha
 
 VIP je građanska inicijativa. Cilj je da se izgradi otvoren, mašinski proverljiv graf znanja o
@@ -32,7 +36,7 @@ Istinomer, KRIK, Cenzolovka i Media Ownership Monitor.
 
 ## Kako se beleže činjenice
 
-Pet pravila važe za svaki zapis. Validatori ih sprovode.
+Šest pravila važi za svaki zapis. Validatori sprovode njihov oblik; da li izvor zaista kaže ono što zapis tvrdi može da proveri samo čovek koji ga čita.
 
 - **Dokaz je čvor Dokumentacija, nikad goli URL.** Svaki izvor je resurs `:Documentation` sa
   svojom adresom, vrstom dokumenta (novinski članak, enciklopedijski članak, zapis iz registra,
@@ -51,6 +55,10 @@ Pet pravila važe za svaki zapis. Validatori ih sprovode.
   `:AlumniEducationalConnection`. Vlasništvo nad firmom je `vip:OwnershipConnection` sa opcionim
   udelom. Svaka veza nosi sopstvenu dokumentaciju, pa je dokaz za „X sedi u odboru Y“ odvojen
   od dokaza da X i Y postoje.
+- **Vreme je deo tvrdnje.** Veza nosi `:connectionStartDate` i `:connectionEndDate` onoliko
+  precizno koliko izvor navodi: `xsd:gYear`, `xsd:gYearMonth` ili `xsd:date`, nikad izmišljeni
+  1. januar. Datum koji nedostaje znači da je nepoznat, a ne da veza još traje. Uloge obavljane u
+  različito vreme su zasebne veze. Oblici odbijaju kraj pre početka.
 - **Svaki pojam ima oznake na engleskom, španskom i srpskom.** Svaka klasa, svojstvo i
   individua u rečniku i svaka SHACL poruka nose tekst sa oznakama `@en`, `@es` i `@sr`, tako da
   se korisnički interfejsi i izveštaji validacije mogu prikazati na bilo kom od tri jezika.
@@ -252,6 +260,11 @@ datoteka za svaki obrazac, sa dvojezičnim objašnjenjem na vrhu svake datoteke:
 ```bash
 ./gradlew :app:checkRedFlags     # pokreće svako pravilo nad data/ i ispisuje pogotke
 ```
+
+Datumi odlučuju šta se prijavljuje. Slučaj čiji datumi pokazuju da se dva perioda nikad nisu
+dodirnula se izostavlja. Ostali nose status: `overlapping` kada su sva četiri datuma zabeležena i
+godine se dodiruju, `unknown` kada neki nedostaje. Većina tragova je `unknown` dok podaci nemaju
+datume, pa ni prazan rezultat ne govori mnogo.
 
 Pokretač učitava podatke zajedno sa onim što rečnik povlači, pa pravilo napisano nad
 `bio:participant` vidi svako specijalizovano svojstvo učesnika. Pogoci su tragovi, ne zaključci:

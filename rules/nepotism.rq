@@ -5,12 +5,16 @@
 # Supružnik, partner, kum ili član porodice osobe koja vodi organizaciju radi u toj istoj
 # organizaciji. Svaki pogodak imenuje rukovodioca, srodnika, vrstu veze i organizaciju. Trag za
 # novinara, ne zaključak: postavljenje može biti opravdano.
+# Time: a case whose dates show the two periods never met is dropped. The rest carry a status:
+# "overlapping" when all four dates are recorded and the years meet, "unknown" when any is missing.
+# Vreme: slučaj čiji datumi pokazuju da se periodi nikad nisu dodirnuli se izostavlja. Ostali nose
+# status: "overlapping" kada su sva četiri datuma zabeležena i godine se dodiruju, "unknown" inače.
 PREFIX :    <http://poderopedia.com/vocab/>
 PREFIX vip: <https://w3id.org/vip/vocab#>
 PREFIX bio: <http://purl.org/vocab/bio/0.1/>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 
-SELECT DISTINCT ?leader ?leaderRole ?relative ?relation ?relativeRole ?organization
+SELECT DISTINCT ?leader ?leaderRole ?relative ?relation ?relativeRole ?organization ?overlap
 WHERE {
   ?lead a :WorkConnection ;
         bio:participant ?leader ;
@@ -36,5 +40,13 @@ WHERE {
     ?leader (:hasParent|:hasChild|:hasSibling|^:hasParent|^:hasChild) ?relative .
     BIND ("family" AS ?relation)
   }
+
+  OPTIONAL { ?lead :connectionStartDate ?leadStart }
+  OPTIONAL { ?lead :connectionEndDate ?leadEnd }
+  OPTIONAL { ?job :connectionStartDate ?jobStart }
+  OPTIONAL { ?job :connectionEndDate ?jobEnd }
+  FILTER (!(BOUND(?leadEnd) && BOUND(?jobStart) && SUBSTR(STR(?leadEnd), 1, 4) < SUBSTR(STR(?jobStart), 1, 4)))
+  FILTER (!(BOUND(?jobEnd) && BOUND(?leadStart) && SUBSTR(STR(?jobEnd), 1, 4) < SUBSTR(STR(?leadStart), 1, 4)))
+  BIND (IF(BOUND(?leadStart) && BOUND(?leadEnd) && BOUND(?jobStart) && BOUND(?jobEnd), "overlapping", "unknown") AS ?overlap)
 }
 ORDER BY ?organization ?leader ?relative

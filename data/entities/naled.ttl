@@ -16,7 +16,7 @@
 rs:NALED a :NonProfitOrganization, :ProgrammaticOrganization ;
     foaf:name "Nacionalna alijansa za lokalni ekonomski razvoj (NALED)"@sr ;
     :alias "NALED" ;
-    dbo:foundationDate "2006-01-01"^^xsd:date ;
+    dbo:foundationDate "2006"^^xsd:gYear ;
     dbo:location "Beograd, Srbija"@sr ;
     rdfs:comment "NALED je najveća privatno-javna asocijacija u Srbiji koja okuplja preko 300 kompanija, lokalnih samouprava i nevladinih organizacija."@sr ;
     :hasDocumentation

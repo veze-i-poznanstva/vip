@@ -1,11 +1,11 @@
 [
   {
     "data": {
-      "id": "milenijum_picaroti",
-      "label": "Milenijum Picaroti",
+      "id": "milenijum_tim",
+      "label": "Milenijum tim",
       "type": "instance",
       "nodeType": "organization",
-      "uri": "https://w3id.org/vip/rs/Milenijum_Picaroti"
+      "uri": "https://w3id.org/vip/rs/Milenijum_Tim"
     }
   },
   {
@@ -15,15 +15,6 @@
       "type": "instance",
       "nodeType": "party",
       "uri": "https://w3id.org/vip/rs/SNS"
-    }
-  },
-  {
-    "data": {
-      "id": "milenijum_tim",
-      "label": "Milenijum tim",
-      "type": "instance",
-      "nodeType": "organization",
-      "uri": "https://w3id.org/vip/rs/Milenijum_Tim"
     }
   },
   {
@@ -91,11 +82,29 @@
   },
   {
     "data": {
+      "id": "ivan_bosnjak_milenijum_tim",
+      "label": "Ivan Bošnjak (Milenijum tim)",
+      "type": "instance",
+      "nodeType": "person",
+      "uri": "https://w3id.org/vip/rs/Ivan_Bosnjak_Milenijum_Tim"
+    }
+  },
+  {
+    "data": {
       "id": "roberts_milenijum",
       "label": "Roberts Millennium",
       "type": "instance",
       "nodeType": "organization",
       "uri": "https://w3id.org/vip/rs/Roberts_Milenijum"
+    }
+  },
+  {
+    "data": {
+      "id": "pizzarotti_millennium",
+      "label": "Pizzarotti Millennium",
+      "type": "instance",
+      "nodeType": "organization",
+      "uri": "https://w3id.org/vip/rs/Pizzarotti_Millennium"
     }
   },
   {
@@ -172,11 +181,11 @@
   },
   {
     "data": {
-      "id": "ivan_bosnjak",
-      "label": "Ivan Bošnjak",
+      "id": "ivan_bosnjak_zrenjanin",
+      "label": "Ivan Bošnjak (Zrenjanin)",
       "type": "instance",
       "nodeType": "person",
-      "uri": "https://w3id.org/vip/rs/Ivan_Bosnjak"
+      "uri": "https://w3id.org/vip/rs/Ivan_Bosnjak_Zrenjanin"
     }
   },
   {
@@ -199,6 +208,22 @@
   {
     "data": {
       "id": "edge1",
+      "label": "ownership connection",
+      "source": "milenijum_tim",
+      "target": "milenijum_resorts"
+    }
+  },
+  {
+    "data": {
+      "id": "edge2",
+      "label": "ownership connection",
+      "source": "milenijum_tim",
+      "target": "mt_gastel"
+    }
+  },
+  {
+    "data": {
+      "id": "edge3",
       "label": "political connection",
       "source": "sinisa_mali",
       "target": "sns"
@@ -206,7 +231,15 @@
   },
   {
     "data": {
-      "id": "edge2",
+      "id": "edge4",
+      "label": "ownership connection",
+      "source": "milenijum_tim",
+      "target": "milenijum_propertiz"
+    }
+  },
+  {
+    "data": {
+      "id": "edge5",
       "label": "alumni",
       "source": "sinisa_mali",
       "target": "ekonomski_fakultet_university_of_belgrade"
@@ -214,7 +247,15 @@
   },
   {
     "data": {
-      "id": "edge3",
+      "id": "edge6",
+      "label": "ownership connection",
+      "source": "milenijum_tim",
+      "target": "roberts_milenijum"
+    }
+  },
+  {
+    "data": {
+      "id": "edge7",
       "label": "ownership connection",
       "source": "sasa_blagojevic",
       "target": "alo_media_system"
@@ -222,7 +263,31 @@
   },
   {
     "data": {
-      "id": "edge4",
+      "id": "edge8",
+      "label": "ownership connection",
+      "source": "milenijum_tim",
+      "target": "milenijum_adria"
+    }
+  },
+  {
+    "data": {
+      "id": "edge9",
+      "label": "chair of the board",
+      "source": "ana_brnabic",
+      "target": "naled"
+    }
+  },
+  {
+    "data": {
+      "id": "edge10",
+      "label": "vice chair of the board",
+      "source": "ana_brnabic",
+      "target": "naled"
+    }
+  },
+  {
+    "data": {
+      "id": "edge11",
       "label": "ownership connection",
       "source": "stojan_vujko",
       "target": "milenijum_tim"
@@ -230,23 +295,15 @@
   },
   {
     "data": {
-      "id": "edge5",
+      "id": "edge12",
       "label": "ownership connection",
-      "source": "ivan_bosnjak",
+      "source": "ivan_bosnjak_milenijum_tim",
       "target": "milenijum_tim"
     }
   },
   {
     "data": {
-      "id": "edge6",
-      "label": "poslovni i politički partneri",
-      "source": "ana_brnabic",
-      "target": "ivan_bosnjak"
-    }
-  },
-  {
-    "data": {
-      "id": "edge7",
+      "id": "edge13",
       "label": "alumni",
       "source": "mihailo_jovanovic",
       "target": "peta_beogradska_gimnazija"
@@ -254,23 +311,23 @@
   },
   {
     "data": {
-      "id": "edge8",
-      "label": "chair of the board, founder, vice chair of the board",
-      "source": "ana_brnabic",
+      "id": "edge14",
+      "label": "ownership connection",
+      "source": "milenijum_tim",
+      "target": "mostogradnja_ing"
+    }
+  },
+  {
+    "data": {
+      "id": "edge16",
+      "label": "executive board member",
+      "source": "ivan_bosnjak_milenijum_tim",
       "target": "naled"
     }
   },
   {
     "data": {
-      "id": "edge9",
-      "label": "executive board member, manager",
-      "source": "ivan_bosnjak",
-      "target": "naled"
-    }
-  },
-  {
-    "data": {
-      "id": "edge10",
+      "id": "edge17",
       "label": "alumni",
       "source": "ana_brnabic",
       "target": "peta_beogradska_gimnazija"
@@ -278,7 +335,15 @@
   },
   {
     "data": {
-      "id": "edge11",
+      "id": "edge18",
+      "label": "ownership connection",
+      "source": "milenijum_tim",
+      "target": "pizzarotti_millennium"
+    }
+  },
+  {
+    "data": {
+      "id": "edge19",
       "label": "political connection",
       "source": "ana_brnabic",
       "target": "sns"
@@ -286,74 +351,26 @@
   },
   {
     "data": {
-      "id": "edge12",
+      "id": "edge20",
+      "label": "ownership connection",
+      "source": "milenijum_tim",
+      "target": "mv_investment"
+    }
+  },
+  {
+    "data": {
+      "id": "edge21",
+      "label": "founder",
+      "source": "ana_brnabic",
+      "target": "naled"
+    }
+  },
+  {
+    "data": {
+      "id": "edge22",
       "label": "alumni",
       "source": "ana_brnabic",
       "target": "northwood_university_michigan"
-    }
-  },
-  {
-    "data": {
-      "id": "edge13",
-      "label": "subsidiary company of",
-      "source": "milenijum_picaroti",
-      "target": "milenijum_tim"
-    }
-  },
-  {
-    "data": {
-      "id": "edge14",
-      "label": "subsidiary company of",
-      "source": "milenijum_resorts",
-      "target": "milenijum_tim"
-    }
-  },
-  {
-    "data": {
-      "id": "edge15",
-      "label": "subsidiary company of",
-      "source": "mt_gastel",
-      "target": "milenijum_tim"
-    }
-  },
-  {
-    "data": {
-      "id": "edge16",
-      "label": "subsidiary company of",
-      "source": "mv_investment",
-      "target": "milenijum_tim"
-    }
-  },
-  {
-    "data": {
-      "id": "edge17",
-      "label": "subsidiary company of",
-      "source": "milenijum_adria",
-      "target": "milenijum_tim"
-    }
-  },
-  {
-    "data": {
-      "id": "edge18",
-      "label": "subsidiary company of",
-      "source": "roberts_milenijum",
-      "target": "milenijum_tim"
-    }
-  },
-  {
-    "data": {
-      "id": "edge19",
-      "label": "subsidiary company of",
-      "source": "mostogradnja_ing",
-      "target": "milenijum_tim"
-    }
-  },
-  {
-    "data": {
-      "id": "edge20",
-      "label": "subsidiary company of",
-      "source": "milenijum_propertiz",
-      "target": "milenijum_tim"
     }
   }
 ]

@@ -20,7 +20,8 @@
 rs:SinisaMali_SNS a :PoliticalConnection ;
     :personParticipant rs:Sinisa_Mali ;
     :politicalParticipant rs:SNS ;
-    rdfs:comment "Siniša Mali je funkcioner Srpske napredne stranke."@sr ;
+    :connectionStartDate "2014"^^xsd:gYear ;
+    rdfs:comment "Siniša Mali je član Srpske napredne stranke od 2014. prema infokutiji Vikipedije, potpredsednik stranke od novembra 2021. prema Istinomeru. Godina učlanjenja ima samo taj jedan izvor."@sr ;
     :hasDocumentation
         [ a :Documentation ; :hasDocumentURL <https://sr.wikipedia.org/wiki/Синиша_Мали> ; :hasDocumentType vip:encyclopediaArticle ; :hasDocumentStatus vip:published ] ,
         [ a :Documentation ; :hasDocumentURL <https://www.istinomer.rs/akter/sinisa-mali/> ; :hasDocumentType vip:factCheckProfile ; :hasDocumentStatus vip:published ] .
@@ -28,7 +29,8 @@ rs:SinisaMali_SNS a :PoliticalConnection ;
 rs:AnaBrnabic_SNS a :PoliticalConnection ;
     :personParticipant rs:Ana_Brnabic ;
     :politicalParticipant rs:SNS ;
-    rdfs:comment "Ana Brnabić je funkcioner Srpske napredne stranke."@sr ;
+    :connectionStartDate "2019-10"^^xsd:gYearMonth ;
+    rdfs:comment "Ana Brnabić je članica Srpske napredne stranke od oktobra 2019, potpredsednica stranke od novembra 2021."@sr ;
     :hasDocumentation
         [ a :Documentation ; :hasDocumentURL <https://sr.wikipedia.org/wiki/Ана_Брнабић> ; :hasDocumentType vip:encyclopediaArticle ; :hasDocumentStatus vip:published ] ,
         [ a :Documentation ; :hasDocumentURL <https://www.istinomer.rs/akter/ana-brnabic/> ; :hasDocumentType vip:factCheckProfile ; :hasDocumentStatus vip:published ] .
@@ -36,6 +38,9 @@ rs:AnaBrnabic_SNS a :PoliticalConnection ;
 rs:SinisaMali_PetaGimnazija a :AlumniEducationalConnection ;
     :hasStudent rs:Sinisa_Mali ;
     :hasAcademicOrganization rs:Peta_Beogradska_Gimnazija ;
+    :connectionStartDate "1987"^^xsd:gYear ;
+    :connectionEndDate "1991"^^xsd:gYear ;
+    rdfs:comment "Generacija je došla u školu 1987. i završila je 1991, prema razrednoj u članku lista Alo."@sr ;
     :hasDocumentation
         [ a :Documentation ; :hasDocumentURL <https://sr.wikipedia.org/wiki/Синиша_Мали> ; :hasDocumentType vip:encyclopediaArticle ; :hasDocumentStatus vip:published ] ,
         [ a :Documentation ; :hasDocumentURL <https://www.alo.rs/vesti/politika/2184894/ekskluzivno-ekipa-alo-sa-ministrima-i-njihovom-razrednom-u-petoj-beogradskoj-posle-30-godina-sinisa-i-mihailo-od-skolskih-do-ministarskih-klupa-video.html> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ] .
@@ -43,6 +48,8 @@ rs:SinisaMali_PetaGimnazija a :AlumniEducationalConnection ;
 rs:SinisaMali_EkonomskiFakultet a :AlumniEducationalConnection ;
     :hasStudent rs:Sinisa_Mali ;
     :hasAcademicOrganization rs:Ekonomski_fakultet_University_of_Belgrade ;
+    :connectionEndDate "1998"^^xsd:gYear ;
+    rdfs:comment "Diplomirao i magistrirao na Ekonomskom fakultetu; magistratura 1998. Godina upisa nije zabeležena."@sr ;
     :hasDocumentation
         [ a :Documentation ; :hasDocumentURL <https://sr.wikipedia.org/wiki/Синиша_Мали> ; :hasDocumentType vip:encyclopediaArticle ; :hasDocumentStatus vip:published ] ,
         [ a :Documentation ; :hasDocumentURL <https://www.istinomer.rs/akter/sinisa-mali/> ; :hasDocumentType vip:factCheckProfile ; :hasDocumentStatus vip:published ] .
@@ -50,6 +57,8 @@ rs:SinisaMali_EkonomskiFakultet a :AlumniEducationalConnection ;
 rs:AnaBrnabic_PetaGimnazija a :AlumniEducationalConnection ;
     :hasStudent rs:Ana_Brnabic ;
     :hasAcademicOrganization rs:Peta_Beogradska_Gimnazija ;
+    :connectionEndDate "1994"^^xsd:gYear ;
+    rdfs:comment "Završila Petu beogradsku gimnaziju 1994. Godina upisa nije zabeležena."@sr ;
     :hasDocumentation
         [ a :Documentation ; :hasDocumentURL <https://sr.wikipedia.org/wiki/Ана_Брнабић> ; :hasDocumentType vip:encyclopediaArticle ; :hasDocumentStatus vip:published ] ,
         [ a :Documentation ; :hasDocumentURL <https://www.istinomer.rs/akter/ana-brnabic/> ; :hasDocumentType vip:factCheckProfile ; :hasDocumentStatus vip:published ] .
@@ -57,6 +66,8 @@ rs:AnaBrnabic_PetaGimnazija a :AlumniEducationalConnection ;
 rs:AnaBrnabic_Northwood a :AlumniEducationalConnection ;
     :hasStudent rs:Ana_Brnabic ;
     :hasAcademicOrganization rs:Northwood_University_Michigan ;
+    :connectionEndDate "1998"^^xsd:gYear ;
+    rdfs:comment "Završila studije poslovne administracije na Univerzitetu Northwood 1998. Godina upisa nije zabeležena."@sr ;
     :hasDocumentation
         [ a :Documentation ; :hasDocumentURL <https://sr.wikipedia.org/wiki/Ана_Брнабић> ; :hasDocumentType vip:encyclopediaArticle ; :hasDocumentStatus vip:published ] ,
         [ a :Documentation ; :hasDocumentURL <https://www.istinomer.rs/akter/ana-brnabic/> ; :hasDocumentType vip:factCheckProfile ; :hasDocumentStatus vip:published ] .
@@ -64,6 +75,9 @@ rs:AnaBrnabic_Northwood a :AlumniEducationalConnection ;
 rs:MihailoJovanovic_PetaGimnazija a :AlumniEducationalConnection ;
     :hasStudent rs:Mihailo_Jovanovic ;
     :hasAcademicOrganization rs:Peta_Beogradska_Gimnazija ;
+    :connectionStartDate "1987"^^xsd:gYear ;
+    :connectionEndDate "1991"^^xsd:gYear ;
+    rdfs:comment "Isto odeljenje kao Siniša Mali; generacija je došla u školu 1987. i završila je 1991, prema članku lista Alo."@sr ;
     :hasDocumentation
         [ a :Documentation ; :hasDocumentURL <https://www.alo.rs/vesti/politika/2184894/ekskluzivno-ekipa-alo-sa-ministrima-i-njihovom-razrednom-u-petoj-beogradskoj-posle-30-godina-sinisa-i-mihailo-od-skolskih-do-ministarskih-klupa-video.html> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ] ,
         [ a :Documentation ; :hasDocumentURL <https://www.youtube.com/watch?v=tHgNZtQdGrg&t=5s> ; :hasDocumentType vip:videoRecording ; :hasDocumentStatus vip:published ] .

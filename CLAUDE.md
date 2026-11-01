@@ -24,6 +24,14 @@ Every agent and every connection carries `:Documentation` nodes with at least tw
 from two different domains (www ignored), each reachable live or through a Wayback Machine
 snapshot recorded in `archives.ttl`. A dead source is kept with `:hasDocumentStatus vip:removed`
 and no longer counts. Only genuine `web.archive.org/web/<14 digits>/` addresses count as archives.
+The build proves form and reachability, not truth: read each source before citing it, quote the
+passage on the document's `rdfs:comment`, and check that it means this person (same-named people
+get separate URIs, `rs:Ivan_Bosnjak_Milenijum_Tim` and `rs:Ivan_Bosnjak_Zrenjanin` are two men).
+A citation found wrong stays with `vip:removed` and a comment saying why.
+
+Connections carry `:connectionStartDate`/`:connectionEndDate` at the source's precision (`xsd:gYear`,
+`xsd:gYearMonth`, `xsd:date`); never invent 1 January; absent means unknown; one connection per
+role when periods differ. Rules drop known non-overlap and report `overlapping` or `unknown`.
 
 ## Data layout
 

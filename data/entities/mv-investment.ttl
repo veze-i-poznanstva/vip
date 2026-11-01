@@ -16,8 +16,7 @@
 rs:MV_Investment a :Company ;
     foaf:name "MV Investment"@sr ;
     dbo:industry "Upravljanje nekretninama"@sr ;
-    :subsidiaryCompanyOf rs:Milenijum_Tim ;
-    rdfs:comment "MV Investment je filijala Milenijum tima, vlasnik kompleksa Hotela Jugoslavija i aktivna u upravljanju nekretninama."@sr ;
+    rdfs:comment "MV Investment je društvo osnovano 2006. koje je kupilo imovinu hotela Jugoslavija iz stečaja preduzeća Danube Riverside. Vlasništvo je u data/cases/milenijum-tim.ttl."@sr ;
     :hasDocumentation
         [ a :Documentation ; :hasDocumentURL <https://www.danas.rs/vesti/ekonomija/sta-sve-ima-milenijum-tim-novi-vlasnik-hotela-jugoslavija/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ] ,
         [ a :Documentation ; :hasDocumentURL <https://forbes.n1info.rs/vesti/vlasnici-milenijum-tima-kupili-hotel-jugoslavija/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ] ,

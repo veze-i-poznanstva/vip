@@ -1,0 +1,29 @@
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix dbo:     <http://dbpedia.org/ontology/> .
+@prefix rs:      <https://w3id.org/vip/rs/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix :        <http://poderopedia.com/vocab/> .
+@prefix vip:     <https://w3id.org/vip/vocab#> .
+
+# Ivan Bošnjak, političar (rođen 1974) / politician (born 1974)
+# Nije isto lice kao suvlasnik Milenijum tima, videti ivan-bosnjak-milenijum-tim.ttl.
+# Not the co-owner of Millennium Team, see ivan-bosnjak-milenijum-tim.ttl.
+# Matična datoteka entiteta: tip, imena, identifikatori i izvori koji potvrđuju identitet.
+# Home file of this entity: type, names, identifiers and the sources for its identity.
+# Veze se nalaze u data/cases/. Connections live in data/cases/.
+
+rs:Ivan_Bosnjak_Zrenjanin a foaf:Person ;
+    foaf:name "Ivan Bošnjak (Zrenjanin)"@sr ;
+    foaf:firstName "Ivan" ;
+    :firstLastName "Bošnjak" ;
+    dbo:birthDate "1974-11-04"^^xsd:date ;
+    dbo:birthPlace "Melenci, Zrenjanin, Srbija"@sr ;
+    rdfs:comment "Političar Srpske napredne stranke, gradonačelnik Zrenjanina 2012-2014, državni sekretar u ministarstvu državne uprave i lokalne samouprave 2014-2020, a od 2022. u ministarstvu za ljudska i manjinska prava i društveni dijalog. Nije isto lice kao privrednik Ivan Bošnjak (rođen 1980. u Beogradu), suvlasnik Milenijum tima."@sr ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://www.istinomer.rs/akter/ivan-bosnjak/> ; :hasDocumentType vip:factCheckProfile ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Datum rođenja 4. 11. 1974, stranka SNS, mesto Zrenjanin."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://en.wikipedia.org/wiki/Ivan_Bo%C5%A1njak_(politician)> ; :hasDocumentType vip:encyclopediaArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Rođen 4. novembra 1974. u Melencima; funkcije sa datumima; Milenijum tim se ne pominje."@sr ] .

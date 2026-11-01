@@ -2,6 +2,10 @@
 
 *Srpska verzija: [PROCITAJME.md](PROCITAJME.md)*
 
+**Want to add data with an AI agent?** Start with the
+[agent quickstart prompt](docs/agent-prompt.md): paste it to your coding agent, or to a browser chat that will first
+help you install a desktop version, and it sets up the tools, forks the repository and guides you through adding sourced connections, in Serbian.
+
 ## Purpose
 
 VIP is a civic initiative. Its goal is to build an open, machine-checkable knowledge graph of
@@ -32,7 +36,7 @@ Istinomer, KRIK, Cenzolovka and the Media Ownership Monitor.
 
 ## How facts are recorded
 
-Five conventions apply to every record. The validators enforce them.
+Six conventions apply to every record. The validators enforce their form; whether a source really says what a record claims takes a person reading it.
 
 - **Evidence is a Documentation node, never a bare URL.** Each source is a `:Documentation`
   resource with its URL, a document type (news article, encyclopedia article, registry record,
@@ -51,6 +55,10 @@ Five conventions apply to every record. The validators enforce them.
   an `:AlumniEducationalConnection`. Company ownership is a `vip:OwnershipConnection` with an
   optional share. Each connection carries its own documentation, so the evidence for "X sits on
   the board of Y" is separate from the evidence that X and Y exist.
+- **Time is part of the claim.** A connection carries `:connectionStartDate` and
+  `:connectionEndDate` as precisely as its source states them: `xsd:gYear`, `xsd:gYearMonth` or
+  `xsd:date`, never an invented 1 January. A missing date means unknown, not ongoing. Roles held
+  at different times are separate connections. The shapes refuse an end before a start.
 - **Every term has labels in English, Spanish and Serbian.** Every class, property and
   individual in the vocabulary and every SHACL message carries `@en`, `@es` and `@sr` text, so
   user interfaces and validation reports can be rendered in any of the three.
@@ -253,6 +261,11 @@ file per pattern, with a bilingual explanation at the top of each file:
 ```bash
 ./gradlew :app:checkRedFlags     # run every rule over data/ and print the matches
 ```
+
+Dates decide what is reported. A case whose dates show the two periods never met is dropped. The
+rest carry a status: `overlapping` when all four dates are recorded and the years meet, `unknown`
+when any is missing. Most leads are `unknown` until the data has its dates, so an empty result
+says little either.
 
 The runner loads the data with what the vocabulary entails, so a rule written against
 `bio:participant` sees every specialised participant property. Matches are leads, not findings:

@@ -15,9 +15,11 @@
 
 rs:Milenijum_Resorts a :Company ;
     foaf:name "Milenijum resorts"@sr ;
-    :subsidiaryCompanyOf rs:Milenijum_Tim ;
-    rdfs:comment "Milenijum resorts je filijala Milenijum tima, zadužena za upravljanje i razvoj turističkih projekata, uključujući Vranjsku Banju."@sr ;
+    dbo:foundationDate "2019-07-08"^^xsd:date ;
+    rdfs:comment "Millennium Resorts upravlja razvojem turističkih projekata, uključujući Vranjsku Banju. Osnovan 8. jula 2019, matični broj 21498491. Vlasništvo je u data/cases/milenijum-tim.ttl."@sr ;
     :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://www.companywall.rs/firma/drustvo--za-inzenjering-i-usluge-millennium-resorts-doo-beograd/MMxxIjkxY> ; :hasDocumentType vip:registryRecord ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Registar: osnovan 8.7.2019, matični broj 21498491."@sr ] ,
         [ a :Documentation ; :hasDocumentURL <https://www.danas.rs/vesti/ekonomija/sta-sve-ima-milenijum-tim-novi-vlasnik-hotela-jugoslavija/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ] ,
         [ a :Documentation ; :hasDocumentURL <https://nova.rs/vesti/biznis/zavrsetak-hotela-u-vranjskoj-banji-za-koje-dobija-drzavnu-subvenciju-milenijum-tim-odlozio-za-2026-godinu/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ] ,
         [ a :Documentation ; :hasDocumentURL <https://luftika.rs/milenijum-tim-vranjska-banja/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ] ,

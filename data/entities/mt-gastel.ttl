@@ -15,8 +15,7 @@
 
 rs:MT_Gastel a :Company ;
     foaf:name "MT Gastel"@sr ;
-    :subsidiaryCompanyOf rs:Milenijum_Tim ;
-    rdfs:comment "MT Gastel je filijala Milenijum tima, aktivna u sektoru distribucije gasa."@sr ;
+    rdfs:comment "MT Gastel je društvo za distribuciju gasa iz Beograda. Registarski zapis nije pronađen. Vlasništvo je u data/cases/milenijum-tim.ttl."@sr ;
     :hasDocumentation
         [ a :Documentation ; :hasDocumentURL <https://www.danas.rs/vesti/ekonomija/sta-sve-ima-milenijum-tim-novi-vlasnik-hotela-jugoslavija/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ] ,
         [ a :Documentation ; :hasDocumentURL <https://www.krik.rs/koruptivne-veze-milenijum-tim-ustupio-audi-i-stan-bratu-sinise-malog/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ] ,

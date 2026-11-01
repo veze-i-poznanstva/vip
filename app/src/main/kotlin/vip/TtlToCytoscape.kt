@@ -138,12 +138,16 @@ private class GraphBuilder(private val data: Model, private val schema: Model) {
                 .map { it.asResource() }
                 .distinct()
                 .filter { it.uri in nodeIds }
-                .sortedWith(compareBy({ !isA(it, Vocab.PERSON) }, { it.uri }))
+                .sortedWith(compareBy({ !isOwnerIn(connection, it) }, { !isA(it, Vocab.PERSON) }, { it.uri }))
             val label = connectionLabel(connection)
             participants.indices.flatMap { i ->
                 (i + 1 until participants.size).map { j -> edge(participants[i], participants[j], label) }
             }
         }
+
+    /** An ownership edge always leaves the owner, whatever the two URIs sort to. */
+    private fun isOwnerIn(connection: Resource, participant: Resource): Boolean =
+        data.contains(connection, data.createProperty(Vocab.OWNER), participant)
 
     /** Only properties the vocabulary declares become edges: a made-up predicate is not a fact. */
     private fun directEdges(): List<CytoscapeElement> =

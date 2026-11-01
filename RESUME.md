@@ -76,6 +76,26 @@ The review sweep of 30 October is reconciled in `reports/sweep-summary.md`; the 
 reports sit beside it. Decide whether `reports/` is committed or gitignored (not decided; a "cp"
 today would commit it).
 
+## Correction of 1 November 2026
+
+`reports/first-principles-review.md` (external review, not committed by us) found a misattributed
+NALED role. Outcome: `rs:Ivan_Bosnjak` merged two men and is gone. `rs:Ivan_Bosnjak_Milenijum_Tim`
+(born 1980, Belgrade, sr.wikipedia "Ivan Bošnjak (privrednik)") and `rs:Ivan_Bosnjak_Zrenjanin`
+(born 4.11.1974, Melenci, state secretary) are separate. NALED Executive Board claim now rests on
+KRIK 2019 (Nova.rs repeats it, one origin), period unknown; "membership development manager" was
+Višnja Račić, removed. The "business and political partners" Brnabić-Bošnjak connection had no
+supporting source and was deleted. Brnabić's NALED record split into three dated roles; the old end
+date April 2017 was wrong (August 2016). 13 of 14 connections now have dates. Date properties accept
+year, month or day precision; shapes refuse end before start; rules drop known non-overlap and report
+`overlapping` or `unknown`. Prompt gained Step 6, second reading.
+The eight direct `:subsidiaryCompanyOf` claims are gone: nine `vip:OwnershipConnection` records in
+`data/cases/milenijum-tim.ttl` replace them, each with its own evidence. Two were not subsidiaries
+(Millennium Properties 26%, Pizzarotti Millennium 4%; the latter was misnamed Milenijum Picaroti).
+Unresolved: no registry record for MT Gastel; CompanyWall page for MB 20183209 sits under an
+"mv-investment" address but shows DANUBE RIVERSIDE, so it is not cited.
+Still open from that review: exporter pairwise edges, archive snapshot identity check, publication contract (reviewer,
+status), `vip:ownershipShare` bounds. Full source re-read of the 21 entities is still not done.
+
 ## What is left, in the order agreed with the user
 
 1. **Human review of the data**: each old source should be read to confirm it supports the exact

@@ -597,15 +597,13 @@ bio:concludingEvent rdf:type rdf:Property ,
                     
 :connectionStartDate a rdf:Property, owl:DatatypeProperty;
                      rdfs:label "Connection start date"@en, "Fecha de inicio de conexión"@es, "Datum početka veze"@sr;
-                     rdfs:comment "Date when connection between entities started"@en, "Fecha cuando comenzó la conexión entre entidades"@es, "Datum kada je veza između entiteta počela"@sr ;
-                     rdfs:domain :Connection ;
-                     rdfs:range xsd:date .
+                     rdfs:comment "When the connection between entities started, as precisely as the source states it: xsd:date, xsd:gYearMonth or xsd:gYear. Absent means unknown."@en, "Cuándo comenzó la conexión entre entidades, con la precisión que indica la fuente: xsd:date, xsd:gYearMonth o xsd:gYear. Su ausencia significa desconocido."@es, "Kada je veza između entiteta počela, onoliko precizno koliko izvor navodi: xsd:date, xsd:gYearMonth ili xsd:gYear. Odsustvo znači da je nepoznato."@sr ;
+                     rdfs:domain :Connection .
 
 :connectionEndDate a rdf:Property, owl:DatatypeProperty;
                    rdfs:label "Connection end date"@en, "Fecha de fin de conexión"@es, "Datum kraja veze"@sr;
-                   rdfs:comment "Date when connection between entities ended"@en, "Fecha cuando terminó la conexión entre entidades"@es, "Datum kada je veza između entiteta prestala"@sr ;
-                   rdfs:domain :Connection ;
-                   rdfs:range xsd:date .
+                   rdfs:comment "When the connection between entities ended, as precisely as the source states it: xsd:date, xsd:gYearMonth or xsd:gYear. Absent means unknown, not ongoing."@en, "Cuándo terminó la conexión entre entidades, con la precisión que indica la fuente: xsd:date, xsd:gYearMonth o xsd:gYear. Su ausencia significa desconocido, no vigente."@es, "Kada je veza između entiteta prestala, onoliko precizno koliko izvor navodi: xsd:date, xsd:gYearMonth ili xsd:gYear. Odsustvo znači da je nepoznato, a ne da još traje."@sr ;
+                   rdfs:domain :Connection .
    
 ####################################### 
 # Social Connections
@@ -1197,6 +1195,34 @@ vip:removed a :DocumentStatus;
         sh:minCount 1;
         sh:class :Documentation;
         sh:message "A connection must have at least one piece of documentation"@en, "Una conexión debe tener al menos una documentación"@es, "Veza mora imati najmanje jedan dokument"@sr
+    ];
+    sh:property [
+        sh:path :connectionStartDate;
+        sh:maxCount 1;
+        sh:or ( [ sh:datatype xsd:date ] [ sh:datatype xsd:gYearMonth ] [ sh:datatype xsd:gYear ] );
+        sh:message "A connection start date must be a single xsd:date, xsd:gYearMonth or xsd:gYear"@en, "La fecha de inicio de una conexión debe ser un único xsd:date, xsd:gYearMonth o xsd:gYear"@es, "Datum početka veze mora biti jedan xsd:date, xsd:gYearMonth ili xsd:gYear"@sr
+    ];
+    sh:property [
+        sh:path :connectionEndDate;
+        sh:maxCount 1;
+        sh:or ( [ sh:datatype xsd:date ] [ sh:datatype xsd:gYearMonth ] [ sh:datatype xsd:gYear ] );
+        sh:message "A connection end date must be a single xsd:date, xsd:gYearMonth or xsd:gYear"@en, "La fecha de fin de una conexión debe ser un único xsd:date, xsd:gYearMonth o xsd:gYear"@es, "Datum kraja veze mora biti jedan xsd:date, xsd:gYearMonth ili xsd:gYear"@sr
+    ].
+
+# Dates of different precision are compared on the part both state.
+:ConnectionChronologyShape a sh:NodeShape;
+    sh:targetClass :Connection;
+    sh:message "A connection cannot end before it starts"@en, "Una conexión no puede terminar antes de comenzar"@es, "Veza ne može da se završi pre nego što počne"@sr;
+    sh:sparql [
+        sh:select """
+            PREFIX : <http://poderopedia.com/vocab/>
+            SELECT $this WHERE {
+                $this :connectionStartDate ?start ; :connectionEndDate ?end .
+                BIND (STR(?start) AS ?s) BIND (STR(?end) AS ?e)
+                BIND (IF(STRLEN(?s) < STRLEN(?e), STRLEN(?s), STRLEN(?e)) AS ?common)
+                FILTER (SUBSTR(?e, 1, ?common) < SUBSTR(?s, 1, ?common))
+            }
+        """
     ].
 
 :FinancialInformationShape a sh:NodeShape;

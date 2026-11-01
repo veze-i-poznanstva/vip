@@ -370,4 +370,16 @@ class TtlToCytoscapeTest {
         assertEquals("MT Gastel", extractLabelFromUri("https://w3id.org/vip/rs/MT_Gastel"))
         assertEquals("Sinisa Mali", extractLabelFromUri("https://w3id.org/vip/rs/SinisaMali"))
     }
+
+    @Test
+    fun `an ownership edge runs from owner to owned even when the owner sorts later`() {
+        val elements = convert("""
+            ex:Z_Owner a :Company ; foaf:name "Z" .
+            ex:A_Owned a :Company ; foaf:name "A" .
+            ex:Ownership a vip:OwnershipConnection ; vip:owner ex:Z_Owner ; vip:ownedCompany ex:A_Owned .
+        """)
+        val edge = elements.edges().single()
+        assertEquals("z_owner", edge.data.source)
+        assertEquals("a_owned", edge.data.target)
+    }
 }
