@@ -1,4 +1,6 @@
-# Prati novac. Da bi znao gde, isprati konekcije.
+# Veze i Poznanstva
+
+**Prati novac. Da bi znao gde, isprati konekcije.**
 
 *English version: [README.md](README.md)*
 

@@ -1,4 +1,6 @@
-# Follow the money. To know where, follow the connections.
+# Veze i Poznanstva
+
+**Follow the money. To know where, follow the connections.**
 
 *Srpska verzija: [PROCITAJME.md](PROCITAJME.md)*
 
