@@ -2,13 +2,17 @@
 
 *Srpska verzija: [PROCITAJME.md](PROCITAJME.md)*
 
-**Want to add data with an AI agent?** Start with the [agent quickstart prompt](docs/agent-prompt.md):
-paste it to your coding agent, or to a browser chat that will first help you install a desktop
-version. It sets up the tools, forks the repository and guides you, in Serbian, through adding
-sourced connections.
+**Contribute to our database with the help of AI.** Start with the
+[agent quickstart prompt](docs/agent-prompt.md): paste it to your coding agent, or to a browser chat
+that will first help you install a desktop version. It sets up the tools, forks the repository and
+guides you, in Serbian, through adding sourced connections.
 
 VIP (Veze i poznanstva, connections and acquaintances) is an open, machine-checkable map of who is
 connected to whom among people of influence in Serbia, and through what.
+
+![A section of the VIP graph: people, a school, a party, an association and companies joined by labelled connections](docs/images/graph-section.png)
+
+*A section of the graph. Each line is a documented connection, not an accusation.*
 
 ## The problem
 

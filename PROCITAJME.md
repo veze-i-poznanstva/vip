@@ -2,13 +2,17 @@
 
 *English version: [README.md](README.md)*
 
-**Želite da dodate podatke uz pomoć AI agenta?** Počnite od
-[prompta za brzi početak](docs/agent-prompt.sr.md): nalepite ga svom agentu za programiranje, ili
-četbotu u pregledaču koji će vam prvo pomoći da instalirate desktop verziju. On podešava alate,
-forkuje repozitorijum i vodi vas, na srpskom, kroz dodavanje veza sa izvorima.
+**Doprinesi našoj bazi uz pomoć AI.** Počni od
+[prompta za brzi početak](docs/agent-prompt.sr.md): nalepi ga svom agentu za programiranje, ili
+četbotu u pregledaču koji će ti prvo pomoći da instaliraš desktop verziju. On podešava alate,
+forkuje repozitorijum i vodi te, na srpskom, kroz dodavanje veza sa izvorima.
 
 VIP (Veze i poznanstva) je otvorena, mašinski proverljiva mapa o tome ko je s kim povezan među
 uticajnim ljudima u Srbiji, i preko čega.
+
+![Deo VIP grafa: osobe, škola, stranka, udruženje i firme povezani označenim vezama](docs/images/graph-section.png)
+
+*Deo grafa. Svaka linija je dokumentovana veza, a ne optužba.*
 
 ## Problem
 
