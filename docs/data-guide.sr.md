@@ -110,7 +110,9 @@ Praktične napomene:
   ih svejedno: arhiver zapisuje Wayback snimak, a validator prijavljuje upozorenje, ne grešku,
   sve dok snimak postoji.
 - **Ograničenja arhiva.** Internet Archive usporava posle mnogo zahteva. Arhiver zadržava šta je
-  uspeo, vraća 1 i traži ponovno pokretanje za nekoliko minuta; već upisani zapisi ostaju. Takođe
+  uspeo, vraća 1 i traži ponovno pokretanje kasnije; već upisani zapisi ostaju. Blokada može da
+  traje sat i duže, a ponavljanje tokom nje može da je produži, pa sačekajte 20 minuta, zatim duže,
+  i napredak proveravajte sa `./gradlew :app:checkArchives`, koji nikad ne kontaktira arhiv. Takođe
   traži najviše 25 novih snimaka po pokretanju, a ostatak ispisuje za sledeće pokretanje, da jedna
   grana ne bi zatrpala arhiv. Pročitajte citirane adrese pre nego što pokrenete `verify` na tuđoj
   grani: arhiver će zatražiti od Wayback Machine-a da preuzme svaku od njih.

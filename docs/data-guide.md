@@ -111,8 +111,9 @@ Practical notes:
   anyway: the archiver records a Wayback snapshot and the validator reports a warning, not an
   error, as long as the snapshot exists.
 - **Archive rate limiting.** The Internet Archive throttles after many requests. The archiver
-  keeps what it managed, exits 1 and asks you to rerun in a few minutes; records already written
-  are kept. It also requests at most 25 new captures per run and lists the rest for the next
+  keeps what it managed, exits 1 and asks you to rerun later; records already written are kept.
+  A block can last an hour or more and retrying during it can prolong it, so wait 20 minutes, then
+  longer, and check progress with `./gradlew :app:checkArchives`, which never contacts the archive. It also requests at most 25 new captures per run and lists the rest for the next
   run, so one branch cannot flood the archive. Read the cited addresses before running `verify`
   on a stranger's branch: the archiver will ask the Wayback Machine to fetch each of them.
 - **Dead sources.** Never delete a citation. Set `:hasDocumentStatus vip:removed` and add an

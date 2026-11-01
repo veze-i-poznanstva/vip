@@ -21,6 +21,10 @@
         vip:archivedOn     "2024-11-09"^^xsd:date;
         vip:hasArchiveURL  <http://web.archive.org/web/20241109195604/https://www.fininfo.hr/Poduzece/Pregled/millennium-adria/Detaljno/780814> .
 
+<https://www.companywall.rs/firma/millennium-properties-doo-beograd/MMsCs0qC>
+        vip:archivedOn     "2026-11-01"^^xsd:date;
+        vip:hasArchiveURL  <https://web.archive.org/web/20261101142452/https://www.companywall.rs/firma/millennium-properties-doo-beograd/MMsCs0qC> .
+
 <https://luftika.rs/milenijum-tim-vranjska-banja/>
         vip:archivedOn     "2022-06-28"^^xsd:date;
         vip:hasArchiveURL  <http://web.archive.org/web/20220628185341/https://luftika.rs/milenijum-tim-vranjska-banja/> .
@@ -64,6 +68,10 @@
 <https://en.wikipedia.org/wiki/Northwood_University>
         vip:archivedOn     "2026-08-03"^^xsd:date;
         vip:hasArchiveURL  <http://web.archive.org/web/20260803122447/https://en.wikipedia.org/wiki/Northwood_University> .
+
+<https://www.companywall.rs/firma/alo-media-system/MMfsPqfD>
+        vip:archivedOn     "2026-11-01"^^xsd:date;
+        vip:hasArchiveURL  <https://web.archive.org/web/20261101142418/https://www.companywall.rs/firma/alo-media-system/MMfsPqfD> .
 
 <https://www.danas.rs/vesti/ekonomija/milenijum-timhotel-jugoslavija/>
         vip:archivedOn     "2025-03-17"^^xsd:date;
@@ -149,6 +157,10 @@
         vip:archivedOn     "2025-07-16"^^xsd:date;
         vip:hasArchiveURL  <http://web.archive.org/web/20250716051444/https://nova.rs/vesti/hronika/suvlasnik-milenijum-tima-bosnjak-zakupac-plantaze-u-leskovcu/> .
 
+<https://www.021.rs/info/srbija/436227/informer-postao-suvlasnik-firme-koja-kupuje-lokalne-medije>
+        vip:archivedOn     "2026-11-01"^^xsd:date;
+        vip:hasArchiveURL  <http://web.archive.org/web/20261101142331/https://www.021.rs/info/srbija/436227/informer-postao-suvlasnik-firme-koja-kupuje-lokalne-medije> .
+
 <https://nova.rs/vesti/biznis/zavrsetak-hotela-u-vranjskoj-banji-za-koje-dobija-drzavnu-subvenciju-milenijum-tim-odlozio-za-2026-godinu/>
         vip:archivedOn     "2026-02-13"^^xsd:date;
         vip:hasArchiveURL  <http://web.archive.org/web/20260213161228/https://nova.rs/vesti/biznis/zavrsetak-hotela-u-vranjskoj-banji-za-koje-dobija-drzavnu-subvenciju-milenijum-tim-odlozio-za-2026-godinu/> .
@@ -169,9 +181,17 @@
         vip:archivedOn     "2026-10-09"^^xsd:date;
         vip:hasArchiveURL  <http://web.archive.org/web/20261009165017/https://ite.gov.rs/tekst/sr/150/direktor.php> .
 
+<https://www.ekof.bg.ac.rs/>
+        vip:archivedOn     "2026-10-19"^^xsd:date;
+        vip:hasArchiveURL  <http://web.archive.org/web/20261019002315/https://www.ekof.bg.ac.rs/> .
+
 <https://naled.rs/htdocs/Files/15388/II-Kvartalni-izvestaj_2024.pdf>
         vip:archivedOn     "2025-05-16"^^xsd:date;
         vip:hasArchiveURL  <http://web.archive.org/web/20250516231427/https://naled.rs/htdocs/Files/15388/II-Kvartalni-izvestaj_2024.pdf> .
+
+<https://24sedam.rs/biznis/privreda/290129/mv-investment-kupio-hotel-jugoslavija/vest>
+        vip:archivedOn     "2026-11-01"^^xsd:date;
+        vip:hasArchiveURL  <https://web.archive.org/web/20261101142153/https://24sedam.rs/biznis/privreda/290129/mv-investment-kupio-hotel-jugoslavija/vest> .
 
 <https://capitalsummit.naled.rs/ana-brnabic.php>
         vip:archivedOn     "2026-09-29"^^xsd:date;
@@ -206,8 +226,8 @@
         vip:hasArchiveURL  <http://web.archive.org/web/20251019045732/https://sr.wikipedia.org/wiki/Nacionalna_alijansa_za_lokalni_ekonomski_razvoj> .
 
 <https://www.alo.rs/vesti/politika/2184894/ekskluzivno-ekipa-alo-sa-ministrima-i-njihovom-razrednom-u-petoj-beogradskoj-posle-30-godina-sinisa-i-mihailo-od-skolskih-do-ministarskih-klupa-video.html>
-        vip:archivedOn     "2026-10-30"^^xsd:date;
-        vip:hasArchiveURL  <http://web.archive.org/web/20261030132905/https://www.alo.rs/vesti/politika/2184894/ekskluzivno-ekipa-alo-sa-ministrima-i-njihovom-razrednom-u-petoj-beogradskoj-posle-30-godina-sinisa-i-mihailo-od-skolskih-do-ministarskih-klupa-video.html> .
+        vip:archivedOn     "2026-11-01"^^xsd:date;
+        vip:hasArchiveURL  <https://web.archive.org/web/20261101142943/https://www.alo.rs/vesti/politika/2184894/ekskluzivno-ekipa-alo-sa-ministrima-i-njihovom-razrednom-u-petoj-beogradskoj-posle-30-godina-sinisa-i-mihailo-od-skolskih-do-ministarskih-klupa-video.html> .
 
 <https://www.uzmiracun.rs/vest-otvorene-wifi-zone-u-titelu-i-bakom-petrovcu-1345>
         vip:archivedOn     "2020-08-09"^^xsd:date;
@@ -216,6 +236,10 @@
 <https://www.wikidata.org/wiki/Q11160995>
         vip:archivedOn     "2025-11-04"^^xsd:date;
         vip:hasArchiveURL  <http://web.archive.org/web/20251104160959/https://www.wikidata.org/wiki/Q11160995> .
+
+<https://anem.org.rs/en/strane/cilj-je-zastrasivanje-na-lokalu-i-spaljena-zemlja-kakvu-ulogu-imaju-ispostave-klonovi-informera-i-aloa>
+        vip:archivedOn     "2026-11-01"^^xsd:date;
+        vip:hasArchiveURL  <https://web.archive.org/web/20261101142227/https://anem.org.rs/en/strane/cilj-je-zastrasivanje-na-lokalu-i-spaljena-zemlja-kakvu-ulogu-imaju-ispostave-klonovi-informera-i-aloa> .
 
 <https://forbes.n1info.rs/vesti/vlasnici-milenijum-tima-kupili-hotel-jugoslavija/>
         vip:archivedOn     "2026-03-11"^^xsd:date;
@@ -228,6 +252,10 @@
 <https://n1info.rs/biznis/prodaje-se-hotel-jugoslavija/>
         vip:archivedOn     "2025-03-04"^^xsd:date;
         vip:hasArchiveURL  <http://web.archive.org/web/20250304052747/https://n1info.rs/biznis/prodaje-se-hotel-jugoslavija/> .
+
+<https://naled.rs/en/istorijat>
+        vip:archivedOn     "2026-06-17"^^xsd:date;
+        vip:hasArchiveURL  <http://web.archive.org/web/20260617110206/https://naled.rs/en/istorijat> .
 
 <https://millenniumteam.rs/en/news/investment-in-tourism-vranjska-banja-resort-is-the-largest-current-project-in-the-south-of-serbia/>
         vip:archivedOn     "2025-10-15"^^xsd:date;
@@ -268,6 +296,14 @@
 <https://www.danas.rs/vesti/ekonomija/beogradsko-gradjevinsko-preduzece-mostogradnja-postalo-vlasnistvo-milenijum-tima/>
         vip:archivedOn     "2025-11-11"^^xsd:date;
         vip:hasArchiveURL  <http://web.archive.org/web/20251111040945/https://www.danas.rs/vesti/ekonomija/beogradsko-gradjevinsko-preduzece-mostogradnja-postalo-vlasnistvo-milenijum-tima/> .
+
+<https://vreme.com/vesti/lokalni-mediji-kupovina-alo-informer/>
+        vip:archivedOn     "2026-04-19"^^xsd:date;
+        vip:hasArchiveURL  <http://web.archive.org/web/20260419063743/https://vreme.com/vesti/lokalni-mediji-kupovina-alo-informer/> .
+
+<https://pretraga.cubepartner.rs/sr/kompanija/0e55cb2461a3e2c0/roberts-millennium-doo>
+        vip:archivedOn     "2026-11-01"^^xsd:date;
+        vip:hasArchiveURL  <https://web.archive.org/web/20261101142259/https://pretraga.cubepartner.rs/sr/kompanija/0e55cb2461a3e2c0/roberts-millennium-doo> .
 
 <https://nova.rs/vesti/biznis/od-vinograda-preko-naucnih-instituta-do-banja-i-giganata-sfrj-sta-je-sve-za-male-pare-kupila-sns-firma-milenijum-tim/>
         vip:archivedOn     "2025-05-22"^^xsd:date;

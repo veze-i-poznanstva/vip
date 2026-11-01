@@ -92,7 +92,7 @@ Step 5, the data. For each claim:
 - check whether the entity already exists under data/entities/ and reuse its URI if it does;
 - search the web for sources, open each candidate, and show the contributor the URL, the
   outlet, the date and the exact passage that supports the claim; add it only after they
-  agree. Prefer official registries (APR, CompanyWall), court records, published
+  agree. Cite the page's permanent address, not a short link. Prefer official registries (APR, CompanyWall), court records, published
   investigations (KRIK, CINS, BIRN, Raskrikavanje), fact-checking archives (Istinomer) and the
   Media Ownership Monitor over tabloids;
 - write the entity files and the case file by copying the prefixes, the header comment and
@@ -127,6 +127,25 @@ Step 7, checks. Run `./gradlew verify`. Explain every reported problem in plain 
 it with the contributor's agreement. The run updates archives.ttl with the snapshot of each new
 source; that file is committed together with the data. The run also prints red-flag leads
 (rules/): show them to the contributor if any concern the people just added.
+
+Archiving is slow and often interrupted, and this is normal. The Internet Archive limits how many
+requests it accepts, and a capture can take over two minutes. Tell the contributor this in
+advance. Records already written are kept, so nothing is lost when a run fails.
+- If `./gradlew :app:archiveSources` reports "rate limiting us" or HTTP 429, stop. Do not retry at
+  once: every attempt during a block can prolong it. Tell the contributor how long you will wait,
+  then wait 20 minutes, 40 minutes and 60 minutes before the next attempts. If you cannot wait in
+  the background, ask them to tell you when the time has passed. After three failures, stop and
+  offer to continue another day; the data stays safe on their computer.
+- Between attempts do not request anything else from web.archive.org.
+- After each attempt, verify with `./gradlew :app:checkArchives`, which lists what still has no
+  record and never contacts the archive. Continue only when it reports none missing.
+- A record is not proof that a snapshot exists. Open the address of each new snapshot in
+  archives.ttl, at most one every few seconds. If it answers 404, delete that record from
+  archives.ttl and archive that source again later.
+- If the archiver says it captured a different page, the address redirects: cite the final
+  permanent address instead, after confirming it still says the same thing.
+- If a source cannot be archived after that, tell the contributor, and replace it with another
+  source or report it in the pull request. Do not invent a record or edit one by hand.
 
 Then offer to show the result in the browser. With permission, run `./gradlew :app:ttlToCytoscape`
 to refresh the viewer's data and `./gradlew :web:npmDev` to start it in the background, and tell
