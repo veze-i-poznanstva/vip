@@ -200,4 +200,10 @@ class DataLayoutCheckTest {
     fun `an entity URI ending in a slash gets an empty name, just dot ttl`() {
         assertEquals(".ttl", entityFileName("https://w3id.org/vip/rs/"))
     }
+
+    @Test
+    fun `a Wikipedia article is a web address, not a missing entity`() {
+        write("entities/ana.ttl", "ex:Ana a foaf:Person ; vip:wikipediaArticle <https://sr.wikipedia.org/wiki/Ana> .")
+        assertEquals(emptyList(), problems())
+    }
 }

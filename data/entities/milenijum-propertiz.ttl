@@ -18,7 +18,7 @@ rs:Milenijum_Propertiz a :Company ;
     dbo:foundationDate "2008-06-30"^^xsd:date ;
     :alias "Milenijum propertiz" ;
     :hasTaxId "105706175" ;
-    rdfs:comment "Millennium Properties je društvo za inženjering i investicije, osnovano 30. juna 2008, matični broj 20435887. Milenijum tim ima manjinski udeo; nije zavisno društvo. Vlasništvo je u data/cases/milenijum-tim.ttl."@sr ;
+    rdfs:comment "Millennium Properties je društvo za inženjering i investicije, osnovano 30. juna 2008, matični broj 20435887. Milenijum tim ima manjinski udeo; nije zavisno društvo."@sr ;
     :hasDocumentation
         [ a :Documentation ; :hasDocumentURL <https://www.danas.rs/vesti/ekonomija/sta-sve-ima-milenijum-tim-novi-vlasnik-hotela-jugoslavija/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ] ,
         [ a :Documentation ; :hasDocumentURL <https://www.companywall.rs/firma/millennium-properties-doo-beograd/MMsCs0qC> ; :hasDocumentType vip:registryRecord ; :hasDocumentStatus vip:published ] ,

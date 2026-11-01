@@ -15,6 +15,7 @@
 
 rs:Sinisa_Mali a foaf:Person ;
     foaf:name "Siniša Mali"@sr ;
+    vip:wikipediaArticle <https://sr.wikipedia.org/wiki/Синиша_Мали> ;
     foaf:firstName "Siniša" ;
     :firstLastName "Mali" ;
     dbo:birthDate "1972-08-25"^^xsd:date ;

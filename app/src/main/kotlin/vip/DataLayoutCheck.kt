@@ -44,7 +44,7 @@ fun checkDataLayout(dataSet: DataSet, schema: Model? = null): List<String> {
     if (schema == null) return duplicates
 
     fun inSchema(uri: String) = schema.containsResource(ResourceFactory.createResource(uri))
-    val referenceProperties = setOf(Vocab.HAS_DOCUMENT_URL, Vocab.HAS_ARCHIVE_URL)
+    val referenceProperties = setOf(Vocab.HAS_DOCUMENT_URL, Vocab.HAS_ARCHIVE_URL, Vocab.WIKIPEDIA_ARTICLE)
     val dangling = linkedMapOf<String, MutableSet<String>>()
     val unknownTypes = mutableListOf<String>()
     val undeclaredPredicates = mutableListOf<String>()

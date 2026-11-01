@@ -15,6 +15,7 @@
 
 rs:SNS a :PoliticalOrganization ;
     foaf:name "Srpska napredna stranka"@sr ;
+    vip:wikipediaArticle <https://sr.wikipedia.org/wiki/Српска_напредна_странка> ;
     :alias "SNS" ;
     :hasDocumentation
         [ a :Documentation ; :hasDocumentURL <https://sr.wikipedia.org/wiki/Српска_напредна_странка> ; :hasDocumentType vip:encyclopediaArticle ; :hasDocumentStatus vip:published ] ,

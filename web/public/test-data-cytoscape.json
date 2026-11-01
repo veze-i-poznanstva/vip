@@ -5,7 +5,9 @@
       "label": "Milenijum tim",
       "type": "instance",
       "nodeType": "organization",
-      "uri": "https://w3id.org/vip/rs/Milenijum_Tim"
+      "uri": "https://w3id.org/vip/rs/Milenijum_Tim",
+      "comment": "Milenijum tim je građevinska kompanija iz Beograda sa širokim portfoliom povezanih firmi i poslova.",
+      "wikipedia": "https://en.wikipedia.org/wiki/Millennium_Team"
     }
   },
   {
@@ -14,7 +16,8 @@
       "label": "Srpska napredna stranka",
       "type": "instance",
       "nodeType": "party",
-      "uri": "https://w3id.org/vip/rs/SNS"
+      "uri": "https://w3id.org/vip/rs/SNS",
+      "wikipedia": "https://sr.wikipedia.org/wiki/Српска_напредна_странка"
     }
   },
   {
@@ -23,7 +26,8 @@
       "label": "Saša Blagojević",
       "type": "instance",
       "nodeType": "person",
-      "uri": "https://w3id.org/vip/rs/Sasa_Blagojevic"
+      "uri": "https://w3id.org/vip/rs/Sasa_Blagojevic",
+      "comment": "Vlasnik tabloida Alo! (Alo Media System) i televizije Studio B (Global Media Technology), većinski vlasnik Maxim Media Plus (radio stanice Hit FM, Karolina, Lola, JAT, TDI, prema Media Ownership Monitoru, 2023-2024). Ranije direktor i suvlasnik marketinške agencije Trilenium."
     }
   },
   {
@@ -32,7 +36,8 @@
       "label": "Millennium Adria",
       "type": "instance",
       "nodeType": "organization",
-      "uri": "https://w3id.org/vip/rs/Milenijum_Adria"
+      "uri": "https://w3id.org/vip/rs/Milenijum_Adria",
+      "comment": "Millennium Adria je društvo sa sedištem u Splitu, osnovano 2020, preko kog Milenijum tim posluje u Hrvatskoj."
     }
   },
   {
@@ -41,7 +46,8 @@
       "label": "Ekonomski fakultet Univerziteta u Beogradu",
       "type": "instance",
       "nodeType": "academic",
-      "uri": "https://w3id.org/vip/rs/Ekonomski_fakultet_University_of_Belgrade"
+      "uri": "https://w3id.org/vip/rs/Ekonomski_fakultet_University_of_Belgrade",
+      "wikipedia": "https://sr.wikipedia.org/wiki/Економски_факултет_Универзитета_у_Београду"
     }
   },
   {
@@ -50,7 +56,8 @@
       "label": "Mostogradnja ING",
       "type": "instance",
       "nodeType": "organization",
-      "uri": "https://w3id.org/vip/rs/Mostogradnja_ING"
+      "uri": "https://w3id.org/vip/rs/Mostogradnja_ING",
+      "comment": "Mostogradnja ING je građevinska kompanija osnovana 24. novembra 2020, matični broj 21634166. U decembru 2024. kupila je imovinu preduzeća Mostogradnja u stečaju; to je kupovina imovine, a ne trenutak kada je sama prešla u vlasništvo Milenijum tima."
     }
   },
   {
@@ -59,7 +66,8 @@
       "label": "Peta beogradska gimnazija",
       "type": "instance",
       "nodeType": "academic",
-      "uri": "https://w3id.org/vip/rs/Peta_Beogradska_Gimnazija"
+      "uri": "https://w3id.org/vip/rs/Peta_Beogradska_Gimnazija",
+      "wikipedia": "https://sr.wikipedia.org/wiki/Пета_београдска_гимназија"
     }
   },
   {
@@ -68,7 +76,8 @@
       "label": "Northwood University, Mičigen, SAD",
       "type": "instance",
       "nodeType": "academic",
-      "uri": "https://w3id.org/vip/rs/Northwood_University_Michigan"
+      "uri": "https://w3id.org/vip/rs/Northwood_University_Michigan",
+      "wikipedia": "https://en.wikipedia.org/wiki/Northwood_University"
     }
   },
   {
@@ -86,7 +95,9 @@
       "label": "Ivan Bošnjak (Milenijum tim)",
       "type": "instance",
       "nodeType": "person",
-      "uri": "https://w3id.org/vip/rs/Ivan_Bosnjak_Milenijum_Tim"
+      "uri": "https://w3id.org/vip/rs/Ivan_Bosnjak_Milenijum_Tim",
+      "comment": "Privrednik, rođen 1980. u Beogradu, jedan od osnivača i suvlasnika Milenijum tima, potpredsednik Privredne komore Srbije od juna 2025. Nije isto lice kao političar Ivan Bošnjak (rođen 1974. u Melencima), državni sekretar i bivši gradonačelnik Zrenjanina.",
+      "wikipedia": "https://sr.wikipedia.org/wiki/Ivan_Bo%C5%A1njak_(privrednik)"
     }
   },
   {
@@ -95,7 +106,8 @@
       "label": "Roberts Millennium",
       "type": "instance",
       "nodeType": "organization",
-      "uri": "https://w3id.org/vip/rs/Roberts_Milenijum"
+      "uri": "https://w3id.org/vip/rs/Roberts_Milenijum",
+      "comment": "Roberts Millennium je osnovan 26. decembra 2019, matični broj 21543080, kao zajednička firma Milenijum tima i australijske kompanije Roberts Constructions Serbia. Izbrisan iz registra 3. decembra 2024."
     }
   },
   {
@@ -104,7 +116,8 @@
       "label": "Pizzarotti Millennium",
       "type": "instance",
       "nodeType": "organization",
-      "uri": "https://w3id.org/vip/rs/Pizzarotti_Millennium"
+      "uri": "https://w3id.org/vip/rs/Pizzarotti_Millennium",
+      "comment": "Pizzarotti Millennium je preduzeće preko kog italijanski Pizzarotti nastupa u Srbiji, izvođač kule u Beogradu na vodi. Osnovano 13. decembra 2018, matični broj 21440639. Većinski vlasnik je Pizzarotti SA sa 96%; Milenijum tim ima 4% i nije matično društvo. Mediji ga nazivaju i Milenijum Picaroti."
     }
   },
   {
@@ -113,7 +126,8 @@
       "label": "Milenijum resorts",
       "type": "instance",
       "nodeType": "organization",
-      "uri": "https://w3id.org/vip/rs/Milenijum_Resorts"
+      "uri": "https://w3id.org/vip/rs/Milenijum_Resorts",
+      "comment": "Millennium Resorts upravlja razvojem turističkih projekata, uključujući Vranjsku Banju. Osnovan 8. jula 2019, matični broj 21498491."
     }
   },
   {
@@ -122,7 +136,9 @@
       "label": "Nacionalna alijansa za lokalni ekonomski razvoj (NALED)",
       "type": "instance",
       "nodeType": "organization",
-      "uri": "https://w3id.org/vip/rs/NALED"
+      "uri": "https://w3id.org/vip/rs/NALED",
+      "comment": "NALED je najveća privatno-javna asocijacija u Srbiji koja okuplja kompanije, lokalne samouprave i nevladine organizacije; 330 članova u 2025. prema sopstvenom sajtu.",
+      "wikipedia": "https://sr.wikipedia.org/wiki/Nacionalna_alijansa_za_lokalni_ekonomski_razvoj"
     }
   },
   {
@@ -131,7 +147,8 @@
       "label": "Millennium Properties",
       "type": "instance",
       "nodeType": "organization",
-      "uri": "https://w3id.org/vip/rs/Milenijum_Propertiz"
+      "uri": "https://w3id.org/vip/rs/Milenijum_Propertiz",
+      "comment": "Millennium Properties je društvo za inženjering i investicije, osnovano 30. juna 2008, matični broj 20435887. Milenijum tim ima manjinski udeo; nije zavisno društvo."
     }
   },
   {
@@ -140,7 +157,8 @@
       "label": "Siniša Mali",
       "type": "instance",
       "nodeType": "person",
-      "uri": "https://w3id.org/vip/rs/Sinisa_Mali"
+      "uri": "https://w3id.org/vip/rs/Sinisa_Mali",
+      "wikipedia": "https://sr.wikipedia.org/wiki/Синиша_Мали"
     }
   },
   {
@@ -149,7 +167,8 @@
       "label": "Ana Brnabić",
       "type": "instance",
       "nodeType": "person",
-      "uri": "https://w3id.org/vip/rs/Ana_Brnabic"
+      "uri": "https://w3id.org/vip/rs/Ana_Brnabic",
+      "wikipedia": "https://sr.wikipedia.org/wiki/Ана_Брнабић"
     }
   },
   {
@@ -158,7 +177,8 @@
       "label": "Alo media system",
       "type": "instance",
       "nodeType": "organization",
-      "uri": "https://w3id.org/vip/rs/Alo_Media_System"
+      "uri": "https://w3id.org/vip/rs/Alo_Media_System",
+      "comment": "Izdavač tabloida Alo!. Osnovana u martu 2017. pod imenom Dnevne novine Alo, preimenovana u Alo media system u junu 2019; matični broj 21276081, sedište Kosovska 26, Beograd. Od kraja 2025. kupuje lokalne televizije, radio i portale, između ostalog preko firme Best Media Team, registrovane 24. decembra 2025, u kojoj od februara 2026. ima 90%, a Insajder Tim 10%. Sa Bojanom Avramovićem poseduje i firmu INI media."
     }
   },
   {
@@ -167,7 +187,8 @@
       "label": "MT Gastel",
       "type": "instance",
       "nodeType": "organization",
-      "uri": "https://w3id.org/vip/rs/MT_Gastel"
+      "uri": "https://w3id.org/vip/rs/MT_Gastel",
+      "comment": "MT Gastel je društvo za distribuciju gasa iz Beograda. Registarski zapis nije pronađen."
     }
   },
   {
@@ -185,7 +206,9 @@
       "label": "Ivan Bošnjak (Zrenjanin)",
       "type": "instance",
       "nodeType": "person",
-      "uri": "https://w3id.org/vip/rs/Ivan_Bosnjak_Zrenjanin"
+      "uri": "https://w3id.org/vip/rs/Ivan_Bosnjak_Zrenjanin",
+      "comment": "Političar Srpske napredne stranke, gradonačelnik Zrenjanina 2012-2014, državni sekretar u ministarstvu državne uprave i lokalne samouprave 2014-2020, a od 2022. u ministarstvu za ljudska i manjinska prava i društveni dijalog. Nije isto lice kao privrednik Ivan Bošnjak (rođen 1980. u Beogradu), suvlasnik Milenijum tima.",
+      "wikipedia": "https://en.wikipedia.org/wiki/Ivan_Bo%C5%A1njak_(politician)"
     }
   },
   {
@@ -194,7 +217,8 @@
       "label": "MV Investment",
       "type": "instance",
       "nodeType": "organization",
-      "uri": "https://w3id.org/vip/rs/MV_Investment"
+      "uri": "https://w3id.org/vip/rs/MV_Investment",
+      "comment": "MV Investment je društvo osnovano 2006. koje je kupilo imovinu hotela Jugoslavija iz stečaja preduzeća Danube Riverside."
     }
   },
   {

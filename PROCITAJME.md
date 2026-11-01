@@ -14,6 +14,9 @@ stranaka sa kojima su povezani. Graf treba da pomogne krivičnim i novinarskim i
 što veze čini vidljivim, proverljivim i dokumentovanim, umesto da ostanu rasute po arhivama
 medija i registrima.
 
+VIP sabira ono što objavljuju ugledni mediji i zvanični registri. On ih ne proverava i nije pravni
+dokaz; njegov zadatak je da ih tačno prenese i pokaže odakle potiče svaka tvrdnja.
+
 Tri načela vode dizajn:
 
 1. **Svaka tvrdnja ima izvor.** Entitet ili veza ulaze u graf samo ako su potkrepljeni sa
@@ -36,7 +39,7 @@ Istinomer, KRIK, Cenzolovka i Media Ownership Monitor.
 
 ## Kako se beleže činjenice
 
-Šest pravila važi za svaki zapis. Validatori sprovode njihov oblik; da li izvor zaista kaže ono što zapis tvrdi može da proveri samo čovek koji ga čita.
+Sedam pravila važi za svaki zapis. Validatori sprovode njihov oblik; da li izvor zaista kaže ono što zapis tvrdi može da proveri samo čovek koji ga čita.
 
 - **Dokaz je čvor Dokumentacija, nikad goli URL.** Svaki izvor je resurs `:Documentation` sa
   svojom adresom, vrstom dokumenta (novinski članak, enciklopedijski članak, zapis iz registra,
@@ -62,6 +65,10 @@ Istinomer, KRIK, Cenzolovka i Media Ownership Monitor.
 - **Svaki pojam ima oznake na engleskom, španskom i srpskom.** Svaka klasa, svojstvo i
   individua u rečniku i svaka SHACL poruka nose tekst sa oznakama `@en`, `@es` i `@sr`, tako da
   se korisnički interfejsi i izveštaji validacije mogu prikazati na bilo kom od tri jezika.
+- **Isto ime, odvojeni zapisi.** Svaka osoba ima jedan URI i ime koje kaže o kome je reč, kao
+  `Ivan Bošnjak (Zrenjanin)`. Osobe se razlikuju po javnim podacima: godini rođenja, funkciji,
+  poslodavcu. `vip:wikipediaArticle` navodi članak o samom entitetu, a ne članak koji ga samo
+  pominje. Nikad ne beležite JMBG ni lični poreski broj.
 - **Tri prostora imena.** Pojmovi PoderVocab-a koriste prazan prefiks `:` za
   `http://poderopedia.com/vocab/`; sopstvene dopune rečnika koriste `vip:` za
   `https://w3id.org/vip/vocab#`; srpski podaci koriste `rs:` za `https://w3id.org/vip/rs/`, pa je
@@ -120,6 +127,18 @@ Potrebna je Java 17 ili novija. Gradle dolazi kroz wrapper.
 # Sve validacije (zadaci za šemu podrazumevaju schema.ttl, zadaci za podatke data/)
 ./gradlew :app:validateAll
 ```
+
+Da biste videli graf u pregledaču, izvezite podatke i pokrenite aplikaciju. Potrebna je samo
+Java, jer build sam preuzima Node.js:
+
+```bash
+./gradlew :app:ttlToCytoscape   # osvežava podatke aplikacije iz data/
+./gradlew :web:npmDev           # pokreće aplikaciju; zaustavlja se sa Ctrl+C
+```
+
+Zatim otvorite <http://localhost:5173/?lang=sr>, ili <http://localhost:5173/> za engleski. Ukucajte
+ime u polje za pretragu, kliknite na čvor da ga stavite u središte, a dvostrukim klikom dodajte
+njegove veze. Zadržite pokazivač na čvoru da pročitate njegov opis i otvorite članak na Vikipediji, ako postoji.
 
 Alati za šemu uzimaju jednu datoteku (`-Pfile`, podrazumevano `schema.ttl`); alati za podatke
 uzimaju stablo foldera sa Turtle datotekama ili jednu datoteku (`-Pdata`, podrazumevano `data`).

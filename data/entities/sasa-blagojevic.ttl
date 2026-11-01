@@ -17,7 +17,7 @@ rs:Sasa_Blagojevic a foaf:Person ;
     foaf:name "Saša Blagojević"@sr ;
     foaf:firstName "Saša" ;
     :firstLastName "Blagojević" ;
-    rdfs:comment "Vlasnik tabloida Alo! (Alo Media System) i televizije Studio B (Global Media Technology), većinski vlasnik Maxim Media Plus (radio stanice Hit FM, Karolina, Lola, JAT, TDI). Ranije direktor i suvlasnik marketinške agencije Trilenium."@sr ;
+    rdfs:comment "Vlasnik tabloida Alo! (Alo Media System) i televizije Studio B (Global Media Technology), većinski vlasnik Maxim Media Plus (radio stanice Hit FM, Karolina, Lola, JAT, TDI, prema Media Ownership Monitoru, 2023-2024). Ranije direktor i suvlasnik marketinške agencije Trilenium."@sr ;
     :hasDocumentation
         [ a :Documentation ; :hasDocumentURL <https://www.cenzolovka.rs/tag/sasa-blagojevic/> ; :hasDocumentType vip:webPage ; :hasDocumentStatus vip:published ] ,
         [ a :Documentation ; :hasDocumentURL <https://serbia.mom-gmr.org/sr/vlasnik/individual-owners/detail/owner/owner/show/sasa-blagojevic-2/> ; :hasDocumentType vip:registryRecord ; :hasDocumentStatus vip:published ] ,

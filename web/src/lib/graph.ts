@@ -93,3 +93,15 @@ export function expand(index: GraphIndex, shown: Set<string>, id: string): Set<s
 export function pushTrail(trail: string[], id: string): string[] {
   return [...trail.filter((t) => t !== id), id];
 }
+
+export interface HoverContent { text: string | null; wikipedia: string | null }
+
+const WIKIPEDIA_ARTICLE = /^https:\/\/[a-z-]+\.wikipedia\.org\/wiki\//;
+
+/** What to show when the pointer rests on a node: its description and Wikipedia article, or nothing. */
+export function hoverContent(node: GraphNode | undefined): HoverContent | null {
+  const text = (typeof node?.comment === 'string' ? node.comment.trim() : '') || null;
+  const link = typeof node?.wikipedia === 'string' ? node.wikipedia : '';
+  const wikipedia = WIKIPEDIA_ARTICLE.test(link) ? link : null;
+  return text || wikipedia ? { text, wikipedia } : null;
+}

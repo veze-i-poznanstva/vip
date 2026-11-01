@@ -382,4 +382,36 @@ class TtlToCytoscapeTest {
         assertEquals("z_owner", edge.data.source)
         assertEquals("a_owned", edge.data.target)
     }
+
+    @Test
+    fun `a node carries the entity's own comment, Serbian first, and none when it has no comment`() {
+        val elements = convert("""
+            ex:Ana a foaf:Person ; rdfs:comment "An official"@en, "Funkcionerka"@sr .
+            ex:Ivan a foaf:Person .
+        """)
+        val comments = elements.nodes().associate { it.data.id to it.data.comment }
+        assertEquals("Funkcionerka", comments["ana"])
+        assertNull(comments["ivan"])
+    }
+
+    @Test
+    fun `a node links its declared Wikipedia article, Serbian first, and only an https Wikipedia address`() {
+        val elements = convert("""
+            ex:Both a foaf:Person ; vip:wikipediaArticle <https://en.wikipedia.org/wiki/A>, <https://sr.wikipedia.org/wiki/A> .
+            ex:One a foaf:Person ; vip:wikipediaArticle <https://en.wikipedia.org/wiki/B> .
+            ex:Fake a foaf:Person ; vip:wikipediaArticle <https://wikipedia.org.example/wiki/C>, <http://en.wikipedia.org/wiki/C> .
+        """)
+        val links = elements.nodes().associate { it.data.id to it.data.wikipedia }
+        assertEquals("https://sr.wikipedia.org/wiki/A", links["both"])
+        assertEquals("https://en.wikipedia.org/wiki/B", links["one"])
+        assertNull(links["fake"])
+    }
+
+    @Test
+    fun `a Wikipedia page that is only cited as a source is not linked as the entity's article`() {
+        val elements = convert("""
+            ex:Person a foaf:Person ; :hasDocumentation [ a :Documentation ; :hasDocumentURL <https://en.wikipedia.org/wiki/Company> ] .
+        """)
+        assertNull(elements.nodes().single().data.wikipedia)
+    }
 }

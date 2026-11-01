@@ -18,12 +18,14 @@ rs:Roberts_Milenijum a :Company ;
     dbo:foundationDate "2019-12-26"^^xsd:date ;
     :alias "Roberts Milenijum" ;
     :hasTaxId "111802832" ;
-    rdfs:comment "Roberts Millennium je osnovan 26. decembra 2019, matični broj 21543080, kao zajednička firma Milenijum tima i australijske kompanije Roberts Constructions Serbia. Izbrisan iz registra 3. decembra 2024. Vlasništvo je u data/cases/milenijum-tim.ttl."@sr ;
+    rdfs:comment "Roberts Millennium je osnovan 26. decembra 2019, matični broj 21543080, kao zajednička firma Milenijum tima i australijske kompanije Roberts Constructions Serbia. Izbrisan iz registra 3. decembra 2024."@sr ;
     :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://n1info.rs/biznis/cime-se-sve-bavi-novi-vlasnik-hotela-jugoslavija-milenijum-tim-od-bolnice-do-gradjevine/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "N1, 23. mart 2024: druga polovina je u vlasništvu Roberts Constructions Serbia Pty Limited iz Australije."@sr ] ,
         [ a :Documentation ; :hasDocumentURL <https://www.companywall.rs/firma/roberts-millennium-doo/MMx15PUYY> ; :hasDocumentType vip:registryRecord ; :hasDocumentStatus vip:published ;
           rdfs:comment "Registar: osnovan 26.12.2019, status neaktivan, izbrisan 3.12.2024."@sr ] ,
         [ a :Documentation ; :hasDocumentURL <https://www.danas.rs/vesti/ekonomija/sta-sve-ima-milenijum-tim-novi-vlasnik-hotela-jugoslavija/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ] ,
-        [ a :Documentation ; :hasDocumentURL <https://pretraga.pkspartner.rs/sr/kompanija/0e55cb2461a3e2c0/roberts-millennium-doo> ; :hasDocumentType vip:registryRecord ; :hasDocumentStatus vip:published ] ,
+        [ a :Documentation ; :hasDocumentURL <https://pretraga.cubepartner.rs/sr/kompanija/0e55cb2461a3e2c0/roberts-millennium-doo> ; :hasDocumentType vip:registryRecord ; :hasDocumentStatus vip:published ] ,
         [ a :Documentation ; :hasDocumentURL <https://poslovi.infostud.com/posao/Inzenjer-tehnicke-pripreme/Roberts-Millennium-doo/432801> ; :hasDocumentType vip:webPage ; :hasDocumentStatus vip:published ] ,
         [ a :Documentation ; :hasDocumentURL <https://www.belgradewaterfront.com/en/news/the-main-works-commence-for-bw-metropolitan/> ; :hasDocumentType vip:webPage ; :hasDocumentStatus vip:published ] ,
         [ a :Documentation ; :hasDocumentURL <https://www.krik.rs/tag/roberts-milenijum/> ; :hasDocumentType vip:webPage ; :hasDocumentStatus vip:removed ] .

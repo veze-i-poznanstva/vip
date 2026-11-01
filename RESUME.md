@@ -78,7 +78,7 @@ today would commit it).
 
 ## Correction of 1 November 2026
 
-`reports/first-principles-review.md` (external review, not committed by us) found a misattributed
+`reports/first-principles-review.md` (external review, local only: by the user's decision it is never committed, and it is listed in .git/info/exclude) found a misattributed
 NALED role. Outcome: `rs:Ivan_Bosnjak` merged two men and is gone. `rs:Ivan_Bosnjak_Milenijum_Tim`
 (born 1980, Belgrade, sr.wikipedia "Ivan Bošnjak (privrednik)") and `rs:Ivan_Bosnjak_Zrenjanin`
 (born 4.11.1974, Melenci, state secretary) are separate. NALED Executive Board claim now rests on

@@ -13,12 +13,15 @@
 # Home file of this entity: type, names, identifiers and the sources for its identity.
 # Veze se nalaze u data/cases/. Connections live in data/cases/.
 
-rs:NALED a :NonProfitOrganization, :ProgrammaticOrganization ;
+rs:NALED a foaf:Organization ;
     foaf:name "Nacionalna alijansa za lokalni ekonomski razvoj (NALED)"@sr ;
+    vip:wikipediaArticle <https://sr.wikipedia.org/wiki/Nacionalna_alijansa_za_lokalni_ekonomski_razvoj> ;
     :alias "NALED" ;
     dbo:foundationDate "2006"^^xsd:gYear ;
     dbo:location "Beograd, Srbija"@sr ;
-    rdfs:comment "NALED je najveća privatno-javna asocijacija u Srbiji koja okuplja preko 300 kompanija, lokalnih samouprava i nevladinih organizacija."@sr ;
+    rdfs:comment "NALED je najveća privatno-javna asocijacija u Srbiji koja okuplja kompanije, lokalne samouprave i nevladine organizacije; 330 članova u 2025. prema sopstvenom sajtu."@sr ;
     :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://naled.rs/en/istorijat> ; :hasDocumentType vip:webPage ; :hasDocumentStatus vip:published ;
+          rdfs:comment "NALED: osnovan 2006; 2025: NALED has 330 members."@sr ] ,
         [ a :Documentation ; :hasDocumentURL <https://sr.wikipedia.org/wiki/Nacionalna_alijansa_za_lokalni_ekonomski_razvoj> ; :hasDocumentType vip:encyclopediaArticle ; :hasDocumentStatus vip:published ] ,
         [ a :Documentation ; :hasDocumentURL <https://naled.rs/o-nama> ; :hasDocumentType vip:webPage ; :hasDocumentStatus vip:published ] .

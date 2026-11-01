@@ -1066,6 +1066,14 @@ vip:godchild a rdf:Property, owl:ObjectProperty;
     rdfs:domain vip:GodparentConnection;
     rdfs:range foaf:Person.
 
+# Tells same-named people apart with a public identifier; a page merely cited as evidence does
+# not say it is about the entity.
+vip:wikipediaArticle a rdf:Property, owl:ObjectProperty;
+    rdfs:label "Wikipedia article"@en, "Artículo de Wikipedia"@es, "Članak na Vikipediji"@sr;
+    rdfs:comment "The Wikipedia article whose subject is this agent; not an article that only mentions it"@en, "El artículo de Wikipedia cuyo tema es este agente; no un artículo que solo lo menciona"@es, "Članak na Vikipediji čija je tema ovaj agent; ne članak koji ga samo pominje"@sr;
+    rdfs:domain foaf:Agent;
+    rdfs:range foaf:Document.
+
 # PoderVocab defines FinancialInformation but no property that attaches it to the organisation
 # it describes.
 vip:hasFinancialInformation a rdf:Property, owl:ObjectProperty;

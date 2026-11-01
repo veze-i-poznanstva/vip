@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { buildIndex, egoGraph, expand, fold, pushTrail, search, subgraph } from './graph';
+import { buildIndex, egoGraph, expand, fold, hoverContent, pushTrail, search, subgraph } from './graph';
 
 describe('fold', () => {
   it('lowercases and strips diacritics so "brnabic" matches "Ana Brnabić"', () => {
@@ -68,5 +68,25 @@ describe('pushTrail', () => {
     expect(pushTrail(trail, 'ana')).toEqual(['ivan', 'ana']);
     expect(pushTrail(trail, 'ivan')).toEqual(['ana', 'ivan']);
     expect(trail).toEqual(['ana', 'ivan']);
+  });
+});
+
+describe('hoverContent', () => {
+  it('gives the trimmed comment and the Wikipedia link of a node', () => {
+    expect(hoverContent({ id: 'a', label: 'A', comment: ' Izdavač. ', wikipedia: 'https://sr.wikipedia.org/wiki/A' }))
+      .toEqual({ text: 'Izdavač.', wikipedia: 'https://sr.wikipedia.org/wiki/A' });
+  });
+
+  it('works with only one of the two, and is null with neither', () => {
+    expect(hoverContent({ id: 'a', label: 'A', comment: 'Opis' })).toEqual({ text: 'Opis', wikipedia: null });
+    expect(hoverContent({ id: 'a', label: 'A', wikipedia: 'https://en.wikipedia.org/wiki/A' }))
+      .toEqual({ text: null, wikipedia: 'https://en.wikipedia.org/wiki/A' });
+    expect(hoverContent({ id: 'a', label: 'A', comment: '  ' })).toBeNull();
+    expect(hoverContent(undefined)).toBeNull();
+  });
+
+  it('refuses a link that is not https Wikipedia, so data cannot plant another address', () => {
+    expect(hoverContent({ id: 'a', label: 'A', wikipedia: 'javascript:alert(1)' })).toBeNull();
+    expect(hoverContent({ id: 'a', label: 'A', wikipedia: 'https://wikipedia.org.example/x' })).toBeNull();
   });
 });

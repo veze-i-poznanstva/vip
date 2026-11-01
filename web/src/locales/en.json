@@ -29,5 +29,6 @@
   "search.none": "No matches",
   "search.hint": "Showing {label} and its direct connections. Click a node to make it the centre; double-click to add its connections.",
   "showAll": "Show all",
-  "trail": "Trail"
+  "trail": "Trail",
+  "wikipedia": "Wikipedia"
 }

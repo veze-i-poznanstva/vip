@@ -15,7 +15,10 @@
 
 rs:Ekonomski_fakultet_University_of_Belgrade a :AcademicOrganization ;
     foaf:name "Ekonomski fakultet Univerziteta u Beogradu"@sr ;
+    vip:wikipediaArticle <https://sr.wikipedia.org/wiki/Економски_факултет_Универзитета_у_Београду> ;
     dbo:location "Beograd, Srbija"@sr ;
     :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://www.ekof.bg.ac.rs/> ; :hasDocumentType vip:webPage ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Sajt fakulteta: Ekonomski fakultet, Univerzitet u Beogradu, Kamenička 6, Beograd."@sr ] ,
         [ a :Documentation ; :hasDocumentURL <https://sr.wikipedia.org/wiki/Економски_факултет_Универзитета_у_Београду> ; :hasDocumentType vip:encyclopediaArticle ; :hasDocumentStatus vip:published ] ,
         [ a :Documentation ; :hasDocumentURL <https://www.bg.ac.rs/> ; :hasDocumentType vip:webPage ; :hasDocumentStatus vip:published ] .

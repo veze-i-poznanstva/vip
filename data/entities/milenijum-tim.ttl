@@ -15,10 +15,11 @@
 
 rs:Milenijum_Tim a :Company ;
     foaf:name "Milenijum tim"@sr ;
+    vip:wikipediaArticle <https://en.wikipedia.org/wiki/Millennium_Team> ;
     dbo:foundationDate "2003-09-04"^^xsd:date ;
     dbo:industry "Građevinarstvo"@sr ;
     dbo:location "Beograd, Srbija"@sr ;
-    rdfs:comment "Milenijum tim je jedna od vodećih građevinskih kompanija u Srbiji sa širokim portfoliom povezanih firmi i poslova."@sr ;
+    rdfs:comment "Milenijum tim je građevinska kompanija iz Beograda sa širokim portfoliom povezanih firmi i poslova."@sr ;
     :hasDocumentation
         [ a :Documentation ; :hasDocumentURL <https://en.wikipedia.org/wiki/Millennium_Team> ; :hasDocumentType vip:encyclopediaArticle ; :hasDocumentStatus vip:published ] ,
         [ a :Documentation ; :hasDocumentURL <https://www.millenniumteam.rs/> ; :hasDocumentType vip:webPage ; :hasDocumentStatus vip:published ] ,

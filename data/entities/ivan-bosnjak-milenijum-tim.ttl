@@ -17,6 +17,7 @@
 
 rs:Ivan_Bosnjak_Milenijum_Tim a foaf:Person ;
     foaf:name "Ivan Bošnjak (Milenijum tim)"@sr ;
+    vip:wikipediaArticle <https://sr.wikipedia.org/wiki/Ivan_Bo%C5%A1njak_(privrednik)> ;
     foaf:firstName "Ivan" ;
     :firstLastName "Bošnjak" ;
     dbo:birthPlace "Beograd, Srbija"@sr ;
@@ -27,6 +28,6 @@ rs:Ivan_Bosnjak_Milenijum_Tim a foaf:Person ;
         [ a :Documentation ; :hasDocumentURL <https://millenniumteam.rs/en/news/ivan-bosnjak-elected-vice-president-of-the-serbian-chamber-of-commerce/> ; :hasDocumentType vip:webPage ; :hasDocumentStatus vip:published ;
           rdfs:comment "Sajt kompanije, 26. jun 2025: co-founder and Deputy General Manager of Millennium Team."@sr ] ,
         [ a :Documentation ; :hasDocumentURL <https://vreme.com/vesti/milenijum-tim-brat-sinise-malog-poslovi-bez-veze-sa-drzavom/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
-          rdfs:comment "Vreme, 26. januar 2026: suvlasnik potvrđuje na sudu da je član SNS, a da nikada nije imao funkciju u stranci."@sr ] ,
+          rdfs:comment "Vreme, 26. januar 2026: suvlasnik je istakao da je ponosni član SNS, a da nikada nije imao funkciju u stranci."@sr ] ,
         [ a :Documentation ; :hasDocumentURL <https://www.krik.rs/tag/ivan-bosnjak/> ; :hasDocumentType vip:webPage ; :hasDocumentStatus vip:published ;
           rdfs:comment "KRIK, oznaka sa tekstovima o Milenijum timu; stranica sama ne navodi uloge."@sr ] .

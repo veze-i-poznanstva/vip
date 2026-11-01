@@ -14,6 +14,9 @@ organizations, companies and parties they are connected to. The graph is meant t
 criminal and journalistic investigation by making connections explicit, traceable and
 verifiable rather than scattered across news archives and registries.
 
+VIP aggregates what reputable media and official registries report. It does not fact-check them
+and it is not legal proof; its job is to report them correctly and show where each claim comes from.
+
 Three principles drive the design:
 
 1. **Every claim is sourced.** An entity or a connection enters the graph only if it is backed
@@ -36,7 +39,7 @@ Istinomer, KRIK, Cenzolovka and the Media Ownership Monitor.
 
 ## How facts are recorded
 
-Six conventions apply to every record. The validators enforce their form; whether a source really says what a record claims takes a person reading it.
+Seven conventions apply to every record. The validators enforce their form; whether a source really says what a record claims takes a person reading it.
 
 - **Evidence is a Documentation node, never a bare URL.** Each source is a `:Documentation`
   resource with its URL, a document type (news article, encyclopedia article, registry record,
@@ -62,6 +65,10 @@ Six conventions apply to every record. The validators enforce their form; whethe
 - **Every term has labels in English, Spanish and Serbian.** Every class, property and
   individual in the vocabulary and every SHACL message carries `@en`, `@es` and `@sr` text, so
   user interfaces and validation reports can be rendered in any of the three.
+- **Same name, separate records.** Each person has one URI and a name that says who it is, such
+  as `Ivan Bošnjak (Zrenjanin)`. Tell people apart by public facts: birth year, office, employer.
+  `vip:wikipediaArticle` names the article about the entity itself, not one that only mentions
+  it. Never record a JMBG or a personal tax number.
 - **Three namespaces.** PoderVocab terms use the empty prefix `:` for
   `http://poderopedia.com/vocab/`; the project's own vocabulary additions use `vip:` for
   `https://w3id.org/vip/vocab#`; Serbian instance data uses `rs:` for `https://w3id.org/vip/rs/`,
@@ -120,6 +127,18 @@ Requirements: Java 17 or newer. Gradle is bundled through the wrapper.
 # Run every validation (schema tasks default to schema.ttl, data tasks to data/)
 ./gradlew :app:validateAll
 ```
+
+To see the graph in your browser, export the data and start the viewer. Java is the only
+requirement, because the build downloads its own Node.js:
+
+```bash
+./gradlew :app:ttlToCytoscape   # refresh the viewer's data from data/
+./gradlew :web:npmDev           # start the viewer; stop it with Ctrl+C
+```
+
+Then open <http://localhost:5173/>, or <http://localhost:5173/?lang=sr> for Serbian. Type a name
+into the search box, click a node to make it the centre, and double-click to add its connections. Rest the pointer on a
+node to read its description and open its Wikipedia article, if it has one.
 
 Schema tools take one file (`-Pfile`, default `schema.ttl`); data tools take a directory tree of
 Turtle files or a single file (`-Pdata`, default `data`). Every tool loads with Apache Jena,

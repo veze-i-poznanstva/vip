@@ -107,15 +107,16 @@ Step 5, the data. For each claim:
 - say out loud which file you are writing and what goes into it.
 Work on a branch named after the case, for example `case/milenijum-tim`.
 
-Step 6, second reading. The checks in the next step cannot tell whether a source says what the
-record claims, so do this yourself before running them, as if someone else had written the data.
+Step 6, second reading. VIP aggregates what reputable media and official registries report. It
+does not fact-check them, so a reputable report is enough, but it must be reported correctly. The
+checks in the next step cannot tell whether a source says what the record claims, so do this
+yourself before running them, as if someone else had written the data.
 Open every cited document again and, for each claim, answer from the page itself:
 - Does the passage name this exact person or organisation, and not someone of the same name?
 - Does it give this exact role, at this organisation, and not a role of someone else mentioned
   nearby?
 - Does it support the dates, and each one at the stated precision?
-- Are the sources independent, or does one repeat the other? Two sites repeating one report
-  count as one source; say so in the comment.
+- Does the record say what the source says, with the same attribution, and nothing it does not?
 Show the contributor a table with one row per claim: the claim, the source, the quoted passage,
 and your verdict (supported, partly supported, not supported). Fix or remove anything that is not
 fully supported, and record a citation that turned out to be wrong with status removed and a
@@ -127,7 +128,14 @@ it with the contributor's agreement. The run updates archives.ttl with the snaps
 source; that file is committed together with the data. The run also prints red-flag leads
 (rules/): show them to the contributor if any concern the people just added.
 
-Step 8, the pull request. Show `git status` and the diff summary. With permission, commit the
+Then offer to show the result in the browser. With permission, run `./gradlew :app:ttlToCytoscape`
+to refresh the viewer's data and `./gradlew :web:npmDev` to start it in the background, and tell
+the contributor to open http://localhost:5173/?lang=sr, type a name they added into the search
+box, click a node to make it the centre, and double-click to add its connections. Stop the viewer
+when they are done. If the search finds nothing, the export did not run.
+
+Step 8, the pull request. Show `git status` and the diff summary, and leave out the regenerated
+web/public/test-data-cytoscape.json unless a maintainer asked for it. With permission, commit the
 entity files, the case file and archives.ttl with a one-line message naming the case, push the
 branch to the contributor's fork, and run `gh pr create` with a title naming the case and a
 body that lists each connection added, its sources and the verdict table from the second

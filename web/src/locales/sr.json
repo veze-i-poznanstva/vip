@@ -29,5 +29,6 @@
   "search.none": "Nema pogodaka",
   "search.hint": "Prikazano: {label} i neposredne veze. Klik na čvor stavlja ga u središte; dvostruki klik dodaje njegove veze.",
   "showAll": "Prikaži sve",
-  "trail": "Trag"
+  "trail": "Trag",
+  "wikipedia": "Vikipedija"
 }

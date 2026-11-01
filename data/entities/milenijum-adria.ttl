@@ -19,7 +19,7 @@ rs:Milenijum_Adria a :Company ;
     :alias "Milenijum Adria" ;
     :hasTaxId "53546365408" ;
     dbo:location "Split, Hrvatska"@sr ;
-    rdfs:comment "Millennium Adria je društvo sa sedištem u Splitu, osnovano 2020, preko kog Milenijum tim posluje u Hrvatskoj. Vlasništvo je u data/cases/milenijum-tim.ttl."@sr ;
+    rdfs:comment "Millennium Adria je društvo sa sedištem u Splitu, osnovano 2020, preko kog Milenijum tim posluje u Hrvatskoj."@sr ;
     :hasDocumentation
         [ a :Documentation ; :hasDocumentURL <https://www.danas.rs/vesti/ekonomija/sta-sve-ima-milenijum-tim-novi-vlasnik-hotela-jugoslavija/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ] ,
         [ a :Documentation ; :hasDocumentURL <https://www.fininfo.hr/Poduzece/Pregled/millennium-adria/Detaljno/780814> ; :hasDocumentType vip:registryRecord ; :hasDocumentStatus vip:published ] ,

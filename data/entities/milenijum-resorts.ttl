@@ -16,7 +16,7 @@
 rs:Milenijum_Resorts a :Company ;
     foaf:name "Milenijum resorts"@sr ;
     dbo:foundationDate "2019-07-08"^^xsd:date ;
-    rdfs:comment "Millennium Resorts upravlja razvojem turističkih projekata, uključujući Vranjsku Banju. Osnovan 8. jula 2019, matični broj 21498491. Vlasništvo je u data/cases/milenijum-tim.ttl."@sr ;
+    rdfs:comment "Millennium Resorts upravlja razvojem turističkih projekata, uključujući Vranjsku Banju. Osnovan 8. jula 2019, matični broj 21498491."@sr ;
     :hasDocumentation
         [ a :Documentation ; :hasDocumentURL <https://www.companywall.rs/firma/drustvo--za-inzenjering-i-usluge-millennium-resorts-doo-beograd/MMxxIjkxY> ; :hasDocumentType vip:registryRecord ; :hasDocumentStatus vip:published ;
           rdfs:comment "Registar: osnovan 8.7.2019, matični broj 21498491."@sr ] ,

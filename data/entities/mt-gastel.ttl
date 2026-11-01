@@ -15,8 +15,10 @@
 
 rs:MT_Gastel a :Company ;
     foaf:name "MT Gastel"@sr ;
-    rdfs:comment "MT Gastel je društvo za distribuciju gasa iz Beograda. Registarski zapis nije pronađen. Vlasništvo je u data/cases/milenijum-tim.ttl."@sr ;
+    rdfs:comment "MT Gastel je društvo za distribuciju gasa iz Beograda. Registarski zapis nije pronađen."@sr ;
     :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://www.emis.cn/php/company-profile/YU/Millennium_Team_DOO_Beograd_en_2585748.html> ; :hasDocumentType vip:registryRecord ; :hasDocumentStatus vip:published ;
+          rdfs:comment "EMIS: Drustvo Za Distribuciju Gasa Mt Gastel D.O.O. Beograd (Savski Venac)."@sr ] ,
         [ a :Documentation ; :hasDocumentURL <https://www.danas.rs/vesti/ekonomija/sta-sve-ima-milenijum-tim-novi-vlasnik-hotela-jugoslavija/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ] ,
         [ a :Documentation ; :hasDocumentURL <https://www.krik.rs/koruptivne-veze-milenijum-tim-ustupio-audi-i-stan-bratu-sinise-malog/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ] ,
         [ a :Documentation ; :hasDocumentURL <https://n1info.rs/biznis/cime-se-sve-bavi-novi-vlasnik-hotela-jugoslavija-milenijum-tim-od-bolnice-do-gradjevine/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ] ,

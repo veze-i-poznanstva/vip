@@ -19,8 +19,14 @@ rs:Alo_Media_System a :Company ;
     dbo:foundationDate "2017-03-27"^^xsd:date ;
     dbo:industry "Izdavanje novina"@sr ;
     dbo:location "Beograd, Srbija"@sr ;
-    rdfs:comment "Izdavač tabloida Alo!. Osnovana u martu 2017. pod imenom Dnevne novine Alo, preimenovana u Alo media system u junu 2019; matični broj 21276081, sedište Kosovska 26, Beograd. Preko zavisnih društava (Best Media Team, INI media) od kraja 2025. kupuje lokalne televizije, radio stanice i portale."@sr ;
+    rdfs:comment "Izdavač tabloida Alo!. Osnovana u martu 2017. pod imenom Dnevne novine Alo, preimenovana u Alo media system u junu 2019; matični broj 21276081, sedište Kosovska 26, Beograd. Od kraja 2025. kupuje lokalne televizije, radio i portale, između ostalog preko firme Best Media Team, registrovane 24. decembra 2025, u kojoj od februara 2026. ima 90%, a Insajder Tim 10%. Sa Bojanom Avramovićem poseduje i firmu INI media."@sr ;
     :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://safejournalists.net/sr/vlasnik-tabloida-alo-za-manje-od-mesec-dana-kupio-dve-televizije-i-radio-za-skoro-200-000-evra/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Raskrikavanje/SafeJournalists, januar 2026: vlasnik tabloida Alo kupio dve televizije i radio."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://vreme.com/vesti/lokalni-mediji-kupovina-alo-informer/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Vreme, 13. mart 2026: Alo Media System zajedno sa Bojanom Avramovićem poseduje i firmu INI media."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.021.rs/story/Info/Srbija/436227/Informer-postao-suvlasnik-firme-koja-kupuje-lokalne-medije.html> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "021.rs, 26. februar 2026: vlasnici Best Media Team su Alo Media System 90 odsto i Insajder Tim 10 odsto; registrovana 24. decembra."@sr ] ,
         [ a :Documentation ; :hasDocumentURL <https://www.companywall.rs/firma/alo-media-system/MMfsPqfD> ; :hasDocumentType vip:registryRecord ; :hasDocumentStatus vip:published ;
           rdfs:comment "Registarski podaci (APR preko CompanyWall): puni naziv, matični broj 21276081, PIB 109964527, osnovana 27.3.2017, Kosovska 26/3, direktor Dragan Lazić."@sr ] ,
         [ a :Documentation ; :hasDocumentURL <https://serbia.mom-gmr.org/sr/mediji/detail/outlet/alo/> ; :hasDocumentType vip:registryRecord ; :hasDocumentStatus vip:published ;

@@ -24,10 +24,16 @@ Every agent and every connection carries `:Documentation` nodes with at least tw
 from two different domains (www ignored), each reachable live or through a Wayback Machine
 snapshot recorded in `archives.ttl`. A dead source is kept with `:hasDocumentStatus vip:removed`
 and no longer counts. Only genuine `web.archive.org/web/<14 digits>/` addresses count as archives.
-The build proves form and reachability, not truth: read each source before citing it, quote the
+Editorial standard: VIP aggregates what reputable media and official registries report; it does
+not fact-check them and needs no legal proof. Trust the source, but aggregate it correctly: the
+record must say what the source says, with its attribution, and nothing more.
+The build proves form and reachability, not that: read each source before citing it, quote the
 passage on the document's `rdfs:comment`, and check that it means this person (same-named people
 get separate URIs, `rs:Ivan_Bosnjak_Milenijum_Tim` and `rs:Ivan_Bosnjak_Zrenjanin` are two men).
 A citation found wrong stays with `vip:removed` and a comment saying why.
+
+Same-named people get separate URIs told apart by public facts. `vip:wikipediaArticle` is the
+article about the entity, never a page it is only cited in. Never record a JMBG or personal tax number.
 
 Connections carry `:connectionStartDate`/`:connectionEndDate` at the source's precision (`xsd:gYear`,
 `xsd:gYearMonth`, `xsd:date`); never invent 1 January; absent means unknown; one connection per

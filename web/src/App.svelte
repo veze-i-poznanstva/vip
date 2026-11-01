@@ -4,8 +4,8 @@
   import type { ElementDefinition } from 'cytoscape';
   import { language, resolveLanguage, supportedLanguages, t } from './lib/i18n';
   import type { Language } from './lib/i18n';
-  import { buildIndex, egoGraph, expand, pushTrail, search, subgraph } from './lib/graph';
-  import type { Element, GraphIndex, GraphNode } from './lib/graph';
+  import { buildIndex, egoGraph, expand, hoverContent, pushTrail, search, subgraph } from './lib/graph';
+  import type { Element, GraphIndex, GraphNode, HoverContent } from './lib/graph';
 
   let graph: CytoscapeGraph;
   let selectedLayout = 'cose';
@@ -37,6 +37,29 @@
     focus = null;
     query = '';
     shown = new Set();
+  }
+
+  /** The popup for the node under the pointer. It stays briefly after the pointer leaves, so its link can be reached. */
+  let hover: (HoverContent & { x: number; y: number; flipX: boolean; flipY: boolean }) | null = null;
+  let hideTimer: ReturnType<typeof setTimeout> | undefined;
+
+  function keepHover() {
+    clearTimeout(hideTimer);
+  }
+
+  function hideHoverSoon() {
+    clearTimeout(hideTimer);
+    hideTimer = setTimeout(() => (hover = null), 400);
+  }
+
+  function onNodeHover(event: CustomEvent<{ id: string; x: number; y: number; flipX: boolean; flipY: boolean } | null>) {
+    const content = event.detail ? hoverContent(index.nodes.get(event.detail.id)) : null;
+    if (!event.detail || !content) {
+      hideHoverSoon();
+      return;
+    }
+    keepHover();
+    hover = { ...event.detail, ...content };
   }
 
   function onNodeClick(event: CustomEvent<string>) {
@@ -305,7 +328,24 @@
         style={graphStyle}
         on:nodeClick={onNodeClick}
         on:nodeDoubleClick={onNodeDoubleClick}
+        on:nodeHover={onNodeHover}
       />
+      {#if hover}
+        <!-- svelte-ignore a11y-no-static-element-interactions -->
+        <div
+          class="node-comment"
+          class:flip-x={hover.flipX}
+          class:flip-y={hover.flipY}
+          style="left: calc({hover.x}px + 1rem); top: calc({hover.y}px + 1rem)"
+          on:mouseenter={keepHover}
+          on:mouseleave={hideHoverSoon}
+        >
+          <p>
+            {#if hover.text}{hover.text}{/if}
+            {#if hover.wikipedia}<a href={hover.wikipedia} target="_blank" rel="noopener noreferrer">{$t('wikipedia')}</a>{/if}
+          </p>
+        </div>
+      {/if}
     {/if}
   </div>
 
@@ -431,6 +471,43 @@
     color: #868e96;
   }
 
+  .node-comment {
+    position: absolute;
+    z-index: 20;
+    max-width: 22rem;
+    padding: 0.5rem 0.7rem;
+    margin: 12px;
+    font-size: 0.9rem;
+    line-height: 1.35;
+    color: #212529;
+    background: #fff;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .node-comment p {
+    margin: 0;
+  }
+
+  .node-comment a {
+    color: #1c7ed6;
+  }
+
+  .node-comment.flip-x {
+    transform: translateX(-100%);
+    margin-left: -12px;
+  }
+
+  .node-comment.flip-y {
+    transform: translateY(-100%);
+    margin-top: -12px;
+  }
+
+  .node-comment.flip-x.flip-y {
+    transform: translate(-100%, -100%);
+  }
+
   .trail {
     display: flex;
     flex-wrap: wrap;
@@ -535,6 +612,7 @@
   }
 
   .graph-container {
+    position: relative;
     flex: 1;
     padding: 1rem;
     overflow: hidden;

@@ -7,7 +7,11 @@
   /** The node drawn in the centre of a concentric layout and marked with the `focus` class. */
   export let focusId: string | null = null;
 
-  const dispatch = createEventDispatcher<{ nodeClick: string; nodeDoubleClick: string }>();
+  const dispatch = createEventDispatcher<{
+    nodeClick: string;
+    nodeDoubleClick: string;
+    nodeHover: { id: string; x: number; y: number; flipX: boolean; flipY: boolean } | null;
+  }>();
 
   function layoutOptions(name: string): cytoscape.LayoutOptions {
     const base = { name, animate: true, animationDuration: 500, fit: true, padding: 50 };
@@ -80,6 +84,19 @@
       const edge = evt.target;
       console.log('Edge clicked:', edge.data());
     });
+
+    cy.on('mouseover', 'node', (evt) => {
+      const at = evt.renderedPosition;
+      dispatch('nodeHover', {
+        id: evt.target.id(),
+        x: at.x,
+        y: at.y,
+        flipX: at.x > cy.width() - 380,
+        flipY: at.y > cy.height() - 180
+      });
+    });
+    cy.on('mouseout', 'node', () => dispatch('nodeHover', null));
+    cy.on('tap pan zoom', () => dispatch('nodeHover', null));
 
     cy.on('dbltap', 'node', (evt) => dispatch('nodeDoubleClick', evt.target.id()));
     markFocus();

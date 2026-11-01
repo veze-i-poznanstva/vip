@@ -16,7 +16,7 @@
 rs:Mostogradnja_ING a :Company ;
     foaf:name "Mostogradnja ING"@sr ;
     dbo:foundationDate "2020-11-24"^^xsd:date ;
-    rdfs:comment "Mostogradnja ING je građevinska kompanija osnovana 24. novembra 2020, matični broj 21634166. U decembru 2024. kupila je imovinu preduzeća Mostogradnja u stečaju; to je kupovina imovine, a ne trenutak kada je sama prešla u vlasništvo Milenijum tima. Vlasništvo je u data/cases/milenijum-tim.ttl."@sr ;
+    rdfs:comment "Mostogradnja ING je građevinska kompanija osnovana 24. novembra 2020, matični broj 21634166. U decembru 2024. kupila je imovinu preduzeća Mostogradnja u stečaju; to je kupovina imovine, a ne trenutak kada je sama prešla u vlasništvo Milenijum tima."@sr ;
     :hasDocumentation
         [ a :Documentation ; :hasDocumentURL <https://www.companywall.rs/firma/mostogradnja-ing-doo/MMxEWFnzR> ; :hasDocumentType vip:registryRecord ; :hasDocumentStatus vip:published ;
           rdfs:comment "Registar: osnovana 24.11.2020, matični broj 21634166."@sr ] ,

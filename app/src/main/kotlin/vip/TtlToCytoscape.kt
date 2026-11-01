@@ -21,7 +21,9 @@ data class ElementData(
     val target: String? = null,
     val type: String? = null,
     val nodeType: String? = null,
-    val uri: String? = null
+    val uri: String? = null,
+    val comment: String? = null,
+    val wikipedia: String? = null
 )
 
 fun main(args: Array<String>) {
@@ -118,7 +120,9 @@ private class GraphBuilder(private val data: Model, private val schema: Model) {
             label = labelOf(agent) ?: extractLabelFromUri(agent.uri),
             type = "instance",
             nodeType = nodeTypeOf(agent),
-            uri = agent.uri
+            uri = agent.uri,
+            comment = commentOf(agent),
+            wikipedia = wikipediaOf(agent)
         )
     )
 
@@ -196,18 +200,31 @@ private class GraphBuilder(private val data: Model, private val schema: Model) {
      */
     private fun labelOf(resource: Resource): String? =
         listOf(Vocab.NAME, RDFS.label.uri, "http://purl.org/dc/terms/title")
-            .firstNotNullOfOrNull { p ->
-                data.listStatements(resource, data.createProperty(p), null as RDFNode?).toList()
-                    .map { it.`object` }.filter { it.isLiteral }.map { it.asLiteral() }
-                    .minWithOrNull(compareBy({ preferredLanguages.indexOf(it.language).let { i -> if (i < 0) preferredLanguages.size else i } }, { it.lexicalForm }))
-                    ?.lexicalForm
-            }
+            .firstNotNullOfOrNull { p -> preferredLiteral(resource, data.createProperty(p)) }
+
+    /** The entity's own description, chosen like its name. */
+    private fun commentOf(resource: Resource): String? = preferredLiteral(resource, RDFS.comment)
+
+    /** The article about this entity, as the data declares it; a page merely cited as a source does not count. */
+    private fun wikipediaOf(resource: Resource): String? =
+        data.listObjectsOfProperty(resource, data.createProperty(Vocab.WIKIPEDIA_ARTICLE)).toList()
+            .filter { it.isURIResource }.map { it.asResource().uri }
+            .filter { WIKIPEDIA_ARTICLE_URL.containsMatchIn(it) }
+            .minWithOrNull(compareBy({ url -> preferredLanguages.indexOf(url.substringAfter("//").substringBefore('.')).let { i -> if (i < 0) preferredLanguages.size else i } }, { it }))
+
+    private fun preferredLiteral(resource: Resource, property: Property): String? =
+        data.listStatements(resource, property, null as RDFNode?).toList()
+            .map { it.`object` }.filter { it.isLiteral }.map { it.asLiteral() }
+            .minWithOrNull(compareBy({ preferredLanguages.indexOf(it.language).let { i -> if (i < 0) preferredLanguages.size else i } }, { it.lexicalForm }))
+            ?.lexicalForm
 
     private fun schemaLabel(resource: Resource, language: String = "en"): String? {
         val labels = schema.listStatements(resource, RDFS.label, null as RDFNode?).toList().map { it.`object`.asLiteral() }
         return (labels.firstOrNull { it.language == language } ?: labels.firstOrNull())?.lexicalForm
     }
 }
+
+private val WIKIPEDIA_ARTICLE_URL = Regex("^https://[a-z-]+\\.wikipedia\\.org/wiki/")
 
 fun createNodeId(uri: String): String {
     val id = uri
