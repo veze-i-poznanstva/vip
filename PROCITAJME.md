@@ -42,7 +42,8 @@ dokaz; njegov zadatak je da ih tačno prenese i pokaže odakle potiče svaka tvr
 svaka veza navode najmanje dva javna dokumenta sa dva različita domena, dostupna uživo ili kroz
 arhiviranu kopiju, a build to automatski proverava.
 
-Projekat je inspirisan [Poderopedijom](https://www.poderopedia.org/). Više u dokumentu
+Projekat je inspirisan čileanskom [Poderopedijom](https://web.archive.org/web/20210104195106/http://www.poderopedia.org/) (arhivirana kopija; sajt više ne radi),
+na čijoj ontologiji [PoderVocab](https://github.com/poderopedia/PoderVocabulary) su podaci izgrađeni. Više u dokumentu
 [Zašto mapirati veze](docs/why-connections.sr.md).
 
 ## Dokumentacija

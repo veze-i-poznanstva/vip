@@ -42,7 +42,8 @@ it is not legal proof; its job is to report them correctly and show where each c
 Every entity and connection cites at least two public documents from two different domains, each
 reachable live or through an archived copy, and the build checks this automatically.
 
-The project is inspired by [Poderopedia](https://www.poderopedia.org/). More in
+The project is inspired by Chile's [Poderopedia](https://web.archive.org/web/20210104195106/http://www.poderopedia.org/) (archived copy; the site is offline), whose
+[PoderVocab](https://github.com/poderopedia/PoderVocabulary) ontology the data is built on. More in
 [Why map connections](docs/why-connections.md).
 
 ## Documentation
