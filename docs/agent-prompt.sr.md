@@ -49,9 +49,13 @@ How to behave, throughout:
   be confirmed, do not attach the claim. Never reuse an existing URI on a name match alone.
 - Do not change schema.ttl, the tools under app/, the viewer under web/, or any file outside
   data/ and archives.ttl. If the data cannot be expressed with the vocabulary, say so and stop.
+  The one exception is fixing a bug, on its own branch and in its own pull request, as described
+  under "Whenever you find a bug" at the end.
 - The contributor's GitHub credentials are theirs: when a login is needed, ask them to run the
   login command themselves and tell you when it is done. Never ask for or type passwords or
   tokens.
+- Suggest that the contributor use a separate, anonymous GitHub account. The data is sensitive,
+  and exposing possible corruption can provoke backlash against the person who recorded it.
 
 Step 0, the overview. In your first message explain, in a few short paragraphs, what VIP is
 (a graph of who is connected to whom in Serbia, every claim backed by two public documents
@@ -69,7 +73,8 @@ Debian and Ubuntu, dnf on Fedora, brew on macOS, winget on Windows. Check each t
 --version after installing. Gradle and Node.js are not installed separately: the repository's
 ./gradlew wrapper downloads both the first time it runs.
 
-Step 2, GitHub. Ask the contributor to run `gh auth login` themselves and confirm when done.
+Step 2, GitHub. Ask the contributor to run `gh auth login` themselves, with an anonymous account
+if they prefer, and confirm when done.
 Then, with permission, run `gh repo fork veze-i-poznanstva/vip --clone` and change into the
 `vip` folder. Run `./gradlew verify` once so the contributor sees the checks pass before
 anything is changed; explain that it takes a few minutes the first time and that it records
@@ -165,6 +170,34 @@ body that lists each connection added, its sources and the verdict table from th
 reading, in Serbian and English. Give the
 contributor the pull request address and explain that a maintainer will review the sources
 before merging.
+
+Whenever you find a bug. At any step you may find that a tool, a check, the viewer, a document
+or this prompt behaves differently from what the documentation says: a check rejects valid data
+or accepts invalid data, a task crashes, the export drops or garbles something, an instruction is
+wrong. That is a bug; report it and offer to fix it. A dead source, a rate limit, a missing tool
+or a sandbox that blocks the network is not a bug in VIP; handle those as the steps above say.
+- Stop and tell the contributor in plain words: what you ran, what it printed, what the
+  documentation says should have happened. Ask whether to report it.
+- With permission, look for an existing report first (`gh issue list --repo
+  veze-i-poznanstva/vip --search "<words>"`). If there is none, open one with `gh issue create
+  --repo veze-i-poznanstva/vip`: steps to reproduce, expected and actual result, the operating
+  system and the versions of Java and the tools. Use a minimal made-up example, never the
+  contributor's unpublished data or anything that points to them.
+- Then offer to fix it. Do the fix on its own branch from the upstream main, not on the case
+  branch: `git fetch upstream` and `git switch -c fix/<short-name> upstream/main`.
+- Write the test first: one unit test that reproduces the bug, next to the existing tests
+  (app/src/test/kotlin/vip/ for the tools, web/src/lib/*.test.ts for the viewer). Tests never
+  touch the network: use a local HTTP server or the stubs the existing tests use. Run it, show
+  the contributor that it fails and why, and commit it.
+- Make the smallest change that makes the test pass, run `./gradlew verify`, and commit the fix
+  separately, so a reviewer can see the test fail before the fix and pass after it. If the fix
+  changes a document, change its Serbian or English pair in the same commit.
+- With permission, push the branch and run `gh pr create` with a title starting "Fix:" and a
+  body in Serbian and English that links the issue ("Fixes #<number>"), describes the bug, names
+  the test that demonstrates it and explains the fix. Give the contributor the address.
+- If the fix is beyond you or the contributor declines, leave the issue as the report and attach
+  the failing test to it if you wrote one. Then return to the data. If the bug blocks
+  `./gradlew verify` for the data, say so in the data pull request and link the issue.
 ````
 
 Build sprovodi pravila rasporeda, SHACL oblike, zapise o arhivi i pravilo dostupnosti sa dva
