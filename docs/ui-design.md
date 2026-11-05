@@ -1,6 +1,6 @@
 # Graph explorer: UI design
 
-Status: increments 2, 3 and the expand half of 5 are built (see Increments); the rest is design. This document describes the first real user interface of VIP,
+Status: increments 2, 3, 4 (the details panel) and the expand half of 5 are built, as is the focus part of 7 (see Increments); the rest is design. This document describes the first real user interface of VIP,
 replacing the current demo viewer that dumps the whole dataset on one canvas.
 
 ## Who it is for and what they do
@@ -131,10 +131,10 @@ Each increment is a thin vertical slice that ends green, following the Baby Step
    matching in Vitest, including Cyrillic input and diacritics.
 3. **Ego graph, depth one.** Choosing a result renders the focus node and its neighbours with
    the concentric layout.
-4. **Details panel.** Click shows properties and sources with status.
+4. **Details panel.** Built. The focus node, or a clicked connection, shows facts, connections, sources with quotes and archive links, and links to the raw data.
 5. **Expand and recentre.** Double click expands; Focus button recentres; trail appears.
 6. **Depth two toggle.** Second ring at reduced opacity.
-7. **Deep links.** Trail and expanded set in the URL hash.
+7. **Deep links.** Trail and expanded set in the URL hash. Built so far: the path (`?from=&to=`) and the focus (`?focus=`).
 8. **Veracity status export.** Build writes the veracity report as JSON and the converter
    merges it, so dashed edges and status marks reflect the last check.
 

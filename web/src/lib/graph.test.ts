@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { buildIndex, egoGraph, expand, filterByType, fold, hoverContent, pathElements, pathSteps, pushTrail, readPathQuery, search, shortestPaths, subgraph, writePathQuery } from './graph';
+import { buildIndex, egoGraph, expand, filterByType, fold, hoverContent, pathElements, pathSteps, pushTrail, readFocusQuery, readPathQuery, search, shortestPaths, subgraph, writeFocusQuery, writePathQuery } from './graph';
 import type { Element } from './graph';
 
 describe('fold', () => {
@@ -210,5 +210,26 @@ describe('filterByType', () => {
 
   it('keeps nodes without a type, and gives only those when every type is hidden', () => {
     expect(ids(['person', 'party', 'organization'])).toEqual(['x']);
+  });
+});
+
+describe('focus in the address', () => {
+  it('reads the focus id, or null when absent or empty', () => {
+    expect(readFocusQuery('?lang=sr&focus=rs:Ana')).toBe('rs:Ana');
+    expect(readFocusQuery('?lang=sr')).toBeNull();
+    expect(readFocusQuery('?focus=')).toBeNull();
+  });
+
+  it('sets the focus and keeps other parameters, replacing an earlier focus', () => {
+    expect(writeFocusQuery('?lang=sr&focus=old', 'new')).toBe('?lang=sr&focus=new');
+  });
+
+  it('removes the focus when there is none, and gives an empty query when nothing is left', () => {
+    expect(writeFocusQuery('?lang=sr&focus=old', null)).toBe('?lang=sr');
+    expect(writeFocusQuery('?focus=old', undefined)).toBe('');
+  });
+
+  it('encodes ids with reserved characters so they read back', () => {
+    expect(readFocusQuery(writeFocusQuery('', 'a&b=c'))).toBe('a&b=c');
   });
 });

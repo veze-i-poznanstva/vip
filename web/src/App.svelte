@@ -4,12 +4,15 @@
   import EntityPicker from './lib/EntityPicker.svelte';
   import ReportDialog from './lib/ReportDialog.svelte';
   import AboutDialog from './lib/AboutDialog.svelte';
+  import DetailsPanel from './lib/DetailsPanel.svelte';
+  import { edgeLabel, panelContent } from './lib/details';
+  import type { ConnectionFields } from './lib/details';
   import { wantsCorrection, withoutCorrection } from './lib/report';
   import type { ReportSubject } from './lib/report';
-  import type { ElementDefinition } from 'cytoscape';
+  import type { ElementDefinition, StylesheetStyle } from 'cytoscape';
   import { language, resolveLanguage, supportedLanguages, t } from './lib/i18n';
   import type { Language } from './lib/i18n';
-  import { buildIndex, egoGraph, expand, filterByType, hoverContent, pathElements, pathSteps, pushTrail, readPathQuery, shortestPaths, subgraph, writePathQuery } from './lib/graph';
+  import { buildIndex, egoGraph, expand, filterByType, hoverContent, pathElements, pathSteps, pushTrail, readFocusQuery, readPathQuery, shortestPaths, subgraph, writeFocusQuery, writePathQuery } from './lib/graph';
   import type { Element, GraphIndex, GraphNode, HoverContent } from './lib/graph';
 
   let graph: CytoscapeGraph;
@@ -41,7 +44,8 @@
     : null;
 
   $: if (!loading) {
-    history.replaceState(null, '', location.pathname + writePathQuery(location.search, pathFrom?.id, pathTo?.id));
+    const withPath = writePathQuery(location.search, pathFrom?.id, pathTo?.id);
+    history.replaceState(null, '', location.pathname + writeFocusQuery(withPath, pathFrom && pathTo ? null : focus?.id));
   }
 
   // Types switched off in the filter; a path always shows every step, so it ignores them.
@@ -60,12 +64,17 @@
   }
 
   $: shownElements = pathShown ?? filterByType(focus ? subgraph(index, shown) : (elements as unknown as Element[]), hiddenTypes);
+  /** The canvas draws translated connection labels; the index keeps the converter's data untouched. */
+  $: drawnElements = shownElements.map((e) =>
+    'source' in e.data ? { data: { ...e.data, label: edgeLabel(e.data as unknown as ConnectionFields, $t) } } : e) as ElementDefinition[];
   $: explorerLayout = pathShown ? 'breadthfirst' : focus ? 'concentric' : selectedLayout;
 
   /** Makes the node the centre: its neighbourhood replaces the canvas and it joins the trail. */
   function choose(node: GraphNode) {
     closePath();
     focus = node;
+    selectedEdgeId = null;
+    panelOpen = true;
     query = node.label;
     shown = new Set(egoGraph(index, node.id).filter((e) => !('source' in e.data)).map((e) => String(e.data.id)));
     trail = pushTrail(trail.map((n) => n.id), node.id).map((id) => index.nodes.get(id)!);
@@ -117,6 +126,24 @@
     toQuery = '';
   }
 
+  // The details panel shows the focus node, or a clicked connection; × hides it until the next selection.
+  let selectedEdgeId: string | null = null;
+  let panelOpen = false;
+  $: panel = panelOpen ? panelContent(index, focus?.id ?? null, selectedEdgeId) : null;
+
+  const permalink = (id: string) => location.origin + location.pathname + writeFocusQuery(writePathQuery(location.search, null, null), id);
+
+  function closePanel() {
+    panelOpen = false;
+    selectedEdgeId = null;
+  }
+
+  function onEdgeClick(event: CustomEvent<string>) {
+    hover = null;
+    selectedEdgeId = event.detail;
+    panelOpen = true;
+  }
+
   let report: ReportSubject | null = null;
   let about = false;
 
@@ -134,6 +161,7 @@
 
   function showAll() {
     closePath();
+    closePanel();
     focus = null;
     query = '';
     shown = new Set();
@@ -164,7 +192,12 @@
 
   function onNodeClick(event: CustomEvent<string>) {
     const node = index.nodes.get(event.detail);
-    if (node && node.id !== focus?.id) choose(node);
+    if (!node) return;
+    if (node.id !== focus?.id) choose(node);
+    else {
+      selectedEdgeId = null;
+      panelOpen = true;
+    }
   }
 
   function onNodeDoubleClick(event: CustomEvent<string>) {
@@ -204,10 +237,13 @@
         pathTo = index.nodes.get(linked.to)!;
         query = pathFrom.label;
         toQuery = pathTo.label;
+      } else {
+        const linkedFocus = readFocusQuery(location.search);
+        if (linkedFocus && index.nodes.has(linkedFocus)) choose(index.nodes.get(linkedFocus)!);
       }
     } catch (e) {
       console.error('Error loading graph data:', e);
-      error = e.message;
+      error = e instanceof Error ? e.message : String(e);
       loading = false;
       // Fallback to sample data
       elements = [
@@ -237,7 +273,7 @@
     }
   });
 
-  const graphStyle = [
+  const graphStyle: StylesheetStyle[] = [
     // Default node style (must come first)
     {
       selector: 'node',
@@ -419,6 +455,7 @@
     </select>
   </div>
 
+  <div class="workspace">
   <div class="graph-container">
     <div class="canvas-tools">
       <button type="button" class="square" aria-label={$t('zoomIn')} title={$t('zoomIn')} on:click={() => graph?.zoomBy(1.25)}>+</button>
@@ -441,11 +478,12 @@
     {:else}
       <CytoscapeGraph
         bind:this={graph}
-        elements={shownElements}
+        elements={drawnElements}
         layout={explorerLayout}
         focusId={pathFrom && pathTo ? pathFrom.id : focus?.id ?? null}
         style={graphStyle}
         on:nodeClick={onNodeClick}
+        on:edgeClick={onEdgeClick}
         on:nodeDoubleClick={onNodeDoubleClick}
         on:nodeHover={onNodeHover}
       />
@@ -468,6 +506,23 @@
         </div>
       {/if}
     {/if}
+  </div>
+  {#if panel}
+    <aside class="details" aria-label={$t('details')}>
+      <DetailsPanel
+        content={panel}
+        {index}
+        canBack={!!focus}
+        focusId={focus?.id ?? null}
+        {permalink}
+        on:close={closePanel}
+        on:centre={(e) => { const n = index.nodes.get(e.detail); if (n) choose(n); }}
+        on:selectEdge={(e) => (selectedEdgeId = e.detail)}
+        on:back={() => (selectedEdgeId = null)}
+        on:report={(e) => (report = e.detail)}
+      />
+    </aside>
+  {/if}
   </div>
 
   {#if pathFrom && pathTo}
@@ -853,9 +908,41 @@
     border-color: #adb5bd;
   }
 
+  .workspace {
+    position: relative;
+    display: flex;
+    flex: 1;
+    min-height: 0;
+  }
+
+  .details {
+    flex: none;
+    box-sizing: border-box;
+    width: 360px;
+    overflow-y: auto;
+    background: #fff;
+    border-left: 1px solid #ced4da;
+  }
+
+  @media (max-width: 899px) {
+    .details {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 30;
+      width: auto;
+      max-height: 55vh;
+      border-left: none;
+      border-top: 1px solid #ced4da;
+      box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15);
+    }
+  }
+
   .graph-container {
     position: relative;
     flex: 1;
+    min-width: 0;
     padding: 1rem;
     overflow: hidden;
   }

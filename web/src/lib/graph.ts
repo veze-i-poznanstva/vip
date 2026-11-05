@@ -216,6 +216,20 @@ export function writePathQuery(search: string, from: string | null | undefined, 
   return query ? `?${query}` : '';
 }
 
+/** The node named in the address by `?focus=`, so a link reproduces the panel. */
+export function readFocusQuery(search: string): string | null {
+  return new URLSearchParams(search).get('focus') || null;
+}
+
+/** The address query with the focus set, or removed when there is none; other parameters stay. */
+export function writeFocusQuery(search: string, id: string | null | undefined): string {
+  const params = new URLSearchParams(search);
+  params.delete('focus');
+  if (id) params.set('focus', id);
+  const query = params.toString();
+  return query ? `?${query}` : '';
+}
+
 /** The elements without nodes of the hidden types, and without the edges that touched them. */
 export function filterByType(elements: Element[], hidden: Set<string>): Element[] {
   const removed = new Set(elements.filter((e) => hidden.has(String(e.data.nodeType))).map((e) => e.data.id));

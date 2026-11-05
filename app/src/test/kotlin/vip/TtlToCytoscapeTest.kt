@@ -20,11 +20,17 @@ class TtlToCytoscapeTest {
         @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
     """.trimIndent()
 
-    private fun convert(ttl: String): List<CytoscapeElement> {
+    private fun convert(ttl: String, archivesTtl: String = ""): List<CytoscapeElement> {
         val model = ModelFactory.createDefaultModel()
         model.read(StringReader(prefixes + "\n" + ttl.trimIndent()), null, "TTL")
-        return convertModelToCytoscape(model, schema)
+        val archives = ModelFactory.createDefaultModel()
+        archives.read(StringReader(
+            "@prefix vip: <https://w3id.org/vip/vocab#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n" + archivesTtl), null, "TTL")
+        return convertModelToCytoscape(model, schema, archives)
     }
+
+    private fun doc(url: String, extra: String = "") =
+        "[ a :Documentation ; :hasDocumentURL <$url> ${if (extra.isEmpty()) "" else "; $extra"} ]"
 
     private fun List<CytoscapeElement>.nodes() = filter { it.data.source == null }
     private fun List<CytoscapeElement>.edges() = filter { it.data.source != null }
@@ -298,13 +304,13 @@ class TtlToCytoscapeTest {
     }
 
     @Test
-    fun `two connections with the same label between the same pair draw one edge`() {
+    fun `two connections with the same label between the same pair draw two edges, one per connection`() {
         val elements = convert("""
             ex:A a foaf:Person . ex:B a foaf:Person .
             _:c1 a :SocialConnection ; bio:participant ex:A, ex:B .
             _:c2 a :SocialConnection ; bio:participant ex:B, ex:A .
         """)
-        assertEquals(1, elements.edges().size)
+        assertEquals(2, elements.edges().size)
     }
 
     @Test
@@ -413,5 +419,189 @@ class TtlToCytoscapeTest {
             ex:Person a foaf:Person ; :hasDocumentation [ a :Documentation ; :hasDocumentURL <https://en.wikipedia.org/wiki/Company> ] .
         """)
         assertNull(elements.nodes().single().data.wikipedia)
+    }
+
+    @Test
+    fun `a node carries its sources with url, domain, type, status and quote`() {
+        val node = convert("""
+            ex:Ana a foaf:Person ; :hasDocumentation [ a :Documentation ;
+                :hasDocumentURL <https://www.Krik.rs/tag/ana/> ; :hasDocumentType vip:newsArticle ;
+                :hasDocumentStatus vip:published ; rdfs:comment "Ana je ministarka"@sr, "Ana is a minister"@en ] .
+        """).nodes().single()
+        assertEquals(
+            listOf(Source("https://www.Krik.rs/tag/ana/", "krik.rs", "newsArticle", "published", "Ana je ministarka")),
+            node.data.sources
+        )
+    }
+
+    @Test
+    fun `a removed source is listed last and keeps its status`() {
+        val sources = convert("""
+            ex:Ana a foaf:Person ; :hasDocumentation
+                ${doc("https://a.example/gone", ":hasDocumentStatus vip:removed")},
+                ${doc("https://z.example/ok", ":hasDocumentStatus vip:published")},
+                ${doc("https://b.example/archived", ":hasDocumentStatus vip:archived")} .
+        """).nodes().single().data.sources!!
+        assertEquals(listOf("published", "archived", "removed"), sources.map { it.status })
+        assertEquals("https://a.example/gone", sources.last().url)
+    }
+
+    @Test
+    fun `a source gets its archive snapshot and date from the archives model`() {
+        val elements = convert("""
+            ex:Ana a foaf:Person ; :hasDocumentation ${doc("https://a.example/x")}, ${doc("https://b.example/y")} .
+        """, """
+            <https://a.example/x> vip:archivedOn "2026-05-21"^^xsd:date ; vip:hasArchiveURL <http://web.archive.org/web/20260521145618/https://a.example/x> .
+        """)
+        val (archived, plain) = elements.nodes().single().data.sources!!
+        assertEquals("http://web.archive.org/web/20260521145618/https://a.example/x", archived.archive)
+        assertEquals("2026-05-21", archived.archivedOn)
+        assertNull(plain.archive)
+        assertNull(plain.archivedOn)
+    }
+
+    @Test
+    fun `a node without documentation has no sources`() {
+        assertNull(convert("ex:Ana a foaf:Person .").nodes().single().data.sources)
+    }
+
+    @Test
+    fun `aliases collect the other names and the vip aliases, sorted`() {
+        val node = convert("""
+            ex:Ana a foaf:Person ; foaf:name "Ana Brnabić"@sr, "Ana Brnabic"@en ; :alias "Zlatna Ana", "Anči" .
+            ex:Ivan a foaf:Person ; foaf:name "Ivan" .
+        """).nodes()
+        assertEquals(listOf("Ana Brnabic", "Anči", "Zlatna Ana"), node.first { it.data.id == "ana" }.data.aliases)
+        assertNull(node.first { it.data.id == "ivan" }.data.aliases)
+    }
+
+    @Test
+    fun `facts carry birth date and place with vocabulary labels and skip names, comments and types`() {
+        val facts = convert("""
+            @prefix dbo: <http://dbpedia.org/ontology/> .
+            @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+            ex:Ana a foaf:Person ; foaf:name "Ana" ; foaf:firstName "Ana" ; :firstLastName "B" ; :alias "A" ;
+                rdfs:label "L" ; rdfs:comment "C" ;
+                dbo:birthPlace "Beograd"@sr ; dbo:birthDate "1975-09-28"^^xsd:date ; :hasTickerSymbol "ANA" .
+        """).nodes().single().data.facts
+        assertEquals(
+            listOf(Fact("birthDate", "birth date", "1975-09-28"), Fact("birthPlace", "birth place", "Beograd"),
+                Fact("hasTickerSymbol", "Ticker symbol", "ANA")),
+            facts
+        )
+        assertNull(convert("ex:Ana a foaf:Person ; foaf:name \"Ana\" .").nodes().single().data.facts)
+    }
+
+    @Test
+    fun `an edge carries the connection uri, kind, type label, start and end exactly as written`() {
+        val data = convert("""
+            @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+            ex:A a foaf:Person . ex:B a :Company .
+            ex:Own a vip:OwnershipConnection ; vip:owner ex:A ; bio:participant ex:A, ex:B ;
+                :connectionStartDate "2016-04"^^xsd:gYearMonth ; :connectionEndDate "2018"^^xsd:gYear ;
+                rdfs:comment "Vlasnik"@sr ; :hasDocumentation ${doc("https://a.example/x")} .
+        """).edges().single().data
+        assertEquals("https://w3id.org/vip/rs/Own", data.uri)
+        assertEquals("OwnershipConnection", data.kind)
+        assertEquals("Ownership connection", data.typeLabel)
+        assertEquals("2016-04", data.start)
+        assertEquals("2018", data.end)
+        assertEquals("Vlasnik", data.comment)
+        assertEquals("a.example", data.sources!!.single().domain)
+    }
+
+    @Test
+    fun `an ownership edge carries its share`() {
+        val data = convert("""
+            ex:A a foaf:Person . ex:B a :Company .
+            ex:Own a vip:OwnershipConnection ; vip:owner ex:A ; vip:ownedCompany ex:B ; vip:ownershipShare 50.0 .
+            ex:Soc a :SocialConnection ; bio:participant ex:A, ex:B .
+        """).edges().associateBy { it.data.kind }
+        assertEquals(50.0, data["OwnershipConnection"]!!.data.share)
+        assertNull(data["SocialConnection"]!!.data.share)
+        assertNull(data["SocialConnection"]!!.data.roles)
+    }
+
+    @Test
+    fun `a work edge carries its role labels`() {
+        val data = convert("""
+            ex:A a foaf:Person . ex:N a :NonProfitOrganization .
+            _:w a :WorkConnection ; bio:participant ex:A ; :hasEconomicOrganizationParticipant ex:N ;
+                :hasWorkRole vip:founder, vip:boardChair .
+        """).edges().single().data
+        assertEquals(listOf("Chair of the board", "Founder"), data.roles)
+        assertNull(data.uri)
+    }
+
+    @Test
+    fun `two connections between the same pair are two edges with their own dates`() {
+        val edges = convert("""
+            @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+            ex:A a foaf:Person . ex:B a :Company .
+            ex:Own1 a vip:OwnershipConnection ; vip:owner ex:A ; vip:ownedCompany ex:B ; :connectionStartDate "2003"^^xsd:gYear .
+            ex:Own2 a vip:OwnershipConnection ; vip:owner ex:A ; vip:ownedCompany ex:B ; :connectionStartDate "2010"^^xsd:gYear .
+        """).edges()
+        assertEquals(listOf("2003", "2010"), edges.map { it.data.start })
+    }
+
+    @Test
+    fun `a direct property edge has no connection fields`() {
+        val data = convert("""
+            ex:P a :Company . ex:C a :Company .
+            ex:C :subsidiaryCompanyOf ex:P .
+        """).edges().single().data
+        assertNull(data.uri)
+        assertNull(data.kind)
+        assertNull(data.sources)
+        assertNull(data.file)
+    }
+
+    @Test
+    fun `the most specific declared type wins when two are declared`() {
+        val data = convert("""
+            ex:A a foaf:Person . ex:B a :AcademicOrganization .
+            ex:E a :Connection, :AlumniEducationalConnection, :EducationalConnection ; :hasStudent ex:A ; :hasAcademicOrganization ex:B .
+        """).edges().single().data
+        assertEquals("AlumniEducationalConnection", data.kind)
+        assertEquals("Alumni", data.typeLabel)
+    }
+
+    private val tmp: java.io.File by lazy { java.nio.file.Files.createTempDirectory("cyto").toFile() }
+
+    private fun convertFiles(files: Map<String, String>, input: (java.io.File) -> java.io.File = { it }, inputPath: String = "data"): List<CytoscapeElement> {
+        val root = java.io.File(tmp, "d" + System.nanoTime()).apply { mkdirs() }
+        files.forEach { (name, body) -> java.io.File(root, name).apply { parentFile.mkdirs() }.writeText(prefixes + "\n" + body.trimIndent() + "\n") }
+        return convertDataSetToCytoscape(loadDataSet(input(root)), schema, ModelFactory.createDefaultModel(), inputPath)
+    }
+
+    @Test
+    fun `file and line point at the declaring file and its line`() {
+        val elements = convertFiles(mapOf(
+            "entities/ana.ttl" to "# c\nex:Ana a foaf:Person .",
+            "entities/acme.ttl" to "ex:Acme a :Company .",
+            "cases/c.ttl" to "# first\n<https://w3id.org/vip/rs/Own> a vip:OwnershipConnection ; vip:owner ex:Ana ; vip:ownedCompany ex:Acme .\nex:Aff :subsidiaryCompanyOf ex:Acme ."
+        ))
+        val ana = elements.nodes().first { it.data.id == "ana" }.data
+        assertEquals("data/entities/ana.ttl", ana.file)
+        assertEquals(8, ana.line)
+        val own = elements.edges().single().data
+        assertEquals("data/cases/c.ttl", own.file)
+        assertEquals(8, own.line)
+    }
+
+    @Test
+    fun `line is null when the subject is written in a way the search does not find`() {
+        val elements = convertFiles(mapOf("entities/two.ttl" to "ex:Ana a foaf:Person . ex:Ivan a foaf:Person ."))
+        val byId = elements.nodes().associate { it.data.id to it.data }
+        assertEquals(7, byId["ana"]!!.line)
+        assertNull(byId["ivan"]!!.line)
+        assertEquals("data/entities/two.ttl", byId["ivan"]!!.file)
+    }
+
+    @Test
+    fun `a single input file is its own path`() {
+        val elements = convertFiles(mapOf("one.ttl" to "ex:Ana a foaf:Person ."),
+            input = { it.resolve("one.ttl") }, inputPath = "data/entities/one.ttl")
+        assertEquals("data/entities/one.ttl", elements.nodes().single().data.file)
     }
 }

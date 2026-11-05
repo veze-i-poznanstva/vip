@@ -23,7 +23,18 @@ data class ElementData(
     val nodeType: String? = null,
     val uri: String? = null,
     val comment: String? = null,
-    val wikipedia: String? = null
+    val wikipedia: String? = null,
+    val aliases: List<String>? = null,
+    val facts: List<Fact>? = null,
+    val kind: String? = null,
+    val typeLabel: String? = null,
+    val roles: List<String>? = null,
+    val share: Double? = null,
+    val start: String? = null,
+    val end: String? = null,
+    val file: String? = null,
+    val line: Int? = null,
+    val sources: List<Source>? = null
 )
 
 fun main(args: Array<String>) {
@@ -32,9 +43,9 @@ fun main(args: Array<String>) {
 
 /** The command line as a function: returns the exit status and writes only to the given streams. */
 fun runTtlToCytoscape(args: Array<String>, out: PrintStream, err: PrintStream): Int {
-    if (args.size < 2 || args.size > 3) {
-        err.println("Usage: ttlToCytoscape <data-dir-or-file> <output.json> [schema.ttl]")
-        err.println("Example: ttlToCytoscape data web/public/test-data-cytoscape.json schema.ttl")
+    if (args.size < 2 || args.size > 4) {
+        err.println("Usage: ttlToCytoscape <data-dir-or-file> <output.json> [schema.ttl] [archives.ttl]")
+        err.println("Example: ttlToCytoscape data web/public/test-data-cytoscape.json schema.ttl archives.ttl")
         return 1
     }
 
@@ -42,7 +53,10 @@ fun runTtlToCytoscape(args: Array<String>, out: PrintStream, err: PrintStream): 
     val outputFile = File(args[1])
     val schemaFile = File(args.getOrElse(2) { "schema.ttl" })
 
-    for (f in listOf(inputFile, schemaFile)) {
+    // An archives file that is named must exist; the default one is optional.
+    val archivesFile = if (args.size > 3) File(args[3]) else File("archives.ttl").takeIf { it.exists() }
+
+    for (f in listOfNotNull(inputFile, schemaFile, archivesFile)) {
         if (!f.exists()) {
             err.println("Error: file '${f.path.printable()}' not found")
             return 1
@@ -53,9 +67,10 @@ fun runTtlToCytoscape(args: Array<String>, out: PrintStream, err: PrintStream): 
         outputFile.parentFile?.mkdirs()
         out.println("Converting ${inputFile.path.printable()} to Cytoscape format using vocabulary ${schemaFile.path.printable()}...")
 
-        val data = loadDataSet(inputFile).merged
+        val dataSet = loadDataSet(inputFile)
         val schema = RDFDataMgr.loadModel(schemaFile.path)
-        val elements = convertModelToCytoscape(data, schema)
+        val archives = archivesFile?.let { RDFDataMgr.loadModel(it.path) } ?: ModelFactory.createDefaultModel()
+        val elements = convertDataSetToCytoscape(dataSet, schema, archives, args[0])
 
         val gson = GsonBuilder().setPrettyPrinting().create()
         outputFile.writeText(gson.toJson(elements))
@@ -79,10 +94,18 @@ fun runTtlToCytoscape(args: Array<String>, out: PrintStream, err: PrintStream): 
  * label, its work roles or its type; and every direct object property between two agents becomes
  * an edge labelled by the property. Connections, documentation and plain URLs never become nodes.
  */
-fun convertModelToCytoscape(data: Model, schema: Model): List<CytoscapeElement> =
-    GraphBuilder(data, schema).build()
+fun convertModelToCytoscape(
+    data: Model, schema: Model, archives: Model = ModelFactory.createDefaultModel()
+): List<CytoscapeElement> = GraphBuilder(data, schema, archives, null).build()
 
-private class GraphBuilder(private val data: Model, private val schema: Model) {
+/** As [convertModelToCytoscape], and records which file and line each record lives at ([inputPath] as given on the command line). */
+fun convertDataSetToCytoscape(dataSet: DataSet, schema: Model, archives: Model, inputPath: String): List<CytoscapeElement> =
+    GraphBuilder(dataSet.merged, schema, archives, RecordLocator(dataSet, inputPath)).build()
+
+private class GraphBuilder(
+    private val data: Model, private val schema: Model, archives: Model, private val locator: RecordLocator?
+) {
+    private val archiveIndex = ArchiveIndex(archives)
     private val inferred: InfModel = ModelFactory.createRDFSModel(schema, data)
     // Only declared resources become nodes: a participant that the data never types is not an
     // agent just because the vocabulary's range axiom would make it one.
@@ -101,8 +124,7 @@ private class GraphBuilder(private val data: Model, private val schema: Model) {
 
     fun build(): List<CytoscapeElement> {
         val nodes = agents.map(::nodeElement)
-        val edges = connectionEdges() + directEdges()
-        return nodes + dedupe(edges)
+        return nodes + connectionEdges() + dedupe(directEdges())
     }
 
     private fun instancesOf(classUri: String): List<Resource> =
@@ -114,17 +136,75 @@ private class GraphBuilder(private val data: Model, private val schema: Model) {
     private fun isA(resource: Resource, classUri: String): Boolean =
         inferred.contains(resource, RDF.type, inferred.createResource(classUri))
 
-    private fun nodeElement(agent: Resource): CytoscapeElement = CytoscapeElement(
-        data = ElementData(
-            id = nodeId(agent),
-            label = labelOf(agent) ?: extractLabelFromUri(agent.uri),
-            type = "instance",
-            nodeType = nodeTypeOf(agent),
-            uri = agent.uri,
-            comment = commentOf(agent),
-            wikipedia = wikipediaOf(agent)
+    private fun nodeElement(agent: Resource): CytoscapeElement {
+        val label = labelOf(agent) ?: extractLabelFromUri(agent.uri)
+        val where = locator?.declaration(agent)
+        return CytoscapeElement(
+            data = ElementData(
+                id = nodeId(agent),
+                label = label,
+                type = "instance",
+                nodeType = nodeTypeOf(agent),
+                uri = agent.uri,
+                comment = commentOf(agent),
+                wikipedia = wikipediaOf(agent),
+                aliases = aliasesOf(agent, label),
+                facts = factsOf(agent),
+                file = where?.file,
+                line = where?.line,
+                sources = sourcesOf(agent)
+            )
         )
+    }
+
+    /** Every other name of the agent: its further foaf:name values and its aliases. */
+    private fun aliasesOf(agent: Resource, label: String): List<String>? =
+        (literals(agent, Vocab.NAME) + literals(agent, Vocab.ALIAS)).filter { it != label }.distinct().sorted().ifEmpty { null }
+
+    private fun literals(resource: Resource, property: String): List<String> =
+        data.listObjectsOfProperty(resource, data.createProperty(property)).toList()
+            .filter { it.isLiteral }.map { it.asLiteral().lexicalForm }
+
+    private val notFacts = setOf(
+        Vocab.NAME, Vocab.FIRST_NAME, Vocab.FIRST_LAST_NAME, Vocab.ALIAS, RDFS.label.uri,
+        Vocab.DCTERMS_TITLE, RDFS.comment.uri, RDF.type.uri
     )
+
+    /** Literal-valued statements other than names, comments and types, labelled by the vocabulary. */
+    private fun factsOf(agent: Resource): List<Fact>? =
+        data.listStatements(agent, null, null as RDFNode?).toList()
+            .filter { it.`object`.isLiteral && it.predicate.uri !in notFacts }
+            .map { Fact(localName(it.predicate.uri), englishLabel(it.predicate) ?: extractLabelFromUri(it.predicate.uri).lowercase(), it.`object`.asLiteral().lexicalForm) }
+            .distinct().sortedWith(compareBy({ it.property }, { it.value })).ifEmpty { null }
+
+    private fun sourcesOf(resource: Resource): List<Source>? =
+        data.listObjectsOfProperty(resource, data.createProperty(Vocab.HAS_DOCUMENTATION)).toList()
+            .filter { it.isResource }.map { it.asResource() }
+            .mapNotNull { doc ->
+                val url = data.listObjectsOfProperty(doc, data.createProperty(Vocab.HAS_DOCUMENT_URL)).toList()
+                    .filter { it.isURIResource }.map { it.asResource().uri }.minOrNull() ?: return@mapNotNull null
+                Source(
+                    url = url,
+                    domain = sourceDomain(url),
+                    type = localNameOf(doc, Vocab.HAS_DOCUMENT_TYPE),
+                    status = localNameOf(doc, Vocab.HAS_DOCUMENT_STATUS),
+                    quote = preferredLiteral(doc, RDFS.comment),
+                    archive = archiveIndex.snapshotOf(url),
+                    archivedOn = archiveIndex.dateOf(url)
+                )
+            }
+            .sortedWith(compareBy({ statusRank(it.status) }, { it.domain }, { it.url })).ifEmpty { null }
+
+    private fun statusRank(status: String?): Int = when (status) {
+        "published" -> 0
+        "archived" -> 1
+        "removed" -> 3
+        else -> 2
+    }
+
+    private fun localNameOf(resource: Resource, property: String): String? =
+        data.listObjectsOfProperty(resource, data.createProperty(property)).toList()
+            .filter { it.isURIResource }.map { localName(it.asResource().uri) }.minOrNull()
 
     private fun nodeTypeOf(agent: Resource): String = when {
         isA(agent, Vocab.PERSON) -> "person"
@@ -135,7 +215,7 @@ private class GraphBuilder(private val data: Model, private val schema: Model) {
     }
 
     private fun connectionEdges(): List<CytoscapeElement> =
-        instancesOf(Vocab.CONNECTION).flatMap { connection ->
+        instancesOf(Vocab.CONNECTION).sortedWith(compareBy({ it.uri ?: "" }, { commentOf(it) ?: "" })).flatMap { connection ->
             val participants = inferred.listObjectsOfProperty(connection, inferred.createProperty(Vocab.PARTICIPANT))
                 .toList()
                 .filter { it.isURIResource }
@@ -145,9 +225,41 @@ private class GraphBuilder(private val data: Model, private val schema: Model) {
                 .sortedWith(compareBy({ !isOwnerIn(connection, it) }, { !isA(it, Vocab.PERSON) }, { it.uri }))
             val label = connectionLabel(connection)
             participants.indices.flatMap { i ->
-                (i + 1 until participants.size).map { j -> edge(participants[i], participants[j], label) }
+                (i + 1 until participants.size).map { j -> connectionEdge(connection, participants[i], participants[j], label) }
             }
         }
+
+    private fun connectionEdge(connection: Resource, from: Resource, to: Resource, label: String): CytoscapeElement {
+        val kind = kindOf(connection)
+        val where = locator?.declaration(connection)
+        val roles = rolesOf(connection)
+        return edge(from, to, label).let { e ->
+            e.copy(data = e.data.copy(
+                uri = connection.takeIf { it.isURIResource }?.uri,
+                kind = kind?.let { localName(it.uri) },
+                typeLabel = kind?.let { englishLabel(it) },
+                roles = roles,
+                share = literals(connection, Vocab.OWNERSHIP_SHARE).mapNotNull { it.toDoubleOrNull() }.minOrNull(),
+                start = literals(connection, Vocab.CONNECTION_START_DATE).minOrNull(),
+                end = literals(connection, Vocab.CONNECTION_END_DATE).minOrNull(),
+                comment = commentOf(connection),
+                file = where?.file,
+                line = where?.line,
+                sources = sourcesOf(connection)
+            ))
+        }
+    }
+
+    private fun rolesOf(connection: Resource): List<String>? =
+        data.listObjectsOfProperty(connection, data.createProperty(Vocab.HAS_WORK_ROLE)).toList()
+            .filter { it.isResource }.mapNotNull { englishLabel(it.asResource()) }.sorted().ifEmpty { null }
+
+    /** The most specific declared type: the one that is a subclass of all the others, else the first by name. */
+    private fun kindOf(connection: Resource): Resource? {
+        val types = data.listObjectsOfProperty(connection, RDF.type).toList()
+            .filter { it.isURIResource }.map { it.asResource() }.sortedBy { localName(it.uri) }
+        return types.firstOrNull { t -> types.all { o -> o == t || inferred.contains(t, RDFS.subClassOf, o) } } ?: types.firstOrNull()
+    }
 
     /** An ownership edge always leaves the owner, whatever the two URIs sort to. */
     private fun isOwnerIn(connection: Resource, participant: Resource): Boolean =
@@ -159,7 +271,11 @@ private class GraphBuilder(private val data: Model, private val schema: Model) {
             .filter { it.predicate != RDF.type && it.subject.isURIResource && it.`object`.isURIResource }
             .filter { it.subject.uri in nodeIds && it.`object`.asResource().uri in nodeIds }
             .filter { schema.containsResource(it.predicate) }
-            .map { edge(it.subject, it.`object`.asResource(), propertyLabel(it.predicate)) }
+            .sortedWith(compareBy({ it.subject.uri }, { it.predicate.uri }, { it.`object`.asResource().uri }))
+            .map { st ->
+                val e = edge(st.subject, st.`object`.asResource(), propertyLabel(st.predicate))
+                e.copy(data = e.data.copy(file = locator?.statement(st)))
+            }
 
     private fun edge(from: Resource, to: Resource, label: String) = CytoscapeElement(
         data = ElementData(
@@ -170,7 +286,7 @@ private class GraphBuilder(private val data: Model, private val schema: Model) {
         )
     )
 
-    /** One edge per unordered pair and label, so symmetric properties are not drawn twice. */
+    /** One edge per unordered pair and label, so symmetric direct properties are not drawn twice. Connections are never merged. */
     private fun dedupe(edges: List<CytoscapeElement>): List<CytoscapeElement> =
         edges.distinctBy { setOf(it.data.source, it.data.target) to it.data.label }
 
@@ -217,6 +333,11 @@ private class GraphBuilder(private val data: Model, private val schema: Model) {
             .map { it.`object` }.filter { it.isLiteral }.map { it.asLiteral() }
             .minWithOrNull(compareBy({ preferredLanguages.indexOf(it.language).let { i -> if (i < 0) preferredLanguages.size else i } }, { it.lexicalForm }))
             ?.lexicalForm
+
+    /** The vocabulary's English (or untagged) label, if it has one. */
+    private fun englishLabel(resource: Resource): String? =
+        schema.listStatements(resource, RDFS.label, null as RDFNode?).toList().map { it.`object`.asLiteral() }
+            .filter { it.language == "en" || it.language == "" }.map { it.lexicalForm }.minOrNull()
 
     private fun schemaLabel(resource: Resource, language: String = "en"): String? {
         val labels = schema.listStatements(resource, RDFS.label, null as RDFNode?).toList().map { it.`object`.asLiteral() }

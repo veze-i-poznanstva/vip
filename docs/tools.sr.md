@@ -225,8 +225,13 @@ konvertuju komandom:
 
 Konverter vodi rečnik: agenti postaju čvorovi, svaka veza postaje ivica između svakog para
 svojih učesnika, označena sopstvenom oznakom veze, njenim radnim ulogama ili vrstom, a direktna
-svojstva između agenata postaju ivice označene svojstvom. Dokumentacija i goli URL-ovi se
-nikad ne pojavljuju u grafu.
+svojstva između agenata postaju ivice označene svojstvom. Dokumentacija i goli URL-ovi nikad
+ne postaju čvorovi, ali putuju uz zapis: svaki čvor i svaka ivica veze nosi svoje izvore (adresu,
+domen, vrstu, status, citirani odlomak i Wayback snimak iz `archives.ttl`, koji se čita iz
+opcionog četvrtog argumenta ili `-Parchives`), čvorovi nose i aliase i činjenice poput datuma
+rođenja, a ivice veza nose vrstu, uloge, vlasnički udeo, početak i kraj tačno kako su zapisani, i
+datoteku i red u repozitorijumu gde zapis stoji. Veze se nikad ne spajaju: dva perioda između istog
+para su dve ivice.
 
 Zatim se pregledač pokreće sa `npm install` i `npm run dev` u folderu `web/`, ili kroz Gradle
 sa `./gradlew :web:npmDev`. Pregledač govori engleski i srpski; jezik se bira prekidačem u

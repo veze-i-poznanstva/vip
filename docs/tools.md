@@ -225,7 +225,12 @@ connections as labelled edges. Convert data for it with:
 The converter is driven by the vocabulary: agents become nodes, each connection becomes an edge
 between every pair of its participants, labelled by the connection's own label, its work roles
 or its type, and direct properties between agents become edges labelled by the property.
-Documentation and plain URLs never appear in the graph.
+Documentation and plain URLs never become nodes, but they travel with the record: every node and
+every connection edge carries its sources (address, domain, type, status, the quoted passage and
+the Wayback snapshot from `archives.ttl`, read from the optional fourth argument or `-Parchives`),
+nodes also carry aliases and facts such as birth date, and connection edges carry their kind, roles,
+ownership share, start and end exactly as written, and the repository file and line where the
+record lives. Connections are never merged: two periods between the same pair are two edges.
 
 Then run the viewer with `npm install` and `npm run dev` inside `web/`, or through Gradle with
 `./gradlew :web:npmDev`. The viewer speaks English and Serbian; the switch in the header or

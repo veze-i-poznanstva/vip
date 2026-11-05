@@ -30,4 +30,14 @@ object Vocab {
     const val WIKIPEDIA_ARTICLE = VIP + "wikipediaArticle"
 
     const val PARTICIPANT = BIO + "participant"
+
+    const val HAS_DOCUMENTATION = PODER + "hasDocumentation"
+    const val HAS_DOCUMENT_TYPE = PODER + "hasDocumentType"
+    const val ALIAS = PODER + "alias"
+    const val FIRST_NAME = FOAF + "firstName"
+    const val FIRST_LAST_NAME = PODER + "firstLastName"
+    const val CONNECTION_START_DATE = PODER + "connectionStartDate"
+    const val CONNECTION_END_DATE = PODER + "connectionEndDate"
+    const val OWNERSHIP_SHARE = VIP + "ownershipShare"
+    const val DCTERMS_TITLE = "http://purl.org/dc/terms/title"
 }

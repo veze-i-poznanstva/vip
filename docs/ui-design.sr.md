@@ -2,7 +2,7 @@
 
 *English version: [ui-design.md](ui-design.md)*
 
-Status: inkrementi 2, 3 i polovina 5 (proširivanje) su izgrađeni (videti Inkrementi); ostalo je dizajn. Ovaj dokument opisuje prvi pravi korisnički interfejs VIP-a,
+Status: inkrementi 2, 3, 4 (panel sa detaljima) i polovina 5 (proširivanje) su izgrađeni, kao i deo 7 za fokus (videti Inkrementi); ostalo je dizajn. Ovaj dokument opisuje prvi pravi korisnički interfejs VIP-a,
 koji menja postojeći demo pregledač što sav skup podataka istovremeno izbacuje na jedno platno.
 
 ## Kome je namenjen i šta korisnici rade
@@ -139,11 +139,11 @@ Svaki inkrement je tanak vertikalni presek koji se završava zelenim, po pristup
    dijakritike.
 3. **Ego graf, dubina jedan.** Izbor rezultata iscrtava čvor u fokusu i njegove susede
    koncentričnim rasporedom.
-4. **Panel sa detaljima.** Klik prikazuje svojstva i izvore sa statusom.
+4. **Panel sa detaljima.** Izgrađeno. Čvor u fokusu ili izabrana veza prikazuju podatke, veze, izvore sa citatima i vezama ka arhivi, i linkove ka sirovim podacima.
 5. **Proširivanje i ponovno centriranje.** Dvoklik proširuje; dugme Fokus ponovo centrira;
    pojavljuje se trag.
 6. **Prekidač dubine dva.** Drugi prsten smanjene neprozirnosti.
-7. **Duboke veze.** Trag i skup proširenih čvorova u heš delu URL-a.
+7. **Duboke veze.** Trag i skup proširenih čvorova u heš delu URL-a. Do sada izgrađeno: putanja (`?from=&to=`) i fokus (`?focus=`).
 8. **Izvoz statusa verodostojnosti.** Build upisuje izveštaj o verodostojnosti kao JSON, a
    konverter ga spaja, pa isprekidane ivice i oznake statusa odražavaju poslednju proveru.
 

@@ -9,6 +9,7 @@
 
   const dispatch = createEventDispatcher<{
     nodeClick: string;
+    edgeClick: string;
     nodeDoubleClick: string;
     nodeHover: { id: string; x: number; y: number; flipX: boolean; flipY: boolean } | null;
   }>();
@@ -28,7 +29,7 @@
     cy.nodes().removeClass('focus');
     if (focusId) cy.getElementById(focusId).addClass('focus');
   }
-  export let style: cytoscape.Stylesheet[] = [
+  export let style: cytoscape.StylesheetStyle[] = [
     {
       selector: 'node',
       style: {
@@ -86,10 +87,7 @@
 
     cy.on('tap', 'node', (evt) => dispatch('nodeClick', evt.target.id()));
 
-    cy.on('tap', 'edge', (evt) => {
-      const edge = evt.target;
-      console.log('Edge clicked:', edge.data());
-    });
+    cy.on('tap', 'edge', (evt) => dispatch('edgeClick', evt.target.id()));
 
     // The canvas changes size when panels open below it; keep the graph inside it.
     resizeObserver = new ResizeObserver(() => {

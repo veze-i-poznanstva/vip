@@ -94,7 +94,9 @@ a directory tree or one file). Every tool exits 1 on failure except `analyzeSche
 - `SourceArchiver.kt` which URLs need records, lookup then save, writes `archives.ttl`, `--check`.
 - `SHACLValidator.kt` `validateShacl(shapes, data)` over the RDFS-inferred graph; CLI.
 - `TtlToCytoscape.kt` vocabulary-driven export: agents are nodes, connections are edges between
-  participants, only vocabulary-declared direct properties become edges, node ids are injective.
+  participants, only vocabulary-declared direct properties become edges, node ids are injective; connections are never
+  merged. Nodes and connection edges carry sources (quote, archive snapshot), aliases, facts, dates,
+  roles, share and the file and line of the record (`CytoscapeEvidence.kt`: Source, Fact, RecordLocator).
 - `RDFValidator.kt`, `OWLConsistencyChecker.kt` (Jena OWL reasoner), `BestPracticesChecker.kt`
   (exits 1 on errors), `SchemaMetrics.kt`.
 - `RedFlags.kt` loads `rules/*.rq` (name, leading comment = bilingual explanation, SPARQL SELECT),

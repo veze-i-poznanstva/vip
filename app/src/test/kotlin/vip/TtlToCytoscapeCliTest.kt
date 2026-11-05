@@ -63,4 +63,25 @@ class TtlToCytoscapeCliTest {
         assertTrue(run.err.contains("Error"), run.err)
         assertTrue(!run.err.contains("\tat "), run.err)
     }
+
+    @Test
+    fun `a run with an archives file puts the snapshot on a source`() {
+        write("data/entities/ana.ttl", "ex:Ana a foaf:Person ; :hasDocumentation [ a :Documentation ; :hasDocumentURL <https://a.example/x> ] .")
+        val archives = File(dir, "archives.ttl")
+        archives.writeText("@prefix vip: <https://w3id.org/vip/vocab#> .\n<https://a.example/x> vip:hasArchiveURL <http://web.archive.org/web/20260521145618/https://a.example/x> .\n")
+        val output = File(dir, "out.json")
+        val run = run(File(dir, "data").path, output.path, "schema.ttl", archives.path)
+        assertEquals(0, run.code, run.out + run.err)
+        val json = output.readText()
+        assertTrue(json.contains("\"archive\": \"http://web.archive.org/web/20260521145618/https://a.example/x\""), json)
+        assertTrue(json.contains("\"file\": \"" + File(dir, "data").path + "/entities/ana.ttl\""), json)
+    }
+
+    @Test
+    fun `a named archives file that does not exist exits 1 and names it`() {
+        write("data/entities/ana.ttl", "ex:Ana a foaf:Person .")
+        val run = run(File(dir, "data").path, File(dir, "out.json").path, "schema.ttl", File(dir, "nope.ttl").path)
+        assertEquals(1, run.code)
+        assertTrue(run.err.contains("nope.ttl"), run.err)
+    }
 }

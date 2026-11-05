@@ -208,6 +208,7 @@ tasks.register<JavaExec>("ttlToCytoscape") {
     val inputFile = project.findProperty("input") as String? ?: "data"
     val outputFile = project.findProperty("output") as String? ?: "web/public/test-data-cytoscape.json"
     val schema = project.findProperty("schema") as String? ?: "schema.ttl"
-    args = listOf(inputFile, outputFile, schema)
+    val archives = project.findProperty("archives") as String? ?: "archives.ttl"
+    args = listOf(inputFile, outputFile, schema, archives)
     workingDir = projectDir.parentFile
 }
