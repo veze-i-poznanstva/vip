@@ -1205,6 +1205,11 @@ vip:removed a :DocumentStatus;
         sh:message "A connection must have at least one piece of documentation"@en, "Una conexión debe tener al menos una documentación"@es, "Veza mora imati najmanje jedan dokument"@sr
     ];
     sh:property [
+        sh:path :hasDocumentation;
+        sh:node :QuotedDocumentationShape;
+        sh:message "Every citation of a connection must quote the passage that supports it, or say why it was removed, in rdfs:comment"@en, "Toda cita de una conexión debe citar el pasaje que la respalda, o explicar por qué fue retirada, en rdfs:comment"@es, "Svaki dokument uz vezu mora u rdfs:comment citirati odlomak koji je potvrđuje ili reći zašto je uklonjen"@sr
+    ];
+    sh:property [
         sh:path :connectionStartDate;
         sh:maxCount 1;
         sh:or ( [ sh:datatype xsd:date ] [ sh:datatype xsd:gYearMonth ] [ sh:datatype xsd:gYear ] );
@@ -1215,6 +1220,15 @@ vip:removed a :DocumentStatus;
         sh:maxCount 1;
         sh:or ( [ sh:datatype xsd:date ] [ sh:datatype xsd:gYearMonth ] [ sh:datatype xsd:gYear ] );
         sh:message "A connection end date must be a single xsd:date, xsd:gYearMonth or xsd:gYear"@en, "La fecha de fin de una conexión debe ser un único xsd:date, xsd:gYearMonth o xsd:gYear"@es, "Datum kraja veze mora biti jedan xsd:date, xsd:gYearMonth ili xsd:gYear"@sr
+    ].
+
+# Applies only through :ConnectionShape (no target class): a citation of a connection quotes its supporting passage
+# (or, when removed, says why); citations on people and organisations are not held to this.
+:QuotedDocumentationShape a sh:NodeShape;
+    sh:property [
+        sh:path rdfs:comment;
+        sh:minCount 1;
+        sh:message "Every citation of a connection must quote the passage that supports it, or say why it was removed, in rdfs:comment"@en, "Toda cita de una conexión debe citar el pasaje que la respalda, o explicar por qué fue retirada, en rdfs:comment"@es, "Svaki dokument uz vezu mora u rdfs:comment citirati odlomak koji je potvrđuje ili reći zašto je uklonjen"@sr
     ].
 
 # Dates of different precision are compared on the part both state.

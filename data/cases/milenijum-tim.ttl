@@ -24,9 +24,12 @@ rs:IvanBosnjak_MilenijumTim a vip:OwnershipConnection ;
     :connectionStartDate "2003-09-04"^^xsd:date ;
     rdfs:comment "Ivan Bošnjak je jedan od osnivača i suvlasnik kompanije Milenijum tim, osnovane 4. septembra 2003. Udeo od 50% je aktuelno stanje u registru; udeo pri osnivanju nije poznat."@sr ;
     :hasDocumentation
-        [ a :Documentation ; :hasDocumentURL <https://www.companywall.rs/firma/millennium-team-doo-beograd/MMksspYq> ; :hasDocumentType vip:registryRecord ; :hasDocumentStatus vip:published ] ,
-        [ a :Documentation ; :hasDocumentURL <https://en.wikipedia.org/wiki/Millennium_Team> ; :hasDocumentType vip:encyclopediaArticle ; :hasDocumentStatus vip:published ] ,
-        [ a :Documentation ; :hasDocumentURL <https://sr.wikipedia.org/wiki/Milenijum_tim> ; :hasDocumentType vip:encyclopediaArticle ; :hasDocumentStatus vip:removed ] .
+        [ a :Documentation ; :hasDocumentURL <https://www.companywall.rs/firma/millennium-team-doo-beograd/MMksspYq> ; :hasDocumentType vip:registryRecord ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Registarski podaci (APR preko CompanyWall, snimak od 13. marta 2026): vlasnici 'Ivan Bošnjak(50,00%)' i 'Stojan Vujko(50,00%)'; 'Datum osnivanja 4.9.2003.'; 'Ivan Bošnjak, zastupnik'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://en.wikipedia.org/wiki/Millennium_Team> ; :hasDocumentType vip:encyclopediaArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Enciklopedijski članak, infokutija: 'Owner: Ivan Bošnjak (50%), Stojan Vujko (50%)'; tekst: 'The company was founded on 4 September 2003. Founded and formally owned by Ivan Bošnjak and Stojan Vujko'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://sr.wikipedia.org/wiki/Milenijum_tim> ; :hasDocumentType vip:encyclopediaArticle ; :hasDocumentStatus vip:removed ;
+          rdfs:comment "Povučeno 5. novembra 2026: članak sr.wikipedia.org/wiki/Milenijum_tim ne postoji i prema dnevniku Vikipedije nikada nije ni postojao ni bio obrisan (HTTP 404; API javlja missing, dnevnik brisanja prazan), a Wayback Machine nema nijedan snimak ni latinične ni ćirilične adrese; ne može da potkrepi vlasništvo."@sr ] .
 
 rs:StojanVujko_MilenijumTim a vip:OwnershipConnection ;
     vip:owner rs:Stojan_Vujko ;
@@ -35,8 +38,10 @@ rs:StojanVujko_MilenijumTim a vip:OwnershipConnection ;
     :connectionStartDate "2003-09-04"^^xsd:date ;
     rdfs:comment "Stojan Vujko je jedan od osnivača i suvlasnik kompanije Milenijum tim, osnovane 4. septembra 2003. Udeo od 50% je aktuelno stanje u registru; udeo pri osnivanju nije poznat."@sr ;
     :hasDocumentation
-        [ a :Documentation ; :hasDocumentURL <https://www.companywall.rs/firma/millennium-team-doo-beograd/MMksspYq> ; :hasDocumentType vip:registryRecord ; :hasDocumentStatus vip:published ] ,
-        [ a :Documentation ; :hasDocumentURL <https://en.wikipedia.org/wiki/Millennium_Team> ; :hasDocumentType vip:encyclopediaArticle ; :hasDocumentStatus vip:published ] .
+        [ a :Documentation ; :hasDocumentURL <https://www.companywall.rs/firma/millennium-team-doo-beograd/MMksspYq> ; :hasDocumentType vip:registryRecord ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Registarski podaci (APR preko CompanyWall, snimak od 13. marta 2026): vlasnici 'Ivan Bošnjak(50,00%)' i 'Stojan Vujko(50,00%)'; 'Datum osnivanja 4.9.2003.'; 'Trenutni direktor je Stojan Vujko.'"@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://en.wikipedia.org/wiki/Millennium_Team> ; :hasDocumentType vip:encyclopediaArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Enciklopedijski članak, infokutija: 'Owner: Ivan Bošnjak (50%), Stojan Vujko (50%)'; 'Stojan Vujko (Director)'; tekst: 'Founded and formally owned by Ivan Bošnjak and Stojan Vujko'."@sr ] .
 
 rs:IvanBosnjak_NALED a :WorkConnection ;
     bio:participant rs:Ivan_Bosnjak_Milenijum_Tim ;

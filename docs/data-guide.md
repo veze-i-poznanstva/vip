@@ -106,7 +106,8 @@ Practical notes:
   hyphens, `sinisa-mali.ttl`.
 - **Minimum fields.** A person needs `foaf:firstName` and `:firstLastName`; an organisation needs
   `foaf:name`; a connection needs its participants and documentation. A document needs
-  `:hasDocumentURL`, `:hasDocumentType` and `:hasDocumentStatus vip:published`.
+  `:hasDocumentURL`, `:hasDocumentType` and `:hasDocumentStatus vip:published`; a document cited by a connection also needs an
+  `rdfs:comment` quoting the passage that supports it (or, when removed, saying why).
 - **Blocked sources.** Some sites (Istinomer, the SNS site) refuse automated clients. Cite them
   anyway: the archiver records a Wayback snapshot and the validator reports a warning, not an
   error, as long as the snapshot exists.

@@ -26,4 +26,5 @@ rs:Milenijum_Tim a :Company ;
         [ a :Documentation ; :hasDocumentURL <https://www.krik.rs/tag/milenijum-tim/> ; :hasDocumentType vip:webPage ; :hasDocumentStatus vip:published ] ,
         [ a :Documentation ; :hasDocumentURL <https://www.companywall.rs/firma/millennium-team-doo-beograd/MMksspYq> ; :hasDocumentType vip:registryRecord ; :hasDocumentStatus vip:published ] ,
         [ a :Documentation ; :hasDocumentURL <https://nova.rs/vesti/biznis/novi-rekord-milenijum-tima-od-250-miliona-evra-za-cetiri-godine-prihodi-porasli-tri-puta-nanizali-poslove-na-najvecim-drzavnim-projektima/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ] ,
-        [ a :Documentation ; :hasDocumentURL <https://sr.wikipedia.org/wiki/Milenijum_tim> ; :hasDocumentType vip:encyclopediaArticle ; :hasDocumentStatus vip:removed ] .
+        [ a :Documentation ; :hasDocumentURL <https://sr.wikipedia.org/wiki/Milenijum_tim> ; :hasDocumentType vip:encyclopediaArticle ; :hasDocumentStatus vip:removed ;
+          rdfs:comment "Povučeno 5. novembra 2026: članak sr.wikipedia.org/wiki/Milenijum_tim ne postoji i prema dnevniku Vikipedije nikada nije ni postojao ni bio obrisan (HTTP 404; API javlja missing, dnevnik brisanja prazan), a Wayback Machine nema nijedan snimak ni latinične ni ćirilične adrese; ne može da potkrepi vlasništvo."@sr ] .

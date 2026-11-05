@@ -168,7 +168,8 @@ Validates instance data against the SHACL shapes shipped in `schema.ttl`: Person
 OrganizationShape, ConnectionShape, DocumentationShape and FinancialInformationShape. The data
 is validated together with what the vocabulary entails (subclasses, subproperties, domains and
 ranges), so a `foaf:Person` satisfies a constraint that asks for a `foaf:Agent` without the data
-repeating the hierarchy. Reports each violation with its focus node and message.
+repeating the hierarchy. Each citation of a connection must quote its supporting passage in `rdfs:comment`. Reports each
+violation with its focus node and message.
 
 ### OWL consistency checker
 

@@ -35,7 +35,7 @@ Editorial standard: VIP aggregates what reputable media and official registries 
 not fact-check them and needs no legal proof. Trust the source, but aggregate it correctly: the
 record must say what the source says, with its attribution, and nothing more.
 The build proves form and reachability, not that: read each source before citing it, quote the
-passage on the document's `rdfs:comment`, and check that it means this person (same-named people
+passage on the document's `rdfs:comment` (the build enforces this for connections), and check that it means this person (same-named people
 get separate URIs, `rs:Ivan_Bosnjak_Milenijum_Tim` and `rs:Ivan_Bosnjak_Zrenjanin` are two men).
 A citation found wrong stays with `vip:removed` and a comment saying why. Corrections: `?ispravka=1`
 opens the page. VIP is a secondary source: a wrong source is corrected at the source first, then VIP

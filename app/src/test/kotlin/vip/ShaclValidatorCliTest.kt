@@ -25,16 +25,18 @@ class ShaclValidatorCliTest {
     }
 
     private fun write(path: String, body: String) = File(dir, path).apply { parentFile.mkdirs() }.writeText(
-        "@prefix ex: <https://w3id.org/vip/rs/> .\n@prefix foaf: <http://xmlns.com/foaf/0.1/> .\n@prefix : <http://poderopedia.com/vocab/> .\n@prefix bio: <http://purl.org/vocab/bio/0.1/> .\n$body\n"
+        "@prefix ex: <https://w3id.org/vip/rs/> .\n@prefix foaf: <http://xmlns.com/foaf/0.1/> .\n@prefix : <http://poderopedia.com/vocab/> .\n@prefix bio: <http://purl.org/vocab/bio/0.1/> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n$body\n"
     )
 
     private val docs = "[ a :Documentation ; :hasDocumentURL <https://a.example/1> ], [ a :Documentation ; :hasDocumentURL <https://b.example/2> ]"
+
+    private val quotedDocs = "[ a :Documentation ; :hasDocumentURL <https://a.example/1> ; rdfs:comment \"Quoted\" ], [ a :Documentation ; :hasDocumentURL <https://b.example/2> ; rdfs:comment \"Quoted\" ]"
 
     @Test
     fun `conforming data exits 0 and says so`() {
         write("entities/ana.ttl", "ex:Ana a foaf:Person ; foaf:firstName \"Ana\" ; :firstLastName \"A\" ; :hasDocumentation $docs .")
         write("entities/ivan.ttl", "ex:Ivan a foaf:Person ; foaf:firstName \"Ivan\" ; :firstLastName \"I\" ; :hasDocumentation $docs .")
-        write("cases/case.ttl", "ex:AnaIvan a :Connection ; bio:participant ex:Ana, ex:Ivan ; :hasDocumentation $docs .")
+        write("cases/case.ttl", "ex:AnaIvan a :Connection ; bio:participant ex:Ana, ex:Ivan ; :hasDocumentation $quotedDocs .")
         val run = run("schema.ttl", dir.path)
         assertEquals(0, run.code, run.out + run.err)
         assertTrue(run.out.contains("conforms"), run.out)

@@ -169,7 +169,8 @@ Proverava podatke prema SHACL oblicima iz `schema.ttl`: PersonShape, Organizatio
 ConnectionShape, DocumentationShape i FinancialInformationShape. Podaci se proveravaju zajedno
 sa onim što rečnik podrazumeva (potklase, potsvojstva, domeni i opsezi), pa `foaf:Person`
 zadovoljava ograničenje koje traži `foaf:Agent` bez ponavljanja hijerarhije u podacima.
-Prijavljuje svako kršenje sa čvorom na koji se odnosi i porukom.
+Svaki dokument uz vezu mora u `rdfs:comment` citirati odlomak koji je potvrđuje. Prijavljuje svako
+kršenje sa čvorom na koji se odnosi i porukom.
 
 ### Provera OWL konzistentnosti
 

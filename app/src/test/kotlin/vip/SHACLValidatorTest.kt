@@ -18,12 +18,15 @@ class SHACLValidatorTest {
             @prefix : <http://poderopedia.com/vocab/> .
             @prefix vip: <https://w3id.org/vip/vocab#> .
             @prefix foaf: <http://xmlns.com/foaf/0.1/> .
+            @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
             @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
             $ttl
         """.trimIndent()), null, "TTL")
     }
 
     private val documented = """:hasDocumentation [ a :Documentation ; :hasDocumentURL <https://a.example/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ]"""
+
+    private val quoted = """:hasDocumentation [ a :Documentation ; :hasDocumentURL <https://a.example/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ; rdfs:comment "Quoted passage"@sr ]"""
 
     @Test
     fun `a person with the required names and documentation conforms`() {
@@ -36,7 +39,7 @@ class SHACLValidatorTest {
         val report = validateShacl(schema, data("""
             rs:Ana a foaf:Person ; foaf:firstName "Ana" ; :firstLastName "B" ; $documented .
             rs:SNS a :PoliticalOrganization ; foaf:name "SNS" ; $documented .
-            rs:AnaSNS a :PoliticalConnection ; :personParticipant rs:Ana ; :politicalParticipant rs:SNS ; $documented .
+            rs:AnaSNS a :PoliticalConnection ; :personParticipant rs:Ana ; :politicalParticipant rs:SNS ; $quoted .
         """))
         assertTrue(report.conforms(), report.entries.joinToString { it.message() })
     }
@@ -53,6 +56,33 @@ class SHACLValidatorTest {
     }
 
     @Test
+    fun `a connection citation without a quoted passage violates the connection shape`() {
+        val report = validateShacl(schema, data("""
+            rs:Ana a foaf:Person ; foaf:firstName "Ana" ; :firstLastName "B" ; $documented .
+            rs:SNS a :PoliticalOrganization ; foaf:name "SNS" ; $documented .
+            rs:AnaSNS a :PoliticalConnection ; :personParticipant rs:Ana ; :politicalParticipant rs:SNS ; $documented .
+        """))
+        assertFalse(report.conforms())
+        assertTrue(report.entries.any { it.focusNode().toString().endsWith("AnaSNS") }, report.entries.joinToString { it.focusNode().toString() })
+    }
+
+    @Test
+    fun `a connection citation with a quoted passage conforms`() {
+        val report = validateShacl(schema, data("""
+            rs:Ana a foaf:Person ; foaf:firstName "Ana" ; :firstLastName "B" ; $documented .
+            rs:SNS a :PoliticalOrganization ; foaf:name "SNS" ; $documented .
+            rs:AnaSNS a :PoliticalConnection ; :personParticipant rs:Ana ; :politicalParticipant rs:SNS ; $quoted .
+        """))
+        assertTrue(report.conforms(), report.entries.joinToString { it.message() })
+    }
+
+    @Test
+    fun `a person citation without a comment still conforms`() {
+        val report = validateShacl(schema, data("""rs:Ana a foaf:Person ; foaf:firstName "Ana" ; :firstLastName "B" ; $documented ."""))
+        assertTrue(report.conforms(), report.entries.joinToString { it.message() })
+    }
+
+    @Test
     fun `a person without a first name violates the person shape`() {
         val report = validateShacl(schema, data("""rs:Ana a foaf:Person ; :firstLastName "B" ; $documented ."""))
         assertFalse(report.conforms())
@@ -61,7 +91,7 @@ class SHACLValidatorTest {
     private fun dated(dates: String) = validateShacl(schema, data("""
         rs:Ana a foaf:Person ; foaf:firstName "Ana" ; :firstLastName "B" ; $documented .
         rs:SNS a :PoliticalOrganization ; foaf:name "SNS" ; $documented .
-        rs:AnaSNS a :PoliticalConnection ; :personParticipant rs:Ana ; :politicalParticipant rs:SNS ; $documented $dates .
+        rs:AnaSNS a :PoliticalConnection ; :personParticipant rs:Ana ; :politicalParticipant rs:SNS ; $quoted $dates .
     """))
 
     @Test

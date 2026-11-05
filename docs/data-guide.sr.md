@@ -105,7 +105,8 @@ Praktične napomene:
   crticama, `sinisa-mali.ttl`.
 - **Najmanje što treba.** Osobi trebaju `foaf:firstName` i `:firstLastName`; organizaciji
   `foaf:name`; vezi učesnici i dokumentacija. Dokumentu trebaju `:hasDocumentURL`,
-  `:hasDocumentType` i `:hasDocumentStatus vip:published`.
+  `:hasDocumentType` i `:hasDocumentStatus vip:published`; dokument koji citira veza treba i
+  `rdfs:comment` koji navodi odlomak što je potvrđuje (a ako je uklonjen, zašto).
 - **Blokirani izvori.** Neki sajtovi (Istinomer, sajt SNS) odbijaju automatske klijente. Citirajte
   ih svejedno: arhiver zapisuje Wayback snimak, a validator prijavljuje upozorenje, ne grešku,
   sve dok snimak postoji.
