@@ -7,7 +7,75 @@
       "nodeType": "organization",
       "uri": "https://w3id.org/vip/rs/Milenijum_Tim",
       "comment": "Milenijum tim je građevinska kompanija iz Beograda sa širokim portfoliom povezanih firmi i poslova.",
-      "wikipedia": "https://en.wikipedia.org/wiki/Millennium_Team"
+      "wikipedia": "https://en.wikipedia.org/wiki/Millennium_Team",
+      "facts": [
+        {
+          "property": "foundationDate",
+          "label": "foundation date",
+          "value": "2003-09-04"
+        },
+        {
+          "property": "industry",
+          "label": "industry",
+          "value": "Građevinarstvo"
+        },
+        {
+          "property": "location",
+          "label": "location",
+          "value": "Beograd, Srbija"
+        }
+      ],
+      "file": "data/entities/milenijum-tim.ttl",
+      "line": 16,
+      "sources": [
+        {
+          "url": "https://www.companywall.rs/firma/millennium-team-doo-beograd/MMksspYq",
+          "domain": "companywall.rs",
+          "type": "registryRecord",
+          "status": "published",
+          "archive": "http://web.archive.org/web/20260313111844/https://www.companywall.rs/firma/millennium-team-doo-beograd/MMksspYq",
+          "archivedOn": "2026-03-13"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Millennium_Team",
+          "domain": "en.wikipedia.org",
+          "type": "encyclopediaArticle",
+          "status": "published",
+          "archive": "http://web.archive.org/web/20251013140940/https://en.wikipedia.org/wiki/Millennium_Team",
+          "archivedOn": "2025-10-13"
+        },
+        {
+          "url": "https://www.krik.rs/tag/milenijum-tim/",
+          "domain": "krik.rs",
+          "type": "webPage",
+          "status": "published",
+          "archive": "http://web.archive.org/web/20260423033321/https://www.krik.rs/tag/milenijum-tim/",
+          "archivedOn": "2026-04-23"
+        },
+        {
+          "url": "https://www.millenniumteam.rs/",
+          "domain": "millenniumteam.rs",
+          "type": "webPage",
+          "status": "published",
+          "archive": "http://web.archive.org/web/20261012201620/https://millenniumteam.rs/",
+          "archivedOn": "2026-10-12"
+        },
+        {
+          "url": "https://nova.rs/vesti/biznis/novi-rekord-milenijum-tima-od-250-miliona-evra-za-cetiri-godine-prihodi-porasli-tri-puta-nanizali-poslove-na-najvecim-drzavnim-projektima/",
+          "domain": "nova.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "archive": "http://web.archive.org/web/20250711221553/https://nova.rs/vesti/biznis/novi-rekord-milenijum-tima-od-250-miliona-evra-za-cetiri-godine-prihodi-porasli-tri-puta-nanizali-poslove-na-najvecim-drzavnim-projektima/",
+          "archivedOn": "2025-07-11"
+        },
+        {
+          "url": "https://sr.wikipedia.org/wiki/Milenijum_tim",
+          "domain": "sr.wikipedia.org",
+          "type": "encyclopediaArticle",
+          "status": "removed",
+          "quote": "Povučeno 5. novembra 2026: članak sr.wikipedia.org/wiki/Milenijum_tim ne postoji i prema dnevniku Vikipedije nikada nije ni postojao ni bio obrisan (HTTP 404; API javlja missing, dnevnik brisanja prazan), a Wayback Machine nema nijedan snimak ni latinične ni ćirilične adrese; ne može da potkrepi vlasništvo."
+        }
+      ]
     }
   },
   {
@@ -17,7 +85,38 @@
       "type": "instance",
       "nodeType": "party",
       "uri": "https://w3id.org/vip/rs/SNS",
-      "wikipedia": "https://sr.wikipedia.org/wiki/Српска_напредна_странка"
+      "wikipedia": "https://sr.wikipedia.org/wiki/Српска_напредна_странка",
+      "aliases": [
+        "SNS"
+      ],
+      "file": "data/entities/sns.ttl",
+      "line": 16,
+      "sources": [
+        {
+          "url": "https://www.krik.rs/tag/sns/",
+          "domain": "krik.rs",
+          "type": "webPage",
+          "status": "published",
+          "archive": "http://web.archive.org/web/20260714002955/https://www.krik.rs/tag/sns/",
+          "archivedOn": "2026-07-14"
+        },
+        {
+          "url": "https://www.sns.org.rs/",
+          "domain": "sns.org.rs",
+          "type": "webPage",
+          "status": "published",
+          "archive": "http://web.archive.org/web/20251023082323/https://sns.org.rs/",
+          "archivedOn": "2025-10-23"
+        },
+        {
+          "url": "https://sr.wikipedia.org/wiki/Српска_напредна_странка",
+          "domain": "sr.wikipedia.org",
+          "type": "encyclopediaArticle",
+          "status": "published",
+          "archive": "http://web.archive.org/web/20251118012657/https://sr.wikipedia.org/wiki/%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B0_%D0%BD%D0%B0%D0%BF%D1%80%D0%B5%D0%B4%D0%BD%D0%B0_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%BA%D0%B0",
+          "archivedOn": "2025-11-18"
+        }
+      ]
     }
   },
   {
@@ -27,7 +126,51 @@
       "type": "instance",
       "nodeType": "person",
       "uri": "https://w3id.org/vip/rs/Sasa_Blagojevic",
-      "comment": "Vlasnik tabloida Alo! (Alo Media System) i televizije Studio B (Global Media Technology), većinski vlasnik Maxim Media Plus (radio stanice Hit FM, Karolina, Lola, JAT, TDI, prema Media Ownership Monitoru, 2023-2024). Ranije direktor i suvlasnik marketinške agencije Trilenium."
+      "comment": "Vlasnik tabloida Alo! (Alo Media System) i televizije Studio B (Global Media Technology), većinski vlasnik Maxim Media Plus (radio stanice Hit FM, Karolina, Lola, JAT, TDI, prema Media Ownership Monitoru, 2023-2024). Ranije direktor i suvlasnik marketinške agencije Trilenium.",
+      "file": "data/entities/sasa-blagojevic.ttl",
+      "line": 16,
+      "sources": [
+        {
+          "url": "https://www.cenzolovka.rs/tag/sasa-blagojevic/",
+          "domain": "cenzolovka.rs",
+          "type": "webPage",
+          "status": "published",
+          "archive": "http://web.archive.org/web/20260305143723/https://www.cenzolovka.rs/tag/sasa-blagojevic/",
+          "archivedOn": "2026-03-05"
+        },
+        {
+          "url": "https://montenegro.mom-gmr.org/cg/vlasnici/pojedinci/detail/owner/owner/show/sasa-blagojevic-3/",
+          "domain": "montenegro.mom-gmr.org",
+          "type": "registryRecord",
+          "status": "published",
+          "archive": "http://web.archive.org/web/20250710173740/https://montenegro.mom-gmr.org/cg/vlasnici/pojedinci/detail/owner/owner/show/sasa-blagojevic-3/",
+          "archivedOn": "2025-07-10"
+        },
+        {
+          "url": "https://safejournalists.net/sr/vlasnik-tabloida-alo-za-manje-od-mesec-dana-kupio-dve-televizije-i-radio-za-skoro-200-000-evra/",
+          "domain": "safejournalists.net",
+          "type": "newsArticle",
+          "status": "published",
+          "archive": "https://web.archive.org/web/20261030133426/https://safejournalists.net/sr/vlasnik-tabloida-alo-za-manje-od-mesec-dana-kupio-dve-televizije-i-radio-za-skoro-200-000-evra/",
+          "archivedOn": "2026-10-30"
+        },
+        {
+          "url": "https://serbia.mom-gmr.org/sr/mediji/detail/outlet/alo/",
+          "domain": "serbia.mom-gmr.org",
+          "type": "registryRecord",
+          "status": "published",
+          "archive": "http://web.archive.org/web/20250520025845/http://serbia.mom-gmr.org/sr/mediji/detail/outlet/alo/",
+          "archivedOn": "2025-05-20"
+        },
+        {
+          "url": "https://serbia.mom-gmr.org/sr/vlasnik/individual-owners/detail/owner/owner/show/sasa-blagojevic-2/",
+          "domain": "serbia.mom-gmr.org",
+          "type": "registryRecord",
+          "status": "published",
+          "archive": "http://web.archive.org/web/20250915222803/https://serbia.mom-gmr.org/sr/vlasnik/individual-owners/detail/owner/owner/show/sasa-blagojevic-2/",
+          "archivedOn": "2025-09-15"
+        }
+      ]
     }
   },
   {
@@ -37,7 +180,62 @@
       "type": "instance",
       "nodeType": "organization",
       "uri": "https://w3id.org/vip/rs/Milenijum_Adria",
-      "comment": "Millennium Adria je društvo sa sedištem u Splitu, osnovano 2020, preko kog Milenijum tim posluje u Hrvatskoj."
+      "comment": "Millennium Adria je društvo sa sedištem u Splitu, osnovano 2020, preko kog Milenijum tim posluje u Hrvatskoj.",
+      "aliases": [
+        "Milenijum Adria"
+      ],
+      "facts": [
+        {
+          "property": "foundationDate",
+          "label": "foundation date",
+          "value": "2020"
+        },
+        {
+          "property": "hasTaxId",
+          "label": "Tax ID",
+          "value": "53546365408"
+        },
+        {
+          "property": "location",
+          "label": "location",
+          "value": "Split, Hrvatska"
+        }
+      ],
+      "file": "data/entities/milenijum-adria.ttl",
+      "line": 16,
+      "sources": [
+        {
+          "url": "https://www.danas.rs/vesti/ekonomija/sta-sve-ima-milenijum-tim-novi-vlasnik-hotela-jugoslavija/",
+          "domain": "danas.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "archive": "http://web.archive.org/web/20250620082052/https://www.danas.rs/vesti/ekonomija/sta-sve-ima-milenijum-tim-novi-vlasnik-hotela-jugoslavija/",
+          "archivedOn": "2025-06-20"
+        },
+        {
+          "url": "https://www.fininfo.hr/Poduzece/Pregled/millennium-adria/Detaljno/780814",
+          "domain": "fininfo.hr",
+          "type": "registryRecord",
+          "status": "published",
+          "archive": "http://web.archive.org/web/20241109195604/https://www.fininfo.hr/Poduzece/Pregled/millennium-adria/Detaljno/780814",
+          "archivedOn": "2024-11-09"
+        },
+        {
+          "url": "https://www.companywall.rs/firma/milenijum-adria-doo-zagreb/MAksspYq",
+          "domain": "companywall.rs",
+          "type": "registryRecord",
+          "status": "removed"
+        },
+        {
+          "url": "https://nova.rs/vesti/politika/sta-je-milenijum-tim-sns-fabrika-za-izvlacenje-para/",
+          "domain": "nova.rs",
+          "type": "newsArticle",
+          "status": "removed",
+          "quote": "Povučeno 1. novembra 2026: članak ne pominje Millennium Adria ni Hrvatsku.",
+          "archive": "http://web.archive.org/web/20251215204745/https://nova.rs/vesti/politika/sta-je-milenijum-tim-sns-fabrika-za-izvlacenje-para/",
+          "archivedOn": "2025-12-15"
+        }
+      ]
     }
   },
   {
@@ -47,7 +245,43 @@
       "type": "instance",
       "nodeType": "academic",
       "uri": "https://w3id.org/vip/rs/Ekonomski_fakultet_University_of_Belgrade",
-      "wikipedia": "https://sr.wikipedia.org/wiki/Економски_факултет_Универзитета_у_Београду"
+      "wikipedia": "https://sr.wikipedia.org/wiki/Економски_факултет_Универзитета_у_Београду",
+      "facts": [
+        {
+          "property": "location",
+          "label": "location",
+          "value": "Beograd, Srbija"
+        }
+      ],
+      "file": "data/entities/ekonomski-fakultet-university-of-belgrade.ttl",
+      "line": 16,
+      "sources": [
+        {
+          "url": "https://www.bg.ac.rs/",
+          "domain": "bg.ac.rs",
+          "type": "webPage",
+          "status": "published",
+          "archive": "http://web.archive.org/web/20261020151326/https://www.bg.ac.rs/",
+          "archivedOn": "2026-10-20"
+        },
+        {
+          "url": "https://www.ekof.bg.ac.rs/",
+          "domain": "ekof.bg.ac.rs",
+          "type": "webPage",
+          "status": "published",
+          "quote": "Sajt fakulteta: Ekonomski fakultet, Univerzitet u Beogradu, Kamenička 6, Beograd.",
+          "archive": "http://web.archive.org/web/20261019002315/https://www.ekof.bg.ac.rs/",
+          "archivedOn": "2026-10-19"
+        },
+        {
+          "url": "https://sr.wikipedia.org/wiki/Економски_факултет_Универзитета_у_Београду",
+          "domain": "sr.wikipedia.org",
+          "type": "encyclopediaArticle",
+          "status": "published",
+          "archive": "http://web.archive.org/web/20251206182607/https://sr.wikipedia.org/wiki/%D0%95%D0%BA%D0%BE%D0%BD%D0%BE%D0%BC%D1%81%D0%BA%D0%B8_%D1%84%D0%B0%D0%BA%D1%83%D0%BB%D1%82%D0%B5%D1%82_%D0%A3%D0%BD%D0%B8%D0%B2%D0%B5%D1%80%D0%B7%D0%B8%D1%82%D0%B5%D1%82%D0%B0_%D1%83_%D0%91%D0%B5%D0%BE%D0%B3%D1%80%D0%B0%D0%B4%D1%83",
+          "archivedOn": "2025-12-06"
+        }
+      ]
     }
   },
   {
@@ -57,7 +291,65 @@
       "type": "instance",
       "nodeType": "organization",
       "uri": "https://w3id.org/vip/rs/Mostogradnja_ING",
-      "comment": "Mostogradnja ING je građevinska kompanija osnovana 24. novembra 2020, matični broj 21634166. U decembru 2024. kupila je imovinu preduzeća Mostogradnja u stečaju; to je kupovina imovine, a ne trenutak kada je sama prešla u vlasništvo Milenijum tima."
+      "comment": "Mostogradnja ING je građevinska kompanija osnovana 24. novembra 2020, matični broj 21634166. U decembru 2024. kupila je imovinu preduzeća Mostogradnja u stečaju; to je kupovina imovine, a ne trenutak kada je sama prešla u vlasništvo Milenijum tima.",
+      "facts": [
+        {
+          "property": "foundationDate",
+          "label": "foundation date",
+          "value": "2020-11-24"
+        }
+      ],
+      "file": "data/entities/mostogradnja-ing.ttl",
+      "line": 16,
+      "sources": [
+        {
+          "url": "https://bif.rs/2025/02/milenijum-tim-novi-vlasnik-mostogradnje/",
+          "domain": "bif.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "archive": "http://web.archive.org/web/20260417092016/https://bif.rs/2025/02/milenijum-tim-novi-vlasnik-mostogradnje/",
+          "archivedOn": "2026-04-17"
+        },
+        {
+          "url": "https://www.companywall.rs/firma/mostogradnja-ing-doo/MMxEWFnzR",
+          "domain": "companywall.rs",
+          "type": "registryRecord",
+          "status": "published",
+          "quote": "Registar: osnovana 24.11.2020, matični broj 21634166.",
+          "archive": "https://web.archive.org/web/20261101021046/https://www.companywall.rs/firma/mostogradnja-ing-doo/MMxEWFnzR",
+          "archivedOn": "2026-11-01"
+        },
+        {
+          "url": "https://www.danas.rs/vesti/ekonomija/beogradsko-gradjevinsko-preduzece-mostogradnja-postalo-vlasnistvo-milenijum-tima/",
+          "domain": "danas.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "archive": "http://web.archive.org/web/20251111040945/https://www.danas.rs/vesti/ekonomija/beogradsko-gradjevinsko-preduzece-mostogradnja-postalo-vlasnistvo-milenijum-tima/",
+          "archivedOn": "2025-11-11"
+        },
+        {
+          "url": "https://n1info.rs/biznis/milenijum-tim-kupio-mostogradnju-u-stecaju-za-10-miliona-evra/",
+          "domain": "n1info.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "archive": "http://web.archive.org/web/20250301102707/https://n1info.rs/biznis/milenijum-tim-kupio-mostogradnju-u-stecaju-za-10-miliona-evra/",
+          "archivedOn": "2025-03-01"
+        },
+        {
+          "url": "https://nova.rs/vesti/biznis/od-vinograda-preko-naucnih-instituta-do-banja-i-giganata-sfrj-sta-je-sve-za-male-pare-kupila-sns-firma-milenijum-tim/",
+          "domain": "nova.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "archive": "http://web.archive.org/web/20250522100926/https://nova.rs/vesti/biznis/od-vinograda-preko-naucnih-instituta-do-banja-i-giganata-sfrj-sta-je-sve-za-male-pare-kupila-sns-firma-milenijum-tim/",
+          "archivedOn": "2025-05-22"
+        },
+        {
+          "url": "https://www.companywall.rs/firma/mostogradnja-ing-doo-beograd/MBksspYq",
+          "domain": "companywall.rs",
+          "type": "registryRecord",
+          "status": "removed"
+        }
+      ]
     }
   },
   {
@@ -67,7 +359,34 @@
       "type": "instance",
       "nodeType": "academic",
       "uri": "https://w3id.org/vip/rs/Peta_Beogradska_Gimnazija",
-      "wikipedia": "https://sr.wikipedia.org/wiki/Пета_београдска_гимназија"
+      "wikipedia": "https://sr.wikipedia.org/wiki/Пета_београдска_гимназија",
+      "facts": [
+        {
+          "property": "location",
+          "label": "location",
+          "value": "Beograd, Srbija"
+        }
+      ],
+      "file": "data/entities/peta-beogradska-gimnazija.ttl",
+      "line": 16,
+      "sources": [
+        {
+          "url": "https://sr.wikipedia.org/wiki/Пета_београдска_гимназија",
+          "domain": "sr.wikipedia.org",
+          "type": "encyclopediaArticle",
+          "status": "published",
+          "archive": "http://web.archive.org/web/20260313162130/https://sr.wikipedia.org/wiki/%D0%9F%D0%B5%D1%82%D0%B0_%D0%B1%D0%B5%D0%BE%D0%B3%D1%80%D0%B0%D0%B4%D1%81%D0%BA%D0%B0_%D0%B3%D0%B8%D0%BC%D0%BD%D0%B0%D0%B7%D0%B8%D1%98%D0%B0",
+          "archivedOn": "2026-03-13"
+        },
+        {
+          "url": "https://www.wikidata.org/wiki/Q11160995",
+          "domain": "wikidata.org",
+          "type": "registryRecord",
+          "status": "published",
+          "archive": "http://web.archive.org/web/20251104160959/https://www.wikidata.org/wiki/Q11160995",
+          "archivedOn": "2025-11-04"
+        }
+      ]
     }
   },
   {
@@ -77,7 +396,34 @@
       "type": "instance",
       "nodeType": "academic",
       "uri": "https://w3id.org/vip/rs/Northwood_University_Michigan",
-      "wikipedia": "https://en.wikipedia.org/wiki/Northwood_University"
+      "wikipedia": "https://en.wikipedia.org/wiki/Northwood_University",
+      "facts": [
+        {
+          "property": "location",
+          "label": "location",
+          "value": "Midland, Mičigen, SAD"
+        }
+      ],
+      "file": "data/entities/northwood-university-michigan.ttl",
+      "line": 16,
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Northwood_University",
+          "domain": "en.wikipedia.org",
+          "type": "encyclopediaArticle",
+          "status": "published",
+          "archive": "http://web.archive.org/web/20260803122447/https://en.wikipedia.org/wiki/Northwood_University",
+          "archivedOn": "2026-08-03"
+        },
+        {
+          "url": "https://www.northwood.edu/",
+          "domain": "northwood.edu",
+          "type": "webPage",
+          "status": "published",
+          "archive": "http://web.archive.org/web/20261017104740/https://www.northwood.edu/",
+          "archivedOn": "2026-10-17"
+        }
+      ]
     }
   },
   {
@@ -86,7 +432,62 @@
       "label": "Mihailo Jovanović",
       "type": "instance",
       "nodeType": "person",
-      "uri": "https://w3id.org/vip/rs/Mihailo_Jovanovic"
+      "uri": "https://w3id.org/vip/rs/Mihailo_Jovanovic",
+      "comment": "Inženjer i političar, rođen 1972. u Beogradu; direktor Kancelarije za informacione tehnologije i elektronsku upravu, ministar informisanja i telekomunikacija od oktobra 2022. do 2024. Nije isto lice kao mitropolit, sudija ili fudbaleri istog imena.",
+      "wikipedia": "https://sr.wikipedia.org/wiki/Михаило_Јовановић_(политичар)",
+      "facts": [
+        {
+          "property": "birthPlace",
+          "label": "birth place",
+          "value": "Beograd, Srbija"
+        }
+      ],
+      "file": "data/entities/mihailo-jovanovic.ttl",
+      "line": 16,
+      "sources": [
+        {
+          "url": "https://www.alo.rs/vesti/politika/2184894/ekskluzivno-ekipa-alo-sa-ministrima-i-njihovom-razrednom-u-petoj-beogradskoj-posle-30-godina-sinisa-i-mihailo-od-skolskih-do-ministarskih-klupa-video.html",
+          "domain": "alo.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "archive": "https://web.archive.org/web/20261101142943/https://www.alo.rs/vesti/politika/2184894/ekskluzivno-ekipa-alo-sa-ministrima-i-njihovom-razrednom-u-petoj-beogradskoj-posle-30-godina-sinisa-i-mihailo-od-skolskih-do-ministarskih-klupa-video.html",
+          "archivedOn": "2026-11-01"
+        },
+        {
+          "url": "https://www.istinomer.rs/akter/mihailo-jovanovic/",
+          "domain": "istinomer.rs",
+          "type": "factCheckProfile",
+          "status": "published",
+          "quote": "Istinomer, profil aktera (snimak od 30. oktobra 2026): rođen 1972. u Beogradu; ministar informisanja i telekomunikacija od oktobra 2022.",
+          "archive": "http://web.archive.org/web/20261030102519/https://www.istinomer.rs/akter/mihailo-jovanovic/",
+          "archivedOn": "2026-10-30"
+        },
+        {
+          "url": "https://www.ite.gov.rs/tekst/sr/150/direktor.php",
+          "domain": "ite.gov.rs",
+          "type": "officialDocument",
+          "status": "published",
+          "archive": "http://web.archive.org/web/20261009165017/https://ite.gov.rs/tekst/sr/150/direktor.php",
+          "archivedOn": "2026-10-09"
+        },
+        {
+          "url": "https://sr.wikipedia.org/wiki/Михаило_Јовановић_(политичар)",
+          "domain": "sr.wikipedia.org",
+          "type": "encyclopediaArticle",
+          "status": "published",
+          "quote": "Uvod članka: \u0027Михаило Јовановић (Београд, 1972) српски је инжењер и политичар. Био је министар телекомуникација и информисања од 2022. до 2024. године.\u0027",
+          "archive": "http://web.archive.org/web/20241226080846/https://sr.wikipedia.org/wiki/%D0%9C%D0%B8%D1%85%D0%B0%D0%B8%D0%BB%D0%BE_%D0%88%D0%BE%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%9B_(%D0%BF%D0%BE%D0%BB%D0%B8%D1%82%D0%B8%D1%87%D0%B0%D1%80)",
+          "archivedOn": "2024-12-26"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v\u003dtHgNZtQdGrg\u0026t\u003d5s",
+          "domain": "youtube.com",
+          "type": "videoRecording",
+          "status": "published",
+          "archive": "https://web.archive.org/web/20261030132947/https://www.youtube.com/watch?v\u003dtHgNZtQdGrg\u0026t\u003d5s",
+          "archivedOn": "2026-10-30"
+        }
+      ]
     }
   },
   {
@@ -97,7 +498,54 @@
       "nodeType": "person",
       "uri": "https://w3id.org/vip/rs/Ivan_Bosnjak_Milenijum_Tim",
       "comment": "Privrednik, rođen 1980. u Beogradu, jedan od osnivača i suvlasnika Milenijum tima, potpredsednik Privredne komore Srbije od juna 2025. Nije isto lice kao političar Ivan Bošnjak (rođen 1974. u Melencima), državni sekretar i bivši gradonačelnik Zrenjanina.",
-      "wikipedia": "https://sr.wikipedia.org/wiki/Ivan_Bo%C5%A1njak_(privrednik)"
+      "wikipedia": "https://sr.wikipedia.org/wiki/Ivan_Bo%C5%A1njak_(privrednik)",
+      "facts": [
+        {
+          "property": "birthPlace",
+          "label": "birth place",
+          "value": "Beograd, Srbija"
+        }
+      ],
+      "file": "data/entities/ivan-bosnjak-milenijum-tim.ttl",
+      "line": 18,
+      "sources": [
+        {
+          "url": "https://www.krik.rs/tag/ivan-bosnjak/",
+          "domain": "krik.rs",
+          "type": "webPage",
+          "status": "published",
+          "quote": "KRIK, oznaka sa tekstovima o Milenijum timu; stranica sama ne navodi uloge.",
+          "archive": "http://web.archive.org/web/20260121233122/https://www.krik.rs/tag/ivan-bosnjak/",
+          "archivedOn": "2026-01-21"
+        },
+        {
+          "url": "https://millenniumteam.rs/en/news/ivan-bosnjak-elected-vice-president-of-the-serbian-chamber-of-commerce/",
+          "domain": "millenniumteam.rs",
+          "type": "webPage",
+          "status": "published",
+          "quote": "Sajt kompanije, 26. jun 2025: co-founder and Deputy General Manager of Millennium Team.",
+          "archive": "http://web.archive.org/web/20260214133819/https://millenniumteam.rs/en/news/ivan-bosnjak-elected-vice-president-of-the-serbian-chamber-of-commerce/",
+          "archivedOn": "2026-02-14"
+        },
+        {
+          "url": "https://sr.wikipedia.org/wiki/Ivan_Bo%C5%A1njak_(privrednik)",
+          "domain": "sr.wikipedia.org",
+          "type": "encyclopediaArticle",
+          "status": "published",
+          "quote": "Zaseban članak o privredniku: rođen 1980. u Beogradu, jedan od osnivača i suvlasnika Milenijum tima, potpredsednik PKS od juna 2025.",
+          "archive": "https://web.archive.org/web/20261101020949/https://sr.wikipedia.org/wiki/Ivan_Bo%C5%A1njak_(privrednik)",
+          "archivedOn": "2026-11-01"
+        },
+        {
+          "url": "https://vreme.com/vesti/milenijum-tim-brat-sinise-malog-poslovi-bez-veze-sa-drzavom/",
+          "domain": "vreme.com",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Vreme, 26. januar 2026: suvlasnik je istakao da je ponosni član SNS, a da nikada nije imao funkciju u stranci.",
+          "archive": "http://web.archive.org/web/20261011172321/https://vreme.com/vesti/milenijum-tim-brat-sinise-malog-poslovi-bez-veze-sa-drzavom/",
+          "archivedOn": "2026-10-11"
+        }
+      ]
     }
   },
   {
@@ -107,7 +555,82 @@
       "type": "instance",
       "nodeType": "organization",
       "uri": "https://w3id.org/vip/rs/Roberts_Milenijum",
-      "comment": "Roberts Millennium je osnovan 26. decembra 2019, matični broj 21543080, kao zajednička firma Milenijum tima i australijske kompanije Roberts Constructions Serbia. Izbrisan iz registra 3. decembra 2024."
+      "comment": "Roberts Millennium je osnovan 26. decembra 2019, matični broj 21543080, kao zajednička firma Milenijum tima i australijske kompanije Roberts Constructions Serbia. Izbrisan iz registra 3. decembra 2024.",
+      "aliases": [
+        "Roberts Milenijum"
+      ],
+      "facts": [
+        {
+          "property": "foundationDate",
+          "label": "foundation date",
+          "value": "2019-12-26"
+        },
+        {
+          "property": "hasTaxId",
+          "label": "Tax ID",
+          "value": "111802832"
+        }
+      ],
+      "file": "data/entities/roberts-milenijum.ttl",
+      "line": 16,
+      "sources": [
+        {
+          "url": "https://www.belgradewaterfront.com/en/news/the-main-works-commence-for-bw-metropolitan/",
+          "domain": "belgradewaterfront.com",
+          "type": "webPage",
+          "status": "published",
+          "archive": "http://web.archive.org/web/20260422051156/https://www.belgradewaterfront.com/en/news/the-main-works-commence-for-bw-metropolitan/",
+          "archivedOn": "2026-04-22"
+        },
+        {
+          "url": "https://www.companywall.rs/firma/roberts-millennium-doo/MMx15PUYY",
+          "domain": "companywall.rs",
+          "type": "registryRecord",
+          "status": "published",
+          "quote": "Registar: osnovan 26.12.2019, status neaktivan, izbrisan 3.12.2024.",
+          "archive": "https://web.archive.org/web/20261101021241/https://www.companywall.rs/firma/roberts-millennium-doo/MMx15PUYY",
+          "archivedOn": "2026-11-01"
+        },
+        {
+          "url": "https://www.danas.rs/vesti/ekonomija/sta-sve-ima-milenijum-tim-novi-vlasnik-hotela-jugoslavija/",
+          "domain": "danas.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "archive": "http://web.archive.org/web/20250620082052/https://www.danas.rs/vesti/ekonomija/sta-sve-ima-milenijum-tim-novi-vlasnik-hotela-jugoslavija/",
+          "archivedOn": "2025-06-20"
+        },
+        {
+          "url": "https://n1info.rs/biznis/cime-se-sve-bavi-novi-vlasnik-hotela-jugoslavija-milenijum-tim-od-bolnice-do-gradjevine/",
+          "domain": "n1info.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "N1, 23. mart 2024: druga polovina je u vlasništvu Roberts Constructions Serbia Pty Limited iz Australije.",
+          "archive": "http://web.archive.org/web/20260414192229/https://n1info.rs/biznis/cime-se-sve-bavi-novi-vlasnik-hotela-jugoslavija-milenijum-tim-od-bolnice-do-gradjevine/",
+          "archivedOn": "2026-04-14"
+        },
+        {
+          "url": "https://poslovi.infostud.com/posao/Inzenjer-tehnicke-pripreme/Roberts-Millennium-doo/432801",
+          "domain": "poslovi.infostud.com",
+          "type": "webPage",
+          "status": "published",
+          "archive": "http://web.archive.org/web/20261030133232/https://poslovi.infostud.com/posao/Inzenjer-tehnicke-pripreme/Roberts-Millennium-doo/432801",
+          "archivedOn": "2026-10-30"
+        },
+        {
+          "url": "https://pretraga.cubepartner.rs/sr/kompanija/0e55cb2461a3e2c0/roberts-millennium-doo",
+          "domain": "pretraga.cubepartner.rs",
+          "type": "registryRecord",
+          "status": "published",
+          "archive": "https://web.archive.org/web/20261101142259/https://pretraga.cubepartner.rs/sr/kompanija/0e55cb2461a3e2c0/roberts-millennium-doo",
+          "archivedOn": "2026-11-01"
+        },
+        {
+          "url": "https://www.krik.rs/tag/roberts-milenijum/",
+          "domain": "krik.rs",
+          "type": "webPage",
+          "status": "removed"
+        }
+      ]
     }
   },
   {
@@ -117,7 +640,62 @@
       "type": "instance",
       "nodeType": "organization",
       "uri": "https://w3id.org/vip/rs/Pizzarotti_Millennium",
-      "comment": "Pizzarotti Millennium je preduzeće preko kog italijanski Pizzarotti nastupa u Srbiji, izvođač kule u Beogradu na vodi. Osnovano 13. decembra 2018, matični broj 21440639. Većinski vlasnik je Pizzarotti SA sa 96%; Milenijum tim ima 4% i nije matično društvo. Mediji ga nazivaju i Milenijum Picaroti."
+      "comment": "Pizzarotti Millennium je preduzeće preko kog italijanski Pizzarotti nastupa u Srbiji, izvođač kule u Beogradu na vodi. Osnovano 13. decembra 2018, matični broj 21440639. Većinski vlasnik je Pizzarotti SA sa 96%; Milenijum tim ima 4% i nije matično društvo. Mediji ga nazivaju i Milenijum Picaroti.",
+      "aliases": [
+        "Milenijum Picaroti",
+        "Pizzarotti Millennium d.o.o. Beograd-Novi Beograd"
+      ],
+      "facts": [
+        {
+          "property": "foundationDate",
+          "label": "foundation date",
+          "value": "2018-12-13"
+        }
+      ],
+      "file": "data/entities/pizzarotti-millennium.ttl",
+      "line": 16,
+      "sources": [
+        {
+          "url": "https://www.companywall.rs/firma/pizzarotti-millennium-doo/MMx04LqfY",
+          "domain": "companywall.rs",
+          "type": "registryRecord",
+          "status": "published",
+          "quote": "Registar: osnovano 13.12.2018, matični broj 21440639, vlasnici Pizzarotti SA 96%, Millennium Team 4%.",
+          "archive": "https://web.archive.org/web/20261101021118/https://www.companywall.rs/firma/pizzarotti-millennium-doo/MMx04LqfY",
+          "archivedOn": "2026-11-01"
+        },
+        {
+          "url": "https://www.danas.rs/vesti/ekonomija/firma-koja-gradi-beograd-na-vodi-u-korupcijskom-skandalu/",
+          "domain": "danas.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Danas, 10. decembar 2021: U Srbiji Pizzarotti nastupa preko preduzeća Pizzarotti Milennium.",
+          "archive": "http://web.archive.org/web/20250311005416/https://www.danas.rs/vesti/ekonomija/firma-koja-gradi-beograd-na-vodi-u-korupcijskom-skandalu/",
+          "archivedOn": "2025-03-11"
+        },
+        {
+          "url": "https://www.danas.rs/vesti/ekonomija/sta-sve-ima-milenijum-tim-novi-vlasnik-hotela-jugoslavija/",
+          "domain": "danas.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "archive": "http://web.archive.org/web/20250620082052/https://www.danas.rs/vesti/ekonomija/sta-sve-ima-milenijum-tim-novi-vlasnik-hotela-jugoslavija/",
+          "archivedOn": "2025-06-20"
+        },
+        {
+          "url": "https://vreme.com/drustvo/poslovi-milenijum-tima-na-red-dosla-i-sanacija-leve-obale-save/",
+          "domain": "vreme.com",
+          "type": "newsArticle",
+          "status": "published",
+          "archive": "http://web.archive.org/web/20260729132920/https://vreme.com/drustvo/poslovi-milenijum-tima-na-red-dosla-i-sanacija-leve-obale-save/",
+          "archivedOn": "2026-07-29"
+        },
+        {
+          "url": "https://www.companywall.rs/firma/milenijum-picaroti-doo-beograd/MPksspYq",
+          "domain": "companywall.rs",
+          "type": "registryRecord",
+          "status": "removed"
+        }
+      ]
     }
   },
   {
@@ -127,7 +705,73 @@
       "type": "instance",
       "nodeType": "organization",
       "uri": "https://w3id.org/vip/rs/Milenijum_Resorts",
-      "comment": "Millennium Resorts upravlja razvojem turističkih projekata, uključujući Vranjsku Banju. Osnovan 8. jula 2019, matični broj 21498491."
+      "comment": "Millennium Resorts upravlja razvojem turističkih projekata, uključujući Vranjsku Banju. Osnovan 8. jula 2019, matični broj 21498491.",
+      "facts": [
+        {
+          "property": "foundationDate",
+          "label": "foundation date",
+          "value": "2019-07-08"
+        }
+      ],
+      "file": "data/entities/milenijum-resorts.ttl",
+      "line": 16,
+      "sources": [
+        {
+          "url": "https://www.companywall.rs/firma/drustvo--za-inzenjering-i-usluge-millennium-resorts-doo-beograd/MMxxIjkxY",
+          "domain": "companywall.rs",
+          "type": "registryRecord",
+          "status": "published",
+          "quote": "Registar: osnovan 8.7.2019, matični broj 21498491.",
+          "archive": "https://web.archive.org/web/20261101021016/https://www.companywall.rs/firma/drustvo--za-inzenjering-i-usluge-millennium-resorts-doo-beograd/MMxxIjkxY",
+          "archivedOn": "2026-11-01"
+        },
+        {
+          "url": "https://www.danas.rs/vesti/ekonomija/sta-sve-ima-milenijum-tim-novi-vlasnik-hotela-jugoslavija/",
+          "domain": "danas.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "archive": "http://web.archive.org/web/20250620082052/https://www.danas.rs/vesti/ekonomija/sta-sve-ima-milenijum-tim-novi-vlasnik-hotela-jugoslavija/",
+          "archivedOn": "2025-06-20"
+        },
+        {
+          "url": "https://jugmedia.rs/milenijum-timu-iz-beograda-10-bespovratnih-miliona-evra-za-investiranje-u-vranjskoj-banji/",
+          "domain": "jugmedia.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "archive": "http://web.archive.org/web/20221210023051/https://jugmedia.rs/milenijum-timu-iz-beograda-10-bespovratnih-miliona-evra-za-investiranje-u-vranjskoj-banji/",
+          "archivedOn": "2022-12-10"
+        },
+        {
+          "url": "https://luftika.rs/milenijum-tim-vranjska-banja/",
+          "domain": "luftika.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "archive": "http://web.archive.org/web/20220628185341/https://luftika.rs/milenijum-tim-vranjska-banja/",
+          "archivedOn": "2022-06-28"
+        },
+        {
+          "url": "https://millenniumteam.rs/en/news/investment-in-tourism-vranjska-banja-resort-is-the-largest-current-project-in-the-south-of-serbia/",
+          "domain": "millenniumteam.rs",
+          "type": "webPage",
+          "status": "published",
+          "archive": "http://web.archive.org/web/20251015050343/https://millenniumteam.rs/en/news/investment-in-tourism-vranjska-banja-resort-is-the-largest-current-project-in-the-south-of-serbia/",
+          "archivedOn": "2025-10-15"
+        },
+        {
+          "url": "https://nova.rs/vesti/biznis/zavrsetak-hotela-u-vranjskoj-banji-za-koje-dobija-drzavnu-subvenciju-milenijum-tim-odlozio-za-2026-godinu/",
+          "domain": "nova.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "archive": "http://web.archive.org/web/20260213161228/https://nova.rs/vesti/biznis/zavrsetak-hotela-u-vranjskoj-banji-za-koje-dobija-drzavnu-subvenciju-milenijum-tim-odlozio-za-2026-godinu/",
+          "archivedOn": "2026-02-13"
+        },
+        {
+          "url": "https://nova.rs/vesti/biznis/milenijum-resorts-u-turizmu/",
+          "domain": "nova.rs",
+          "type": "newsArticle",
+          "status": "removed"
+        }
+      ]
     }
   },
   {
@@ -138,7 +782,51 @@
       "nodeType": "organization",
       "uri": "https://w3id.org/vip/rs/NALED",
       "comment": "NALED je najveća privatno-javna asocijacija u Srbiji koja okuplja kompanije, lokalne samouprave i nevladine organizacije; 330 članova u 2025. prema sopstvenom sajtu.",
-      "wikipedia": "https://sr.wikipedia.org/wiki/Nacionalna_alijansa_za_lokalni_ekonomski_razvoj"
+      "wikipedia": "https://sr.wikipedia.org/wiki/Nacionalna_alijansa_za_lokalni_ekonomski_razvoj",
+      "aliases": [
+        "NALED"
+      ],
+      "facts": [
+        {
+          "property": "foundationDate",
+          "label": "foundation date",
+          "value": "2006"
+        },
+        {
+          "property": "location",
+          "label": "location",
+          "value": "Beograd, Srbija"
+        }
+      ],
+      "file": "data/entities/naled.ttl",
+      "line": 16,
+      "sources": [
+        {
+          "url": "https://naled.rs/en/istorijat",
+          "domain": "naled.rs",
+          "type": "webPage",
+          "status": "published",
+          "quote": "NALED: osnovan 2006; 2025: NALED has 330 members.",
+          "archive": "http://web.archive.org/web/20260617110206/https://naled.rs/en/istorijat",
+          "archivedOn": "2026-06-17"
+        },
+        {
+          "url": "https://naled.rs/o-nama",
+          "domain": "naled.rs",
+          "type": "webPage",
+          "status": "published",
+          "archive": "http://web.archive.org/web/20260521021217/https://naled.rs/o-nama",
+          "archivedOn": "2026-05-21"
+        },
+        {
+          "url": "https://sr.wikipedia.org/wiki/Nacionalna_alijansa_za_lokalni_ekonomski_razvoj",
+          "domain": "sr.wikipedia.org",
+          "type": "encyclopediaArticle",
+          "status": "published",
+          "archive": "http://web.archive.org/web/20251019045732/https://sr.wikipedia.org/wiki/Nacionalna_alijansa_za_lokalni_ekonomski_razvoj",
+          "archivedOn": "2025-10-19"
+        }
+      ]
     }
   },
   {
@@ -148,7 +836,48 @@
       "type": "instance",
       "nodeType": "organization",
       "uri": "https://w3id.org/vip/rs/Milenijum_Propertiz",
-      "comment": "Millennium Properties je društvo za inženjering i investicije, osnovano 30. juna 2008, matični broj 20435887. Milenijum tim ima manjinski udeo; nije zavisno društvo."
+      "comment": "Millennium Properties je društvo za inženjering i investicije, osnovano 30. juna 2008, matični broj 20435887. Milenijum tim ima manjinski udeo; nije zavisno društvo.",
+      "aliases": [
+        "Milenijum propertiz"
+      ],
+      "facts": [
+        {
+          "property": "foundationDate",
+          "label": "foundation date",
+          "value": "2008-06-30"
+        },
+        {
+          "property": "hasTaxId",
+          "label": "Tax ID",
+          "value": "105706175"
+        }
+      ],
+      "file": "data/entities/milenijum-propertiz.ttl",
+      "line": 16,
+      "sources": [
+        {
+          "url": "https://www.companywall.rs/firma/millennium-properties-doo-beograd/MMsCs0qC",
+          "domain": "companywall.rs",
+          "type": "registryRecord",
+          "status": "published",
+          "archive": "https://web.archive.org/web/20261101142452/https://www.companywall.rs/firma/millennium-properties-doo-beograd/MMsCs0qC",
+          "archivedOn": "2026-11-01"
+        },
+        {
+          "url": "https://www.danas.rs/vesti/ekonomija/sta-sve-ima-milenijum-tim-novi-vlasnik-hotela-jugoslavija/",
+          "domain": "danas.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "archive": "http://web.archive.org/web/20250620082052/https://www.danas.rs/vesti/ekonomija/sta-sve-ima-milenijum-tim-novi-vlasnik-hotela-jugoslavija/",
+          "archivedOn": "2025-06-20"
+        },
+        {
+          "url": "https://www.companywall.rs/firma/milenijum-propertiz-doo-beograd/MPksspYq",
+          "domain": "companywall.rs",
+          "type": "registryRecord",
+          "status": "removed"
+        }
+      ]
     }
   },
   {
@@ -158,7 +887,39 @@
       "type": "instance",
       "nodeType": "person",
       "uri": "https://w3id.org/vip/rs/Sinisa_Mali",
-      "wikipedia": "https://sr.wikipedia.org/wiki/Синиша_Мали"
+      "wikipedia": "https://sr.wikipedia.org/wiki/Синиша_Мали",
+      "facts": [
+        {
+          "property": "birthDate",
+          "label": "birth date",
+          "value": "1972-08-25"
+        },
+        {
+          "property": "birthPlace",
+          "label": "birth place",
+          "value": "Beograd, Srbija"
+        }
+      ],
+      "file": "data/entities/sinisa-mali.ttl",
+      "line": 16,
+      "sources": [
+        {
+          "url": "https://www.istinomer.rs/akter/sinisa-mali/",
+          "domain": "istinomer.rs",
+          "type": "factCheckProfile",
+          "status": "published",
+          "archive": "https://web.archive.org/web/20261030102432/https://www.istinomer.rs/akter/sinisa-mali/",
+          "archivedOn": "2026-10-30"
+        },
+        {
+          "url": "https://sr.wikipedia.org/wiki/Синиша_Мали",
+          "domain": "sr.wikipedia.org",
+          "type": "encyclopediaArticle",
+          "status": "published",
+          "archive": "http://web.archive.org/web/20251211120109/https://sr.wikipedia.org/wiki/%D0%A1%D0%B8%D0%BD%D0%B8%D1%88%D0%B0_%D0%9C%D0%B0%D0%BB%D0%B8",
+          "archivedOn": "2025-12-11"
+        }
+      ]
     }
   },
   {
@@ -168,7 +929,39 @@
       "type": "instance",
       "nodeType": "person",
       "uri": "https://w3id.org/vip/rs/Ana_Brnabic",
-      "wikipedia": "https://sr.wikipedia.org/wiki/Ана_Брнабић"
+      "wikipedia": "https://sr.wikipedia.org/wiki/Ана_Брнабић",
+      "facts": [
+        {
+          "property": "birthDate",
+          "label": "birth date",
+          "value": "1975-09-28"
+        },
+        {
+          "property": "birthPlace",
+          "label": "birth place",
+          "value": "Beograd, Srbija"
+        }
+      ],
+      "file": "data/entities/ana-brnabic.ttl",
+      "line": 16,
+      "sources": [
+        {
+          "url": "https://www.istinomer.rs/akter/ana-brnabic/",
+          "domain": "istinomer.rs",
+          "type": "factCheckProfile",
+          "status": "published",
+          "archive": "http://web.archive.org/web/20261030102409/https://www.istinomer.rs/akter/ana-brnabic/",
+          "archivedOn": "2026-10-30"
+        },
+        {
+          "url": "https://sr.wikipedia.org/wiki/Ана_Брнабић",
+          "domain": "sr.wikipedia.org",
+          "type": "encyclopediaArticle",
+          "status": "published",
+          "archive": "http://web.archive.org/web/20260927001708/https://sr.wikipedia.org/wiki/%D0%90%D0%BD%D0%B0_%D0%91%D1%80%D0%BD%D0%B0%D0%B1%D0%B8%D1%9B",
+          "archivedOn": "2026-09-27"
+        }
+      ]
     }
   },
   {
@@ -178,7 +971,86 @@
       "type": "instance",
       "nodeType": "organization",
       "uri": "https://w3id.org/vip/rs/Alo_Media_System",
-      "comment": "Izdavač tabloida Alo!. Osnovana u martu 2017. pod imenom Dnevne novine Alo, preimenovana u Alo media system u junu 2019; matični broj 21276081, sedište Kosovska 26, Beograd. Od kraja 2025. kupuje lokalne televizije, radio i portale, između ostalog preko firme Best Media Team, registrovane 24. decembra 2025, u kojoj od februara 2026. ima 90%, a Insajder Tim 10%. Sa Bojanom Avramovićem poseduje i firmu INI media."
+      "comment": "Izdavač tabloida Alo!. Osnovana u martu 2017. pod imenom Dnevne novine Alo, preimenovana u Alo media system u junu 2019; matični broj 21276081, sedište Kosovska 26, Beograd. Od kraja 2025. kupuje lokalne televizije, radio i portale, između ostalog preko firme Best Media Team, registrovane 24. decembra 2025, u kojoj od februara 2026. ima 90%, a Insajder Tim 10%. Sa Bojanom Avramovićem poseduje i firmu INI media.",
+      "aliases": [
+        "Alo media system doo Beograd",
+        "Dnevne novine Alo"
+      ],
+      "facts": [
+        {
+          "property": "foundationDate",
+          "label": "foundation date",
+          "value": "2017-03-27"
+        },
+        {
+          "property": "industry",
+          "label": "industry",
+          "value": "Izdavanje novina"
+        },
+        {
+          "property": "location",
+          "label": "location",
+          "value": "Beograd, Srbija"
+        }
+      ],
+      "file": "data/entities/alo-media-system.ttl",
+      "line": 16,
+      "sources": [
+        {
+          "url": "https://www.021.rs/info/srbija/436227/informer-postao-suvlasnik-firme-koja-kupuje-lokalne-medije",
+          "domain": "021.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "021.rs, 26. februar 2026: vlasnici Best Media Team su Alo Media System 90 odsto i Insajder Tim 10 odsto; registrovana 24. decembra.",
+          "archive": "http://web.archive.org/web/20261101142331/https://www.021.rs/info/srbija/436227/informer-postao-suvlasnik-firme-koja-kupuje-lokalne-medije",
+          "archivedOn": "2026-11-01"
+        },
+        {
+          "url": "https://anem.org.rs/en/strane/cilj-je-zastrasivanje-na-lokalu-i-spaljena-zemlja-kakvu-ulogu-imaju-ispostave-klonovi-informera-i-aloa",
+          "domain": "anem.org.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "ANEM, 2026: \u0027The publisher of the newspaper Alo is Alo Media System Belgrade\u0027, povezana sa devet preduzeća (tri sestrinska, šest zavisnih).",
+          "archive": "https://web.archive.org/web/20261101142227/https://anem.org.rs/en/strane/cilj-je-zastrasivanje-na-lokalu-i-spaljena-zemlja-kakvu-ulogu-imaju-ispostave-klonovi-informera-i-aloa",
+          "archivedOn": "2026-11-01"
+        },
+        {
+          "url": "https://www.companywall.rs/firma/alo-media-system/MMfsPqfD",
+          "domain": "companywall.rs",
+          "type": "registryRecord",
+          "status": "published",
+          "quote": "Registarski podaci (APR preko CompanyWall): puni naziv, matični broj 21276081, PIB 109964527, osnovana 27.3.2017, Kosovska 26/3, direktor Dragan Lazić.",
+          "archive": "https://web.archive.org/web/20261101142418/https://www.companywall.rs/firma/alo-media-system/MMfsPqfD",
+          "archivedOn": "2026-11-01"
+        },
+        {
+          "url": "https://safejournalists.net/sr/vlasnik-tabloida-alo-za-manje-od-mesec-dana-kupio-dve-televizije-i-radio-za-skoro-200-000-evra/",
+          "domain": "safejournalists.net",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Raskrikavanje/SafeJournalists, januar 2026: vlasnik tabloida Alo kupio dve televizije i radio.",
+          "archive": "https://web.archive.org/web/20261030133426/https://safejournalists.net/sr/vlasnik-tabloida-alo-za-manje-od-mesec-dana-kupio-dve-televizije-i-radio-za-skoro-200-000-evra/",
+          "archivedOn": "2026-10-30"
+        },
+        {
+          "url": "https://serbia.mom-gmr.org/sr/mediji/detail/outlet/alo/",
+          "domain": "serbia.mom-gmr.org",
+          "type": "registryRecord",
+          "status": "published",
+          "quote": "Media Ownership Monitor Srbija: \u0027Kompanija Alo media system osnovana je u martu 2017. pod imenom Dnevne novine Alo\u0027, preimenovana u junu 2019.",
+          "archive": "http://web.archive.org/web/20250520025845/http://serbia.mom-gmr.org/sr/mediji/detail/outlet/alo/",
+          "archivedOn": "2025-05-20"
+        },
+        {
+          "url": "https://vreme.com/vesti/lokalni-mediji-kupovina-alo-informer/",
+          "domain": "vreme.com",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Vreme, 13. mart 2026: Alo Media System zajedno sa Bojanom Avramovićem poseduje i firmu INI media.",
+          "archive": "http://web.archive.org/web/20260419063743/https://vreme.com/vesti/lokalni-mediji-kupovina-alo-informer/",
+          "archivedOn": "2026-04-19"
+        }
+      ]
     }
   },
   {
@@ -188,7 +1060,50 @@
       "type": "instance",
       "nodeType": "organization",
       "uri": "https://w3id.org/vip/rs/MT_Gastel",
-      "comment": "MT Gastel je društvo za distribuciju gasa iz Beograda. Registarski zapis nije pronađen."
+      "comment": "MT Gastel je društvo za distribuciju gasa iz Beograda. Registarski zapis nije pronađen.",
+      "file": "data/entities/mt-gastel.ttl",
+      "line": 16,
+      "sources": [
+        {
+          "url": "https://www.danas.rs/vesti/ekonomija/sta-sve-ima-milenijum-tim-novi-vlasnik-hotela-jugoslavija/",
+          "domain": "danas.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "archive": "http://web.archive.org/web/20250620082052/https://www.danas.rs/vesti/ekonomija/sta-sve-ima-milenijum-tim-novi-vlasnik-hotela-jugoslavija/",
+          "archivedOn": "2025-06-20"
+        },
+        {
+          "url": "https://www.emis.cn/php/company-profile/YU/Millennium_Team_DOO_Beograd_en_2585748.html",
+          "domain": "emis.cn",
+          "type": "registryRecord",
+          "status": "published",
+          "quote": "EMIS: Drustvo Za Distribuciju Gasa Mt Gastel D.O.O. Beograd (Savski Venac).",
+          "archive": "https://web.archive.org/web/20261101025035/https://www.emis.cn/php/company-profile/YU/Millennium_Team_DOO_Beograd_en_2585748.html",
+          "archivedOn": "2026-11-01"
+        },
+        {
+          "url": "https://www.krik.rs/koruptivne-veze-milenijum-tim-ustupio-audi-i-stan-bratu-sinise-malog/",
+          "domain": "krik.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "archive": "http://web.archive.org/web/20260925060313/https://www.krik.rs/koruptivne-veze-milenijum-tim-ustupio-audi-i-stan-bratu-sinise-malog/",
+          "archivedOn": "2026-09-25"
+        },
+        {
+          "url": "https://n1info.rs/biznis/cime-se-sve-bavi-novi-vlasnik-hotela-jugoslavija-milenijum-tim-od-bolnice-do-gradjevine/",
+          "domain": "n1info.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "archive": "http://web.archive.org/web/20260414192229/https://n1info.rs/biznis/cime-se-sve-bavi-novi-vlasnik-hotela-jugoslavija-milenijum-tim-od-bolnice-do-gradjevine/",
+          "archivedOn": "2026-04-14"
+        },
+        {
+          "url": "https://www.companywall.rs/firma/mt-gastel-doo-beograd/MGksspYq",
+          "domain": "companywall.rs",
+          "type": "registryRecord",
+          "status": "removed"
+        }
+      ]
     }
   },
   {
@@ -197,7 +1112,27 @@
       "label": "Stojan Vujko",
       "type": "instance",
       "nodeType": "person",
-      "uri": "https://w3id.org/vip/rs/Stojan_Vujko"
+      "uri": "https://w3id.org/vip/rs/Stojan_Vujko",
+      "file": "data/entities/stojan-vujko.ttl",
+      "line": 16,
+      "sources": [
+        {
+          "url": "https://www.companywall.rs/firma/millennium-team-doo-beograd/MMksspYq",
+          "domain": "companywall.rs",
+          "type": "registryRecord",
+          "status": "published",
+          "archive": "http://web.archive.org/web/20260313111844/https://www.companywall.rs/firma/millennium-team-doo-beograd/MMksspYq",
+          "archivedOn": "2026-03-13"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Millennium_Team",
+          "domain": "en.wikipedia.org",
+          "type": "encyclopediaArticle",
+          "status": "published",
+          "archive": "http://web.archive.org/web/20251013140940/https://en.wikipedia.org/wiki/Millennium_Team",
+          "archivedOn": "2025-10-13"
+        }
+      ]
     }
   },
   {
@@ -208,7 +1143,41 @@
       "nodeType": "person",
       "uri": "https://w3id.org/vip/rs/Ivan_Bosnjak_Zrenjanin",
       "comment": "Političar Srpske napredne stranke, gradonačelnik Zrenjanina 2012-2014, državni sekretar u ministarstvu državne uprave i lokalne samouprave 2014-2020, a od 2022. u ministarstvu za ljudska i manjinska prava i društveni dijalog. Nije isto lice kao privrednik Ivan Bošnjak (rođen 1980. u Beogradu), suvlasnik Milenijum tima.",
-      "wikipedia": "https://en.wikipedia.org/wiki/Ivan_Bo%C5%A1njak_(politician)"
+      "wikipedia": "https://en.wikipedia.org/wiki/Ivan_Bo%C5%A1njak_(politician)",
+      "facts": [
+        {
+          "property": "birthDate",
+          "label": "birth date",
+          "value": "1974-11-04"
+        },
+        {
+          "property": "birthPlace",
+          "label": "birth place",
+          "value": "Melenci, Zrenjanin, Srbija"
+        }
+      ],
+      "file": "data/entities/ivan-bosnjak-zrenjanin.ttl",
+      "line": 18,
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Ivan_Bo%C5%A1njak_(politician)",
+          "domain": "en.wikipedia.org",
+          "type": "encyclopediaArticle",
+          "status": "published",
+          "quote": "Rođen 4. novembra 1974. u Melencima; funkcije sa datumima; Milenijum tim se ne pominje.",
+          "archive": "http://web.archive.org/web/20260104002608/https://en.wikipedia.org/wiki/Ivan_Bo%C5%A1njak_(politician)",
+          "archivedOn": "2026-01-04"
+        },
+        {
+          "url": "https://www.istinomer.rs/akter/ivan-bosnjak/",
+          "domain": "istinomer.rs",
+          "type": "factCheckProfile",
+          "status": "published",
+          "quote": "Datum rođenja 4. 11. 1974, stranka SNS, mesto Zrenjanin.",
+          "archive": "http://web.archive.org/web/20261030102500/https://www.istinomer.rs/akter/ivan-bosnjak/",
+          "archivedOn": "2026-10-30"
+        }
+      ]
     }
   },
   {
@@ -218,119 +1187,677 @@
       "type": "instance",
       "nodeType": "organization",
       "uri": "https://w3id.org/vip/rs/MV_Investment",
-      "comment": "MV Investment je društvo osnovano 2006. koje je kupilo imovinu hotela Jugoslavija iz stečaja preduzeća Danube Riverside."
+      "comment": "MV Investment je društvo osnovano 2006. koje je kupilo imovinu hotela Jugoslavija iz stečaja preduzeća Danube Riverside.",
+      "file": "data/entities/mv-investment.ttl",
+      "line": 16,
+      "sources": [
+        {
+          "url": "https://24sedam.rs/biznis/privreda/290129/mv-investment-kupio-hotel-jugoslavija/vest",
+          "domain": "24sedam.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "archive": "https://web.archive.org/web/20261101142153/https://24sedam.rs/biznis/privreda/290129/mv-investment-kupio-hotel-jugoslavija/vest",
+          "archivedOn": "2026-11-01"
+        },
+        {
+          "url": "https://www.danas.rs/vesti/ekonomija/milenijum-timhotel-jugoslavija/",
+          "domain": "danas.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "archive": "http://web.archive.org/web/20250317181645/https://www.danas.rs/vesti/ekonomija/milenijum-timhotel-jugoslavija/",
+          "archivedOn": "2025-03-17"
+        },
+        {
+          "url": "https://www.danas.rs/vesti/ekonomija/sta-sve-ima-milenijum-tim-novi-vlasnik-hotela-jugoslavija/",
+          "domain": "danas.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "archive": "http://web.archive.org/web/20250620082052/https://www.danas.rs/vesti/ekonomija/sta-sve-ima-milenijum-tim-novi-vlasnik-hotela-jugoslavija/",
+          "archivedOn": "2025-06-20"
+        },
+        {
+          "url": "https://forbes.n1info.rs/vesti/vlasnici-milenijum-tima-kupili-hotel-jugoslavija/",
+          "domain": "forbes.n1info.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "archive": "http://web.archive.org/web/20260311005157/https://forbes.n1info.rs/vesti/vlasnici-milenijum-tima-kupili-hotel-jugoslavija/",
+          "archivedOn": "2026-03-11"
+        },
+        {
+          "url": "https://n1info.rs/biznis/cime-se-sve-bavi-novi-vlasnik-hotela-jugoslavija-milenijum-tim-od-bolnice-do-gradjevine/",
+          "domain": "n1info.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "N1, 23. mart 2024: MV Investment je osnovano 2006. godine, u vlasništvu Milenijum tima od 4. novembra 2022.",
+          "archive": "http://web.archive.org/web/20260414192229/https://n1info.rs/biznis/cime-se-sve-bavi-novi-vlasnik-hotela-jugoslavija-milenijum-tim-od-bolnice-do-gradjevine/",
+          "archivedOn": "2026-04-14"
+        },
+        {
+          "url": "https://rs.bloombergadria.com/ekonomija/srbija/55076/milenijum-tim-kupio-hotel-jugoslaviju-i-najavio-400-miliona-evra-ulaganja/news",
+          "domain": "rs.bloombergadria.com",
+          "type": "newsArticle",
+          "status": "published",
+          "archive": "http://web.archive.org/web/20240401222308/https://rs.bloombergadria.com/ekonomija/srbija/55076/milenijum-tim-kupio-hotel-jugoslaviju-i-najavio-400-miliona-evra-ulaganja/news",
+          "archivedOn": "2024-04-01"
+        },
+        {
+          "url": "https://www.companywall.rs/firma/mv-investment-doo-beograd/MVksppYq",
+          "domain": "companywall.rs",
+          "type": "registryRecord",
+          "status": "removed"
+        }
+      ]
     }
   },
   {
     "data": {
       "id": "edge0",
-      "label": "alumni",
-      "source": "sinisa_mali",
-      "target": "peta_beogradska_gimnazija"
+      "label": "founder",
+      "source": "ana_brnabic",
+      "target": "naled",
+      "uri": "https://w3id.org/vip/rs/AnaBrnabic_NALED_Osnivanje",
+      "comment": "Ana Brnabić je aktivno učestvovala u osnivanju NALED-a 2006. godine.",
+      "kind": "WorkConnection",
+      "typeLabel": "Work Connection",
+      "roles": [
+        "Founder"
+      ],
+      "start": "2006",
+      "file": "data/cases/milenijum-tim.ttl",
+      "line": 61,
+      "sources": [
+        {
+          "url": "https://www.kurir.rs/vesti/politika/2864945/ovo-je-biografija-nove-premijerke-ana-brnabic-prva-zena-na-celu-vlade-srbije-u-istoriji",
+          "domain": "kurir.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Biografija, jun 2017: Aktivno učestvuje u osnivanju NALED-a 2006.",
+          "archive": "http://web.archive.org/web/20261013002115/https://www.kurir.rs/vesti/politika/2864945/ovo-je-biografija-nove-premijerke-ana-brnabic-prva-zena-na-celu-vlade-srbije-u-istoriji",
+          "archivedOn": "2026-10-13"
+        },
+        {
+          "url": "https://sr.wikipedia.org/wiki/Ана_Брнабић",
+          "domain": "sr.wikipedia.org",
+          "type": "encyclopediaArticle",
+          "status": "published",
+          "quote": "Aktivno je učestvovala u osnivanju alijanse 2006. godine.",
+          "archive": "http://web.archive.org/web/20260927001708/https://sr.wikipedia.org/wiki/%D0%90%D0%BD%D0%B0_%D0%91%D1%80%D0%BD%D0%B0%D0%B1%D0%B8%D1%9B",
+          "archivedOn": "2026-09-27"
+        }
+      ]
     }
   },
   {
     "data": {
       "id": "edge1",
-      "label": "ownership connection",
-      "source": "milenijum_tim",
-      "target": "milenijum_resorts"
+      "label": "vice chair of the board",
+      "source": "ana_brnabic",
+      "target": "naled",
+      "uri": "https://w3id.org/vip/rs/AnaBrnabic_NALED_Potpredsednica",
+      "comment": "Ana Brnabić je bila potpredsednica Upravnog odbora NALED-a od 2013. do izbora za predsednicu u aprilu 2016.",
+      "kind": "WorkConnection",
+      "typeLabel": "Work Connection",
+      "roles": [
+        "Vice chair of the board"
+      ],
+      "start": "2013",
+      "end": "2016-04",
+      "file": "data/cases/milenijum-tim.ttl",
+      "line": 73,
+      "sources": [
+        {
+          "url": "https://capitalsummit.naled.rs/ana-brnabic.php",
+          "domain": "capitalsummit.naled.rs",
+          "type": "webPage",
+          "status": "published",
+          "quote": "NALED, skup u aprilu 2015: Ana Brnabić, VP, NALED.",
+          "archive": "http://web.archive.org/web/20260929014309/https://capitalsummit.naled.rs/ana-brnabic.php",
+          "archivedOn": "2026-09-29"
+        },
+        {
+          "url": "https://www.kurir.rs/vesti/politika/2864945/ovo-je-biografija-nove-premijerke-ana-brnabic-prva-zena-na-celu-vlade-srbije-u-istoriji",
+          "domain": "kurir.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Biografija, jun 2017: potpredsednica Upravnog odbora NALED-a od 2013, od aprila 2016. i predsednica.",
+          "archive": "http://web.archive.org/web/20261013002115/https://www.kurir.rs/vesti/politika/2864945/ovo-je-biografija-nove-premijerke-ana-brnabic-prva-zena-na-celu-vlade-srbije-u-istoriji",
+          "archivedOn": "2026-10-13"
+        }
+      ]
     }
   },
   {
     "data": {
       "id": "edge2",
-      "label": "ownership connection",
-      "source": "milenijum_tim",
-      "target": "mt_gastel"
+      "label": "chair of the board",
+      "source": "ana_brnabic",
+      "target": "naled",
+      "uri": "https://w3id.org/vip/rs/AnaBrnabic_NALED_Predsednica",
+      "comment": "Ana Brnabić je bila predsednica Upravnog odbora NALED-a od aprila 2016. do izbora za ministarku u avgustu 2016.",
+      "kind": "WorkConnection",
+      "typeLabel": "Work Connection",
+      "roles": [
+        "Chair of the board"
+      ],
+      "start": "2016-04",
+      "end": "2016-08",
+      "file": "data/cases/milenijum-tim.ttl",
+      "line": 86,
+      "sources": [
+        {
+          "url": "https://www.diplomacyandcommerce.rs/naled-has-chosen-a-new-president-and-members-of-the-board-of-directors/",
+          "domain": "diplomacyandcommerce.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Diplomacy and Commerce, 3. oktobar 2016: novi predsednik umesto ministarke Ane Brnabić je Goran Kovačević.",
+          "archive": "http://web.archive.org/web/20261101020830/https://www.diplomacyandcommerce.rs/naled-has-chosen-a-new-president-and-members-of-the-board-of-directors/",
+          "archivedOn": "2026-11-01"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Ana_Brnabi%C4%87",
+          "domain": "en.wikipedia.org",
+          "type": "encyclopediaArticle",
+          "status": "published",
+          "quote": "Ministarka od 11. avgusta 2016.",
+          "archive": "http://web.archive.org/web/20261028164643/https://en.wikipedia.org/wiki/Ana_Brnabi%C4%87",
+          "archivedOn": "2026-10-28"
+        },
+        {
+          "url": "https://www.kurir.rs/vesti/politika/2864945/ovo-je-biografija-nove-premijerke-ana-brnabic-prva-zena-na-celu-vlade-srbije-u-istoriji",
+          "domain": "kurir.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Biografija, jun 2017: od aprila 2016. predsednica Upravnog odbora.",
+          "archive": "http://web.archive.org/web/20261013002115/https://www.kurir.rs/vesti/politika/2864945/ovo-je-biografija-nove-premijerke-ana-brnabic-prva-zena-na-celu-vlade-srbije-u-istoriji",
+          "archivedOn": "2026-10-13"
+        },
+        {
+          "url": "https://naled.rs/vest-premijerka-obisla-zaposlene-u-naled-u-2421",
+          "domain": "naled.rs",
+          "type": "webPage",
+          "status": "published",
+          "quote": "NALED, 18. jul 2019: sa mesta predsednice Upravnog odbora NALED-a izabrana za ministarku državne uprave i lokalne samouprave.",
+          "archive": "http://web.archive.org/web/20221209120204/https://naled.rs/vest-premijerka-obisla-zaposlene-u-naled-u-2421",
+          "archivedOn": "2022-12-09"
+        },
+        {
+          "url": "https://naled.rs/o-naled-u/vesti/ana-brnabic-novi-predsednik-upravnog-odbora-naleda/",
+          "domain": "naled.rs",
+          "type": "webPage",
+          "status": "removed",
+          "quote": "Sajt NALED-a preusmerava ovu adresu na stranicu greške (404); nikada nije arhivirana."
+        }
+      ]
     }
   },
   {
     "data": {
       "id": "edge3",
-      "label": "political connection",
-      "source": "sinisa_mali",
-      "target": "sns"
+      "label": "alumni",
+      "source": "ana_brnabic",
+      "target": "northwood_university_michigan",
+      "uri": "https://w3id.org/vip/rs/AnaBrnabic_Northwood",
+      "comment": "Završila studije poslovne administracije na Univerzitetu Northwood 1998. Godina upisa nije zabeležena.",
+      "kind": "AlumniEducationalConnection",
+      "typeLabel": "Alumni",
+      "end": "1998",
+      "file": "data/cases/peta-beogradska-gimnazija.ttl",
+      "line": 76,
+      "sources": [
+        {
+          "url": "https://www.istinomer.rs/akter/ana-brnabic/",
+          "domain": "istinomer.rs",
+          "type": "factCheckProfile",
+          "status": "published",
+          "quote": "Istinomer, profil aktera: \u0027Na univerzitetu Northwood u Mičigenu završila je studije poslovne administracije 1998. godine\u0027",
+          "archive": "http://web.archive.org/web/20261030102409/https://www.istinomer.rs/akter/ana-brnabic/",
+          "archivedOn": "2026-10-30"
+        },
+        {
+          "url": "https://sr.wikipedia.org/wiki/Ана_Брнабић",
+          "domain": "sr.wikipedia.org",
+          "type": "encyclopediaArticle",
+          "status": "published",
+          "quote": "Vikipedija: \u0027Поред српског образовања, Брнабићева има и диплому пословне администрације на Универзитету Нортвуд и мастер пословне администрације Универзитета у Халу\u0027 Godinu ne navodi.",
+          "archive": "http://web.archive.org/web/20260927001708/https://sr.wikipedia.org/wiki/%D0%90%D0%BD%D0%B0_%D0%91%D1%80%D0%BD%D0%B0%D0%B1%D0%B8%D1%9B",
+          "archivedOn": "2026-09-27"
+        }
+      ]
     }
   },
   {
     "data": {
       "id": "edge4",
-      "label": "ownership connection",
-      "source": "milenijum_tim",
-      "target": "milenijum_propertiz"
+      "label": "alumni",
+      "source": "ana_brnabic",
+      "target": "peta_beogradska_gimnazija",
+      "uri": "https://w3id.org/vip/rs/AnaBrnabic_PetaGimnazija",
+      "comment": "Završila Petu beogradsku gimnaziju 1994. Godina upisa nije zabeležena.",
+      "kind": "AlumniEducationalConnection",
+      "typeLabel": "Alumni",
+      "end": "1994",
+      "file": "data/cases/peta-beogradska-gimnazija.ttl",
+      "line": 65,
+      "sources": [
+        {
+          "url": "https://www.istinomer.rs/akter/ana-brnabic/",
+          "domain": "istinomer.rs",
+          "type": "factCheckProfile",
+          "status": "published",
+          "quote": "Istinomer, profil aktera: \u0027Završila je Petu beogradsku gimnaziju 1994. godine.\u0027",
+          "archive": "http://web.archive.org/web/20261030102409/https://www.istinomer.rs/akter/ana-brnabic/",
+          "archivedOn": "2026-10-30"
+        },
+        {
+          "url": "https://sr.wikipedia.org/wiki/Ана_Брнабић",
+          "domain": "sr.wikipedia.org",
+          "type": "encyclopediaArticle",
+          "status": "published",
+          "quote": "Vikipedija: \u0027Брнабићева је одрасла у Београду, где је похађала престижну Пету београдску гимназију.\u0027 Godinu završetka ne navodi.",
+          "archive": "http://web.archive.org/web/20260927001708/https://sr.wikipedia.org/wiki/%D0%90%D0%BD%D0%B0_%D0%91%D1%80%D0%BD%D0%B0%D0%B1%D0%B8%D1%9B",
+          "archivedOn": "2026-09-27"
+        }
+      ]
     }
   },
   {
     "data": {
       "id": "edge5",
-      "label": "alumni",
-      "source": "sinisa_mali",
-      "target": "ekonomski_fakultet_university_of_belgrade"
+      "label": "political connection",
+      "source": "ana_brnabic",
+      "target": "sns",
+      "uri": "https://w3id.org/vip/rs/AnaBrnabic_SNS",
+      "comment": "Ana Brnabić je članica Srpske napredne stranke od oktobra 2019, potpredsednica stranke od novembra 2021.",
+      "kind": "PoliticalConnection",
+      "typeLabel": "Political connection",
+      "start": "2019-10",
+      "file": "data/cases/peta-beogradska-gimnazija.ttl",
+      "line": 31,
+      "sources": [
+        {
+          "url": "https://www.istinomer.rs/akter/ana-brnabic/",
+          "domain": "istinomer.rs",
+          "type": "factCheckProfile",
+          "status": "published",
+          "quote": "Istinomer, profil aktera: \u0027Postala je članica Srpske napredne stranke početkom oktobra 2019. godine.\u0027 i \u0027U novembru 2021. na Skupštini SNS izabrana je za potpredsednicu partije.\u0027",
+          "archive": "http://web.archive.org/web/20261030102409/https://www.istinomer.rs/akter/ana-brnabic/",
+          "archivedOn": "2026-10-30"
+        },
+        {
+          "url": "https://sr.wikipedia.org/wiki/Ана_Брнабић",
+          "domain": "sr.wikipedia.org",
+          "type": "encyclopediaArticle",
+          "status": "published",
+          "quote": "Vikipedija: \u0027Изабрана је као нестраначка политичарка, док је 2019. приступила владајућој Српској напредној странци (СНС), а потом је 2021. изабрана за потпредседницу СНС.\u0027 Mesec učlanjenja ovaj članak ne navodi.",
+          "archive": "http://web.archive.org/web/20260927001708/https://sr.wikipedia.org/wiki/%D0%90%D0%BD%D0%B0_%D0%91%D1%80%D0%BD%D0%B0%D0%B1%D0%B8%D1%9B",
+          "archivedOn": "2026-09-27"
+        }
+      ]
     }
   },
   {
     "data": {
       "id": "edge6",
       "label": "ownership connection",
-      "source": "milenijum_tim",
-      "target": "roberts_milenijum"
+      "source": "ivan_bosnjak_milenijum_tim",
+      "target": "milenijum_tim",
+      "uri": "https://w3id.org/vip/rs/IvanBosnjak_MilenijumTim",
+      "comment": "Ivan Bošnjak je jedan od osnivača i suvlasnik kompanije Milenijum tim, osnovane 4. septembra 2003. Udeo od 50% je aktuelno stanje u registru; udeo pri osnivanju nije poznat.",
+      "kind": "OwnershipConnection",
+      "typeLabel": "Ownership connection",
+      "share": 50.0,
+      "start": "2003-09-04",
+      "file": "data/cases/milenijum-tim.ttl",
+      "line": 20,
+      "sources": [
+        {
+          "url": "https://www.companywall.rs/firma/millennium-team-doo-beograd/MMksspYq",
+          "domain": "companywall.rs",
+          "type": "registryRecord",
+          "status": "published",
+          "quote": "Registarski podaci (APR preko CompanyWall, snimak od 13. marta 2026): vlasnici \u0027Ivan Bošnjak(50,00%)\u0027 i \u0027Stojan Vujko(50,00%)\u0027; \u0027Datum osnivanja 4.9.2003.\u0027; \u0027Ivan Bošnjak, zastupnik\u0027.",
+          "archive": "http://web.archive.org/web/20260313111844/https://www.companywall.rs/firma/millennium-team-doo-beograd/MMksspYq",
+          "archivedOn": "2026-03-13"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Millennium_Team",
+          "domain": "en.wikipedia.org",
+          "type": "encyclopediaArticle",
+          "status": "published",
+          "quote": "Enciklopedijski članak, infokutija: \u0027Owner: Ivan Bošnjak (50%), Stojan Vujko (50%)\u0027; tekst: \u0027The company was founded on 4 September 2003. Founded and formally owned by Ivan Bošnjak and Stojan Vujko\u0027.",
+          "archive": "http://web.archive.org/web/20251013140940/https://en.wikipedia.org/wiki/Millennium_Team",
+          "archivedOn": "2025-10-13"
+        },
+        {
+          "url": "https://sr.wikipedia.org/wiki/Milenijum_tim",
+          "domain": "sr.wikipedia.org",
+          "type": "encyclopediaArticle",
+          "status": "removed",
+          "quote": "Povučeno 5. novembra 2026: članak sr.wikipedia.org/wiki/Milenijum_tim ne postoji i prema dnevniku Vikipedije nikada nije ni postojao ni bio obrisan (HTTP 404; API javlja missing, dnevnik brisanja prazan), a Wayback Machine nema nijedan snimak ni latinične ni ćirilične adrese; ne može da potkrepi vlasništvo."
+        }
+      ]
     }
   },
   {
     "data": {
       "id": "edge7",
-      "label": "ownership connection",
-      "source": "sasa_blagojevic",
-      "target": "alo_media_system"
+      "label": "executive board member",
+      "source": "ivan_bosnjak_milenijum_tim",
+      "target": "naled",
+      "uri": "https://w3id.org/vip/rs/IvanBosnjak_NALED",
+      "comment": "Ivan Bošnjak, suvlasnik Milenijum tima, bio je član Izvršnog odbora NALED-a. Period nije poznat, osim da je članstvo završeno pre jula 2019. Izvor je jedan: Nova.rs preuzima navod KRIK-a.",
+      "kind": "WorkConnection",
+      "typeLabel": "Work Connection",
+      "roles": [
+        "Executive board member"
+      ],
+      "file": "data/cases/milenijum-tim.ttl",
+      "line": 46,
+      "sources": [
+        {
+          "url": "https://www.krik.rs/koruptivne-veze-milenijum-tim-ustupio-audi-i-stan-bratu-sinise-malog/",
+          "domain": "krik.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "KRIK, 22. jul 2019: Bošnjak je bio član Izvršnog odbora NALED-a i sa Vujkom sedi u upravi Sportskog društva Crvena zvezda.",
+          "archive": "http://web.archive.org/web/20260925060313/https://www.krik.rs/koruptivne-veze-milenijum-tim-ustupio-audi-i-stan-bratu-sinise-malog/",
+          "archivedOn": "2026-09-25"
+        },
+        {
+          "url": "https://nova.rs/vesti/hronika/suvlasnik-milenijum-tima-bosnjak-zakupac-plantaze-u-leskovcu/",
+          "domain": "nova.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Nova.rs, 28. januar 2021: ista rečenica o suvlasniku Milenijum tima; nije nezavisna potvrda KRIK-a.",
+          "archive": "http://web.archive.org/web/20250716051444/https://nova.rs/vesti/hronika/suvlasnik-milenijum-tima-bosnjak-zakupac-plantaze-u-leskovcu/",
+          "archivedOn": "2025-07-16"
+        },
+        {
+          "url": "https://naled.rs/htdocs/Files/15388/II-Kvartalni-izvestaj_2024.pdf",
+          "domain": "naled.rs",
+          "type": "officialDocument",
+          "status": "removed",
+          "quote": "Povučeno 1. novembra 2026: izveštaj navodi imenjaka, državnog sekretara, među predstavnicima ministarstva; ne potkrepljuje ovu vezu.",
+          "archive": "http://web.archive.org/web/20250516231427/https://naled.rs/htdocs/Files/15388/II-Kvartalni-izvestaj_2024.pdf",
+          "archivedOn": "2025-05-16"
+        },
+        {
+          "url": "https://www.uzmiracun.rs/vest-otvorene-wifi-zone-u-titelu-i-bakom-petrovcu-1345",
+          "domain": "uzmiracun.rs",
+          "type": "newsArticle",
+          "status": "removed",
+          "quote": "Povučeno 1. novembra 2026: članak navodi imenjaka kao državnog sekretara, a menadžer za razvoj članstva u NALED-u je Višnja Račić. Raniji navod o toj ulozi bio je pogrešan.",
+          "archive": "http://web.archive.org/web/20200809000902/http://uzmiracun.rs/vest-otvorene-wifi-zone-u-titelu-i-bakom-petrovcu-1345",
+          "archivedOn": "2020-08-09"
+        }
+      ]
     }
   },
   {
     "data": {
       "id": "edge8",
-      "label": "ownership connection",
-      "source": "milenijum_tim",
-      "target": "milenijum_adria"
+      "label": "alumni",
+      "source": "mihailo_jovanovic",
+      "target": "peta_beogradska_gimnazija",
+      "uri": "https://w3id.org/vip/rs/MihailoJovanovic_PetaGimnazija",
+      "comment": "Isto odeljenje kao Siniša Mali, prema članku lista Alo; generacija je došla u školu 1987, prema Siniši Malom, i završila je 1991, prema razrednoj Divni Jovanović.",
+      "kind": "AlumniEducationalConnection",
+      "typeLabel": "Alumni",
+      "start": "1987",
+      "end": "1991",
+      "file": "data/cases/peta-beogradska-gimnazija.ttl",
+      "line": 87,
+      "sources": [
+        {
+          "url": "https://www.alo.rs/vesti/politika/2184894/ekskluzivno-ekipa-alo-sa-ministrima-i-njihovom-razrednom-u-petoj-beogradskoj-posle-30-godina-sinisa-i-mihailo-od-skolskih-do-ministarskih-klupa-video.html",
+          "domain": "alo.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Alo, 31. decembar 2022: \u0027Pogađate, u pitanju su Siniša Mali i Mihailo Jovanović.\u0027 i razredna Divna Jovanović: \u0027Oni su završili 1991. godine\u0027; Siniša Mali: \u0027veliki broj mojih drugara i drugarica je iz te škole došao u Petu beogradsku gimnaziju 1987.\u0027",
+          "archive": "https://web.archive.org/web/20261101142943/https://www.alo.rs/vesti/politika/2184894/ekskluzivno-ekipa-alo-sa-ministrima-i-njihovom-razrednom-u-petoj-beogradskoj-posle-30-godina-sinisa-i-mihailo-od-skolskih-do-ministarskih-klupa-video.html",
+          "archivedOn": "2026-11-01"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v\u003dtHgNZtQdGrg\u0026t\u003d5s",
+          "domain": "youtube.com",
+          "type": "videoRecording",
+          "status": "published",
+          "quote": "YouTube, kanal ALO. RS, naslov snimka: \u0027SINIŠA MALI I MIHAILO JOVANOVIĆ OD ŠKOLSKIH DO MINISTARSKIH KLUPA - Bivšu razrednu iznenadili cvećem\u0027. Sam snimak nije pregledan; stranica ne navodi godine školovanja.",
+          "archive": "https://web.archive.org/web/20261030132947/https://www.youtube.com/watch?v\u003dtHgNZtQdGrg\u0026t\u003d5s",
+          "archivedOn": "2026-10-30"
+        }
+      ]
     }
   },
   {
     "data": {
       "id": "edge9",
-      "label": "chair of the board",
-      "source": "ana_brnabic",
-      "target": "naled"
+      "label": "ownership connection",
+      "source": "milenijum_tim",
+      "target": "mt_gastel",
+      "uri": "https://w3id.org/vip/rs/MilenijumTim_MTGastel",
+      "comment": "MT Gastel je zavisno društvo Milenijum tima, sa udelom 100% prema bazi EMIS iz septembra 2025. Registarski zapis nije pronađen. KRIK je 2019. kao vlasnike naveo Bošnjaka i Vujka lično, pa ni datum ni put sticanja nisu utvrđeni.",
+      "kind": "OwnershipConnection",
+      "typeLabel": "Ownership connection",
+      "share": 100.0,
+      "file": "data/cases/milenijum-tim.ttl",
+      "line": 116,
+      "sources": [
+        {
+          "url": "https://www.emis.cn/php/company-profile/YU/Millennium_Team_DOO_Beograd_en_2585748.html",
+          "domain": "emis.cn",
+          "type": "registryRecord",
+          "status": "published",
+          "quote": "EMIS, profil ažuriran 30.9.2025: Mt Gastel D.O.O. Beograd 100%. Komercijalna baza, ne zvanični registar.",
+          "archive": "https://web.archive.org/web/20261101025035/https://www.emis.cn/php/company-profile/YU/Millennium_Team_DOO_Beograd_en_2585748.html",
+          "archivedOn": "2026-11-01"
+        },
+        {
+          "url": "https://www.krik.rs/koruptivne-veze-milenijum-tim-ustupio-audi-i-stan-bratu-sinise-malog/",
+          "domain": "krik.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "KRIK, 22. jul 2019: Bošnjak i Vujko su vlasnici i MT gastela, koji se bavi distribucijom gasa.",
+          "archive": "http://web.archive.org/web/20260925060313/https://www.krik.rs/koruptivne-veze-milenijum-tim-ustupio-audi-i-stan-bratu-sinise-malog/",
+          "archivedOn": "2026-09-25"
+        },
+        {
+          "url": "https://n1info.rs/biznis/cime-se-sve-bavi-novi-vlasnik-hotela-jugoslavija-milenijum-tim-od-bolnice-do-gradjevine/",
+          "domain": "n1info.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "N1, 23. mart 2024: grupu čini Milenijum tim i još 14 zavisnih društava prema završnim računima za 2022. Na listi je MT Gastel.",
+          "archive": "http://web.archive.org/web/20260414192229/https://n1info.rs/biznis/cime-se-sve-bavi-novi-vlasnik-hotela-jugoslavija-milenijum-tim-od-bolnice-do-gradjevine/",
+          "archivedOn": "2026-04-14"
+        },
+        {
+          "url": "https://vreme.com/drustvo/poslovi-milenijum-tima-na-red-dosla-i-sanacija-leve-obale-save/",
+          "domain": "vreme.com",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Vreme, 2. oktobar 2025: Milenijum tim ima i firmu za distribuciju gasa MT Gastel.",
+          "archive": "http://web.archive.org/web/20260729132920/https://vreme.com/drustvo/poslovi-milenijum-tima-na-red-dosla-i-sanacija-leve-obale-save/",
+          "archivedOn": "2026-07-29"
+        }
+      ]
     }
   },
   {
     "data": {
       "id": "edge10",
-      "label": "vice chair of the board",
-      "source": "ana_brnabic",
-      "target": "naled"
+      "label": "ownership connection",
+      "source": "milenijum_tim",
+      "target": "mv_investment",
+      "uri": "https://w3id.org/vip/rs/MilenijumTim_MVInvestment",
+      "comment": "Milenijum tim je jedini vlasnik društva MV Investment od 4. novembra 2022.",
+      "kind": "OwnershipConnection",
+      "typeLabel": "Ownership connection",
+      "share": 100.0,
+      "start": "2022-11-04",
+      "file": "data/cases/milenijum-tim.ttl",
+      "line": 195,
+      "sources": [
+        {
+          "url": "https://biznis.rs/vesti/srbija/rusenje-hotela-jugoslavija-od-hipo-alpe-adrija-banke-do-milenijum-tima-preko-paname-grcke-i-kipra/",
+          "domain": "biznis.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Biznis.rs, 18. novembar 2024: vlasnik kompanije MV Investment je Milenijum tim.",
+          "archive": "http://web.archive.org/web/20250814081438/https://biznis.rs/vesti/srbija/rusenje-hotela-jugoslavija-od-hipo-alpe-adrija-banke-do-milenijum-tima-preko-paname-grcke-i-kipra/",
+          "archivedOn": "2025-08-14"
+        },
+        {
+          "url": "https://forbes.n1info.rs/vesti/vlasnici-milenijum-tima-kupili-hotel-jugoslavija/",
+          "domain": "forbes.n1info.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Forbes Srbija, 22. mart 2024: MV Investment je ćerka firma Milenijum tima.",
+          "archive": "http://web.archive.org/web/20260311005157/https://forbes.n1info.rs/vesti/vlasnici-milenijum-tima-kupili-hotel-jugoslavija/",
+          "archivedOn": "2026-03-11"
+        },
+        {
+          "url": "https://n1info.rs/biznis/cime-se-sve-bavi-novi-vlasnik-hotela-jugoslavija-milenijum-tim-od-bolnice-do-gradjevine/",
+          "domain": "n1info.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "N1, 23. mart 2024: kupovinom 100 odsto udela u kompaniji MV Investment; u vlasništvu Milenijum tima je od 4. novembra 2022.",
+          "archive": "http://web.archive.org/web/20260414192229/https://n1info.rs/biznis/cime-se-sve-bavi-novi-vlasnik-hotela-jugoslavija-milenijum-tim-od-bolnice-do-gradjevine/",
+          "archivedOn": "2026-04-14"
+        },
+        {
+          "url": "https://n1info.rs/biznis/prodaje-se-hotel-jugoslavija/",
+          "domain": "n1info.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "N1, 20. februar 2024: MV Investment je u stoprocentnom vlasništvu Milenijum tima.",
+          "archive": "http://web.archive.org/web/20250304052747/https://n1info.rs/biznis/prodaje-se-hotel-jugoslavija/",
+          "archivedOn": "2025-03-04"
+        }
+      ]
     }
   },
   {
     "data": {
       "id": "edge11",
       "label": "ownership connection",
-      "source": "stojan_vujko",
-      "target": "milenijum_tim"
+      "source": "milenijum_tim",
+      "target": "milenijum_adria",
+      "uri": "https://w3id.org/vip/rs/MilenijumTim_MilenijumAdria",
+      "comment": "Milenijum tim je jedini osnivač društva Millennium Adria, osnovanog 2020.",
+      "kind": "OwnershipConnection",
+      "typeLabel": "Ownership connection",
+      "share": 100.0,
+      "start": "2020",
+      "file": "data/cases/milenijum-tim.ttl",
+      "line": 131,
+      "sources": [
+        {
+          "url": "https://www.danas.rs/vesti/ekonomija/sta-sve-ima-milenijum-tim-novi-vlasnik-hotela-jugoslavija/",
+          "domain": "danas.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Danas, 25. mart 2024: biznisom u Hrvatskoj bave se preko firme Milenijum Adria.",
+          "archive": "http://web.archive.org/web/20250620082052/https://www.danas.rs/vesti/ekonomija/sta-sve-ima-milenijum-tim-novi-vlasnik-hotela-jugoslavija/",
+          "archivedOn": "2025-06-20"
+        },
+        {
+          "url": "https://www.fininfo.hr/Poduzece/Pregled/millennium-adria/Detaljno/780814",
+          "domain": "fininfo.hr",
+          "type": "registryRecord",
+          "status": "published",
+          "quote": "Fininfo: MILLENIUM TEAM DOO BEOGRAD, jedini osnivač d.o.o.",
+          "archive": "http://web.archive.org/web/20241109195604/https://www.fininfo.hr/Poduzece/Pregled/millennium-adria/Detaljno/780814",
+          "archivedOn": "2024-11-09"
+        },
+        {
+          "url": "https://n1info.rs/biznis/cime-se-sve-bavi-novi-vlasnik-hotela-jugoslavija-milenijum-tim-od-bolnice-do-gradjevine/",
+          "domain": "n1info.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "N1, 23. mart 2024: grupu čini Milenijum tim i još 14 zavisnih društava prema završnim računima za 2022. Na listi je Milenijum Adria.",
+          "archive": "http://web.archive.org/web/20260414192229/https://n1info.rs/biznis/cime-se-sve-bavi-novi-vlasnik-hotela-jugoslavija-milenijum-tim-od-bolnice-do-gradjevine/",
+          "archivedOn": "2026-04-14"
+        }
+      ]
     }
   },
   {
     "data": {
       "id": "edge12",
       "label": "ownership connection",
-      "source": "ivan_bosnjak_milenijum_tim",
-      "target": "milenijum_tim"
+      "source": "milenijum_tim",
+      "target": "milenijum_resorts",
+      "uri": "https://w3id.org/vip/rs/MilenijumTim_MilenijumResorts",
+      "comment": "Milenijum tim je jedini vlasnik (100%) društva Millennium Resorts. Datum sticanja nije poznat.",
+      "kind": "OwnershipConnection",
+      "typeLabel": "Ownership connection",
+      "share": 100.0,
+      "file": "data/cases/milenijum-tim.ttl",
+      "line": 105,
+      "sources": [
+        {
+          "url": "https://www.companywall.rs/firma/drustvo--za-inzenjering-i-usluge-millennium-resorts-doo-beograd/MMxxIjkxY",
+          "domain": "companywall.rs",
+          "type": "registryRecord",
+          "status": "published",
+          "quote": "Registar: vlasnik Millennium Team doo Beograd, 100%.",
+          "archive": "https://web.archive.org/web/20261101021016/https://www.companywall.rs/firma/drustvo--za-inzenjering-i-usluge-millennium-resorts-doo-beograd/MMxxIjkxY",
+          "archivedOn": "2026-11-01"
+        },
+        {
+          "url": "https://n1info.rs/biznis/cime-se-sve-bavi-novi-vlasnik-hotela-jugoslavija-milenijum-tim-od-bolnice-do-gradjevine/",
+          "domain": "n1info.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "N1, 23. mart 2024: grupu čini Milenijum tim i još 14 zavisnih društava prema završnim računima za 2022. Na listi je Milenijum rizort.",
+          "archive": "http://web.archive.org/web/20260414192229/https://n1info.rs/biznis/cime-se-sve-bavi-novi-vlasnik-hotela-jugoslavija-milenijum-tim-od-bolnice-do-gradjevine/",
+          "archivedOn": "2026-04-14"
+        }
+      ]
     }
   },
   {
     "data": {
       "id": "edge13",
-      "label": "alumni",
-      "source": "mihailo_jovanovic",
-      "target": "peta_beogradska_gimnazija"
+      "label": "ownership connection",
+      "source": "milenijum_tim",
+      "target": "milenijum_propertiz",
+      "uri": "https://w3id.org/vip/rs/MilenijumTim_MilleniumProperties",
+      "comment": "Milenijum tim ima manjinski udeo od 26% u društvu Millennium Properties; ostali vlasnici su IFG Properties Limited (40%) i Axel Capital Limited (34%), čiji stvarni vlasnici nisu poznati. Direktor je Ivan Bošnjak. Nije zavisno društvo. KRIK je 2019. naveo Bošnjaka i Vujka kao vlasnike, a firma nije na N1 listi zavisnih društava.",
+      "kind": "OwnershipConnection",
+      "typeLabel": "Ownership connection",
+      "share": 26.0,
+      "file": "data/cases/milenijum-tim.ttl",
+      "line": 145,
+      "sources": [
+        {
+          "url": "https://www.companywall.rs/firma/millennium-properties-doo-beograd/MMsCs0qC",
+          "domain": "companywall.rs",
+          "type": "registryRecord",
+          "status": "published",
+          "quote": "Registar: IFG Properties Limited 40%, Axel Capital Limited 34%, Millennium Team 26%; direktor Ivan Bošnjak.",
+          "archive": "https://web.archive.org/web/20261101142452/https://www.companywall.rs/firma/millennium-properties-doo-beograd/MMsCs0qC",
+          "archivedOn": "2026-11-01"
+        },
+        {
+          "url": "https://www.danas.rs/vesti/ekonomija/sta-sve-ima-milenijum-tim-novi-vlasnik-hotela-jugoslavija/",
+          "domain": "danas.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Danas, 25. mart 2024: navodi Milenijum propertiz među firmama u kojima udeo imaju Milenijum tim ili njegovi vlasnici.",
+          "archive": "http://web.archive.org/web/20250620082052/https://www.danas.rs/vesti/ekonomija/sta-sve-ima-milenijum-tim-novi-vlasnik-hotela-jugoslavija/",
+          "archivedOn": "2025-06-20"
+        },
+        {
+          "url": "https://www.krik.rs/koruptivne-veze-milenijum-tim-ustupio-audi-i-stan-bratu-sinise-malog/",
+          "domain": "krik.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "KRIK, 22. jul 2019: Bošnjak i Vujko vlasnici su i firme Millennium properties koja trguje nekretninama.",
+          "archive": "http://web.archive.org/web/20260925060313/https://www.krik.rs/koruptivne-veze-milenijum-tim-ustupio-audi-i-stan-bratu-sinise-malog/",
+          "archivedOn": "2026-09-25"
+        }
+      ]
     }
   },
   {
@@ -338,63 +1865,366 @@
       "id": "edge14",
       "label": "ownership connection",
       "source": "milenijum_tim",
-      "target": "mostogradnja_ing"
+      "target": "mostogradnja_ing",
+      "uri": "https://w3id.org/vip/rs/MilenijumTim_MostogradnjaING",
+      "comment": "Milenijum tim je jedini vlasnik društva Mostogradnja ING. Datum sticanja nije poznat; društvo je osnovano 24. novembra 2020.",
+      "kind": "OwnershipConnection",
+      "typeLabel": "Ownership connection",
+      "share": 100.0,
+      "file": "data/cases/milenijum-tim.ttl",
+      "line": 211,
+      "sources": [
+        {
+          "url": "https://www.companywall.rs/firma/mostogradnja-ing-doo/MMxEWFnzR",
+          "domain": "companywall.rs",
+          "type": "registryRecord",
+          "status": "published",
+          "quote": "Registar: vlasnik Millennium Team 100%.",
+          "archive": "https://web.archive.org/web/20261101021046/https://www.companywall.rs/firma/mostogradnja-ing-doo/MMxEWFnzR",
+          "archivedOn": "2026-11-01"
+        },
+        {
+          "url": "https://www.danas.rs/vesti/ekonomija/beogradsko-gradjevinsko-preduzece-mostogradnja-postalo-vlasnistvo-milenijum-tima/",
+          "domain": "danas.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Danas, 13. februar 2025: Mostogradnja ING, u vlasništvu firme Milenijum tim.",
+          "archive": "http://web.archive.org/web/20251111040945/https://www.danas.rs/vesti/ekonomija/beogradsko-gradjevinsko-preduzece-mostogradnja-postalo-vlasnistvo-milenijum-tima/",
+          "archivedOn": "2025-11-11"
+        },
+        {
+          "url": "https://n1info.rs/biznis/milenijum-tim-kupio-mostogradnju-u-stecaju-za-10-miliona-evra/",
+          "domain": "n1info.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "N1, 25. decembar 2024: Mostogradnja ING u stoprocentnom vlasništvu Milenijum tima, zavisno društvo.",
+          "archive": "http://web.archive.org/web/20250301102707/https://n1info.rs/biznis/milenijum-tim-kupio-mostogradnju-u-stecaju-za-10-miliona-evra/",
+          "archivedOn": "2025-03-01"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "edge15",
+      "label": "ownership connection",
+      "source": "milenijum_tim",
+      "target": "pizzarotti_millennium",
+      "uri": "https://w3id.org/vip/rs/MilenijumTim_PizzarottiMillennium",
+      "comment": "Milenijum tim ima manjinski udeo od 4% u preduzeću Pizzarotti Millennium; većinski vlasnik je Pizzarotti SA sa 96%. Nije zavisno društvo.",
+      "kind": "OwnershipConnection",
+      "typeLabel": "Ownership connection",
+      "share": 4.0,
+      "file": "data/cases/milenijum-tim.ttl",
+      "line": 158,
+      "sources": [
+        {
+          "url": "https://www.companywall.rs/firma/pizzarotti-millennium-doo/MMx04LqfY",
+          "domain": "companywall.rs",
+          "type": "registryRecord",
+          "status": "published",
+          "quote": "Registar: Pizzarotti SA 96%, Millennium Team 4%.",
+          "archive": "https://web.archive.org/web/20261101021118/https://www.companywall.rs/firma/pizzarotti-millennium-doo/MMx04LqfY",
+          "archivedOn": "2026-11-01"
+        },
+        {
+          "url": "https://www.danas.rs/vesti/ekonomija/firma-koja-gradi-beograd-na-vodi-u-korupcijskom-skandalu/",
+          "domain": "danas.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Danas, 10. decembar 2021: suvlasnik u preduzeću sa četiri odsto građevinska firma Milenijum tim.",
+          "archive": "http://web.archive.org/web/20250311005416/https://www.danas.rs/vesti/ekonomija/firma-koja-gradi-beograd-na-vodi-u-korupcijskom-skandalu/",
+          "archivedOn": "2025-03-11"
+        }
+      ]
     }
   },
   {
     "data": {
       "id": "edge16",
-      "label": "executive board member",
-      "source": "ivan_bosnjak_milenijum_tim",
-      "target": "naled"
+      "label": "ownership connection",
+      "source": "milenijum_tim",
+      "target": "roberts_milenijum",
+      "uri": "https://w3id.org/vip/rs/MilenijumTim_RobertsMillennium_Suvlasnistvo",
+      "comment": "Milenijum tim je od osnivanja imao 50% društva Roberts Millennium; drugu polovinu držala je Roberts Constructions Serbia Pty Limited iz Australije.",
+      "kind": "OwnershipConnection",
+      "typeLabel": "Ownership connection",
+      "share": 50.0,
+      "start": "2019-12-26",
+      "end": "2022-07",
+      "file": "data/cases/milenijum-tim.ttl",
+      "line": 169,
+      "sources": [
+        {
+          "url": "https://www.danas.rs/vesti/ekonomija/prijatelji-milenijum-tima-ne-placaju-turske-radnike/",
+          "domain": "danas.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Danas, 12. mart 2021: prema registru, Roberts i Milenijum tim imaju zajedničko preduzeće Roberts Milenium.",
+          "archive": "http://web.archive.org/web/20250313081418/https://www.danas.rs/vesti/ekonomija/prijatelji-milenijum-tima-ne-placaju-turske-radnike/",
+          "archivedOn": "2025-03-13"
+        },
+        {
+          "url": "https://n1info.rs/biznis/cime-se-sve-bavi-novi-vlasnik-hotela-jugoslavija-milenijum-tim-od-bolnice-do-gradjevine/",
+          "domain": "n1info.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "N1, 23. mart 2024: 50 odsto je u suvlasništvu Milenijum tima, druga polovina je u vlasništvu Roberts Constructions Serbia Pty Limited.",
+          "archive": "http://web.archive.org/web/20260414192229/https://n1info.rs/biznis/cime-se-sve-bavi-novi-vlasnik-hotela-jugoslavija-milenijum-tim-od-bolnice-do-gradjevine/",
+          "archivedOn": "2026-04-14"
+        }
+      ]
     }
   },
   {
     "data": {
       "id": "edge17",
-      "label": "alumni",
-      "source": "ana_brnabic",
-      "target": "peta_beogradska_gimnazija"
+      "label": "ownership connection",
+      "source": "milenijum_tim",
+      "target": "roberts_milenijum",
+      "uri": "https://w3id.org/vip/rs/MilenijumTim_RobertsMillennium_Vlasnistvo",
+      "comment": "Milenijum tim je u julu 2022. preuzeo 100% društva Roberts Millennium, koje je izbrisano iz registra 3. decembra 2024.",
+      "kind": "OwnershipConnection",
+      "typeLabel": "Ownership connection",
+      "share": 100.0,
+      "start": "2022-07",
+      "end": "2024-12-03",
+      "file": "data/cases/milenijum-tim.ttl",
+      "line": 182,
+      "sources": [
+        {
+          "url": "https://www.companywall.rs/firma/roberts-millennium-doo/MMx15PUYY",
+          "domain": "companywall.rs",
+          "type": "registryRecord",
+          "status": "published",
+          "quote": "Registar: vlasnik Millennium Team 100%, neaktivan, izbrisan 3.12.2024.",
+          "archive": "https://web.archive.org/web/20261101021241/https://www.companywall.rs/firma/roberts-millennium-doo/MMx15PUYY",
+          "archivedOn": "2026-11-01"
+        },
+        {
+          "url": "https://n1info.rs/biznis/cime-se-sve-bavi-novi-vlasnik-hotela-jugoslavija-milenijum-tim-od-bolnice-do-gradjevine/",
+          "domain": "n1info.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "N1, 23. mart 2024: Milenijum tim preuzima 100 procentno vlasništvo u julu 2022.",
+          "archive": "http://web.archive.org/web/20260414192229/https://n1info.rs/biznis/cime-se-sve-bavi-novi-vlasnik-hotela-jugoslavija-milenijum-tim-od-bolnice-do-gradjevine/",
+          "archivedOn": "2026-04-14"
+        }
+      ]
     }
   },
   {
     "data": {
       "id": "edge18",
       "label": "ownership connection",
-      "source": "milenijum_tim",
-      "target": "pizzarotti_millennium"
+      "source": "sasa_blagojevic",
+      "target": "alo_media_system",
+      "uri": "https://w3id.org/vip/rs/SasaBlagojevic_AloMediaSystem",
+      "comment": "Saša Blagojević je jedini vlasnik (100%) kompanije Alo media system, izdavača tabloida Alo!, od jula 2017, kada je Ringier Axel Springer prodao Alo njegovoj firmi Dnevne novine Alo.",
+      "kind": "OwnershipConnection",
+      "typeLabel": "Ownership connection",
+      "share": 100.0,
+      "start": "2017-07",
+      "file": "data/cases/alo-media-system.ttl",
+      "line": 19,
+      "sources": [
+        {
+          "url": "https://anem.org.rs/en/strane/cilj-je-zastrasivanje-na-lokalu-i-spaljena-zemlja-kakvu-ulogu-imaju-ispostave-klonovi-informera-i-aloa",
+          "domain": "anem.org.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "ANEM, 2026: \u0027The owner of the \"umbrella\" (parent) company Alo Media System is Saša Blagojević\u0027, sa udelima u više od 30 firmi.",
+          "archive": "https://web.archive.org/web/20261101142227/https://anem.org.rs/en/strane/cilj-je-zastrasivanje-na-lokalu-i-spaljena-zemlja-kakvu-ulogu-imaju-ispostave-klonovi-informera-i-aloa",
+          "archivedOn": "2026-11-01"
+        },
+        {
+          "url": "https://www.companywall.rs/firma/alo-media-system/MMfsPqfD",
+          "domain": "companywall.rs",
+          "type": "registryRecord",
+          "status": "published",
+          "quote": "Registarski podaci: \u0027Vlasnik (osnivač): Saša Blagojević (100,00%)\u0027.",
+          "archive": "https://web.archive.org/web/20261101142418/https://www.companywall.rs/firma/alo-media-system/MMfsPqfD",
+          "archivedOn": "2026-11-01"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Alo!",
+          "domain": "en.wikipedia.org",
+          "type": "encyclopediaArticle",
+          "status": "published",
+          "quote": "Enciklopedijski članak o listu Alo!: \u0027Owner: Saša Blagojević\u0027.",
+          "archive": "http://web.archive.org/web/20260413190045/https://en.wikipedia.org/wiki/Alo!",
+          "archivedOn": "2026-04-13"
+        },
+        {
+          "url": "https://safejournalists.net/sr/vlasnik-tabloida-alo-za-manje-od-mesec-dana-kupio-dve-televizije-i-radio-za-skoro-200-000-evra/",
+          "domain": "safejournalists.net",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Raskrikavanje/SafeJournalists, januar 2026: \u0027Saša Blagojević ... od 2017. godine je vlasnik kompanije Alo Media System.\u0027",
+          "archive": "https://web.archive.org/web/20261030133426/https://safejournalists.net/sr/vlasnik-tabloida-alo-za-manje-od-mesec-dana-kupio-dve-televizije-i-radio-za-skoro-200-000-evra/",
+          "archivedOn": "2026-10-30"
+        },
+        {
+          "url": "https://serbia.mom-gmr.org/sr/mediji/detail/outlet/alo/",
+          "domain": "serbia.mom-gmr.org",
+          "type": "registryRecord",
+          "status": "published",
+          "quote": "Media Ownership Monitor Srbija, profil medija: \u0027Vlasnik dnevnih novina Alo je Saša Blagojević preko svoje kompanije Dnevne novine Alo, od jula 2017.\u0027",
+          "archive": "http://web.archive.org/web/20250520025845/http://serbia.mom-gmr.org/sr/mediji/detail/outlet/alo/",
+          "archivedOn": "2025-05-20"
+        },
+        {
+          "url": "https://serbia.mom-gmr.org/sr/vlasnik/individual-owners/detail/owner/owner/show/sasa-blagojevic-2/",
+          "domain": "serbia.mom-gmr.org",
+          "type": "registryRecord",
+          "status": "published",
+          "quote": "Media Ownership Monitor Srbija, profil vlasnika: Alo Media System 100%, Alo! 100% preko Alo Media System; \u0027Blagojević je 2017. godine kupio dnevne novine Alo\u0027.",
+          "archive": "http://web.archive.org/web/20250915222803/https://serbia.mom-gmr.org/sr/vlasnik/individual-owners/detail/owner/owner/show/sasa-blagojevic-2/",
+          "archivedOn": "2025-09-15"
+        }
+      ]
     }
   },
   {
     "data": {
       "id": "edge19",
-      "label": "political connection",
-      "source": "ana_brnabic",
-      "target": "sns"
+      "label": "alumni",
+      "source": "sinisa_mali",
+      "target": "ekonomski_fakultet_university_of_belgrade",
+      "uri": "https://w3id.org/vip/rs/SinisaMali_EkonomskiFakultet",
+      "comment": "Diplomirao i magistrirao na Ekonomskom fakultetu; magistratura 1998. Godina upisa nije zabeležena.",
+      "kind": "AlumniEducationalConnection",
+      "typeLabel": "Alumni",
+      "end": "1998",
+      "file": "data/cases/peta-beogradska-gimnazija.ttl",
+      "line": 54,
+      "sources": [
+        {
+          "url": "https://www.istinomer.rs/akter/sinisa-mali/",
+          "domain": "istinomer.rs",
+          "type": "factCheckProfile",
+          "status": "published",
+          "quote": "Istinomer, profil aktera: \u0027Diplomirao je i magistrirao na Ekonomskom fakultetu Univerziteta u Beogradu, smer marketing, na temu „Trgovinske izložbe kao instrument promocije preduzeća“.\u0027 Godinu magistrature Istinomer ne navodi.",
+          "archive": "https://web.archive.org/web/20261030102432/https://www.istinomer.rs/akter/sinisa-mali/",
+          "archivedOn": "2026-10-30"
+        },
+        {
+          "url": "https://sr.wikipedia.org/wiki/Синиша_Мали",
+          "domain": "sr.wikipedia.org",
+          "type": "encyclopediaArticle",
+          "status": "published",
+          "quote": "Vikipedija: \u0027Дипломирао је на Економском факултету Универзитета у Београду, након чега је и магистрирао 1998. године на тему Трговинске изложбе као инструмент промоције предузећа на истом факултету.\u0027 Navod magistrature nema izvor u samom članku.",
+          "archive": "http://web.archive.org/web/20251211120109/https://sr.wikipedia.org/wiki/%D0%A1%D0%B8%D0%BD%D0%B8%D1%88%D0%B0_%D0%9C%D0%B0%D0%BB%D0%B8",
+          "archivedOn": "2025-12-11"
+        }
+      ]
     }
   },
   {
     "data": {
       "id": "edge20",
-      "label": "ownership connection",
-      "source": "milenijum_tim",
-      "target": "mv_investment"
+      "label": "alumni",
+      "source": "sinisa_mali",
+      "target": "peta_beogradska_gimnazija",
+      "uri": "https://w3id.org/vip/rs/SinisaMali_PetaGimnazija",
+      "comment": "Generacija je došla u školu 1987, prema Siniši Malom, i završila je 1991, prema razrednoj Divni Jovanović, oboje u članku lista Alo.",
+      "kind": "AlumniEducationalConnection",
+      "typeLabel": "Alumni",
+      "start": "1987",
+      "end": "1991",
+      "file": "data/cases/peta-beogradska-gimnazija.ttl",
+      "line": 42,
+      "sources": [
+        {
+          "url": "https://www.alo.rs/vesti/politika/2184894/ekskluzivno-ekipa-alo-sa-ministrima-i-njihovom-razrednom-u-petoj-beogradskoj-posle-30-godina-sinisa-i-mihailo-od-skolskih-do-ministarskih-klupa-video.html",
+          "domain": "alo.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Alo, 31. decembar 2022, Siniša Mali: \u0027veliki broj mojih drugara i drugarica je iz te škole došao u Petu beogradsku gimnaziju 1987.\u0027 Završetak: razredna Divna Jovanović: \u0027Oni su završili 1991. godine i posle toga nikad nije bila generacija takvih kvalitetnih đaka i odeljenja.\u0027",
+          "archive": "https://web.archive.org/web/20261101142943/https://www.alo.rs/vesti/politika/2184894/ekskluzivno-ekipa-alo-sa-ministrima-i-njihovom-razrednom-u-petoj-beogradskoj-posle-30-godina-sinisa-i-mihailo-od-skolskih-do-ministarskih-klupa-video.html",
+          "archivedOn": "2026-11-01"
+        },
+        {
+          "url": "https://sr.wikipedia.org/wiki/Синиша_Мали",
+          "domain": "sr.wikipedia.org",
+          "type": "encyclopediaArticle",
+          "status": "published",
+          "quote": "Vikipedija: \u0027Синиша Мали рођен је у Београду, 25. августа 1972. године, где је и завршио основну школу и Пету београдску гимназију.\u0027 Godine ne navodi.",
+          "archive": "http://web.archive.org/web/20251211120109/https://sr.wikipedia.org/wiki/%D0%A1%D0%B8%D0%BD%D0%B8%D1%88%D0%B0_%D0%9C%D0%B0%D0%BB%D0%B8",
+          "archivedOn": "2025-12-11"
+        }
+      ]
     }
   },
   {
     "data": {
       "id": "edge21",
-      "label": "founder",
-      "source": "ana_brnabic",
-      "target": "naled"
+      "label": "political connection",
+      "source": "sinisa_mali",
+      "target": "sns",
+      "uri": "https://w3id.org/vip/rs/SinisaMali_SNS",
+      "comment": "Siniša Mali je član Srpske napredne stranke od 2014. prema infokutiji Vikipedije, potpredsednik stranke od novembra 2021. prema Istinomeru. Godina učlanjenja ima samo taj jedan izvor.",
+      "kind": "PoliticalConnection",
+      "typeLabel": "Political connection",
+      "start": "2014",
+      "file": "data/cases/peta-beogradska-gimnazija.ttl",
+      "line": 20,
+      "sources": [
+        {
+          "url": "https://www.istinomer.rs/akter/sinisa-mali/",
+          "domain": "istinomer.rs",
+          "type": "factCheckProfile",
+          "status": "published",
+          "quote": "Istinomer, profil aktera: \u0027U novembru 2021. na Skupštini SNS izabran je za potpredsednika stranke.\u0027",
+          "archive": "https://web.archive.org/web/20261030102432/https://www.istinomer.rs/akter/sinisa-mali/",
+          "archivedOn": "2026-10-30"
+        },
+        {
+          "url": "https://sr.wikipedia.org/wiki/Синиша_Мали",
+          "domain": "sr.wikipedia.org",
+          "type": "encyclopediaArticle",
+          "status": "published",
+          "quote": "Infokutija Vikipedije o Siniši Malom, rubrika Politička karijera: \u0027Странка СНС (2014—данас)\u0027; uvod: \u0027Члан је Српске напредне странке (СНС).\u0027",
+          "archive": "http://web.archive.org/web/20251211120109/https://sr.wikipedia.org/wiki/%D0%A1%D0%B8%D0%BD%D0%B8%D1%88%D0%B0_%D0%9C%D0%B0%D0%BB%D0%B8",
+          "archivedOn": "2025-12-11"
+        }
+      ]
     }
   },
   {
     "data": {
       "id": "edge22",
-      "label": "alumni",
-      "source": "ana_brnabic",
-      "target": "northwood_university_michigan"
+      "label": "ownership connection",
+      "source": "stojan_vujko",
+      "target": "milenijum_tim",
+      "uri": "https://w3id.org/vip/rs/StojanVujko_MilenijumTim",
+      "comment": "Stojan Vujko je jedan od osnivača i suvlasnik kompanije Milenijum tim, osnovane 4. septembra 2003. Udeo od 50% je aktuelno stanje u registru; udeo pri osnivanju nije poznat.",
+      "kind": "OwnershipConnection",
+      "typeLabel": "Ownership connection",
+      "share": 50.0,
+      "start": "2003-09-04",
+      "file": "data/cases/milenijum-tim.ttl",
+      "line": 34,
+      "sources": [
+        {
+          "url": "https://www.companywall.rs/firma/millennium-team-doo-beograd/MMksspYq",
+          "domain": "companywall.rs",
+          "type": "registryRecord",
+          "status": "published",
+          "quote": "Registarski podaci (APR preko CompanyWall, snimak od 13. marta 2026): vlasnici \u0027Ivan Bošnjak(50,00%)\u0027 i \u0027Stojan Vujko(50,00%)\u0027; \u0027Datum osnivanja 4.9.2003.\u0027; \u0027Trenutni direktor je Stojan Vujko.\u0027",
+          "archive": "http://web.archive.org/web/20260313111844/https://www.companywall.rs/firma/millennium-team-doo-beograd/MMksspYq",
+          "archivedOn": "2026-03-13"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Millennium_Team",
+          "domain": "en.wikipedia.org",
+          "type": "encyclopediaArticle",
+          "status": "published",
+          "quote": "Enciklopedijski članak, infokutija: \u0027Owner: Ivan Bošnjak (50%), Stojan Vujko (50%)\u0027; \u0027Stojan Vujko (Director)\u0027; tekst: \u0027Founded and formally owned by Ivan Bošnjak and Stojan Vujko\u0027.",
+          "archive": "http://web.archive.org/web/20251013140940/https://en.wikipedia.org/wiki/Millennium_Team",
+          "archivedOn": "2025-10-13"
+        }
+      ]
     }
   }
 ]
