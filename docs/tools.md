@@ -62,7 +62,8 @@ requirement, because the build downloads its own Node.js:
 
 Then open <http://localhost:5173/>, or <http://localhost:5173/?lang=sr> for Serbian. Type a name
 into the search box, click a node to make it the centre, and double-click to add its connections. Rest the pointer on a
-node to read its description and open its Wikipedia article, if it has one.
+node to read its description and open its Wikipedia article, if it has one; the details panel also
+links its Wikidata item.
 
 Schema tools take one file (`-Pfile`, default `schema.ttl`); data tools take a directory tree of
 Turtle files or a single file (`-Pdata`, default `data`). Every tool loads with Apache Jena,
@@ -138,6 +139,22 @@ Now, pausing between captures to respect the archive's rate limit. Records are w
 
 `verify` runs the archiver locally and the check on CI, so a contribution that cites a new source
 cannot pass CI until that source has been archived and the record committed.
+
+The Wikidata step works the same way for `vip:wikidataItem`. For every entity with a
+`vip:wikipediaArticle` and no recorded item it asks the Wikipedia API, anonymously, which Wikidata
+item the article belongs to, and writes the `vip:wikidataItem` line into the entity file in place,
+right after the article line. Commit the changed files. An entity without an article needs
+nothing: its VIP URI is its identifier.
+
+```bash
+./gradlew :app:linkWikidata     # locally: write each entity's Wikidata item into its file, then commit
+./gradlew :app:checkWikidata    # on CI: fail if a recorded item does not match the article, or an article's item is not recorded
+```
+
+`verify` runs the linker locally and the check on CI. The check also fails when an item recorded
+without an article does not exist on Wikidata; an article not yet linked to Wikidata is only noted.
+If Wikipedia cannot be reached, that is a warning, not a failure. Both tasks take `-Pdata`
+(default `data`) and exit 1 on failure.
 
 Reachability is checked live only for URLs in data files changed since the base, by default
 `origin/main`, so a build's load on other sites stays small. Pick another base with

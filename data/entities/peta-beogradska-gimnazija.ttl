@@ -16,6 +16,7 @@
 rs:Peta_Beogradska_Gimnazija a :AcademicOrganization ;
     foaf:name "Peta beogradska gimnazija"@sr ;
     vip:wikipediaArticle <https://sr.wikipedia.org/wiki/Пета_београдска_гимназија> ;
+    vip:wikidataItem <http://www.wikidata.org/entity/Q11160995> ;
     dbo:location "Beograd, Srbija"@sr ;
     :hasDocumentation
         [ a :Documentation ; :hasDocumentURL <https://sr.wikipedia.org/wiki/Пета_београдска_гимназија> ; :hasDocumentType vip:encyclopediaArticle ; :hasDocumentStatus vip:published ] ,

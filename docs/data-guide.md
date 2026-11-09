@@ -35,7 +35,13 @@ Seven conventions apply to every record. The validators enforce their form; whet
 - **Same name, separate records.** Each person has one URI and a name that says who it is, such
   as `Ivan Bošnjak (Zrenjanin)`. Tell people apart by public facts: birth year, office, employer.
   `vip:wikipediaArticle` names the article about the entity itself, not one that only mentions
-  it. Never record a JMBG or a personal tax number.
+  it. `vip:wikidataItem` is the entity's Wikidata item as its entity IRI
+  (`http://www.wikidata.org/entity/Q114870170`): a permanent number that survives renaming and
+  spans scripts and languages, so it pins which namesake is meant. It is an identifier, never a
+  source. The build writes it from the Wikipedia article (`./gradlew :app:linkWikidata`), so
+  contributors never look it up; an entity without an article is identified by its VIP URI.
+  Never record a JMBG or a personal tax number: the shapes refuse a tax ID on a person, while a
+  company's registration and tax numbers are public registry data.
 - **Three namespaces.** PoderVocab terms use the empty prefix `:` for
   `http://poderopedia.com/vocab/`; the project's own vocabulary additions use `vip:` for
   `https://w3id.org/vip/vocab#`; Serbian instance data uses `rs:` for `https://w3id.org/vip/rs/`,
@@ -45,7 +51,8 @@ The vocabulary is extended where PoderVocab had gaps. The additions are marked i
 under the heading "VIP additions": the ownership connection and its properties, the
 godparenthood connection (kumstvo, a kinship-grade bond in Serbian society that PoderVocab
 lacks), the link from an organisation to its financial information, governance work roles such
-as founder and chair of the board, the document types and the document statuses.
+as founder and chair of the board, the document types and the document statuses, and the two
+public identifiers of an entity, its Wikipedia article and its Wikidata item.
 
 ## The vocabulary
 

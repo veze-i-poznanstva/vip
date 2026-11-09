@@ -206,4 +206,10 @@ class DataLayoutCheckTest {
         write("entities/ana.ttl", "ex:Ana a foaf:Person ; vip:wikipediaArticle <https://sr.wikipedia.org/wiki/Ana> .")
         assertEquals(emptyList(), problems())
     }
+
+    @Test
+    fun `a Wikidata item is a web address, not a missing entity`() {
+        write("entities/ana.ttl", "ex:Ana a foaf:Person ; vip:wikidataItem <http://www.wikidata.org/entity/Q42> .")
+        assertEquals(emptyList(), problems())
+    }
 }

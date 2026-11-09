@@ -31,6 +31,8 @@
   "showAll": "Prikaži sve",
   "trail": "Trag",
   "wikipedia": "Vikipedija",
+  "wikidata": "Vikidata",
+  "wikidata.hint": "Stavka na Vikidati {id}: trajni broj zapisa koji kaže o kojoj je osobi ili organizaciji reč",
   "path.connect": "Poveži sa…",
   "path.none": "Nema zabeležene veze. To ne znači da veza ne postoji.",
   "path.note": "Putanja je trag, a ne dokaz povezanosti.",

@@ -88,6 +88,42 @@ class SHACLValidatorTest {
         assertFalse(report.conforms())
     }
 
+    @Test
+    fun `a person with a tax ID violates the person shape, because it is personal data`() {
+        val report = validateShacl(schema, data("""rs:Ana a foaf:Person ; foaf:firstName "Ana" ; :firstLastName "B" ; :hasTaxId "1234567890123" ; $documented ."""))
+        assertFalse(report.conforms())
+        assertTrue(report.entries.any { it.focusNode().toString().endsWith("Ana") && it.resultPath().toString().contains("hasTaxId") }, report.entries.joinToString { it.message() })
+    }
+
+    @Test
+    fun `an organisation may record its public tax ID`() {
+        val report = validateShacl(schema, data("""rs:Firma a :Company ; foaf:name "Firma" ; :hasTaxId "109964527" ; $documented ."""))
+        assertTrue(report.conforms(), report.entries.joinToString { it.message() })
+    }
+
+    @Test
+    fun `a Wikidata item that is not a wikidata org entity address violates the agent shape`() {
+        val report = validateShacl(schema, data("""rs:Ana a foaf:Person ; foaf:firstName "Ana" ; :firstLastName "B" ; vip:wikidataItem <https://www.wikidata.org/wiki/Q42> ; $documented ."""))
+        assertFalse(report.conforms())
+        assertTrue(report.entries.any { it.focusNode().toString().endsWith("Ana") }, report.entries.joinToString { it.focusNode().toString() })
+    }
+
+    @Test
+    fun `a person and an organisation with one Wikidata entity IRI each conform`() {
+        val report = validateShacl(schema, data("""
+            rs:Ana a foaf:Person ; foaf:firstName "Ana" ; :firstLastName "B" ; vip:wikidataItem <http://www.wikidata.org/entity/Q114870170> ; $documented .
+            rs:Firma a :Company ; foaf:name "Firma" ; vip:wikidataItem <http://www.wikidata.org/entity/Q126264685> ; $documented .
+        """))
+        assertTrue(report.conforms(), report.entries.joinToString { it.message() })
+    }
+
+    @Test
+    fun `two Wikidata items on one organisation violate the agent shape`() {
+        val report = validateShacl(schema, data("""rs:Firma a :Company ; foaf:name "Firma" ; vip:wikidataItem <http://www.wikidata.org/entity/Q1>, <http://www.wikidata.org/entity/Q2> ; $documented ."""))
+        assertFalse(report.conforms())
+        assertTrue(report.entries.any { it.focusNode().toString().endsWith("Firma") }, report.entries.joinToString { it.focusNode().toString() })
+    }
+
     private fun dated(dates: String) = validateShacl(schema, data("""
         rs:Ana a foaf:Person ; foaf:firstName "Ana" ; :firstLastName "B" ; $documented .
         rs:SNS a :PoliticalOrganization ; foaf:name "SNS" ; $documented .

@@ -24,6 +24,7 @@ data class ElementData(
     val uri: String? = null,
     val comment: String? = null,
     val wikipedia: String? = null,
+    val wikidata: String? = null,
     val aliases: List<String>? = null,
     val facts: List<Fact>? = null,
     val kind: String? = null,
@@ -148,6 +149,7 @@ private class GraphBuilder(
                 uri = agent.uri,
                 comment = commentOf(agent),
                 wikipedia = wikipediaOf(agent),
+                wikidata = wikidataOf(agent),
                 aliases = aliasesOf(agent, label),
                 facts = factsOf(agent),
                 file = where?.file,
@@ -328,6 +330,13 @@ private class GraphBuilder(
             .filter { WIKIPEDIA_ARTICLE_URL.containsMatchIn(it) }
             .minWithOrNull(compareBy({ url -> preferredLanguages.indexOf(url.substringAfter("//").substringBefore('.')).let { i -> if (i < 0) preferredLanguages.size else i } }, { it }))
 
+    /** The entity's Wikidata item as its entity IRI; the shapes allow one, so the lowest wins if the data has more. */
+    private fun wikidataOf(resource: Resource): String? =
+        data.listObjectsOfProperty(resource, data.createProperty(Vocab.WIKIDATA_ITEM)).toList()
+            .filter { it.isURIResource }.map { it.asResource().uri }
+            .filter { WIKIDATA_ENTITY_IRI.matches(it) }
+            .minOrNull()
+
     private fun preferredLiteral(resource: Resource, property: Property): String? =
         data.listStatements(resource, property, null as RDFNode?).toList()
             .map { it.`object` }.filter { it.isLiteral }.map { it.asLiteral() }
@@ -346,6 +355,7 @@ private class GraphBuilder(
 }
 
 private val WIKIPEDIA_ARTICLE_URL = Regex("^https://[a-z-]+\\.wikipedia\\.org/wiki/")
+private val WIKIDATA_ENTITY_IRI = Regex("^http://www\\.wikidata\\.org/entity/Q[1-9][0-9]*$")
 
 fun createNodeId(uri: String): String {
     val id = uri

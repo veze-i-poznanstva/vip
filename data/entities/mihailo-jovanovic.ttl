@@ -16,6 +16,7 @@
 rs:Mihailo_Jovanovic a foaf:Person ;
     foaf:name "Mihailo Jovanović"@sr ;
     vip:wikipediaArticle <https://sr.wikipedia.org/wiki/Михаило_Јовановић_(политичар)> ;
+    vip:wikidataItem <http://www.wikidata.org/entity/Q114870170> ;
     foaf:firstName "Mihailo" ;
     :firstLastName "Jovanović" ;
     dbo:birthPlace "Beograd, Srbija"@sr ;

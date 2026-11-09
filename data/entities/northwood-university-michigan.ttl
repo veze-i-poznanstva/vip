@@ -16,6 +16,7 @@
 rs:Northwood_University_Michigan a :AcademicOrganization ;
     foaf:name "Northwood University, Mičigen, SAD"@sr ;
     vip:wikipediaArticle <https://en.wikipedia.org/wiki/Northwood_University> ;
+    vip:wikidataItem <http://www.wikidata.org/entity/Q7060498> ;
     dbo:location "Midland, Mičigen, SAD"@sr ;
     :hasDocumentation
         [ a :Documentation ; :hasDocumentURL <https://en.wikipedia.org/wiki/Northwood_University> ; :hasDocumentType vip:encyclopediaArticle ; :hasDocumentStatus vip:published ] ,

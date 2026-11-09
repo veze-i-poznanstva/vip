@@ -35,7 +35,13 @@ Sedam pravila važi za svaki zapis. Validatori sprovode njihov oblik; da li izvo
 - **Isto ime, odvojeni zapisi.** Svaka osoba ima jedan URI i ime koje kaže o kome je reč, kao
   `Ivan Bošnjak (Zrenjanin)`. Osobe se razlikuju po javnim podacima: godini rođenja, funkciji,
   poslodavcu. `vip:wikipediaArticle` navodi članak o samom entitetu, a ne članak koji ga samo
-  pominje. Nikad ne beležite JMBG ni lični poreski broj.
+  pominje. `vip:wikidataItem` je stavka entiteta na Vikidati kao IRI entiteta
+  (`http://www.wikidata.org/entity/Q114870170`): trajni broj koji preživljava preimenovanje i
+  važi za sva pisma i jezike, pa kaže o kom je imenjaku reč. To je identifikator, nikad izvor.
+  Build ga upisuje iz članka na Vikipediji (`./gradlew :app:linkWikidata`), pa ga saradnici nikad
+  ne traže; entitet bez članka identifikuje njegov VIP URI. Nikad ne beležite JMBG ni lični
+  poreski broj: oblici odbijaju poreski broj na osobi, dok su matični broj i PIB firme javni
+  podaci iz registra.
 - **Tri prostora imena.** Pojmovi PoderVocab-a koriste prazan prefiks `:` za
   `http://poderopedia.com/vocab/`; sopstvene dopune rečnika koriste `vip:` za
   `https://w3id.org/vip/vocab#`; srpski podaci koriste `rs:` za `https://w3id.org/vip/rs/`, pa je
@@ -45,7 +51,8 @@ Rečnik je proširen tamo gde je PoderVocab imao praznine. Dopune su obeležene 
 pod naslovom „VIP additions“: vlasnička veza i njena svojstva, veza kumstva (koju PoderVocab
 nema, a u srpskom društvu je jaka kao srodstvo), veza organizacije sa njenim finansijskim
 informacijama, upravljačke radne uloge kao osnivač i predsednik upravnog odbora, vrste
-dokumenata i statusi dokumenata.
+dokumenata i statusi dokumenata, kao i dva javna identifikatora entiteta: članak na Vikipediji
+i stavku na Vikidati.
 
 ## Rečnik
 

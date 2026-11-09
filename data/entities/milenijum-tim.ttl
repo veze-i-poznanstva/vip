@@ -16,6 +16,7 @@
 rs:Milenijum_Tim a :Company ;
     foaf:name "Milenijum tim"@sr ;
     vip:wikipediaArticle <https://en.wikipedia.org/wiki/Millennium_Team> ;
+    vip:wikidataItem <http://www.wikidata.org/entity/Q126264685> ;
     dbo:foundationDate "2003-09-04"^^xsd:date ;
     dbo:industry "Građevinarstvo"@sr ;
     dbo:location "Beograd, Srbija"@sr ;

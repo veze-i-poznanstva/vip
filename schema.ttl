@@ -1074,6 +1074,14 @@ vip:wikipediaArticle a rdf:Property, owl:ObjectProperty;
     rdfs:domain foaf:Agent;
     rdfs:range foaf:Document.
 
+# The Wikidata item is a stable identifier that survives renaming and spans scripts and
+# languages; it says which same-named entity is meant, and is never evidence.
+vip:wikidataItem a rdf:Property, owl:ObjectProperty;
+    rdfs:label "Wikidata item"@en, "Elemento de Wikidata"@es, "Stavka na Vikidati"@sr;
+    rdfs:comment "The Wikidata item whose subject is this agent, as its entity IRI (http://www.wikidata.org/entity/Q...); an identifier, not a source"@en, "El elemento de Wikidata cuyo tema es este agente, como IRI de entidad (http://www.wikidata.org/entity/Q...); un identificador, no una fuente"@es, "Stavka na Vikidati čija je tema ovaj agent, kao IRI entiteta (http://www.wikidata.org/entity/Q...); identifikator, a ne izvor"@sr;
+    rdfs:domain foaf:Agent;
+    rdfs:range owl:Thing.
+
 # PoderVocab defines FinancialInformation but no property that attaches it to the organisation
 # it describes.
 vip:hasFinancialInformation a rdf:Property, owl:ObjectProperty;
@@ -1170,9 +1178,18 @@ vip:removed a :DocumentStatus;
     ];
     sh:property [
         sh:path :hasTaxId;
+        sh:maxCount 0;
+        sh:message "Never record a person's tax ID or JMBG: it is personal data, and public facts tell namesakes apart"@en, "Nunca registre el RUT ni el número de identidad de una persona: son datos personales, y los hechos públicos distinguen a los homónimos"@es, "Nikad ne beležite PIB ni JMBG osobe: to su lični podaci, a imenjake razlikuju javne činjenice"@sr
+    ].
+
+:AgentIdentifierShape a sh:NodeShape;
+    sh:targetClass foaf:Agent;
+    sh:property [
+        sh:path vip:wikidataItem;
         sh:maxCount 1;
-        sh:datatype xsd:string;
-        sh:message "A person can have at most one tax ID"@en, "Una persona puede tener como máximo un RUT"@es, "Osoba može imati najviše jedan poreski identifikacioni broj"@sr
+        sh:nodeKind sh:IRI;
+        sh:pattern "^http://www\\.wikidata\\.org/entity/Q[1-9][0-9]*$";
+        sh:message "A Wikidata item is one entity IRI of the form http://www.wikidata.org/entity/Q<number>"@en, "Un elemento de Wikidata es un solo IRI de entidad de la forma http://www.wikidata.org/entity/Q<número>"@es, "Stavka na Vikidati je jedan IRI entiteta oblika http://www.wikidata.org/entity/Q<broj>"@sr
     ].
 
 :OrganizationShape a sh:NodeShape;

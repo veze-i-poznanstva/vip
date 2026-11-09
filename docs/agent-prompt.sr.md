@@ -108,6 +108,9 @@ Step 5, the data. For each claim:
   the structure of an existing file, with names in Serbian tagged @sr, a short rdfs:comment in
   Serbian on every connection, and a rdfs:comment on each document quoting the passage it
   supports;
+- record vip:wikipediaArticle when there is an article about the entity itself, not one that
+  only mentions it. Do not look up Wikidata: the build fills in vip:wikidataItem from the
+  article, and an entity without an article is identified by its VIP URI;
 - record when each connection held, with :connectionStartDate and :connectionEndDate, exactly as
   precisely as the source states it: xsd:gYear for a year, xsd:gYearMonth for a month, xsd:date
   for a day. Never invent a precision, such as 1 January for a bare year. Leave a date out when

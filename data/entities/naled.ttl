@@ -16,6 +16,7 @@
 rs:NALED a foaf:Organization ;
     foaf:name "Nacionalna alijansa za lokalni ekonomski razvoj (NALED)"@sr ;
     vip:wikipediaArticle <https://sr.wikipedia.org/wiki/Nacionalna_alijansa_za_lokalni_ekonomski_razvoj> ;
+    vip:wikidataItem <http://www.wikidata.org/entity/Q20436524> ;
     :alias "NALED" ;
     dbo:foundationDate "2006"^^xsd:gYear ;
     dbo:location "Beograd, Srbija"@sr ;

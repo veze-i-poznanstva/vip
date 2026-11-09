@@ -31,6 +31,8 @@
   "showAll": "Show all",
   "trail": "Trail",
   "wikipedia": "Wikipedia",
+  "wikidata": "Wikidata",
+  "wikidata.hint": "Wikidata item {id}: a permanent record number that says which person or organisation this is",
   "path.connect": "Connect to…",
   "path.none": "No connection recorded. That does not mean none exists.",
   "path.note": "A path is a lead, not proof of a relationship.",

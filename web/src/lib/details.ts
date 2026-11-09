@@ -120,6 +120,16 @@ export function githubLinks(file: string | undefined, line?: number): GithubLink
   };
 }
 
+const WIKIDATA_ENTITY = /^http:\/\/www\.wikidata\.org\/entity\/(Q[1-9][0-9]*)$/;
+
+export interface WikidataPage { id: string; url: string }
+
+/** The Q number and the page to open for a Wikidata entity IRI; null for anything else. */
+export function wikidataPage(iri: unknown): WikidataPage | null {
+  const match = typeof iri === 'string' ? WIKIDATA_ENTITY.exec(iri) : null;
+  return match ? { id: match[1], url: `https://www.wikidata.org/wiki/${match[1]}` } : null;
+}
+
 export type PanelContent =
   | { kind: 'node'; node: GraphNode }
   | { kind: 'edge'; edge: GraphEdge; from: GraphNode | undefined; to: GraphNode | undefined };

@@ -28,6 +28,7 @@ object Vocab {
     const val REMOVED = VIP + "removed"
     const val OWNER = VIP + "owner"
     const val WIKIPEDIA_ARTICLE = VIP + "wikipediaArticle"
+    const val WIKIDATA_ITEM = VIP + "wikidataItem"
 
     const val PARTICIPANT = BIO + "participant"
 

@@ -16,6 +16,7 @@
 rs:Ana_Brnabic a foaf:Person ;
     foaf:name "Ana Brnabić"@sr ;
     vip:wikipediaArticle <https://sr.wikipedia.org/wiki/Ана_Брнабић> ;
+    vip:wikidataItem <http://www.wikidata.org/entity/Q26258815> ;
     foaf:firstName "Ana" ;
     :firstLastName "Brnabić" ;
     dbo:birthDate "1975-09-28"^^xsd:date ;

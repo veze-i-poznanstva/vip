@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { buildIndex } from './graph';
-import { connectionsOf, connectionTitle, edgeLabel, githubLinks, groupSources, panelContent, period } from './details';
+import { connectionsOf, connectionTitle, edgeLabel, githubLinks, groupSources, panelContent, period, wikidataPage } from './details';
 import type { Source } from './details';
 
 const dictionary: Record<string, string> = {
@@ -126,6 +126,20 @@ describe('githubLinks', () => {
   it('is null without a file', () => {
     expect(githubLinks(undefined)).toBeNull();
     expect(githubLinks('')).toBeNull();
+  });
+});
+
+describe('wikidataPage', () => {
+  it('turns the entity IRI into the page a reader can open', () => {
+    expect(wikidataPage('http://www.wikidata.org/entity/Q114870170')).toEqual({ id: 'Q114870170', url: 'https://www.wikidata.org/wiki/Q114870170' });
+  });
+  it('is null for anything that is not a Wikidata entity IRI', () => {
+    expect(wikidataPage(undefined)).toBeNull();
+    expect(wikidataPage('')).toBeNull();
+    expect(wikidataPage('https://www.wikidata.org/wiki/Q42')).toBeNull();
+    expect(wikidataPage('http://www.wikidata.org/entity/Q0')).toBeNull();
+    expect(wikidataPage('http://www.wikidata.org/entity/Q42/extra')).toBeNull();
+    expect(wikidataPage(42)).toBeNull();
   });
 });
 

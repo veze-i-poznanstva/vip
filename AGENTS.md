@@ -42,7 +42,11 @@ opens the page. VIP is a secondary source: a wrong source is corrected at the so
 follows; a record that misstates its source is our error and is fixed directly.
 
 Same-named people get separate URIs told apart by public facts. `vip:wikipediaArticle` is the
-article about the entity, never a page it is only cited in. Never record a JMBG or personal tax number.
+article about the entity, never a page it is only cited in; `vip:wikidataItem` is its Wikidata entity
+IRI (`http://www.wikidata.org/entity/Q…`), an identifier, never a source. The build writes it from the
+article (`linkWikidata`); contributors never look it up; without an article the `rs:` URI is the
+identifier. Never record a JMBG or personal tax number; the shapes refuse `:hasTaxId` on a person, while a
+company's registration and tax numbers are public registry data.
 
 Connections carry `:connectionStartDate`/`:connectionEndDate` at the source's precision (`xsd:gYear`,
 `xsd:gYearMonth`, `xsd:date`); never invent 1 January; absent means unknown; one connection per
@@ -67,12 +71,14 @@ role when periods differ. Rules drop known non-overlap and report `overlapping` 
 ./gradlew verify                 # the single gate; CI only calls this
 ./gradlew :app:test              # unit tests, offline (local HTTP servers, stubs)
 ./gradlew :app:validateSchema    # validate, checkConsistency, checkBestPractices, analyzeSchema
-./gradlew :app:validateData      # checkDataLayout, validateShacl, archiveSources|checkArchives, validateVeracity
+./gradlew :app:validateData      # checkDataLayout, validateShacl, archiveSources|checkArchives, linkWikidata|checkWikidata, validateVeracity
 ./gradlew :app:checkDataLayout -Pdata=data
 ./gradlew :app:validateShacl -Pshapes=schema.ttl -Pdata=data
 ./gradlew :app:validateVeracity -Pdata=data -Pschema=schema.ttl -Parchives=archives.ttl   # live checks only for files changed since -PverifyBase (origin/main); -PverifyFull checks all
 ./gradlew :app:archiveSources    # locally: record Wayback snapshots for new citations; commit archives.ttl
 ./gradlew :app:checkArchives     # what CI runs (CI=true): fail if a citation has no record, never contacts the archive
+./gradlew :app:linkWikidata      # locally: write each entity's Wikidata item from its Wikipedia article into the entity file; commit the files
+./gradlew :app:checkWikidata     # what CI runs (CI=true): fail if a recorded item does not match the article, or an article's item is not recorded
 ./gradlew :app:ttlToCytoscape -Pinput=data -Poutput=web/public/test-data-cytoscape.json -Pschema=schema.ttl
 ./gradlew :app:checkRedFlags     # every rules/*.rq over the data; prints leads, always exits 0
 ```
@@ -92,6 +98,8 @@ a directory tree or one file). Every tool exits 1 on failure except `analyzeSche
   separate save timeout, refuses snapshots of a different page (error page, home page) but accepts
   a host move with the same path.
 - `SourceArchiver.kt` which URLs need records, lookup then save, writes `archives.ttl`, `--check`.
+- `Wikidata.kt` Wikipedia/Wikidata client (`ItemLookup`, `WikimediaClient`): item of an article, item exists; tests on a local server.
+- `WikidataLinker.kt` fills `vip:wikidataItem` into entity files from the article (text insertion after the article line) and checks recorded items; CLI with `--check`.
 - `SHACLValidator.kt` `validateShacl(shapes, data)` over the RDFS-inferred graph; CLI.
 - `TtlToCytoscape.kt` vocabulary-driven export: agents are nodes, connections are edges between
   participants, only vocabulary-declared direct properties become edges, node ids are injective; connections are never

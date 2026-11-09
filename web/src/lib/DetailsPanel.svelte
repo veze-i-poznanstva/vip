@@ -1,7 +1,7 @@
 <script lang="ts">
   import { createEventDispatcher } from 'svelte';
   import { t } from './i18n';
-  import { connectionKind, connectionsOf, connectionTitle, period } from './details';
+  import { connectionKind, connectionsOf, connectionTitle, period, wikidataPage } from './details';
   import type { ConnectionFields, Fact, PanelContent, Source } from './details';
   import type { GraphEdge, GraphIndex } from './graph';
   import SourceList from './SourceList.svelte';
@@ -32,6 +32,7 @@
   $: edge = content.kind === 'edge' ? content.edge : null;
   $: rows = node ? connectionsOf(index, node.id) : [];
   $: aliases = node ? list<string>(node.aliases) : [];
+  $: wikidata = node ? wikidataPage(node.wikidata) : null;
   $: facts = node ? list<Fact>(node.facts) : [];
   $: nodeSources = node ? list<Source>(node.sources) : [];
   $: edgeSources = edge ? list<Source>(edge.sources) : [];
@@ -56,10 +57,16 @@
       <button type="button" class="close" aria-label={$t('details.close')} title={$t('details.close')} on:click={() => dispatch('close')}>×</button>
     </header>
 
-    {#if str(node.comment) || safeLink(str(node.wikipedia)) || aliases.length > 0}
+    {#if str(node.comment) || safeLink(str(node.wikipedia)) || wikidata || aliases.length > 0}
       <section class="description">
         {#if str(node.comment)}<p>{node.comment}</p>{/if}
-        {#if safeLink(str(node.wikipedia))}<p><a href={safeLink(str(node.wikipedia))} target="_blank" rel="noopener noreferrer">{$t('wikipedia')}</a></p>{/if}
+        {#if safeLink(str(node.wikipedia)) || wikidata}
+          <p>
+            {#if safeLink(str(node.wikipedia))}<a href={safeLink(str(node.wikipedia))} target="_blank" rel="noopener noreferrer">{$t('wikipedia')}</a>{/if}
+            {#if safeLink(str(node.wikipedia)) && wikidata}<span class="quiet"> · </span>{/if}
+            {#if wikidata}<a href={wikidata.url} target="_blank" rel="noopener noreferrer" title={$t('wikidata.hint', { id: wikidata.id })}>{$t('wikidata')} {wikidata.id}</a>{/if}
+          </p>
+        {/if}
         {#if aliases.length > 0}<p class="quiet">{$t('details.aka', { names: aliases.join(', ') })}</p>{/if}
       </section>
     {/if}

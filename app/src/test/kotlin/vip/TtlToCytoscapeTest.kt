@@ -414,6 +414,19 @@ class TtlToCytoscapeTest {
     }
 
     @Test
+    fun `a node carries its declared Wikidata item, and only a wikidata org entity IRI`() {
+        val elements = convert("""
+            ex:Item a foaf:Person ; vip:wikidataItem <http://www.wikidata.org/entity/Q114870170> .
+            ex:Page a foaf:Person ; vip:wikidataItem <https://www.wikidata.org/wiki/Q42> .
+            ex:None a foaf:Person .
+        """)
+        val items = elements.nodes().associate { it.data.id to it.data.wikidata }
+        assertEquals("http://www.wikidata.org/entity/Q114870170", items["item"])
+        assertNull(items["page"])
+        assertNull(items["none"])
+    }
+
+    @Test
     fun `a Wikipedia page that is only cited as a source is not linked as the entity's article`() {
         val elements = convert("""
             ex:Person a foaf:Person ; :hasDocumentation [ a :Documentation ; :hasDocumentURL <https://en.wikipedia.org/wiki/Company> ] .

@@ -62,7 +62,8 @@ Java, jer build sam preuzima Node.js:
 
 Zatim otvorite <http://localhost:5173/?lang=sr>, ili <http://localhost:5173/> za engleski. Ukucajte
 ime u polje za pretragu, kliknite na čvor da ga stavite u središte, a dvostrukim klikom dodajte
-njegove veze. Zadržite pokazivač na čvoru da pročitate njegov opis i otvorite članak na Vikipediji, ako postoji.
+njegove veze. Zadržite pokazivač na čvoru da pročitate njegov opis i otvorite članak na Vikipediji, ako postoji;
+panel sa detaljima vodi i do njegove stavke na Vikidati.
 
 Alati za šemu uzimaju jednu datoteku (`-Pfile`, podrazumevano `schema.ttl`); alati za podatke
 uzimaju stablo foldera sa Turtle datotekama ili jednu datoteku (`-Pdata`, podrazumevano `data`).
@@ -139,6 +140,22 @@ između snimanja zbog ograničenja arhiva. Zapisi se upisuju u `archives.ttl`.
 
 `verify` lokalno pokreće arhiver, a na CI proveru, pa doprinos koji citira novi izvor ne može
 proći CI dok taj izvor nije arhiviran i zapis komitovan.
+
+Korak za Vikidatu radi na isti način za `vip:wikidataItem`. Za svaki entitet sa
+`vip:wikipediaArticle` i bez upisane stavke anonimno pita API Vikipedije kojoj stavci na Vikidati
+članak pripada i upisuje liniju `vip:wikidataItem` direktno u datoteku entiteta, odmah posle
+linije sa člankom. Izmenjene datoteke komitujte. Entitetu bez članka ne treba ništa: njegov VIP
+URI je njegov identifikator.
+
+```bash
+./gradlew :app:linkWikidata     # lokalno: upiši stavku na Vikidati u datoteku svakog entiteta, pa komituj
+./gradlew :app:checkWikidata    # na CI: padni ako upisana stavka ne odgovara članku, ili stavka članka nije upisana
+```
+
+`verify` lokalno pokreće povezivač, a na CI proveru. Provera pada i kada stavka upisana bez članka
+ne postoji na Vikidati; članak koji još niko nije povezao sa Vikidatom samo se beleži. Ako
+Vikipedija nije dostupna, to je upozorenje, a ne greška. Oba zadatka primaju `-Pdata`
+(podrazumevano `data`) i izlaze sa 1 pri neuspehu.
 
 Dostupnost se proverava uživo samo za adrese u datotekama sa podacima promenjenim od osnove, što
 je podrazumevano `origin/main`, pa opterećenje drugih sajtova ostaje malo. Drugu osnovu birate sa

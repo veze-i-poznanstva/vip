@@ -119,7 +119,7 @@ tasks.register<JavaExec>("validateVeracity") {
     val base = project.findProperty("verifyBase") as String? ?: System.getenv("VERIFY_BASE")?.takeIf { it.isNotBlank() } ?: "origin/main"
     args = listOf(file, schema, archives) + if (full) emptyList() else listOf("--since", base)
     workingDir = projectDir.parentFile
-    mustRunAfter("archiveSources", "checkArchives")
+    mustRunAfter("archiveSources", "checkArchives", "linkWikidata", "checkWikidata")
 }
 
 tasks.register<JavaExec>("archiveSources") {
@@ -146,6 +146,32 @@ tasks.register<JavaExec>("checkArchives") {
     val archives = project.findProperty("archives") as String? ?: "archives.ttl"
     args = listOf(file, archives, "--check")
     workingDir = projectDir.parentFile
+}
+
+tasks.register<JavaExec>("linkWikidata") {
+    group = "rdf"
+    description = "Locally: record each entity's Wikidata item from its Wikipedia article into the entity file; commit the files"
+    
+    classpath = sourceSets.main.get().runtimeClasspath
+    mainClass.set("vip.WikidataLinkerKt")
+    
+    val file = project.findProperty("data") as String? ?: "data"
+    args = listOf(file)
+    workingDir = projectDir.parentFile
+    mustRunAfter("checkDataLayout", "validateShacl")
+}
+
+tasks.register<JavaExec>("checkWikidata") {
+    group = "rdf"
+    description = "Fails if a recorded Wikidata item does not match the entity's Wikipedia article, or an article's item is not recorded (what CI runs)"
+    
+    classpath = sourceSets.main.get().runtimeClasspath
+    mainClass.set("vip.WikidataLinkerKt")
+    
+    val file = project.findProperty("data") as String? ?: "data"
+    args = listOf(file, "--check")
+    workingDir = projectDir.parentFile
+    mustRunAfter("checkDataLayout", "validateShacl")
 }
 
 tasks.register<JavaExec>("checkDataLayout") {
@@ -188,7 +214,8 @@ tasks.register("validateData") {
     
     // Locally, missing archive records are created; on CI they fail the build so they get committed.
     val onCi = System.getenv("CI") == "true"
-    dependsOn("checkDataLayout", "validateShacl", if (onCi) "checkArchives" else "archiveSources", "validateVeracity")
+    dependsOn("checkDataLayout", "validateShacl", if (onCi) "checkArchives" else "archiveSources",
+        if (onCi) "checkWikidata" else "linkWikidata", "validateVeracity")
 }
 
 tasks.register("validateAll") {

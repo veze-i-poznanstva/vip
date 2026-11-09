@@ -8,6 +8,7 @@
       "uri": "https://w3id.org/vip/rs/Milenijum_Tim",
       "comment": "Milenijum tim je građevinska kompanija iz Beograda sa širokim portfoliom povezanih firmi i poslova.",
       "wikipedia": "https://en.wikipedia.org/wiki/Millennium_Team",
+      "wikidata": "http://www.wikidata.org/entity/Q126264685",
       "facts": [
         {
           "property": "foundationDate",
@@ -86,6 +87,7 @@
       "nodeType": "party",
       "uri": "https://w3id.org/vip/rs/SNS",
       "wikipedia": "https://sr.wikipedia.org/wiki/Српска_напредна_странка",
+      "wikidata": "http://www.wikidata.org/entity/Q253586",
       "aliases": [
         "SNS"
       ],
@@ -246,6 +248,7 @@
       "nodeType": "academic",
       "uri": "https://w3id.org/vip/rs/Ekonomski_fakultet_University_of_Belgrade",
       "wikipedia": "https://sr.wikipedia.org/wiki/Економски_факултет_Универзитета_у_Београду",
+      "wikidata": "http://www.wikidata.org/entity/Q4864983",
       "facts": [
         {
           "property": "location",
@@ -360,6 +363,7 @@
       "nodeType": "academic",
       "uri": "https://w3id.org/vip/rs/Peta_Beogradska_Gimnazija",
       "wikipedia": "https://sr.wikipedia.org/wiki/Пета_београдска_гимназија",
+      "wikidata": "http://www.wikidata.org/entity/Q11160995",
       "facts": [
         {
           "property": "location",
@@ -397,6 +401,7 @@
       "nodeType": "academic",
       "uri": "https://w3id.org/vip/rs/Northwood_University_Michigan",
       "wikipedia": "https://en.wikipedia.org/wiki/Northwood_University",
+      "wikidata": "http://www.wikidata.org/entity/Q7060498",
       "facts": [
         {
           "property": "location",
@@ -435,6 +440,7 @@
       "uri": "https://w3id.org/vip/rs/Mihailo_Jovanovic",
       "comment": "Inženjer i političar, rođen 1972. u Beogradu; direktor Kancelarije za informacione tehnologije i elektronsku upravu, ministar informisanja i telekomunikacija od oktobra 2022. do 2024. Nije isto lice kao mitropolit, sudija ili fudbaleri istog imena.",
       "wikipedia": "https://sr.wikipedia.org/wiki/Михаило_Јовановић_(политичар)",
+      "wikidata": "http://www.wikidata.org/entity/Q114870170",
       "facts": [
         {
           "property": "birthPlace",
@@ -783,6 +789,7 @@
       "uri": "https://w3id.org/vip/rs/NALED",
       "comment": "NALED je najveća privatno-javna asocijacija u Srbiji koja okuplja kompanije, lokalne samouprave i nevladine organizacije; 330 članova u 2025. prema sopstvenom sajtu.",
       "wikipedia": "https://sr.wikipedia.org/wiki/Nacionalna_alijansa_za_lokalni_ekonomski_razvoj",
+      "wikidata": "http://www.wikidata.org/entity/Q20436524",
       "aliases": [
         "NALED"
       ],
@@ -888,6 +895,7 @@
       "nodeType": "person",
       "uri": "https://w3id.org/vip/rs/Sinisa_Mali",
       "wikipedia": "https://sr.wikipedia.org/wiki/Синиша_Мали",
+      "wikidata": "http://www.wikidata.org/entity/Q16935101",
       "facts": [
         {
           "property": "birthDate",
@@ -930,6 +938,7 @@
       "nodeType": "person",
       "uri": "https://w3id.org/vip/rs/Ana_Brnabic",
       "wikipedia": "https://sr.wikipedia.org/wiki/Ана_Брнабић",
+      "wikidata": "http://www.wikidata.org/entity/Q26258815",
       "facts": [
         {
           "property": "birthDate",
@@ -1144,6 +1153,7 @@
       "uri": "https://w3id.org/vip/rs/Ivan_Bosnjak_Zrenjanin",
       "comment": "Političar Srpske napredne stranke, gradonačelnik Zrenjanina 2012-2014, državni sekretar u ministarstvu državne uprave i lokalne samouprave 2014-2020, a od 2022. u ministarstvu za ljudska i manjinska prava i društveni dijalog. Nije isto lice kao privrednik Ivan Bošnjak (rođen 1980. u Beogradu), suvlasnik Milenijum tima.",
       "wikipedia": "https://en.wikipedia.org/wiki/Ivan_Bo%C5%A1njak_(politician)",
+      "wikidata": "http://www.wikidata.org/entity/Q109327747",
       "facts": [
         {
           "property": "birthDate",
