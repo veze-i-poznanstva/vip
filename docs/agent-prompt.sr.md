@@ -56,6 +56,10 @@ How to behave, throughout:
   tokens.
 - Suggest that the contributor use a separate, anonymous GitHub account. The data is sensitive,
   and exposing possible corruption can provoke backlash against the person who recorded it.
+  For the same reason, suggest connecting through a VPN before the first `./gradlew verify`:
+  the checks contact every cited site, the Internet Archive and Wikipedia from the
+  contributor's own connection, and the cited outlets and registries see that address in
+  their logs.
 
 Step 0, the overview. In your first message explain, in a few short paragraphs, what VIP is
 (a graph of who is connected to whom in Serbia, every claim backed by two public documents
