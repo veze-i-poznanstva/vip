@@ -145,6 +145,107 @@ Each increment is a thin vertical slice that ends green, following the Baby Step
 
 Increments one and two deliver value on their own and can be reviewed independently.
 
+## Querying in the browser
+
+The rules in `rules/`, and any question a reporter can phrase as a graph pattern, run in the
+visitor's browser over the same data the map draws. Nothing is computed on a server, and nothing
+leaves the browser except what the visitor chooses to hand to their own AI assistant.
+
+### Decision
+
+- **Engine.** Comunica's RDF/JS lite build, pure TypeScript, over an N3.js in-memory store. About
+  225 KB gzipped, loaded only when a panel that needs it opens. No WebAssembly: the engine is
+  readable, debuggable and runs in Vitest without a binary. The lite build has no `SERVICE`
+  keyword, so a query cannot call out to another endpoint.
+- **One definition of every rule.** The rules stay SPARQL files in `rules/`. The build's
+  `checkRedFlags` keeps reporting on the command line; the browser runs the same text.
+- **Leads are computed in the client.** This replaces the earlier idea of a precomputed leads
+  file: with the engine in the browser there is nothing left to duplicate.
+
+### Published files
+
+The build writes, beside the graph JSON and from the same commit:
+
+- `data.ttl`: every data file merged, plus the RDFS entailments the rules depend on (types along
+  `rdfs:subClassOf`, participants along `rdfs:subPropertyOf`), because the engine does no
+  reasoning.
+- `schema.ttl` as it is, for labels, comments and the prompt.
+- `rules.json`: the name, the bilingual explanation and the query text of every rule.
+
+### Leads panel
+
+"Tragovi". On opening it loads the engine and the data and runs every rule. It shows each rule's
+name and explanation in the viewer's language, its match count, and each match as a sentence built
+from node labels ("Siniša Mali owns Brigham Holding & Finance and held office at Grad Beograd as
+mayor; overlap unknown"). Clicking a match opens the path view between the two agents, or the ego
+view of the person. Every entry carries "a lead for a reporter, not a finding". No query is
+visible here.
+
+### Ask
+
+"Pitaj". A box for a question in Serbian or English. The page does not interpret the question;
+it builds a prompt and hands it to the visitor's own assistant.
+
+1. The prompt contains: the task (write one SPARQL 1.1 `SELECT` query over this vocabulary); the
+   vocabulary summary generated from `schema.ttl` in the viewer's language, every class and
+   property with its label and comment, and the role and document-type individuals; the
+   prefixes; one or two rules as worked examples; the conventions (a missing end date is unknown,
+   never current; dates come at three precisions and are compared on the year; kinship, kumstvo
+   and public office are connections; `rs:` names); the output format (a single fenced `sparql`
+   block, with variables for the agents to show); and the question.
+2. "Open in Claude" and "Open in ChatGPT" links carry the prompt prefilled in the address, with
+   "Copy prompt" as the fallback. The page itself sends nothing.
+3. A paste field takes the assistant's answer. The page extracts the first fenced code block, or
+   the whole text when there is no fence, runs it with the same runner as Advanced, shows the rows
+   as sentences and highlights the agents on the map. "Show query" expands the SPARQL; a parse or
+   run error is shown in words together with the engine's message.
+4. The same caveat line as the leads, and a note that the question goes to the assistant the
+   visitor opened, not to the project.
+
+### Advanced
+
+"Napredno", reachable from a link under an answer and from the address `?upit=<base64url>`. A
+plain text area to paste or edit SPARQL, "Run", the rules loadable as templates, a results table
+with "show on map" per row, and "Share", which writes the query into the address. Meant for
+journalists who learn the patterns, for developers, and for agents that generate queries.
+
+### Limits
+
+- A result cap of 500 rows and a time limit of five seconds, each with a readable message; a
+  `LIMIT` is appended when the query has none.
+- `SELECT` only; `CONSTRUCT`, `ASK` and updates are refused in the interface.
+- The whole dataset sits in the browser. At tens of thousands of triples the Turtle is still a
+  few megabytes; revisit if it grows past that.
+- Vite needs the known `process.env` workaround for Comunica; it is documented in the build.
+- The lazy chunk stays under 250 KB gzipped, measured in the web build.
+
+### Increments
+
+Thin, test-first slices, each ending green:
+
+1. **Export.** A Gradle task writes `data.ttl` with the entailments, `schema.ttl` and
+   `rules.json`. Kotlin tests: a sibling connection comes out typed as a family connection; a
+   parent comes out as a participant; the JSON carries both explanations.
+2. **Query module.** `web/src/lib/query.ts`: load Turtle, run, cap, time limit, rows with node
+   ids. Vitest: a join, a property path, the `SUBSTR` year filter, a syntax error message, an
+   empty result, the cap.
+3. **Equivalence.** Vitest: every rule over the published `data.ttl` gives exactly the bindings
+   the build's `checkRedFlags` wrote to `red-flags.json`.
+4. **Leads panel.** Sentences from bindings, click to path or ego, locale keys, loading and
+   error states.
+5. **Prompt builder and paste-back.** The prompt from the schema in both languages (test: every
+   class and property present), the links and the copy, code-block extraction (test: fenced,
+   unfenced, text before and after), run and display.
+6. **Advanced.** Text area, templates, share address, results table.
+7. **Docs and budget.** The tools guide gains the task; the bundle size is asserted in the web
+   build.
+
+### Not now
+
+- A direct call to a model with the visitor's own key.
+- An MCP server over the dataset for agents.
+- `llms.txt` on the site, cheap once the files are published.
+
 ## Open questions
 
 - **Cyrillic and Latin.** Decided for now: folding in the UI transliterates Serbian Cyrillic to

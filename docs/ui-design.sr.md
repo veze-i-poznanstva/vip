@@ -149,6 +149,106 @@ Svaki inkrement je tanak vertikalni presek koji se završava zelenim, po pristup
 
 Inkrementi jedan i dva sami donose vrednost i mogu se pregledati nezavisno.
 
+## Upiti u pregledaču
+
+Pravila iz `rules/`, i svako pitanje koje novinar može da iskaže kao obrazac u grafu, izvršavaju se
+u posetiočevom pregledaču nad istim podacima koje mapa crta. Ništa se ne računa na serveru i ništa
+ne napušta pregledač osim onoga što posetilac sam odluči da preda svom AI asistentu.
+
+### Odluka
+
+- **Mašina za upite.** Comunica, izdanje RDF/JS lite, čist TypeScript, nad N3.js skladištem u
+  memoriji. Oko 225 KB gzipovano, učitava se tek kada se otvori panel kome treba. Bez
+  WebAssembly-ja: mašina je čitljiva, može da se debaguje i radi u Vitestu bez binarne datoteke.
+  Lite izdanje nema ključnu reč `SERVICE`, pa upit ne može da pozove tuđi endpoint.
+- **Jedna definicija svakog pravila.** Pravila ostaju SPARQL datoteke u `rules/`. `checkRedFlags`
+  u bildu i dalje izveštava u komandnoj liniji; pregledač izvršava isti tekst.
+- **Tragovi se računaju u klijentu.** Ovo zamenjuje raniju ideju o unapred izračunatoj datoteci
+  tragova: kada je mašina u pregledaču, nema više šta da se duplira.
+
+### Objavljene datoteke
+
+Bild upisuje, pored JSON-a grafa i iz istog komita:
+
+- `data.ttl`: sve datoteke podataka spojene, uz RDFS zaključke od kojih pravila zavise (tipovi duž
+  `rdfs:subClassOf`, učesnici duž `rdfs:subPropertyOf`), jer mašina ne zaključuje.
+- `schema.ttl` kakav jeste, za nazive, komentare i prompt.
+- `rules.json`: ime, dvojezično objašnjenje i tekst upita svakog pravila.
+
+### Panel sa tragovima
+
+„Tragovi“. Pri otvaranju učitava mašinu i podatke i izvršava svako pravilo. Prikazuje ime i
+objašnjenje svakog pravila na jeziku pregledača, broj pogodaka i svaki pogodak kao rečenicu
+sastavljenu od naziva čvorova („Siniša Mali je vlasnik Brigham Holding & Finance i držao je
+funkciju u Gradu Beogradu kao gradonačelnik; preklapanje nepoznato“). Klik na pogodak otvara prikaz
+putanje između dva aktera, ili ego prikaz osobe. Svaki unos nosi „trag za novinara, ne nalaz“.
+Upit se ovde ne vidi.
+
+### Pitaj
+
+„Pitaj“. Polje za pitanje na srpskom ili engleskom. Stranica ne tumači pitanje; ona sastavlja
+prompt i predaje ga posetiočevom asistentu.
+
+1. Prompt sadrži: zadatak (napiši jedan SPARQL 1.1 `SELECT` upit nad ovim rečnikom); sažetak
+   rečnika generisan iz `schema.ttl` na jeziku pregledača, svaku klasu i svojstvo sa nazivom i
+   komentarom, i pojedince za uloge i tipove dokumenata; prefikse; jedno ili dva pravila kao
+   rešene primere; konvencije (nepostojeći datum kraja znači nepoznato, nikad „i dalje“; datumi
+   dolaze u tri preciznosti i porede se po godini; srodstvo, kumstvo i javna funkcija su veze;
+   `rs:` imena); format odgovora (jedan ograđeni `sparql` blok, sa promenljivama za aktere koje
+   treba prikazati); i pitanje.
+2. Linkovi „Otvori u Claude-u“ i „Otvori u ChatGPT-u“ nose prompt unapred upisan u adresu, a
+   „Kopiraj prompt“ je rezerva. Stranica sama ništa ne šalje.
+3. Polje za lepljenje prima odgovor asistenta. Stranica izdvaja prvi ograđeni blok koda, ili ceo
+   tekst kada ograde nema, izvršava ga istim izvršiocem kao Napredno, prikazuje redove kao
+   rečenice i ističe aktere na mapi. „Prikaži upit“ otvara SPARQL; greška pri parsiranju ili
+   izvršavanju prikazuje se rečima uz poruku mašine.
+4. Ista rečenica upozorenja kao kod tragova, i napomena da pitanje ide asistentu koga je posetilac
+   otvorio, a ne projektu.
+
+### Napredno
+
+„Napredno“, dostupno preko linka ispod odgovora i preko adrese `?upit=<base64url>`. Obično tekstualno
+polje za lepljenje ili uređivanje SPARQL-a, „Izvrši“, pravila koja se učitavaju kao šabloni, tabela
+rezultata sa „prikaži na mapi“ po redu, i „Podeli“, koje upisuje upit u adresu. Namenjeno novinarima
+koji nauče obrasce, programerima i agentima koji generišu upite.
+
+### Ograničenja
+
+- Gornja granica od 500 redova i vremensko ograničenje od pet sekundi, svako sa čitljivom porukom;
+  `LIMIT` se dodaje kada ga upit nema.
+- Samo `SELECT`; `CONSTRUCT`, `ASK` i izmene se u interfejsu odbijaju.
+- Ceo skup podataka je u pregledaču. Pri desetinama hiljada trojki Turtle je i dalje nekoliko
+  megabajta; preispitati ako naraste preko toga.
+- Vite traži poznato zaobilaženje za `process.env` kod Comunice; dokumentovano je u bildu.
+- Odloženo učitani deo ostaje ispod 250 KB gzipovano, mereno u veb bildu.
+
+### Inkrementi
+
+Tanki, testom vođeni koraci, svaki se završava zelenim:
+
+1. **Izvoz.** Gradle zadatak upisuje `data.ttl` sa zaključcima, `schema.ttl` i `rules.json`.
+   Kotlin testovi: veza braće i sestara izlazi tipizirana kao porodična veza; roditelj izlazi kao
+   učesnik; JSON nosi oba objašnjenja.
+2. **Modul za upite.** `web/src/lib/query.ts`: učitavanje Turtle-a, izvršavanje, granica, vremensko
+   ograničenje, redovi sa identifikatorima čvorova. Vitest: spoj, putanja svojstava, `SUBSTR`
+   filter po godini, poruka o sintaksnoj grešci, prazan rezultat, granica.
+3. **Ekvivalencija.** Vitest: svako pravilo nad objavljenim `data.ttl` daje tačno one vezane
+   vrednosti koje je `checkRedFlags` u bildu upisao u `red-flags.json`.
+4. **Panel sa tragovima.** Rečenice iz vezanih vrednosti, klik ka putanji ili egu, ključevi
+   prevoda, stanja učitavanja i greške.
+5. **Sastavljač prompta i lepljenje odgovora.** Prompt iz šeme na oba jezika (test: svaka klasa i
+   svojstvo prisutni), linkovi i kopiranje, izdvajanje bloka koda (test: ograđen, neograđen, tekst
+   pre i posle), izvršavanje i prikaz.
+6. **Napredno.** Tekstualno polje, šabloni, adresa za deljenje, tabela rezultata.
+7. **Dokumentacija i budžet.** Vodič za alate dobija zadatak; veličina paketa se proverava u veb
+   bildu.
+
+### Ne sada
+
+- Direktan poziv modela sa posetiočevim sopstvenim ključem.
+- MCP server nad skupom podataka za agente.
+- `llms.txt` na sajtu, jeftino kada datoteke budu objavljene.
+
 ## Otvorena pitanja
 
 - **Ćirilica i latinica.** Za sada odlučeno: svođenje u interfejsu transliteruje srpsku
