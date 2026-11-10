@@ -1,0 +1,32 @@
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix dbo:     <http://dbpedia.org/ontology/> .
+@prefix rs:      <https://w3id.org/vip/rs/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix :        <http://poderopedia.com/vocab/> .
+@prefix vip:     <https://w3id.org/vip/vocab#> .
+
+# KBV Datacom d.o.o. Beograd
+# Matična datoteka entiteta: tip, imena, identifikatori i izvori koji potvrđuju identitet.
+# Home file of this entity: type, names, identifiers and the sources for its identity.
+# Veze se nalaze u data/cases/. Connections live in data/cases/.
+
+rs:KBV_Datacom a :Company ;
+    foaf:name "KBV Datacom d.o.o. Beograd"@sr ;
+    :alias "KBV datakom"@sr, "Društvo za informacione tehnologije i telekomunikacije KBV DATACOM d.o.o. Beograd"@sr ;
+    dbo:foundationDate "2011-03-11"^^xsd:date ;
+    dbo:location "Beograd, Srbija"@sr ;
+    dbo:industry "Telekomunikaciona, energetska i saobraćajna infrastruktura"@sr ;
+    rdfs:comment "Beogradska firma za projektovanje i izgradnju telekomunikacione, elektroenergetske i saobraćajne infrastrukture; prema sopstvenom sajtu više od 200 zaposlenih. Prema KRIK-u, firma Ivana Bošnjaka i Stojana Vujka na koju je preregistrovan audi koji vozi Predrag Mali; prema registru (APR preko CompanyWall, očitano 10. novembra 2026) vlasnici su Dragan Kilibarda 30%, Ivan Bošnjak 30%, Stojan Vujko 30%, Miloš Janjić 5% i Rade Sekulić 5%, direktor Dragan Kilibarda; Kilibarda, Janjić i Sekulić ovde nisu uneti."@sr ;
+    rdfs:comment "Belgrade company designing and building telecoms, power and traffic infrastructure; more than 200 employees per its own site. Per KRIK, the company of Ivan Bošnjak and Stojan Vujko to which the Audi driven by Predrag Mali was re-registered; per the registry (APR via CompanyWall, read 10 November 2026) the owners are Dragan Kilibarda 30%, Ivan Bošnjak 30%, Stojan Vujko 30%, Miloš Janjić 5% and Rade Sekulić 5%, director Dragan Kilibarda; Kilibarda, Janjić and Sekulić are not entered here."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://www.companywall.rs/firma/kbv-datacom-doo-beograd/MMu9ivZ0> ; :hasDocumentType vip:registryRecord ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Registarski podaci (APR preko CompanyWall, očitano 10. novembra 2026): 'Naziv Društvo za informacione tehnologije i telekomunikacije KBV DATACOM d.o.o. Beograd'; 'Datum osnivanja 11.3.2011.'; vlasnici 'Dragan Kilibarda(30,00%)', 'Ivan Bošnjak(30,00%)', 'Miloš Janjić(5,00%)', 'Rade Sekulić(5,00%)', 'Stojan Vujko(30,00%)'; 'Direktor Dragan Kilibarda'; 'Delatnost 6209 - Ostale usluge informacione tehnologije'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://kbvdatacom.rs/> ; :hasDocumentType vip:webPage ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Sajt firme: 'Projektujemo, gradimo i integrišemo telekomunikacione, elektroenergetske i ITS sisteme'; '200 + zaposlenih'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://nova.rs/vesti/politika/brat-sinise-malog-zaposlen-u-firmi-vlasnika-milenijum-tima-radi-tamo-duze-od-10-godina/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Nova.rs, 26. januar 2026, Bošnjak na sudu: 'Predrag Mali je između 10 i 15 godina zaposlen u kompaniji “КBV datakom”, delatnost kompanije je telekomunikacija. Ta kompanija nije ćerka firme “Milenijum tima”, ali smo Stojan Vujko i ja manjinski vlasnici iste.'"@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.krik.rs/koruptivne-veze-milenijum-tim-ustupio-audi-i-stan-bratu-sinise-malog/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "KRIK, 22. jul 2019: 'preregistrovan na „KBV datakom“ (KBV datacom), firmu takođe u većinskom vlasništvu istih biznismena – Bošnjaka i Vujka'; 'Njihova druga firma „KBV datakom“ ... prekopala je širi centar Beograda kako bi postavila optičke kablove za državnu telekomunikacionu kompaniju Telekom Srbija.'"@sr ] .

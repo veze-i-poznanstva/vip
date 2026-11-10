@@ -1,0 +1,30 @@
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix dbo:     <http://dbpedia.org/ontology/> .
+@prefix rs:      <https://w3id.org/vip/rs/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix :        <http://poderopedia.com/vocab/> .
+@prefix vip:     <https://w3id.org/vip/vocab#> .
+
+# Andrej Vučić
+# Matična datoteka entiteta: tip, imena, identifikatori i izvori koji potvrđuju identitet.
+# Home file of this entity: type, names, identifiers and the sources for its identity.
+# Veze se nalaze u data/cases/. Connections live in data/cases/.
+
+rs:Andrej_Vucic a foaf:Person ;
+    foaf:name "Andrej Vučić"@sr ;
+    foaf:firstName "Andrej" ;
+    :firstLastName "Vučić" ;
+    vip:wikipediaArticle <https://sr.wikipedia.org/wiki/Андреј_Вучић> ;
+    vip:wikidataItem <http://www.wikidata.org/entity/Q61746836> ;
+    dbo:birthDate "1972-04-09"^^xsd:date ;
+    dbo:birthPlace "Beograd, Srbija"@sr ;
+    rdfs:comment "Brat Aleksandra Vučića; prema Vikipediji visoki funkcioner SNS i ranije izvršni direktor Zavoda za izradu novčanica i kovanog novca NBS. Član Predsedništva KK Crvena zvezda od januara do juna 2014. Srodstvo sa Aleksandrom Vučićem ovde još nije zabeleženo kao veza, jer Aleksandar Vučić nije unet u bazu."@sr ;
+    rdfs:comment "Brother of Aleksandar Vučić; per Wikipedia a senior SNS official and formerly executive director of the National Bank's banknote and coin mint. Member of the Presidency of KK Crvena zvezda from January to June 2014. The kinship with Aleksandar Vučić is not yet recorded as a connection, because Aleksandar Vučić is not in the dataset."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://sr.wikipedia.org/wiki/Андреј_Вучић> ; :hasDocumentType vip:encyclopediaArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Vikipedija: 'Андреј Вучић (Београд, 9. април 1972) српски је политичар и предузетник. Вучић је високи званичник Српске напредне странке, претходно је био извршни директор Завода за израду новчаница и кованог новца Народне банке Србије (НБС).'"@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.krik.rs/andrej-vucic-nisam-neformalni-gradonacelnik-novog-sada/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "KRIK, 5. septembar 2019: 'Andreja Vučića su u septembru 2014. na beogradskoj Paradi ponosa zajedno sa njegovim prijateljem Predragom Malim, bratom Siniše Malog, pretukli žandarmi.'"@sr ] .

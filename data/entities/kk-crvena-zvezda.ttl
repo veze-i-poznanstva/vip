@@ -1,0 +1,28 @@
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix dbo:     <http://dbpedia.org/ontology/> .
+@prefix rs:      <https://w3id.org/vip/rs/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix :        <http://poderopedia.com/vocab/> .
+@prefix vip:     <https://w3id.org/vip/vocab#> .
+
+# Košarkaški klub Crvena zvezda (KK Crvena zvezda)
+# Matična datoteka entiteta: tip, imena, identifikatori i izvori koji potvrđuju identitet.
+# Home file of this entity: type, names, identifiers and the sources for its identity.
+# Veze se nalaze u data/cases/. Connections live in data/cases/.
+
+rs:KK_Crvena_Zvezda a :NonProfitOrganization ;
+    foaf:name "Košarkaški klub Crvena zvezda"@sr ;
+    :alias "KK Crvena zvezda"@sr ;
+    vip:wikipediaArticle <https://sr.wikipedia.org/wiki/КК_Црвена_звезда> ;
+    vip:wikidataItem <http://www.wikidata.org/entity/Q1132627> ;
+    dbo:location "Beograd, Srbija"@sr ;
+    rdfs:comment "Košarkaški klub iz Beograda, deo Sportskog društva Crvena zvezda; sportsko udruženje. Ovde je zabeležen zbog uprave kluba 2014. godine, u kojoj su sedeli Predrag Mali, Ivan Bošnjak i Andrej Vučić."@sr ;
+    rdfs:comment "Basketball club from Belgrade, part of the Crvena zvezda sports society; a sports association. Recorded here for its 2014 governing bodies, on which Predrag Mali, Ivan Bošnjak and Andrej Vučić sat."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://sr.wikipedia.org/wiki/КК_Црвена_звезда> ; :hasDocumentType vip:encyclopediaArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Vikipedija: 'КК Црвена звезда (или, из спонзорских разлога, Црвена звезда Меридианбет) српски је професионални кошаркашки клуб из Београдa. Део је спортског друштва Црвена звезда.'"@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://kkcrvenazvezda.rs/> ; :hasDocumentType vip:webPage ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Zvanični sajt kluba."@sr ] .

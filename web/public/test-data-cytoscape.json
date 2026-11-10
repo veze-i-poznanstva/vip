@@ -1,6 +1,77 @@
 [
   {
     "data": {
+      "id": "kbv_datacom",
+      "label": "KBV Datacom d.o.o. Beograd",
+      "type": "instance",
+      "nodeType": "organization",
+      "uri": "https://w3id.org/vip/rs/KBV_Datacom",
+      "comment": "Beogradska firma za projektovanje i izgradnju telekomunikacione, elektroenergetske i saobraćajne infrastrukture; prema sopstvenom sajtu više od 200 zaposlenih. Prema KRIK-u, firma Ivana Bošnjaka i Stojana Vujka na koju je preregistrovan audi koji vozi Predrag Mali; prema registru (APR preko CompanyWall, očitano 10. novembra 2026) vlasnici su Dragan Kilibarda 30%, Ivan Bošnjak 30%, Stojan Vujko 30%, Miloš Janjić 5% i Rade Sekulić 5%, direktor Dragan Kilibarda; Kilibarda, Janjić i Sekulić ovde nisu uneti.",
+      "aliases": [
+        "Društvo za informacione tehnologije i telekomunikacije KBV DATACOM d.o.o. Beograd",
+        "KBV datakom"
+      ],
+      "facts": [
+        {
+          "property": "foundationDate",
+          "label": "foundation date",
+          "value": "2011-03-11"
+        },
+        {
+          "property": "industry",
+          "label": "industry",
+          "value": "Telekomunikaciona, energetska i saobraćajna infrastruktura"
+        },
+        {
+          "property": "location",
+          "label": "location",
+          "value": "Beograd, Srbija"
+        }
+      ],
+      "file": "data/entities/kbv-datacom.ttl",
+      "line": 16,
+      "sources": [
+        {
+          "url": "https://www.companywall.rs/firma/kbv-datacom-doo-beograd/MMu9ivZ0",
+          "domain": "companywall.rs",
+          "type": "registryRecord",
+          "status": "published",
+          "quote": "Registarski podaci (APR preko CompanyWall, očitano 10. novembra 2026): \u0027Naziv Društvo za informacione tehnologije i telekomunikacije KBV DATACOM d.o.o. Beograd\u0027; \u0027Datum osnivanja 11.3.2011.\u0027; vlasnici \u0027Dragan Kilibarda(30,00%)\u0027, \u0027Ivan Bošnjak(30,00%)\u0027, \u0027Miloš Janjić(5,00%)\u0027, \u0027Rade Sekulić(5,00%)\u0027, \u0027Stojan Vujko(30,00%)\u0027; \u0027Direktor Dragan Kilibarda\u0027; \u0027Delatnost 6209 - Ostale usluge informacione tehnologije\u0027.",
+          "archive": "https://web.archive.org/web/20261110214229/https://www.companywall.rs/firma/kbv-datacom-doo-beograd/MMu9ivZ0",
+          "archivedOn": "2026-11-10"
+        },
+        {
+          "url": "https://kbvdatacom.rs/",
+          "domain": "kbvdatacom.rs",
+          "type": "webPage",
+          "status": "published",
+          "quote": "Sajt firme: \u0027Projektujemo, gradimo i integrišemo telekomunikacione, elektroenergetske i ITS sisteme\u0027; \u0027200 + zaposlenih\u0027.",
+          "archive": "https://web.archive.org/web/20261110213853/https://kbvdatacom.rs/",
+          "archivedOn": "2026-11-10"
+        },
+        {
+          "url": "https://www.krik.rs/koruptivne-veze-milenijum-tim-ustupio-audi-i-stan-bratu-sinise-malog/",
+          "domain": "krik.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "KRIK, 22. jul 2019: \u0027preregistrovan na „KBV datakom“ (KBV datacom), firmu takođe u većinskom vlasništvu istih biznismena – Bošnjaka i Vujka\u0027; \u0027Njihova druga firma „KBV datakom“ ... prekopala je širi centar Beograda kako bi postavila optičke kablove za državnu telekomunikacionu kompaniju Telekom Srbija.\u0027",
+          "archive": "http://web.archive.org/web/20260925060313/https://www.krik.rs/koruptivne-veze-milenijum-tim-ustupio-audi-i-stan-bratu-sinise-malog/",
+          "archivedOn": "2026-09-25"
+        },
+        {
+          "url": "https://nova.rs/vesti/politika/brat-sinise-malog-zaposlen-u-firmi-vlasnika-milenijum-tima-radi-tamo-duze-od-10-godina/",
+          "domain": "nova.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Nova.rs, 26. januar 2026, Bošnjak na sudu: \u0027Predrag Mali je između 10 i 15 godina zaposlen u kompaniji “КBV datakom”, delatnost kompanije je telekomunikacija. Ta kompanija nije ćerka firme “Milenijum tima”, ali smo Stojan Vujko i ja manjinski vlasnici iste.\u0027",
+          "archive": "http://web.archive.org/web/20260127051217/https://nova.rs/vesti/politika/brat-sinise-malog-zaposlen-u-firmi-vlasnika-milenijum-tima-radi-tamo-duze-od-10-godina/",
+          "archivedOn": "2026-01-27"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
       "id": "trilenium",
       "label": "Trilenium",
       "type": "instance",
@@ -747,6 +818,52 @@
           "domain": "companywall.rs",
           "type": "registryRecord",
           "status": "removed"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "andrej_vucic",
+      "label": "Andrej Vučić",
+      "type": "instance",
+      "nodeType": "person",
+      "uri": "https://w3id.org/vip/rs/Andrej_Vucic",
+      "comment": "Brat Aleksandra Vučića; prema Vikipediji visoki funkcioner SNS i ranije izvršni direktor Zavoda za izradu novčanica i kovanog novca NBS. Član Predsedništva KK Crvena zvezda od januara do juna 2014. Srodstvo sa Aleksandrom Vučićem ovde još nije zabeleženo kao veza, jer Aleksandar Vučić nije unet u bazu.",
+      "wikipedia": "https://sr.wikipedia.org/wiki/Андреј_Вучић",
+      "wikidata": "http://www.wikidata.org/entity/Q61746836",
+      "facts": [
+        {
+          "property": "birthDate",
+          "label": "birth date",
+          "value": "1972-04-09"
+        },
+        {
+          "property": "birthPlace",
+          "label": "birth place",
+          "value": "Beograd, Srbija"
+        }
+      ],
+      "file": "data/entities/andrej-vucic.ttl",
+      "line": 16,
+      "sources": [
+        {
+          "url": "https://www.krik.rs/andrej-vucic-nisam-neformalni-gradonacelnik-novog-sada/",
+          "domain": "krik.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "KRIK, 5. septembar 2019: \u0027Andreja Vučića su u septembru 2014. na beogradskoj Paradi ponosa zajedno sa njegovim prijateljem Predragom Malim, bratom Siniše Malog, pretukli žandarmi.\u0027",
+          "archive": "http://web.archive.org/web/20260516201946/https://www.krik.rs/andrej-vucic-nisam-neformalni-gradonacelnik-novog-sada/",
+          "archivedOn": "2026-05-16"
+        },
+        {
+          "url": "https://sr.wikipedia.org/wiki/Андреј_Вучић",
+          "domain": "sr.wikipedia.org",
+          "type": "encyclopediaArticle",
+          "status": "published",
+          "quote": "Vikipedija: \u0027Андреј Вучић (Београд, 9. април 1972) српски је политичар и предузетник. Вучић је високи званичник Српске напредне странке, претходно је био извршни директор Завода за израду новчаница и кованог новца Народне банке Србије (НБС).\u0027",
+          "archive": "http://web.archive.org/web/20260115000320/https://sr.wikipedia.org/wiki/%D0%90%D0%BD%D0%B4%D1%80%D0%B5%D1%98_%D0%92%D1%83%D1%87%D0%B8%D1%9B",
+          "archivedOn": "2026-01-15"
         }
       ]
     }
@@ -1886,6 +2003,50 @@
   },
   {
     "data": {
+      "id": "kk_crvena_zvezda",
+      "label": "Košarkaški klub Crvena zvezda",
+      "type": "instance",
+      "nodeType": "organization",
+      "uri": "https://w3id.org/vip/rs/KK_Crvena_Zvezda",
+      "comment": "Košarkaški klub iz Beograda, deo Sportskog društva Crvena zvezda; sportsko udruženje. Ovde je zabeležen zbog uprave kluba 2014. godine, u kojoj su sedeli Predrag Mali, Ivan Bošnjak i Andrej Vučić.",
+      "wikipedia": "https://sr.wikipedia.org/wiki/КК_Црвена_звезда",
+      "wikidata": "http://www.wikidata.org/entity/Q1132627",
+      "aliases": [
+        "KK Crvena zvezda"
+      ],
+      "facts": [
+        {
+          "property": "location",
+          "label": "location",
+          "value": "Beograd, Srbija"
+        }
+      ],
+      "file": "data/entities/kk-crvena-zvezda.ttl",
+      "line": 16,
+      "sources": [
+        {
+          "url": "https://kkcrvenazvezda.rs/",
+          "domain": "kkcrvenazvezda.rs",
+          "type": "webPage",
+          "status": "published",
+          "quote": "Zvanični sajt kluba.",
+          "archive": "http://web.archive.org/web/20261015034141/https://kkcrvenazvezda.rs/",
+          "archivedOn": "2026-10-15"
+        },
+        {
+          "url": "https://sr.wikipedia.org/wiki/КК_Црвена_звезда",
+          "domain": "sr.wikipedia.org",
+          "type": "encyclopediaArticle",
+          "status": "published",
+          "quote": "Vikipedija: \u0027КК Црвена звезда (или, из спонзорских разлога, Црвена звезда Меридианбет) српски је професионални кошаркашки клуб из Београдa. Део је спортског друштва Црвена звезда.\u0027",
+          "archive": "http://web.archive.org/web/20260615175917/https://sr.wikipedia.org/wiki/%D0%9A%D0%9A_%D0%A6%D1%80%D0%B2%D0%B5%D0%BD%D0%B0_%D0%B7%D0%B2%D0%B5%D0%B7%D0%B4%D0%B0",
+          "archivedOn": "2026-06-15"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
       "id": "baltazar",
       "label": "Baltazar",
       "type": "instance",
@@ -2633,6 +2794,58 @@
   {
     "data": {
       "id": "edge10",
+      "label": "presidency member",
+      "source": "andrej_vucic",
+      "target": "kk_crvena_zvezda",
+      "uri": "https://w3id.org/vip/rs/AndrejVucic_KKCrvenaZvezda",
+      "comment": "Član Predsedništva KK Crvena zvezda: izabran na prvoj redovnoj sednici Skupštine 2014 (obaveštenje kluba arhivirano 30. januara 2014) sa mandatom do 12. avgusta 2016; ostavku podneo pre druge redovne sednice Skupštine (obaveštenje arhivirano 30. juna 2014). Vreme (1. oktobar 2014) piše da je to bila njegova jedina formalna javna funkcija i da je upravu napustio „ovog leta“. Meseci su izvedeni iz tih podataka.",
+      "kind": "WorkConnection",
+      "typeLabel": "Work Connection",
+      "roles": [
+        {
+          "en": "Presidency member",
+          "es": "Miembro de la presidencia",
+          "sr": "Član predsedništva"
+        }
+      ],
+      "start": "2014-01",
+      "end": "2014-06",
+      "file": "data/cases/predrag-mali-milenijum-tim.ttl",
+      "line": 94,
+      "sources": [
+        {
+          "url": "https://vreme.com/vreme/u-senci-velikog-brata/",
+          "domain": "vreme.com",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Vreme, 1. oktobar 2014 (Slobodan Georgijev): \u0027po dolasku naprednjaka na vlast 2012. godine, Andrej Vučić je formalno imao samo tu „javnu funkciju“, dakle u upravi kluba koji se nekad zvao FMP\u0027; \u0027Andrej zajedno sa Malim napustio ovog leta upravu kluba\u0027.",
+          "archive": "http://web.archive.org/web/20241225013625/https://vreme.com/vreme/u-senci-velikog-brata/",
+          "archivedOn": "2024-12-25"
+        },
+        {
+          "url": "http://www.kkcrvenazvezda.rs/index.php/article/odrzana-skupstina-kk-crvena-zvezda",
+          "domain": "kkcrvenazvezda.rs",
+          "type": "webPage",
+          "status": "archived",
+          "quote": "KK Crvena zvezda, obaveštenje \u0027Održana Skupština KK Crvena zvezda\u0027 (arhivirano 30. januara 2014): \u0027dobio 19 novih članova Skupštine, koji su potom izglasali i trojicu članova Predsedništva. To su: Andrej Vučić, Aleksandar Jokić i Ognjen Oliverić.\u0027; \u0027Mandat članova Skupštine i Predsedništva traje do 12. avgusta 2016. godine.\u0027",
+          "archive": "http://web.archive.org/web/20160501135334/http://www.kkcrvenazvezda.rs:80/index.php/article/odrzana-skupstina-kk-crvena-zvezda",
+          "archivedOn": "2016-05-01"
+        },
+        {
+          "url": "http://www.kkcrvenazvezda.rs/index.php/article/podrska-trenerima-promene-u-rukovodstvu",
+          "domain": "kkcrvenazvezda.rs",
+          "type": "webPage",
+          "status": "archived",
+          "quote": "KK Crvena zvezda, obaveštenje \u0027Podrška trenerima, promene u rukovodstvu\u0027 (arhivirano 30. juna 2014): \u0027ostavke su podneli i članovi Predsedništva: Andrej Vučić, Aleksandar Jokić i Ognjen Oliverić\u0027.",
+          "archive": "http://web.archive.org/web/20160314214559/http://kkcrvenazvezda.rs/index.php/article/podrska-trenerima-promene-u-rukovodstvu",
+          "archivedOn": "2016-03-14"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "edge11",
       "label": "ownership connection",
       "source": "best_media_team",
       "target": "infomacva",
@@ -2668,7 +2881,7 @@
   },
   {
     "data": {
-      "id": "edge11",
+      "id": "edge12",
       "label": "ownership connection",
       "source": "best_media_team",
       "target": "miomedia",
@@ -2703,7 +2916,7 @@
   },
   {
     "data": {
-      "id": "edge12",
+      "id": "edge13",
       "label": "Pomoć pri osnivanju",
       "labels": {
         "en": "Formation assistance",
@@ -2743,7 +2956,7 @@
   },
   {
     "data": {
-      "id": "edge13",
+      "id": "edge14",
       "label": "ownership connection",
       "source": "global_media_technology",
       "target": "matrix_d",
@@ -2777,7 +2990,7 @@
   },
   {
     "data": {
-      "id": "edge14",
+      "id": "edge15",
       "label": "ownership connection",
       "source": "global_media_technology",
       "target": "maxim_media_plus",
@@ -2813,7 +3026,7 @@
   },
   {
     "data": {
-      "id": "edge15",
+      "id": "edge16",
       "label": "ownership connection",
       "source": "global_media_technology",
       "target": "rimi_media_group",
@@ -2847,7 +3060,7 @@
   },
   {
     "data": {
-      "id": "edge16",
+      "id": "edge17",
       "label": "ownership connection",
       "source": "insajder_tim",
       "target": "best_media_team",
@@ -2883,7 +3096,103 @@
   },
   {
     "data": {
-      "id": "edge17",
+      "id": "edge18",
+      "label": "ownership connection",
+      "source": "ivan_bosnjak_milenijum_tim",
+      "target": "kbv_datacom",
+      "uri": "https://w3id.org/vip/rs/IvanBosnjakMilenijumTim_KBVDatacom",
+      "comment": "Ivan Bošnjak je suvlasnik KBV Datacom-a: na sudu je 22. januara 2026. rekao da su on i Stojan Vujko „manjinski vlasnici“ te firme (Nova.rs); KRIK je 2019. pisao da je firma „u većinskom vlasništvu istih biznismena – Bošnjaka i Vujka“. Ta dva opisa su saglasna ako svaki drži manje od polovine, a dvojica zajedno više. Prema registru (APR preko CompanyWall, očitano 10. novembra 2026) udeo je 30%, uz Dragana Kilibardu 30%, Miloša Janjića 5% i Rade Sekulića 5%; datum sticanja nije naveden.",
+      "kind": "OwnershipConnection",
+      "typeLabel": "Ownership connection",
+      "share": 30.0,
+      "file": "data/cases/predrag-mali-milenijum-tim.ttl",
+      "line": 32,
+      "sources": [
+        {
+          "url": "https://www.companywall.rs/firma/kbv-datacom-doo-beograd/MMu9ivZ0",
+          "domain": "companywall.rs",
+          "type": "registryRecord",
+          "status": "published",
+          "quote": "Registarski podaci (APR preko CompanyWall, očitano 10. novembra 2026): vlasnici \u0027Dragan Kilibarda(30,00%)\u0027, \u0027Ivan Bošnjak(30,00%)\u0027, \u0027Miloš Janjić(5,00%)\u0027, \u0027Rade Sekulić(5,00%)\u0027, \u0027Stojan Vujko(30,00%)\u0027.",
+          "archive": "https://web.archive.org/web/20261110214229/https://www.companywall.rs/firma/kbv-datacom-doo-beograd/MMu9ivZ0",
+          "archivedOn": "2026-11-10"
+        },
+        {
+          "url": "https://www.krik.rs/koruptivne-veze-milenijum-tim-ustupio-audi-i-stan-bratu-sinise-malog/",
+          "domain": "krik.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "KRIK, 22. jul 2019: \u0027preregistrovan na „KBV datakom“ (KBV datacom), firmu takođe u većinskom vlasništvu istih biznismena – Bošnjaka i Vujka\u0027.",
+          "archive": "http://web.archive.org/web/20260925060313/https://www.krik.rs/koruptivne-veze-milenijum-tim-ustupio-audi-i-stan-bratu-sinise-malog/",
+          "archivedOn": "2026-09-25"
+        },
+        {
+          "url": "https://nova.rs/vesti/politika/brat-sinise-malog-zaposlen-u-firmi-vlasnika-milenijum-tima-radi-tamo-duze-od-10-godina/",
+          "domain": "nova.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Nova.rs, 26. januar 2026, Bošnjak na sudu: \u0027Ta kompanija nije ćerka firme “Milenijum tima”, ali smo Stojan Vujko i ja manjinski vlasnici iste.\u0027",
+          "archive": "http://web.archive.org/web/20260127051217/https://nova.rs/vesti/politika/brat-sinise-malog-zaposlen-u-firmi-vlasnika-milenijum-tima-radi-tamo-duze-od-10-godina/",
+          "archivedOn": "2026-01-27"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "edge19",
+      "label": "board member",
+      "source": "ivan_bosnjak_milenijum_tim",
+      "target": "kk_crvena_zvezda",
+      "uri": "https://w3id.org/vip/rs/IvanBosnjakMilenijumTim_KKCrvenaZvezda",
+      "comment": "Član Upravnog odbora KK Crvena zvezda od januara do juna 2014, prema obaveštenjima kluba (izbor na trećoj sednici Predsedništva 2014; ostavka pre druge redovne sednice Skupštine). Obaveštenja navode samo ime „Ivan Bošnjak“; KRIK ga 2019. identifikuje kao suvlasnika Milenijum tima i piše da sa Vujkom sedi i u upravi Sportskog društva Crvena zvezda, što ovde nije zabeleženo. Meseci su izvedeni iz datuma arhiviranja obaveštenja.",
+      "kind": "WorkConnection",
+      "typeLabel": "Work Connection",
+      "roles": [
+        {
+          "en": "Board member",
+          "es": "Miembro del directorio",
+          "sr": "Član upravnog odbora"
+        }
+      ],
+      "start": "2014-01",
+      "end": "2014-06",
+      "file": "data/cases/predrag-mali-milenijum-tim.ttl",
+      "line": 78,
+      "sources": [
+        {
+          "url": "https://www.krik.rs/koruptivne-veze-milenijum-tim-ustupio-audi-i-stan-bratu-sinise-malog/",
+          "domain": "krik.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "KRIK, 22. jul 2019: \u0027Predrag Mali i Bošnjak bili su 2014. godine članovi Upravnog odbora ovog kluba, u vreme dok je Andrej Vučić bio član predsedništva.\u0027; \u0027Bošnjak je bio član Izvršnog odbora NALED-a i sa Vujkom sedi u upravi Sportskog društva „Crvena zvezda“.\u0027",
+          "archive": "http://web.archive.org/web/20260925060313/https://www.krik.rs/koruptivne-veze-milenijum-tim-ustupio-audi-i-stan-bratu-sinise-malog/",
+          "archivedOn": "2026-09-25"
+        },
+        {
+          "url": "http://www.kkcrvenazvezda.rs/index.php/article/odrzana-skupstina-kk-crvena-zvezda",
+          "domain": "kkcrvenazvezda.rs",
+          "type": "webPage",
+          "status": "archived",
+          "quote": "KK Crvena zvezda, obaveštenje \u0027Održana Skupština KK Crvena zvezda\u0027 (arhivirano 30. januara 2014): \u0027formiran novi Upravni odbor kluba u kome se pored članova Predsedništva nalaze i: Luka Petrović, Darko Glišić, Ivan Bošnjak, ... i Predrag Mali. Mandat svih članova Upravnog odbora traje godinu dana.\u0027",
+          "archive": "http://web.archive.org/web/20160501135334/http://www.kkcrvenazvezda.rs:80/index.php/article/odrzana-skupstina-kk-crvena-zvezda",
+          "archivedOn": "2016-05-01"
+        },
+        {
+          "url": "http://www.kkcrvenazvezda.rs/index.php/article/podrska-trenerima-promene-u-rukovodstvu",
+          "domain": "kkcrvenazvezda.rs",
+          "type": "webPage",
+          "status": "archived",
+          "quote": "KK Crvena zvezda, obaveštenje \u0027Podrška trenerima, promene u rukovodstvu\u0027 (arhivirano 30. juna 2014): \u0027a promena je bilo i u Upravnom odboru pošto su ostavke podneli: Luka Petrović, Darko Glišić, Predrag Mali i Ivan Bošnjak.\u0027",
+          "archive": "http://web.archive.org/web/20160314214559/http://kkcrvenazvezda.rs/index.php/article/podrska-trenerima-promene-u-rukovodstvu",
+          "archivedOn": "2016-03-14"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "edge20",
       "label": "political connection",
       "source": "ivan_bosnjak_zrenjanin",
       "target": "sns",
@@ -2917,7 +3226,7 @@
   },
   {
     "data": {
-      "id": "edge18",
+      "id": "edge21",
       "label": "ownership connection",
       "source": "ivan_bosnjak_milenijum_tim",
       "target": "milenijum_tim",
@@ -2960,7 +3269,7 @@
   },
   {
     "data": {
-      "id": "edge19",
+      "id": "edge22",
       "label": "executive board member",
       "source": "ivan_bosnjak_milenijum_tim",
       "target": "naled",
@@ -3019,7 +3328,7 @@
   },
   {
     "data": {
-      "id": "edge20",
+      "id": "edge23",
       "label": "ownership connection",
       "source": "maxim_media_plus",
       "target": "baltazar",
@@ -3054,7 +3363,7 @@
   },
   {
     "data": {
-      "id": "edge21",
+      "id": "edge24",
       "label": "ownership connection",
       "source": "maxim_media_plus",
       "target": "bis_komerc",
@@ -3089,7 +3398,7 @@
   },
   {
     "data": {
-      "id": "edge22",
+      "id": "edge25",
       "label": "ownership connection",
       "source": "maxim_media_plus",
       "target": "new_agency",
@@ -3124,7 +3433,7 @@
   },
   {
     "data": {
-      "id": "edge23",
+      "id": "edge26",
       "label": "alumni",
       "source": "mihailo_jovanovic",
       "target": "peta_beogradska_gimnazija",
@@ -3160,7 +3469,7 @@
   },
   {
     "data": {
-      "id": "edge24",
+      "id": "edge27",
       "label": "ownership connection",
       "source": "milenijum_tim",
       "target": "mt_gastel",
@@ -3213,7 +3522,7 @@
   },
   {
     "data": {
-      "id": "edge25",
+      "id": "edge28",
       "label": "ownership connection",
       "source": "milenijum_tim",
       "target": "mv_investment",
@@ -3267,7 +3576,7 @@
   },
   {
     "data": {
-      "id": "edge26",
+      "id": "edge29",
       "label": "ownership connection",
       "source": "milenijum_tim",
       "target": "milenijum_adria",
@@ -3312,7 +3621,7 @@
   },
   {
     "data": {
-      "id": "edge27",
+      "id": "edge30",
       "label": "ownership connection",
       "source": "milenijum_tim",
       "target": "milenijum_resorts",
@@ -3347,7 +3656,7 @@
   },
   {
     "data": {
-      "id": "edge28",
+      "id": "edge31",
       "label": "ownership connection",
       "source": "milenijum_tim",
       "target": "milenijum_propertiz",
@@ -3391,7 +3700,7 @@
   },
   {
     "data": {
-      "id": "edge29",
+      "id": "edge32",
       "label": "ownership connection",
       "source": "milenijum_tim",
       "target": "mostogradnja_ing",
@@ -3435,7 +3744,7 @@
   },
   {
     "data": {
-      "id": "edge30",
+      "id": "edge33",
       "label": "ownership connection",
       "source": "milenijum_tim",
       "target": "pizzarotti_millennium",
@@ -3470,7 +3779,7 @@
   },
   {
     "data": {
-      "id": "edge31",
+      "id": "edge34",
       "label": "Ustupljen automobil",
       "labels": {
         "en": "Car provided",
@@ -3479,7 +3788,7 @@
       "source": "predrag_mali",
       "target": "milenijum_tim",
       "uri": "https://w3id.org/vip/rs/MilenijumTim_PredragMali_Automobil",
-      "comment": "Prema KRIK-u (22. jul 2019), Predrag Mali već pet godina vozi „audi a6“ u vlasništvu firmi Ivana Bošnjaka i Stojana Vujka: najpre Milenijum tima, što pokazuje policijski zapisnik od 26. decembra 2014, a zatim je automobil preregistrovan na njihovu drugu firmu KBV datakom, koja ovde nije zabeležena. Novinari su ga videli u istom automobilu 5. juna 2019. Mali je rekao da „to nije tačno“; Milenijum tim: „U potpunosti odbacujemo navode da smo bilo šta ustupili ili poklonili Predragu Malom, s kojim kompanija nema nikakve odnose.“ Početak je godina najranijeg zapisa; datum preregistracije nije naveden, pa kraj nije zabeležen.",
+      "comment": "Prema KRIK-u (22. jul 2019), Predrag Mali već pet godina vozi „audi a6“ u vlasništvu firmi Ivana Bošnjaka i Stojana Vujka: najpre Milenijum tima, što pokazuje policijski zapisnik od 26. decembra 2014, a zatim je automobil preregistrovan na njihovu drugu firmu KBV Datacom (rs:KBV_Datacom). Novinari su ga videli u istom automobilu 5. juna 2019. Mali je rekao da „to nije tačno“; Milenijum tim: „U potpunosti odbacujemo navode da smo bilo šta ustupili ili poklonili Predragu Malom, s kojim kompanija nema nikakve odnose.“ Na sudu je 22. januara 2026. Bošnjak rekao da je Predrag Mali zaposlen u KBV Datacom-u i da „koristi samo službeni automobil koji mu pripada uz radno mesto“ (Nova.rs); to zaposlenje je zabeleženo u predrag-mali-milenijum-tim.ttl. Početak je godina najranijeg zapisa; datum preregistracije nije naveden, pa kraj nije zabeležen.",
       "kind": "Connection",
       "typeLabel": "Generic connection",
       "start": "2014",
@@ -3503,13 +3812,22 @@
           "quote": "N1 (Beta, KRIK), 22. jul 2019: \u0027Predrag Mali već pet godina vozi \"audi\" u vlasništvu firmi srpskih biznismena Ivana Bošnjaka i Stojana Vujka, objavio je KRIK\u0027; \u0027Automobil je najpre bio u vlasništvu njihove poznate firme \"Milenijum tim\"\u0027; prenosi KRIK, nije nezavisna potvrda.",
           "archive": "http://web.archive.org/web/20261029214400/https://n1info.rs/vesti/a501712-Milenijum-tim-ustupio-audi-i-stan-bratu-Sinise-Malog/",
           "archivedOn": "2026-10-29"
+        },
+        {
+          "url": "https://nova.rs/vesti/politika/brat-sinise-malog-zaposlen-u-firmi-vlasnika-milenijum-tima-radi-tamo-duze-od-10-godina/",
+          "domain": "nova.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Nova.rs, 26. januar 2026, Bošnjak na ročištu 22. januara: \u0027Predrag koristi samo službeni automobil koji mu pripada uz radno mesto\u0027; \u0027KRIK je 2019. godine otkrio i da Predrag Mali, rođeni brat ministra finansija Siniše Malog, godinama vozi „audi“ u vlasništvu firme „KBV datakom“, čiji su suvlasnici upravo Bošnjak i Vujko.\u0027",
+          "archive": "http://web.archive.org/web/20260127051217/https://nova.rs/vesti/politika/brat-sinise-malog-zaposlen-u-firmi-vlasnika-milenijum-tima-radi-tamo-duze-od-10-godina/",
+          "archivedOn": "2026-01-27"
         }
       ]
     }
   },
   {
     "data": {
-      "id": "edge32",
+      "id": "edge35",
       "label": "Ustupljen stan",
       "labels": {
         "en": "Flat provided",
@@ -3518,12 +3836,12 @@
       "source": "predrag_mali",
       "target": "milenijum_tim",
       "uri": "https://w3id.org/vip/rs/MilenijumTim_PredragMali_Stan",
-      "comment": "Prema KRIK-u (22. jul 2019), u dupleksu na Voždovcu u vlasništvu „ćerke firme“ Milenijum tima, koju članak ne imenuje, do 2016. stanovala je tadašnja devojka Predraga Malog; KRIK to naziva stanom ustupljenim Predragu Malom. Milenijum tim: zgrada je građena 2009, svi stanovi su prodati i nemaju evidenciju ko u njima stanuje. Početak nije naveden.",
+      "comment": "Prema KRIK-u (22. jul 2019), u dupleksu na Voždovcu u vlasništvu „ćerke firme“ Milenijum tima, koju članak ne imenuje, do 2016. stanovala je tadašnja devojka Predraga Malog; KRIK to naziva stanom ustupljenim Predragu Malom. Milenijum tim: zgrada je građena 2009, svi stanovi su prodati i nemaju evidenciju ko u njima stanuje. Bošnjak na sudu 22. januara 2026: Predrag „nikada nije koristio službeni stan, niti kompanija poseduje stanove“ (Nova.rs). Početak nije naveden.",
       "kind": "Connection",
       "typeLabel": "Generic connection",
       "end": "2016",
       "file": "data/cases/milenijum-tim.ttl",
-      "line": 238,
+      "line": 240,
       "sources": [
         {
           "url": "https://www.krik.rs/koruptivne-veze-milenijum-tim-ustupio-audi-i-stan-bratu-sinise-malog/",
@@ -3542,13 +3860,22 @@
           "quote": "N1 (Beta, KRIK), 22. jul 2019, naslov \u0027Milenijum tim ustupio audi i stan bratu Siniše Malog\u0027: \u0027biznismeni su ustupili i stan\u0027; prenosi KRIK, nije nezavisna potvrda.",
           "archive": "http://web.archive.org/web/20261029214400/https://n1info.rs/vesti/a501712-Milenijum-tim-ustupio-audi-i-stan-bratu-Sinise-Malog/",
           "archivedOn": "2026-10-29"
+        },
+        {
+          "url": "https://nova.rs/vesti/politika/brat-sinise-malog-zaposlen-u-firmi-vlasnika-milenijum-tima-radi-tamo-duze-od-10-godina/",
+          "domain": "nova.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Nova.rs, 26. januar 2026, Bošnjak na ročištu 22. januara: \u0027a nikada nije koristio službeni stan, niti kompanija poseduje stanove\u0027.",
+          "archive": "http://web.archive.org/web/20260127051217/https://nova.rs/vesti/politika/brat-sinise-malog-zaposlen-u-firmi-vlasnika-milenijum-tima-radi-tamo-duze-od-10-godina/",
+          "archivedOn": "2026-01-27"
         }
       ]
     }
   },
   {
     "data": {
-      "id": "edge33",
+      "id": "edge36",
       "label": "ownership connection",
       "source": "milenijum_tim",
       "target": "roberts_milenijum",
@@ -3645,7 +3972,7 @@
   },
   {
     "data": {
-      "id": "edge34",
+      "id": "edge37",
       "label": "ownership connection",
       "source": "nikola_petrovic_ems",
       "target": "arkshore_international",
@@ -3680,7 +4007,7 @@
   },
   {
     "data": {
-      "id": "edge35",
+      "id": "edge38",
       "label": "friendship",
       "source": "darko_tamindzic",
       "target": "novica_toncev",
@@ -3714,7 +4041,7 @@
   },
   {
     "data": {
-      "id": "edge36",
+      "id": "edge39",
       "label": "ownership connection",
       "source": "novica_toncev",
       "target": "service_for_efficient_energy",
@@ -3749,7 +4076,161 @@
   },
   {
     "data": {
-      "id": "edge37",
+      "id": "edge40",
+      "label": "friendship",
+      "source": "andrej_vucic",
+      "target": "predrag_mali",
+      "uri": "https://w3id.org/vip/rs/PredragMali_AndrejVucic_Friendship",
+      "comment": "Prema rečima Siniše Malog u intervjuu hrvatskom nedeljniku Globus u proleće 2014 (novinar Darko Hudelist), kako su preneli KRIK i Danas 14. marta 2018: „Vučićev rođeni brat Andrej i moj mlađi brat Predrag (Peđa) najbolji prijatelji.“ Predrag Mali je 15. oktobra 2015. pred Višim sudom izjavio da su on i Andrej Vučić na dan Parade ponosa 2014. zajedno krenuli na porodični ručak kod Vučićevih roditelja (Beta/N1). Andrej Vučić je 4. septembra 2019. pred sudom demantovao da je predložio Malog za gradonačelnika i rekao da mu je Mali kazao da to nikada nije rekao; o prijateljstvu se nije izjašnjavao, a KRIK Predraga Malog naziva njegovim prijateljem. Sam tekst intervjua u Globusu nije dostupan onlajn. Datumi početka i prestanka nisu navedeni.",
+      "kind": "Friendship",
+      "typeLabel": "Friendship",
+      "file": "data/cases/predrag-mali-milenijum-tim.ttl",
+      "line": 110,
+      "sources": [
+        {
+          "url": "https://www.danas.rs/vesti/politika/mali-postao-sam-gradonacelnik-po-ideji-andreja-vucica/",
+          "domain": "danas.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Danas, 14. mart 2018 (prema KRIK-u): \u0027„Stvar je u tome što su Vučićev rođeni brat Andrej i moj mlađi brat Predrag (Peđa) najbolji prijatelji. I ja sam uvek njima pomagao“, rekao je Mali u intervjuu za „Globus“.\u0027; prenosi KRIK, nije nezavisna potvrda.",
+          "archive": "http://web.archive.org/web/20261110214035/https://www.danas.rs/vesti/politika/mali-postao-sam-gradonacelnik-po-ideji-andreja-vucica/",
+          "archivedOn": "2026-11-10"
+        },
+        {
+          "url": "https://www.krik.rs/andrej-vucic-nisam-neformalni-gradonacelnik-novog-sada/",
+          "domain": "krik.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "KRIK, 5. septembar 2019: \u0027Andreja Vučića su u septembru 2014. na beogradskoj Paradi ponosa zajedno sa njegovim prijateljem Predragom Malim, bratom Siniše Malog, pretukli žandarmi.\u0027; demanti: \u0027„Nije mi poznato ni šta je izjavio, ni da li je izjavio. Kad sam pitao Sinišu Malog on mi je odgovorio da to nikada nije rekao“, kazao je juče Vučić.\u0027",
+          "archive": "http://web.archive.org/web/20260516201946/https://www.krik.rs/andrej-vucic-nisam-neformalni-gradonacelnik-novog-sada/",
+          "archivedOn": "2026-05-16"
+        },
+        {
+          "url": "https://www.krik.rs/mali-postao-sam-gradonacelnik-po-ideji-andreja-vucica/",
+          "domain": "krik.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "KRIK, 14. mart 2018 (Dragana Pećo): \u0027„Stvar je u tome što su Vučićev rođeni brat Andrej i moj mlađi brat Predrag (Peđa) najbolji prijatelji. I ja sam uvek njima pomagao“, rekao je Mali u intervjuu za „Globus“.\u0027",
+          "archive": "http://web.archive.org/web/20261102125328/https://www.krik.rs/mali-postao-sam-gradonacelnik-po-ideji-andreja-vucica/",
+          "archivedOn": "2026-11-02"
+        },
+        {
+          "url": "https://n1info.rs/vesti/a100688-predrag-mali-na-sudjenju/",
+          "domain": "n1info.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "N1 (Beta), 15. oktobar 2015: \u0027Poput Vučića, i Mali je naveo da su zajedno krenuli na porodični ručak kod Vučićevih roditelja i da su kod Hrama Svetog Save parkirali automobil\u0027.",
+          "archive": "http://web.archive.org/web/20250309032348/https://n1info.rs/vesti/a100688-predrag-mali-na-sudjenju/",
+          "archivedOn": "2025-03-09"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "edge41",
+      "label": "employee",
+      "source": "predrag_mali",
+      "target": "kbv_datacom",
+      "uri": "https://w3id.org/vip/rs/PredragMali_KBVDatacom",
+      "comment": "Predrag Mali je zaposlen u KBV Datacom-u „između 10 i 15 godina“, prema iskazu suvlasnika Ivana Bošnjaka na ročištu 22. januara 2026, u parnici Milenijum tima protiv urednika portala Nova.rs (prenose Nova.rs i Vreme). Početak zaposlenja nije naveden preciznije, pa datum početka nije zabeležen. Bošnjak je dodao da Predrag „koristi samo službeni automobil koji mu pripada uz radno mesto“.",
+      "kind": "WorkConnection",
+      "typeLabel": "Work Connection",
+      "roles": [
+        {
+          "en": "Employee",
+          "es": "Empleado",
+          "sr": "Zaposleni"
+        }
+      ],
+      "file": "data/cases/predrag-mali-milenijum-tim.ttl",
+      "line": 20,
+      "sources": [
+        {
+          "url": "https://nova.rs/vesti/politika/brat-sinise-malog-zaposlen-u-firmi-vlasnika-milenijum-tima-radi-tamo-duze-od-10-godina/",
+          "domain": "nova.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Nova.rs, 26. januar 2026 (Jelena Jelovac), Bošnjak na ročištu 22. januara: \u0027Predrag Mali je između 10 i 15 godina zaposlen u kompaniji “КBV datakom”, delatnost kompanije je telekomunikacija.\u0027; \u0027Predrag koristi samo službeni automobil koji mu pripada uz radno mesto\u0027.",
+          "archive": "http://web.archive.org/web/20260127051217/https://nova.rs/vesti/politika/brat-sinise-malog-zaposlen-u-firmi-vlasnika-milenijum-tima-radi-tamo-duze-od-10-godina/",
+          "archivedOn": "2026-01-27"
+        },
+        {
+          "url": "https://vreme.com/vesti/milenijum-tim-brat-sinise-malog-poslovi-bez-veze-sa-drzavom/",
+          "domain": "vreme.com",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Vreme, 26. januar 2026 (izvor Nova.rs): \u0027Ivan Bošnjak, suvlasnik kompanije „Milenijum tim“, na sudu potvrdio da je Predrag Mali, brat ministra finansija Siniše Malog, zaposlen u firmi „KBV datakom“ više od deset godina i da koristi službeni automobil firme\u0027.",
+          "archive": "http://web.archive.org/web/20261011172321/https://vreme.com/vesti/milenijum-tim-brat-sinise-malog-poslovi-bez-veze-sa-drzavom/",
+          "archivedOn": "2026-10-11"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "edge42",
+      "label": "board member",
+      "source": "predrag_mali",
+      "target": "kk_crvena_zvezda",
+      "uri": "https://w3id.org/vip/rs/PredragMali_KKCrvenaZvezda",
+      "comment": "Član Upravnog odbora KK Crvena zvezda: izabran na trećoj sednici Predsedništva u 2014, održanoj posle prve redovne sednice Skupštine (obaveštenje kluba, arhivirano 30. januara 2014), sa mandatom od godinu dana; ostavku podneo pre druge redovne sednice Skupštine, na kojoj je podnet i sportski izveštaj za sezonu 2013/2014 (obaveštenje arhivirano 30. juna 2014). Vreme (1. oktobar 2014) piše da ga je Andrej Vučić doveo u upravu i da su je obojica napustili „ovog leta“. Meseci su izvedeni iz tih podataka; tačni dani sednica nisu navedeni.",
+      "kind": "WorkConnection",
+      "typeLabel": "Work Connection",
+      "roles": [
+        {
+          "en": "Board member",
+          "es": "Miembro del directorio",
+          "sr": "Član upravnog odbora"
+        }
+      ],
+      "start": "2014-01",
+      "end": "2014-06",
+      "file": "data/cases/predrag-mali-milenijum-tim.ttl",
+      "line": 60,
+      "sources": [
+        {
+          "url": "https://www.krik.rs/koruptivne-veze-milenijum-tim-ustupio-audi-i-stan-bratu-sinise-malog/",
+          "domain": "krik.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "KRIK, 22. jul 2019: \u0027Predrag Mali i Bošnjak bili su 2014. godine članovi Upravnog odbora ovog kluba, u vreme dok je Andrej Vučić bio član predsedništva.\u0027",
+          "archive": "http://web.archive.org/web/20260925060313/https://www.krik.rs/koruptivne-veze-milenijum-tim-ustupio-audi-i-stan-bratu-sinise-malog/",
+          "archivedOn": "2026-09-25"
+        },
+        {
+          "url": "https://vreme.com/vreme/u-senci-velikog-brata/",
+          "domain": "vreme.com",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Vreme, 1. oktobar 2014 (Slobodan Georgijev): \u0027On je doveo i Predraga Malog u upravu\u0027; \u0027Andrej zajedno sa Malim napustio ovog leta upravu kluba prepuštajući Čoviću sve upravljačke moći.\u0027",
+          "archive": "http://web.archive.org/web/20241225013625/https://vreme.com/vreme/u-senci-velikog-brata/",
+          "archivedOn": "2024-12-25"
+        },
+        {
+          "url": "http://www.kkcrvenazvezda.rs/index.php/article/odrzana-skupstina-kk-crvena-zvezda",
+          "domain": "kkcrvenazvezda.rs",
+          "type": "webPage",
+          "status": "archived",
+          "quote": "KK Crvena zvezda, obaveštenje \u0027Održana Skupština KK Crvena zvezda\u0027 (arhivirano 30. januara 2014): \u0027treća sednica Predsedništva u 2014. godini na kojoj je formiran novi Upravni odbor kluba u kome se pored članova Predsedništva nalaze i: Luka Petrović, Darko Glišić, Ivan Bošnjak, Đorđe Vučinić, Branislav Baćević, Ivan Bekjarev, Veljko Gudelj, Ranko Žeravica, Nikola Vasiljević, Nemanja Lazić i Predrag Mali. Mandat svih članova Upravnog odbora traje godinu dana.\u0027 Stranica više nije na sajtu kluba.",
+          "archive": "http://web.archive.org/web/20160501135334/http://www.kkcrvenazvezda.rs:80/index.php/article/odrzana-skupstina-kk-crvena-zvezda",
+          "archivedOn": "2016-05-01"
+        },
+        {
+          "url": "http://www.kkcrvenazvezda.rs/index.php/article/podrska-trenerima-promene-u-rukovodstvu",
+          "domain": "kkcrvenazvezda.rs",
+          "type": "webPage",
+          "status": "archived",
+          "quote": "KK Crvena zvezda, obaveštenje \u0027Podrška trenerima, promene u rukovodstvu\u0027 (arhivirano 30. juna 2014): \u0027Druga redovna sednica Skupštine KK Crvena zvezda\u0027; \u0027a promena je bilo i u Upravnom odboru pošto su ostavke podneli: Luka Petrović, Darko Glišić, Predrag Mali i Ivan Bošnjak.\u0027 Stranica više nije na sajtu kluba.",
+          "archive": "http://web.archive.org/web/20160314214559/http://kkcrvenazvezda.rs/index.php/article/podrska-trenerima-promene-u-rukovodstvu",
+          "archivedOn": "2016-03-14"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "edge43",
       "label": "siblings",
       "source": "predrag_mali",
       "target": "sinisa_mali",
@@ -3783,7 +4264,7 @@
   },
   {
     "data": {
-      "id": "edge38",
+      "id": "edge44",
       "label": "ownership connection",
       "source": "sasa_blagojevic",
       "target": "alo_marketing",
@@ -3819,7 +4300,7 @@
   },
   {
     "data": {
-      "id": "edge39",
+      "id": "edge45",
       "label": "ownership connection",
       "source": "sasa_blagojevic",
       "target": "alo_media_system",
@@ -3891,7 +4372,7 @@
   },
   {
     "data": {
-      "id": "edge40",
+      "id": "edge46",
       "label": "ownership connection",
       "source": "sasa_blagojevic",
       "target": "global_media_technology",
@@ -3926,7 +4407,7 @@
   },
   {
     "data": {
-      "id": "edge41",
+      "id": "edge47",
       "label": "alumni",
       "source": "sasa_blagojevic",
       "target": "peta_beogradska_gimnazija",
@@ -3987,7 +4468,7 @@
   },
   {
     "data": {
-      "id": "edge42",
+      "id": "edge48",
       "label": "classmate (same class)",
       "source": "sasa_blagojevic",
       "target": "sinisa_mali",
@@ -4057,7 +4538,7 @@
   },
   {
     "data": {
-      "id": "edge43",
+      "id": "edge49",
       "label": "ownership connection",
       "source": "sasa_blagojevic",
       "target": "trilenium",
@@ -4092,7 +4573,7 @@
   },
   {
     "data": {
-      "id": "edge44",
+      "id": "edge50",
       "label": "ownership connection",
       "source": "sinisa_mali",
       "target": "brigham_holding_finance",
@@ -4128,7 +4609,7 @@
   },
   {
     "data": {
-      "id": "edge45",
+      "id": "edge51",
       "label": "alumni",
       "source": "sinisa_mali",
       "target": "ekonomski_fakultet_university_of_belgrade",
@@ -4163,7 +4644,7 @@
   },
   {
     "data": {
-      "id": "edge46",
+      "id": "edge52",
       "label": "ownership connection",
       "source": "sinisa_mali",
       "target": "etham_invest_finance",
@@ -4199,7 +4680,7 @@
   },
   {
     "data": {
-      "id": "edge47",
+      "id": "edge53",
       "label": "mayor",
       "source": "sinisa_mali",
       "target": "grad_beograd",
@@ -4251,7 +4732,7 @@
   },
   {
     "data": {
-      "id": "edge48",
+      "id": "edge54",
       "label": "alumni",
       "source": "sinisa_mali",
       "target": "peta_beogradska_gimnazija",
@@ -4287,7 +4768,7 @@
   },
   {
     "data": {
-      "id": "edge49",
+      "id": "edge55",
       "label": "political connection",
       "source": "sinisa_mali",
       "target": "sns",
@@ -4322,7 +4803,7 @@
   },
   {
     "data": {
-      "id": "edge50",
+      "id": "edge56",
       "label": "minister",
       "source": "sinisa_mali",
       "target": "vlada_srbije",
@@ -4373,7 +4854,7 @@
   },
   {
     "data": {
-      "id": "edge51",
+      "id": "edge57",
       "label": "Poslovni saradnici",
       "labels": {
         "en": "Business associates",
@@ -4411,7 +4892,7 @@
   },
   {
     "data": {
-      "id": "edge52",
+      "id": "edge58",
       "label": "Svedok osnivanja",
       "labels": {
         "en": "Formation witness",
@@ -4451,7 +4932,51 @@
   },
   {
     "data": {
-      "id": "edge53",
+      "id": "edge59",
+      "label": "ownership connection",
+      "source": "stojan_vujko",
+      "target": "kbv_datacom",
+      "uri": "https://w3id.org/vip/rs/StojanVujko_KBVDatacom",
+      "comment": "Stojan Vujko je suvlasnik KBV Datacom-a: Ivan Bošnjak je na sudu 22. januara 2026. rekao da su on i Vujko „manjinski vlasnici“ te firme (Nova.rs); KRIK je 2019. pisao da je firma „u većinskom vlasništvu istih biznismena – Bošnjaka i Vujka“. Prema registru (APR preko CompanyWall, očitano 10. novembra 2026) udeo je 30%, uz Dragana Kilibardu 30%, Miloša Janjića 5% i Rade Sekulića 5%; datum sticanja nije naveden.",
+      "kind": "OwnershipConnection",
+      "typeLabel": "Ownership connection",
+      "share": 30.0,
+      "file": "data/cases/predrag-mali-milenijum-tim.ttl",
+      "line": 46,
+      "sources": [
+        {
+          "url": "https://www.companywall.rs/firma/kbv-datacom-doo-beograd/MMu9ivZ0",
+          "domain": "companywall.rs",
+          "type": "registryRecord",
+          "status": "published",
+          "quote": "Registarski podaci (APR preko CompanyWall, očitano 10. novembra 2026): vlasnici \u0027Dragan Kilibarda(30,00%)\u0027, \u0027Ivan Bošnjak(30,00%)\u0027, \u0027Miloš Janjić(5,00%)\u0027, \u0027Rade Sekulić(5,00%)\u0027, \u0027Stojan Vujko(30,00%)\u0027.",
+          "archive": "https://web.archive.org/web/20261110214229/https://www.companywall.rs/firma/kbv-datacom-doo-beograd/MMu9ivZ0",
+          "archivedOn": "2026-11-10"
+        },
+        {
+          "url": "https://www.krik.rs/koruptivne-veze-milenijum-tim-ustupio-audi-i-stan-bratu-sinise-malog/",
+          "domain": "krik.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "KRIK, 22. jul 2019: \u0027preregistrovan na „KBV datakom“ (KBV datacom), firmu takođe u većinskom vlasništvu istih biznismena – Bošnjaka i Vujka\u0027.",
+          "archive": "http://web.archive.org/web/20260925060313/https://www.krik.rs/koruptivne-veze-milenijum-tim-ustupio-audi-i-stan-bratu-sinise-malog/",
+          "archivedOn": "2026-09-25"
+        },
+        {
+          "url": "https://nova.rs/vesti/politika/brat-sinise-malog-zaposlen-u-firmi-vlasnika-milenijum-tima-radi-tamo-duze-od-10-godina/",
+          "domain": "nova.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Nova.rs, 26. januar 2026, Bošnjak na sudu: \u0027Ta kompanija nije ćerka firme “Milenijum tima”, ali smo Stojan Vujko i ja manjinski vlasnici iste.\u0027",
+          "archive": "http://web.archive.org/web/20260127051217/https://nova.rs/vesti/politika/brat-sinise-malog-zaposlen-u-firmi-vlasnika-milenijum-tima-radi-tamo-duze-od-10-godina/",
+          "archivedOn": "2026-01-27"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "edge60",
       "label": "ownership connection",
       "source": "stojan_vujko",
       "target": "milenijum_tim",

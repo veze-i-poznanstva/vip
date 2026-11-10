@@ -1144,6 +1144,12 @@ vip:mayor a :WorkRole;
 vip:minister a :WorkRole;
     rdfs:label "Minister"@en, "Ministro"@es, "Ministar"@sr.
 
+vip:boardMember a :WorkRole;
+    rdfs:label "Board member"@en, "Miembro del directorio"@es, "Član upravnog odbora"@sr.
+
+vip:presidencyMember a :WorkRole;
+    rdfs:label "Presidency member"@en, "Miembro de la presidencia"@es, "Član predsedništva"@sr.
+
 # Document types used as evidence
 vip:newsArticle a :DocumentType;
     rdfs:label "News article"@en, "Artículo de prensa"@es, "Novinski članak"@sr.
