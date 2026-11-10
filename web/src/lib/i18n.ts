@@ -23,8 +23,8 @@ export function resolveLanguage(supported: string[], candidates: (string | null 
   return supported[0];
 }
 
-/** Languages the viewer speaks; the first is the fallback. Serbian is in Latin script, as the data. */
-export const supportedLanguages = ['en', 'sr'] as const;
+/** Languages the viewer speaks; the first is the default. Serbian is in Latin script, as the data. */
+export const supportedLanguages = ['sr', 'en'] as const;
 export type Language = (typeof supportedLanguages)[number];
 
 export const dictionaries: Record<Language, Dictionary> = { en, sr };

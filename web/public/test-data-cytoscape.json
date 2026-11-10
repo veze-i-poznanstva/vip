@@ -3280,13 +3280,13 @@
   {
     "data": {
       "id": "edge34",
-      "label": "classmate",
+      "label": "classmate (same class)",
       "source": "sasa_blagojevic",
       "target": "sinisa_mali",
       "uri": "https://w3id.org/vip/rs/SasaBlagojevic_SinisaMali_Classmates",
       "comment": "Saša Blagojević i Siniša Mali bili su u istom odeljenju Pete beogradske gimnazije krajem osamdesetih, prema Pištaljci i kasnijim izveštajima. Tačne godine nisu navedene; navod o istom odeljenju nije izveden samo iz pohađanja iste škole.",
       "kind": "Classmate",
-      "typeLabel": "Classmate",
+      "typeLabel": "Classmate (same class)",
       "file": "data/cases/peta-beogradska-gimnazija.ttl",
       "line": 121,
       "sources": [

@@ -39,6 +39,10 @@ describe('resolveLanguage', () => {
   it('falls back to the first supported language when nothing matches', () => {
     expect(resolveLanguage(supported, ['de'])).toBe('en');
   });
+
+  it('the viewer itself falls back to Serbian when nothing is chosen', () => {
+    expect(resolveLanguage([...supportedLanguages], ['de'])).toBe('sr');
+  });
 });
 
 describe('dictionaries', () => {

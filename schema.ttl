@@ -664,8 +664,8 @@ bio:concludingEvent rdf:type rdf:Property ,
 
 :Classmate a owl:Class;
            rdfs:subClassOf :SocialConnection;
-           rdfs:label "Classmate"@en, "Compañero de curso o clases"@es, "Školski drug"@sr;
-           rdfs:comment "Classmate relationship between people"@en, "Relación de compañeros de clase entre personas"@es, "Odnos školskih drugova"@sr.
+           rdfs:label "Classmate (same class)"@en, "Compañero de la misma clase"@es, "Isti razred"@sr;
+           rdfs:comment "People who were in the same class (odeljenje) at school, as a source states it; attending the same school is an educational connection, not this"@en, "Personas que estuvieron en la misma clase en la escuela, según lo afirma una fuente; asistir a la misma escuela es una conexión educativa, no esta"@es, "Osobe koje su išle u isti razred (odeljenje), kako izvor navodi; pohađanje iste škole je obrazovna veza, a ne ova"@sr.
 
 ####################################### 
 # Educational Connections

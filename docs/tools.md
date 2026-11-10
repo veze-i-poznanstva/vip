@@ -60,7 +60,7 @@ requirement, because the build downloads its own Node.js:
 ./gradlew :web:npmDev           # start the viewer; stop it with Ctrl+C
 ```
 
-Then open <http://localhost:5173/>, or <http://localhost:5173/?lang=sr> for Serbian. Type a name
+Then open <http://localhost:5173/> (Serbian), or <http://localhost:5173/?lang=en> for English. Type a name
 into the search box, click a node to make it the centre, and double-click to add its connections. Rest the pointer on a
 node to read its description and open its Wikipedia article, if it has one; the details panel also
 links its Wikidata item. The viewer draws one edge per relationship, labelled with its latest

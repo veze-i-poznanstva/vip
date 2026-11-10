@@ -69,7 +69,7 @@ i stavku na Vikidati.
 PoderVocab modeluje agente i veze među njima. Osobe i organizacije su `foaf:Person` i
 `foaf:Organization`. Organizacije se dele na firme, političke, državne, nevladine, neprofitne,
 međunarodne, verske i akademske. Veze su samostalni resursi sa sopstvenom taksonomijom:
-prijateljstvo, školski drugovi, obrazovne veze, radne uloge, preuzimanja i spajanja firmi,
+prijateljstvo, isti razred, obrazovne veze, radne uloge, preuzimanja i spajanja firmi,
 vlasništvo, članstvo, finansiranje, političke, emotivne i veze preko događaja u vestima, između
 ostalog. Poreklo podataka nose `SourcedEntity`, `SourceReliability` i `Documentation`. Oznake i
 komentari su na engleskom, španskom i srpskom.

@@ -206,10 +206,10 @@
   
   const layouts = ['cose', 'circle', 'concentric', 'breadthfirst', 'grid', 'random'];
 
-  // The language comes from ?lang=, then the last choice on this browser, then the browser itself.
+  // The language comes from ?lang=, then the last choice on this browser, else Serbian; the browser's own language is not consulted.
   const stored = (key: string): string | null => { try { return localStorage.getItem(key); } catch { return null; } };
   language.set(resolveLanguage(supportedLanguages as unknown as string[], [
-    new URLSearchParams(location.search).get('lang'), stored('lang'), ...navigator.languages
+    new URLSearchParams(location.search).get('lang'), stored('lang')
   ]) as Language);
   $: {
     document.documentElement.lang = $language;

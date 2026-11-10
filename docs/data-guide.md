@@ -70,7 +70,7 @@ public identifiers of an entity, its Wikipedia article and its Wikidata item.
 PoderVocab models agents and the connections between them. People and organizations are
 `foaf:Person` and `foaf:Organization`. Organizations are specialised into company, political,
 governmental, non-governmental, non-profit, international, religious and academic kinds.
-Connections are first-class resources with their own taxonomy: friendship, classmate,
+Connections are first-class resources with their own taxonomy: friendship, same class,
 educational, work role, company acquisition and merger, ownership, membership, financier,
 political, sentimental and news-event connections, among others. Provenance is carried by
 `SourcedEntity`, `SourceReliability` and `Documentation`. Labels and comments are in English,

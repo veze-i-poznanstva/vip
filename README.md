@@ -66,7 +66,7 @@ Java 17 or newer is the only requirement; the build downloads the rest.
 ./gradlew verify                # run every check
 ```
 
-Open <http://localhost:5173/>, or <http://localhost:5173/?lang=sr> for Serbian. Type a name into the
+Open <http://localhost:5173/> (Serbian), or <http://localhost:5173/?lang=en> for English. Type a name into the
 search box, click a node to make it the centre, double-click to add its connections, and rest the
 pointer on a node to read its description. The Connect button next to the search box takes a
 From and a To, like directions in a map, and shows the shortest paths between them. The

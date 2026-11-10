@@ -60,7 +60,7 @@ Java, jer build sam preuzima Node.js:
 ./gradlew :web:npmDev           # pokreće aplikaciju; zaustavlja se sa Ctrl+C
 ```
 
-Zatim otvorite <http://localhost:5173/?lang=sr>, ili <http://localhost:5173/> za engleski. Ukucajte
+Zatim otvorite <http://localhost:5173/> (srpski), ili <http://localhost:5173/?lang=en> za engleski. Ukucajte
 ime u polje za pretragu, kliknite na čvor da ga stavite u središte, a dvostrukim klikom dodajte
 njegove veze. Zadržite pokazivač na čvoru da pročitate njegov opis i otvorite članak na Vikipediji, ako postoji;
 panel sa detaljima vodi i do njegove stavke na Vikidati. Pregledač crta jednu ivicu po odnosu, sa

@@ -66,7 +66,7 @@ Potrebna je samo Java 17 ili novija; build preuzima sve ostalo.
 ./gradlew verify                # pokreće sve provere
 ```
 
-Otvorite <http://localhost:5173/?lang=sr>, ili <http://localhost:5173/> za engleski. Ukucajte ime u
+Otvorite <http://localhost:5173/> (srpski), ili <http://localhost:5173/?lang=en> za engleski. Ukucajte ime u
 polje za pretragu, kliknite na čvor da ga stavite u središte, dvostrukim klikom dodajte njegove
 veze, a zadržite pokazivač na čvoru da pročitate njegov opis. Dugme Poveži pored polja za pretragu
 traži Od i Do, kao uputstva na mapi, i prikazuje najkraće putanje između njih.
