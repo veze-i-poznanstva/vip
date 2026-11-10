@@ -16,6 +16,19 @@ data class Source(
     val archivedOn: String? = null
 )
 
+/** One documented state of a relationship: the record's own share, roles, dates, comment, location and sources. */
+data class ConnectionState(
+    val uri: String? = null,
+    val share: Double? = null,
+    val roles: List<String>? = null,
+    val start: String? = null,
+    val end: String? = null,
+    val comment: String? = null,
+    val file: String? = null,
+    val line: Int? = null,
+    val sources: List<Source>? = null
+)
+
 /** A literal-valued statement about an agent, with the vocabulary's label for its property. */
 data class Fact(val property: String, val label: String, val value: String)
 

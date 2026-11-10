@@ -381,6 +381,10 @@
       }
     },
     {
+      selector: 'edge[end]',
+      style: { 'line-style': 'dashed' }
+    },
+    {
       selector: 'edge[label="rdfs:subClassOf"]',
       style: {
         'line-style': 'dashed',

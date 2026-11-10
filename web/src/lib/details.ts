@@ -16,12 +16,46 @@ export interface Source {
 export interface Fact { property: string; label: string; value: string }
 
 /** The optional fields the converter adds to an edge's data. */
+export interface ConnectionState {
+  uri?: string;
+  share?: number;
+  roles?: string[];
+  start?: string;
+  end?: string;
+  comment?: string;
+  file?: string;
+  line?: number;
+  sources?: Source[];
+}
+
 export interface ConnectionFields {
   label?: string;
   kind?: string;
   typeLabel?: string;
   roles?: string[];
   share?: number;
+  uri?: string;
+  start?: string;
+  end?: string;
+  comment?: string;
+  file?: string;
+  line?: number;
+  sources?: Source[];
+  /** Dated states of the relationship, oldest first; absent for a single record. */
+  history?: ConnectionState[];
+}
+
+/** An ended relationship has a recorded end; a missing end is unknown, never "ongoing". */
+export const isEnded = (edge: object): boolean => {
+  const end = (edge as { end?: unknown }).end;
+  return typeof end === 'string' && end !== '';
+};
+
+/** The dated states of the relationship, oldest first; one state built from the edge when it has no history. */
+export function statesOf(edge: ConnectionFields): ConnectionState[] {
+  if (Array.isArray(edge.history) && edge.history.length > 0) return edge.history;
+  const { uri, share, roles, start, end, comment, file, line, sources } = edge;
+  return [{ uri, share, roles, start, end, comment, file, line, sources }];
 }
 
 export interface ConnectionRow {
@@ -69,7 +103,8 @@ const withShare = (text: string, share: number | undefined) => (typeof share ===
 /** The label drawn on the canvas: the translated kind and share when known, else the converter's label. */
 export function edgeLabel(edge: ConnectionFields, t: Translate): string {
   const kind = kindText(edge, t);
-  return kind === undefined ? edge.label ?? '' : withShare(kind, edge.share);
+  const text = kind === undefined ? edge.label ?? '' : withShare(kind, edge.share);
+  return isEnded(edge) ? `${text} (${t('period.until', { end: edge.end as string })})` : text;
 }
 
 /** The tie as the panel words it: kind, share and roles. */

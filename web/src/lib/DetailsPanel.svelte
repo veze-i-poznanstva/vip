@@ -1,7 +1,7 @@
 <script lang="ts">
   import { createEventDispatcher } from 'svelte';
   import { t } from './i18n';
-  import { connectionKind, connectionsOf, connectionTitle, period, wikidataPage } from './details';
+  import { connectionKind, connectionsOf, connectionTitle, githubLinks, isEnded, period, statesOf, wikidataPage } from './details';
   import type { ConnectionFields, Fact, PanelContent, Source } from './details';
   import type { GraphEdge, GraphIndex } from './graph';
   import SourceList from './SourceList.svelte';
@@ -23,6 +23,8 @@
   const factLabel = (fact: Fact) => (knownFacts.includes(fact.property) ? $t('fact.' + fact.property) : fact.label);
   const str = (value: unknown): string | undefined => (typeof value === 'string' && value !== '' ? value : undefined);
   const list = <T,>(value: unknown): T[] => (Array.isArray(value) ? (value as T[]) : []);
+  const stateCount = (e: GraphEdge) => statesOf(e as unknown as ConnectionFields).length;
+  const strings = (value: unknown): string[] => list<string>(value);
   const safeLink = (url: string | undefined) => (url && /^https?:\/\//i.test(url) ? url : undefined);
 
   const title = (e: GraphEdge, tr: typeof $t) => connectionTitle(e as unknown as ConnectionFields, tr);
@@ -38,12 +40,14 @@
   $: edgeSources = edge ? list<Source>(edge.sources) : [];
   $: fromName = content.kind === 'edge' ? content.from?.label ?? '?' : '';
   $: toName = content.kind === 'edge' ? content.to?.label ?? '?' : '';
+  $: states = edge ? statesOf(edge as unknown as ConnectionFields) : [];
   $: edgeFacts = edge
     ? [
         { key: 'details.type', value: kindOf(edge, $t) },
         ...(list<string>(edge.roles).length > 0 ? [{ key: 'details.roles', value: list<string>(edge.roles).join(', ') }] : []),
         ...(typeof edge.share === 'number' ? [{ key: 'details.share', value: `${edge.share}%` }] : []),
         { key: 'details.period', value: period(str(edge.start), str(edge.end), $t) },
+        ...(isEnded(edge) ? [] : [{ key: 'details.continues', value: $t('details.endUnknown') }]),
         ...(str(edge.comment) ? [{ key: 'details.comment', value: str(edge.comment)! }] : [])
       ]
     : [];
@@ -97,6 +101,7 @@
               <button type="button" class="link tie" on:click={() => dispatch('selectEdge', row.edge.id)}>
                 {title(row.edge, $t)}
                 <span class="when">{period(str(row.edge.start), str(row.edge.end), $t)}</span>
+                {#if stateCount(row.edge) > 1}<span class="count">{$t('details.stateCount', { count: stateCount(row.edge) })}</span>{/if}
                 {#if list(row.edge.sources).length > 0}<span class="count">{$t('details.sourceCount', { count: list(row.edge.sources).length })}</span>{/if}
               </button>
             </div>
@@ -115,6 +120,7 @@
     </header>
     <h2>{fromName} → {toName}</h2>
     <p class="quiet">{title(edge, $t)}</p>
+    {#if isEnded(edge)}<p><span class="chip">{$t('details.ended')}</span></p>{/if}
     <section>
       <dl>
         {#each edgeFacts as fact}
@@ -123,7 +129,29 @@
         {/each}
       </dl>
     </section>
-    <SourceList sources={edgeSources} />
+    {#if states.length > 1}
+      <section>
+        <h3>{$t('details.history')}</h3>
+        <ol class="history">
+          {#each states as state, i}
+            <li>
+              <div class="state-head">
+                <span class="when">{period(str(state.start), str(state.end), $t)}</span>
+                {#if typeof state.share === 'number'}<span>{state.share}%</span>{/if}
+                {#if strings(state.roles).length > 0}<span>{strings(state.roles).join(', ')}</span>{/if}
+                {#if i === states.length - 1}<span class="chip">{$t('details.latest')}</span>{/if}
+              </div>
+              {#if str(state.comment)}<p class="quiet">{state.comment}</p>{/if}
+              <SourceList sources={state.sources} />
+              {#if githubLinks(state.file, state.line)}
+                <a href={githubLinks(state.file, state.line)?.record} target="_blank" rel="noopener noreferrer">{$t('details.record')}</a>
+              {/if}
+            </li>
+          {/each}
+        </ol>
+      </section>
+    {/if}
+    {#if states.length <= 1}<SourceList sources={edgeSources} />{/if}
     <DataLinks file={str(edge.file)} line={typeof edge.line === 'number' ? edge.line : undefined} permalink={permalink(focusId ?? edge.source)}
       on:report={() => edge && dispatch('report', { subject: `${fromName} – ${toName}`, uri: str(edge.uri) })} />
   {/if}
@@ -151,5 +179,8 @@
   .row-main { display: flex; flex-direction: column; align-items: flex-start; gap: 0.1rem; }
   .name { font-weight: 600; }
   .tie { display: flex; flex-wrap: wrap; gap: 0.1rem 0.5rem; }
+  .history { margin: 0; padding-left: 1.2rem; }
+  .history li { padding: 0.35rem 0; }
+  .state-head { display: flex; flex-wrap: wrap; gap: 0.1rem 0.5rem; align-items: center; font-weight: 600; }
   .when, .count { color: #868e96; font-size: 0.85rem; }
 </style>

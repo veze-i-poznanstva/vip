@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { buildIndex } from './graph';
-import { connectionsOf, connectionTitle, edgeLabel, githubLinks, groupSources, panelContent, period, wikidataPage } from './details';
+import { connectionsOf, connectionTitle, edgeLabel, githubLinks, groupSources, panelContent, period, statesOf, isEnded, wikidataPage } from './details';
 import type { Source } from './details';
 
 const dictionary: Record<string, string> = {
@@ -162,5 +162,43 @@ describe('panelContent', () => {
   });
   it('ignores an unknown focus', () => {
     expect(panelContent(index, 'nope', null)).toBeNull();
+  });
+});
+
+describe('statesOf', () => {
+  it('returns the history as is when present', () => {
+    const history = [{ start: '2019', end: '2022-07', share: 40 }, { start: '2022-08', share: 100 }];
+    expect(statesOf({ history, share: 100 })).toBe(history);
+  });
+  it('builds one state from the edge when there is no history', () => {
+    const sources = [{ url: 'https://a.rs/x', domain: 'a.rs' }];
+    expect(statesOf({ share: 50, start: '2019', end: '2020', sources })).toEqual([
+      { uri: undefined, share: 50, roles: undefined, start: '2019', end: '2020', comment: undefined, file: undefined, line: undefined, sources }
+    ]);
+  });
+  it('treats an empty history as absent', () => {
+    expect(statesOf({ history: [], share: 10 })).toHaveLength(1);
+  });
+});
+
+describe('isEnded', () => {
+  it('is true only for a non-empty string end', () => {
+    expect(isEnded({ end: '2022-07' })).toBe(true);
+    expect(isEnded({ end: '' })).toBe(false);
+    expect(isEnded({})).toBe(false);
+    expect(isEnded({ end: 2022 })).toBe(false);
+    expect(isEnded({ end: null })).toBe(false);
+  });
+});
+
+describe('edgeLabel for an ended relationship', () => {
+  it('appends the end in parentheses', () => {
+    expect(edgeLabel({ kind: 'OwnershipConnection', share: 100, end: '2022-07', label: 'x' }, t)).toBe('owns 100% (until 2022-07)');
+  });
+  it('leaves an open or unknown end alone', () => {
+    expect(edgeLabel({ kind: 'OwnershipConnection', share: 100, label: 'x' }, t)).toBe('owns 100%');
+  });
+  it('also marks the fallback label', () => {
+    expect(edgeLabel({ label: 'friend', end: '2001' }, t)).toBe('friend (until 2001)');
   });
 });

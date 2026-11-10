@@ -35,7 +35,8 @@ data class ElementData(
     val end: String? = null,
     val file: String? = null,
     val line: Int? = null,
-    val sources: List<Source>? = null
+    val sources: List<Source>? = null,
+    val history: List<ConnectionState>? = null
 )
 
 fun main(args: Array<String>) {
@@ -121,11 +122,12 @@ private class GraphBuilder(
         }
     }
     private fun nodeId(resource: Resource): String = nodeIds.getValue(resource.uri)
-    private var edgeCounter = 0
 
     fun build(): List<CytoscapeElement> {
         val nodes = agents.map(::nodeElement)
-        return nodes + connectionEdges() + dedupe(directEdges())
+        val edges = (mergeRelationships(connectionEdges()) + dedupe(directEdges()))
+            .mapIndexed { i, e -> e.copy(data = e.data.copy(id = "edge$i")) }
+        return nodes + edges
     }
 
     private fun instancesOf(classUri: String): List<Resource> =
@@ -252,6 +254,25 @@ private class GraphBuilder(
         }
     }
 
+    /**
+     * One edge per relationship (kind, label, source, target, roles): the latest documented state,
+     * with every state oldest first as its history when there are several. Dates compare as written;
+     * a missing start sorts first, a missing end last. The edge keeps the position of its first record.
+     */
+    private fun mergeRelationships(edges: List<CytoscapeElement>): List<CytoscapeElement> =
+        edges.groupBy { listOf(it.data.kind, it.data.label, it.data.source, it.data.target, it.data.roles.orEmpty()) }
+            .values.map { group ->
+                val states = group.sortedWith(
+                    compareBy<CytoscapeElement, String?>(nullsFirst(), { it.data.start })
+                        .thenBy(nullsLast()) { it.data.end }
+                        .thenBy { it.data.uri ?: "" }
+                ).map { it.data }
+                val latest = states.last()
+                CytoscapeElement(latest.copy(history = if (states.size < 2) null else states.map {
+                    ConnectionState(it.uri, it.share, it.roles, it.start, it.end, it.comment, it.file, it.line, it.sources)
+                }))
+            }
+
     private fun rolesOf(connection: Resource): List<String>? =
         data.listObjectsOfProperty(connection, data.createProperty(Vocab.HAS_WORK_ROLE)).toList()
             .filter { it.isResource }.mapNotNull { englishLabel(it.asResource()) }.sorted().ifEmpty { null }
@@ -281,7 +302,7 @@ private class GraphBuilder(
 
     private fun edge(from: Resource, to: Resource, label: String) = CytoscapeElement(
         data = ElementData(
-            id = "edge${edgeCounter++}",
+            id = "",
             source = nodeId(from),
             target = nodeId(to),
             label = label

@@ -63,7 +63,11 @@ requirement, because the build downloads its own Node.js:
 Then open <http://localhost:5173/>, or <http://localhost:5173/?lang=sr> for Serbian. Type a name
 into the search box, click a node to make it the centre, and double-click to add its connections. Rest the pointer on a
 node to read its description and open its Wikipedia article, if it has one; the details panel also
-links its Wikidata item.
+links its Wikidata item. The viewer draws one edge per relationship, labelled with its latest
+documented state (for example "owns 90%"); the panel shows the history, every state with its
+period, share, comment and sources. An ended relationship is drawn dashed with "until" and the end
+in the label. A missing end date means unknown, and the panel says so; the viewer never says
+"current".
 
 Schema tools take one file (`-Pfile`, default `schema.ttl`); data tools take a directory tree of
 Turtle files or a single file (`-Pdata`, default `data`). Every tool loads with Apache Jena,
@@ -186,7 +190,10 @@ OrganizationShape, ConnectionShape, DocumentationShape and FinancialInformationS
 is validated together with what the vocabulary entails (subclasses, subproperties, domains and
 ranges), so a `foaf:Person` satisfies a constraint that asks for a `foaf:Agent` without the data
 repeating the hierarchy. Each citation of a connection must quote its supporting passage in `rdfs:comment`. Reports each
-violation with its focus node and message.
+violation with its focus node and message. Two checks cover ownership: `vip:ownershipShare` is one
+decimal percentage above 0 and at most 100, and for each company the shares of records that may
+apply at the same time total at most 100%. Records known to follow one another are not summed; an
+undated record is never known to be disjoint.
 
 ### OWL consistency checker
 

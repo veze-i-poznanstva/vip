@@ -304,13 +304,25 @@ class TtlToCytoscapeTest {
     }
 
     @Test
-    fun `two connections with the same label between the same pair draw two edges, one per connection`() {
+    fun `two records of the same kind between the same pair are one relationship with a two state history`() {
         val elements = convert("""
             ex:A a foaf:Person . ex:B a foaf:Person .
             _:c1 a :SocialConnection ; bio:participant ex:A, ex:B .
             _:c2 a :SocialConnection ; bio:participant ex:B, ex:A .
         """)
-        assertEquals(2, elements.edges().size)
+        assertEquals(1, elements.edges().size)
+        assertEquals(2, elements.edges().single().data.history!!.size)
+    }
+
+    @Test
+    fun `two records of the same kind with different own labels between the same pair are two edges`() {
+        val elements = convert("""
+            ex:A a foaf:Person . ex:B a foaf:Person .
+            _:c1 a :SocialConnection ; rdfs:label "Poslovni partneri" ; bio:participant ex:A, ex:B .
+            _:c2 a :SocialConnection ; rdfs:label "Suosnivači" ; bio:participant ex:A, ex:B .
+        """)
+        assertEquals(listOf("Poslovni partneri", "Suosnivači"), elements.edges().map { it.data.label ?: "" }.sorted())
+        assertTrue(elements.edges().all { it.data.history == null })
     }
 
     @Test
@@ -547,14 +559,115 @@ class TtlToCytoscapeTest {
     }
 
     @Test
-    fun `two connections between the same pair are two edges with their own dates`() {
-        val edges = convert("""
+    fun `two records of one relationship become one edge with the latest state and the history oldest first`() {
+        val edge = convert("""
             @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
             ex:A a foaf:Person . ex:B a :Company .
             ex:Own1 a vip:OwnershipConnection ; vip:owner ex:A ; vip:ownedCompany ex:B ; :connectionStartDate "2003"^^xsd:gYear .
             ex:Own2 a vip:OwnershipConnection ; vip:owner ex:A ; vip:ownedCompany ex:B ; :connectionStartDate "2010"^^xsd:gYear .
+        """).edges().single().data
+        assertEquals("2010", edge.start)
+        assertEquals(listOf("2003", "2010"), edge.history!!.map { it.start })
+    }
+
+    @Test
+    fun `a relationship with a single record has no history`() {
+        val data = convert("""
+            ex:A a foaf:Person . ex:B a :Company .
+            ex:Own a vip:OwnershipConnection ; vip:owner ex:A ; vip:ownedCompany ex:B .
+        """).edges().single().data
+        assertNull(data.history)
+    }
+
+    @Test
+    fun `the latest state is the open record when no record has a start`() {
+        val data = convert("""
+            @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+            ex:A a foaf:Person . ex:B a :Company .
+            ex:OwnA a vip:OwnershipConnection ; vip:owner ex:A ; vip:ownedCompany ex:B ; :connectionEndDate "2020"^^xsd:gYear .
+            ex:OwnB a vip:OwnershipConnection ; vip:owner ex:A ; vip:ownedCompany ex:B .
+        """).edges().single().data
+        assertNull(data.end)
+        assertEquals(listOf(null to "2020", null to null), data.history!!.map { it.start to it.end })
+    }
+
+    @Test
+    fun `an undated record sorts before dated ones`() {
+        val data = convert("""
+            @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+            ex:A a foaf:Person . ex:B a :Company .
+            ex:OwnA a vip:OwnershipConnection ; vip:owner ex:A ; vip:ownedCompany ex:B .
+            ex:OwnB a vip:OwnershipConnection ; vip:owner ex:A ; vip:ownedCompany ex:B ; :connectionStartDate "2010"^^xsd:gYear .
+        """).edges().single().data
+        assertEquals("2010", data.start)
+        assertEquals(listOf(null, "2010"), data.history!!.map { it.start })
+    }
+
+    @Test
+    fun `the edge carries the latest state's share, uri, comment and sources, and each state keeps its own`() {
+        val data = convert("""
+            @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+            ex:A a foaf:Person . ex:B a :Company .
+            ex:OwnA a vip:OwnershipConnection ; vip:owner ex:A ; vip:ownedCompany ex:B ; vip:ownershipShare 100.0 ;
+                :connectionStartDate "2025-12-24"^^xsd:date ; :connectionEndDate "2026-02"^^xsd:gYearMonth ;
+                rdfs:comment "first" ; :hasDocumentation ${doc("https://a.example/")} .
+            ex:OwnB a vip:OwnershipConnection ; vip:owner ex:A ; vip:ownedCompany ex:B ; vip:ownershipShare 90.0 ;
+                :connectionStartDate "2026-02"^^xsd:gYearMonth ;
+                rdfs:comment "second" ; :hasDocumentation ${doc("https://b.example/")} .
+        """).edges().single().data
+        assertEquals(90.0, data.share)
+        assertTrue(data.uri!!.endsWith("OwnB"))
+        assertEquals("second", data.comment)
+        assertEquals("b.example", data.sources!!.single().domain)
+        val first = data.history!![0]
+        assertEquals(100.0, first.share)
+        assertEquals("first", first.comment)
+        assertEquals("a.example", first.sources!!.single().domain)
+        assertEquals(90.0, data.history!![1].share)
+    }
+
+    @Test
+    fun `records of different kinds between the same pair are different edges`() {
+        val edges = convert("""
+            ex:A a foaf:Person . ex:B a :Company .
+            ex:Own a vip:OwnershipConnection ; vip:owner ex:A ; vip:ownedCompany ex:B .
+            ex:W a :WorkConnection ; bio:participant ex:A ; :hasEconomicOrganizationParticipant ex:B .
         """).edges()
-        assertEquals(listOf("2003", "2010"), edges.map { it.data.start })
+        assertEquals(2, edges.size)
+        assertTrue(edges.all { it.data.history == null })
+    }
+
+    @Test
+    fun `records with different roles are different edges`() {
+        val edges = convert("""
+            ex:A a foaf:Person . ex:N a :NonProfitOrganization .
+            ex:W1 a :WorkConnection ; bio:participant ex:A ; :hasEconomicOrganizationParticipant ex:N ; :hasWorkRole vip:founder .
+            ex:W2 a :WorkConnection ; bio:participant ex:A ; :hasEconomicOrganizationParticipant ex:N ; :hasWorkRole vip:boardChair .
+        """).edges()
+        assertEquals(2, edges.size)
+        assertTrue(edges.all { it.data.history == null })
+    }
+
+    @Test
+    fun `edge ids stay contiguous after merging`() {
+        val edges = convert("""
+            ex:A a foaf:Person . ex:B a :Company . ex:C a foaf:Person . ex:D a :Company .
+            ex:Own1 a vip:OwnershipConnection ; vip:owner ex:A ; vip:ownedCompany ex:B .
+            ex:Own2 a vip:OwnershipConnection ; vip:owner ex:A ; vip:ownedCompany ex:B .
+            ex:Own3 a vip:OwnershipConnection ; vip:owner ex:C ; vip:ownedCompany ex:D .
+        """).edges()
+        assertEquals(listOf("edge0", "edge1"), edges.map { it.data.id })
+    }
+
+    @Test
+    fun `the history entries carry file and line`() {
+        val data = convertFiles(mapOf(
+            "entities/ana.ttl" to "ex:Ana a foaf:Person .",
+            "entities/acme.ttl" to "ex:Acme a :Company .",
+            "cases/c.ttl" to "# first\nex:Own1 a vip:OwnershipConnection ; vip:owner ex:Ana ; vip:ownedCompany ex:Acme .\nex:Own2 a vip:OwnershipConnection ; vip:owner ex:Ana ; vip:ownedCompany ex:Acme ."
+        )).edges().single().data
+        assertEquals(listOf("data/cases/c.ttl", "data/cases/c.ttl"), data.history!!.map { it.file })
+        assertEquals(listOf(8, 9), data.history!!.map { it.line })
     }
 
     @Test

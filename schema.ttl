@@ -1264,6 +1264,47 @@ vip:removed a :DocumentStatus;
         """
     ].
 
+:OwnershipConnectionShape a sh:NodeShape;
+    sh:targetClass vip:OwnershipConnection;
+    sh:property [
+        sh:path vip:ownershipShare;
+        sh:maxCount 1;
+        sh:datatype xsd:decimal;
+        sh:minExclusive 0;
+        sh:maxInclusive 100;
+        sh:message "An ownership share is one decimal percentage above 0 and at most 100, such as 51.0"@en, "Una participación es un único porcentaje decimal mayor que 0 y como máximo 100, por ejemplo 51.0"@es, "Vlasnički udeo je jedan decimalni procenat veći od 0 i najviše 100, na primer 51.0"@sr
+    ].
+
+# Shares that may apply at the same time are summed; records known to follow one another (one ends no later than
+# the other starts, on the common date precision) are not. An undated record is never known to be disjoint.
+:OwnershipTotalShape a sh:NodeShape;
+    sh:targetObjectsOf vip:ownedCompany;
+    sh:message "The ownership shares of a company that may apply at the same time total more than 100%; date the records so that an earlier state ends where the later one starts"@en, "Las participaciones de una empresa que pueden aplicarse al mismo tiempo suman más del 100%; date los registros de modo que un estado anterior termine donde empieza el posterior"@es, "Vlasnički udeo jedne firme koji mogu da važe u isto vreme zbirno prelaze 100%; datirajte zapise tako da se ranije stanje završava tamo gde kasnije počinje"@sr;
+    sh:sparql [
+        sh:select """
+            PREFIX : <http://poderopedia.com/vocab/>
+            PREFIX vip: <https://w3id.org/vip/vocab#>
+            SELECT $this ?value ?total WHERE {
+              {
+                SELECT ?company ?value (SUM(?share) AS ?total) WHERE {
+                  ?value vip:ownedCompany ?company ; vip:ownershipShare ?own .
+                  ?other vip:ownedCompany ?company ; vip:ownershipShare ?share .
+                  OPTIONAL { ?value :connectionStartDate ?rs }
+                  OPTIONAL { ?value :connectionEndDate ?re }
+                  OPTIONAL { ?other :connectionStartDate ?os }
+                  OPTIONAL { ?other :connectionEndDate ?oe }
+                  FILTER (?other = ?value || !(
+                    (bound(?oe) && bound(?rs) && SUBSTR(STR(?oe), 1, IF(STRLEN(STR(?oe)) < STRLEN(STR(?rs)), STRLEN(STR(?oe)), STRLEN(STR(?rs)))) <= SUBSTR(STR(?rs), 1, IF(STRLEN(STR(?oe)) < STRLEN(STR(?rs)), STRLEN(STR(?oe)), STRLEN(STR(?rs)))))
+                    ||
+                    (bound(?re) && bound(?os) && SUBSTR(STR(?re), 1, IF(STRLEN(STR(?re)) < STRLEN(STR(?os)), STRLEN(STR(?re)), STRLEN(STR(?os)))) <= SUBSTR(STR(?os), 1, IF(STRLEN(STR(?re)) < STRLEN(STR(?os)), STRLEN(STR(?re)), STRLEN(STR(?os)))))
+                  ))
+                } GROUP BY ?company ?value
+              }
+              FILTER (?company = $this && ?total > 100)
+            }
+        """
+    ].
+
 :FinancialInformationShape a sh:NodeShape;
     sh:targetClass :FinancialInformation;
     sh:property [

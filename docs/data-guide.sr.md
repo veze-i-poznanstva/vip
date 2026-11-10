@@ -23,12 +23,22 @@ Sedam pravila važi za svaki zapis. Validatori sprovode njihov oblik; da li izvo
   između osobe i stranke. Zaposlenje i mesta u odborima su `:WorkConnection` sa jednom ili više
   radnih uloga i opcionim datumima početka i kraja. Školovanje je
   `:AlumniEducationalConnection`. Vlasništvo nad firmom je `vip:OwnershipConnection` sa opcionim
-  udelom. Svaka veza nosi sopstvenu dokumentaciju, pa je dokaz za „X sedi u odboru Y“ odvojen
-  od dokaza da X i Y postoje.
+  udelom (decimalni procenat, od 0 do 100). Svaka veza nosi sopstvenu dokumentaciju, pa je dokaz
+  za „X sedi u odboru Y“ odvojen od dokaza da X i Y postoje.
 - **Vreme je deo tvrdnje.** Veza nosi `:connectionStartDate` i `:connectionEndDate` onoliko
   precizno koliko izvor navodi: `xsd:gYear`, `xsd:gYearMonth` ili `xsd:date`, nikad izmišljeni
   1. januar. Datum koji nedostaje znači da je nepoznat, a ne da veza još traje. Uloge obavljane u
   različito vreme su zasebne veze. Oblici odbijaju kraj pre početka.
+  Odnos ima jedan identitet, ali se piše kao jedan datiran zapis po stanju: Alo Media System je
+  posedovao 100% Best Media Team od 24. decembra 2025, a 90% od februara 2026, pa postoje dva
+  zapisa `vip:OwnershipConnection` između istih strana, prvi se završava u `2026-02` gde drugi
+  počinje, a svaki ima sopstvene izvore. Ništa novo se ne deklariše; izgradnja izvodi odnos iz
+  zapisa (ista vrsta veze, iste strane, iste uloge). Za svaku firmu, udeli zapisa koji mogu važiti
+  istovremeno ne smeju zbirno prelaziti 100%; zapisi za koje se zna da slede jedan drugog ne
+  sabiraju se, a dve nedatirane ili otvorene tvrdnje koje zajedno prelaze 100% ruše izgradnju dok
+  se jedna ne datira ili ukloni. Pregledač spaja zapise jednog odnosa u jednu ivicu sa oznakom
+  poslednjeg dokumentovanog stanja, a istoriju čuva u panelu sa detaljima; odnos čije poslednje
+  stanje ima datum kraja crta se isprekidano. Kraj koji nedostaje je nepoznat, nikad „aktuelan“.
 - **Svaki pojam ima oznake na engleskom, španskom i srpskom.** Svaka klasa, svojstvo i
   individua u rečniku i svaka SHACL poruka nose tekst sa oznakama `@en`, `@es` i `@sr`, tako da
   se korisnički interfejsi i izveštaji validacije mogu prikazati na bilo kom od tri jezika.

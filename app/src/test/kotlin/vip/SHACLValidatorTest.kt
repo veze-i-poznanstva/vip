@@ -130,6 +130,24 @@ class SHACLValidatorTest {
         rs:AnaSNS a :PoliticalConnection ; :personParticipant rs:Ana ; :politicalParticipant rs:SNS ; $quoted $dates .
     """))
 
+    private fun ownerships(records: String) = validateShacl(schema, data("""
+        rs:OwnerA a :Company ; foaf:name "Owner A" ; $documented .
+        rs:OwnerB a :Company ; foaf:name "Owner B" ; $documented .
+        rs:OwnerC a :Company ; foaf:name "Owner C" ; $documented .
+        rs:Firm a :Company ; foaf:name "Firm" ; $documented .
+        $records
+    """))
+
+    @Test
+    fun `ownership shares of different owners cannot total more than one hundred percent`() {
+        val report = ownerships("""
+            rs:A a vip:OwnershipConnection ; vip:owner rs:OwnerA ; vip:ownedCompany rs:Firm ; vip:ownershipShare 90.0 ; $quoted .
+            rs:B a vip:OwnershipConnection ; vip:owner rs:OwnerB ; vip:ownedCompany rs:Firm ; vip:ownershipShare 20.0 ; $quoted .
+        """)
+        assertFalse(report.conforms())
+        assertTrue(report.entries.any { it.focusNode().toString().endsWith("Firm") })
+    }
+
     @Test
     fun `a connection may date itself to the year, the month or the day`() {
         val report = dated(""" ; :connectionStartDate "2017"^^xsd:gYear ; :connectionEndDate "2019-10"^^xsd:gYearMonth""")
@@ -151,6 +169,116 @@ class SHACLValidatorTest {
     @Test
     fun `a connection that starts and ends within the same year conforms whatever the precision`() {
         val report = dated(""" ; :connectionStartDate "2016-04"^^xsd:gYearMonth ; :connectionEndDate "2016"^^xsd:gYear""")
+        assertTrue(report.conforms(), report.entries.joinToString { it.message() })
+    }
+
+    @Test
+    fun `adjacent ownership states are not summed`() {
+        val report = ownerships("""
+            rs:A a vip:OwnershipConnection ; vip:owner rs:OwnerA ; vip:ownedCompany rs:Firm ; vip:ownershipShare 100.0 ; $quoted ; :connectionStartDate "2025-12-24"^^xsd:date ; :connectionEndDate "2026-02"^^xsd:gYearMonth .
+            rs:B a vip:OwnershipConnection ; vip:owner rs:OwnerB ; vip:ownedCompany rs:Firm ; vip:ownershipShare 90.0 ; $quoted ; :connectionStartDate "2026-02"^^xsd:gYearMonth .
+            rs:C a vip:OwnershipConnection ; vip:owner rs:OwnerC ; vip:ownedCompany rs:Firm ; vip:ownershipShare 10.0 ; $quoted ; :connectionStartDate "2026-02"^^xsd:gYearMonth .
+        """)
+        assertTrue(report.conforms(), report.entries.joinToString { it.message() })
+    }
+
+    @Test
+    fun `ownership states that overlap in time are summed`() {
+        val report = ownerships("""
+            rs:A a vip:OwnershipConnection ; vip:owner rs:OwnerA ; vip:ownedCompany rs:Firm ; vip:ownershipShare 100.0 ; $quoted ; :connectionStartDate "2025-12-24"^^xsd:date ; :connectionEndDate "2026-03"^^xsd:gYearMonth .
+            rs:B a vip:OwnershipConnection ; vip:owner rs:OwnerB ; vip:ownedCompany rs:Firm ; vip:ownershipShare 10.0 ; $quoted ; :connectionStartDate "2026-02"^^xsd:gYearMonth .
+        """)
+        assertFalse(report.conforms())
+        assertTrue(report.entries.any { it.focusNode().toString().endsWith("Firm") })
+    }
+
+    @Test
+    fun `a day-precise end in the same month as a month-precise start is adjacent`() {
+        val report = ownerships("""
+            rs:A a vip:OwnershipConnection ; vip:owner rs:OwnerA ; vip:ownedCompany rs:Firm ; vip:ownershipShare 100.0 ; $quoted ; :connectionEndDate "2026-02-10"^^xsd:date .
+            rs:B a vip:OwnershipConnection ; vip:owner rs:OwnerB ; vip:ownedCompany rs:Firm ; vip:ownershipShare 100.0 ; $quoted ; :connectionStartDate "2026-02"^^xsd:gYearMonth .
+        """)
+        assertTrue(report.conforms(), report.entries.joinToString { it.message() })
+    }
+
+    @Test
+    fun `an undated record is summed with every open record`() {
+        val report = ownerships("""
+            rs:A a vip:OwnershipConnection ; vip:owner rs:OwnerA ; vip:ownedCompany rs:Firm ; vip:ownershipShare 100.0 ; $quoted  .
+            rs:B a vip:OwnershipConnection ; vip:owner rs:OwnerB ; vip:ownedCompany rs:Firm ; vip:ownershipShare 10.0 ; $quoted ; :connectionStartDate "2026"^^xsd:gYear .
+        """)
+        assertFalse(report.conforms())
+    }
+
+    @Test
+    fun `a record without a share does not count`() {
+        val report = ownerships("""
+            rs:A a vip:OwnershipConnection ; vip:owner rs:OwnerA ; vip:ownedCompany rs:Firm ; vip:ownershipShare 100.0 ; $quoted  .
+            rs:B a vip:OwnershipConnection ; vip:owner rs:OwnerB ; vip:ownedCompany rs:Firm ;  $quoted  .
+        """)
+        assertTrue(report.conforms(), report.entries.joinToString { it.message() })
+    }
+
+    @Test
+    fun `shares that total exactly one hundred conform`() {
+        val report = ownerships("""
+            rs:A a vip:OwnershipConnection ; vip:owner rs:OwnerA ; vip:ownedCompany rs:Firm ; vip:ownershipShare 50.0 ; $quoted  .
+            rs:B a vip:OwnershipConnection ; vip:owner rs:OwnerB ; vip:ownedCompany rs:Firm ; vip:ownershipShare 50.0 ; $quoted  .
+        """)
+        assertTrue(report.conforms(), report.entries.joinToString { it.message() })
+    }
+
+    @Test
+    fun `shares of different companies are not summed`() {
+        val report = ownerships("""
+            rs:Other a :Company ; foaf:name "Other" ; $documented .
+            rs:A a vip:OwnershipConnection ; vip:owner rs:OwnerA ; vip:ownedCompany rs:Firm ; vip:ownershipShare 90.0 ; $quoted  .
+            rs:B a vip:OwnershipConnection ; vip:owner rs:OwnerB ; vip:ownedCompany rs:Other ; vip:ownershipShare 90.0 ; $quoted  .
+        """)
+        assertTrue(report.conforms(), report.entries.joinToString { it.message() })
+    }
+
+    @Test
+    fun `the total violation names the company and the record`() {
+        val report = ownerships("""
+            rs:A a vip:OwnershipConnection ; vip:owner rs:OwnerA ; vip:ownedCompany rs:Firm ; vip:ownershipShare 90.0 ; $quoted  .
+            rs:B a vip:OwnershipConnection ; vip:owner rs:OwnerB ; vip:ownedCompany rs:Firm ; vip:ownershipShare 20.0 ; $quoted  .
+        """)
+        assertFalse(report.conforms())
+        assertTrue(report.entries.all { it.focusNode().toString().endsWith("Firm") })
+        assertTrue(report.entries.any { it.value().toString().let { v -> v.endsWith("A") || v.endsWith("B") } })
+    }
+
+    @Test
+    fun `an ownership share above one hundred violates`() {
+        val report = ownerships("""
+            rs:A a vip:OwnershipConnection ; vip:owner rs:OwnerA ; vip:ownedCompany rs:Firm ; vip:ownershipShare 100.5 ; $quoted .
+        """)
+        assertFalse(report.conforms())
+        assertTrue(report.entries.any { it.message().contains("share") }, report.entries.joinToString { it.message() })
+    }
+
+    @Test
+    fun `an ownership share of zero violates`() {
+        val report = ownerships("""
+            rs:A a vip:OwnershipConnection ; vip:owner rs:OwnerA ; vip:ownedCompany rs:Firm ; vip:ownershipShare 0.0 ; $quoted .
+        """)
+        assertFalse(report.conforms())
+    }
+
+    @Test
+    fun `an integer ownership share violates`() {
+        val report = ownerships("""
+            rs:A a vip:OwnershipConnection ; vip:owner rs:OwnerA ; vip:ownedCompany rs:Firm ; vip:ownershipShare 51 ; $quoted .
+        """)
+        assertFalse(report.conforms())
+    }
+
+    @Test
+    fun `a share of one hundred decimal conforms`() {
+        val report = ownerships("""
+            rs:A a vip:OwnershipConnection ; vip:owner rs:OwnerA ; vip:ownedCompany rs:Firm ; vip:ownershipShare 100.0 ; $quoted .
+        """)
         assertTrue(report.conforms(), report.entries.joinToString { it.message() })
     }
 }

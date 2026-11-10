@@ -1,6 +1,38 @@
 [
   {
     "data": {
+      "id": "trilenium",
+      "label": "Trilenium",
+      "type": "instance",
+      "nodeType": "organization",
+      "uri": "https://w3id.org/vip/rs/Trilenium",
+      "comment": "Beogradska marketinška i konsultantska kompanija; MOM i Nova navode vlasnički udeo Saše Blagojevića.",
+      "file": "data/entities/trilenium.ttl",
+      "line": 12,
+      "sources": [
+        {
+          "url": "https://nova.rs/vesti/biznis/vlasnici-aloa-i-informera-vlasnici-skoro-25-medija-u-srbiji",
+          "domain": "nova.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Nova, 1. novembar 2026, Trilenium: \u002750 odsto u vlasništvu Saše Blagojevića\u0027.",
+          "archive": "http://web.archive.org/web/20261102131221/https://nova.rs/vesti/biznis/vlasnici-aloa-i-informera-vlasnici-skoro-25-medija-u-srbiji/",
+          "archivedOn": "2026-11-02"
+        },
+        {
+          "url": "https://serbia.mom-gmr.org/sr/vlasnik/individual-owners/detail/owner/owner/show/sasa-blagojevic-2/",
+          "domain": "serbia.mom-gmr.org",
+          "type": "registryRecord",
+          "status": "published",
+          "quote": "MOM, poslovni interesi Saše Blagojevića, konsultantske aktivnosti: \u0027Trilenium (50%)\u0027.",
+          "archive": "http://web.archive.org/web/20250915222803/https://serbia.mom-gmr.org/sr/vlasnik/individual-owners/detail/owner/owner/show/sasa-blagojevic-2/",
+          "archivedOn": "2025-09-15"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
       "id": "milenijum_tim",
       "label": "Milenijum tim",
       "type": "instance",
@@ -81,6 +113,38 @@
   },
   {
     "data": {
+      "id": "insajder_tim",
+      "label": "Insajder Tim",
+      "type": "instance",
+      "nodeType": "organization",
+      "uri": "https://w3id.org/vip/rs/Insajder_Tim",
+      "comment": "Izdavač tabloida Informer; od februara 2026. suvlasnik firme Best Media Team, prema izveštajima ANEM-a i 021.",
+      "file": "data/entities/insajder-tim.ttl",
+      "line": 12,
+      "sources": [
+        {
+          "url": "https://www.021.rs/info/srbija/436227/informer-postao-suvlasnik-firme-koja-kupuje-lokalne-medije",
+          "domain": "021.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "021 prenosi ANEM: \u0027izdavačem tabloida Informera, odnosno firmom Insajder Tim\u0027.",
+          "archive": "http://web.archive.org/web/20261101142331/https://www.021.rs/info/srbija/436227/informer-postao-suvlasnik-firme-koja-kupuje-lokalne-medije",
+          "archivedOn": "2026-11-01"
+        },
+        {
+          "url": "https://anem.org.rs/sr/strane/informer-postao-suvlasnik-cerke-firme-aloa-koja-kupuje-lokalne-medije-o-srbiji",
+          "domain": "anem.org.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "ANEM: \u0027izdavačem Informera, odnosno firmom Insajder Tim\u0027.",
+          "archive": "http://web.archive.org/web/20260414144733/https://anem.org.rs/sr/strane/informer-postao-suvlasnik-cerke-firme-aloa-koja-kupuje-lokalne-medije-o-srbiji",
+          "archivedOn": "2026-04-14"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
       "id": "sns",
       "label": "Srpska napredna stranka",
       "type": "instance",
@@ -123,54 +187,64 @@
   },
   {
     "data": {
-      "id": "sasa_blagojevic",
-      "label": "Saša Blagojević",
+      "id": "infomacva",
+      "label": "Infomačva",
       "type": "instance",
-      "nodeType": "person",
-      "uri": "https://w3id.org/vip/rs/Sasa_Blagojevic",
-      "comment": "Vlasnik tabloida Alo! (Alo Media System) i televizije Studio B (Global Media Technology), većinski vlasnik Maxim Media Plus (radio stanice Hit FM, Karolina, Lola, JAT, TDI, prema Media Ownership Monitoru, 2023-2024). Ranije direktor i suvlasnik marketinške agencije Trilenium.",
-      "file": "data/entities/sasa-blagojevic.ttl",
-      "line": 16,
+      "nodeType": "organization",
+      "uri": "https://w3id.org/vip/rs/Infomacva",
+      "comment": "Medijska kompanija u Šapcu koju je osnovao Best Media Team; drugi suvlasnik je Dragan Mandić, prema Vremenu i Novoj.",
+      "file": "data/entities/infomacva.ttl",
+      "line": 12,
       "sources": [
         {
-          "url": "https://www.cenzolovka.rs/tag/sasa-blagojevic/",
-          "domain": "cenzolovka.rs",
-          "type": "webPage",
-          "status": "published",
-          "archive": "http://web.archive.org/web/20260305143723/https://www.cenzolovka.rs/tag/sasa-blagojevic/",
-          "archivedOn": "2026-03-05"
-        },
-        {
-          "url": "https://montenegro.mom-gmr.org/cg/vlasnici/pojedinci/detail/owner/owner/show/sasa-blagojevic-3/",
-          "domain": "montenegro.mom-gmr.org",
-          "type": "registryRecord",
-          "status": "published",
-          "archive": "http://web.archive.org/web/20250710173740/https://montenegro.mom-gmr.org/cg/vlasnici/pojedinci/detail/owner/owner/show/sasa-blagojevic-3/",
-          "archivedOn": "2025-07-10"
-        },
-        {
-          "url": "https://safejournalists.net/sr/vlasnik-tabloida-alo-za-manje-od-mesec-dana-kupio-dve-televizije-i-radio-za-skoro-200-000-evra/",
-          "domain": "safejournalists.net",
+          "url": "https://nova.rs/vesti/biznis/vlasnici-aloa-i-informera-vlasnici-skoro-25-medija-u-srbiji",
+          "domain": "nova.rs",
           "type": "newsArticle",
           "status": "published",
-          "archive": "https://web.archive.org/web/20261030133426/https://safejournalists.net/sr/vlasnik-tabloida-alo-za-manje-od-mesec-dana-kupio-dve-televizije-i-radio-za-skoro-200-000-evra/",
-          "archivedOn": "2026-10-30"
+          "quote": "Nova, odeljak Infomačva: \u0027Best Media Team ima 80 odsto\u0027.",
+          "archive": "http://web.archive.org/web/20261102131221/https://nova.rs/vesti/biznis/vlasnici-aloa-i-informera-vlasnici-skoro-25-medija-u-srbiji/",
+          "archivedOn": "2026-11-02"
         },
         {
-          "url": "https://serbia.mom-gmr.org/sr/mediji/detail/outlet/alo/",
-          "domain": "serbia.mom-gmr.org",
+          "url": "https://vreme.com/vesti/lokalni-mediji-kupovina-alo-informer/",
+          "domain": "vreme.com",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Vreme navodi osnivanje ćerke firme Best Media Team: \u002715. januara Infomačvu u Šapcu\u0027, uz Mandićevih 20%.",
+          "archive": "http://web.archive.org/web/20260419063743/https://vreme.com/vesti/lokalni-mediji-kupovina-alo-informer/",
+          "archivedOn": "2026-04-19"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "matrix_d",
+      "label": "Matrix D",
+      "type": "instance",
+      "nodeType": "organization",
+      "uri": "https://w3id.org/vip/rs/Matrix_D",
+      "comment": "Beogradska kompanija za proizvodnju i emitovanje televizijskog programa; CompanyWall navodi Global Media Technology i Miloša Krdžića kao suvlasnike.",
+      "file": "data/entities/matrix-d.ttl",
+      "line": 12,
+      "sources": [
+        {
+          "url": "https://www.companywall.rs/firma/doo-matrix-d-beograd/MMkw3o1Y",
+          "domain": "companywall.rs",
           "type": "registryRecord",
           "status": "published",
-          "archive": "http://web.archive.org/web/20250520025845/http://serbia.mom-gmr.org/sr/mediji/detail/outlet/alo/",
-          "archivedOn": "2025-05-20"
+          "quote": "CompanyWall, trenutni vlasnici: \u0027Global media technology društvo sa ograničenom odgovornošću Beograd-Stari Grad, MILOŠ KRDžIĆ\u0027.",
+          "archive": "https://web.archive.org/web/20261110163212/https://www.companywall.rs/firma/doo-matrix-d-beograd/MMkw3o1Y",
+          "archivedOn": "2026-11-10"
         },
         {
-          "url": "https://serbia.mom-gmr.org/sr/vlasnik/individual-owners/detail/owner/owner/show/sasa-blagojevic-2/",
-          "domain": "serbia.mom-gmr.org",
-          "type": "registryRecord",
+          "url": "https://www.danas.rs/vesti/ekonomija/sasa-blagojevic-alo-rock-radio-mediji-lik-dana/",
+          "domain": "danas.rs",
+          "type": "newsArticle",
           "status": "published",
-          "archive": "http://web.archive.org/web/20250915222803/https://serbia.mom-gmr.org/sr/vlasnik/individual-owners/detail/owner/owner/show/sasa-blagojevic-2/",
-          "archivedOn": "2025-09-15"
+          "quote": "Danas, spisak preduzeća za koja je Global Media Technology krovna kompanija: \u0027Matrix D\u0027.",
+          "archive": "http://web.archive.org/web/20260217205038/https://www.danas.rs/vesti/ekonomija/sasa-blagojevic-alo-rock-radio-mediji-lik-dana/",
+          "archivedOn": "2026-02-17"
         }
       ]
     }
@@ -357,6 +431,70 @@
   },
   {
     "data": {
+      "id": "maxim_media_plus",
+      "label": "Maxim Media Plus",
+      "type": "instance",
+      "nodeType": "organization",
+      "uri": "https://w3id.org/vip/rs/Maxim_Media_Plus",
+      "comment": "Kompanija za komunikacije, medije i marketing; MOM opisuje vlasništvo Global Media Technology i porodice Krdžić.",
+      "file": "data/entities/maxim-media-plus.ttl",
+      "line": 12,
+      "sources": [
+        {
+          "url": "https://nova.rs/vesti/biznis/vlasnici-aloa-i-informera-vlasnici-skoro-25-medija-u-srbiji",
+          "domain": "nova.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Nova, 1. novembar 2026, opis vlasništva Maxim Media Plus: \u0027Global Media Technology Saše Blagojevića sa 51 odsto\u0027.",
+          "archive": "http://web.archive.org/web/20261102131221/https://nova.rs/vesti/biznis/vlasnici-aloa-i-informera-vlasnici-skoro-25-medija-u-srbiji/",
+          "archivedOn": "2026-11-02"
+        },
+        {
+          "url": "https://serbia.mom-gmr.org/sr/vlasnik/companies/detail/company/company/show/maxim-media-plus-1/",
+          "domain": "serbia.mom-gmr.org",
+          "type": "registryRecord",
+          "status": "published",
+          "quote": "MOM: \u0027U januaru 2021. godine, većinski vlasnik sa 51% udela postala je kompanija Global Media Technology\u0027.",
+          "archive": "http://web.archive.org/web/20250915220442/https://serbia.mom-gmr.org/sr/vlasnik/companies/detail/company/company/show/maxim-media-plus-1/",
+          "archivedOn": "2025-09-15"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "best_media_team",
+      "label": "Best Media Team",
+      "type": "instance",
+      "nodeType": "organization",
+      "uri": "https://w3id.org/vip/rs/Best_Media_Team",
+      "comment": "Kompanija osnovana 24. decembra 2025. koja kupuje i osniva lokalne medijske kompanije. Alo Media System je prvobitni vlasnik; Insajder Tim ulazi u vlasništvo u februaru 2026.",
+      "file": "data/entities/best-media-team.ttl",
+      "line": 12,
+      "sources": [
+        {
+          "url": "https://www.021.rs/info/srbija/436227/informer-postao-suvlasnik-firme-koja-kupuje-lokalne-medije",
+          "domain": "021.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "021, prenoseći ANEM: \u0027Alo Media System\u0027 90 odsto i \u0027Insajder Tim\u0027 10 odsto.",
+          "archive": "http://web.archive.org/web/20261101142331/https://www.021.rs/info/srbija/436227/informer-postao-suvlasnik-firme-koja-kupuje-lokalne-medije",
+          "archivedOn": "2026-11-01"
+        },
+        {
+          "url": "https://anem.org.rs/sr/strane/informer-postao-suvlasnik-cerke-firme-aloa-koja-kupuje-lokalne-medije-o-srbiji",
+          "domain": "anem.org.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "ANEM, promena vlasništva: \u0027Alo Media System 90 odsto i Insajder Tim 10 odsto\u0027.",
+          "archive": "http://web.archive.org/web/20260414144733/https://anem.org.rs/sr/strane/informer-postao-suvlasnik-cerke-firme-aloa-koja-kupuje-lokalne-medije-o-srbiji",
+          "archivedOn": "2026-04-14"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
       "id": "peta_beogradska_gimnazija",
       "label": "Peta beogradska gimnazija",
       "type": "instance",
@@ -492,6 +630,70 @@
           "status": "published",
           "archive": "https://web.archive.org/web/20261030132947/https://www.youtube.com/watch?v\u003dtHgNZtQdGrg\u0026t\u003d5s",
           "archivedOn": "2026-10-30"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "bizmedia",
+      "label": "Bizmedia",
+      "type": "instance",
+      "nodeType": "organization",
+      "uri": "https://w3id.org/vip/rs/Bizmedia",
+      "comment": "Beogradska kompanija za izdavanje novina u vlasništvu Alo Media System, prema CompanyWall-u i Novoj.",
+      "file": "data/entities/bizmedia.ttl",
+      "line": 12,
+      "sources": [
+        {
+          "url": "https://www.companywall.rs/firma/bizmedia-doo-beograd/MMx3lKQZD",
+          "domain": "companywall.rs",
+          "type": "registryRecord",
+          "status": "published",
+          "quote": "CompanyWall: \u0027Vlasnik kompanije je Alo media system doo Beograd\u0027.",
+          "archive": "https://web.archive.org/web/20261110163136/https://www.companywall.rs/firma/bizmedia-doo-beograd/MMx3lKQZD",
+          "archivedOn": "2026-11-10"
+        },
+        {
+          "url": "https://nova.rs/vesti/biznis/vlasnici-aloa-i-informera-vlasnici-skoro-25-medija-u-srbiji",
+          "domain": "nova.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Nova, odeljak Mediji u vlasništvu Alo Media Sistema: \u0027Bizmedia\u0027.",
+          "archive": "http://web.archive.org/web/20261102131221/https://nova.rs/vesti/biznis/vlasnici-aloa-i-informera-vlasnici-skoro-25-medija-u-srbiji/",
+          "archivedOn": "2026-11-02"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "new_agency",
+      "label": "New Agency",
+      "type": "instance",
+      "nodeType": "organization",
+      "uri": "https://w3id.org/vip/rs/New_Agency",
+      "comment": "Marketinška kompanija u vlasništvu Maxim Media Plus, prema MOM-u i Danasu.",
+      "file": "data/entities/new-agency.ttl",
+      "line": 12,
+      "sources": [
+        {
+          "url": "https://www.danas.rs/vesti/ekonomija/sasa-blagojevic-alo-rock-radio-mediji-lik-dana/",
+          "domain": "danas.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Danas, spisak ćerki firmi Maxim Media Plus: \u0027New Agency\u0027.",
+          "archive": "http://web.archive.org/web/20260217205038/https://www.danas.rs/vesti/ekonomija/sasa-blagojevic-alo-rock-radio-mediji-lik-dana/",
+          "archivedOn": "2026-02-17"
+        },
+        {
+          "url": "https://serbia.mom-gmr.org/sr/vlasnik/companies/detail/company/company/show/maxim-media-plus-1/",
+          "domain": "serbia.mom-gmr.org",
+          "type": "registryRecord",
+          "status": "published",
+          "quote": "MOM, profil Maxim Media Plus, odeljak Biznis / Marketing: \u0027New Agency (100%)\u0027.",
+          "archive": "http://web.archive.org/web/20250915220442/https://serbia.mom-gmr.org/sr/vlasnik/companies/detail/company/company/show/maxim-media-plus-1/",
+          "archivedOn": "2025-09-15"
         }
       ]
     }
@@ -641,65 +843,32 @@
   },
   {
     "data": {
-      "id": "pizzarotti_millennium",
-      "label": "Pizzarotti Millennium",
+      "id": "owp_info",
+      "label": "OWP Info",
       "type": "instance",
       "nodeType": "organization",
-      "uri": "https://w3id.org/vip/rs/Pizzarotti_Millennium",
-      "comment": "Pizzarotti Millennium je preduzeće preko kog italijanski Pizzarotti nastupa u Srbiji, izvođač kule u Beogradu na vodi. Osnovano 13. decembra 2018, matični broj 21440639. Većinski vlasnik je Pizzarotti SA sa 96%; Milenijum tim ima 4% i nije matično društvo. Mediji ga nazivaju i Milenijum Picaroti.",
-      "aliases": [
-        "Milenijum Picaroti",
-        "Pizzarotti Millennium d.o.o. Beograd-Novi Beograd"
-      ],
-      "facts": [
-        {
-          "property": "foundationDate",
-          "label": "foundation date",
-          "value": "2018-12-13"
-        }
-      ],
-      "file": "data/entities/pizzarotti-millennium.ttl",
-      "line": 16,
+      "uri": "https://w3id.org/vip/rs/OWP_Info",
+      "comment": "Beogradska kompanija za veb portale, povezana sa portalom Objektiv.rs prema Novoj; CompanyWall navodi Alo Media System i Boška Milosavljevića kao suvlasnike.",
+      "file": "data/entities/owp-info.ttl",
+      "line": 12,
       "sources": [
         {
-          "url": "https://www.companywall.rs/firma/pizzarotti-millennium-doo/MMx04LqfY",
+          "url": "https://www.companywall.rs/firma/owp-info/MMxI9WKCC",
           "domain": "companywall.rs",
           "type": "registryRecord",
           "status": "published",
-          "quote": "Registar: osnovano 13.12.2018, matični broj 21440639, vlasnici Pizzarotti SA 96%, Millennium Team 4%.",
-          "archive": "https://web.archive.org/web/20261101021118/https://www.companywall.rs/firma/pizzarotti-millennium-doo/MMx04LqfY",
-          "archivedOn": "2026-11-01"
+          "quote": "CompanyWall: \u0027Trenutni vlasnici kompanije su Alo media system doo Beograd, Boško Milosavljević\u0027.",
+          "archive": "https://web.archive.org/web/20261110163321/https://www.companywall.rs/firma/owp-info/MMxI9WKCC",
+          "archivedOn": "2026-11-10"
         },
         {
-          "url": "https://www.danas.rs/vesti/ekonomija/firma-koja-gradi-beograd-na-vodi-u-korupcijskom-skandalu/",
-          "domain": "danas.rs",
+          "url": "https://nova.rs/vesti/biznis/vlasnici-aloa-i-informera-vlasnici-skoro-25-medija-u-srbiji",
+          "domain": "nova.rs",
           "type": "newsArticle",
           "status": "published",
-          "quote": "Danas, 10. decembar 2021: U Srbiji Pizzarotti nastupa preko preduzeća Pizzarotti Milennium.",
-          "archive": "http://web.archive.org/web/20250311005416/https://www.danas.rs/vesti/ekonomija/firma-koja-gradi-beograd-na-vodi-u-korupcijskom-skandalu/",
-          "archivedOn": "2025-03-11"
-        },
-        {
-          "url": "https://www.danas.rs/vesti/ekonomija/sta-sve-ima-milenijum-tim-novi-vlasnik-hotela-jugoslavija/",
-          "domain": "danas.rs",
-          "type": "newsArticle",
-          "status": "published",
-          "archive": "http://web.archive.org/web/20250620082052/https://www.danas.rs/vesti/ekonomija/sta-sve-ima-milenijum-tim-novi-vlasnik-hotela-jugoslavija/",
-          "archivedOn": "2025-06-20"
-        },
-        {
-          "url": "https://vreme.com/drustvo/poslovi-milenijum-tima-na-red-dosla-i-sanacija-leve-obale-save/",
-          "domain": "vreme.com",
-          "type": "newsArticle",
-          "status": "published",
-          "archive": "http://web.archive.org/web/20260729132920/https://vreme.com/drustvo/poslovi-milenijum-tima-na-red-dosla-i-sanacija-leve-obale-save/",
-          "archivedOn": "2026-07-29"
-        },
-        {
-          "url": "https://www.companywall.rs/firma/milenijum-picaroti-doo-beograd/MPksspYq",
-          "domain": "companywall.rs",
-          "type": "registryRecord",
-          "status": "removed"
+          "quote": "Nova, Owp info: \u0027ostalih 85 je u vlasništvu Alo Media Sistema\u0027, uz Milosavljevićevih 15%.",
+          "archive": "http://web.archive.org/web/20261102131221/https://nova.rs/vesti/biznis/vlasnici-aloa-i-informera-vlasnici-skoro-25-medija-u-srbiji/",
+          "archivedOn": "2026-11-02"
         }
       ]
     }
@@ -838,6 +1007,520 @@
   },
   {
     "data": {
+      "id": "sinisa_mali",
+      "label": "Siniša Mali",
+      "type": "instance",
+      "nodeType": "person",
+      "uri": "https://w3id.org/vip/rs/Sinisa_Mali",
+      "wikipedia": "https://sr.wikipedia.org/wiki/Синиша_Мали",
+      "wikidata": "http://www.wikidata.org/entity/Q16935101",
+      "facts": [
+        {
+          "property": "birthDate",
+          "label": "birth date",
+          "value": "1972-08-25"
+        },
+        {
+          "property": "birthPlace",
+          "label": "birth place",
+          "value": "Beograd, Srbija"
+        }
+      ],
+      "file": "data/entities/sinisa-mali.ttl",
+      "line": 16,
+      "sources": [
+        {
+          "url": "https://www.istinomer.rs/akter/sinisa-mali/",
+          "domain": "istinomer.rs",
+          "type": "factCheckProfile",
+          "status": "published",
+          "archive": "https://web.archive.org/web/20261030102432/https://www.istinomer.rs/akter/sinisa-mali/",
+          "archivedOn": "2026-10-30"
+        },
+        {
+          "url": "https://sr.wikipedia.org/wiki/Синиша_Мали",
+          "domain": "sr.wikipedia.org",
+          "type": "encyclopediaArticle",
+          "status": "published",
+          "archive": "http://web.archive.org/web/20251211120109/https://sr.wikipedia.org/wiki/%D0%A1%D0%B8%D0%BD%D0%B8%D1%88%D0%B0_%D0%9C%D0%B0%D0%BB%D0%B8",
+          "archivedOn": "2025-12-11"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "global_media_technology",
+      "label": "Global Media Technology",
+      "type": "instance",
+      "nodeType": "organization",
+      "uri": "https://w3id.org/vip/rs/Global_Media_Technology",
+      "comment": "Beogradska kompanija za televizijsku delatnost; MOM i CompanyWall navode Sašu Blagojevića kao vlasnika.",
+      "file": "data/entities/global-media-technology.ttl",
+      "line": 12,
+      "sources": [
+        {
+          "url": "https://www.companywall.rs/firma/global-media-technology-drustvo-sa-ogranicenom-odgovornoscu-beograd-stari-grad/MMz0shQD",
+          "domain": "companywall.rs",
+          "type": "registryRecord",
+          "status": "published",
+          "quote": "CompanyWall: \u0027Vlasnik kompanije je Saša Blagojević\u0027.",
+          "archive": "https://web.archive.org/web/20261110163250/https://www.companywall.rs/firma/global-media-technology-drustvo-sa-ogranicenom-odgovornoscu-beograd-stari-grad/MMz0shQD",
+          "archivedOn": "2026-11-10"
+        },
+        {
+          "url": "https://montenegro.mom-gmr.org/cg/vlasnici/pojedinci/detail/owner/owner/show/sasa-blagojevic-3/",
+          "domain": "montenegro.mom-gmr.org",
+          "type": "registryRecord",
+          "status": "published",
+          "quote": "MOM Crna Gora: \u0027Saša Blagojević je 100% vlasnik Global Media Tehnologi d.o.o. Beograd\u0027.",
+          "archive": "http://web.archive.org/web/20250710173740/https://montenegro.mom-gmr.org/cg/vlasnici/pojedinci/detail/owner/owner/show/sasa-blagojevic-3/",
+          "archivedOn": "2025-07-10"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "mt_gastel",
+      "label": "MT Gastel",
+      "type": "instance",
+      "nodeType": "organization",
+      "uri": "https://w3id.org/vip/rs/MT_Gastel",
+      "comment": "MT Gastel je društvo za distribuciju gasa iz Beograda. Registarski zapis nije pronađen.",
+      "file": "data/entities/mt-gastel.ttl",
+      "line": 16,
+      "sources": [
+        {
+          "url": "https://www.danas.rs/vesti/ekonomija/sta-sve-ima-milenijum-tim-novi-vlasnik-hotela-jugoslavija/",
+          "domain": "danas.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "archive": "http://web.archive.org/web/20250620082052/https://www.danas.rs/vesti/ekonomija/sta-sve-ima-milenijum-tim-novi-vlasnik-hotela-jugoslavija/",
+          "archivedOn": "2025-06-20"
+        },
+        {
+          "url": "https://www.emis.cn/php/company-profile/YU/Millennium_Team_DOO_Beograd_en_2585748.html",
+          "domain": "emis.cn",
+          "type": "registryRecord",
+          "status": "published",
+          "quote": "EMIS: Drustvo Za Distribuciju Gasa Mt Gastel D.O.O. Beograd (Savski Venac).",
+          "archive": "https://web.archive.org/web/20261101025035/https://www.emis.cn/php/company-profile/YU/Millennium_Team_DOO_Beograd_en_2585748.html",
+          "archivedOn": "2026-11-01"
+        },
+        {
+          "url": "https://www.krik.rs/koruptivne-veze-milenijum-tim-ustupio-audi-i-stan-bratu-sinise-malog/",
+          "domain": "krik.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "archive": "http://web.archive.org/web/20260925060313/https://www.krik.rs/koruptivne-veze-milenijum-tim-ustupio-audi-i-stan-bratu-sinise-malog/",
+          "archivedOn": "2026-09-25"
+        },
+        {
+          "url": "https://n1info.rs/biznis/cime-se-sve-bavi-novi-vlasnik-hotela-jugoslavija-milenijum-tim-od-bolnice-do-gradjevine/",
+          "domain": "n1info.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "archive": "http://web.archive.org/web/20260414192229/https://n1info.rs/biznis/cime-se-sve-bavi-novi-vlasnik-hotela-jugoslavija-milenijum-tim-od-bolnice-do-gradjevine/",
+          "archivedOn": "2026-04-14"
+        },
+        {
+          "url": "https://www.companywall.rs/firma/mt-gastel-doo-beograd/MGksspYq",
+          "domain": "companywall.rs",
+          "type": "registryRecord",
+          "status": "removed"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "stojan_vujko",
+      "label": "Stojan Vujko",
+      "type": "instance",
+      "nodeType": "person",
+      "uri": "https://w3id.org/vip/rs/Stojan_Vujko",
+      "file": "data/entities/stojan-vujko.ttl",
+      "line": 16,
+      "sources": [
+        {
+          "url": "https://www.companywall.rs/firma/millennium-team-doo-beograd/MMksspYq",
+          "domain": "companywall.rs",
+          "type": "registryRecord",
+          "status": "published",
+          "archive": "http://web.archive.org/web/20260313111844/https://www.companywall.rs/firma/millennium-team-doo-beograd/MMksspYq",
+          "archivedOn": "2026-03-13"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Millennium_Team",
+          "domain": "en.wikipedia.org",
+          "type": "encyclopediaArticle",
+          "status": "published",
+          "archive": "http://web.archive.org/web/20251013140940/https://en.wikipedia.org/wiki/Millennium_Team",
+          "archivedOn": "2025-10-13"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "ivan_bosnjak_zrenjanin",
+      "label": "Ivan Bošnjak (Zrenjanin)",
+      "type": "instance",
+      "nodeType": "person",
+      "uri": "https://w3id.org/vip/rs/Ivan_Bosnjak_Zrenjanin",
+      "comment": "Političar Srpske napredne stranke, gradonačelnik Zrenjanina 2012-2014, državni sekretar u ministarstvu državne uprave i lokalne samouprave 2014-2020, a od 2022. u ministarstvu za ljudska i manjinska prava i društveni dijalog. Nije isto lice kao privrednik Ivan Bošnjak (rođen 1980. u Beogradu), suvlasnik Milenijum tima.",
+      "wikipedia": "https://en.wikipedia.org/wiki/Ivan_Bo%C5%A1njak_(politician)",
+      "wikidata": "http://www.wikidata.org/entity/Q109327747",
+      "facts": [
+        {
+          "property": "birthDate",
+          "label": "birth date",
+          "value": "1974-11-04"
+        },
+        {
+          "property": "birthPlace",
+          "label": "birth place",
+          "value": "Melenci, Zrenjanin, Srbija"
+        }
+      ],
+      "file": "data/entities/ivan-bosnjak-zrenjanin.ttl",
+      "line": 18,
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Ivan_Bo%C5%A1njak_(politician)",
+          "domain": "en.wikipedia.org",
+          "type": "encyclopediaArticle",
+          "status": "published",
+          "quote": "Rođen 4. novembra 1974. u Melencima; funkcije sa datumima; Milenijum tim se ne pominje.",
+          "archive": "http://web.archive.org/web/20260104002608/https://en.wikipedia.org/wiki/Ivan_Bo%C5%A1njak_(politician)",
+          "archivedOn": "2026-01-04"
+        },
+        {
+          "url": "https://www.istinomer.rs/akter/ivan-bosnjak/",
+          "domain": "istinomer.rs",
+          "type": "factCheckProfile",
+          "status": "published",
+          "quote": "Datum rođenja 4. 11. 1974, stranka SNS, mesto Zrenjanin.",
+          "archive": "http://web.archive.org/web/20261030102500/https://www.istinomer.rs/akter/ivan-bosnjak/",
+          "archivedOn": "2026-10-30"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "bis_komerc",
+      "label": "Bis-komerc",
+      "type": "instance",
+      "nodeType": "organization",
+      "uri": "https://w3id.org/vip/rs/Bis_Komerc",
+      "comment": "Kompanija za kablovske telekomunikacije u sastavu Maxim Media Plus, prema MOM-u i Danasu.",
+      "file": "data/entities/bis-komerc.ttl",
+      "line": 12,
+      "sources": [
+        {
+          "url": "https://www.danas.rs/vesti/ekonomija/sasa-blagojevic-alo-rock-radio-mediji-lik-dana/",
+          "domain": "danas.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Danas, spisak ćerki firmi Maxim Media Plus: \u0027Bis-Komerc\u0027.",
+          "archive": "http://web.archive.org/web/20260217205038/https://www.danas.rs/vesti/ekonomija/sasa-blagojevic-alo-rock-radio-mediji-lik-dana/",
+          "archivedOn": "2026-02-17"
+        },
+        {
+          "url": "https://serbia.mom-gmr.org/sr/vlasnik/companies/detail/company/company/show/maxim-media-plus-1/",
+          "domain": "serbia.mom-gmr.org",
+          "type": "registryRecord",
+          "status": "published",
+          "quote": "MOM, profil Maxim Media Plus, odeljak Biznis / Kablovske telekomunikacije: \u0027Bis-komerc (100%)\u0027.",
+          "archive": "http://web.archive.org/web/20250915220442/https://serbia.mom-gmr.org/sr/vlasnik/companies/detail/company/company/show/maxim-media-plus-1/",
+          "archivedOn": "2025-09-15"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "miomedia",
+      "label": "Miomedia",
+      "type": "instance",
+      "nodeType": "organization",
+      "uri": "https://w3id.org/vip/rs/Miomedia",
+      "comment": "Medijska kompanija u Mionici koju je osnovao Best Media Team, prema ANEM-u i Vremenu.",
+      "file": "data/entities/miomedia.ttl",
+      "line": 12,
+      "sources": [
+        {
+          "url": "https://anem.org.rs/sr/strane/informer-postao-suvlasnik-cerke-firme-aloa-koja-kupuje-lokalne-medije-o-srbiji",
+          "domain": "anem.org.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "ANEM opisuje dve ćerke firme Best Media Team i navodi: \u002730. decembra Miomediu u Mionici\u0027.",
+          "archive": "http://web.archive.org/web/20260414144733/https://anem.org.rs/sr/strane/informer-postao-suvlasnik-cerke-firme-aloa-koja-kupuje-lokalne-medije-o-srbiji",
+          "archivedOn": "2026-04-14"
+        },
+        {
+          "url": "https://vreme.com/vesti/lokalni-mediji-kupovina-alo-informer/",
+          "domain": "vreme.com",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Vreme prenosi ANEM-ov izveštaj o ćerkama firmama Best Media Team: \u002730. decembra Miomediu u Mionici\u0027.",
+          "archive": "http://web.archive.org/web/20260419063743/https://vreme.com/vesti/lokalni-mediji-kupovina-alo-informer/",
+          "archivedOn": "2026-04-19"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "rimi_media_group",
+      "label": "Rimi Media Group",
+      "type": "instance",
+      "nodeType": "organization",
+      "uri": "https://w3id.org/vip/rs/Rimi_Media_Group",
+      "comment": "Beogradska kompanija čiji su suvlasnici Global Media Technology i Ružica Krdžić, prema CompanyWall-u; Danas je navodi u poslovnoj grupi Global Media Technology.",
+      "file": "data/entities/rimi-media-group.ttl",
+      "line": 12,
+      "sources": [
+        {
+          "url": "https://www.companywall.rs/firma/rimi-media-group-doo-beograd/MMorLuGY",
+          "domain": "companywall.rs",
+          "type": "registryRecord",
+          "status": "published",
+          "quote": "CompanyWall, trenutni vlasnici: \u0027Global media technology društvo sa ograničenom odgovornošću Beograd-Stari Grad, Ružica Krdžić\u0027.",
+          "archive": "https://web.archive.org/web/20261110163443/https://www.companywall.rs/firma/rimi-media-group-doo-beograd/MMorLuGY",
+          "archivedOn": "2026-11-10"
+        },
+        {
+          "url": "https://www.danas.rs/vesti/ekonomija/sasa-blagojevic-alo-rock-radio-mediji-lik-dana/",
+          "domain": "danas.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Danas, spisak preduzeća za koja je Global Media Technology krovna kompanija: \u0027Rimi Media Group\u0027.",
+          "archive": "http://web.archive.org/web/20260217205038/https://www.danas.rs/vesti/ekonomija/sasa-blagojevic-alo-rock-radio-mediji-lik-dana/",
+          "archivedOn": "2026-02-17"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "ini_media",
+      "label": "INI Media",
+      "type": "instance",
+      "nodeType": "organization",
+      "uri": "https://w3id.org/vip/rs/INI_Media",
+      "comment": "Niška medijska kompanija, izdavač Niš TV i istoimenog portala. Vreme i Danas navode Alo Media System i Bojana Avramovića kao suvlasnike.",
+      "file": "data/entities/ini-media.ttl",
+      "line": 12,
+      "sources": [
+        {
+          "url": "https://www.danas.rs/vesti/drustvo/idu-izbori-vise-od-pola-novca-na-niskom-konkursu-dobili-mediji-bivsih-funkcionera-sns-i-clanova-njihovih-porodica/",
+          "domain": "danas.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Danas, osnivači Ini medie: \u0027Alo media sistem\u0027 iz Beograda, sa ulogom od 51 odsto; Avramović ima 49%.",
+          "archive": "http://web.archive.org/web/20261022001345/https://www.danas.rs/vesti/drustvo/idu-izbori-vise-od-pola-novca-na-niskom-konkursu-dobili-mediji-bivsih-funkcionera-sns-i-clanova-njihovih-porodica/",
+          "archivedOn": "2026-10-22"
+        },
+        {
+          "url": "https://vreme.com/vesti/lokalni-mediji-kupovina-alo-informer/",
+          "domain": "vreme.com",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Vreme: \u0027Alo Media System\u0027 zajedno sa Bojanom Avramovićem poseduje i firmu INI media.",
+          "archive": "http://web.archive.org/web/20260419063743/https://vreme.com/vesti/lokalni-mediji-kupovina-alo-informer/",
+          "archivedOn": "2026-04-19"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "sasa_blagojevic",
+      "label": "Saša Blagojević",
+      "type": "instance",
+      "nodeType": "person",
+      "uri": "https://w3id.org/vip/rs/Sasa_Blagojevic",
+      "comment": "Vlasnik tabloida Alo! (Alo Media System) i televizije Studio B (Global Media Technology), većinski vlasnik Maxim Media Plus (radio stanice Hit FM, Karolina, Lola, JAT, TDI, prema Media Ownership Monitoru, 2023-2024). Ranije direktor i suvlasnik marketinške agencije Trilenium.",
+      "file": "data/entities/sasa-blagojevic.ttl",
+      "line": 16,
+      "sources": [
+        {
+          "url": "https://www.cenzolovka.rs/tag/sasa-blagojevic/",
+          "domain": "cenzolovka.rs",
+          "type": "webPage",
+          "status": "published",
+          "archive": "http://web.archive.org/web/20260305143723/https://www.cenzolovka.rs/tag/sasa-blagojevic/",
+          "archivedOn": "2026-03-05"
+        },
+        {
+          "url": "https://montenegro.mom-gmr.org/cg/vlasnici/pojedinci/detail/owner/owner/show/sasa-blagojevic-3/",
+          "domain": "montenegro.mom-gmr.org",
+          "type": "registryRecord",
+          "status": "published",
+          "archive": "http://web.archive.org/web/20250710173740/https://montenegro.mom-gmr.org/cg/vlasnici/pojedinci/detail/owner/owner/show/sasa-blagojevic-3/",
+          "archivedOn": "2025-07-10"
+        },
+        {
+          "url": "https://safejournalists.net/sr/vlasnik-tabloida-alo-za-manje-od-mesec-dana-kupio-dve-televizije-i-radio-za-skoro-200-000-evra/",
+          "domain": "safejournalists.net",
+          "type": "newsArticle",
+          "status": "published",
+          "archive": "https://web.archive.org/web/20261030133426/https://safejournalists.net/sr/vlasnik-tabloida-alo-za-manje-od-mesec-dana-kupio-dve-televizije-i-radio-za-skoro-200-000-evra/",
+          "archivedOn": "2026-10-30"
+        },
+        {
+          "url": "https://serbia.mom-gmr.org/sr/mediji/detail/outlet/alo/",
+          "domain": "serbia.mom-gmr.org",
+          "type": "registryRecord",
+          "status": "published",
+          "archive": "http://web.archive.org/web/20250520025845/http://serbia.mom-gmr.org/sr/mediji/detail/outlet/alo/",
+          "archivedOn": "2025-05-20"
+        },
+        {
+          "url": "https://serbia.mom-gmr.org/sr/vlasnik/individual-owners/detail/owner/owner/show/sasa-blagojevic-2/",
+          "domain": "serbia.mom-gmr.org",
+          "type": "registryRecord",
+          "status": "published",
+          "archive": "http://web.archive.org/web/20250915222803/https://serbia.mom-gmr.org/sr/vlasnik/individual-owners/detail/owner/owner/show/sasa-blagojevic-2/",
+          "archivedOn": "2025-09-15"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "baltazar",
+      "label": "Baltazar",
+      "type": "instance",
+      "nodeType": "organization",
+      "uri": "https://w3id.org/vip/rs/Baltazar",
+      "comment": "Marketinška kompanija iz Niša, ćerka firma Maxim Media Plus prema MOM-u i Danasu.",
+      "file": "data/entities/baltazar.ttl",
+      "line": 12,
+      "sources": [
+        {
+          "url": "https://www.danas.rs/vesti/ekonomija/sasa-blagojevic-alo-rock-radio-mediji-lik-dana/",
+          "domain": "danas.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Danas, spisak ćerki firmi Maxim Media Plus: \u0027Baltazar DOO\u0027 iz Niša.",
+          "archive": "http://web.archive.org/web/20260217205038/https://www.danas.rs/vesti/ekonomija/sasa-blagojevic-alo-rock-radio-mediji-lik-dana/",
+          "archivedOn": "2026-02-17"
+        },
+        {
+          "url": "https://serbia.mom-gmr.org/sr/vlasnik/companies/detail/company/company/show/maxim-media-plus-1/",
+          "domain": "serbia.mom-gmr.org",
+          "type": "registryRecord",
+          "status": "published",
+          "quote": "MOM, profil kompanije Maxim Media Plus, odeljak Biznis / Marketing: \u0027Baltazar (100%)\u0027.",
+          "archive": "http://web.archive.org/web/20250915220442/https://serbia.mom-gmr.org/sr/vlasnik/companies/detail/company/company/show/maxim-media-plus-1/",
+          "archivedOn": "2025-09-15"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "alo_marketing",
+      "label": "Alo Marketing",
+      "type": "instance",
+      "nodeType": "organization",
+      "uri": "https://w3id.org/vip/rs/Alo_Marketing",
+      "comment": "Beogradska marketinška kompanija koju je, prema MOM-u, Saša Blagojević osnovao u avgustu 2017.",
+      "file": "data/entities/alo-marketing.ttl",
+      "line": 12,
+      "sources": [
+        {
+          "url": "https://www.companywall.rs/firma/alo-marketing-doo-beograd-stari-grad/MMykEIG0",
+          "domain": "companywall.rs",
+          "type": "registryRecord",
+          "status": "published",
+          "quote": "CompanyWall: \u0027Vlasnik kompanije je Saša Blagojević\u0027.",
+          "archive": "https://web.archive.org/web/20261110163101/https://www.companywall.rs/firma/alo-marketing-doo-beograd-stari-grad/MMykEIG0",
+          "archivedOn": "2026-11-10"
+        },
+        {
+          "url": "https://serbia.mom-gmr.org/sr/vlasnik/individual-owners/detail/owner/owner/show/sasa-blagojevic-2/",
+          "domain": "serbia.mom-gmr.org",
+          "type": "registryRecord",
+          "status": "published",
+          "quote": "MOM navodi osnivanje u avgustu 2017; pod poslovnim interesima: \u0027Alo marketing (100%)\u0027.",
+          "archive": "http://web.archive.org/web/20250915222803/https://serbia.mom-gmr.org/sr/vlasnik/individual-owners/detail/owner/owner/show/sasa-blagojevic-2/",
+          "archivedOn": "2025-09-15"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "pizzarotti_millennium",
+      "label": "Pizzarotti Millennium",
+      "type": "instance",
+      "nodeType": "organization",
+      "uri": "https://w3id.org/vip/rs/Pizzarotti_Millennium",
+      "comment": "Pizzarotti Millennium je preduzeće preko kog italijanski Pizzarotti nastupa u Srbiji, izvođač kule u Beogradu na vodi. Osnovano 13. decembra 2018, matični broj 21440639. Većinski vlasnik je Pizzarotti SA sa 96%; Milenijum tim ima 4% i nije matično društvo. Mediji ga nazivaju i Milenijum Picaroti.",
+      "aliases": [
+        "Milenijum Picaroti",
+        "Pizzarotti Millennium d.o.o. Beograd-Novi Beograd"
+      ],
+      "facts": [
+        {
+          "property": "foundationDate",
+          "label": "foundation date",
+          "value": "2018-12-13"
+        }
+      ],
+      "file": "data/entities/pizzarotti-millennium.ttl",
+      "line": 16,
+      "sources": [
+        {
+          "url": "https://www.companywall.rs/firma/pizzarotti-millennium-doo/MMx04LqfY",
+          "domain": "companywall.rs",
+          "type": "registryRecord",
+          "status": "published",
+          "quote": "Registar: osnovano 13.12.2018, matični broj 21440639, vlasnici Pizzarotti SA 96%, Millennium Team 4%.",
+          "archive": "https://web.archive.org/web/20261101021118/https://www.companywall.rs/firma/pizzarotti-millennium-doo/MMx04LqfY",
+          "archivedOn": "2026-11-01"
+        },
+        {
+          "url": "https://www.danas.rs/vesti/ekonomija/firma-koja-gradi-beograd-na-vodi-u-korupcijskom-skandalu/",
+          "domain": "danas.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Danas, 10. decembar 2021: U Srbiji Pizzarotti nastupa preko preduzeća Pizzarotti Milennium.",
+          "archive": "http://web.archive.org/web/20250311005416/https://www.danas.rs/vesti/ekonomija/firma-koja-gradi-beograd-na-vodi-u-korupcijskom-skandalu/",
+          "archivedOn": "2025-03-11"
+        },
+        {
+          "url": "https://www.danas.rs/vesti/ekonomija/sta-sve-ima-milenijum-tim-novi-vlasnik-hotela-jugoslavija/",
+          "domain": "danas.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "archive": "http://web.archive.org/web/20250620082052/https://www.danas.rs/vesti/ekonomija/sta-sve-ima-milenijum-tim-novi-vlasnik-hotela-jugoslavija/",
+          "archivedOn": "2025-06-20"
+        },
+        {
+          "url": "https://vreme.com/drustvo/poslovi-milenijum-tima-na-red-dosla-i-sanacija-leve-obale-save/",
+          "domain": "vreme.com",
+          "type": "newsArticle",
+          "status": "published",
+          "archive": "http://web.archive.org/web/20260729132920/https://vreme.com/drustvo/poslovi-milenijum-tima-na-red-dosla-i-sanacija-leve-obale-save/",
+          "archivedOn": "2026-07-29"
+        },
+        {
+          "url": "https://www.companywall.rs/firma/milenijum-picaroti-doo-beograd/MPksspYq",
+          "domain": "companywall.rs",
+          "type": "registryRecord",
+          "status": "removed"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
       "id": "milenijum_propertiz",
       "label": "Millennium Properties",
       "type": "instance",
@@ -883,49 +1566,6 @@
           "domain": "companywall.rs",
           "type": "registryRecord",
           "status": "removed"
-        }
-      ]
-    }
-  },
-  {
-    "data": {
-      "id": "sinisa_mali",
-      "label": "Siniša Mali",
-      "type": "instance",
-      "nodeType": "person",
-      "uri": "https://w3id.org/vip/rs/Sinisa_Mali",
-      "wikipedia": "https://sr.wikipedia.org/wiki/Синиша_Мали",
-      "wikidata": "http://www.wikidata.org/entity/Q16935101",
-      "facts": [
-        {
-          "property": "birthDate",
-          "label": "birth date",
-          "value": "1972-08-25"
-        },
-        {
-          "property": "birthPlace",
-          "label": "birth place",
-          "value": "Beograd, Srbija"
-        }
-      ],
-      "file": "data/entities/sinisa-mali.ttl",
-      "line": 16,
-      "sources": [
-        {
-          "url": "https://www.istinomer.rs/akter/sinisa-mali/",
-          "domain": "istinomer.rs",
-          "type": "factCheckProfile",
-          "status": "published",
-          "archive": "https://web.archive.org/web/20261030102432/https://www.istinomer.rs/akter/sinisa-mali/",
-          "archivedOn": "2026-10-30"
-        },
-        {
-          "url": "https://sr.wikipedia.org/wiki/Синиша_Мали",
-          "domain": "sr.wikipedia.org",
-          "type": "encyclopediaArticle",
-          "status": "published",
-          "archive": "http://web.archive.org/web/20251211120109/https://sr.wikipedia.org/wiki/%D0%A1%D0%B8%D0%BD%D0%B8%D1%88%D0%B0_%D0%9C%D0%B0%D0%BB%D0%B8",
-          "archivedOn": "2025-12-11"
         }
       ]
     }
@@ -1064,134 +1704,6 @@
   },
   {
     "data": {
-      "id": "mt_gastel",
-      "label": "MT Gastel",
-      "type": "instance",
-      "nodeType": "organization",
-      "uri": "https://w3id.org/vip/rs/MT_Gastel",
-      "comment": "MT Gastel je društvo za distribuciju gasa iz Beograda. Registarski zapis nije pronađen.",
-      "file": "data/entities/mt-gastel.ttl",
-      "line": 16,
-      "sources": [
-        {
-          "url": "https://www.danas.rs/vesti/ekonomija/sta-sve-ima-milenijum-tim-novi-vlasnik-hotela-jugoslavija/",
-          "domain": "danas.rs",
-          "type": "newsArticle",
-          "status": "published",
-          "archive": "http://web.archive.org/web/20250620082052/https://www.danas.rs/vesti/ekonomija/sta-sve-ima-milenijum-tim-novi-vlasnik-hotela-jugoslavija/",
-          "archivedOn": "2025-06-20"
-        },
-        {
-          "url": "https://www.emis.cn/php/company-profile/YU/Millennium_Team_DOO_Beograd_en_2585748.html",
-          "domain": "emis.cn",
-          "type": "registryRecord",
-          "status": "published",
-          "quote": "EMIS: Drustvo Za Distribuciju Gasa Mt Gastel D.O.O. Beograd (Savski Venac).",
-          "archive": "https://web.archive.org/web/20261101025035/https://www.emis.cn/php/company-profile/YU/Millennium_Team_DOO_Beograd_en_2585748.html",
-          "archivedOn": "2026-11-01"
-        },
-        {
-          "url": "https://www.krik.rs/koruptivne-veze-milenijum-tim-ustupio-audi-i-stan-bratu-sinise-malog/",
-          "domain": "krik.rs",
-          "type": "newsArticle",
-          "status": "published",
-          "archive": "http://web.archive.org/web/20260925060313/https://www.krik.rs/koruptivne-veze-milenijum-tim-ustupio-audi-i-stan-bratu-sinise-malog/",
-          "archivedOn": "2026-09-25"
-        },
-        {
-          "url": "https://n1info.rs/biznis/cime-se-sve-bavi-novi-vlasnik-hotela-jugoslavija-milenijum-tim-od-bolnice-do-gradjevine/",
-          "domain": "n1info.rs",
-          "type": "newsArticle",
-          "status": "published",
-          "archive": "http://web.archive.org/web/20260414192229/https://n1info.rs/biznis/cime-se-sve-bavi-novi-vlasnik-hotela-jugoslavija-milenijum-tim-od-bolnice-do-gradjevine/",
-          "archivedOn": "2026-04-14"
-        },
-        {
-          "url": "https://www.companywall.rs/firma/mt-gastel-doo-beograd/MGksspYq",
-          "domain": "companywall.rs",
-          "type": "registryRecord",
-          "status": "removed"
-        }
-      ]
-    }
-  },
-  {
-    "data": {
-      "id": "stojan_vujko",
-      "label": "Stojan Vujko",
-      "type": "instance",
-      "nodeType": "person",
-      "uri": "https://w3id.org/vip/rs/Stojan_Vujko",
-      "file": "data/entities/stojan-vujko.ttl",
-      "line": 16,
-      "sources": [
-        {
-          "url": "https://www.companywall.rs/firma/millennium-team-doo-beograd/MMksspYq",
-          "domain": "companywall.rs",
-          "type": "registryRecord",
-          "status": "published",
-          "archive": "http://web.archive.org/web/20260313111844/https://www.companywall.rs/firma/millennium-team-doo-beograd/MMksspYq",
-          "archivedOn": "2026-03-13"
-        },
-        {
-          "url": "https://en.wikipedia.org/wiki/Millennium_Team",
-          "domain": "en.wikipedia.org",
-          "type": "encyclopediaArticle",
-          "status": "published",
-          "archive": "http://web.archive.org/web/20251013140940/https://en.wikipedia.org/wiki/Millennium_Team",
-          "archivedOn": "2025-10-13"
-        }
-      ]
-    }
-  },
-  {
-    "data": {
-      "id": "ivan_bosnjak_zrenjanin",
-      "label": "Ivan Bošnjak (Zrenjanin)",
-      "type": "instance",
-      "nodeType": "person",
-      "uri": "https://w3id.org/vip/rs/Ivan_Bosnjak_Zrenjanin",
-      "comment": "Političar Srpske napredne stranke, gradonačelnik Zrenjanina 2012-2014, državni sekretar u ministarstvu državne uprave i lokalne samouprave 2014-2020, a od 2022. u ministarstvu za ljudska i manjinska prava i društveni dijalog. Nije isto lice kao privrednik Ivan Bošnjak (rođen 1980. u Beogradu), suvlasnik Milenijum tima.",
-      "wikipedia": "https://en.wikipedia.org/wiki/Ivan_Bo%C5%A1njak_(politician)",
-      "wikidata": "http://www.wikidata.org/entity/Q109327747",
-      "facts": [
-        {
-          "property": "birthDate",
-          "label": "birth date",
-          "value": "1974-11-04"
-        },
-        {
-          "property": "birthPlace",
-          "label": "birth place",
-          "value": "Melenci, Zrenjanin, Srbija"
-        }
-      ],
-      "file": "data/entities/ivan-bosnjak-zrenjanin.ttl",
-      "line": 18,
-      "sources": [
-        {
-          "url": "https://en.wikipedia.org/wiki/Ivan_Bo%C5%A1njak_(politician)",
-          "domain": "en.wikipedia.org",
-          "type": "encyclopediaArticle",
-          "status": "published",
-          "quote": "Rođen 4. novembra 1974. u Melencima; funkcije sa datumima; Milenijum tim se ne pominje.",
-          "archive": "http://web.archive.org/web/20260104002608/https://en.wikipedia.org/wiki/Ivan_Bo%C5%A1njak_(politician)",
-          "archivedOn": "2026-01-04"
-        },
-        {
-          "url": "https://www.istinomer.rs/akter/ivan-bosnjak/",
-          "domain": "istinomer.rs",
-          "type": "factCheckProfile",
-          "status": "published",
-          "quote": "Datum rođenja 4. 11. 1974, stranka SNS, mesto Zrenjanin.",
-          "archive": "http://web.archive.org/web/20261030102500/https://www.istinomer.rs/akter/ivan-bosnjak/",
-          "archivedOn": "2026-10-30"
-        }
-      ]
-    }
-  },
-  {
-    "data": {
       "id": "mv_investment",
       "label": "MV Investment",
       "type": "instance",
@@ -1262,6 +1774,205 @@
   {
     "data": {
       "id": "edge0",
+      "label": "ownership connection",
+      "source": "alo_media_system",
+      "target": "best_media_team",
+      "uri": "https://w3id.org/vip/rs/AloMediaSystem_BestMediaTeam_90",
+      "comment": "ANEM i 021 izveštavaju da od februara 2026. Alo Media System ima 90% Best Media Team; datum je naveden na nivou meseca zbog različitih datuma objavljivanja izveštaja.",
+      "kind": "OwnershipConnection",
+      "typeLabel": "Ownership connection",
+      "share": 90.0,
+      "start": "2026-02",
+      "file": "data/cases/alo-media-system.ttl",
+      "line": 104,
+      "sources": [
+        {
+          "url": "https://www.021.rs/info/srbija/436227/informer-postao-suvlasnik-firme-koja-kupuje-lokalne-medije",
+          "domain": "021.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "021, prenoseći ANEM: \u0027Alo Media System\u0027 90 odsto i \u0027Insajder Tim\u0027 10 odsto.",
+          "archive": "http://web.archive.org/web/20261101142331/https://www.021.rs/info/srbija/436227/informer-postao-suvlasnik-firme-koja-kupuje-lokalne-medije",
+          "archivedOn": "2026-11-01"
+        },
+        {
+          "url": "https://anem.org.rs/sr/strane/informer-postao-suvlasnik-cerke-firme-aloa-koja-kupuje-lokalne-medije-o-srbiji",
+          "domain": "anem.org.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "ANEM, promena vlasništva: \u0027Alo Media System 90 odsto i Insajder Tim 10 odsto\u0027.",
+          "archive": "http://web.archive.org/web/20260414144733/https://anem.org.rs/sr/strane/informer-postao-suvlasnik-cerke-firme-aloa-koja-kupuje-lokalne-medije-o-srbiji",
+          "archivedOn": "2026-04-14"
+        }
+      ],
+      "history": [
+        {
+          "uri": "https://w3id.org/vip/rs/AloMediaSystem_BestMediaTeam_Initial",
+          "share": 100.0,
+          "start": "2025-12-24",
+          "end": "2026-02",
+          "comment": "Prema Raskrikavanju i ANEM-u, Best Media Team je osnovan u stoprocentnom vlasništvu Alo Media System. U februaru 2026. udeo je smanjen na 90%; izvori se razlikuju u danu objavljivanja promene, pa je kraj naveden na nivou meseca.",
+          "file": "data/cases/alo-media-system.ttl",
+          "line": 90,
+          "sources": [
+            {
+              "url": "https://anem.org.rs/sr/strane/informer-postao-suvlasnik-cerke-firme-aloa-koja-kupuje-lokalne-medije-o-srbiji",
+              "domain": "anem.org.rs",
+              "type": "newsArticle",
+              "status": "published",
+              "quote": "ANEM, februar 2026: \u0027bila je u stopostotnom vlasništvu kompanije Alo Media System\u0027, pre ulaska Insajder Tima.",
+              "archive": "http://web.archive.org/web/20260414144733/https://anem.org.rs/sr/strane/informer-postao-suvlasnik-cerke-firme-aloa-koja-kupuje-lokalne-medije-o-srbiji",
+              "archivedOn": "2026-04-14"
+            },
+            {
+              "url": "https://raskrikavanje.rs/vlasnik-tabloida-alo-za-manje-od-mesec-dana-kupio-dve-televizije-i-radio-za-skoro-200-000-evra/",
+              "domain": "raskrikavanje.rs",
+              "type": "newsArticle",
+              "status": "published",
+              "quote": "Raskrikavanje: \u0027u stoprocentnom vlasništvu Alo Media System-a\u0027; kompanija je osnovana 24. decembra 2025.",
+              "archive": "http://web.archive.org/web/20260516045552/https://raskrikavanje.rs/vlasnik-tabloida-alo-za-manje-od-mesec-dana-kupio-dve-televizije-i-radio-za-skoro-200-000-evra/",
+              "archivedOn": "2026-05-16"
+            }
+          ]
+        },
+        {
+          "uri": "https://w3id.org/vip/rs/AloMediaSystem_BestMediaTeam_90",
+          "share": 90.0,
+          "start": "2026-02",
+          "comment": "ANEM i 021 izveštavaju da od februara 2026. Alo Media System ima 90% Best Media Team; datum je naveden na nivou meseca zbog različitih datuma objavljivanja izveštaja.",
+          "file": "data/cases/alo-media-system.ttl",
+          "line": 104,
+          "sources": [
+            {
+              "url": "https://www.021.rs/info/srbija/436227/informer-postao-suvlasnik-firme-koja-kupuje-lokalne-medije",
+              "domain": "021.rs",
+              "type": "newsArticle",
+              "status": "published",
+              "quote": "021, prenoseći ANEM: \u0027Alo Media System\u0027 90 odsto i \u0027Insajder Tim\u0027 10 odsto.",
+              "archive": "http://web.archive.org/web/20261101142331/https://www.021.rs/info/srbija/436227/informer-postao-suvlasnik-firme-koja-kupuje-lokalne-medije",
+              "archivedOn": "2026-11-01"
+            },
+            {
+              "url": "https://anem.org.rs/sr/strane/informer-postao-suvlasnik-cerke-firme-aloa-koja-kupuje-lokalne-medije-o-srbiji",
+              "domain": "anem.org.rs",
+              "type": "newsArticle",
+              "status": "published",
+              "quote": "ANEM, promena vlasništva: \u0027Alo Media System 90 odsto i Insajder Tim 10 odsto\u0027.",
+              "archive": "http://web.archive.org/web/20260414144733/https://anem.org.rs/sr/strane/informer-postao-suvlasnik-cerke-firme-aloa-koja-kupuje-lokalne-medije-o-srbiji",
+              "archivedOn": "2026-04-14"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "edge1",
+      "label": "ownership connection",
+      "source": "alo_media_system",
+      "target": "bizmedia",
+      "uri": "https://w3id.org/vip/rs/AloMediaSystem_Bizmedia",
+      "comment": "CompanyWall i Nova navode Alo Media System kao vlasnika Bizmedie. Procenat i datum sticanja nisu navedeni u korišćenim pasusima.",
+      "kind": "OwnershipConnection",
+      "typeLabel": "Ownership connection",
+      "file": "data/cases/alo-media-system.ttl",
+      "line": 225,
+      "sources": [
+        {
+          "url": "https://www.companywall.rs/firma/bizmedia-doo-beograd/MMx3lKQZD",
+          "domain": "companywall.rs",
+          "type": "registryRecord",
+          "status": "published",
+          "quote": "CompanyWall: \u0027Vlasnik kompanije je Alo media system doo Beograd\u0027.",
+          "archive": "https://web.archive.org/web/20261110163136/https://www.companywall.rs/firma/bizmedia-doo-beograd/MMx3lKQZD",
+          "archivedOn": "2026-11-10"
+        },
+        {
+          "url": "https://nova.rs/vesti/biznis/vlasnici-aloa-i-informera-vlasnici-skoro-25-medija-u-srbiji",
+          "domain": "nova.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Nova, odeljak Mediji u vlasništvu Alo Media Sistema: \u0027Bizmedia\u0027.",
+          "archive": "http://web.archive.org/web/20261102131221/https://nova.rs/vesti/biznis/vlasnici-aloa-i-informera-vlasnici-skoro-25-medija-u-srbiji/",
+          "archivedOn": "2026-11-02"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "edge2",
+      "label": "ownership connection",
+      "source": "alo_media_system",
+      "target": "ini_media",
+      "uri": "https://w3id.org/vip/rs/AloMediaSystem_INIMedia",
+      "comment": "Danas navodi udeo Alo Media System od 51% u INI Media, a Vreme potvrđuje suvlasništvo sa Bojanom Avramovićem. Datum sticanja nije utvrđen.",
+      "kind": "OwnershipConnection",
+      "typeLabel": "Ownership connection",
+      "share": 51.0,
+      "file": "data/cases/alo-media-system.ttl",
+      "line": 213,
+      "sources": [
+        {
+          "url": "https://www.danas.rs/vesti/drustvo/idu-izbori-vise-od-pola-novca-na-niskom-konkursu-dobili-mediji-bivsih-funkcionera-sns-i-clanova-njihovih-porodica/",
+          "domain": "danas.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Danas, osnivači Ini medie: \u0027Alo media sistem\u0027 iz Beograda, sa ulogom od 51 odsto; Avramović ima 49%.",
+          "archive": "http://web.archive.org/web/20261022001345/https://www.danas.rs/vesti/drustvo/idu-izbori-vise-od-pola-novca-na-niskom-konkursu-dobili-mediji-bivsih-funkcionera-sns-i-clanova-njihovih-porodica/",
+          "archivedOn": "2026-10-22"
+        },
+        {
+          "url": "https://vreme.com/vesti/lokalni-mediji-kupovina-alo-informer/",
+          "domain": "vreme.com",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Vreme: \u0027Alo Media System\u0027 zajedno sa Bojanom Avramovićem poseduje i firmu INI media.",
+          "archive": "http://web.archive.org/web/20260419063743/https://vreme.com/vesti/lokalni-mediji-kupovina-alo-informer/",
+          "archivedOn": "2026-04-19"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "edge3",
+      "label": "ownership connection",
+      "source": "alo_media_system",
+      "target": "owp_info",
+      "uri": "https://w3id.org/vip/rs/AloMediaSystem_OWPInfo",
+      "comment": "Nova navodi da Alo Media System ima 85% OWP Info; CompanyWall potvrđuje suvlasništvo. Datum sticanja nije utvrđen.",
+      "kind": "OwnershipConnection",
+      "typeLabel": "Ownership connection",
+      "share": 85.0,
+      "file": "data/cases/alo-media-system.ttl",
+      "line": 236,
+      "sources": [
+        {
+          "url": "https://www.companywall.rs/firma/owp-info/MMxI9WKCC",
+          "domain": "companywall.rs",
+          "type": "registryRecord",
+          "status": "published",
+          "quote": "CompanyWall: \u0027Trenutni vlasnici kompanije su Alo media system doo Beograd, Boško Milosavljević\u0027.",
+          "archive": "https://web.archive.org/web/20261110163321/https://www.companywall.rs/firma/owp-info/MMxI9WKCC",
+          "archivedOn": "2026-11-10"
+        },
+        {
+          "url": "https://nova.rs/vesti/biznis/vlasnici-aloa-i-informera-vlasnici-skoro-25-medija-u-srbiji",
+          "domain": "nova.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Nova, Owp info: \u0027ostalih 85 je u vlasništvu Alo Media Sistema\u0027, uz Milosavljevićevih 15%.",
+          "archive": "http://web.archive.org/web/20261102131221/https://nova.rs/vesti/biznis/vlasnici-aloa-i-informera-vlasnici-skoro-25-medija-u-srbiji/",
+          "archivedOn": "2026-11-02"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "edge4",
       "label": "founder",
       "source": "ana_brnabic",
       "target": "naled",
@@ -1299,7 +2010,7 @@
   },
   {
     "data": {
-      "id": "edge1",
+      "id": "edge5",
       "label": "vice chair of the board",
       "source": "ana_brnabic",
       "target": "naled",
@@ -1338,7 +2049,7 @@
   },
   {
     "data": {
-      "id": "edge2",
+      "id": "edge6",
       "label": "chair of the board",
       "source": "ana_brnabic",
       "target": "naled",
@@ -1402,7 +2113,7 @@
   },
   {
     "data": {
-      "id": "edge3",
+      "id": "edge7",
       "label": "alumni",
       "source": "ana_brnabic",
       "target": "northwood_university_michigan",
@@ -1437,7 +2148,7 @@
   },
   {
     "data": {
-      "id": "edge4",
+      "id": "edge8",
       "label": "alumni",
       "source": "ana_brnabic",
       "target": "peta_beogradska_gimnazija",
@@ -1472,7 +2183,7 @@
   },
   {
     "data": {
-      "id": "edge5",
+      "id": "edge9",
       "label": "political connection",
       "source": "ana_brnabic",
       "target": "sns",
@@ -1507,7 +2218,218 @@
   },
   {
     "data": {
-      "id": "edge6",
+      "id": "edge10",
+      "label": "ownership connection",
+      "source": "best_media_team",
+      "target": "infomacva",
+      "uri": "https://w3id.org/vip/rs/BestMediaTeam_Infomacva",
+      "comment": "Vreme navodi da je Best Media Team osnovao Infomačvu 15. januara 2026, a Nova izričito navodi njegov udeo od 80%.",
+      "kind": "OwnershipConnection",
+      "typeLabel": "Ownership connection",
+      "share": 80.0,
+      "start": "2026-01-15",
+      "file": "data/cases/alo-media-system.ttl",
+      "line": 142,
+      "sources": [
+        {
+          "url": "https://nova.rs/vesti/biznis/vlasnici-aloa-i-informera-vlasnici-skoro-25-medija-u-srbiji",
+          "domain": "nova.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Nova, odeljak Infomačva: \u0027Best Media Team ima 80 odsto\u0027.",
+          "archive": "http://web.archive.org/web/20261102131221/https://nova.rs/vesti/biznis/vlasnici-aloa-i-informera-vlasnici-skoro-25-medija-u-srbiji/",
+          "archivedOn": "2026-11-02"
+        },
+        {
+          "url": "https://vreme.com/vesti/lokalni-mediji-kupovina-alo-informer/",
+          "domain": "vreme.com",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Vreme navodi osnivanje ćerke firme Best Media Team: \u002715. januara Infomačvu u Šapcu\u0027, uz Mandićevih 20%.",
+          "archive": "http://web.archive.org/web/20260419063743/https://vreme.com/vesti/lokalni-mediji-kupovina-alo-informer/",
+          "archivedOn": "2026-04-19"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "edge11",
+      "label": "ownership connection",
+      "source": "best_media_team",
+      "target": "miomedia",
+      "uri": "https://w3id.org/vip/rs/BestMediaTeam_Miomedia",
+      "comment": "Prema izveštajima ANEM-a i Vremena, Best Media Team je 30. decembra 2025. osnovao ćerku firmu Miomedia. Procenat udela nije naveden u tim izveštajima.",
+      "kind": "OwnershipConnection",
+      "typeLabel": "Ownership connection",
+      "start": "2025-12-30",
+      "file": "data/cases/alo-media-system.ttl",
+      "line": 130,
+      "sources": [
+        {
+          "url": "https://anem.org.rs/sr/strane/informer-postao-suvlasnik-cerke-firme-aloa-koja-kupuje-lokalne-medije-o-srbiji",
+          "domain": "anem.org.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "ANEM opisuje dve ćerke firme Best Media Team i navodi: \u002730. decembra Miomediu u Mionici\u0027.",
+          "archive": "http://web.archive.org/web/20260414144733/https://anem.org.rs/sr/strane/informer-postao-suvlasnik-cerke-firme-aloa-koja-kupuje-lokalne-medije-o-srbiji",
+          "archivedOn": "2026-04-14"
+        },
+        {
+          "url": "https://vreme.com/vesti/lokalni-mediji-kupovina-alo-informer/",
+          "domain": "vreme.com",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Vreme prenosi ANEM-ov izveštaj o ćerkama firmama Best Media Team: \u002730. decembra Miomediu u Mionici\u0027.",
+          "archive": "http://web.archive.org/web/20260419063743/https://vreme.com/vesti/lokalni-mediji-kupovina-alo-informer/",
+          "archivedOn": "2026-04-19"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "edge12",
+      "label": "ownership connection",
+      "source": "global_media_technology",
+      "target": "matrix_d",
+      "uri": "https://w3id.org/vip/rs/GlobalMediaTechnology_MatrixD",
+      "comment": "CompanyWall navodi Global Media Technology kao suvlasnika Matrix D, a Danas potvrđuje pripadnost toj grupi. Udeo i datum sticanja nisu navedeni u korišćenim pasusima.",
+      "kind": "OwnershipConnection",
+      "typeLabel": "Ownership connection",
+      "file": "data/cases/alo-media-system.ttl",
+      "line": 202,
+      "sources": [
+        {
+          "url": "https://www.companywall.rs/firma/doo-matrix-d-beograd/MMkw3o1Y",
+          "domain": "companywall.rs",
+          "type": "registryRecord",
+          "status": "published",
+          "quote": "CompanyWall, trenutni vlasnici: \u0027Global media technology društvo sa ograničenom odgovornošću Beograd-Stari Grad, MILOŠ KRDžIĆ\u0027.",
+          "archive": "https://web.archive.org/web/20261110163212/https://www.companywall.rs/firma/doo-matrix-d-beograd/MMkw3o1Y",
+          "archivedOn": "2026-11-10"
+        },
+        {
+          "url": "https://www.danas.rs/vesti/ekonomija/sasa-blagojevic-alo-rock-radio-mediji-lik-dana/",
+          "domain": "danas.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Danas, spisak preduzeća za koja je Global Media Technology krovna kompanija: \u0027Matrix D\u0027.",
+          "archive": "http://web.archive.org/web/20260217205038/https://www.danas.rs/vesti/ekonomija/sasa-blagojevic-alo-rock-radio-mediji-lik-dana/",
+          "archivedOn": "2026-02-17"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "edge13",
+      "label": "ownership connection",
+      "source": "global_media_technology",
+      "target": "maxim_media_plus",
+      "uri": "https://w3id.org/vip/rs/GlobalMediaTechnology_MaximMediaPlus",
+      "comment": "Prema MOM-u, Global Media Technology postaje vlasnik 51% Maxim Media Plus u januaru 2021; Nova potvrđuje taj udeo u novembru 2026.",
+      "kind": "OwnershipConnection",
+      "typeLabel": "Ownership connection",
+      "share": 51.0,
+      "start": "2021-01",
+      "file": "data/cases/alo-media-system.ttl",
+      "line": 52,
+      "sources": [
+        {
+          "url": "https://nova.rs/vesti/biznis/vlasnici-aloa-i-informera-vlasnici-skoro-25-medija-u-srbiji",
+          "domain": "nova.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Nova, 1. novembar 2026, opis vlasništva Maxim Media Plus: \u0027Global Media Technology Saše Blagojevića sa 51 odsto\u0027.",
+          "archive": "http://web.archive.org/web/20261102131221/https://nova.rs/vesti/biznis/vlasnici-aloa-i-informera-vlasnici-skoro-25-medija-u-srbiji/",
+          "archivedOn": "2026-11-02"
+        },
+        {
+          "url": "https://serbia.mom-gmr.org/sr/vlasnik/companies/detail/company/company/show/maxim-media-plus-1/",
+          "domain": "serbia.mom-gmr.org",
+          "type": "registryRecord",
+          "status": "published",
+          "quote": "MOM: \u0027U januaru 2021. godine, većinski vlasnik sa 51% udela postala je kompanija Global Media Technology\u0027.",
+          "archive": "http://web.archive.org/web/20250915220442/https://serbia.mom-gmr.org/sr/vlasnik/companies/detail/company/company/show/maxim-media-plus-1/",
+          "archivedOn": "2025-09-15"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "edge14",
+      "label": "ownership connection",
+      "source": "global_media_technology",
+      "target": "rimi_media_group",
+      "uri": "https://w3id.org/vip/rs/GlobalMediaTechnology_RimiMediaGroup",
+      "comment": "CompanyWall navodi Global Media Technology kao suvlasnika Rimi Media Group, a Danas potvrđuje pripadnost toj grupi. Udeo i datum sticanja nisu navedeni u korišćenim pasusima.",
+      "kind": "OwnershipConnection",
+      "typeLabel": "Ownership connection",
+      "file": "data/cases/alo-media-system.ttl",
+      "line": 191,
+      "sources": [
+        {
+          "url": "https://www.companywall.rs/firma/rimi-media-group-doo-beograd/MMorLuGY",
+          "domain": "companywall.rs",
+          "type": "registryRecord",
+          "status": "published",
+          "quote": "CompanyWall, trenutni vlasnici: \u0027Global media technology društvo sa ograničenom odgovornošću Beograd-Stari Grad, Ružica Krdžić\u0027.",
+          "archive": "https://web.archive.org/web/20261110163443/https://www.companywall.rs/firma/rimi-media-group-doo-beograd/MMorLuGY",
+          "archivedOn": "2026-11-10"
+        },
+        {
+          "url": "https://www.danas.rs/vesti/ekonomija/sasa-blagojevic-alo-rock-radio-mediji-lik-dana/",
+          "domain": "danas.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Danas, spisak preduzeća za koja je Global Media Technology krovna kompanija: \u0027Rimi Media Group\u0027.",
+          "archive": "http://web.archive.org/web/20260217205038/https://www.danas.rs/vesti/ekonomija/sasa-blagojevic-alo-rock-radio-mediji-lik-dana/",
+          "archivedOn": "2026-02-17"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "edge15",
+      "label": "ownership connection",
+      "source": "insajder_tim",
+      "target": "best_media_team",
+      "uri": "https://w3id.org/vip/rs/InsajderTim_BestMediaTeam",
+      "comment": "Prema ANEM-u i 021, izdavač Informera, Insajder Tim, postaje vlasnik 10% Best Media Team u februaru 2026.",
+      "kind": "OwnershipConnection",
+      "typeLabel": "Ownership connection",
+      "share": 10.0,
+      "start": "2026-02",
+      "file": "data/cases/alo-media-system.ttl",
+      "line": 117,
+      "sources": [
+        {
+          "url": "https://www.021.rs/info/srbija/436227/informer-postao-suvlasnik-firme-koja-kupuje-lokalne-medije",
+          "domain": "021.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "021, prenoseći ANEM: \u0027Alo Media System\u0027 90 odsto i \u0027Insajder Tim\u0027 10 odsto.",
+          "archive": "http://web.archive.org/web/20261101142331/https://www.021.rs/info/srbija/436227/informer-postao-suvlasnik-firme-koja-kupuje-lokalne-medije",
+          "archivedOn": "2026-11-01"
+        },
+        {
+          "url": "https://anem.org.rs/sr/strane/informer-postao-suvlasnik-cerke-firme-aloa-koja-kupuje-lokalne-medije-o-srbiji",
+          "domain": "anem.org.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "ANEM, promena vlasništva: \u0027Alo Media System 90 odsto i Insajder Tim 10 odsto\u0027.",
+          "archive": "http://web.archive.org/web/20260414144733/https://anem.org.rs/sr/strane/informer-postao-suvlasnik-cerke-firme-aloa-koja-kupuje-lokalne-medije-o-srbiji",
+          "archivedOn": "2026-04-14"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "edge16",
       "label": "ownership connection",
       "source": "ivan_bosnjak_milenijum_tim",
       "target": "milenijum_tim",
@@ -1550,7 +2472,7 @@
   },
   {
     "data": {
-      "id": "edge7",
+      "id": "edge17",
       "label": "executive board member",
       "source": "ivan_bosnjak_milenijum_tim",
       "target": "naled",
@@ -1605,7 +2527,112 @@
   },
   {
     "data": {
-      "id": "edge8",
+      "id": "edge18",
+      "label": "ownership connection",
+      "source": "maxim_media_plus",
+      "target": "baltazar",
+      "uri": "https://w3id.org/vip/rs/MaximMediaPlus_Baltazar",
+      "comment": "MOM navodi Baltazar kao stoprocentni poslovni interes Maxim Media Plus; Danas potvrđuje da je ćerka firma. Datum sticanja nije utvrđen.",
+      "kind": "OwnershipConnection",
+      "typeLabel": "Ownership connection",
+      "share": 100.0,
+      "file": "data/cases/alo-media-system.ttl",
+      "line": 155,
+      "sources": [
+        {
+          "url": "https://www.danas.rs/vesti/ekonomija/sasa-blagojevic-alo-rock-radio-mediji-lik-dana/",
+          "domain": "danas.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Danas, spisak ćerki firmi Maxim Media Plus: \u0027Baltazar DOO\u0027 iz Niša.",
+          "archive": "http://web.archive.org/web/20260217205038/https://www.danas.rs/vesti/ekonomija/sasa-blagojevic-alo-rock-radio-mediji-lik-dana/",
+          "archivedOn": "2026-02-17"
+        },
+        {
+          "url": "https://serbia.mom-gmr.org/sr/vlasnik/companies/detail/company/company/show/maxim-media-plus-1/",
+          "domain": "serbia.mom-gmr.org",
+          "type": "registryRecord",
+          "status": "published",
+          "quote": "MOM, profil kompanije Maxim Media Plus, odeljak Biznis / Marketing: \u0027Baltazar (100%)\u0027.",
+          "archive": "http://web.archive.org/web/20250915220442/https://serbia.mom-gmr.org/sr/vlasnik/companies/detail/company/company/show/maxim-media-plus-1/",
+          "archivedOn": "2025-09-15"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "edge19",
+      "label": "ownership connection",
+      "source": "maxim_media_plus",
+      "target": "bis_komerc",
+      "uri": "https://w3id.org/vip/rs/MaximMediaPlus_BisKomerc",
+      "comment": "MOM navodi Bis-komerc kao stoprocentni poslovni interes Maxim Media Plus; Danas potvrđuje da je ćerka firma. Datum sticanja nije utvrđen.",
+      "kind": "OwnershipConnection",
+      "typeLabel": "Ownership connection",
+      "share": 100.0,
+      "file": "data/cases/alo-media-system.ttl",
+      "line": 167,
+      "sources": [
+        {
+          "url": "https://www.danas.rs/vesti/ekonomija/sasa-blagojevic-alo-rock-radio-mediji-lik-dana/",
+          "domain": "danas.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Danas, spisak ćerki firmi Maxim Media Plus: \u0027Bis-Komerc\u0027.",
+          "archive": "http://web.archive.org/web/20260217205038/https://www.danas.rs/vesti/ekonomija/sasa-blagojevic-alo-rock-radio-mediji-lik-dana/",
+          "archivedOn": "2026-02-17"
+        },
+        {
+          "url": "https://serbia.mom-gmr.org/sr/vlasnik/companies/detail/company/company/show/maxim-media-plus-1/",
+          "domain": "serbia.mom-gmr.org",
+          "type": "registryRecord",
+          "status": "published",
+          "quote": "MOM, profil Maxim Media Plus, odeljak Biznis / Kablovske telekomunikacije: \u0027Bis-komerc (100%)\u0027.",
+          "archive": "http://web.archive.org/web/20250915220442/https://serbia.mom-gmr.org/sr/vlasnik/companies/detail/company/company/show/maxim-media-plus-1/",
+          "archivedOn": "2025-09-15"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "edge20",
+      "label": "ownership connection",
+      "source": "maxim_media_plus",
+      "target": "new_agency",
+      "uri": "https://w3id.org/vip/rs/MaximMediaPlus_NewAgency",
+      "comment": "MOM izričito navodi da je New Agency u vlasništvu Maxim Media Plus sa 100%; Danas potvrđuje da je ćerka firma. Datum sticanja nije utvrđen.",
+      "kind": "OwnershipConnection",
+      "typeLabel": "Ownership connection",
+      "share": 100.0,
+      "file": "data/cases/alo-media-system.ttl",
+      "line": 179,
+      "sources": [
+        {
+          "url": "https://www.danas.rs/vesti/ekonomija/sasa-blagojevic-alo-rock-radio-mediji-lik-dana/",
+          "domain": "danas.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Danas, spisak ćerki firmi Maxim Media Plus: \u0027New Agency\u0027.",
+          "archive": "http://web.archive.org/web/20260217205038/https://www.danas.rs/vesti/ekonomija/sasa-blagojevic-alo-rock-radio-mediji-lik-dana/",
+          "archivedOn": "2026-02-17"
+        },
+        {
+          "url": "https://serbia.mom-gmr.org/sr/vlasnik/companies/detail/company/company/show/maxim-media-plus-1/",
+          "domain": "serbia.mom-gmr.org",
+          "type": "registryRecord",
+          "status": "published",
+          "quote": "MOM, profil Maxim Media Plus, odeljak Biznis / Marketing: \u0027New Agency (100%)\u0027.",
+          "archive": "http://web.archive.org/web/20250915220442/https://serbia.mom-gmr.org/sr/vlasnik/companies/detail/company/company/show/maxim-media-plus-1/",
+          "archivedOn": "2025-09-15"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "edge21",
       "label": "alumni",
       "source": "mihailo_jovanovic",
       "target": "peta_beogradska_gimnazija",
@@ -1641,7 +2668,7 @@
   },
   {
     "data": {
-      "id": "edge9",
+      "id": "edge22",
       "label": "ownership connection",
       "source": "milenijum_tim",
       "target": "mt_gastel",
@@ -1694,7 +2721,7 @@
   },
   {
     "data": {
-      "id": "edge10",
+      "id": "edge23",
       "label": "ownership connection",
       "source": "milenijum_tim",
       "target": "mv_investment",
@@ -1748,7 +2775,7 @@
   },
   {
     "data": {
-      "id": "edge11",
+      "id": "edge24",
       "label": "ownership connection",
       "source": "milenijum_tim",
       "target": "milenijum_adria",
@@ -1793,7 +2820,7 @@
   },
   {
     "data": {
-      "id": "edge12",
+      "id": "edge25",
       "label": "ownership connection",
       "source": "milenijum_tim",
       "target": "milenijum_resorts",
@@ -1828,7 +2855,7 @@
   },
   {
     "data": {
-      "id": "edge13",
+      "id": "edge26",
       "label": "ownership connection",
       "source": "milenijum_tim",
       "target": "milenijum_propertiz",
@@ -1872,7 +2899,7 @@
   },
   {
     "data": {
-      "id": "edge14",
+      "id": "edge27",
       "label": "ownership connection",
       "source": "milenijum_tim",
       "target": "mostogradnja_ing",
@@ -1916,7 +2943,7 @@
   },
   {
     "data": {
-      "id": "edge15",
+      "id": "edge28",
       "label": "ownership connection",
       "source": "milenijum_tim",
       "target": "pizzarotti_millennium",
@@ -1951,44 +2978,7 @@
   },
   {
     "data": {
-      "id": "edge16",
-      "label": "ownership connection",
-      "source": "milenijum_tim",
-      "target": "roberts_milenijum",
-      "uri": "https://w3id.org/vip/rs/MilenijumTim_RobertsMillennium_Suvlasnistvo",
-      "comment": "Milenijum tim je od osnivanja imao 50% društva Roberts Millennium; drugu polovinu držala je Roberts Constructions Serbia Pty Limited iz Australije.",
-      "kind": "OwnershipConnection",
-      "typeLabel": "Ownership connection",
-      "share": 50.0,
-      "start": "2019-12-26",
-      "end": "2022-07",
-      "file": "data/cases/milenijum-tim.ttl",
-      "line": 169,
-      "sources": [
-        {
-          "url": "https://www.danas.rs/vesti/ekonomija/prijatelji-milenijum-tima-ne-placaju-turske-radnike/",
-          "domain": "danas.rs",
-          "type": "newsArticle",
-          "status": "published",
-          "quote": "Danas, 12. mart 2021: prema registru, Roberts i Milenijum tim imaju zajedničko preduzeće Roberts Milenium.",
-          "archive": "http://web.archive.org/web/20250313081418/https://www.danas.rs/vesti/ekonomija/prijatelji-milenijum-tima-ne-placaju-turske-radnike/",
-          "archivedOn": "2025-03-13"
-        },
-        {
-          "url": "https://n1info.rs/biznis/cime-se-sve-bavi-novi-vlasnik-hotela-jugoslavija-milenijum-tim-od-bolnice-do-gradjevine/",
-          "domain": "n1info.rs",
-          "type": "newsArticle",
-          "status": "published",
-          "quote": "N1, 23. mart 2024: 50 odsto je u suvlasništvu Milenijum tima, druga polovina je u vlasništvu Roberts Constructions Serbia Pty Limited.",
-          "archive": "http://web.archive.org/web/20260414192229/https://n1info.rs/biznis/cime-se-sve-bavi-novi-vlasnik-hotela-jugoslavija-milenijum-tim-od-bolnice-do-gradjevine/",
-          "archivedOn": "2026-04-14"
-        }
-      ]
-    }
-  },
-  {
-    "data": {
-      "id": "edge17",
+      "id": "edge29",
       "label": "ownership connection",
       "source": "milenijum_tim",
       "target": "roberts_milenijum",
@@ -2020,12 +3010,108 @@
           "archive": "http://web.archive.org/web/20260414192229/https://n1info.rs/biznis/cime-se-sve-bavi-novi-vlasnik-hotela-jugoslavija-milenijum-tim-od-bolnice-do-gradjevine/",
           "archivedOn": "2026-04-14"
         }
+      ],
+      "history": [
+        {
+          "uri": "https://w3id.org/vip/rs/MilenijumTim_RobertsMillennium_Suvlasnistvo",
+          "share": 50.0,
+          "start": "2019-12-26",
+          "end": "2022-07",
+          "comment": "Milenijum tim je od osnivanja imao 50% društva Roberts Millennium; drugu polovinu držala je Roberts Constructions Serbia Pty Limited iz Australije.",
+          "file": "data/cases/milenijum-tim.ttl",
+          "line": 169,
+          "sources": [
+            {
+              "url": "https://www.danas.rs/vesti/ekonomija/prijatelji-milenijum-tima-ne-placaju-turske-radnike/",
+              "domain": "danas.rs",
+              "type": "newsArticle",
+              "status": "published",
+              "quote": "Danas, 12. mart 2021: prema registru, Roberts i Milenijum tim imaju zajedničko preduzeće Roberts Milenium.",
+              "archive": "http://web.archive.org/web/20250313081418/https://www.danas.rs/vesti/ekonomija/prijatelji-milenijum-tima-ne-placaju-turske-radnike/",
+              "archivedOn": "2025-03-13"
+            },
+            {
+              "url": "https://n1info.rs/biznis/cime-se-sve-bavi-novi-vlasnik-hotela-jugoslavija-milenijum-tim-od-bolnice-do-gradjevine/",
+              "domain": "n1info.rs",
+              "type": "newsArticle",
+              "status": "published",
+              "quote": "N1, 23. mart 2024: 50 odsto je u suvlasništvu Milenijum tima, druga polovina je u vlasništvu Roberts Constructions Serbia Pty Limited.",
+              "archive": "http://web.archive.org/web/20260414192229/https://n1info.rs/biznis/cime-se-sve-bavi-novi-vlasnik-hotela-jugoslavija-milenijum-tim-od-bolnice-do-gradjevine/",
+              "archivedOn": "2026-04-14"
+            }
+          ]
+        },
+        {
+          "uri": "https://w3id.org/vip/rs/MilenijumTim_RobertsMillennium_Vlasnistvo",
+          "share": 100.0,
+          "start": "2022-07",
+          "end": "2024-12-03",
+          "comment": "Milenijum tim je u julu 2022. preuzeo 100% društva Roberts Millennium, koje je izbrisano iz registra 3. decembra 2024.",
+          "file": "data/cases/milenijum-tim.ttl",
+          "line": 182,
+          "sources": [
+            {
+              "url": "https://www.companywall.rs/firma/roberts-millennium-doo/MMx15PUYY",
+              "domain": "companywall.rs",
+              "type": "registryRecord",
+              "status": "published",
+              "quote": "Registar: vlasnik Millennium Team 100%, neaktivan, izbrisan 3.12.2024.",
+              "archive": "https://web.archive.org/web/20261101021241/https://www.companywall.rs/firma/roberts-millennium-doo/MMx15PUYY",
+              "archivedOn": "2026-11-01"
+            },
+            {
+              "url": "https://n1info.rs/biznis/cime-se-sve-bavi-novi-vlasnik-hotela-jugoslavija-milenijum-tim-od-bolnice-do-gradjevine/",
+              "domain": "n1info.rs",
+              "type": "newsArticle",
+              "status": "published",
+              "quote": "N1, 23. mart 2024: Milenijum tim preuzima 100 procentno vlasništvo u julu 2022.",
+              "archive": "http://web.archive.org/web/20260414192229/https://n1info.rs/biznis/cime-se-sve-bavi-novi-vlasnik-hotela-jugoslavija-milenijum-tim-od-bolnice-do-gradjevine/",
+              "archivedOn": "2026-04-14"
+            }
+          ]
+        }
       ]
     }
   },
   {
     "data": {
-      "id": "edge18",
+      "id": "edge30",
+      "label": "ownership connection",
+      "source": "sasa_blagojevic",
+      "target": "alo_marketing",
+      "uri": "https://w3id.org/vip/rs/SasaBlagojevic_AloMarketing",
+      "comment": "MOM navodi da je Blagojević osnovao Alo Marketing u avgustu 2017. i ima 100%; CompanyWall potvrđuje vlasnika.",
+      "kind": "OwnershipConnection",
+      "typeLabel": "Ownership connection",
+      "share": 100.0,
+      "start": "2017-08",
+      "file": "data/cases/alo-media-system.ttl",
+      "line": 77,
+      "sources": [
+        {
+          "url": "https://www.companywall.rs/firma/alo-marketing-doo-beograd-stari-grad/MMykEIG0",
+          "domain": "companywall.rs",
+          "type": "registryRecord",
+          "status": "published",
+          "quote": "CompanyWall: \u0027Vlasnik kompanije je Saša Blagojević\u0027.",
+          "archive": "https://web.archive.org/web/20261110163101/https://www.companywall.rs/firma/alo-marketing-doo-beograd-stari-grad/MMykEIG0",
+          "archivedOn": "2026-11-10"
+        },
+        {
+          "url": "https://serbia.mom-gmr.org/sr/vlasnik/individual-owners/detail/owner/owner/show/sasa-blagojevic-2/",
+          "domain": "serbia.mom-gmr.org",
+          "type": "registryRecord",
+          "status": "published",
+          "quote": "MOM navodi osnivanje u avgustu 2017; pod poslovnim interesima: \u0027Alo marketing (100%)\u0027.",
+          "archive": "http://web.archive.org/web/20250915222803/https://serbia.mom-gmr.org/sr/vlasnik/individual-owners/detail/owner/owner/show/sasa-blagojevic-2/",
+          "archivedOn": "2025-09-15"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "edge31",
       "label": "ownership connection",
       "source": "sasa_blagojevic",
       "target": "alo_media_system",
@@ -2036,7 +3122,7 @@
       "share": 100.0,
       "start": "2017-07",
       "file": "data/cases/alo-media-system.ttl",
-      "line": 19,
+      "line": 20,
       "sources": [
         {
           "url": "https://anem.org.rs/en/strane/cilj-je-zastrasivanje-na-lokalu-i-spaljena-zemlja-kakvu-ulogu-imaju-ispostave-klonovi-informera-i-aloa",
@@ -2097,7 +3183,77 @@
   },
   {
     "data": {
-      "id": "edge19",
+      "id": "edge32",
+      "label": "ownership connection",
+      "source": "sasa_blagojevic",
+      "target": "global_media_technology",
+      "uri": "https://w3id.org/vip/rs/SasaBlagojevic_GlobalMediaTechnology",
+      "comment": "Prema MOM-u i CompanyWall-u, Saša Blagojević je vlasnik Global Media Technology. Datum sticanja nije utvrđen.",
+      "kind": "OwnershipConnection",
+      "typeLabel": "Ownership connection",
+      "share": 100.0,
+      "file": "data/cases/alo-media-system.ttl",
+      "line": 40,
+      "sources": [
+        {
+          "url": "https://www.companywall.rs/firma/global-media-technology-drustvo-sa-ogranicenom-odgovornoscu-beograd-stari-grad/MMz0shQD",
+          "domain": "companywall.rs",
+          "type": "registryRecord",
+          "status": "published",
+          "quote": "CompanyWall: \u0027Vlasnik kompanije je Saša Blagojević\u0027.",
+          "archive": "https://web.archive.org/web/20261110163250/https://www.companywall.rs/firma/global-media-technology-drustvo-sa-ogranicenom-odgovornoscu-beograd-stari-grad/MMz0shQD",
+          "archivedOn": "2026-11-10"
+        },
+        {
+          "url": "https://montenegro.mom-gmr.org/cg/vlasnici/pojedinci/detail/owner/owner/show/sasa-blagojevic-3/",
+          "domain": "montenegro.mom-gmr.org",
+          "type": "registryRecord",
+          "status": "published",
+          "quote": "MOM Crna Gora: \u0027Saša Blagojević je 100% vlasnik Global Media Tehnologi d.o.o. Beograd\u0027.",
+          "archive": "http://web.archive.org/web/20250710173740/https://montenegro.mom-gmr.org/cg/vlasnici/pojedinci/detail/owner/owner/show/sasa-blagojevic-3/",
+          "archivedOn": "2025-07-10"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "edge33",
+      "label": "ownership connection",
+      "source": "sasa_blagojevic",
+      "target": "trilenium",
+      "uri": "https://w3id.org/vip/rs/SasaBlagojevic_Trilenium",
+      "comment": "Prema MOM-u i Novoj, Saša Blagojević ima 50% kompanije Trilenium. Datum sticanja nije utvrđen.",
+      "kind": "OwnershipConnection",
+      "typeLabel": "Ownership connection",
+      "share": 50.0,
+      "file": "data/cases/alo-media-system.ttl",
+      "line": 65,
+      "sources": [
+        {
+          "url": "https://nova.rs/vesti/biznis/vlasnici-aloa-i-informera-vlasnici-skoro-25-medija-u-srbiji",
+          "domain": "nova.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Nova, 1. novembar 2026, Trilenium: \u002750 odsto u vlasništvu Saše Blagojevića\u0027.",
+          "archive": "http://web.archive.org/web/20261102131221/https://nova.rs/vesti/biznis/vlasnici-aloa-i-informera-vlasnici-skoro-25-medija-u-srbiji/",
+          "archivedOn": "2026-11-02"
+        },
+        {
+          "url": "https://serbia.mom-gmr.org/sr/vlasnik/individual-owners/detail/owner/owner/show/sasa-blagojevic-2/",
+          "domain": "serbia.mom-gmr.org",
+          "type": "registryRecord",
+          "status": "published",
+          "quote": "MOM, poslovni interesi Saše Blagojevića, konsultantske aktivnosti: \u0027Trilenium (50%)\u0027.",
+          "archive": "http://web.archive.org/web/20250915222803/https://serbia.mom-gmr.org/sr/vlasnik/individual-owners/detail/owner/owner/show/sasa-blagojevic-2/",
+          "archivedOn": "2025-09-15"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "edge34",
       "label": "alumni",
       "source": "sinisa_mali",
       "target": "ekonomski_fakultet_university_of_belgrade",
@@ -2132,7 +3288,7 @@
   },
   {
     "data": {
-      "id": "edge20",
+      "id": "edge35",
       "label": "alumni",
       "source": "sinisa_mali",
       "target": "peta_beogradska_gimnazija",
@@ -2168,7 +3324,7 @@
   },
   {
     "data": {
-      "id": "edge21",
+      "id": "edge36",
       "label": "political connection",
       "source": "sinisa_mali",
       "target": "sns",
@@ -2203,7 +3359,7 @@
   },
   {
     "data": {
-      "id": "edge22",
+      "id": "edge37",
       "label": "ownership connection",
       "source": "stojan_vujko",
       "target": "milenijum_tim",

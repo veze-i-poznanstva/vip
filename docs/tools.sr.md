@@ -63,7 +63,11 @@ Java, jer build sam preuzima Node.js:
 Zatim otvorite <http://localhost:5173/?lang=sr>, ili <http://localhost:5173/> za engleski. Ukucajte
 ime u polje za pretragu, kliknite na čvor da ga stavite u središte, a dvostrukim klikom dodajte
 njegove veze. Zadržite pokazivač na čvoru da pročitate njegov opis i otvorite članak na Vikipediji, ako postoji;
-panel sa detaljima vodi i do njegove stavke na Vikidati.
+panel sa detaljima vodi i do njegove stavke na Vikidati. Pregledač crta jednu ivicu po odnosu, sa
+oznakom poslednjeg dokumentovanog stanja (na primer „vlasnik 90%“); panel prikazuje istoriju, svako
+stanje sa periodom, udelom, komentarom i izvorima. Okončan odnos crta se isprekidano, a oznaka nosi
+„do“ i kraj. Datum kraja koji nedostaje znači da je nepoznat, i panel to kaže; pregledač nikad ne
+kaže „aktuelan“.
 
 Alati za šemu uzimaju jednu datoteku (`-Pfile`, podrazumevano `schema.ttl`); alati za podatke
 uzimaju stablo foldera sa Turtle datotekama ili jednu datoteku (`-Pdata`, podrazumevano `data`).
@@ -187,7 +191,10 @@ ConnectionShape, DocumentationShape i FinancialInformationShape. Podaci se prove
 sa onim što rečnik podrazumeva (potklase, potsvojstva, domeni i opsezi), pa `foaf:Person`
 zadovoljava ograničenje koje traži `foaf:Agent` bez ponavljanja hijerarhije u podacima.
 Svaki dokument uz vezu mora u `rdfs:comment` citirati odlomak koji je potvrđuje. Prijavljuje svako
-kršenje sa čvorom na koji se odnosi i porukom.
+kršenje sa čvorom na koji se odnosi i porukom. Dve provere se tiču vlasništva: `vip:ownershipShare`
+je jedan decimalni procenat veći od 0 i najviše 100, a za svaku firmu udeli zapisa koji mogu važiti
+istovremeno zbirno ne prelaze 100%. Zapisi za koje se zna da slede jedan drugog ne sabiraju se;
+za nedatiran zapis se nikad ne zna da je razdvojen, pa se uvek sabira.
 
 ### Provera OWL konzistentnosti
 

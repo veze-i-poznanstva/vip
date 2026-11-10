@@ -50,7 +50,12 @@ company's registration and tax numbers are public registry data.
 
 Connections carry `:connectionStartDate`/`:connectionEndDate` at the source's precision (`xsd:gYear`,
 `xsd:gYearMonth`, `xsd:date`); never invent 1 January; absent means unknown; one connection per
-role when periods differ. Rules drop known non-overlap and report `overlapping` or `unknown`.
+role when periods differ. A changed attribute (such as a share) is a new dated record for the same
+parties, the old one ending where the new one starts; the export merges the records of one
+relationship into one edge with the latest state and its history, and draws ended relationships
+dashed. A company's shares that may apply at the same time total at most 100
+(`:OwnershipTotalShape`); a share is a decimal in (0, 100]. Rules drop known non-overlap and
+report `overlapping` or `unknown`.
 
 ## Data layout
 
@@ -102,9 +107,11 @@ a directory tree or one file). Every tool exits 1 on failure except `analyzeSche
 - `WikidataLinker.kt` fills `vip:wikidataItem` into entity files from the article (text insertion after the article line) and checks recorded items; CLI with `--check`.
 - `SHACLValidator.kt` `validateShacl(shapes, data)` over the RDFS-inferred graph; CLI.
 - `TtlToCytoscape.kt` vocabulary-driven export: agents are nodes, connections are edges between
-  participants, only vocabulary-declared direct properties become edges, node ids are injective; connections are never
-  merged. Nodes and connection edges carry sources (quote, archive snapshot), aliases, facts, dates,
-  roles, share and the file and line of the record (`CytoscapeEvidence.kt`: Source, Fact, RecordLocator).
+  participants, only vocabulary-declared direct properties become edges, node ids are injective.
+  The records of one relationship (same kind, parties and roles) become one edge carrying the latest
+  state and a `history` of all states; nothing else is merged. Nodes and connection edges carry
+  sources (quote, archive snapshot), aliases, facts, dates, roles, share and the file and line of the
+  record (`CytoscapeEvidence.kt`: Source, Fact, RecordLocator).
 - `RDFValidator.kt`, `OWLConsistencyChecker.kt` (Jena OWL reasoner), `BestPracticesChecker.kt`
   (exits 1 on errors), `SchemaMetrics.kt`.
 - `RedFlags.kt` loads `rules/*.rq` (name, leading comment = bilingual explanation, SPARQL SELECT),

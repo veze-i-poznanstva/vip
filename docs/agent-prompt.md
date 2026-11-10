@@ -115,7 +115,11 @@ Step 5, the data. For each claim:
   precisely as the source states it: xsd:gYear for a year, xsd:gYearMonth for a month, xsd:date
   for a day. Never invent a precision, such as 1 January for a bare year. Leave a date out when
   no source gives it, and say so in the comment. When one person held several roles at different
-  times, write one connection per role;
+  times, write one connection per role. When an attribute changes, such as an ownership share,
+  write a new connection for the new state and end the old one where the new one starts, at the
+  precision the source gives; the viewer shows them as one relationship with its history. A
+  company's shares that may apply at the same time must not add up to more than 100%, and the
+  build refuses a file where they do;
 - say out loud which file you are writing and what goes into it.
 Work on a branch named after the case, for example `case/milenijum-tim`.
 

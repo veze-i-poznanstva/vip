@@ -23,12 +23,23 @@ Seven conventions apply to every record. The validators enforce their form; whet
   `:PoliticalConnection` between the person and the party. Employment and board seats are a
   `:WorkConnection` with one or more work roles and optional start and end dates. Schooling is
   an `:AlumniEducationalConnection`. Company ownership is a `vip:OwnershipConnection` with an
-  optional share. Each connection carries its own documentation, so the evidence for "X sits on
-  the board of Y" is separate from the evidence that X and Y exist.
+  optional share (a decimal percentage, 0 to 100). Each connection carries its own documentation,
+  so the evidence for "X sits on the board of Y" is separate from the evidence that X and Y exist.
 - **Time is part of the claim.** A connection carries `:connectionStartDate` and
   `:connectionEndDate` as precisely as its source states them: `xsd:gYear`, `xsd:gYearMonth` or
   `xsd:date`, never an invented 1 January. A missing date means unknown, not ongoing. Roles held
   at different times are separate connections. The shapes refuse an end before a start.
+  A relationship has one identity but is written as one dated record per state: Alo Media System
+  owned 100% of Best Media Team from 24 December 2025 and 90% from February 2026, so there are two
+  `vip:OwnershipConnection` records between the same parties, the first ending in `2026-02` where
+  the second starts, each with its own sources. Nothing new is declared; the build derives the
+  relationship from the records (same kind, same parties, same roles). For each company, the
+  shares of records that may apply at the same time must not total more than 100%; records known
+  to follow one another are not summed, and two undated or open claims that together exceed 100%
+  fail the build until one is dated or removed. The viewer merges the records of one relationship
+  into one edge labelled with the latest documented state and keeps the history in the details
+  panel; a relationship whose latest state has an end date is drawn dashed. A missing end is
+  unknown, never "current".
 - **Every term has labels in English, Spanish and Serbian.** Every class, property and
   individual in the vocabulary and every SHACL message carries `@en`, `@es` and `@sr` text, so
   user interfaces and validation reports can be rendered in any of the three.

@@ -26,7 +26,8 @@ Three things must always be true on screen:
    one hop (default) and two hops. Two hops render the second ring fainter.
 3. **Inspect.** A single click on any node or edge selects it and fills the details panel:
    label, type, every known property, and the list of sources with domain and reachability
-   status. Nothing else on the canvas changes.
+   status. An edge's details list the relationship's dated states, the newest marked as the latest
+   documented state; a relationship is never called current. Nothing else on the canvas changes.
 4. **Expand.** A double click, or the Expand button in the details panel, adds that node's
    neighbours to the canvas without removing what is there. The layout animates so the
    expanded node moves outward and its neighbours gather round it.
@@ -70,8 +71,10 @@ On narrow screens the details panel becomes a sheet that slides up over the canv
 - Edge labels hidden by default, shown on hover and on selection, to keep the canvas clean.
 - Layout: concentric around the focus node for the ego view; on Expand, run an incremental
   force layout with existing nodes locked so the picture does not jump.
-- Edges whose connection has no reachable source are drawn dashed, so weak evidence is visible
-  at a glance.
+- Ended relationships (the latest state has an end date) are drawn dashed, with the end in the
+  label, for example "owns 100% (until 2022-07)".
+- Weak evidence (no reachable source) is planned as a lighter, thinner line, since dashed now
+  means ended.
 
 ## Data
 
@@ -105,6 +108,8 @@ contract above stays the same, so the UI does not change.
 
 The current converter produces nodes and edges with only id, label and type. It must also:
 
+- merge the records of one relationship (same kind, parties, roles) into one edge carrying the
+  latest state and a `history` of all states;
 - carry every `hasDocumentURL` and `hasSource` of a node onto the node, and of a connection
   onto the edge it was collapsed into;
 - keep the connection's URI and comment on the edge, so the details panel can show them;
@@ -131,7 +136,7 @@ Each increment is a thin vertical slice that ends green, following the Baby Step
    matching in Vitest, including Cyrillic input and diacritics.
 3. **Ego graph, depth one.** Choosing a result renders the focus node and its neighbours with
    the concentric layout.
-4. **Details panel.** Built. The focus node, or a clicked connection, shows facts, connections, sources with quotes and archive links, and links to the raw data.
+4. **Details panel.** Built. The focus node, or a clicked connection, shows facts, connections, sources with quotes and archive links, and links to the raw data. Relationship history and ended-relationship marking built.
 5. **Expand and recentre.** Double click expands; Focus button recentres; trail appears.
 6. **Depth two toggle.** Second ring at reduced opacity.
 7. **Deep links.** Trail and expanded set in the URL hash. Built so far: the path (`?from=&to=`) and the focus (`?focus=`).
