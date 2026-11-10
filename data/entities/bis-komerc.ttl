@@ -1,0 +1,20 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rs: <https://w3id.org/vip/rs/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix : <http://poderopedia.com/vocab/> .
+@prefix vip: <https://w3id.org/vip/vocab#> .
+
+# Bis-komerc
+# Matična datoteka entiteta; veze su u data/cases/alo-media-system.ttl.
+# Entity home file; connections are in data/cases/alo-media-system.ttl.
+
+rs:Bis_Komerc a :Company ;
+    foaf:name "Bis-komerc"@sr ;
+    rdfs:comment "Kompanija za kablovske telekomunikacije u sastavu Maxim Media Plus, prema MOM-u i Danasu."@sr ;
+    rdfs:comment "Cable telecommunications company within Maxim Media Plus, according to MOM and Danas."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://serbia.mom-gmr.org/sr/vlasnik/companies/detail/company/company/show/maxim-media-plus-1/> ; :hasDocumentType vip:registryRecord ; :hasDocumentStatus vip:published ;
+          rdfs:comment "MOM, profil Maxim Media Plus, odeljak Biznis / Kablovske telekomunikacije: 'Bis-komerc (100%)'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.danas.rs/vesti/ekonomija/sasa-blagojevic-alo-rock-radio-mediji-lik-dana/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Danas, spisak ćerki firmi Maxim Media Plus: 'Bis-Komerc'."@sr ] .

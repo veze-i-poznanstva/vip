@@ -1,0 +1,20 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rs: <https://w3id.org/vip/rs/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix : <http://poderopedia.com/vocab/> .
+@prefix vip: <https://w3id.org/vip/vocab#> .
+
+# Global Media Technology — televizijska kompanija Saše Blagojevića.
+# Global Media Technology — Saša Blagojević's television company.
+# Matična datoteka entiteta; veze su u data/cases/alo-media-system.ttl.
+# Entity home file; connections are in data/cases/alo-media-system.ttl.
+
+rs:Global_Media_Technology a :Company ;
+    foaf:name "Global Media Technology"@sr ;
+    rdfs:comment "Beogradska kompanija za televizijsku delatnost; MOM i CompanyWall navode Sašu Blagojevića kao vlasnika."@sr ;
+    rdfs:comment "Belgrade television company; MOM and CompanyWall identify Saša Blagojević as its owner."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://montenegro.mom-gmr.org/cg/vlasnici/pojedinci/detail/owner/owner/show/sasa-blagojevic-3/> ; :hasDocumentType vip:registryRecord ; :hasDocumentStatus vip:published ;
+          rdfs:comment "MOM Crna Gora: 'Saša Blagojević je 100% vlasnik Global Media Tehnologi d.o.o. Beograd'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.companywall.rs/firma/global-media-technology-drustvo-sa-ogranicenom-odgovornoscu-beograd-stari-grad/MMz0shQD> ; :hasDocumentType vip:registryRecord ; :hasDocumentStatus vip:published ;
+          rdfs:comment "CompanyWall: 'Vlasnik kompanije je Saša Blagojević'."@sr ] .

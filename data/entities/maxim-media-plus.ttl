@@ -1,0 +1,20 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rs: <https://w3id.org/vip/rs/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix : <http://poderopedia.com/vocab/> .
+@prefix vip: <https://w3id.org/vip/vocab#> .
+
+# Maxim Media Plus
+# Matična datoteka entiteta; veze su u data/cases/alo-media-system.ttl.
+# Entity home file; connections are in data/cases/alo-media-system.ttl.
+
+rs:Maxim_Media_Plus a :Company ;
+    foaf:name "Maxim Media Plus"@sr ;
+    rdfs:comment "Kompanija za komunikacije, medije i marketing; MOM opisuje vlasništvo Global Media Technology i porodice Krdžić."@sr ;
+    rdfs:comment "Communications, media and marketing company; MOM describes its ownership by Global Media Technology and the Krdžić family."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://serbia.mom-gmr.org/sr/vlasnik/companies/detail/company/company/show/maxim-media-plus-1/> ; :hasDocumentType vip:registryRecord ; :hasDocumentStatus vip:published ;
+          rdfs:comment "MOM: 'U januaru 2021. godine, većinski vlasnik sa 51% udela postala je kompanija Global Media Technology'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://nova.rs/vesti/biznis/vlasnici-aloa-i-informera-vlasnici-skoro-25-medija-u-srbiji> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Nova, 1. novembar 2026, opis vlasništva Maxim Media Plus: 'Global Media Technology Saše Blagojevića sa 51 odsto'."@sr ] .

@@ -1,0 +1,20 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rs: <https://w3id.org/vip/rs/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix : <http://poderopedia.com/vocab/> .
+@prefix vip: <https://w3id.org/vip/vocab#> .
+
+# Rimi Media Group
+# Matična datoteka entiteta; veze su u data/cases/alo-media-system.ttl.
+# Entity home file; connections are in data/cases/alo-media-system.ttl.
+
+rs:Rimi_Media_Group a :Company ;
+    foaf:name "Rimi Media Group"@sr ;
+    rdfs:comment "Beogradska kompanija čiji su suvlasnici Global Media Technology i Ružica Krdžić, prema CompanyWall-u; Danas je navodi u poslovnoj grupi Global Media Technology."@sr ;
+    rdfs:comment "Belgrade company co-owned by Global Media Technology and Ružica Krdžić according to CompanyWall; Danas places it in the Global Media Technology business group."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://www.companywall.rs/firma/rimi-media-group-doo-beograd/MMorLuGY> ; :hasDocumentType vip:registryRecord ; :hasDocumentStatus vip:published ;
+          rdfs:comment "CompanyWall, trenutni vlasnici: 'Global media technology društvo sa ograničenom odgovornošću Beograd-Stari Grad, Ružica Krdžić'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.danas.rs/vesti/ekonomija/sasa-blagojevic-alo-rock-radio-mediji-lik-dana/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Danas, spisak preduzeća za koja je Global Media Technology krovna kompanija: 'Rimi Media Group'."@sr ] .

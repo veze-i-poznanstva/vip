@@ -37,6 +37,10 @@
         vip:archivedOn     "2025-05-20"^^xsd:date;
         vip:hasArchiveURL  <http://web.archive.org/web/20250520025845/http://serbia.mom-gmr.org/sr/mediji/detail/outlet/alo/> .
 
+<https://www.companywall.rs/firma/bizmedia-doo-beograd/MMx3lKQZD>
+        vip:archivedOn     "2026-11-10"^^xsd:date;
+        vip:hasArchiveURL  <https://web.archive.org/web/20261110163136/https://www.companywall.rs/firma/bizmedia-doo-beograd/MMx3lKQZD> .
+
 <https://nova.rs/vesti/politika/sta-je-milenijum-tim-sns-fabrika-za-izvlacenje-para/>
         vip:archivedOn     "2025-12-15"^^xsd:date;
         vip:hasArchiveURL  <http://web.archive.org/web/20251215204745/https://nova.rs/vesti/politika/sta-je-milenijum-tim-sns-fabrika-za-izvlacenje-para/> .
@@ -45,9 +49,17 @@
         vip:archivedOn     "2026-02-14"^^xsd:date;
         vip:hasArchiveURL  <http://web.archive.org/web/20260214133819/https://millenniumteam.rs/en/news/ivan-bosnjak-elected-vice-president-of-the-serbian-chamber-of-commerce/> .
 
+<https://www.companywall.rs/firma/global-media-technology-drustvo-sa-ogranicenom-odgovornoscu-beograd-stari-grad/MMz0shQD>
+        vip:archivedOn     "2026-11-10"^^xsd:date;
+        vip:hasArchiveURL  <https://web.archive.org/web/20261110163250/https://www.companywall.rs/firma/global-media-technology-drustvo-sa-ogranicenom-odgovornoscu-beograd-stari-grad/MMz0shQD> .
+
 <https://www.istinomer.rs/akter/sinisa-mali/>
         vip:archivedOn     "2026-10-30"^^xsd:date;
         vip:hasArchiveURL  <https://web.archive.org/web/20261030102432/https://www.istinomer.rs/akter/sinisa-mali/> .
+
+<https://www.danas.rs/vesti/drustvo/idu-izbori-vise-od-pola-novca-na-niskom-konkursu-dobili-mediji-bivsih-funkcionera-sns-i-clanova-njihovih-porodica/>
+        vip:archivedOn     "2026-10-22"^^xsd:date;
+        vip:hasArchiveURL  <http://web.archive.org/web/20261022001345/https://www.danas.rs/vesti/drustvo/idu-izbori-vise-od-pola-novca-na-niskom-konkursu-dobili-mediji-bivsih-funkcionera-sns-i-clanova-njihovih-porodica/> .
 
 <https://sr.wikipedia.org/wiki/Синиша_Мали>
         vip:archivedOn     "2025-12-11"^^xsd:date;
@@ -60,6 +72,10 @@
 <https://www.istinomer.rs/akter/ana-brnabic/>
         vip:archivedOn     "2026-10-30"^^xsd:date;
         vip:hasArchiveURL  <http://web.archive.org/web/20261030102409/https://www.istinomer.rs/akter/ana-brnabic/> .
+
+<https://serbia.mom-gmr.org/sr/vlasnik/companies/detail/company/company/show/maxim-media-plus-1/>
+        vip:archivedOn     "2025-09-15"^^xsd:date;
+        vip:hasArchiveURL  <http://web.archive.org/web/20250915220442/https://serbia.mom-gmr.org/sr/vlasnik/companies/detail/company/company/show/maxim-media-plus-1/> .
 
 <https://www.millenniumteam.rs/>
         vip:archivedOn     "2026-10-12"^^xsd:date;
@@ -85,6 +101,10 @@
         vip:archivedOn     "2026-10-30"^^xsd:date;
         vip:hasArchiveURL  <http://web.archive.org/web/20261030102519/https://www.istinomer.rs/akter/mihailo-jovanovic/> .
 
+<https://sr.wikipedia.org/wiki/Михаило_Јовановић_(политичар)>
+        vip:archivedOn     "2024-12-26"^^xsd:date;
+        vip:hasArchiveURL  <http://web.archive.org/web/20241226080846/https://sr.wikipedia.org/wiki/%D0%9C%D0%B8%D1%85%D0%B0%D0%B8%D0%BB%D0%BE_%D0%88%D0%BE%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%9B_(%D0%BF%D0%BE%D0%BB%D0%B8%D1%82%D0%B8%D1%87%D0%B0%D1%80)> .
+
 <https://www.krik.rs/tag/ivan-bosnjak/>
         vip:archivedOn     "2026-01-21"^^xsd:date;
         vip:hasArchiveURL  <http://web.archive.org/web/20260121233122/https://www.krik.rs/tag/ivan-bosnjak/> .
@@ -93,9 +113,13 @@
         vip:archivedOn     "2026-10-13"^^xsd:date;
         vip:hasArchiveURL  <http://web.archive.org/web/20261013002115/https://www.kurir.rs/vesti/politika/2864945/ovo-je-biografija-nove-premijerke-ana-brnabic-prva-zena-na-celu-vlade-srbije-u-istoriji> .
 
-<https://sr.wikipedia.org/wiki/Михаило_Јовановић_(политичар)>
-        vip:archivedOn     "2024-12-26"^^xsd:date;
-        vip:hasArchiveURL  <http://web.archive.org/web/20241226080846/https://sr.wikipedia.org/wiki/%D0%9C%D0%B8%D1%85%D0%B0%D0%B8%D0%BB%D0%BE_%D0%88%D0%BE%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%9B_(%D0%BF%D0%BE%D0%BB%D0%B8%D1%82%D0%B8%D1%87%D0%B0%D1%80)> .
+<https://raskrikavanje.rs/vlasnik-tabloida-alo-za-manje-od-mesec-dana-kupio-dve-televizije-i-radio-za-skoro-200-000-evra/>
+        vip:archivedOn     "2026-05-16"^^xsd:date;
+        vip:hasArchiveURL  <http://web.archive.org/web/20260516045552/https://raskrikavanje.rs/vlasnik-tabloida-alo-za-manje-od-mesec-dana-kupio-dve-televizije-i-radio-za-skoro-200-000-evra/> .
+
+<https://www.companywall.rs/firma/rimi-media-group-doo-beograd/MMorLuGY>
+        vip:archivedOn     "2026-11-10"^^xsd:date;
+        vip:hasArchiveURL  <https://web.archive.org/web/20261110163443/https://www.companywall.rs/firma/rimi-media-group-doo-beograd/MMorLuGY> .
 
 <https://rs.bloombergadria.com/ekonomija/srbija/55076/milenijum-tim-kupio-hotel-jugoslaviju-i-najavio-400-miliona-evra-ulaganja/news>
         vip:archivedOn     "2024-04-01"^^xsd:date;
@@ -177,6 +201,10 @@
         vip:archivedOn     "2026-03-05"^^xsd:date;
         vip:hasArchiveURL  <http://web.archive.org/web/20260305143723/https://www.cenzolovka.rs/tag/sasa-blagojevic/> .
 
+<https://nova.rs/vesti/biznis/vlasnici-aloa-i-informera-vlasnici-skoro-25-medija-u-srbiji>
+        vip:archivedOn     "2026-11-02"^^xsd:date;
+        vip:hasArchiveURL  <http://web.archive.org/web/20261102131221/https://nova.rs/vesti/biznis/vlasnici-aloa-i-informera-vlasnici-skoro-25-medija-u-srbiji/> .
+
 <https://biznis.rs/vesti/srbija/rusenje-hotela-jugoslavija-od-hipo-alpe-adrija-banke-do-milenijum-tima-preko-paname-grcke-i-kipra/>
         vip:archivedOn     "2025-08-14"^^xsd:date;
         vip:hasArchiveURL  <http://web.archive.org/web/20250814081438/https://biznis.rs/vesti/srbija/rusenje-hotela-jugoslavija-od-hipo-alpe-adrija-banke-do-milenijum-tima-preko-paname-grcke-i-kipra/> .
@@ -188,6 +216,10 @@
 <https://www.ekof.bg.ac.rs/>
         vip:archivedOn     "2026-10-19"^^xsd:date;
         vip:hasArchiveURL  <http://web.archive.org/web/20261019002315/https://www.ekof.bg.ac.rs/> .
+
+<https://www.companywall.rs/firma/owp-info/MMxI9WKCC>
+        vip:archivedOn     "2026-11-10"^^xsd:date;
+        vip:hasArchiveURL  <https://web.archive.org/web/20261110163321/https://www.companywall.rs/firma/owp-info/MMxI9WKCC> .
 
 <https://naled.rs/htdocs/Files/15388/II-Kvartalni-izvestaj_2024.pdf>
         vip:archivedOn     "2025-05-16"^^xsd:date;
@@ -209,9 +241,17 @@
         vip:archivedOn     "2026-11-01"^^xsd:date;
         vip:hasArchiveURL  <https://web.archive.org/web/20261101021046/https://www.companywall.rs/firma/mostogradnja-ing-doo/MMxEWFnzR> .
 
+<https://www.companywall.rs/firma/doo-matrix-d-beograd/MMkw3o1Y>
+        vip:archivedOn     "2026-11-10"^^xsd:date;
+        vip:hasArchiveURL  <https://web.archive.org/web/20261110163212/https://www.companywall.rs/firma/doo-matrix-d-beograd/MMkw3o1Y> .
+
 <https://vreme.com/vesti/milenijum-tim-brat-sinise-malog-poslovi-bez-veze-sa-drzavom/>
         vip:archivedOn     "2026-10-11"^^xsd:date;
         vip:hasArchiveURL  <http://web.archive.org/web/20261011172321/https://vreme.com/vesti/milenijum-tim-brat-sinise-malog-poslovi-bez-veze-sa-drzavom/> .
+
+<https://www.danas.rs/vesti/ekonomija/sasa-blagojevic-alo-rock-radio-mediji-lik-dana/>
+        vip:archivedOn     "2026-02-17"^^xsd:date;
+        vip:hasArchiveURL  <http://web.archive.org/web/20260217205038/https://www.danas.rs/vesti/ekonomija/sasa-blagojevic-alo-rock-radio-mediji-lik-dana/> .
 
 <https://naled.rs/vest-premijerka-obisla-zaposlene-u-naled-u-2421>
         vip:archivedOn     "2022-12-09"^^xsd:date;
@@ -277,6 +317,10 @@
         vip:archivedOn     "2026-03-13"^^xsd:date;
         vip:hasArchiveURL  <http://web.archive.org/web/20260313162130/https://sr.wikipedia.org/wiki/%D0%9F%D0%B5%D1%82%D0%B0_%D0%B1%D0%B5%D0%BE%D0%B3%D1%80%D0%B0%D0%B4%D1%81%D0%BA%D0%B0_%D0%B3%D0%B8%D0%BC%D0%BD%D0%B0%D0%B7%D0%B8%D1%98%D0%B0> .
 
+<https://anem.org.rs/sr/strane/informer-postao-suvlasnik-cerke-firme-aloa-koja-kupuje-lokalne-medije-o-srbiji>
+        vip:archivedOn     "2026-04-14"^^xsd:date;
+        vip:hasArchiveURL  <http://web.archive.org/web/20260414144733/https://anem.org.rs/sr/strane/informer-postao-suvlasnik-cerke-firme-aloa-koja-kupuje-lokalne-medije-o-srbiji> .
+
 <https://www.krik.rs/tag/milenijum-tim/>
         vip:archivedOn     "2026-04-23"^^xsd:date;
         vip:hasArchiveURL  <http://web.archive.org/web/20260423033321/https://www.krik.rs/tag/milenijum-tim/> .
@@ -316,6 +360,10 @@
 <https://n1info.rs/biznis/cime-se-sve-bavi-novi-vlasnik-hotela-jugoslavija-milenijum-tim-od-bolnice-do-gradjevine/>
         vip:archivedOn     "2026-04-14"^^xsd:date;
         vip:hasArchiveURL  <http://web.archive.org/web/20260414192229/https://n1info.rs/biznis/cime-se-sve-bavi-novi-vlasnik-hotela-jugoslavija-milenijum-tim-od-bolnice-do-gradjevine/> .
+
+<https://www.companywall.rs/firma/alo-marketing-doo-beograd-stari-grad/MMykEIG0>
+        vip:archivedOn     "2026-11-10"^^xsd:date;
+        vip:hasArchiveURL  <https://web.archive.org/web/20261110163101/https://www.companywall.rs/firma/alo-marketing-doo-beograd-stari-grad/MMykEIG0> .
 
 <https://en.wikipedia.org/wiki/Millennium_Team>
         vip:archivedOn     "2025-10-13"^^xsd:date;

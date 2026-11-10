@@ -1,0 +1,20 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rs: <https://w3id.org/vip/rs/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix : <http://poderopedia.com/vocab/> .
+@prefix vip: <https://w3id.org/vip/vocab#> .
+
+# Alo Marketing
+# Matična datoteka entiteta; veze su u data/cases/alo-media-system.ttl.
+# Entity home file; connections are in data/cases/alo-media-system.ttl.
+
+rs:Alo_Marketing a :Company ;
+    foaf:name "Alo Marketing"@sr ;
+    rdfs:comment "Beogradska marketinška kompanija koju je, prema MOM-u, Saša Blagojević osnovao u avgustu 2017."@sr ;
+    rdfs:comment "Belgrade marketing company established by Saša Blagojević in August 2017, according to MOM."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://serbia.mom-gmr.org/sr/vlasnik/individual-owners/detail/owner/owner/show/sasa-blagojevic-2/> ; :hasDocumentType vip:registryRecord ; :hasDocumentStatus vip:published ;
+          rdfs:comment "MOM navodi osnivanje u avgustu 2017; pod poslovnim interesima: 'Alo marketing (100%)'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.companywall.rs/firma/alo-marketing-doo-beograd-stari-grad/MMykEIG0> ; :hasDocumentType vip:registryRecord ; :hasDocumentStatus vip:published ;
+          rdfs:comment "CompanyWall: 'Vlasnik kompanije je Saša Blagojević'."@sr ] .

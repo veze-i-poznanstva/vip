@@ -1,0 +1,20 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rs: <https://w3id.org/vip/rs/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix : <http://poderopedia.com/vocab/> .
+@prefix vip: <https://w3id.org/vip/vocab#> .
+
+# Infomačva
+# Matična datoteka entiteta; veze su u data/cases/alo-media-system.ttl.
+# Entity home file; connections are in data/cases/alo-media-system.ttl.
+
+rs:Infomacva a :Company ;
+    foaf:name "Infomačva"@sr ;
+    rdfs:comment "Medijska kompanija u Šapcu koju je osnovao Best Media Team; drugi suvlasnik je Dragan Mandić, prema Vremenu i Novoj."@sr ;
+    rdfs:comment "Media company in Šabac established by Best Media Team; the other co-owner is Dragan Mandić, according to Vreme and Nova."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://vreme.com/vesti/lokalni-mediji-kupovina-alo-informer/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Vreme navodi osnivanje ćerke firme Best Media Team: '15. januara Infomačvu u Šapcu', uz Mandićevih 20%."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://nova.rs/vesti/biznis/vlasnici-aloa-i-informera-vlasnici-skoro-25-medija-u-srbiji> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Nova, odeljak Infomačva: 'Best Media Team ima 80 odsto'."@sr ] .

@@ -11,7 +11,8 @@
 # Slučaj: Alo media system — vlasnik tabloida Alo i njegove medijske kupovine
 # Case: Alo media system — the owner of the tabloid Alo and his media acquisitions
 #
-# Obuhvata: Sašu Blagojevića i kompaniju Alo media system, izdavača tabloida Alo!.
+# Obuhvata: Sašu Blagojevića i vlasničke veze njegovih medijskih i marketinških kompanija.
+# Covers: Saša Blagojević and the ownership links of his media and marketing companies.
 # Osobe i organizacije su deklarisane u data/entities/, ovde su samo veze među njima.
 # People and organisations are declared in data/entities/; this file holds only the connections.
 # Konvencije zapisa: videti docs/data-guide.sr.md (see docs/data-guide.md).
@@ -35,3 +36,211 @@ rs:SasaBlagojevic_AloMediaSystem a vip:OwnershipConnection ;
           rdfs:comment "ANEM, 2026: 'The owner of the \"umbrella\" (parent) company Alo Media System is Saša Blagojević', sa udelima u više od 30 firmi."@sr ] ,
         [ a :Documentation ; :hasDocumentURL <https://en.wikipedia.org/wiki/Alo!> ; :hasDocumentType vip:encyclopediaArticle ; :hasDocumentStatus vip:published ;
           rdfs:comment "Enciklopedijski članak o listu Alo!: 'Owner: Saša Blagojević'."@sr ] .
+
+rs:SasaBlagojevic_GlobalMediaTechnology a vip:OwnershipConnection ;
+    vip:owner rs:Sasa_Blagojevic ;
+    vip:ownedCompany rs:Global_Media_Technology ;
+    vip:ownershipShare 100.0 ;
+    rdfs:comment "Prema MOM-u i CompanyWall-u, Saša Blagojević je vlasnik Global Media Technology. Datum sticanja nije utvrđen."@sr ;
+    rdfs:comment "MOM and CompanyWall identify Saša Blagojević as the owner of Global Media Technology. The acquisition date is unknown."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://montenegro.mom-gmr.org/cg/vlasnici/pojedinci/detail/owner/owner/show/sasa-blagojevic-3/> ; :hasDocumentType vip:registryRecord ; :hasDocumentStatus vip:published ;
+          rdfs:comment "MOM Crna Gora: 'Saša Blagojević je 100% vlasnik Global Media Tehnologi d.o.o. Beograd'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.companywall.rs/firma/global-media-technology-drustvo-sa-ogranicenom-odgovornoscu-beograd-stari-grad/MMz0shQD> ; :hasDocumentType vip:registryRecord ; :hasDocumentStatus vip:published ;
+          rdfs:comment "CompanyWall: 'Vlasnik kompanije je Saša Blagojević'."@sr ] .
+
+rs:GlobalMediaTechnology_MaximMediaPlus a vip:OwnershipConnection ;
+    vip:owner rs:Global_Media_Technology ;
+    vip:ownedCompany rs:Maxim_Media_Plus ;
+    vip:ownershipShare 51.0 ;
+    :connectionStartDate "2021-01"^^xsd:gYearMonth ;
+    rdfs:comment "Prema MOM-u, Global Media Technology postaje vlasnik 51% Maxim Media Plus u januaru 2021; Nova potvrđuje taj udeo u novembru 2026."@sr ;
+    rdfs:comment "MOM reports Global Media Technology acquired 51% of Maxim Media Plus in January 2021; Nova reports the same share in November 2026."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://serbia.mom-gmr.org/sr/vlasnik/companies/detail/company/company/show/maxim-media-plus-1/> ; :hasDocumentType vip:registryRecord ; :hasDocumentStatus vip:published ;
+          rdfs:comment "MOM: 'U januaru 2021. godine, većinski vlasnik sa 51% udela postala je kompanija Global Media Technology'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://nova.rs/vesti/biznis/vlasnici-aloa-i-informera-vlasnici-skoro-25-medija-u-srbiji> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Nova, 1. novembar 2026, opis vlasništva Maxim Media Plus: 'Global Media Technology Saše Blagojevića sa 51 odsto'."@sr ] .
+
+rs:SasaBlagojevic_Trilenium a vip:OwnershipConnection ;
+    vip:owner rs:Sasa_Blagojevic ;
+    vip:ownedCompany rs:Trilenium ;
+    vip:ownershipShare 50.0 ;
+    rdfs:comment "Prema MOM-u i Novoj, Saša Blagojević ima 50% kompanije Trilenium. Datum sticanja nije utvrđen."@sr ;
+    rdfs:comment "MOM and Nova report Saša Blagojević holds 50% of Trilenium. The acquisition date is unknown."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://serbia.mom-gmr.org/sr/vlasnik/individual-owners/detail/owner/owner/show/sasa-blagojevic-2/> ; :hasDocumentType vip:registryRecord ; :hasDocumentStatus vip:published ;
+          rdfs:comment "MOM, poslovni interesi Saše Blagojevića, konsultantske aktivnosti: 'Trilenium (50%)'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://nova.rs/vesti/biznis/vlasnici-aloa-i-informera-vlasnici-skoro-25-medija-u-srbiji> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Nova, 1. novembar 2026, Trilenium: '50 odsto u vlasništvu Saše Blagojevića'."@sr ] .
+
+rs:SasaBlagojevic_AloMarketing a vip:OwnershipConnection ;
+    vip:owner rs:Sasa_Blagojevic ;
+    vip:ownedCompany rs:Alo_Marketing ;
+    vip:ownershipShare 100.0 ;
+    :connectionStartDate "2017-08"^^xsd:gYearMonth ;
+    rdfs:comment "MOM navodi da je Blagojević osnovao Alo Marketing u avgustu 2017. i ima 100%; CompanyWall potvrđuje vlasnika."@sr ;
+    rdfs:comment "MOM reports Blagojević established Alo Marketing in August 2017 and holds 100%; CompanyWall corroborates the owner."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://serbia.mom-gmr.org/sr/vlasnik/individual-owners/detail/owner/owner/show/sasa-blagojevic-2/> ; :hasDocumentType vip:registryRecord ; :hasDocumentStatus vip:published ;
+          rdfs:comment "MOM navodi osnivanje u avgustu 2017; pod poslovnim interesima: 'Alo marketing (100%)'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.companywall.rs/firma/alo-marketing-doo-beograd-stari-grad/MMykEIG0> ; :hasDocumentType vip:registryRecord ; :hasDocumentStatus vip:published ;
+          rdfs:comment "CompanyWall: 'Vlasnik kompanije je Saša Blagojević'."@sr ] .
+
+rs:AloMediaSystem_BestMediaTeam_Initial a vip:OwnershipConnection ;
+    vip:owner rs:Alo_Media_System ;
+    vip:ownedCompany rs:Best_Media_Team ;
+    vip:ownershipShare 100.0 ;
+    :connectionStartDate "2025-12-24"^^xsd:date ;
+    :connectionEndDate "2026-02"^^xsd:gYearMonth ;
+    rdfs:comment "Prema Raskrikavanju i ANEM-u, Best Media Team je osnovan u stoprocentnom vlasništvu Alo Media System. U februaru 2026. udeo je smanjen na 90%; izvori se razlikuju u danu objavljivanja promene, pa je kraj naveden na nivou meseca."@sr ;
+    rdfs:comment "Raskrikavanje and ANEM report Best Media Team was initially wholly owned by Alo Media System. The stake fell to 90% in February 2026; reports differ on the day of the change, so the end date has month precision."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://raskrikavanje.rs/vlasnik-tabloida-alo-za-manje-od-mesec-dana-kupio-dve-televizije-i-radio-za-skoro-200-000-evra/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Raskrikavanje: 'u stoprocentnom vlasništvu Alo Media System-a'; kompanija je osnovana 24. decembra 2025."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://anem.org.rs/sr/strane/informer-postao-suvlasnik-cerke-firme-aloa-koja-kupuje-lokalne-medije-o-srbiji> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "ANEM, februar 2026: 'bila je u stopostotnom vlasništvu kompanije Alo Media System', pre ulaska Insajder Tima."@sr ] .
+
+rs:AloMediaSystem_BestMediaTeam_90 a vip:OwnershipConnection ;
+    vip:owner rs:Alo_Media_System ;
+    vip:ownedCompany rs:Best_Media_Team ;
+    vip:ownershipShare 90.0 ;
+    :connectionStartDate "2026-02"^^xsd:gYearMonth ;
+    rdfs:comment "ANEM i 021 izveštavaju da od februara 2026. Alo Media System ima 90% Best Media Team; datum je naveden na nivou meseca zbog različitih datuma objavljivanja izveštaja."@sr ;
+    rdfs:comment "ANEM and 021 report Alo Media System holds 90% of Best Media Team from February 2026; month precision reflects differing publication dates."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://www.021.rs/info/srbija/436227/informer-postao-suvlasnik-firme-koja-kupuje-lokalne-medije> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "021, prenoseći ANEM: 'Alo Media System' 90 odsto i 'Insajder Tim' 10 odsto."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://anem.org.rs/sr/strane/informer-postao-suvlasnik-cerke-firme-aloa-koja-kupuje-lokalne-medije-o-srbiji> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "ANEM, promena vlasništva: 'Alo Media System 90 odsto i Insajder Tim 10 odsto'."@sr ] .
+
+rs:InsajderTim_BestMediaTeam a vip:OwnershipConnection ;
+    vip:owner rs:Insajder_Tim ;
+    vip:ownedCompany rs:Best_Media_Team ;
+    vip:ownershipShare 10.0 ;
+    :connectionStartDate "2026-02"^^xsd:gYearMonth ;
+    rdfs:comment "Prema ANEM-u i 021, izdavač Informera, Insajder Tim, postaje vlasnik 10% Best Media Team u februaru 2026."@sr ;
+    rdfs:comment "ANEM and 021 report Informer's publisher, Insajder Tim, acquired 10% of Best Media Team in February 2026."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://www.021.rs/info/srbija/436227/informer-postao-suvlasnik-firme-koja-kupuje-lokalne-medije> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "021, prenoseći ANEM: 'Alo Media System' 90 odsto i 'Insajder Tim' 10 odsto."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://anem.org.rs/sr/strane/informer-postao-suvlasnik-cerke-firme-aloa-koja-kupuje-lokalne-medije-o-srbiji> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "ANEM, promena vlasništva: 'Alo Media System 90 odsto i Insajder Tim 10 odsto'."@sr ] .
+
+rs:BestMediaTeam_Miomedia a vip:OwnershipConnection ;
+    vip:owner rs:Best_Media_Team ;
+    vip:ownedCompany rs:Miomedia ;
+    :connectionStartDate "2025-12-30"^^xsd:date ;
+    rdfs:comment "Prema izveštajima ANEM-a i Vremena, Best Media Team je 30. decembra 2025. osnovao ćerku firmu Miomedia. Procenat udela nije naveden u tim izveštajima."@sr ;
+    rdfs:comment "ANEM and Vreme report Best Media Team established the subsidiary Miomedia on 30 December 2025. These reports do not specify a share percentage."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://anem.org.rs/sr/strane/informer-postao-suvlasnik-cerke-firme-aloa-koja-kupuje-lokalne-medije-o-srbiji> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "ANEM opisuje dve ćerke firme Best Media Team i navodi: '30. decembra Miomediu u Mionici'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://vreme.com/vesti/lokalni-mediji-kupovina-alo-informer/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Vreme prenosi ANEM-ov izveštaj o ćerkama firmama Best Media Team: '30. decembra Miomediu u Mionici'."@sr ] .
+
+rs:BestMediaTeam_Infomacva a vip:OwnershipConnection ;
+    vip:owner rs:Best_Media_Team ;
+    vip:ownedCompany rs:Infomacva ;
+    vip:ownershipShare 80.0 ;
+    :connectionStartDate "2026-01-15"^^xsd:date ;
+    rdfs:comment "Vreme navodi da je Best Media Team osnovao Infomačvu 15. januara 2026, a Nova izričito navodi njegov udeo od 80%."@sr ;
+    rdfs:comment "Vreme reports Best Media Team established Infomačva on 15 January 2026; Nova explicitly reports its 80% stake."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://vreme.com/vesti/lokalni-mediji-kupovina-alo-informer/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Vreme navodi osnivanje ćerke firme Best Media Team: '15. januara Infomačvu u Šapcu', uz Mandićevih 20%."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://nova.rs/vesti/biznis/vlasnici-aloa-i-informera-vlasnici-skoro-25-medija-u-srbiji> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Nova, odeljak Infomačva: 'Best Media Team ima 80 odsto'."@sr ] .
+
+rs:MaximMediaPlus_Baltazar a vip:OwnershipConnection ;
+    vip:owner rs:Maxim_Media_Plus ;
+    vip:ownedCompany rs:Baltazar ;
+    vip:ownershipShare 100.0 ;
+    rdfs:comment "MOM navodi Baltazar kao stoprocentni poslovni interes Maxim Media Plus; Danas potvrđuje da je ćerka firma. Datum sticanja nije utvrđen."@sr ;
+    rdfs:comment "MOM lists Baltazar as a wholly owned business interest of Maxim Media Plus; Danas identifies it as a subsidiary. The acquisition date is unknown."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://serbia.mom-gmr.org/sr/vlasnik/companies/detail/company/company/show/maxim-media-plus-1/> ; :hasDocumentType vip:registryRecord ; :hasDocumentStatus vip:published ;
+          rdfs:comment "MOM, profil kompanije Maxim Media Plus, odeljak Biznis / Marketing: 'Baltazar (100%)'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.danas.rs/vesti/ekonomija/sasa-blagojevic-alo-rock-radio-mediji-lik-dana/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Danas, spisak ćerki firmi Maxim Media Plus: 'Baltazar DOO' iz Niša."@sr ] .
+
+rs:MaximMediaPlus_BisKomerc a vip:OwnershipConnection ;
+    vip:owner rs:Maxim_Media_Plus ;
+    vip:ownedCompany rs:Bis_Komerc ;
+    vip:ownershipShare 100.0 ;
+    rdfs:comment "MOM navodi Bis-komerc kao stoprocentni poslovni interes Maxim Media Plus; Danas potvrđuje da je ćerka firma. Datum sticanja nije utvrđen."@sr ;
+    rdfs:comment "MOM lists Bis-komerc as a wholly owned business interest of Maxim Media Plus; Danas identifies it as a subsidiary. The acquisition date is unknown."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://serbia.mom-gmr.org/sr/vlasnik/companies/detail/company/company/show/maxim-media-plus-1/> ; :hasDocumentType vip:registryRecord ; :hasDocumentStatus vip:published ;
+          rdfs:comment "MOM, profil Maxim Media Plus, odeljak Biznis / Kablovske telekomunikacije: 'Bis-komerc (100%)'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.danas.rs/vesti/ekonomija/sasa-blagojevic-alo-rock-radio-mediji-lik-dana/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Danas, spisak ćerki firmi Maxim Media Plus: 'Bis-Komerc'."@sr ] .
+
+rs:MaximMediaPlus_NewAgency a vip:OwnershipConnection ;
+    vip:owner rs:Maxim_Media_Plus ;
+    vip:ownedCompany rs:New_Agency ;
+    vip:ownershipShare 100.0 ;
+    rdfs:comment "MOM izričito navodi da je New Agency u vlasništvu Maxim Media Plus sa 100%; Danas potvrđuje da je ćerka firma. Datum sticanja nije utvrđen."@sr ;
+    rdfs:comment "MOM explicitly reports Maxim Media Plus owns 100% of New Agency; Danas identifies it as a subsidiary. The acquisition date is unknown."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://serbia.mom-gmr.org/sr/vlasnik/companies/detail/company/company/show/maxim-media-plus-1/> ; :hasDocumentType vip:registryRecord ; :hasDocumentStatus vip:published ;
+          rdfs:comment "MOM, profil Maxim Media Plus, odeljak Biznis / Marketing: 'New Agency (100%)'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.danas.rs/vesti/ekonomija/sasa-blagojevic-alo-rock-radio-mediji-lik-dana/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Danas, spisak ćerki firmi Maxim Media Plus: 'New Agency'."@sr ] .
+
+rs:GlobalMediaTechnology_RimiMediaGroup a vip:OwnershipConnection ;
+    vip:owner rs:Global_Media_Technology ;
+    vip:ownedCompany rs:Rimi_Media_Group ;
+    rdfs:comment "CompanyWall navodi Global Media Technology kao suvlasnika Rimi Media Group, a Danas potvrđuje pripadnost toj grupi. Udeo i datum sticanja nisu navedeni u korišćenim pasusima."@sr ;
+    rdfs:comment "CompanyWall identifies Global Media Technology as a co-owner of Rimi Media Group; Danas corroborates the group connection. The cited passages do not specify the share or acquisition date."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://www.companywall.rs/firma/rimi-media-group-doo-beograd/MMorLuGY> ; :hasDocumentType vip:registryRecord ; :hasDocumentStatus vip:published ;
+          rdfs:comment "CompanyWall, trenutni vlasnici: 'Global media technology društvo sa ograničenom odgovornošću Beograd-Stari Grad, Ružica Krdžić'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.danas.rs/vesti/ekonomija/sasa-blagojevic-alo-rock-radio-mediji-lik-dana/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Danas, spisak preduzeća za koja je Global Media Technology krovna kompanija: 'Rimi Media Group'."@sr ] .
+
+rs:GlobalMediaTechnology_MatrixD a vip:OwnershipConnection ;
+    vip:owner rs:Global_Media_Technology ;
+    vip:ownedCompany rs:Matrix_D ;
+    rdfs:comment "CompanyWall navodi Global Media Technology kao suvlasnika Matrix D, a Danas potvrđuje pripadnost toj grupi. Udeo i datum sticanja nisu navedeni u korišćenim pasusima."@sr ;
+    rdfs:comment "CompanyWall identifies Global Media Technology as a co-owner of Matrix D; Danas corroborates the group connection. The cited passages do not specify the share or acquisition date."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://www.companywall.rs/firma/doo-matrix-d-beograd/MMkw3o1Y> ; :hasDocumentType vip:registryRecord ; :hasDocumentStatus vip:published ;
+          rdfs:comment "CompanyWall, trenutni vlasnici: 'Global media technology društvo sa ograničenom odgovornošću Beograd-Stari Grad, MILOŠ KRDžIĆ'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.danas.rs/vesti/ekonomija/sasa-blagojevic-alo-rock-radio-mediji-lik-dana/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Danas, spisak preduzeća za koja je Global Media Technology krovna kompanija: 'Matrix D'."@sr ] .
+
+rs:AloMediaSystem_INIMedia a vip:OwnershipConnection ;
+    vip:owner rs:Alo_Media_System ;
+    vip:ownedCompany rs:INI_Media ;
+    vip:ownershipShare 51.0 ;
+    rdfs:comment "Danas navodi udeo Alo Media System od 51% u INI Media, a Vreme potvrđuje suvlasništvo sa Bojanom Avramovićem. Datum sticanja nije utvrđen."@sr ;
+    rdfs:comment "Danas reports Alo Media System holds 51% of INI Media; Vreme corroborates co-ownership with Bojan Avramović. The acquisition date is unknown."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://vreme.com/vesti/lokalni-mediji-kupovina-alo-informer/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Vreme: 'Alo Media System' zajedno sa Bojanom Avramovićem poseduje i firmu INI media."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.danas.rs/vesti/drustvo/idu-izbori-vise-od-pola-novca-na-niskom-konkursu-dobili-mediji-bivsih-funkcionera-sns-i-clanova-njihovih-porodica/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Danas, osnivači Ini medie: 'Alo media sistem' iz Beograda, sa ulogom od 51 odsto; Avramović ima 49%."@sr ] .
+
+rs:AloMediaSystem_Bizmedia a vip:OwnershipConnection ;
+    vip:owner rs:Alo_Media_System ;
+    vip:ownedCompany rs:Bizmedia ;
+    rdfs:comment "CompanyWall i Nova navode Alo Media System kao vlasnika Bizmedie. Procenat i datum sticanja nisu navedeni u korišćenim pasusima."@sr ;
+    rdfs:comment "CompanyWall and Nova identify Alo Media System as Bizmedia's owner. The cited passages do not specify a share percentage or acquisition date."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://www.companywall.rs/firma/bizmedia-doo-beograd/MMx3lKQZD> ; :hasDocumentType vip:registryRecord ; :hasDocumentStatus vip:published ;
+          rdfs:comment "CompanyWall: 'Vlasnik kompanije je Alo media system doo Beograd'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://nova.rs/vesti/biznis/vlasnici-aloa-i-informera-vlasnici-skoro-25-medija-u-srbiji> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Nova, odeljak Mediji u vlasništvu Alo Media Sistema: 'Bizmedia'."@sr ] .
+
+rs:AloMediaSystem_OWPInfo a vip:OwnershipConnection ;
+    vip:owner rs:Alo_Media_System ;
+    vip:ownedCompany rs:OWP_Info ;
+    vip:ownershipShare 85.0 ;
+    rdfs:comment "Nova navodi da Alo Media System ima 85% OWP Info; CompanyWall potvrđuje suvlasništvo. Datum sticanja nije utvrđen."@sr ;
+    rdfs:comment "Nova reports Alo Media System holds 85% of OWP Info; CompanyWall corroborates co-ownership. The acquisition date is unknown."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://www.companywall.rs/firma/owp-info/MMxI9WKCC> ; :hasDocumentType vip:registryRecord ; :hasDocumentStatus vip:published ;
+          rdfs:comment "CompanyWall: 'Trenutni vlasnici kompanije su Alo media system doo Beograd, Boško Milosavljević'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://nova.rs/vesti/biznis/vlasnici-aloa-i-informera-vlasnici-skoro-25-medija-u-srbiji> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Nova, Owp info: 'ostalih 85 je u vlasništvu Alo Media Sistema', uz Milosavljevićevih 15%."@sr ] .
