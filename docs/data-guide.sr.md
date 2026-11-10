@@ -66,7 +66,7 @@ Sedam pravila važi za svaki zapis. Validatori sprovode njihov oblik; da li izvo
 
 Rečnik je proširen tamo gde je PoderVocab imao praznine. Dopune su obeležene u `schema.ttl`
 pod naslovom „VIP additions“: vlasnička veza i njena svojstva, veza kumstva (koju PoderVocab
-nema, a u srpskom društvu je jaka kao srodstvo), porodične veze (braća i sestre, roditelj i dete), veza organizacije sa njenim finansijskim
+nema, a u srpskom društvu je jaka kao srodstvo), porodične veze (braća i sestre, roditelj i dete), veza školskih drugova (ista škola, kada razred nije poznat), veza organizacije sa njenim finansijskim
 informacijama, upravljačke radne uloge kao osnivač i predsednik upravnog odbora, vrste
 dokumenata i statusi dokumenata, kao i dva javna identifikatora entiteta: članak na Vikipediji
 i stavku na Vikidati.

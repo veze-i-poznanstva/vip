@@ -1066,6 +1066,13 @@ vip:godchild a rdf:Property, owl:ObjectProperty;
     rdfs:domain vip:GodparentConnection;
     rdfs:range foaf:Person.
 
+# Schoolmates: PoderVocab's :Classmate means the same class. Reporting often says only that two
+# people went to school together, without the school, class or years; that weaker tie is this class.
+vip:Schoolmate a owl:Class;
+    rdfs:subClassOf :SocialConnection;
+    rdfs:label "Schoolmate (same school)"@en, "Compañero de escuela (misma escuela)"@es, "Školski drug (ista škola)"@sr;
+    rdfs:comment "Connection between two people reported to have gone to school together, without a claim that they shared a class; the school, when known, is :connectedVia."@en, "Conexión entre dos personas de las que se informa que fueron juntas a la escuela, sin afirmar que compartieran clase; la escuela, cuando se conoce, es :connectedVia."@es, "Veza između dve osobe za koje se izveštava da su zajedno išle u školu, bez tvrdnje da su delile razred; škola je, kada je poznata, :connectedVia."@sr.
+
 # Kinship: PoderVocab states family ties as bare properties between two people (:hasSibling,
 # :hasParent), which leaves no place for the evidence or the dates. VIP records kinship as a
 # connection, like every other relationship; the shapes refuse the bare properties in data.

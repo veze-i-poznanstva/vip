@@ -133,17 +133,17 @@
         vip:archivedOn     "2026-11-01"^^xsd:date;
         vip:hasArchiveURL  <https://web.archive.org/web/20261101142418/https://www.companywall.rs/firma/alo-media-system/MMfsPqfD> .
 
-<https://www.krik.rs/nova-dokumenta-sa-devicanskih-ostrva-mali-je-definitivno-bio-vlasnik-24-stana/>
-        vip:archivedOn     "2026-11-02"^^xsd:date;
-        vip:hasArchiveURL  <http://web.archive.org/web/20261102152329/https://www.krik.rs/nova-dokumenta-sa-devicanskih-ostrva-mali-je-definitivno-bio-vlasnik-24-stana/> .
+<https://www.companywall.rs/firma/kbv-datacom-doo-beograd/MMu9ivZ0>
+        vip:archivedOn     "2026-11-10"^^xsd:date;
+        vip:hasArchiveURL  <https://web.archive.org/web/20261110214229/https://www.companywall.rs/firma/kbv-datacom-doo-beograd/MMu9ivZ0> .
 
 <https://www.danas.rs/vesti/ekonomija/milenijum-timhotel-jugoslavija/>
         vip:archivedOn     "2025-03-17"^^xsd:date;
         vip:hasArchiveURL  <http://web.archive.org/web/20250317181645/https://www.danas.rs/vesti/ekonomija/milenijum-timhotel-jugoslavija/> .
 
-<https://www.companywall.rs/firma/kbv-datacom-doo-beograd/MMu9ivZ0>
-        vip:archivedOn     "2026-11-10"^^xsd:date;
-        vip:hasArchiveURL  <https://web.archive.org/web/20261110214229/https://www.companywall.rs/firma/kbv-datacom-doo-beograd/MMu9ivZ0> .
+<https://www.krik.rs/nova-dokumenta-sa-devicanskih-ostrva-mali-je-definitivno-bio-vlasnik-24-stana/>
+        vip:archivedOn     "2026-11-02"^^xsd:date;
+        vip:hasArchiveURL  <http://web.archive.org/web/20261102152329/https://www.krik.rs/nova-dokumenta-sa-devicanskih-ostrva-mali-je-definitivno-bio-vlasnik-24-stana/> .
 
 <https://poslovi.infostud.com/posao/Inzenjer-tehnicke-pripreme/Roberts-Millennium-doo/432801>
         vip:archivedOn     "2026-10-30"^^xsd:date;
@@ -236,6 +236,10 @@
 <https://vreme.com/drustvo/poslovi-milenijum-tima-na-red-dosla-i-sanacija-leve-obale-save/>
         vip:archivedOn     "2026-07-29"^^xsd:date;
         vip:hasArchiveURL  <http://web.archive.org/web/20260729132920/https://vreme.com/drustvo/poslovi-milenijum-tima-na-red-dosla-i-sanacija-leve-obale-save/> .
+
+<https://nova.rs/emisije/zasto-se-radnik-kovnice-novca-pominje-u-skoro-svim-sumnjivim-poslovima-vlasti/>
+        vip:archivedOn     "2021-10-06"^^xsd:date;
+        vip:hasArchiveURL  <http://web.archive.org/web/20211006214711/https://nova.rs/emisije/zasto-se-radnik-kovnice-novca-pominje-u-skoro-svim-sumnjivim-poslovima-vlasti/> .
 
 <https://bif.rs/2025/02/milenijum-tim-novi-vlasnik-mostogradnje/>
         vip:archivedOn     "2026-04-17"^^xsd:date;
@@ -352,6 +356,10 @@
 <https://montenegro.mom-gmr.org/cg/vlasnici/pojedinci/detail/owner/owner/show/sasa-blagojevic-3/>
         vip:archivedOn     "2025-07-10"^^xsd:date;
         vip:hasArchiveURL  <http://web.archive.org/web/20250710173740/https://montenegro.mom-gmr.org/cg/vlasnici/pojedinci/detail/owner/owner/show/sasa-blagojevic-3/> .
+
+<https://www.danas.rs/vesti/drustvo/cime-se-bavi-andrej-vucic/>
+        vip:archivedOn     "2025-07-13"^^xsd:date;
+        vip:hasArchiveURL  <http://web.archive.org/web/20250713173532/https://www.danas.rs/vesti/drustvo/cime-se-bavi-andrej-vucic/> .
 
 <https://sr.wikipedia.org/wiki/Nacionalna_alijansa_za_lokalni_ekonomski_razvoj>
         vip:archivedOn     "2025-10-19"^^xsd:date;

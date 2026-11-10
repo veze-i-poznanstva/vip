@@ -1939,38 +1939,6 @@
   },
   {
     "data": {
-      "id": "miomedia",
-      "label": "Miomedia",
-      "type": "instance",
-      "nodeType": "organization",
-      "uri": "https://w3id.org/vip/rs/Miomedia",
-      "comment": "Medijska kompanija u Mionici koju je osnovao Best Media Team, prema ANEM-u i Vremenu.",
-      "file": "data/entities/miomedia.ttl",
-      "line": 12,
-      "sources": [
-        {
-          "url": "https://anem.org.rs/sr/strane/informer-postao-suvlasnik-cerke-firme-aloa-koja-kupuje-lokalne-medije-o-srbiji",
-          "domain": "anem.org.rs",
-          "type": "newsArticle",
-          "status": "published",
-          "quote": "ANEM opisuje dve ćerke firme Best Media Team i navodi: \u002730. decembra Miomediu u Mionici\u0027.",
-          "archive": "http://web.archive.org/web/20260414144733/https://anem.org.rs/sr/strane/informer-postao-suvlasnik-cerke-firme-aloa-koja-kupuje-lokalne-medije-o-srbiji",
-          "archivedOn": "2026-04-14"
-        },
-        {
-          "url": "https://vreme.com/vesti/lokalni-mediji-kupovina-alo-informer/",
-          "domain": "vreme.com",
-          "type": "newsArticle",
-          "status": "published",
-          "quote": "Vreme prenosi ANEM-ov izveštaj o ćerkama firmama Best Media Team: \u002730. decembra Miomediu u Mionici\u0027.",
-          "archive": "http://web.archive.org/web/20260419063743/https://vreme.com/vesti/lokalni-mediji-kupovina-alo-informer/",
-          "archivedOn": "2026-04-19"
-        }
-      ]
-    }
-  },
-  {
-    "data": {
       "id": "predrag_mali",
       "label": "Predrag Mali",
       "type": "instance",
@@ -1997,6 +1965,38 @@
           "quote": "N1 (Beta, KRIK), 22. jul 2019: \u0027Rođeni brat ministra finansija Siniše Malog Predrag Mali\u0027; prenosi KRIK, nije nezavisna potvrda.",
           "archive": "http://web.archive.org/web/20261029214400/https://n1info.rs/vesti/a501712-Milenijum-tim-ustupio-audi-i-stan-bratu-Sinise-Malog/",
           "archivedOn": "2026-10-29"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "miomedia",
+      "label": "Miomedia",
+      "type": "instance",
+      "nodeType": "organization",
+      "uri": "https://w3id.org/vip/rs/Miomedia",
+      "comment": "Medijska kompanija u Mionici koju je osnovao Best Media Team, prema ANEM-u i Vremenu.",
+      "file": "data/entities/miomedia.ttl",
+      "line": 12,
+      "sources": [
+        {
+          "url": "https://anem.org.rs/sr/strane/informer-postao-suvlasnik-cerke-firme-aloa-koja-kupuje-lokalne-medije-o-srbiji",
+          "domain": "anem.org.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "ANEM opisuje dve ćerke firme Best Media Team i navodi: \u002730. decembra Miomediu u Mionici\u0027.",
+          "archive": "http://web.archive.org/web/20260414144733/https://anem.org.rs/sr/strane/informer-postao-suvlasnik-cerke-firme-aloa-koja-kupuje-lokalne-medije-o-srbiji",
+          "archivedOn": "2026-04-14"
+        },
+        {
+          "url": "https://vreme.com/vesti/lokalni-mediji-kupovina-alo-informer/",
+          "domain": "vreme.com",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Vreme prenosi ANEM-ov izveštaj o ćerkama firmama Best Media Team: \u002730. decembra Miomediu u Mionici\u0027.",
+          "archive": "http://web.archive.org/web/20260419063743/https://vreme.com/vesti/lokalni-mediji-kupovina-alo-informer/",
+          "archivedOn": "2026-04-19"
         }
       ]
     }
@@ -4129,6 +4129,49 @@
   {
     "data": {
       "id": "edge41",
+      "label": "schoolmate (same school)",
+      "source": "andrej_vucic",
+      "target": "predrag_mali",
+      "uri": "https://w3id.org/vip/rs/PredragMali_AndrejVucic_Schoolmates",
+      "comment": "Tri redakcije opisuju Predraga Malog i Andreja Vučića kao školske drugove: Vreme 2014 („stari školski drugari“), Danas 2016 („njegov školski drug“) i Nova.rs 2021 („školski drug“), sve u izveštajima o incidentu na Paradi ponosa 2014. Nijedna ne navodi školu, razred ni godine, niti izjavu bilo kog od njih dvojice; zato je veza zabeležena kao školsko drugarstvo bez škole, ne kao isti razred (:Classmate). Andrej Vučić je rođen 1972; godina rođenja Predraga Malog ovde nije zabeležena.",
+      "kind": "Schoolmate",
+      "typeLabel": "Schoolmate (same school)",
+      "file": "data/cases/predrag-mali-milenijum-tim.ttl",
+      "line": 124,
+      "sources": [
+        {
+          "url": "https://www.danas.rs/vesti/drustvo/cime-se-bavi-andrej-vucic/",
+          "domain": "danas.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Danas, 4. novembar 2016 (Snežana Čongradin, Vuk Jeremić): \u0027Andrej Vučić i Predrag Mali, njegov školski drug i brat gradonačelnika Beograda Siniše Malog, su pokušali da probiju kordon policije u centru grada.\u0027",
+          "archive": "http://web.archive.org/web/20250713173532/https://www.danas.rs/vesti/drustvo/cime-se-bavi-andrej-vucic/",
+          "archivedOn": "2025-07-13"
+        },
+        {
+          "url": "https://nova.rs/emisije/zasto-se-radnik-kovnice-novca-pominje-u-skoro-svim-sumnjivim-poslovima-vlasti/",
+          "domain": "nova.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Nova.rs, 6. oktobar 2021 (Milica Božinović): \u0027Parada ponosa 2014. centar Beograda i dva brata, Andrej Vučić i Predrag Mali, školski drug i brat tadašnjeg gradonačelnika Beograda Siniše Malog, izvukli su deblji kraj.\u0027",
+          "archive": "http://web.archive.org/web/20211006214711/https://nova.rs/emisije/zasto-se-radnik-kovnice-novca-pominje-u-skoro-svim-sumnjivim-poslovima-vlasti/",
+          "archivedOn": "2021-10-06"
+        },
+        {
+          "url": "https://vreme.com/vreme/u-senci-velikog-brata/",
+          "domain": "vreme.com",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Vreme, 1. oktobar 2014 (Slobodan Georgijev): \u0027njihova su braća Andrej i Predarg – inače stari školski drugari – nabasala sa pripadnicima obezbeđenja srpskog premijera na odred žandarmerije u obezbeđenju Parade ponosa\u0027 (ime je u originalu pogrešno otkucano).",
+          "archive": "http://web.archive.org/web/20241225013625/https://vreme.com/vreme/u-senci-velikog-brata/",
+          "archivedOn": "2024-12-25"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "edge42",
       "label": "employee",
       "source": "predrag_mali",
       "target": "kbv_datacom",
@@ -4169,7 +4212,7 @@
   },
   {
     "data": {
-      "id": "edge42",
+      "id": "edge43",
       "label": "board member",
       "source": "predrag_mali",
       "target": "kk_crvena_zvezda",
@@ -4230,7 +4273,7 @@
   },
   {
     "data": {
-      "id": "edge43",
+      "id": "edge44",
       "label": "siblings",
       "source": "predrag_mali",
       "target": "sinisa_mali",
@@ -4264,7 +4307,7 @@
   },
   {
     "data": {
-      "id": "edge44",
+      "id": "edge45",
       "label": "ownership connection",
       "source": "sasa_blagojevic",
       "target": "alo_marketing",
@@ -4300,7 +4343,7 @@
   },
   {
     "data": {
-      "id": "edge45",
+      "id": "edge46",
       "label": "ownership connection",
       "source": "sasa_blagojevic",
       "target": "alo_media_system",
@@ -4372,7 +4415,7 @@
   },
   {
     "data": {
-      "id": "edge46",
+      "id": "edge47",
       "label": "ownership connection",
       "source": "sasa_blagojevic",
       "target": "global_media_technology",
@@ -4407,7 +4450,7 @@
   },
   {
     "data": {
-      "id": "edge47",
+      "id": "edge48",
       "label": "alumni",
       "source": "sasa_blagojevic",
       "target": "peta_beogradska_gimnazija",
@@ -4468,7 +4511,7 @@
   },
   {
     "data": {
-      "id": "edge48",
+      "id": "edge49",
       "label": "classmate (same class)",
       "source": "sasa_blagojevic",
       "target": "sinisa_mali",
@@ -4538,7 +4581,7 @@
   },
   {
     "data": {
-      "id": "edge49",
+      "id": "edge50",
       "label": "ownership connection",
       "source": "sasa_blagojevic",
       "target": "trilenium",
@@ -4573,7 +4616,7 @@
   },
   {
     "data": {
-      "id": "edge50",
+      "id": "edge51",
       "label": "ownership connection",
       "source": "sinisa_mali",
       "target": "brigham_holding_finance",
@@ -4609,7 +4652,7 @@
   },
   {
     "data": {
-      "id": "edge51",
+      "id": "edge52",
       "label": "alumni",
       "source": "sinisa_mali",
       "target": "ekonomski_fakultet_university_of_belgrade",
@@ -4644,7 +4687,7 @@
   },
   {
     "data": {
-      "id": "edge52",
+      "id": "edge53",
       "label": "ownership connection",
       "source": "sinisa_mali",
       "target": "etham_invest_finance",
@@ -4680,7 +4723,7 @@
   },
   {
     "data": {
-      "id": "edge53",
+      "id": "edge54",
       "label": "mayor",
       "source": "sinisa_mali",
       "target": "grad_beograd",
@@ -4732,7 +4775,7 @@
   },
   {
     "data": {
-      "id": "edge54",
+      "id": "edge55",
       "label": "alumni",
       "source": "sinisa_mali",
       "target": "peta_beogradska_gimnazija",
@@ -4768,7 +4811,7 @@
   },
   {
     "data": {
-      "id": "edge55",
+      "id": "edge56",
       "label": "political connection",
       "source": "sinisa_mali",
       "target": "sns",
@@ -4803,7 +4846,7 @@
   },
   {
     "data": {
-      "id": "edge56",
+      "id": "edge57",
       "label": "minister",
       "source": "sinisa_mali",
       "target": "vlada_srbije",
@@ -4854,7 +4897,7 @@
   },
   {
     "data": {
-      "id": "edge57",
+      "id": "edge58",
       "label": "Poslovni saradnici",
       "labels": {
         "en": "Business associates",
@@ -4892,7 +4935,7 @@
   },
   {
     "data": {
-      "id": "edge58",
+      "id": "edge59",
       "label": "Svedok osnivanja",
       "labels": {
         "en": "Formation witness",
@@ -4932,7 +4975,7 @@
   },
   {
     "data": {
-      "id": "edge59",
+      "id": "edge60",
       "label": "ownership connection",
       "source": "stojan_vujko",
       "target": "kbv_datacom",
@@ -4976,7 +5019,7 @@
   },
   {
     "data": {
-      "id": "edge60",
+      "id": "edge61",
       "label": "ownership connection",
       "source": "stojan_vujko",
       "target": "milenijum_tim",

@@ -69,7 +69,7 @@ Seven conventions apply to every record. The validators enforce their form; whet
 The vocabulary is extended where PoderVocab had gaps. The additions are marked in `schema.ttl`
 under the heading "VIP additions": the ownership connection and its properties, the
 godparenthood connection (kumstvo, a kinship-grade bond in Serbian society that PoderVocab
-lacks), the family connections (siblings, parent and child), the link from an organisation to its financial information, governance work roles such
+lacks), the family connections (siblings, parent and child), the schoolmate connection (same school, when the class is not known), the link from an organisation to its financial information, governance work roles such
 as founder and chair of the board, the document types and the document statuses, and the two
 public identifiers of an entity, its Wikipedia article and its Wikidata item.
 

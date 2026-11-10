@@ -111,6 +111,7 @@
   "edge.PoliticalConnection": "member of",
   "edge.AlumniEducationalConnection": "attended",
   "edge.Classmate": "same class",
+  "edge.Schoolmate": "schoolmates",
   "edge.GodparentConnection": "godparent",
   "edge.FamilyConnection": "family",
   "edge.SiblingConnection": "sibling",

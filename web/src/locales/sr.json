@@ -111,6 +111,7 @@
   "edge.PoliticalConnection": "član",
   "edge.AlumniEducationalConnection": "pohađao/la",
   "edge.Classmate": "isti razred",
+  "edge.Schoolmate": "školski drugovi",
   "edge.GodparentConnection": "kum",
   "edge.FamilyConnection": "srodnici",
   "edge.SiblingConnection": "brat ili sestra",
