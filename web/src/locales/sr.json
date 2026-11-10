@@ -110,6 +110,7 @@
   "edge.WorkConnection": "radi u",
   "edge.PoliticalConnection": "član",
   "edge.AlumniEducationalConnection": "pohađao/la",
+  "edge.Classmate": "školski drug",
   "edge.GodparentConnection": "kum",
   "period.since": "od {start}",
   "period.until": "do {end}",

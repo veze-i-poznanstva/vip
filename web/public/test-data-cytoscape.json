@@ -3219,6 +3219,137 @@
   {
     "data": {
       "id": "edge33",
+      "label": "alumni",
+      "source": "sasa_blagojevic",
+      "target": "peta_beogradska_gimnazija",
+      "uri": "https://w3id.org/vip/rs/SasaBlagojevic_PetaGimnazija",
+      "comment": "Saša Blagojević je pohađao Petu beogradsku gimnaziju u istom odeljenju kao Siniša Mali, prema Pištaljci, Istinomeru, Danasu, Novoj i Vremenu. Pištaljka navodi kraj osamdesetih; tačne godine školovanja nisu navedene. Ostali članci prenose ili pripisuju navod Pištaljci ili ranijem medijskom izveštavanju.",
+      "kind": "AlumniEducationalConnection",
+      "typeLabel": "Alumni",
+      "file": "data/cases/peta-beogradska-gimnazija.ttl",
+      "line": 104,
+      "sources": [
+        {
+          "url": "https://www.danas.rs/vesti/ekonomija/sasa-blagojevic-alo-rock-radio-mediji-lik-dana/",
+          "domain": "danas.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Danas, o Blagojeviću i Malom: \u0027isto odeljenje u Petu beogradsku gimnaziju\u0027. Članak pripisuje navod Pištaljci, ali greškom povezuje /723; odgovarajući izvor je /724.",
+          "archive": "http://web.archive.org/web/20260217205038/https://www.danas.rs/vesti/ekonomija/sasa-blagojevic-alo-rock-radio-mediji-lik-dana/",
+          "archivedOn": "2026-02-17"
+        },
+        {
+          "url": "https://www.istinomer.rs/analize/medijska-koalicija-jednog-ministra-u-zgradi-novosti/",
+          "domain": "istinomer.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Istinomer prenosi Pištaljku o Blagojeviću i Malom: \u0027krajem osamdesetih išli su u isto odeljenje Pete beogradske gimnazije\u0027.",
+          "archive": "http://web.archive.org/web/20260116031455/https://www.istinomer.rs/analize/medijska-koalicija-jednog-ministra-u-zgradi-novosti/",
+          "archivedOn": "2026-01-16"
+        },
+        {
+          "url": "https://nova.rs/vesti/biznis/vlasnici-aloa-i-informera-vlasnici-skoro-25-medija-u-srbiji",
+          "domain": "nova.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Nova, o Blagojeviću i Malom, prema pisanju medija: \u0027isto odeljenje u Petu beogradsku gimnaziju\u0027.",
+          "archive": "http://web.archive.org/web/20261102131221/https://nova.rs/vesti/biznis/vlasnici-aloa-i-informera-vlasnici-skoro-25-medija-u-srbiji/",
+          "archivedOn": "2026-11-02"
+        },
+        {
+          "url": "https://pistaljka.rs/home/read/724",
+          "domain": "pistaljka.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Pištaljka, 8. maj 2018, o Blagojeviću i Malom: \u0027крајем осамдесетих ишли су у исто одељење Пете београдске гимназије\u0027.",
+          "archive": "http://web.archive.org/web/20250422085444/https://pistaljka.rs/home/read/724",
+          "archivedOn": "2025-04-22"
+        },
+        {
+          "url": "https://vreme.com/vreme/prica-se-prica-o-prodaji-blica/",
+          "domain": "vreme.com",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Vreme prenosi Pištaljkin navod o Blagojeviću i Malom: \u0027isto odeljenje u Petoj beogradskoj gimnaziji\u0027.",
+          "archive": "http://web.archive.org/web/20260917061142/https://vreme.com/vreme/prica-se-prica-o-prodaji-blica/",
+          "archivedOn": "2026-09-17"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "edge34",
+      "label": "classmate",
+      "source": "sasa_blagojevic",
+      "target": "sinisa_mali",
+      "uri": "https://w3id.org/vip/rs/SasaBlagojevic_SinisaMali_Classmates",
+      "comment": "Saša Blagojević i Siniša Mali bili su u istom odeljenju Pete beogradske gimnazije krajem osamdesetih, prema Pištaljci i kasnijim izveštajima. Tačne godine nisu navedene; navod o istom odeljenju nije izveden samo iz pohađanja iste škole.",
+      "kind": "Classmate",
+      "typeLabel": "Classmate",
+      "file": "data/cases/peta-beogradska-gimnazija.ttl",
+      "line": 121,
+      "sources": [
+        {
+          "url": "https://www.danas.rs/vesti/ekonomija/sasa-blagojevic-alo-rock-radio-mediji-lik-dana/",
+          "domain": "danas.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Danas, o Blagojeviću i Malom: \u0027isto odeljenje u Petu beogradsku gimnaziju\u0027. Članak pripisuje navod Pištaljci, ali greškom povezuje /723; odgovarajući izvor je /724.",
+          "archive": "http://web.archive.org/web/20260217205038/https://www.danas.rs/vesti/ekonomija/sasa-blagojevic-alo-rock-radio-mediji-lik-dana/",
+          "archivedOn": "2026-02-17"
+        },
+        {
+          "url": "https://www.istinomer.rs/analize/medijska-koalicija-jednog-ministra-u-zgradi-novosti/",
+          "domain": "istinomer.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Istinomer prenosi Pištaljku o Blagojeviću i Malom: \u0027krajem osamdesetih išli su u isto odeljenje Pete beogradske gimnazije\u0027.",
+          "archive": "http://web.archive.org/web/20260116031455/https://www.istinomer.rs/analize/medijska-koalicija-jednog-ministra-u-zgradi-novosti/",
+          "archivedOn": "2026-01-16"
+        },
+        {
+          "url": "https://nova.rs/vesti/biznis/vlasnici-aloa-i-informera-vlasnici-skoro-25-medija-u-srbiji",
+          "domain": "nova.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Nova, o Blagojeviću i Malom, prema pisanju medija: \u0027isto odeljenje u Petu beogradsku gimnaziju\u0027.",
+          "archive": "http://web.archive.org/web/20261102131221/https://nova.rs/vesti/biznis/vlasnici-aloa-i-informera-vlasnici-skoro-25-medija-u-srbiji/",
+          "archivedOn": "2026-11-02"
+        },
+        {
+          "url": "https://pistaljka.rs/home/read/724",
+          "domain": "pistaljka.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Pištaljka, 8. maj 2018, o Blagojeviću i Malom: \u0027крајем осамдесетих ишли су у исто одељење Пете београдске гимназије\u0027.",
+          "archive": "http://web.archive.org/web/20250422085444/https://pistaljka.rs/home/read/724",
+          "archivedOn": "2025-04-22"
+        },
+        {
+          "url": "https://raskrikavanje.rs/milo-irinej-jaja-i-paradajz-ili-kako-alo-vadi-sopstvene-fleke/",
+          "domain": "raskrikavanje.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Raskrikavanje prenosi Pištaljku o Blagojeviću i Malom: \u0027krajem osamdesetih su išli u isto odeljenje gimnazije\u0027. Ovaj pasus ne navodi naziv škole.",
+          "archive": "http://web.archive.org/web/20260411074817/https://raskrikavanje.rs/milo-irinej-jaja-i-paradajz-ili-kako-alo-vadi-sopstvene-fleke/",
+          "archivedOn": "2026-04-11"
+        },
+        {
+          "url": "https://vreme.com/vreme/prica-se-prica-o-prodaji-blica/",
+          "domain": "vreme.com",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Vreme prenosi Pištaljkin navod o Blagojeviću i Malom: \u0027isto odeljenje u Petoj beogradskoj gimnaziji\u0027.",
+          "archive": "http://web.archive.org/web/20260917061142/https://vreme.com/vreme/prica-se-prica-o-prodaji-blica/",
+          "archivedOn": "2026-09-17"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "edge35",
       "label": "ownership connection",
       "source": "sasa_blagojevic",
       "target": "trilenium",
@@ -3253,7 +3384,7 @@
   },
   {
     "data": {
-      "id": "edge34",
+      "id": "edge36",
       "label": "alumni",
       "source": "sinisa_mali",
       "target": "ekonomski_fakultet_university_of_belgrade",
@@ -3288,7 +3419,7 @@
   },
   {
     "data": {
-      "id": "edge35",
+      "id": "edge37",
       "label": "alumni",
       "source": "sinisa_mali",
       "target": "peta_beogradska_gimnazija",
@@ -3324,7 +3455,7 @@
   },
   {
     "data": {
-      "id": "edge36",
+      "id": "edge38",
       "label": "political connection",
       "source": "sinisa_mali",
       "target": "sns",
@@ -3359,7 +3490,7 @@
   },
   {
     "data": {
-      "id": "edge37",
+      "id": "edge39",
       "label": "ownership connection",
       "source": "stojan_vujko",
       "target": "milenijum_tim",

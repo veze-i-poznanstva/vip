@@ -65,6 +65,10 @@
         vip:archivedOn     "2025-12-11"^^xsd:date;
         vip:hasArchiveURL  <http://web.archive.org/web/20251211120109/https://sr.wikipedia.org/wiki/%D0%A1%D0%B8%D0%BD%D0%B8%D1%88%D0%B0_%D0%9C%D0%B0%D0%BB%D0%B8> .
 
+<https://www.istinomer.rs/analize/medijska-koalicija-jednog-ministra-u-zgradi-novosti/>
+        vip:archivedOn     "2026-01-16"^^xsd:date;
+        vip:hasArchiveURL  <http://web.archive.org/web/20260116031455/https://www.istinomer.rs/analize/medijska-koalicija-jednog-ministra-u-zgradi-novosti/> .
+
 <https://www.emis.cn/php/company-profile/YU/Millennium_Team_DOO_Beograd_en_2585748.html>
         vip:archivedOn     "2026-11-01"^^xsd:date;
         vip:hasArchiveURL  <https://web.archive.org/web/20261101025035/https://www.emis.cn/php/company-profile/YU/Millennium_Team_DOO_Beograd_en_2585748.html> .
@@ -201,6 +205,10 @@
         vip:archivedOn     "2026-03-05"^^xsd:date;
         vip:hasArchiveURL  <http://web.archive.org/web/20260305143723/https://www.cenzolovka.rs/tag/sasa-blagojevic/> .
 
+<https://vreme.com/vreme/prica-se-prica-o-prodaji-blica/>
+        vip:archivedOn     "2026-09-17"^^xsd:date;
+        vip:hasArchiveURL  <http://web.archive.org/web/20260917061142/https://vreme.com/vreme/prica-se-prica-o-prodaji-blica/> .
+
 <https://nova.rs/vesti/biznis/vlasnici-aloa-i-informera-vlasnici-skoro-25-medija-u-srbiji>
         vip:archivedOn     "2026-11-02"^^xsd:date;
         vip:hasArchiveURL  <http://web.archive.org/web/20261102131221/https://nova.rs/vesti/biznis/vlasnici-aloa-i-informera-vlasnici-skoro-25-medija-u-srbiji/> .
@@ -212,6 +220,10 @@
 <https://www.ite.gov.rs/tekst/sr/150/direktor.php>
         vip:archivedOn     "2026-10-09"^^xsd:date;
         vip:hasArchiveURL  <http://web.archive.org/web/20261009165017/https://ite.gov.rs/tekst/sr/150/direktor.php> .
+
+<https://raskrikavanje.rs/milo-irinej-jaja-i-paradajz-ili-kako-alo-vadi-sopstvene-fleke/>
+        vip:archivedOn     "2026-04-11"^^xsd:date;
+        vip:hasArchiveURL  <http://web.archive.org/web/20260411074817/https://raskrikavanje.rs/milo-irinej-jaja-i-paradajz-ili-kako-alo-vadi-sopstvene-fleke/> .
 
 <https://www.ekof.bg.ac.rs/>
         vip:archivedOn     "2026-10-19"^^xsd:date;
@@ -324,6 +336,10 @@
 <https://www.krik.rs/tag/milenijum-tim/>
         vip:archivedOn     "2026-04-23"^^xsd:date;
         vip:hasArchiveURL  <http://web.archive.org/web/20260423033321/https://www.krik.rs/tag/milenijum-tim/> .
+
+<https://pistaljka.rs/home/read/724>
+        vip:archivedOn     "2025-04-22"^^xsd:date;
+        vip:hasArchiveURL  <http://web.archive.org/web/20250422085444/https://pistaljka.rs/home/read/724> .
 
 <https://www.companywall.rs/firma/drustvo--za-inzenjering-i-usluge-millennium-resorts-doo-beograd/MMxxIjkxY>
         vip:archivedOn     "2026-11-01"^^xsd:date;

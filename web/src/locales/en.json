@@ -110,6 +110,7 @@
   "edge.WorkConnection": "works at",
   "edge.PoliticalConnection": "member of",
   "edge.AlumniEducationalConnection": "attended",
+  "edge.Classmate": "classmate",
   "edge.GodparentConnection": "godparent",
   "period.since": "since {start}",
   "period.until": "until {end}",

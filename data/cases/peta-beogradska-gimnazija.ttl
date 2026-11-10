@@ -95,3 +95,44 @@ rs:MihailoJovanovic_PetaGimnazija a :AlumniEducationalConnection ;
           rdfs:comment "Alo, 31. decembar 2022: 'Pogađate, u pitanju su Siniša Mali i Mihailo Jovanović.' i razredna Divna Jovanović: 'Oni su završili 1991. godine'; Siniša Mali: 'veliki broj mojih drugara i drugarica je iz te škole došao u Petu beogradsku gimnaziju 1987.'"@sr ] ,
         [ a :Documentation ; :hasDocumentURL <https://www.youtube.com/watch?v=tHgNZtQdGrg&t=5s> ; :hasDocumentType vip:videoRecording ; :hasDocumentStatus vip:published ;
           rdfs:comment "YouTube, kanal ALO. RS, naslov snimka: 'SINIŠA MALI I MIHAILO JOVANOVIĆ OD ŠKOLSKIH DO MINISTARSKIH KLUPA - Bivšu razrednu iznenadili cvećem'. Sam snimak nije pregledan; stranica ne navodi godine školovanja."@sr ] .
+
+# Saša Blagojević: školovanje i isto odeljenje sa Sinišom Malim.
+# Saša Blagojević: school attendance and the same class as Siniša Mali.
+# Izvori navode kraj osamdesetih; tačne godine školovanja nisu poznate.
+# Sources say the late 1980s; exact attendance years are unknown.
+
+rs:SasaBlagojevic_PetaGimnazija a :AlumniEducationalConnection ;
+    :hasStudent rs:Sasa_Blagojevic ;
+    :hasAcademicOrganization rs:Peta_Beogradska_Gimnazija ;
+    rdfs:comment "Saša Blagojević je pohađao Petu beogradsku gimnaziju u istom odeljenju kao Siniša Mali, prema Pištaljci, Istinomeru, Danasu, Novoj i Vremenu. Pištaljka navodi kraj osamdesetih; tačne godine školovanja nisu navedene. Ostali članci prenose ili pripisuju navod Pištaljci ili ranijem medijskom izveštavanju."@sr ;
+    rdfs:comment "Saša Blagojević attended Peta beogradska gimnazija in the same class as Siniša Mali, according to Pištaljka, Istinomer, Danas, Nova and Vreme. Pištaljka places this in the late 1980s; exact attendance years are not stated. The other articles repeat or attribute the account to Pištaljka or earlier media reporting."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://pistaljka.rs/home/read/724> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Pištaljka, 8. maj 2018, o Blagojeviću i Malom: 'крајем осамдесетих ишли су у исто одељење Пете београдске гимназије'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.istinomer.rs/analize/medijska-koalicija-jednog-ministra-u-zgradi-novosti/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Istinomer prenosi Pištaljku o Blagojeviću i Malom: 'krajem osamdesetih išli su u isto odeljenje Pete beogradske gimnazije'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.danas.rs/vesti/ekonomija/sasa-blagojevic-alo-rock-radio-mediji-lik-dana/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Danas, o Blagojeviću i Malom: 'isto odeljenje u Petu beogradsku gimnaziju'. Članak pripisuje navod Pištaljci, ali greškom povezuje /723; odgovarajući izvor je /724."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://nova.rs/vesti/biznis/vlasnici-aloa-i-informera-vlasnici-skoro-25-medija-u-srbiji> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Nova, o Blagojeviću i Malom, prema pisanju medija: 'isto odeljenje u Petu beogradsku gimnaziju'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://vreme.com/vreme/prica-se-prica-o-prodaji-blica/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Vreme prenosi Pištaljkin navod o Blagojeviću i Malom: 'isto odeljenje u Petoj beogradskoj gimnaziji'."@sr ] .
+
+rs:SasaBlagojevic_SinisaMali_Classmates a :Classmate ;
+    bio:participant rs:Sasa_Blagojevic, rs:Sinisa_Mali ;
+    :connectedVia rs:Peta_Beogradska_Gimnazija ;
+    rdfs:comment "Saša Blagojević i Siniša Mali bili su u istom odeljenju Pete beogradske gimnazije krajem osamdesetih, prema Pištaljci i kasnijim izveštajima. Tačne godine nisu navedene; navod o istom odeljenju nije izveden samo iz pohađanja iste škole."@sr ;
+    rdfs:comment "Saša Blagojević and Siniša Mali were in the same class at Peta beogradska gimnazija in the late 1980s, according to Pištaljka and subsequent reporting. Exact years are not stated; the same-class claim is explicit, rather than inferred from attending the same school."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://pistaljka.rs/home/read/724> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Pištaljka, 8. maj 2018, o Blagojeviću i Malom: 'крајем осамдесетих ишли су у исто одељење Пете београдске гимназије'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.istinomer.rs/analize/medijska-koalicija-jednog-ministra-u-zgradi-novosti/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Istinomer prenosi Pištaljku o Blagojeviću i Malom: 'krajem osamdesetih išli su u isto odeljenje Pete beogradske gimnazije'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.danas.rs/vesti/ekonomija/sasa-blagojevic-alo-rock-radio-mediji-lik-dana/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Danas, o Blagojeviću i Malom: 'isto odeljenje u Petu beogradsku gimnaziju'. Članak pripisuje navod Pištaljci, ali greškom povezuje /723; odgovarajući izvor je /724."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://nova.rs/vesti/biznis/vlasnici-aloa-i-informera-vlasnici-skoro-25-medija-u-srbiji> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Nova, o Blagojeviću i Malom, prema pisanju medija: 'isto odeljenje u Petu beogradsku gimnaziju'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://vreme.com/vreme/prica-se-prica-o-prodaji-blica/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Vreme prenosi Pištaljkin navod o Blagojeviću i Malom: 'isto odeljenje u Petoj beogradskoj gimnaziji'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://raskrikavanje.rs/milo-irinej-jaja-i-paradajz-ili-kako-alo-vadi-sopstvene-fleke/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Raskrikavanje prenosi Pištaljku o Blagojeviću i Malom: 'krajem osamdesetih su išli u isto odeljenje gimnazije'. Ovaj pasus ne navodi naziv škole."@sr ] .
