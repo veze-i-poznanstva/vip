@@ -548,13 +548,15 @@ class TtlToCytoscapeTest {
     }
 
     @Test
-    fun `a work edge carries its role labels`() {
+    fun `a work edge carries its role labels in every language of the vocabulary, ordered by the English one`() {
         val data = convert("""
             ex:A a foaf:Person . ex:N a :NonProfitOrganization .
             _:w a :WorkConnection ; bio:participant ex:A ; :hasEconomicOrganizationParticipant ex:N ;
                 :hasWorkRole vip:founder, vip:boardChair .
         """).edges().single().data
-        assertEquals(listOf("Chair of the board", "Founder"), data.roles)
+        assertEquals(listOf("Chair of the board", "Founder"), data.roles!!.map { it.getValue("en") })
+        assertEquals(listOf("Predsednik upravnog odbora", "Osnivač"), data.roles!!.map { it.getValue("sr") })
+        assertEquals(listOf("Presidente del directorio", "Fundador"), data.roles!!.map { it.getValue("es") })
         assertNull(data.uri)
     }
 
@@ -668,6 +670,27 @@ class TtlToCytoscapeTest {
         )).edges().single().data
         assertEquals(listOf("data/cases/c.ttl", "data/cases/c.ttl"), data.history!!.map { it.file })
         assertEquals(listOf(8, 9), data.history!!.map { it.line })
+    }
+
+    @Test
+    fun `a parent-and-child edge leaves the parent, whatever the URIs sort to`() {
+        val edge = convert("""
+            ex:Zed a foaf:Person . ex:Ana a foaf:Person .
+            ex:ZA a vip:ParentChildConnection ; vip:parent ex:Zed ; vip:child ex:Ana .
+        """).edges().single()
+        assertEquals("zed", edge.data.source)
+        assertEquals("ana", edge.data.target)
+        assertEquals("ParentChildConnection", edge.data.kind)
+    }
+
+    @Test
+    fun `a connection's own label is exported in every language it has, the Serbian one drawn by default`() {
+        val data = convert("""
+            ex:A a foaf:Person . ex:B a :Company .
+            ex:AB a :Connection ; bio:participant ex:A, ex:B ; rdfs:label "Ustupljen automobil"@sr, "Car provided"@en .
+        """).edges().single().data
+        assertEquals("Ustupljen automobil", data.label)
+        assertEquals(mapOf("en" to "Car provided", "sr" to "Ustupljen automobil"), data.labels)
     }
 
     @Test

@@ -18,6 +18,7 @@ class SHACLValidatorTest {
             @prefix : <http://poderopedia.com/vocab/> .
             @prefix vip: <https://w3id.org/vip/vocab#> .
             @prefix foaf: <http://xmlns.com/foaf/0.1/> .
+            @prefix bio: <http://purl.org/vocab/bio/0.1/> .
             @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
             @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
             $ttl
@@ -279,6 +280,28 @@ class SHACLValidatorTest {
         val report = ownerships("""
             rs:A a vip:OwnershipConnection ; vip:owner rs:OwnerA ; vip:ownedCompany rs:Firm ; vip:ownershipShare 100.0 ; $quoted .
         """)
+        assertTrue(report.conforms(), report.entries.joinToString { it.message() })
+    }
+
+    @Test
+    fun `a bare kinship property on a person is refused, because kinship is a connection record`() {
+        val report = validateShacl(schema, data("""
+            rs:Ana a foaf:Person ; foaf:firstName "Ana" ; :firstLastName "B" ; :hasSibling rs:Bo ; $documented .
+            rs:Bo a foaf:Person ; foaf:firstName "Bo" ; :firstLastName "B" ; $documented .
+        """))
+        assertFalse(report.conforms())
+        assertTrue(report.entries.any { it.focusNode().toString().endsWith("Ana") }, report.entries.joinToString { it.focusNode().toString() })
+    }
+
+    @Test
+    fun `a sibling connection and a parent-and-child connection with quoted citations conform`() {
+        val report = validateShacl(schema, data("""
+            rs:Ana a foaf:Person ; foaf:firstName "Ana" ; :firstLastName "B" ; $documented .
+            rs:Bo a foaf:Person ; foaf:firstName "Bo" ; :firstLastName "B" ; $documented .
+            rs:Cile a foaf:Person ; foaf:firstName "Cile" ; :firstLastName "B" ; $documented .
+            rs:AnaBo a vip:SiblingConnection ; bio:participant rs:Ana, rs:Bo ; $quoted .
+            rs:AnaCile a vip:ParentChildConnection ; vip:parent rs:Ana ; vip:child rs:Cile ; $quoted .
+        """))
         assertTrue(report.conforms(), report.entries.joinToString { it.message() })
     }
 }

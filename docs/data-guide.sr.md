@@ -21,10 +21,17 @@ Sedam pravila važi za svaki zapis. Validatori sprovode njihov oblik; da li izvo
   identitet citata.
 - **Odnosi su resursi veze, nikad gola svojstva.** Članstvo u stranci je `:PoliticalConnection`
   između osobe i stranke. Zaposlenje i mesta u odborima su `:WorkConnection` sa jednom ili više
-  radnih uloga i opcionim datumima početka i kraja. Školovanje je
-  `:AlumniEducationalConnection`. Vlasništvo nad firmom je `vip:OwnershipConnection` sa opcionim
+  radnih uloga i opcionim datumima početka i kraja. Javna funkcija je takođe `:WorkConnection`:
+  gradonačelnikova sa gradom (`rs:Grad_Beograd`, tipa `:GovernmentOrganization`), ministrova sa
+  Vladom (`rs:Vlada_Srbije`), sa ulogom `vip:mayor` ili `vip:minister` i resorom u komentaru;
+  pravilo „vlasnik na funkciji“ čita upravo njih. Školovanje je `:AlumniEducationalConnection`. Vlasništvo nad firmom je `vip:OwnershipConnection` sa opcionim
   udelom (decimalni procenat, od 0 do 100). Svaka veza nosi sopstvenu dokumentaciju, pa je dokaz
   za „X sedi u odboru Y“ odvojen od dokaza da X i Y postoje.
+  Srodstvo nije izuzetak: braća i sestre su `vip:SiblingConnection`, a roditelj i dete
+  `vip:ParentChildConnection` (`vip:parent`, `vip:child`), zabeleženi u
+  `data/cases/porodicne-veze.ttl` sa sopstvenim izvorima. Oblici odbijaju gola porodična
+  svojstva PoderVocab-a (`:hasSibling`, `:hasParent`) na osobi, jer ne ostavljaju mesta za
+  dokaz.
 - **Vreme je deo tvrdnje.** Veza nosi `:connectionStartDate` i `:connectionEndDate` onoliko
   precizno koliko izvor navodi: `xsd:gYear`, `xsd:gYearMonth` ili `xsd:date`, nikad izmišljeni
   1. januar. Datum koji nedostaje znači da je nepoznat, a ne da veza još traje. Uloge obavljane u
@@ -59,7 +66,7 @@ Sedam pravila važi za svaki zapis. Validatori sprovode njihov oblik; da li izvo
 
 Rečnik je proširen tamo gde je PoderVocab imao praznine. Dopune su obeležene u `schema.ttl`
 pod naslovom „VIP additions“: vlasnička veza i njena svojstva, veza kumstva (koju PoderVocab
-nema, a u srpskom društvu je jaka kao srodstvo), veza organizacije sa njenim finansijskim
+nema, a u srpskom društvu je jaka kao srodstvo), porodične veze (braća i sestre, roditelj i dete), veza organizacije sa njenim finansijskim
 informacijama, upravljačke radne uloge kao osnivač i predsednik upravnog odbora, vrste
 dokumenata i statusi dokumenata, kao i dva javna identifikatora entiteta: članak na Vikipediji
 i stavku na Vikidati.
@@ -86,8 +93,9 @@ Podaci žive u `data/` u dve vrste datoteka:
 - `data/cases/<slucaj>.ttl`, po jedna za svaki istraživani slučaj: veze među entitetima, svaka sa
   datumima, ulogama i dokazima. `milenijum-tim.ttl` sadrži vlasničke i radne veze građevinske
   grupe; `peta-beogradska-gimnazija.ttl` sadrži razred koji je stigao do vlade;
-  `alo-media-system.ttl` sadrži vlasništvo nad izdavačem tabloida Alo. Recenzent pročita jednu
-  datoteku slučaja i vidi celu priču sa izvorima.
+  `alo-media-system.ttl` sadrži vlasništvo nad izdavačem tabloida Alo. Dve datoteke presecaju
+  slučajeve: `javne-funkcije.ttl` sadrži javne funkcije, a `porodicne-veze.ttl` srodstvo.
+  Recenzent pročita jednu datoteku slučaja i vidi celu priču sa izvorima.
 
 Radite sa AI agentom za programiranje? Nalepite prompt za brzi početak iz
 [docs/agent-prompt.sr.md](agent-prompt.sr.md) kao prvu poruku: on objašnjava ceo put,

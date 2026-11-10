@@ -1,7 +1,7 @@
 <script lang="ts">
   import { createEventDispatcher } from 'svelte';
-  import { t } from './i18n';
-  import { connectionKind, connectionsOf, connectionTitle, githubLinks, isEnded, period, statesOf, wikidataPage } from './details';
+  import { language, t } from './i18n';
+  import { connectionKind, connectionsOf, connectionTitle, githubLinks, isEnded, period, roleNames, statesOf, wikidataPage } from './details';
   import type { ConnectionFields, Fact, PanelContent, Source } from './details';
   import type { GraphEdge, GraphIndex } from './graph';
   import SourceList from './SourceList.svelte';
@@ -24,11 +24,10 @@
   const str = (value: unknown): string | undefined => (typeof value === 'string' && value !== '' ? value : undefined);
   const list = <T,>(value: unknown): T[] => (Array.isArray(value) ? (value as T[]) : []);
   const stateCount = (e: GraphEdge) => statesOf(e as unknown as ConnectionFields).length;
-  const strings = (value: unknown): string[] => list<string>(value);
   const safeLink = (url: string | undefined) => (url && /^https?:\/\//i.test(url) ? url : undefined);
 
-  const title = (e: GraphEdge, tr: typeof $t) => connectionTitle(e as unknown as ConnectionFields, tr);
-  const kindOf = (e: GraphEdge, tr: typeof $t) => connectionKind(e as unknown as ConnectionFields, tr);
+  const title = (e: GraphEdge, tr: typeof $t, lang: string) => connectionTitle(e as unknown as ConnectionFields, tr, lang);
+  const kindOf = (e: GraphEdge, tr: typeof $t, lang: string) => connectionKind(e as unknown as ConnectionFields, tr, lang);
 
   $: node = content.kind === 'node' ? content.node : null;
   $: edge = content.kind === 'edge' ? content.edge : null;
@@ -43,8 +42,8 @@
   $: states = edge ? statesOf(edge as unknown as ConnectionFields) : [];
   $: edgeFacts = edge
     ? [
-        { key: 'details.type', value: kindOf(edge, $t) },
-        ...(list<string>(edge.roles).length > 0 ? [{ key: 'details.roles', value: list<string>(edge.roles).join(', ') }] : []),
+        { key: 'details.type', value: kindOf(edge, $t, $language) },
+        ...(roleNames(edge.roles, $language).length > 0 ? [{ key: 'details.roles', value: roleNames(edge.roles, $language).join(', ') }] : []),
         ...(typeof edge.share === 'number' ? [{ key: 'details.share', value: `${edge.share}%` }] : []),
         { key: 'details.period', value: period(str(edge.start), str(edge.end), $t) },
         ...(isEnded(edge) ? [] : [{ key: 'details.continues', value: $t('details.endUnknown') }]),
@@ -99,7 +98,7 @@
                 <span class="name">?</span>
               {/if}
               <button type="button" class="link tie" on:click={() => dispatch('selectEdge', row.edge.id)}>
-                {title(row.edge, $t)}
+                {title(row.edge, $t, $language)}
                 <span class="when">{period(str(row.edge.start), str(row.edge.end), $t)}</span>
                 {#if stateCount(row.edge) > 1}<span class="count">{$t('details.stateCount', { count: stateCount(row.edge) })}</span>{/if}
                 {#if list(row.edge.sources).length > 0}<span class="count">{$t('details.sourceCount', { count: list(row.edge.sources).length })}</span>{/if}
@@ -119,7 +118,7 @@
       <button type="button" class="close" aria-label={$t('details.close')} title={$t('details.close')} on:click={() => dispatch('close')}>×</button>
     </header>
     <h2>{fromName} → {toName}</h2>
-    <p class="quiet">{title(edge, $t)}</p>
+    <p class="quiet">{title(edge, $t, $language)}</p>
     {#if isEnded(edge)}<p><span class="chip">{$t('details.ended')}</span></p>{/if}
     <section>
       <dl>
@@ -138,7 +137,7 @@
               <div class="state-head">
                 <span class="when">{period(str(state.start), str(state.end), $t)}</span>
                 {#if typeof state.share === 'number'}<span>{state.share}%</span>{/if}
-                {#if strings(state.roles).length > 0}<span>{strings(state.roles).join(', ')}</span>{/if}
+                {#if roleNames(state.roles, $language).length > 0}<span>{roleNames(state.roles, $language).join(', ')}</span>{/if}
                 {#if i === states.length - 1}<span class="chip">{$t('details.latest')}</span>{/if}
               </div>
               {#if str(state.comment)}<p class="quiet">{state.comment}</p>{/if}

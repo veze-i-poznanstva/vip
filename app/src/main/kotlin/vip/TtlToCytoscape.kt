@@ -17,6 +17,8 @@ data class CytoscapeElement(
 data class ElementData(
     val id: String,
     val label: String? = null,
+    /** A connection's own label by language code, when it has one. */
+    val labels: Map<String, String>? = null,
     val source: String? = null,
     val target: String? = null,
     val type: String? = null,
@@ -29,7 +31,7 @@ data class ElementData(
     val facts: List<Fact>? = null,
     val kind: String? = null,
     val typeLabel: String? = null,
-    val roles: List<String>? = null,
+    val roles: List<Map<String, String>>? = null,
     val share: Double? = null,
     val start: String? = null,
     val end: String? = null,
@@ -226,7 +228,7 @@ private class GraphBuilder(
                 .map { it.asResource() }
                 .distinct()
                 .filter { it.uri in nodeIds }
-                .sortedWith(compareBy({ !isOwnerIn(connection, it) }, { !isA(it, Vocab.PERSON) }, { it.uri }))
+                .sortedWith(compareBy({ !isOriginIn(connection, it) }, { !isA(it, Vocab.PERSON) }, { it.uri }))
             val label = connectionLabel(connection)
             participants.indices.flatMap { i ->
                 (i + 1 until participants.size).map { j -> connectionEdge(connection, participants[i], participants[j], label) }
@@ -240,6 +242,7 @@ private class GraphBuilder(
         return edge(from, to, label).let { e ->
             e.copy(data = e.data.copy(
                 uri = connection.takeIf { it.isURIResource }?.uri,
+                labels = labelsOf(data, connection).ifEmpty { null },
                 kind = kind?.let { localName(it.uri) },
                 typeLabel = kind?.let { englishLabel(it) },
                 roles = roles,
@@ -273,9 +276,16 @@ private class GraphBuilder(
                 }))
             }
 
-    private fun rolesOf(connection: Resource): List<String>? =
+    /** The work roles as the vocabulary names them in each language, ordered by the English name. */
+    private fun rolesOf(connection: Resource): List<Map<String, String>>? =
         data.listObjectsOfProperty(connection, data.createProperty(Vocab.HAS_WORK_ROLE)).toList()
-            .filter { it.isResource }.mapNotNull { englishLabel(it.asResource()) }.sorted().ifEmpty { null }
+            .filter { it.isResource }.map { labelsOf(schema, it.asResource()) }.filter { it.isNotEmpty() }
+            .sortedBy { it["en"] ?: it.values.first() }.ifEmpty { null }
+
+    /** The `rdfs:label`s of a resource in [model] by language; an untagged label counts as English. */
+    private fun labelsOf(model: Model, resource: Resource): Map<String, String> =
+        model.listStatements(resource, RDFS.label, null as RDFNode?).toList().map { it.`object`.asLiteral() }
+            .groupBy({ it.language.ifEmpty { "en" } }, { it.lexicalForm }).mapValues { (_, forms) -> forms.min() }.toSortedMap()
 
     /** The most specific declared type: the one that is a subclass of all the others, else the first by name. */
     private fun kindOf(connection: Resource): Resource? {
@@ -284,9 +294,9 @@ private class GraphBuilder(
         return types.firstOrNull { t -> types.all { o -> o == t || inferred.contains(t, RDFS.subClassOf, o) } } ?: types.firstOrNull()
     }
 
-    /** An ownership edge always leaves the owner, whatever the two URIs sort to. */
-    private fun isOwnerIn(connection: Resource, participant: Resource): Boolean =
-        data.contains(connection, data.createProperty(Vocab.OWNER), participant)
+    /** A directed tie leaves its origin, the owner or the parent, whatever the two URIs sort to. */
+    private fun isOriginIn(connection: Resource, participant: Resource): Boolean =
+        listOf(Vocab.OWNER, Vocab.PARENT).any { data.contains(connection, data.createProperty(it), participant) }
 
     /** Only properties the vocabulary declares become edges: a made-up predicate is not a fact. */
     private fun directEdges(): List<CytoscapeElement> =

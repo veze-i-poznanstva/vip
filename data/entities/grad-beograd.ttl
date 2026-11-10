@@ -1,0 +1,27 @@
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix dbo:     <http://dbpedia.org/ontology/> .
+@prefix rs:      <https://w3id.org/vip/rs/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix :        <http://poderopedia.com/vocab/> .
+@prefix vip:     <https://w3id.org/vip/vocab#> .
+
+# Grad Beograd
+# Matična datoteka entiteta: tip, imena, identifikatori i izvori koji potvrđuju identitet.
+# Home file of this entity: type, names, identifiers and the sources for its identity.
+# Veze se nalaze u data/cases/. Connections live in data/cases/.
+
+rs:Grad_Beograd a :GovernmentOrganization ;
+    foaf:name "Grad Beograd"@sr ;
+    vip:wikipediaArticle <https://sr.wikipedia.org/wiki/Град_Београд> ;
+    vip:wikidataItem <http://www.wikidata.org/entity/Q2074197> ;
+    dbo:location "Beograd, Srbija"@sr ;
+    rdfs:comment "Jedinica lokalne samouprave glavnog grada: Skupština grada, gradonačelnik, Gradsko veće i Gradska uprava. Ovaj entitet je organizacija čije funkcije ljudi vrše, a ne mesto."@sr ;
+    rdfs:comment "The capital's unit of local self-government: the City Assembly, the mayor, the City Council and the City Administration. The entity is the organisation whose offices people hold, not the place."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://sr.wikipedia.org/wiki/Град_Београд> ; :hasDocumentType vip:encyclopediaArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Enciklopedijski članak: 'Град Београд има статус посебне територијалне јединице у Србији са својом локалном самоуправом.'"@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.beograd.rs/lat/gradska-vlast> ; :hasDocumentType vip:webPage ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Zvanični sajt Grada Beograda, strana 'Gradska vlast Beograda': organi su 'Skupština grada Beograda', 'Gradonačelnik', 'Gradsko veće', 'Gradska uprava'."@sr ] .

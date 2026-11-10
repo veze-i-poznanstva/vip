@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { buildIndex } from './graph';
-import { connectionsOf, connectionTitle, edgeLabel, githubLinks, groupSources, panelContent, period, statesOf, isEnded, wikidataPage } from './details';
+import { connectionsOf, connectionTitle, edgeLabel, githubLinks, groupSources, panelContent, period, roleNames, statesOf, isEnded, wikidataPage } from './details';
 import type { Source } from './details';
 
 const dictionary: Record<string, string> = {
@@ -63,8 +63,22 @@ describe('connectionTitle', () => {
     expect(connectionTitle({ kind: 'Odd', label: 'x' }, t)).toBe('x');
     expect(connectionTitle({ label: 'friend' }, t)).toBe('friend');
   });
-  it('adds roles when present', () => {
-    expect(connectionTitle({ kind: 'WorkConnection', roles: ['chair', 'member'], label: 'x' }, t)).toBe('works at (chair, member)');
+  it('adds the roles in the given language when present', () => {
+    const roles = [{ en: 'chair', sr: 'predsednik' }, { en: 'member' }];
+    expect(connectionTitle({ kind: 'WorkConnection', roles, label: 'x' }, t, 'sr')).toBe('works at (predsednik, member)');
+    expect(connectionTitle({ kind: 'WorkConnection', roles, label: 'x' }, t, 'en')).toBe('works at (chair, member)');
+  });
+});
+
+describe('roleNames', () => {
+  it('picks the name in the given language, else the English one, else any', () => {
+    expect(roleNames([{ en: 'Mayor', sr: 'Gradonačelnik' }], 'sr')).toEqual(['Gradonačelnik']);
+    expect(roleNames([{ en: 'Mayor' }], 'sr')).toEqual(['Mayor']);
+    expect(roleNames([{ es: 'Alcalde' }], 'sr')).toEqual(['Alcalde']);
+  });
+  it('keeps a plain string role, drops anything else and tolerates no roles', () => {
+    expect(roleNames(['chair', 7, null, {}], 'en')).toEqual(['chair']);
+    expect(roleNames(undefined, 'en')).toEqual([]);
   });
 });
 
@@ -76,8 +90,15 @@ describe('edgeLabel', () => {
     expect(edgeLabel({ label: 'poslovni partneri' }, t)).toBe('poslovni partneri');
     expect(edgeLabel({ kind: 'Unmapped', label: 'raw' }, t)).toBe('raw');
   });
+  it('draws a record\'s own label in the given language when the kind has no translation', () => {
+    const labels = { en: 'Car provided', sr: 'Ustupljen automobil' };
+    expect(edgeLabel({ kind: 'Connection', label: 'Ustupljen automobil', labels }, t, 'en')).toBe('Car provided');
+    expect(edgeLabel({ kind: 'Connection', label: 'Ustupljen automobil', labels }, t, 'sr')).toBe('Ustupljen automobil');
+    expect(edgeLabel({ kind: 'Connection', label: 'Ustupljen automobil', labels }, t, 'de')).toBe('Ustupljen automobil');
+    expect(connectionTitle({ kind: 'Connection', label: 'Ustupljen automobil', labels }, t, 'en')).toBe('Car provided');
+  });
   it('does not add roles to the drawn label', () => {
-    expect(edgeLabel({ kind: 'WorkConnection', roles: ['chair'], label: 'x' }, t)).toBe('works at');
+    expect(edgeLabel({ kind: 'WorkConnection', roles: [{ en: 'chair' }], label: 'x' }, t)).toBe('works at');
   });
 });
 

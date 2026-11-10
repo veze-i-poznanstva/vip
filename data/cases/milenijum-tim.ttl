@@ -13,6 +13,8 @@
 #
 # Obuhvata: Ivana Bošnjaka i Stojana Vujka, kompaniju Milenijum tim sa zavisnim društvima,
 # vlasničke udele, NALED i radne veze Ivana Bošnjaka (suvlasnika, rođenog 1980) i Ane Brnabić sa NALED-om.
+# Dodato: automobil i stan koje je, prema KRIK-u, Milenijum tim ustupio Predragu Malom, bratu Siniše Malog.
+# Added: the car and the flat that, per KRIK, Milenijum Tim provided to Predrag Mali, Siniša Mali's brother.
 # Osobe i organizacije su deklarisane u data/entities/, ovde su samo veze među njima.
 # People and organisations are declared in data/entities/; this file holds only the connections.
 # Konvencije zapisa: videti docs/data-guide.sr.md (see docs/data-guide.md).
@@ -220,3 +222,27 @@ rs:MilenijumTim_MostogradnjaING a vip:OwnershipConnection ;
           rdfs:comment "N1, 25. decembar 2024: Mostogradnja ING u stoprocentnom vlasništvu Milenijum tima, zavisno društvo."@sr ] ,
         [ a :Documentation ; :hasDocumentURL <https://www.danas.rs/vesti/ekonomija/beogradsko-gradjevinsko-preduzece-mostogradnja-postalo-vlasnistvo-milenijum-tima/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
           rdfs:comment "Danas, 13. februar 2025: Mostogradnja ING, u vlasništvu firme Milenijum tim."@sr ] .
+
+rs:MilenijumTim_PredragMali_Automobil a :Connection ;
+    bio:participant rs:Milenijum_Tim, rs:Predrag_Mali ;
+    rdfs:label "Ustupljen automobil"@sr, "Car provided"@en ;
+    :connectionStartDate "2014"^^xsd:gYear ;
+    rdfs:comment "Prema KRIK-u (22. jul 2019), Predrag Mali već pet godina vozi „audi a6“ u vlasništvu firmi Ivana Bošnjaka i Stojana Vujka: najpre Milenijum tima, što pokazuje policijski zapisnik od 26. decembra 2014, a zatim je automobil preregistrovan na njihovu drugu firmu KBV datakom, koja ovde nije zabeležena. Novinari su ga videli u istom automobilu 5. juna 2019. Mali je rekao da „to nije tačno“; Milenijum tim: „U potpunosti odbacujemo navode da smo bilo šta ustupili ili poklonili Predragu Malom, s kojim kompanija nema nikakve odnose.“ Početak je godina najranijeg zapisa; datum preregistracije nije naveden, pa kraj nije zabeležen."@sr ;
+    rdfs:comment "Per KRIK (22 July 2019), Predrag Mali had for five years driven an Audi A6 owned by Ivan Bošnjak's and Stojan Vujko's firms: first Milenijum Tim, as a police record of 26 December 2014 shows, then re-registered to their other firm KBV datakom, not recorded here. Reporters saw him in the same car on 5 June 2019. Mali said it was not true; Milenijum Tim rejected the claim entirely and said it has no relations with him. The start is the year of the earliest record; the re-registration date is not given, so no end is recorded."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://www.krik.rs/koruptivne-veze-milenijum-tim-ustupio-audi-i-stan-bratu-sinise-malog/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "KRIK, 22. jul 2019: 'Predrag Mali, rođeni brat ministra finansija Siniše Malog, već pet godina vozi „audi“ u vlasništvu firmi srpskih biznismena Ivana Bošnjaka i Stojana Vujka'; 'Automobil je najpre bio u vlasništvu njihove poznate firme „Milenijum tim“'; zapisnik od '26. decembra 2014'; odgovor firme: 'U potpunosti odbacujemo navode da smo bilo šta ustupili ili poklonili Predragu Malom'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://n1info.rs/vesti/a501712-Milenijum-tim-ustupio-audi-i-stan-bratu-Sinise-Malog/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "N1 (Beta, KRIK), 22. jul 2019: 'Predrag Mali već pet godina vozi \"audi\" u vlasništvu firmi srpskih biznismena Ivana Bošnjaka i Stojana Vujka, objavio je KRIK'; 'Automobil je najpre bio u vlasništvu njihove poznate firme \"Milenijum tim\"'; prenosi KRIK, nije nezavisna potvrda."@sr ] .
+
+rs:MilenijumTim_PredragMali_Stan a :Connection ;
+    bio:participant rs:Milenijum_Tim, rs:Predrag_Mali ;
+    rdfs:label "Ustupljen stan"@sr, "Flat provided"@en ;
+    :connectionEndDate "2016"^^xsd:gYear ;
+    rdfs:comment "Prema KRIK-u (22. jul 2019), u dupleksu na Voždovcu u vlasništvu „ćerke firme“ Milenijum tima, koju članak ne imenuje, do 2016. stanovala je tadašnja devojka Predraga Malog; KRIK to naziva stanom ustupljenim Predragu Malom. Milenijum tim: zgrada je građena 2009, svi stanovi su prodati i nemaju evidenciju ko u njima stanuje. Početak nije naveden."@sr ;
+    rdfs:comment "Per KRIK (22 July 2019), a duplex in Voždovac owned by a Milenijum Tim subsidiary, unnamed in the article, housed Predrag Mali's then girlfriend until 2016; KRIK calls it a flat provided to Predrag Mali. Milenijum Tim said the building was built in 2009, all flats were sold and it keeps no record of who lives there. No start is given."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://www.krik.rs/koruptivne-veze-milenijum-tim-ustupio-audi-i-stan-bratu-sinise-malog/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "KRIK, 22. jul 2019: 'U dupleksu na Voždovcu, koji se nalazio u vlasništvu „ćerke firme“ „Milenijum tima“, do 2016. godine stanovala je tadašnja devojka Predraga Malog'; odgovor firme: 'Zgrada o kojoj govorite građena je 2009. godine, svi stanovi su prodati i nemamo evidenciju ko u njima stanuje.'"@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://n1info.rs/vesti/a501712-Milenijum-tim-ustupio-audi-i-stan-bratu-Sinise-Malog/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "N1 (Beta, KRIK), 22. jul 2019, naslov 'Milenijum tim ustupio audi i stan bratu Siniše Malog': 'biznismeni su ustupili i stan'; prenosi KRIK, nije nezavisna potvrda."@sr ] .

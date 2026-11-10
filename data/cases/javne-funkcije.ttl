@@ -1,0 +1,47 @@
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix dbo:     <http://dbpedia.org/ontology/> .
+@prefix rs:      <https://w3id.org/vip/rs/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix :        <http://poderopedia.com/vocab/> .
+@prefix vip:     <https://w3id.org/vip/vocab#> .
+
+# Slučaj: Javne funkcije — ko je kada držao koju javnu funkciju.
+# Case: Public offices — who held which public office, and when.
+# Nosioci funkcija i državni organi su deklarisani u data/entities/; ovde su samo radne veze sa organima.
+# Office holders and government bodies are declared in data/entities/; this file holds only the work connections to them.
+# Funkcija bez zabeleženog kraja nije dokaz da još traje; komentar daje poslednje dokumentovano stanje.
+# An office with no recorded end is not proof that it continues; the comment gives the latest documented state.
+
+rs:SinisaMali_GradBeograd_Gradonacelnik a :WorkConnection ;
+    bio:participant rs:Sinisa_Mali ;
+    :hasEconomicOrganizationParticipant rs:Grad_Beograd ;
+    :hasWorkRole vip:mayor ;
+    :connectionStartDate "2014-04-24"^^xsd:date ;
+    :connectionEndDate "2018-05-28"^^xsd:date ;
+    rdfs:comment "Siniša Mali je izabran za gradonačelnika Beograda 24. aprila 2014. (Istinomer, Vikipedija) i tu funkciju vršio do maja 2018, kada je izabran za ministra finansija (zvanična biografija Vlade). Dan kraja, 28. maj 2018, daje Vikipedija; Vlada navodi samo mesec."@sr ;
+    rdfs:comment "Siniša Mali was elected mayor of Belgrade on 24 April 2014 (Istinomer, Wikipedia) and held the office until May 2018, when he was elected finance minister (the Government's official biography). The end day, 28 May 2018, comes from Wikipedia; the Government gives only the month."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://www.istinomer.rs/akter/sinisa-mali/> ; :hasDocumentType vip:factCheckProfile ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Istinomer, biografija: 'Za gradonačelnika Beograda izabran je 24. aprila 2014. godine.'"@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.srbija.gov.rs/biografija/67114/sinisa-mali.php> ; :hasDocumentType vip:webPage ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Zvanična biografija na sajtu Vlade: 'Пре ступања на дужност министра био је градоначелник Београда од априла 2014. до маја 2018. године.'"@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://sr.wikipedia.org/wiki/Синиша_Мали> ; :hasDocumentType vip:encyclopediaArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Enciklopedijski članak, infokutija: 'почетак функције 24. април 2014', 'крај функције 28. мај 2018'; tekst: 'од 2014. до 2018. градоначелник Београда'."@sr ] .
+
+rs:SinisaMali_VladaSrbije_MinistarFinansija a :WorkConnection ;
+    bio:participant rs:Sinisa_Mali ;
+    :hasEconomicOrganizationParticipant rs:Vlada_Srbije ;
+    :hasWorkRole vip:minister ;
+    :connectionStartDate "2018-05-29"^^xsd:date ;
+    rdfs:comment "Narodna skupština je 29. maja 2018. izabrala Sinišu Malog za ministra finansija, sa 154 glasa za i 30 protiv; mandat mu je počeo polaganjem zakletve (Danas, sajt Vlade). Zvanična biografija Vlade, pročitana 10. novembra 2026, vodi ga kao prvog potpredsednika Vlade i ministra finansija i navodi da je iste funkcije obavljao u mandatu do aprila 2025. Kraj nije zabeležen: to je poslednje dokumentovano stanje, ne dokaz da funkcija traje."@sr ;
+    rdfs:comment "The National Assembly elected Siniša Mali finance minister on 29 May 2018, by 154 votes to 30; his term began with the oath (Danas, the Government's site). The Government's official biography, read on 10 November 2026, lists him as First Deputy Prime Minister and Minister of Finance and says he held the same offices in the term that ended in April 2025. No end is recorded: that is the latest documented state, not proof that the office continues."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://www.danas.rs/vesti/politika/sinisa-mali-novi-ministar-finansija/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Danas, 29. maj 2018: 'poslanici su izabrali Sinišu Malog za novog ministra finansija u Vladi Srbije. Za izbor Malog glasala su 154 poslanika, protiv je bilo 30 poslanika'; 'Mali je pred poslanicima položio zakletvu, čime mu je počeo mandat.'"@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.srbija.gov.rs/vest/en/128256/sinisa-mali-appointed-new-finance-minister.php> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Sajt Vlade, 'Belgrade, 29 May 2018': 'The National Assembly of the Republic of Serbia today supported with 154 votes the proposal of Prime Minister Ana Brnabic and elected Sinisa Mali as new Minister of Finance, who up until now has served as mayor of Belgrade.'"@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.srbija.gov.rs/biografija/67114/sinisa-mali.php> ; :hasDocumentType vip:webPage ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Zvanična biografija, naslov 'Први потпредседник Владе и министар финансија': 'Од 2018. године је министар финансија у Влади Републике Србије, а од 2022. године и потпредседник Владе. Исте функције обављао је у мандату до априла 2025. године.'"@sr ] .

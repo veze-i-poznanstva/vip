@@ -20,7 +20,7 @@ data class Source(
 data class ConnectionState(
     val uri: String? = null,
     val share: Double? = null,
-    val roles: List<String>? = null,
+    val roles: List<Map<String, String>>? = null,
     val start: String? = null,
     val end: String? = null,
     val comment: String? = null,

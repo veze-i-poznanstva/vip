@@ -21,7 +21,7 @@ WHERE {
         :hasEconomicOrganizationParticipant ?organization ;
         :hasWorkRole ?leaderRole .
   ?leader a foaf:Person .
-  VALUES ?leaderRole { :ceo :director :manager vip:founder vip:boardChair vip:boardViceChair vip:executiveBoardMember }
+  VALUES ?leaderRole { :ceo :director :manager vip:founder vip:boardChair vip:boardViceChair vip:executiveBoardMember vip:mayor vip:minister }
 
   ?job a :WorkConnection ;
        bio:participant ?relative ;
@@ -37,7 +37,7 @@ WHERE {
     ?tie a vip:GodparentConnection ; bio:participant ?leader, ?relative .
     BIND ("kum" AS ?relation)
   } UNION {
-    ?leader (:hasParent|:hasChild|:hasSibling|^:hasParent|^:hasChild) ?relative .
+    ?tie a vip:FamilyConnection ; bio:participant ?leader, ?relative .
     BIND ("family" AS ?relation)
   }
 

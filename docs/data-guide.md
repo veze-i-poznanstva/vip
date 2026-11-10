@@ -21,10 +21,18 @@ Seven conventions apply to every record. The validators enforce their form; whet
   reference to show and to check; the original URL remains the identity of the citation.
 - **Relationships are connection resources, never bare properties.** Party membership is a
   `:PoliticalConnection` between the person and the party. Employment and board seats are a
-  `:WorkConnection` with one or more work roles and optional start and end dates. Schooling is
-  an `:AlumniEducationalConnection`. Company ownership is a `vip:OwnershipConnection` with an
+  `:WorkConnection` with one or more work roles and optional start and end dates. A public
+  office is a `:WorkConnection` too: a mayor's with the city (`rs:Grad_Beograd`, a
+  `:GovernmentOrganization`), a minister's with the Government (`rs:Vlada_Srbije`), with the
+  role `vip:mayor` or `vip:minister` and the portfolio in the comment; the owner-in-office rule
+  reads exactly these. Schooling is an `:AlumniEducationalConnection`. Company ownership is a `vip:OwnershipConnection` with an
   optional share (a decimal percentage, 0 to 100). Each connection carries its own documentation,
   so the evidence for "X sits on the board of Y" is separate from the evidence that X and Y exist.
+  Kinship is no exception: siblings are a `vip:SiblingConnection` and a parent and child a
+  `vip:ParentChildConnection` (`vip:parent`, `vip:child`), recorded in
+  `data/cases/porodicne-veze.ttl` with their own sources. The shapes refuse PoderVocab's bare
+  family properties (`:hasSibling`, `:hasParent`) on a person, because they leave no place for
+  the evidence.
 - **Time is part of the claim.** A connection carries `:connectionStartDate` and
   `:connectionEndDate` as precisely as its source states them: `xsd:gYear`, `xsd:gYearMonth` or
   `xsd:date`, never an invented 1 January. A missing date means unknown, not ongoing. Roles held
@@ -61,7 +69,7 @@ Seven conventions apply to every record. The validators enforce their form; whet
 The vocabulary is extended where PoderVocab had gaps. The additions are marked in `schema.ttl`
 under the heading "VIP additions": the ownership connection and its properties, the
 godparenthood connection (kumstvo, a kinship-grade bond in Serbian society that PoderVocab
-lacks), the link from an organisation to its financial information, governance work roles such
+lacks), the family connections (siblings, parent and child), the link from an organisation to its financial information, governance work roles such
 as founder and chair of the board, the document types and the document statuses, and the two
 public identifiers of an entity, its Wikipedia article and its Wikidata item.
 
@@ -88,7 +96,8 @@ Data lives in `data/` in two kinds of file:
 - `data/cases/<case>.ttl`, one per investigated case: the connections between entities, each
   with dates, roles and evidence. `milenijum-tim.ttl` holds the construction group's ownership and
   work ties; `peta-beogradska-gimnazija.ttl` holds the school class that reached the government;
-  `alo-media-system.ttl` holds the ownership of the tabloid Alo's publisher.
+  `alo-media-system.ttl` holds the ownership of the tabloid Alo's publisher. Two files cut across
+  cases: `javne-funkcije.ttl` holds public offices and `porodicne-veze.ttl` holds kinship.
   A reviewer reads one case file and sees a whole story with its sources.
 
 Working with an AI coding agent? Paste the quickstart prompt in

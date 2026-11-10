@@ -9,25 +9,25 @@
         vip:archivedOn     "2026-09-25"^^xsd:date;
         vip:hasArchiveURL  <http://web.archive.org/web/20260925060313/https://www.krik.rs/koruptivne-veze-milenijum-tim-ustupio-audi-i-stan-bratu-sinise-malog/> .
 
+<https://sr.wikipedia.org/wiki/Новица_Тончев>
+        vip:archivedOn     "2025-12-14"^^xsd:date;
+        vip:hasArchiveURL  <http://web.archive.org/web/20251214142316/https://sr.wikipedia.org/wiki/%D0%9D%D0%BE%D0%B2%D0%B8%D1%86%D0%B0_%D0%A2%D0%BE%D0%BD%D1%87%D0%B5%D0%B2> .
+
 <https://nova.rs/vesti/biznis/novi-rekord-milenijum-tima-od-250-miliona-evra-za-cetiri-godine-prihodi-porasli-tri-puta-nanizali-poslove-na-najvecim-drzavnim-projektima/>
         vip:archivedOn     "2025-07-11"^^xsd:date;
         vip:hasArchiveURL  <http://web.archive.org/web/20250711221553/https://nova.rs/vesti/biznis/novi-rekord-milenijum-tima-od-250-miliona-evra-za-cetiri-godine-prihodi-porasli-tri-puta-nanizali-poslove-na-najvecim-drzavnim-projektima/> .
-
-<https://en.wikipedia.org/wiki/Alo!>
-        vip:archivedOn     "2026-04-13"^^xsd:date;
-        vip:hasArchiveURL  <http://web.archive.org/web/20260413190045/https://en.wikipedia.org/wiki/Alo!> .
 
 <https://www.fininfo.hr/Poduzece/Pregled/millennium-adria/Detaljno/780814>
         vip:archivedOn     "2024-11-09"^^xsd:date;
         vip:hasArchiveURL  <http://web.archive.org/web/20241109195604/https://www.fininfo.hr/Poduzece/Pregled/millennium-adria/Detaljno/780814> .
 
+<https://en.wikipedia.org/wiki/Alo!>
+        vip:archivedOn     "2026-04-13"^^xsd:date;
+        vip:hasArchiveURL  <http://web.archive.org/web/20260413190045/https://en.wikipedia.org/wiki/Alo!> .
+
 <https://www.companywall.rs/firma/millennium-properties-doo-beograd/MMsCs0qC>
         vip:archivedOn     "2026-11-01"^^xsd:date;
         vip:hasArchiveURL  <https://web.archive.org/web/20261101142452/https://www.companywall.rs/firma/millennium-properties-doo-beograd/MMsCs0qC> .
-
-<https://sr.wikipedia.org/wiki/Новица_Тончев>
-        vip:archivedOn     "2025-12-14"^^xsd:date;
-        vip:hasArchiveURL  <http://web.archive.org/web/20251214142316/https://sr.wikipedia.org/wiki/%D0%9D%D0%BE%D0%B2%D0%B8%D1%86%D0%B0_%D0%A2%D0%BE%D0%BD%D1%87%D0%B5%D0%B2> .
 
 <https://luftika.rs/milenijum-tim-vranjska-banja/>
         vip:archivedOn     "2022-06-28"^^xsd:date;
@@ -36,6 +36,14 @@
 <https://www.youtube.com/watch?v=tHgNZtQdGrg&t=5s>
         vip:archivedOn     "2026-10-30"^^xsd:date;
         vip:hasArchiveURL  <https://web.archive.org/web/20261030132947/https://www.youtube.com/watch?v=tHgNZtQdGrg&t=5s> .
+
+<https://www.srbija.gov.rs/biografija/67114/sinisa-mali.php>
+        vip:archivedOn     "2026-10-29"^^xsd:date;
+        vip:hasArchiveURL  <http://web.archive.org/web/20261029230728/https://www.srbija.gov.rs/biografija/67114/sinisa-mali.php> .
+
+<https://www.beograd.rs/lat/gradska-vlast>
+        vip:archivedOn     "2026-08-08"^^xsd:date;
+        vip:hasArchiveURL  <http://web.archive.org/web/20260808120436/https://www.beograd.rs/lat/gradska-vlast> .
 
 <https://serbia.mom-gmr.org/sr/mediji/detail/outlet/alo/>
         vip:archivedOn     "2025-05-20"^^xsd:date;
@@ -165,6 +173,10 @@
         vip:archivedOn     "2026-10-30"^^xsd:date;
         vip:hasArchiveURL  <http://web.archive.org/web/20261030102500/https://www.istinomer.rs/akter/ivan-bosnjak/> .
 
+<https://n1info.rs/vesti/a501712-Milenijum-tim-ustupio-audi-i-stan-bratu-Sinise-Malog/>
+        vip:archivedOn     "2026-10-29"^^xsd:date;
+        vip:hasArchiveURL  <http://web.archive.org/web/20261029214400/https://n1info.rs/vesti/a501712-Milenijum-tim-ustupio-audi-i-stan-bratu-Sinise-Malog/> .
+
 <https://sr.wikipedia.org/wiki/Економски_факултет_Универзитета_у_Београду>
         vip:archivedOn     "2025-12-06"^^xsd:date;
         vip:hasArchiveURL  <http://web.archive.org/web/20251206182607/https://sr.wikipedia.org/wiki/%D0%95%D0%BA%D0%BE%D0%BD%D0%BE%D0%BC%D1%81%D0%BA%D0%B8_%D1%84%D0%B0%D0%BA%D1%83%D0%BB%D1%82%D0%B5%D1%82_%D0%A3%D0%BD%D0%B8%D0%B2%D0%B5%D1%80%D0%B7%D0%B8%D1%82%D0%B5%D1%82%D0%B0_%D1%83_%D0%91%D0%B5%D0%BE%D0%B3%D1%80%D0%B0%D0%B4%D1%83> .
@@ -221,6 +233,10 @@
         vip:archivedOn     "2026-03-05"^^xsd:date;
         vip:hasArchiveURL  <http://web.archive.org/web/20260305143723/https://www.cenzolovka.rs/tag/sasa-blagojevic/> .
 
+<https://www.danas.rs/vesti/politika/sinisa-mali-novi-ministar-finansija/>
+        vip:archivedOn     "2025-05-22"^^xsd:date;
+        vip:hasArchiveURL  <http://web.archive.org/web/20250522101622/https://www.danas.rs/vesti/politika/sinisa-mali-novi-ministar-finansija/> .
+
 <https://vreme.com/vreme/prica-se-prica-o-prodaji-blica/>
         vip:archivedOn     "2026-09-17"^^xsd:date;
         vip:hasArchiveURL  <http://web.archive.org/web/20260917061142/https://vreme.com/vreme/prica-se-prica-o-prodaji-blica/> .
@@ -236,6 +252,10 @@
 <https://www.ite.gov.rs/tekst/sr/150/direktor.php>
         vip:archivedOn     "2026-10-09"^^xsd:date;
         vip:hasArchiveURL  <http://web.archive.org/web/20261009165017/https://ite.gov.rs/tekst/sr/150/direktor.php> .
+
+<https://www.srbija.gov.rs/vest/en/128256/sinisa-mali-appointed-new-finance-minister.php>
+        vip:archivedOn     "2026-10-30"^^xsd:date;
+        vip:hasArchiveURL  <http://web.archive.org/web/20261030024903/https://www.srbija.gov.rs/vest/en/128256/sinisa-mali-appointed-new-finance-minister.php> .
 
 <https://raskrikavanje.rs/milo-irinej-jaja-i-paradajz-ili-kako-alo-vadi-sopstvene-fleke/>
         vip:archivedOn     "2026-04-11"^^xsd:date;
@@ -337,6 +357,10 @@
         vip:archivedOn     "2026-06-17"^^xsd:date;
         vip:hasArchiveURL  <http://web.archive.org/web/20260617110206/https://naled.rs/en/istorijat> .
 
+<https://sr.wikipedia.org/wiki/Влада_Републике_Србије>
+        vip:archivedOn     "2026-10-28"^^xsd:date;
+        vip:hasArchiveURL  <http://web.archive.org/web/20261028162352/https://sr.wikipedia.org/wiki/%D0%92%D0%BB%D0%B0%D0%B4%D0%B0_%D0%A0%D0%B5%D0%BF%D1%83%D0%B1%D0%BB%D0%B8%D0%BA%D0%B5_%D0%A1%D1%80%D0%B1%D0%B8%D1%98%D0%B5> .
+
 <https://millenniumteam.rs/en/news/investment-in-tourism-vranjska-banja-resort-is-the-largest-current-project-in-the-south-of-serbia/>
         vip:archivedOn     "2025-10-15"^^xsd:date;
         vip:hasArchiveURL  <http://web.archive.org/web/20251015050343/https://millenniumteam.rs/en/news/investment-in-tourism-vranjska-banja-resort-is-the-largest-current-project-in-the-south-of-serbia/> .
@@ -356,6 +380,10 @@
 <https://anem.org.rs/sr/strane/informer-postao-suvlasnik-cerke-firme-aloa-koja-kupuje-lokalne-medije-o-srbiji>
         vip:archivedOn     "2026-04-14"^^xsd:date;
         vip:hasArchiveURL  <http://web.archive.org/web/20260414144733/https://anem.org.rs/sr/strane/informer-postao-suvlasnik-cerke-firme-aloa-koja-kupuje-lokalne-medije-o-srbiji> .
+
+<https://sr.wikipedia.org/wiki/Град_Београд>
+        vip:archivedOn     "2026-10-12"^^xsd:date;
+        vip:hasArchiveURL  <http://web.archive.org/web/20261012155256/https://sr.wikipedia.org/wiki/%D0%93%D1%80%D0%B0%D0%B4_%D0%91%D0%B5%D0%BE%D0%B3%D1%80%D0%B0%D0%B4> .
 
 <https://www.krik.rs/tag/milenijum-tim/>
         vip:archivedOn     "2026-04-23"^^xsd:date;
@@ -424,6 +452,10 @@
 <https://www.vijesti.me/svijet/balkan/569829/pandorini-papiri-firma-koje-se-niko-ne-sjeca-otkriva-veze-tonceva-i-srpskog-biznismena-iz-singapura>
         vip:archivedOn     "2024-10-14"^^xsd:date;
         vip:hasArchiveURL  <http://web.archive.org/web/20241014205703/https://www.vijesti.me/svijet/balkan/569829/pandorini-papiri-firma-koje-se-niko-ne-sjeca-otkriva-veze-tonceva-i-srpskog-biznismena-iz-singapura> .
+
+<https://www.srbija.gov.rs/templates/vlada/sastav.php?id=177>
+        vip:archivedOn     "2026-11-10"^^xsd:date;
+        vip:hasArchiveURL  <http://web.archive.org/web/20261110191536/https://www.srbija.gov.rs/templates/vlada/sastav.php?id=177> .
 
 <https://naled.rs/o-nama>
         vip:archivedOn     "2026-05-21"^^xsd:date;

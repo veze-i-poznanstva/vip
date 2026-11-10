@@ -1,0 +1,28 @@
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix dbo:     <http://dbpedia.org/ontology/> .
+@prefix rs:      <https://w3id.org/vip/rs/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix :        <http://poderopedia.com/vocab/> .
+@prefix vip:     <https://w3id.org/vip/vocab#> .
+
+# Vlada Republike Srbije
+# Matična datoteka entiteta: tip, imena, identifikatori i izvori koji potvrđuju identitet.
+# Home file of this entity: type, names, identifiers and the sources for its identity.
+# Veze se nalaze u data/cases/. Connections live in data/cases/.
+
+rs:Vlada_Srbije a :GovernmentOrganization ;
+    foaf:name "Vlada Republike Srbije"@sr ;
+    vip:wikipediaArticle <https://sr.wikipedia.org/wiki/Влада_Републике_Србије> ;
+    vip:wikidataItem <http://www.wikidata.org/entity/Q1285499> ;
+    :alias "Vlada Srbije"@sr ;
+    dbo:location "Beograd, Srbija"@sr ;
+    rdfs:comment "Nosilac izvršne vlasti u Republici Srbiji; čine je predsednik Vlade, potpredsednici i ministri, koje bira Narodna skupština. Ministarske funkcije se beleže kao radne veze sa Vladom, uz resor u komentaru."@sr ;
+    rdfs:comment "The executive of the Republic of Serbia: the prime minister, deputy prime ministers and ministers, elected by the National Assembly. Ministerial offices are recorded as work connections to the Government, with the portfolio in the comment."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://sr.wikipedia.org/wiki/Влада_Републике_Србије> ; :hasDocumentType vip:encyclopediaArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Enciklopedijski članak: 'Влада Републике Србије је носилац извршне власти у Републици Србији. Владу бира Народна скупштина Републике Србије, а чине је председник владе, један или више потпредседника и министри.'"@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.srbija.gov.rs/templates/vlada/sastav.php?id=177> ; :hasDocumentType vip:webPage ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Zvanični sajt Vlade, strana 'Састав Владе' (adresa na koju preusmerava srbija.gov.rs/vlada/sastav-vlade): članovi Vlade sa biografijama."@sr ] .

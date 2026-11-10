@@ -52,7 +52,7 @@ class RedFlagsTest {
             ex:K_Org a :WorkConnection ; bio:participant ex:K ; :hasEconomicOrganizationParticipant ex:Org .
             ex:S_Org a :WorkConnection ; bio:participant ex:S ; :hasEconomicOrganizationParticipant ex:Org ; :hasWorkRole :employee .
             ex:AK a vip:GodparentConnection ; vip:godparent ex:A ; vip:godchild ex:K .
-            ex:A :hasSibling ex:S .
+            ex:AS a vip:SiblingConnection ; bio:participant ex:A, ex:S .
         """)
         assertEquals(mapOf("https://w3id.org/vip/rs/K" to "kum", "https://w3id.org/vip/rs/S" to "family"), found.associate { it.getValue("relative") to it.getValue("relation") })
     }
@@ -176,6 +176,39 @@ class RedFlagsTest {
         ).single()
         assertEquals("overlapping", found["schoolOverlap"])
         assertEquals("unknown", found["organizationOverlap"])
+    }
+
+    @Test
+    fun `nepotism matches a sibling of a mayor employed by the city`() {
+        val found = matches("nepotism", """
+            ex:A a foaf:Person . ex:S a foaf:Person . ex:City a :GovernmentOrganization .
+            ex:A_City a :WorkConnection ; bio:participant ex:A ; :hasEconomicOrganizationParticipant ex:City ; :hasWorkRole vip:mayor .
+            ex:S_City a :WorkConnection ; bio:participant ex:S ; :hasEconomicOrganizationParticipant ex:City ; :hasWorkRole :advisor .
+            ex:AS a vip:SiblingConnection ; bio:participant ex:A, ex:S .
+        """)
+        assertEquals(listOf("https://w3id.org/vip/rs/S"), found.map { it["relative"] })
+    }
+
+    @Test
+    fun `nepotism matches a kum of a minister employed by the government`() {
+        val found = matches("nepotism", """
+            ex:A a foaf:Person . ex:K a foaf:Person . ex:Gov a :GovernmentOrganization .
+            ex:A_Gov a :WorkConnection ; bio:participant ex:A ; :hasEconomicOrganizationParticipant ex:Gov ; :hasWorkRole vip:minister .
+            ex:K_Gov a :WorkConnection ; bio:participant ex:K ; :hasEconomicOrganizationParticipant ex:Gov ; :hasWorkRole :advisor .
+            ex:AK a vip:GodparentConnection ; vip:godparent ex:A ; vip:godchild ex:K .
+        """)
+        assertEquals(listOf("https://w3id.org/vip/rs/K" to "kum"), found.map { it["relative"] to it["relation"] })
+    }
+
+    @Test
+    fun `nepotism matches a child of a director employed by the company`() {
+        val found = matches("nepotism", """
+            ex:A a foaf:Person . ex:C a foaf:Person . ex:Org a foaf:Organization .
+            ex:A_Org a :WorkConnection ; bio:participant ex:A ; :hasEconomicOrganizationParticipant ex:Org ; :hasWorkRole :director .
+            ex:C_Org a :WorkConnection ; bio:participant ex:C ; :hasEconomicOrganizationParticipant ex:Org ; :hasWorkRole :employee .
+            ex:AC a vip:ParentChildConnection ; vip:parent ex:A ; vip:child ex:C .
+        """)
+        assertEquals(listOf("https://w3id.org/vip/rs/C" to "family"), found.map { it["relative"] to it["relation"] })
     }
 
     private fun nepotism(leaderJob: String, relativeJob: String) = matches("nepotism", """

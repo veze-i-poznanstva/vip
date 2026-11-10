@@ -1066,6 +1066,38 @@ vip:godchild a rdf:Property, owl:ObjectProperty;
     rdfs:domain vip:GodparentConnection;
     rdfs:range foaf:Person.
 
+# Kinship: PoderVocab states family ties as bare properties between two people (:hasSibling,
+# :hasParent), which leaves no place for the evidence or the dates. VIP records kinship as a
+# connection, like every other relationship; the shapes refuse the bare properties in data.
+vip:FamilyConnection a owl:Class;
+    rdfs:subClassOf :SocialConnection;
+    rdfs:label "Family tie"@en, "Vínculo familiar"@es, "Srodstvo"@sr;
+    rdfs:comment "Connection between two members of one family, recorded with its own evidence and dates. The kind of kinship is the subclass."@en, "Conexión entre dos miembros de una misma familia, registrada con sus propias fuentes y fechas. El tipo de parentesco es la subclase."@es, "Veza između dva člana iste porodice, zabeležena sa sopstvenim izvorima i datumima. Vrsta srodstva je potklasa."@sr.
+
+vip:SiblingConnection a owl:Class;
+    rdfs:subClassOf vip:FamilyConnection;
+    rdfs:label "Siblings"@en, "Hermanos"@es, "Braća i sestre"@sr;
+    rdfs:comment "Connection between two siblings; both are plain participants, since the tie has no direction."@en, "Conexión entre dos hermanos; ambos son participantes simples, ya que el vínculo no tiene dirección."@es, "Veza između dva brata, dve sestre ili brata i sestre; oba su obični učesnici, jer veza nema smer."@sr.
+
+vip:ParentChildConnection a owl:Class;
+    rdfs:subClassOf vip:FamilyConnection;
+    rdfs:label "Parent and child"@en, "Padre o madre e hijo"@es, "Roditelj i dete"@sr;
+    rdfs:comment "Connection between a parent and a child, with the parent as vip:parent and the child as vip:child."@en, "Conexión entre un padre o madre y un hijo, con el padre como vip:parent y el hijo como vip:child."@es, "Veza između roditelja i deteta, sa roditeljem kao vip:parent i detetom kao vip:child."@sr.
+
+vip:parent a rdf:Property, owl:ObjectProperty;
+    rdfs:subPropertyOf bio:participant;
+    rdfs:label "Parent"@en, "Padre o madre"@es, "Roditelj"@sr;
+    rdfs:comment "The parent in a parent-and-child connection"@en, "El padre o la madre en una conexión entre padre e hijo"@es, "Roditelj u vezi roditelja i deteta"@sr;
+    rdfs:domain vip:ParentChildConnection;
+    rdfs:range foaf:Person.
+
+vip:child a rdf:Property, owl:ObjectProperty;
+    rdfs:subPropertyOf bio:participant;
+    rdfs:label "Child"@en, "Hijo o hija"@es, "Dete"@sr;
+    rdfs:comment "The child in a parent-and-child connection"@en, "El hijo o la hija en una conexión entre padre e hijo"@es, "Dete u vezi roditelja i deteta"@sr;
+    rdfs:domain vip:ParentChildConnection;
+    rdfs:range foaf:Person.
+
 # Tells same-named people apart with a public identifier; a page merely cited as evidence does
 # not say it is about the entity.
 vip:wikipediaArticle a rdf:Property, owl:ObjectProperty;
@@ -1105,6 +1137,12 @@ vip:boardMember a :WorkRole;
 
 vip:executiveBoardMember a :WorkRole;
     rdfs:label "Executive board member"@en, "Miembro del comité ejecutivo"@es, "Član izvršnog odbora"@sr.
+
+vip:mayor a :WorkRole;
+    rdfs:label "Mayor"@en, "Alcalde"@es, "Gradonačelnik"@sr.
+
+vip:minister a :WorkRole;
+    rdfs:label "Minister"@en, "Ministro"@es, "Ministar"@sr.
 
 # Document types used as evidence
 vip:newsArticle a :DocumentType;
@@ -1180,6 +1218,11 @@ vip:removed a :DocumentStatus;
         sh:path :hasTaxId;
         sh:maxCount 0;
         sh:message "Never record a person's tax ID or JMBG: it is personal data, and public facts tell namesakes apart"@en, "Nunca registre el RUT ni el número de identidad de una persona: son datos personales, y los hechos públicos distinguen a los homónimos"@es, "Nikad ne beležite PIB ni JMBG osobe: to su lični podaci, a imenjake razlikuju javne činjenice"@sr
+    ];
+    sh:property [
+        sh:path [ sh:alternativePath ( :hasParent :hasChild :hasSibling :hasHalfSibling :hasStepParent :hasStepChild :hasAuntOrUncle :hasNieceOrNephew :hasGrandparent :hasGrandChild :hasCousin ) ];
+        sh:maxCount 0;
+        sh:message "Kinship is a connection record (vip:SiblingConnection, vip:ParentChildConnection) with its own evidence, never a bare property on the person"@en, "El parentesco es un registro de conexión (vip:SiblingConnection, vip:ParentChildConnection) con su propia evidencia, nunca una propiedad suelta de la persona"@es, "Srodstvo je zapis veze (vip:SiblingConnection, vip:ParentChildConnection) sa sopstvenim dokazima, nikad golo svojstvo osobe"@sr
     ].
 
 :AgentIdentifierShape a sh:NodeShape;

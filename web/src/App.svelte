@@ -66,7 +66,7 @@
   $: shownElements = pathShown ?? filterByType(focus ? subgraph(index, shown) : (elements as unknown as Element[]), hiddenTypes);
   /** The canvas draws translated connection labels; the index keeps the converter's data untouched. */
   $: drawnElements = shownElements.map((e) =>
-    'source' in e.data ? { data: { ...e.data, label: edgeLabel(e.data as unknown as ConnectionFields, $t) } } : e) as ElementDefinition[];
+    'source' in e.data ? { data: { ...e.data, label: edgeLabel(e.data as unknown as ConnectionFields, $t, $language) } } : e) as ElementDefinition[];
   $: explorerLayout = pathShown ? 'breadthfirst' : focus ? 'concentric' : selectedLayout;
 
   /** Makes the node the centre: its neighbourhood replaces the canvas and it joins the trail. */

@@ -1,0 +1,26 @@
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix dbo:     <http://dbpedia.org/ontology/> .
+@prefix rs:      <https://w3id.org/vip/rs/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix :        <http://poderopedia.com/vocab/> .
+@prefix vip:     <https://w3id.org/vip/vocab#> .
+
+# Predrag Mali
+# Matična datoteka entiteta: tip, imena, identifikatori i izvori koji potvrđuju identitet.
+# Home file of this entity: type, names, identifiers and the sources for its identity.
+# Veze se nalaze u data/cases/ (srodstvo u porodicne-veze.ttl). Connections live in data/cases/ (kinship in porodicne-veze.ttl).
+
+rs:Predrag_Mali a foaf:Person ;
+    foaf:name "Predrag Mali"@sr ;
+    foaf:firstName "Predrag" ;
+    :firstLastName "Mali" ;
+    rdfs:comment "Mlađi brat Siniše Malog, prema KRIK-u i prema samom Siniši Malom (Globus, 2014, preneo KRIK). KRIK navodi da je bio direktor bratovljeve firme Oli Consulting od 2005. do 2013, direktor porodične firme Kompost grup i 2014. član Upravnog odbora KK Crvena zvezda; te uloge ovde nisu zabeležene kao veze."@sr ;
+    rdfs:comment "Younger brother of Siniša Mali, per KRIK and per Siniša Mali himself (Globus, 2014, as relayed by KRIK). KRIK reports he directed his brother's firm Oli Consulting from 2005 to 2013 and the family firm Kompost grup, and sat on the board of KK Crvena zvezda in 2014; those roles are not recorded here as connections."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://www.krik.rs/koruptivne-veze-milenijum-tim-ustupio-audi-i-stan-bratu-sinise-malog/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "KRIK, 22. jul 2019: 'Predrag Mali, rođeni brat ministra finansija Siniše Malog'; Siniša Mali za Globus 2014, kako prenosi KRIK: 'moj mlađi brat Predrag'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://n1info.rs/vesti/a501712-Milenijum-tim-ustupio-audi-i-stan-bratu-Sinise-Malog/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "N1 (Beta, KRIK), 22. jul 2019: 'Rođeni brat ministra finansija Siniše Malog Predrag Mali'; prenosi KRIK, nije nezavisna potvrda."@sr ] .

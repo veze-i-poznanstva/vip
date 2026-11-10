@@ -15,11 +15,14 @@ export interface Source {
 
 export interface Fact { property: string; label: string; value: string }
 
+/** A vocabulary term's name by language code, as the converter exports work roles. */
+export type RoleLabels = Record<string, string>;
+
 /** The optional fields the converter adds to an edge's data. */
 export interface ConnectionState {
   uri?: string;
   share?: number;
-  roles?: string[];
+  roles?: RoleLabels[];
   start?: string;
   end?: string;
   comment?: string;
@@ -30,9 +33,11 @@ export interface ConnectionState {
 
 export interface ConnectionFields {
   label?: string;
+  /** The record's own label by language code, when it has one. */
+  labels?: Record<string, string>;
   kind?: string;
   typeLabel?: string;
-  roles?: string[];
+  roles?: RoleLabels[];
   share?: number;
   uri?: string;
   start?: string;
@@ -93,24 +98,43 @@ function kindText(edge: ConnectionFields, t: Translate): string | undefined {
   return text === key ? undefined : text;
 }
 
-/** What the tie is, in words: translated kind, else the type label, else the converter's label. */
-export function connectionKind(edge: ConnectionFields, t: Translate): string {
-  return kindText(edge, t) ?? edge.typeLabel ?? edge.label ?? '';
+/** The record's own label in the given language, else the converter's label. */
+function ownLabel(edge: ConnectionFields, language: string | undefined): string {
+  const own = language !== undefined && edge.labels ? edge.labels[language] : undefined;
+  return typeof own === 'string' && own !== '' ? own : edge.label ?? '';
+}
+
+/** What the tie is, in words: translated kind, else the type label, else the record's own label in the given language. */
+export function connectionKind(edge: ConnectionFields, t: Translate, language?: string): string {
+  return kindText(edge, t) ?? edge.typeLabel ?? ownLabel(edge, language);
 }
 
 const withShare = (text: string, share: number | undefined) => (typeof share === 'number' ? `${text} ${share}%` : text);
 
-/** The label drawn on the canvas: the translated kind and share when known, else the converter's label. */
-export function edgeLabel(edge: ConnectionFields, t: Translate): string {
+/** The roles' names in the given language, else in English, else in whatever language they have; a plain string is kept as it is. */
+export function roleNames(roles: unknown, language: string): string[] {
+  if (!Array.isArray(roles)) return [];
+  return roles.flatMap((role): string[] => {
+    if (typeof role === 'string') return [role];
+    if (role === null || typeof role !== 'object') return [];
+    const names = role as Record<string, unknown>;
+    const name = names[language] ?? names.en ?? Object.values(names)[0];
+    return typeof name === 'string' ? [name] : [];
+  });
+}
+
+/** The label drawn on the canvas: the translated kind and share when known, else the record's own label in the given language. */
+export function edgeLabel(edge: ConnectionFields, t: Translate, language?: string): string {
   const kind = kindText(edge, t);
-  const text = kind === undefined ? edge.label ?? '' : withShare(kind, edge.share);
+  const text = kind === undefined ? ownLabel(edge, language) : withShare(kind, edge.share);
   return isEnded(edge) ? `${text} (${t('period.until', { end: edge.end as string })})` : text;
 }
 
-/** The tie as the panel words it: kind, share and roles. */
-export function connectionTitle(edge: ConnectionFields, t: Translate): string {
-  const text = withShare(connectionKind(edge, t), edge.share);
-  return edge.roles && edge.roles.length > 0 ? `${text} (${edge.roles.join(', ')})` : text;
+/** The tie as the panel words it: kind, share and the roles in the given language. */
+export function connectionTitle(edge: ConnectionFields, t: Translate, language: string): string {
+  const text = withShare(connectionKind(edge, t, language), edge.share);
+  const roles = roleNames(edge.roles, language);
+  return roles.length > 0 ? `${text} (${roles.join(', ')})` : text;
 }
 
 export interface SourceGroup { domain: string; sources: Source[] }

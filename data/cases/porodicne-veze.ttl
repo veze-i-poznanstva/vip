@@ -1,0 +1,26 @@
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix dbo:     <http://dbpedia.org/ontology/> .
+@prefix rs:      <https://w3id.org/vip/rs/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix :        <http://poderopedia.com/vocab/> .
+@prefix vip:     <https://w3id.org/vip/vocab#> .
+
+# Slučaj: Porodične veze — srodstvo između ljudi u bazi.
+# Case: Family ties — kinship between people in the dataset.
+# Srodnici su deklarisani u data/entities/; ovde su samo veze srodstva sa dokazima koji ih potvrđuju.
+# The relatives are declared in data/entities/; this file holds only the kinship records with the evidence for them.
+# Srodstvo samo po sebi nije trag: pravila ga ukrštaju sa funkcijama i zaposlenjima (nepotizam).
+# Kinship is not a lead by itself: the rules cross it with offices and jobs (nepotism).
+
+rs:PredragMali_SinisaMali_Braca a vip:SiblingConnection ;
+    bio:participant rs:Predrag_Mali, rs:Sinisa_Mali ;
+    rdfs:comment "Predrag Mali je mlađi brat Siniše Malog, prema KRIK-u (22. jul 2019) i prema samom Siniši Malom u intervjuu Globusu 2014, kako prenosi KRIK."@sr ;
+    rdfs:comment "Predrag Mali is the younger brother of Siniša Mali, per KRIK (22 July 2019) and per Siniša Mali himself in a 2014 Globus interview, as relayed by KRIK."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://www.krik.rs/koruptivne-veze-milenijum-tim-ustupio-audi-i-stan-bratu-sinise-malog/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "KRIK, 22. jul 2019: 'Predrag Mali, rođeni brat ministra finansija Siniše Malog'; Siniša Mali za Globus 2014, kako prenosi KRIK: 'moj mlađi brat Predrag'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://n1info.rs/vesti/a501712-Milenijum-tim-ustupio-audi-i-stan-bratu-Sinise-Malog/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "N1 (Beta, KRIK), 22. jul 2019: 'Rođeni brat ministra finansija Siniše Malog Predrag Mali'; prenosi KRIK, nije nezavisna potvrda."@sr ] .

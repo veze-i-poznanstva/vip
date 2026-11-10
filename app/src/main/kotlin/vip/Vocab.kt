@@ -3,7 +3,7 @@ package vip
 /** URIs of the vocabulary terms the tools depend on. */
 object Vocab {
     const val PODER = "http://poderopedia.com/vocab/"
-    /** Our own additions to PoderVocab: ownership, kumstvo, governance roles, document types and statuses, archive records. */
+    /** Our own additions to PoderVocab: ownership, kumstvo, kinship, governance roles, document types and statuses, archive records. */
     const val VIP = "https://w3id.org/vip/vocab#"
     /** Instance data for Serbia. Other countries get their own segment under https://w3id.org/vip/. */
     const val RS = "https://w3id.org/vip/rs/"
@@ -27,6 +27,7 @@ object Vocab {
     const val ARCHIVED_ON = VIP + "archivedOn"
     const val REMOVED = VIP + "removed"
     const val OWNER = VIP + "owner"
+    const val PARENT = VIP + "parent"
     const val WIKIPEDIA_ARTICLE = VIP + "wikipediaArticle"
     const val WIKIDATA_ITEM = VIP + "wikidataItem"
 

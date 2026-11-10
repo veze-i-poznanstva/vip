@@ -1,4 +1,5 @@
 import { describe, expect, it } from 'vitest';
+import exported from '../../public/test-data-cytoscape.json';
 import { get } from 'svelte/store';
 import { dictionaries, language, resolveLanguage, supportedLanguages, t, translate } from './i18n';
 
@@ -60,5 +61,18 @@ describe('language store', () => {
     expect(get(t)('legend.people')).toBe('People');
     language.set('sr');
     expect(get(t)('legend.people')).toBe('Osobe');
+  });
+});
+
+describe('the published data', () => {
+  it('has a translated edge label for every connection kind it exports, the generic Connection drawing its own label', () => {
+    const kinds = new Set(
+      (exported as { data: { kind?: string } }[]).map((e) => e.data.kind).filter((k): k is string => typeof k === 'string' && k !== 'Connection')
+    );
+    expect([...kinds].sort()).not.toEqual([]);
+    for (const code of supportedLanguages) {
+      const missing = [...kinds].filter((k) => !(`edge.${k}` in dictionaries[code]));
+      expect(missing, `${code} lacks edge keys`).toEqual([]);
+    }
   });
 });
