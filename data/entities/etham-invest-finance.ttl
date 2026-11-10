@@ -1,0 +1,21 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rs: <https://w3id.org/vip/rs/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio: <http://purl.org/vocab/bio/0.1/> .
+@prefix : <http://poderopedia.com/vocab/> .
+@prefix vip: <https://w3id.org/vip/vocab#> .
+
+# Etham Invest & Finance Corp.
+# Matična datoteka entiteta; veze su u data/cases/pandorini-papiri.ttl.
+# Entity home file; connections are in data/cases/pandorini-papiri.ttl.
+
+rs:Etham_Invest_Finance a :Company ;
+    foaf:name "Etham Invest & Finance Corp."@sr ;
+    rdfs:comment "Kompanija sa Britanskih Devičanskih Ostrva koju KRIK i OCCRP povezuju sa kupovinom apartmana u Bugarskoj. Prema dokumentima iz Pandorinih papira, Siniša Mali bio je njen jedini akcionar; vlasništvo je preneo u avgustu 2014. Mali je osporavao navode o vlasništvu nad preostala 23 apartmana."@sr ;
+    rdfs:comment "British Virgin Islands company linked by KRIK and OCCRP to apartment purchases in Bulgaria. According to Pandora Papers documents, Siniša Mali was its sole shareholder and transferred ownership in August 2014. Mali disputed the allegations about ownership of the other 23 apartments."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://www.krik.rs/nova-dokumenta-sa-devicanskih-ostrva-mali-je-definitivno-bio-vlasnik-24-stana/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "KRIK identifikuje Etham Invest & Finance Corp. u kupovini bugarskih apartmana i navodi da je Mali bio 'i vlasnik ovih kompanija'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.occrp.org/en/project/the-pandora-papers/despite-denials-serbian-finance-minister-owned-luxury-apartments-after-all> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "OCCRP izričito navodi Sinišu Malog kao 'sole shareholder' kompanija Brigham Holding & Finance Inc. i Etham Invest & Finance Corp."@sr ] .

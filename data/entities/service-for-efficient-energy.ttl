@@ -1,0 +1,21 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rs: <https://w3id.org/vip/rs/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio: <http://purl.org/vocab/bio/0.1/> .
+@prefix : <http://poderopedia.com/vocab/> .
+@prefix vip: <https://w3id.org/vip/vocab#> .
+
+# Service for Efficient Energy
+# Matična datoteka entiteta; veze su u data/cases/pandorini-papiri.ttl.
+# Entity home file; connections are in data/cases/pandorini-papiri.ttl.
+
+rs:Service_for_Efficient_Energy a :Company ;
+    foaf:name "Service for Efficient Energy"@sr ;
+    rdfs:comment "Ofšor kompanija sa Britanskih Devičanskih Ostrva koju je Novica Tončev osnovao 2010, prema KRIK-u i Vijestima. Postala je neaktivna 2013. i ugašena 2020. Tončev je posle početnog negiranja priznao vlasništvo, ali je rekao da firma nije poslovala."@sr ;
+    rdfs:comment "British Virgin Islands offshore company established by Novica Tončev in 2010, according to KRIK and Vijesti. It became inactive in 2013 and was dissolved in 2020. After initially denying involvement, Tončev acknowledged ownership but said the company never traded."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://www.krik.rs/firma-koje-se-niko-ne-seca-otkriva-veze-tonceva-i-srpskog-biznismena-iz-singapura/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "KRIK: 'Service for Efficient Energy', firma sa Britanskih Devičanskih Ostrva; navodi osnivanje 2010, neaktivnost od 2013. i gašenje 2020."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.vijesti.me/svijet/balkan/569829/pandorini-papiri-firma-koje-se-niko-ne-sjeca-otkriva-veze-tonceva-i-srpskog-biznismena-iz-singapura> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Vijesti prenose KRIK: 'Service for Efficient Energy', osnovana 2010, neaktivna od 2013. i ugašena 2020."@sr ] .

@@ -1,6 +1,38 @@
 [
   {
     "data": {
+      "id": "etham_invest_finance",
+      "label": "Etham Invest \u0026 Finance Corp.",
+      "type": "instance",
+      "nodeType": "organization",
+      "uri": "https://w3id.org/vip/rs/Etham_Invest_Finance",
+      "comment": "Kompanija sa Britanskih Devičanskih Ostrva koju KRIK i OCCRP povezuju sa kupovinom apartmana u Bugarskoj. Prema dokumentima iz Pandorinih papira, Siniša Mali bio je njen jedini akcionar; vlasništvo je preneo u avgustu 2014. Mali je osporavao navode o vlasništvu nad preostala 23 apartmana.",
+      "file": "data/entities/etham-invest-finance.ttl",
+      "line": 13,
+      "sources": [
+        {
+          "url": "https://www.krik.rs/nova-dokumenta-sa-devicanskih-ostrva-mali-je-definitivno-bio-vlasnik-24-stana/",
+          "domain": "krik.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "KRIK identifikuje Etham Invest \u0026 Finance Corp. u kupovini bugarskih apartmana i navodi da je Mali bio \u0027i vlasnik ovih kompanija\u0027.",
+          "archive": "http://web.archive.org/web/20261102152329/https://www.krik.rs/nova-dokumenta-sa-devicanskih-ostrva-mali-je-definitivno-bio-vlasnik-24-stana/",
+          "archivedOn": "2026-11-02"
+        },
+        {
+          "url": "https://www.occrp.org/en/project/the-pandora-papers/despite-denials-serbian-finance-minister-owned-luxury-apartments-after-all",
+          "domain": "occrp.org",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "OCCRP izričito navodi Sinišu Malog kao \u0027sole shareholder\u0027 kompanija Brigham Holding \u0026 Finance Inc. i Etham Invest \u0026 Finance Corp.",
+          "archive": "http://web.archive.org/web/20260808153303/https://www.occrp.org/en/project/the-pandora-papers/despite-denials-serbian-finance-minister-owned-luxury-apartments-after-all",
+          "archivedOn": "2026-08-08"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
       "id": "trilenium",
       "label": "Trilenium",
       "type": "instance",
@@ -571,6 +603,41 @@
   },
   {
     "data": {
+      "id": "srecko_kostov_surdulica",
+      "label": "Srećko Kostov (Surdulica)",
+      "type": "instance",
+      "nodeType": "person",
+      "uri": "https://w3id.org/vip/rs/Srecko_Kostov_Surdulica",
+      "comment": "Surduličanin i saradnik Darka Tamindžića, prema KRIK-u i Vijestima; naveden kao svedok u dokumentima o osnivanju Tončevljeve ofšor firme. Kostov je novinarima rekao da poznaje Tončeva, ali je negirao vezu sa firmom. Izvori ga ne predstavljaju kao političara.",
+      "aliases": [
+        "Srećko Kostov"
+      ],
+      "file": "data/entities/srecko-kostov-surdulica.ttl",
+      "line": 13,
+      "sources": [
+        {
+          "url": "https://www.krik.rs/firma-koje-se-niko-ne-seca-otkriva-veze-tonceva-i-srpskog-biznismena-iz-singapura/",
+          "domain": "krik.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "KRIK navodi da je Srećko Kostov bio \u0027svedok Tončevu\u0027 i potpisao osnivačka dokumenta. Kostov je negirao vezu sa firmom.",
+          "archive": "http://web.archive.org/web/20260929212107/https://www.krik.rs/firma-koje-se-niko-ne-seca-otkriva-veze-tonceva-i-srpskog-biznismena-iz-singapura/",
+          "archivedOn": "2026-09-29"
+        },
+        {
+          "url": "https://www.vijesti.me/svijet/balkan/569829/pandorini-papiri-firma-koje-se-niko-ne-sjeca-otkriva-veze-tonceva-i-srpskog-biznismena-iz-singapura",
+          "domain": "vijesti.me",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Vijesti prenose KRIK: Srećko Kostov bio je \u0027svedok Tončevu\u0027; u istom članku preneta je Kostovljeva negacija veze sa firmom.",
+          "archive": "http://web.archive.org/web/20241014205703/https://www.vijesti.me/svijet/balkan/569829/pandorini-papiri-firma-koje-se-niko-ne-sjeca-otkriva-veze-tonceva-i-srpskog-biznismena-iz-singapura",
+          "archivedOn": "2024-10-14"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
       "id": "mihailo_jovanovic",
       "label": "Mihailo Jovanović",
       "type": "instance",
@@ -694,6 +761,38 @@
           "quote": "MOM, profil Maxim Media Plus, odeljak Biznis / Marketing: \u0027New Agency (100%)\u0027.",
           "archive": "http://web.archive.org/web/20250915220442/https://serbia.mom-gmr.org/sr/vlasnik/companies/detail/company/company/show/maxim-media-plus-1/",
           "archivedOn": "2025-09-15"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "darko_tamindzic",
+      "label": "Darko Tamindžić",
+      "type": "instance",
+      "nodeType": "person",
+      "uri": "https://w3id.org/vip/rs/Darko_Tamindzic",
+      "comment": "Biznismen iz Singapura o čijim vezama sa Novicom Tončevom i Srećkom Kostovom izveštavaju KRIK i Vijesti u projektu Pandorini papiri. Prema Tončevu, pomogao mu je da osnuje ofšor firmu; Tamindžićev advokat je potvrdio da zna za postojanje firme.",
+      "file": "data/entities/darko-tamindzic.ttl",
+      "line": 13,
+      "sources": [
+        {
+          "url": "https://www.krik.rs/firma-koje-se-niko-ne-seca-otkriva-veze-tonceva-i-srpskog-biznismena-iz-singapura/",
+          "domain": "krik.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "KRIK: \u0027Darko Tamindžić\u0027; poslovni saradnici i Tončev opisuju njegove poslove i ulogu u osnivanju kompanije.",
+          "archive": "http://web.archive.org/web/20260929212107/https://www.krik.rs/firma-koje-se-niko-ne-seca-otkriva-veze-tonceva-i-srpskog-biznismena-iz-singapura/",
+          "archivedOn": "2026-09-29"
+        },
+        {
+          "url": "https://www.vijesti.me/svijet/balkan/569829/pandorini-papiri-firma-koje-se-niko-ne-sjeca-otkriva-veze-tonceva-i-srpskog-biznismena-iz-singapura",
+          "domain": "vijesti.me",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Vijesti prenose KRIK-ov izveštaj o biznismenu \u0027Darko Tamindžić\u0027 i njegovoj vezi sa Tončevom i Kostovom.",
+          "archive": "http://web.archive.org/web/20241014205703/https://www.vijesti.me/svijet/balkan/569829/pandorini-papiri-firma-koje-se-niko-ne-sjeca-otkriva-veze-tonceva-i-srpskog-biznismena-iz-singapura",
+          "archivedOn": "2024-10-14"
         }
       ]
     }
@@ -843,6 +942,41 @@
   },
   {
     "data": {
+      "id": "nikola_petrovic_ems",
+      "label": "Nikola Petrović (EMS)",
+      "type": "instance",
+      "nodeType": "person",
+      "uri": "https://w3id.org/vip/rs/Nikola_Petrovic_EMS",
+      "comment": "Bivši direktor Elektromreže Srbije i privrednik, identifikovan u KRIK-ovom istraživanju Pandorini papiri kao vlasnik Arkshore International od 2016. KRIK i RSE navode da nije odgovorio na pitanja o toj kompaniji.",
+      "aliases": [
+        "Nikola Petrović"
+      ],
+      "file": "data/entities/nikola-petrovic-ems.ttl",
+      "line": 13,
+      "sources": [
+        {
+          "url": "https://www.krik.rs/barka-predsednikovog-kuma-petrovic-sakrio-ofsor-firmu-i-racun-u-svajcarskoj/",
+          "domain": "krik.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "KRIK identifikuje \u0027Nikola Petrović\u0027 kao vlasnika Arkshore International i tadašnjeg direktora EMS-a.",
+          "archive": "http://web.archive.org/web/20261102155628/https://www.krik.rs/barka-predsednikovog-kuma-petrovic-sakrio-ofsor-firmu-i-racun-u-svajcarskoj/",
+          "archivedOn": "2026-11-02"
+        },
+        {
+          "url": "https://www.slobodnaevropa.org/a/krik-petrovic-pandora-papers/31493609.html",
+          "domain": "slobodnaevropa.org",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "RSE prenosi KRIK-ovo otkriće o \u0027Nikola Petrović\u0027, bivšem direktoru Elektromreže Srbije, i ofšor kompaniji Arkshore International.",
+          "archive": "http://web.archive.org/web/20260421015209/https://www.slobodnaevropa.org/a/krik-petrovic-pandora-papers/31493609.html",
+          "archivedOn": "2026-04-21"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
       "id": "owp_info",
       "label": "OWP Info",
       "type": "instance",
@@ -951,6 +1085,49 @@
   },
   {
     "data": {
+      "id": "sinisa_mali",
+      "label": "Siniša Mali",
+      "type": "instance",
+      "nodeType": "person",
+      "uri": "https://w3id.org/vip/rs/Sinisa_Mali",
+      "wikipedia": "https://sr.wikipedia.org/wiki/Синиша_Мали",
+      "wikidata": "http://www.wikidata.org/entity/Q16935101",
+      "facts": [
+        {
+          "property": "birthDate",
+          "label": "birth date",
+          "value": "1972-08-25"
+        },
+        {
+          "property": "birthPlace",
+          "label": "birth place",
+          "value": "Beograd, Srbija"
+        }
+      ],
+      "file": "data/entities/sinisa-mali.ttl",
+      "line": 16,
+      "sources": [
+        {
+          "url": "https://www.istinomer.rs/akter/sinisa-mali/",
+          "domain": "istinomer.rs",
+          "type": "factCheckProfile",
+          "status": "published",
+          "archive": "https://web.archive.org/web/20261030102432/https://www.istinomer.rs/akter/sinisa-mali/",
+          "archivedOn": "2026-10-30"
+        },
+        {
+          "url": "https://sr.wikipedia.org/wiki/Синиша_Мали",
+          "domain": "sr.wikipedia.org",
+          "type": "encyclopediaArticle",
+          "status": "published",
+          "archive": "http://web.archive.org/web/20251211120109/https://sr.wikipedia.org/wiki/%D0%A1%D0%B8%D0%BD%D0%B8%D1%88%D0%B0_%D0%9C%D0%B0%D0%BB%D0%B8",
+          "archivedOn": "2025-12-11"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
       "id": "naled",
       "label": "Nacionalna alijansa za lokalni ekonomski razvoj (NALED)",
       "type": "instance",
@@ -1001,49 +1178,6 @@
           "status": "published",
           "archive": "http://web.archive.org/web/20251019045732/https://sr.wikipedia.org/wiki/Nacionalna_alijansa_za_lokalni_ekonomski_razvoj",
           "archivedOn": "2025-10-19"
-        }
-      ]
-    }
-  },
-  {
-    "data": {
-      "id": "sinisa_mali",
-      "label": "Siniša Mali",
-      "type": "instance",
-      "nodeType": "person",
-      "uri": "https://w3id.org/vip/rs/Sinisa_Mali",
-      "wikipedia": "https://sr.wikipedia.org/wiki/Синиша_Мали",
-      "wikidata": "http://www.wikidata.org/entity/Q16935101",
-      "facts": [
-        {
-          "property": "birthDate",
-          "label": "birth date",
-          "value": "1972-08-25"
-        },
-        {
-          "property": "birthPlace",
-          "label": "birth place",
-          "value": "Beograd, Srbija"
-        }
-      ],
-      "file": "data/entities/sinisa-mali.ttl",
-      "line": 16,
-      "sources": [
-        {
-          "url": "https://www.istinomer.rs/akter/sinisa-mali/",
-          "domain": "istinomer.rs",
-          "type": "factCheckProfile",
-          "status": "published",
-          "archive": "https://web.archive.org/web/20261030102432/https://www.istinomer.rs/akter/sinisa-mali/",
-          "archivedOn": "2026-10-30"
-        },
-        {
-          "url": "https://sr.wikipedia.org/wiki/Синиша_Мали",
-          "domain": "sr.wikipedia.org",
-          "type": "encyclopediaArticle",
-          "status": "published",
-          "archive": "http://web.archive.org/web/20251211120109/https://sr.wikipedia.org/wiki/%D0%A1%D0%B8%D0%BD%D0%B8%D1%88%D0%B0_%D0%9C%D0%B0%D0%BB%D0%B8",
-          "archivedOn": "2025-12-11"
         }
       ]
     }
@@ -1572,6 +1706,93 @@
   },
   {
     "data": {
+      "id": "arkshore_international",
+      "label": "Arkshore International Ltd",
+      "type": "instance",
+      "nodeType": "organization",
+      "uri": "https://w3id.org/vip/rs/Arkshore_International",
+      "comment": "Ofšor kompanija sa Britanskih Devičanskih Ostrva. KRIK i RSE su 2021. izvestili o vlasništvu Nikole Petrovića; KRIK navodi početak vlasništva 2016. Kompanija je prema tadašnjim registarskim podacima neaktivna od novembra 2019, što ne određuje datum prestanka vlasništva.",
+      "file": "data/entities/arkshore-international.ttl",
+      "line": 13,
+      "sources": [
+        {
+          "url": "https://www.krik.rs/barka-predsednikovog-kuma-petrovic-sakrio-ofsor-firmu-i-racun-u-svajcarskoj/",
+          "domain": "krik.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "KRIK: \u0027Arkshore International LTD\u0027; kompanija sa Britanskih Devičanskih Ostrva, neaktivna od novembra 2019. prema izveštaju iz 2021.",
+          "archive": "http://web.archive.org/web/20261102155628/https://www.krik.rs/barka-predsednikovog-kuma-petrovic-sakrio-ofsor-firmu-i-racun-u-svajcarskoj/",
+          "archivedOn": "2026-11-02"
+        },
+        {
+          "url": "https://www.slobodnaevropa.org/a/krik-petrovic-pandora-papers/31493609.html",
+          "domain": "slobodnaevropa.org",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "RSE prenosi KRIK: \u0027Arkshore International\u0027 sa Britanskih Devičanskih Ostrva; neaktivna od novembra 2019. prema tadašnjem registru.",
+          "archive": "http://web.archive.org/web/20260421015209/https://www.slobodnaevropa.org/a/krik-petrovic-pandora-papers/31493609.html",
+          "archivedOn": "2026-04-21"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "novica_toncev",
+      "label": "Novica Tončev",
+      "type": "instance",
+      "nodeType": "person",
+      "uri": "https://w3id.org/vip/rs/Novica_Toncev",
+      "comment": "Političar SPS-a; prema izveštajima KRIK-a i BIRN-a iz 2021. ministar zadužen za razvoj siromašnih opština, a u vreme osnivanja ofšor firme 2010. predsednik opštine Surdulica.",
+      "wikipedia": "https://sr.wikipedia.org/wiki/Новица_Тончев",
+      "wikidata": "http://www.wikidata.org/entity/Q55584331",
+      "facts": [
+        {
+          "property": "birthDate",
+          "label": "birth date",
+          "value": "1962-12-09"
+        },
+        {
+          "property": "birthPlace",
+          "label": "birth place",
+          "value": "Niš, Srbija"
+        }
+      ],
+      "file": "data/entities/novica-toncev.ttl",
+      "line": 14,
+      "sources": [
+        {
+          "url": "https://balkaninsight.com/2021/10/07/pandora-papers-reveal-second-serbian-ministers-hidden-offshore/",
+          "domain": "balkaninsight.com",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "BIRN, 7. oktobar 2021: \u0027Novica Toncev, minister for developing poor municipalities\u0027.",
+          "archive": "http://web.archive.org/web/20250722102114/https://balkaninsight.com/2021/10/07/pandora-papers-reveal-second-serbian-ministers-hidden-offshore/",
+          "archivedOn": "2025-07-22"
+        },
+        {
+          "url": "https://www.krik.rs/firma-koje-se-niko-ne-seca-otkriva-veze-tonceva-i-srpskog-biznismena-iz-singapura/",
+          "domain": "krik.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "KRIK, Pandorini papiri, 2021: \u0027Novica Tončev, ministar zadužen za razvoj siromašnih opština\u0027.",
+          "archive": "http://web.archive.org/web/20260929212107/https://www.krik.rs/firma-koje-se-niko-ne-seca-otkriva-veze-tonceva-i-srpskog-biznismena-iz-singapura/",
+          "archivedOn": "2026-09-29"
+        },
+        {
+          "url": "https://sr.wikipedia.org/wiki/Новица_Тончев",
+          "domain": "sr.wikipedia.org",
+          "type": "encyclopediaArticle",
+          "status": "published",
+          "quote": "Enciklopedijski članak: \u0027Новица Тончев (Ниш, 9. децембар 1962) је српски политичар\u0027; ministar bez portfelja zadužen za razvoj nedovoljno razvijenih opština, bivši predsednik skupštine opštine Surdulica i potpredsednik SPS-a.",
+          "archive": "http://web.archive.org/web/20251214142316/https://sr.wikipedia.org/wiki/%D0%9D%D0%BE%D0%B2%D0%B8%D1%86%D0%B0_%D0%A2%D0%BE%D0%BD%D1%87%D0%B5%D0%B2",
+          "archivedOn": "2025-12-14"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
       "id": "ana_brnabic",
       "label": "Ana Brnabić",
       "type": "instance",
@@ -1698,6 +1919,70 @@
           "quote": "Vreme, 13. mart 2026: Alo Media System zajedno sa Bojanom Avramovićem poseduje i firmu INI media.",
           "archive": "http://web.archive.org/web/20260419063743/https://vreme.com/vesti/lokalni-mediji-kupovina-alo-informer/",
           "archivedOn": "2026-04-19"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "brigham_holding_finance",
+      "label": "Brigham Holding \u0026 Finance Inc.",
+      "type": "instance",
+      "nodeType": "organization",
+      "uri": "https://w3id.org/vip/rs/Brigham_Holding_Finance",
+      "comment": "Kompanija sa Britanskih Devičanskih Ostrva koju KRIK i OCCRP povezuju sa kupovinom apartmana u Bugarskoj. Prema dokumentima iz Pandorinih papira, Siniša Mali bio je njen jedini akcionar; vlasništvo je preneo u avgustu 2014. Mali je osporavao navode o vlasništvu nad preostala 23 apartmana.",
+      "file": "data/entities/brigham-holding-finance.ttl",
+      "line": 13,
+      "sources": [
+        {
+          "url": "https://www.krik.rs/nova-dokumenta-sa-devicanskih-ostrva-mali-je-definitivno-bio-vlasnik-24-stana/",
+          "domain": "krik.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "KRIK identifikuje Brigham Holding \u0026 Finance Inc. u kupovini bugarskih apartmana i navodi da je Mali bio \u0027i vlasnik ovih kompanija\u0027.",
+          "archive": "http://web.archive.org/web/20261102152329/https://www.krik.rs/nova-dokumenta-sa-devicanskih-ostrva-mali-je-definitivno-bio-vlasnik-24-stana/",
+          "archivedOn": "2026-11-02"
+        },
+        {
+          "url": "https://www.occrp.org/en/project/the-pandora-papers/despite-denials-serbian-finance-minister-owned-luxury-apartments-after-all",
+          "domain": "occrp.org",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "OCCRP izričito navodi Sinišu Malog kao \u0027sole shareholder\u0027 kompanija Brigham Holding \u0026 Finance Inc. i Etham Invest \u0026 Finance Corp.",
+          "archive": "http://web.archive.org/web/20260808153303/https://www.occrp.org/en/project/the-pandora-papers/despite-denials-serbian-finance-minister-owned-luxury-apartments-after-all",
+          "archivedOn": "2026-08-08"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "service_for_efficient_energy",
+      "label": "Service for Efficient Energy",
+      "type": "instance",
+      "nodeType": "organization",
+      "uri": "https://w3id.org/vip/rs/Service_for_Efficient_Energy",
+      "comment": "Ofšor kompanija sa Britanskih Devičanskih Ostrva koju je Novica Tončev osnovao 2010, prema KRIK-u i Vijestima. Postala je neaktivna 2013. i ugašena 2020. Tončev je posle početnog negiranja priznao vlasništvo, ali je rekao da firma nije poslovala.",
+      "file": "data/entities/service-for-efficient-energy.ttl",
+      "line": 13,
+      "sources": [
+        {
+          "url": "https://www.krik.rs/firma-koje-se-niko-ne-seca-otkriva-veze-tonceva-i-srpskog-biznismena-iz-singapura/",
+          "domain": "krik.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "KRIK: \u0027Service for Efficient Energy\u0027, firma sa Britanskih Devičanskih Ostrva; navodi osnivanje 2010, neaktivnost od 2013. i gašenje 2020.",
+          "archive": "http://web.archive.org/web/20260929212107/https://www.krik.rs/firma-koje-se-niko-ne-seca-otkriva-veze-tonceva-i-srpskog-biznismena-iz-singapura/",
+          "archivedOn": "2026-09-29"
+        },
+        {
+          "url": "https://www.vijesti.me/svijet/balkan/569829/pandorini-papiri-firma-koje-se-niko-ne-sjeca-otkriva-veze-tonceva-i-srpskog-biznismena-iz-singapura",
+          "domain": "vijesti.me",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Vijesti prenose KRIK: \u0027Service for Efficient Energy\u0027, osnovana 2010, neaktivna od 2013. i ugašena 2020.",
+          "archive": "http://web.archive.org/web/20241014205703/https://www.vijesti.me/svijet/balkan/569829/pandorini-papiri-firma-koje-se-niko-ne-sjeca-otkriva-veze-tonceva-i-srpskog-biznismena-iz-singapura",
+          "archivedOn": "2024-10-14"
         }
       ]
     }
@@ -2290,6 +2575,42 @@
   {
     "data": {
       "id": "edge12",
+      "label": "Pomoć pri osnivanju",
+      "source": "darko_tamindzic",
+      "target": "service_for_efficient_energy",
+      "uri": "https://w3id.org/vip/rs/DarkoTamindzic_ServiceForEfficientEnergy_Formation",
+      "comment": "Tončev je KRIK-u rekao da je Darko Tamindžić organizovao osnivanje kompanije i obezbedio ljude koji su mu pomogli; Vijesti prenose taj iskaz. Tamindžićev advokat je potvrdio da zna za postojanje firme, navodeći da po njegovim saznanjima nije aktivno radila. Veza beleži pripisanu pomoć pri osnivanju, ne vlasništvo.",
+      "kind": "Connection",
+      "typeLabel": "Generic connection",
+      "start": "2010",
+      "end": "2010",
+      "file": "data/cases/pandorini-papiri.ttl",
+      "line": 81,
+      "sources": [
+        {
+          "url": "https://www.krik.rs/firma-koje-se-niko-ne-seca-otkriva-veze-tonceva-i-srpskog-biznismena-iz-singapura/",
+          "domain": "krik.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Tončev za KRIK: \u0027Darko mi je registrovao firmu\u0027.",
+          "archive": "http://web.archive.org/web/20260929212107/https://www.krik.rs/firma-koje-se-niko-ne-seca-otkriva-veze-tonceva-i-srpskog-biznismena-iz-singapura/",
+          "archivedOn": "2026-09-29"
+        },
+        {
+          "url": "https://www.vijesti.me/svijet/balkan/569829/pandorini-papiri-firma-koje-se-niko-ne-sjeca-otkriva-veze-tonceva-i-srpskog-biznismena-iz-singapura",
+          "domain": "vijesti.me",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Vijesti prenose Tončevljev iskaz KRIK-u: \u0027Darko mi je registrovao firmu\u0027.",
+          "archive": "http://web.archive.org/web/20241014205703/https://www.vijesti.me/svijet/balkan/569829/pandorini-papiri-firma-koje-se-niko-ne-sjeca-otkriva-veze-tonceva-i-srpskog-biznismena-iz-singapura",
+          "archivedOn": "2024-10-14"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "edge13",
       "label": "ownership connection",
       "source": "global_media_technology",
       "target": "matrix_d",
@@ -2323,7 +2644,7 @@
   },
   {
     "data": {
-      "id": "edge13",
+      "id": "edge14",
       "label": "ownership connection",
       "source": "global_media_technology",
       "target": "maxim_media_plus",
@@ -2359,7 +2680,7 @@
   },
   {
     "data": {
-      "id": "edge14",
+      "id": "edge15",
       "label": "ownership connection",
       "source": "global_media_technology",
       "target": "rimi_media_group",
@@ -2393,7 +2714,7 @@
   },
   {
     "data": {
-      "id": "edge15",
+      "id": "edge16",
       "label": "ownership connection",
       "source": "insajder_tim",
       "target": "best_media_team",
@@ -2429,7 +2750,41 @@
   },
   {
     "data": {
-      "id": "edge16",
+      "id": "edge17",
+      "label": "political connection",
+      "source": "ivan_bosnjak_zrenjanin",
+      "target": "sns",
+      "uri": "https://w3id.org/vip/rs/IvanBosnjakZrenjanin_SNS",
+      "comment": "Ivan Bošnjak, političar iz Zrenjanina rođen 1974, član je Srpske napredne stranke prema Istinomerovoj biografiji ažuriranoj 14. januara 2015. RTV ga je 2012. opisao kao pokrajinskog poslanika SNS prilikom izbora za gradonačelnika Zrenjanina. Datumi učlanjenja i eventualnog prestanka članstva nisu navedeni u korišćenim izvorima.",
+      "kind": "PoliticalConnection",
+      "typeLabel": "Political connection",
+      "file": "data/cases/zrenjanin.ttl",
+      "line": 11,
+      "sources": [
+        {
+          "url": "https://www.istinomer.rs/akter/ivan-bosnjak/",
+          "domain": "istinomer.rs",
+          "type": "factCheckProfile",
+          "status": "published",
+          "quote": "Istinomer, biografija Ivana Bošnjaka iz Zrenjanina: \u0027Član je Srpske napredne stranke.\u0027 Profil je ažuriran 14. januara 2015.",
+          "archive": "http://web.archive.org/web/20261030102500/https://www.istinomer.rs/akter/ivan-bosnjak/",
+          "archivedOn": "2026-10-30"
+        },
+        {
+          "url": "https://rtv.rs/sr_lat/vojvodina/banat/ivan-bosnjak-novi-gradonacelnik-zrenjanina_337551.html",
+          "domain": "rtv.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "RTV, izveštaj o izboru gradonačelnika Zrenjanina: \u0027izabrali pokrajinskog poslanika SNS Ivana Bošnjaka (38)\u0027.",
+          "archive": "http://web.archive.org/web/20241127073902/https://rtv.rs/sr_lat/vojvodina/banat/ivan-bosnjak-novi-gradonacelnik-zrenjanina_337551.html",
+          "archivedOn": "2024-11-27"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "edge18",
       "label": "ownership connection",
       "source": "ivan_bosnjak_milenijum_tim",
       "target": "milenijum_tim",
@@ -2472,7 +2827,7 @@
   },
   {
     "data": {
-      "id": "edge17",
+      "id": "edge19",
       "label": "executive board member",
       "source": "ivan_bosnjak_milenijum_tim",
       "target": "naled",
@@ -2527,7 +2882,7 @@
   },
   {
     "data": {
-      "id": "edge18",
+      "id": "edge20",
       "label": "ownership connection",
       "source": "maxim_media_plus",
       "target": "baltazar",
@@ -2562,7 +2917,7 @@
   },
   {
     "data": {
-      "id": "edge19",
+      "id": "edge21",
       "label": "ownership connection",
       "source": "maxim_media_plus",
       "target": "bis_komerc",
@@ -2597,7 +2952,7 @@
   },
   {
     "data": {
-      "id": "edge20",
+      "id": "edge22",
       "label": "ownership connection",
       "source": "maxim_media_plus",
       "target": "new_agency",
@@ -2632,7 +2987,7 @@
   },
   {
     "data": {
-      "id": "edge21",
+      "id": "edge23",
       "label": "alumni",
       "source": "mihailo_jovanovic",
       "target": "peta_beogradska_gimnazija",
@@ -2668,7 +3023,7 @@
   },
   {
     "data": {
-      "id": "edge22",
+      "id": "edge24",
       "label": "ownership connection",
       "source": "milenijum_tim",
       "target": "mt_gastel",
@@ -2721,7 +3076,7 @@
   },
   {
     "data": {
-      "id": "edge23",
+      "id": "edge25",
       "label": "ownership connection",
       "source": "milenijum_tim",
       "target": "mv_investment",
@@ -2775,7 +3130,7 @@
   },
   {
     "data": {
-      "id": "edge24",
+      "id": "edge26",
       "label": "ownership connection",
       "source": "milenijum_tim",
       "target": "milenijum_adria",
@@ -2820,7 +3175,7 @@
   },
   {
     "data": {
-      "id": "edge25",
+      "id": "edge27",
       "label": "ownership connection",
       "source": "milenijum_tim",
       "target": "milenijum_resorts",
@@ -2855,7 +3210,7 @@
   },
   {
     "data": {
-      "id": "edge26",
+      "id": "edge28",
       "label": "ownership connection",
       "source": "milenijum_tim",
       "target": "milenijum_propertiz",
@@ -2899,7 +3254,7 @@
   },
   {
     "data": {
-      "id": "edge27",
+      "id": "edge29",
       "label": "ownership connection",
       "source": "milenijum_tim",
       "target": "mostogradnja_ing",
@@ -2943,7 +3298,7 @@
   },
   {
     "data": {
-      "id": "edge28",
+      "id": "edge30",
       "label": "ownership connection",
       "source": "milenijum_tim",
       "target": "pizzarotti_millennium",
@@ -2978,7 +3333,7 @@
   },
   {
     "data": {
-      "id": "edge29",
+      "id": "edge31",
       "label": "ownership connection",
       "source": "milenijum_tim",
       "target": "roberts_milenijum",
@@ -3075,7 +3430,111 @@
   },
   {
     "data": {
-      "id": "edge30",
+      "id": "edge32",
+      "label": "ownership connection",
+      "source": "nikola_petrovic_ems",
+      "target": "arkshore_international",
+      "uri": "https://w3id.org/vip/rs/NikolaPetrovicEMS_ArkshoreInternational",
+      "comment": "KRIK i RSE su 2021. izvestili da je Nikola Petrović bio vlasnik Arkshore International dok je bio direktor EMS-a; KRIK navodi početak 2016. KRIK prenosi potvrdu Agencije da firma nije prijavljena. Petrović nije odgovorio na pitanja novinara. Udeo i datum prestanka vlasništva nisu navedeni; neaktivnost od novembra 2019. ne znači prestanak vlasništva.",
+      "kind": "OwnershipConnection",
+      "typeLabel": "Ownership connection",
+      "start": "2016",
+      "file": "data/cases/pandorini-papiri.ttl",
+      "line": 56,
+      "sources": [
+        {
+          "url": "https://www.krik.rs/barka-predsednikovog-kuma-petrovic-sakrio-ofsor-firmu-i-racun-u-svajcarskoj/",
+          "domain": "krik.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "KRIK: Petrović je bio \u0027od 2016. godine vlasnik kompanije\u0027; identifikuje Arkshore International LTD.",
+          "archive": "http://web.archive.org/web/20261102155628/https://www.krik.rs/barka-predsednikovog-kuma-petrovic-sakrio-ofsor-firmu-i-racun-u-svajcarskoj/",
+          "archivedOn": "2026-11-02"
+        },
+        {
+          "url": "https://www.slobodnaevropa.org/a/krik-petrovic-pandora-papers/31493609.html",
+          "domain": "slobodnaevropa.org",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "RSE prenosi KRIK: Petrović je \u0027bio je vlasnik ofšor (offshore) kompanije\u0027; u istom pasusu imenovana je Arkshore International.",
+          "archive": "http://web.archive.org/web/20260421015209/https://www.slobodnaevropa.org/a/krik-petrovic-pandora-papers/31493609.html",
+          "archivedOn": "2026-04-21"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "edge33",
+      "label": "friendship",
+      "source": "darko_tamindzic",
+      "target": "novica_toncev",
+      "uri": "https://w3id.org/vip/rs/NovicaToncev_DarkoTamindzic_Friendship",
+      "comment": "Prema Tončevljevom iskazu KRIK-u, on i Darko Tamindžić su dugogodišnji prijatelji. Vijesti prenose isti iskaz; Tamindžićev odgovor preko advokata potvrđuje da Tončeva poznaje više od 20 godina. Datumi početka i prestanka prijateljstva nisu navedeni.",
+      "kind": "Friendship",
+      "typeLabel": "Friendship",
+      "file": "data/cases/pandorini-papiri.ttl",
+      "line": 94,
+      "sources": [
+        {
+          "url": "https://www.krik.rs/firma-koje-se-niko-ne-seca-otkriva-veze-tonceva-i-srpskog-biznismena-iz-singapura/",
+          "domain": "krik.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Tončev za KRIK: \u0027S Darkom Tamindžićem sam odavno prijatelj\u0027.",
+          "archive": "http://web.archive.org/web/20260929212107/https://www.krik.rs/firma-koje-se-niko-ne-seca-otkriva-veze-tonceva-i-srpskog-biznismena-iz-singapura/",
+          "archivedOn": "2026-09-29"
+        },
+        {
+          "url": "https://www.vijesti.me/svijet/balkan/569829/pandorini-papiri-firma-koje-se-niko-ne-sjeca-otkriva-veze-tonceva-i-srpskog-biznismena-iz-singapura",
+          "domain": "vijesti.me",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Vijesti prenose Tončevljev iskaz: \u0027S Darkom Tamindžićem sam odavno prijatelj\u0027.",
+          "archive": "http://web.archive.org/web/20241014205703/https://www.vijesti.me/svijet/balkan/569829/pandorini-papiri-firma-koje-se-niko-ne-sjeca-otkriva-veze-tonceva-i-srpskog-biznismena-iz-singapura",
+          "archivedOn": "2024-10-14"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "edge34",
+      "label": "ownership connection",
+      "source": "novica_toncev",
+      "target": "service_for_efficient_energy",
+      "uri": "https://w3id.org/vip/rs/NovicaToncev_ServiceForEfficientEnergy",
+      "comment": "Prema KRIK-u i BIRN-u, Novica Tončev osnovao je Service for Efficient Energy 2010. i bio njen vlasnik. Tončev je prvo negirao vlasništvo, zatim ga priznao uz tvrdnju da firma nije poslovala. KRIK navodi da je nije prijavio Agenciji. Udeo i datum prestanka njegovog vlasništva nisu utvrđeni; gašenje kompanije 2020. nije dokaz da ju je posedovao do tada.",
+      "kind": "OwnershipConnection",
+      "typeLabel": "Ownership connection",
+      "start": "2010",
+      "file": "data/cases/pandorini-papiri.ttl",
+      "line": 18,
+      "sources": [
+        {
+          "url": "https://balkaninsight.com/2021/10/07/pandora-papers-reveal-second-serbian-ministers-hidden-offshore/",
+          "domain": "balkaninsight.com",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "BIRN, 7. oktobar 2021: \u0027Toncev opened a company called “Service for Efficient Energy“\u0027; navodi osnivanje 2010. i njegovo naknadno priznanje vlasništva.",
+          "archive": "http://web.archive.org/web/20250722102114/https://balkaninsight.com/2021/10/07/pandora-papers-reveal-second-serbian-ministers-hidden-offshore/",
+          "archivedOn": "2025-07-22"
+        },
+        {
+          "url": "https://www.krik.rs/firma-koje-se-niko-ne-seca-otkriva-veze-tonceva-i-srpskog-biznismena-iz-singapura/",
+          "domain": "krik.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "KRIK za Tončeva: \u0027setio da je bio vlasnik kompanije\u0027; osnivanje datira u 2010. Prenosi njegovu tvrdnju da firma nije poslovala.",
+          "archive": "http://web.archive.org/web/20260929212107/https://www.krik.rs/firma-koje-se-niko-ne-seca-otkriva-veze-tonceva-i-srpskog-biznismena-iz-singapura/",
+          "archivedOn": "2026-09-29"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "edge35",
       "label": "ownership connection",
       "source": "sasa_blagojevic",
       "target": "alo_marketing",
@@ -3111,7 +3570,7 @@
   },
   {
     "data": {
-      "id": "edge31",
+      "id": "edge36",
       "label": "ownership connection",
       "source": "sasa_blagojevic",
       "target": "alo_media_system",
@@ -3183,7 +3642,7 @@
   },
   {
     "data": {
-      "id": "edge32",
+      "id": "edge37",
       "label": "ownership connection",
       "source": "sasa_blagojevic",
       "target": "global_media_technology",
@@ -3218,7 +3677,7 @@
   },
   {
     "data": {
-      "id": "edge33",
+      "id": "edge38",
       "label": "alumni",
       "source": "sasa_blagojevic",
       "target": "peta_beogradska_gimnazija",
@@ -3279,7 +3738,7 @@
   },
   {
     "data": {
-      "id": "edge34",
+      "id": "edge39",
       "label": "classmate (same class)",
       "source": "sasa_blagojevic",
       "target": "sinisa_mali",
@@ -3349,7 +3808,7 @@
   },
   {
     "data": {
-      "id": "edge35",
+      "id": "edge40",
       "label": "ownership connection",
       "source": "sasa_blagojevic",
       "target": "trilenium",
@@ -3384,7 +3843,43 @@
   },
   {
     "data": {
-      "id": "edge36",
+      "id": "edge41",
+      "label": "ownership connection",
+      "source": "sinisa_mali",
+      "target": "brigham_holding_finance",
+      "uri": "https://w3id.org/vip/rs/SinisaMali_BrighamHoldingFinance",
+      "comment": "Prema KRIK-u i OCCRP-u, dokumenta iz Pandorinih papira identifikuju Sinišu Malog kao jedinog akcionara kompanije Brigham Holding \u0026 Finance Inc. Vlasništvo je preneto na Anu Panajotovu u avgustu 2014; tačan datum sticanja nije naveden. Mali je osporavao vlasništvo nad 23 apartmana koja su kupljena preko dve ofšor firme; prema izveštaju, nije odgovorio na pitanja o novim dokumentima.",
+      "kind": "OwnershipConnection",
+      "typeLabel": "Ownership connection",
+      "share": 100.0,
+      "end": "2014-08",
+      "file": "data/cases/pandorini-papiri.ttl",
+      "line": 30,
+      "sources": [
+        {
+          "url": "https://www.krik.rs/nova-dokumenta-sa-devicanskih-ostrva-mali-je-definitivno-bio-vlasnik-24-stana/",
+          "domain": "krik.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "KRIK identifikuje Brigham Holding \u0026 Finance Inc. i navodi da je Mali bio \u0027i vlasnik ovih kompanija\u0027; prenos vlasništva: \u0027U avgustu 2014\u0027.",
+          "archive": "http://web.archive.org/web/20261102152329/https://www.krik.rs/nova-dokumenta-sa-devicanskih-ostrva-mali-je-definitivno-bio-vlasnik-24-stana/",
+          "archivedOn": "2026-11-02"
+        },
+        {
+          "url": "https://www.occrp.org/en/project/the-pandora-papers/despite-denials-serbian-finance-minister-owned-luxury-apartments-after-all",
+          "domain": "occrp.org",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "OCCRP navodi Malog kao \u0027sole shareholder\u0027 Brigham Holding \u0026 Finance Inc.; prenos vlasništva dve BVI firme: \u0027in August 2014\u0027.",
+          "archive": "http://web.archive.org/web/20260808153303/https://www.occrp.org/en/project/the-pandora-papers/despite-denials-serbian-finance-minister-owned-luxury-apartments-after-all",
+          "archivedOn": "2026-08-08"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "edge42",
       "label": "alumni",
       "source": "sinisa_mali",
       "target": "ekonomski_fakultet_university_of_belgrade",
@@ -3419,7 +3914,43 @@
   },
   {
     "data": {
-      "id": "edge37",
+      "id": "edge43",
+      "label": "ownership connection",
+      "source": "sinisa_mali",
+      "target": "etham_invest_finance",
+      "uri": "https://w3id.org/vip/rs/SinisaMali_EthamInvestFinance",
+      "comment": "Prema KRIK-u i OCCRP-u, dokumenta iz Pandorinih papira identifikuju Sinišu Malog kao jedinog akcionara kompanije Etham Invest \u0026 Finance Corp. Vlasništvo je preneto na Anu Panajotovu u avgustu 2014; tačan datum sticanja nije naveden. Mali je osporavao vlasništvo nad 23 apartmana koja su kupljena preko dve ofšor firme; prema izveštaju, nije odgovorio na pitanja o novim dokumentima.",
+      "kind": "OwnershipConnection",
+      "typeLabel": "Ownership connection",
+      "share": 100.0,
+      "end": "2014-08",
+      "file": "data/cases/pandorini-papiri.ttl",
+      "line": 43,
+      "sources": [
+        {
+          "url": "https://www.krik.rs/nova-dokumenta-sa-devicanskih-ostrva-mali-je-definitivno-bio-vlasnik-24-stana/",
+          "domain": "krik.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "KRIK identifikuje Etham Invest \u0026 Finance Corp. i navodi da je Mali bio \u0027i vlasnik ovih kompanija\u0027; prenos vlasništva: \u0027U avgustu 2014\u0027.",
+          "archive": "http://web.archive.org/web/20261102152329/https://www.krik.rs/nova-dokumenta-sa-devicanskih-ostrva-mali-je-definitivno-bio-vlasnik-24-stana/",
+          "archivedOn": "2026-11-02"
+        },
+        {
+          "url": "https://www.occrp.org/en/project/the-pandora-papers/despite-denials-serbian-finance-minister-owned-luxury-apartments-after-all",
+          "domain": "occrp.org",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "OCCRP navodi Malog kao \u0027sole shareholder\u0027 Etham Invest \u0026 Finance Corp.; prenos vlasništva dve BVI firme: \u0027in August 2014\u0027.",
+          "archive": "http://web.archive.org/web/20260808153303/https://www.occrp.org/en/project/the-pandora-papers/despite-denials-serbian-finance-minister-owned-luxury-apartments-after-all",
+          "archivedOn": "2026-08-08"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "edge44",
       "label": "alumni",
       "source": "sinisa_mali",
       "target": "peta_beogradska_gimnazija",
@@ -3455,7 +3986,7 @@
   },
   {
     "data": {
-      "id": "edge38",
+      "id": "edge45",
       "label": "political connection",
       "source": "sinisa_mali",
       "target": "sns",
@@ -3490,7 +4021,77 @@
   },
   {
     "data": {
-      "id": "edge39",
+      "id": "edge46",
+      "label": "Poslovni saradnici",
+      "source": "darko_tamindzic",
+      "target": "srecko_kostov_surdulica",
+      "uri": "https://w3id.org/vip/rs/SreckoKostov_DarkoTamindzic_Association",
+      "comment": "KRIK i Vijesti opisuju Srećka Kostova kao saradnika Darka Tamindžića; navode da je Kostov osnovao NEPC koji je Tamindžić kasnije preuzeo. Veza ne određuje radno mesto, vlasnički udeo niti datume saradnje.",
+      "kind": "Connection",
+      "typeLabel": "Generic connection",
+      "file": "data/cases/pandorini-papiri.ttl",
+      "line": 104,
+      "sources": [
+        {
+          "url": "https://www.krik.rs/firma-koje-se-niko-ne-seca-otkriva-veze-tonceva-i-srpskog-biznismena-iz-singapura/",
+          "domain": "krik.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "KRIK za Kostova: \u0027Tamindžićev je saradnik\u0027.",
+          "archive": "http://web.archive.org/web/20260929212107/https://www.krik.rs/firma-koje-se-niko-ne-seca-otkriva-veze-tonceva-i-srpskog-biznismena-iz-singapura/",
+          "archivedOn": "2026-09-29"
+        },
+        {
+          "url": "https://www.vijesti.me/svijet/balkan/569829/pandorini-papiri-firma-koje-se-niko-ne-sjeca-otkriva-veze-tonceva-i-srpskog-biznismena-iz-singapura",
+          "domain": "vijesti.me",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Vijesti prenose KRIK-ov opis Kostova: \u0027Tamindžićev je saradnik\u0027.",
+          "archive": "http://web.archive.org/web/20241014205703/https://www.vijesti.me/svijet/balkan/569829/pandorini-papiri-firma-koje-se-niko-ne-sjeca-otkriva-veze-tonceva-i-srpskog-biznismena-iz-singapura",
+          "archivedOn": "2024-10-14"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "edge47",
+      "label": "Svedok osnivanja",
+      "source": "srecko_kostov_surdulica",
+      "target": "service_for_efficient_energy",
+      "uri": "https://w3id.org/vip/rs/SreckoKostov_ServiceForEfficientEnergy_Witness",
+      "comment": "Prema KRIK-u, čiji izveštaj prenose Vijesti, Srećko Kostov je kao svedok potpisao osnivačka dokumenta Tončevljeve kompanije Service for Efficient Energy 2010. i potvrdio Tončevljev identitet. Kostov je rekao da poznaje Tončeva, ali je negirao vezu sa firmom. Ovo je uloga svedoka osnivanja, bez tvrdnje o vlasništvu, zaposlenju ili političkoj funkciji.",
+      "kind": "Connection",
+      "typeLabel": "Generic connection",
+      "start": "2010",
+      "end": "2010",
+      "file": "data/cases/pandorini-papiri.ttl",
+      "line": 68,
+      "sources": [
+        {
+          "url": "https://www.krik.rs/firma-koje-se-niko-ne-seca-otkriva-veze-tonceva-i-srpskog-biznismena-iz-singapura/",
+          "domain": "krik.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "KRIK navodi da je Srećko Kostov bio \u0027svedok Tončevu\u0027 i potpisao osnivačka dokumenta. Kostov je negirao vezu sa firmom.",
+          "archive": "http://web.archive.org/web/20260929212107/https://www.krik.rs/firma-koje-se-niko-ne-seca-otkriva-veze-tonceva-i-srpskog-biznismena-iz-singapura/",
+          "archivedOn": "2026-09-29"
+        },
+        {
+          "url": "https://www.vijesti.me/svijet/balkan/569829/pandorini-papiri-firma-koje-se-niko-ne-sjeca-otkriva-veze-tonceva-i-srpskog-biznismena-iz-singapura",
+          "domain": "vijesti.me",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Vijesti prenose KRIK: Srećko Kostov bio je \u0027svedok Tončevu\u0027; u istom članku preneta je Kostovljeva negacija veze sa firmom.",
+          "archive": "http://web.archive.org/web/20241014205703/https://www.vijesti.me/svijet/balkan/569829/pandorini-papiri-firma-koje-se-niko-ne-sjeca-otkriva-veze-tonceva-i-srpskog-biznismena-iz-singapura",
+          "archivedOn": "2024-10-14"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "edge48",
       "label": "ownership connection",
       "source": "stojan_vujko",
       "target": "milenijum_tim",

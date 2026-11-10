@@ -1,0 +1,113 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rs: <https://w3id.org/vip/rs/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio: <http://purl.org/vocab/bio/0.1/> .
+@prefix : <http://poderopedia.com/vocab/> .
+@prefix vip: <https://w3id.org/vip/vocab#> .
+
+# Slučaj: Pandorini papiri — ofšor kompanije i dokumentovane veze funkcionera iz Srbije.
+# Case: Pandora Papers — offshore companies and documented links of Serbian public officials.
+# Obuhvata Tončeva, Malog i Petrovića, kao i uloge Kostova i Tamindžića.
+# Covers Tončev, Mali and Petrović, and the roles of Kostov and Tamindžić.
+# Navodi o vlasništvu i neprijavljivanju pripisani su izvorima; odgovori su sačuvani u komentarima.
+# Ownership and non-disclosure reports are attributed; subjects’ responses are retained in comments.
+# Neaktivnost firme ne znači da je vlasništvo tada prestalo; nepoznati datumi ostaju nezabeleženi.
+# Company inactivity does not establish the end of ownership; unknown dates remain unset.
+
+rs:NovicaToncev_ServiceForEfficientEnergy a vip:OwnershipConnection ;
+    vip:owner rs:Novica_Toncev ;
+    vip:ownedCompany rs:Service_for_Efficient_Energy ;
+    :connectionStartDate "2010"^^xsd:gYear ;
+    rdfs:comment "Prema KRIK-u i BIRN-u, Novica Tončev osnovao je Service for Efficient Energy 2010. i bio njen vlasnik. Tončev je prvo negirao vlasništvo, zatim ga priznao uz tvrdnju da firma nije poslovala. KRIK navodi da je nije prijavio Agenciji. Udeo i datum prestanka njegovog vlasništva nisu utvrđeni; gašenje kompanije 2020. nije dokaz da ju je posedovao do tada."@sr ;
+    rdfs:comment "KRIK and BIRN report Novica Tončev established Service for Efficient Energy in 2010 and owned it. He first denied ownership, then acknowledged it while saying the company never traded. KRIK reports he did not declare it to the Agency. His share and ownership end date are unknown; dissolution in 2020 does not prove he held it until then."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://www.krik.rs/firma-koje-se-niko-ne-seca-otkriva-veze-tonceva-i-srpskog-biznismena-iz-singapura/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "KRIK za Tončeva: 'setio da je bio vlasnik kompanije'; osnivanje datira u 2010. Prenosi njegovu tvrdnju da firma nije poslovala."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://balkaninsight.com/2021/10/07/pandora-papers-reveal-second-serbian-ministers-hidden-offshore/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "BIRN, 7. oktobar 2021: 'Toncev opened a company called “Service for Efficient Energy“'; navodi osnivanje 2010. i njegovo naknadno priznanje vlasništva."@sr ] .
+
+rs:SinisaMali_BrighamHoldingFinance a vip:OwnershipConnection ;
+    vip:owner rs:Sinisa_Mali ;
+    vip:ownedCompany rs:Brigham_Holding_Finance ;
+    vip:ownershipShare 100.0 ;
+    :connectionEndDate "2014-08"^^xsd:gYearMonth ;
+    rdfs:comment "Prema KRIK-u i OCCRP-u, dokumenta iz Pandorinih papira identifikuju Sinišu Malog kao jedinog akcionara kompanije Brigham Holding & Finance Inc. Vlasništvo je preneto na Anu Panajotovu u avgustu 2014; tačan datum sticanja nije naveden. Mali je osporavao vlasništvo nad 23 apartmana koja su kupljena preko dve ofšor firme; prema izveštaju, nije odgovorio na pitanja o novim dokumentima."@sr ;
+    rdfs:comment "KRIK and OCCRP report that Pandora Papers documents identify Siniša Mali as the sole shareholder of Brigham Holding & Finance Inc. Ownership transferred to Ana Panayotova in August 2014; the acquisition date is not stated. Mali disputed ownership of the 23 apartments purchased through the two offshore companies; the report says he did not answer questions about the new documents."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://www.krik.rs/nova-dokumenta-sa-devicanskih-ostrva-mali-je-definitivno-bio-vlasnik-24-stana/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "KRIK identifikuje Brigham Holding & Finance Inc. i navodi da je Mali bio 'i vlasnik ovih kompanija'; prenos vlasništva: 'U avgustu 2014'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.occrp.org/en/project/the-pandora-papers/despite-denials-serbian-finance-minister-owned-luxury-apartments-after-all> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "OCCRP navodi Malog kao 'sole shareholder' Brigham Holding & Finance Inc.; prenos vlasništva dve BVI firme: 'in August 2014'."@sr ] .
+
+rs:SinisaMali_EthamInvestFinance a vip:OwnershipConnection ;
+    vip:owner rs:Sinisa_Mali ;
+    vip:ownedCompany rs:Etham_Invest_Finance ;
+    vip:ownershipShare 100.0 ;
+    :connectionEndDate "2014-08"^^xsd:gYearMonth ;
+    rdfs:comment "Prema KRIK-u i OCCRP-u, dokumenta iz Pandorinih papira identifikuju Sinišu Malog kao jedinog akcionara kompanije Etham Invest & Finance Corp. Vlasništvo je preneto na Anu Panajotovu u avgustu 2014; tačan datum sticanja nije naveden. Mali je osporavao vlasništvo nad 23 apartmana koja su kupljena preko dve ofšor firme; prema izveštaju, nije odgovorio na pitanja o novim dokumentima."@sr ;
+    rdfs:comment "KRIK and OCCRP report that Pandora Papers documents identify Siniša Mali as the sole shareholder of Etham Invest & Finance Corp. Ownership transferred to Ana Panayotova in August 2014; the acquisition date is not stated. Mali disputed ownership of the 23 apartments purchased through the two offshore companies; the report says he did not answer questions about the new documents."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://www.krik.rs/nova-dokumenta-sa-devicanskih-ostrva-mali-je-definitivno-bio-vlasnik-24-stana/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "KRIK identifikuje Etham Invest & Finance Corp. i navodi da je Mali bio 'i vlasnik ovih kompanija'; prenos vlasništva: 'U avgustu 2014'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.occrp.org/en/project/the-pandora-papers/despite-denials-serbian-finance-minister-owned-luxury-apartments-after-all> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "OCCRP navodi Malog kao 'sole shareholder' Etham Invest & Finance Corp.; prenos vlasništva dve BVI firme: 'in August 2014'."@sr ] .
+
+rs:NikolaPetrovicEMS_ArkshoreInternational a vip:OwnershipConnection ;
+    vip:owner rs:Nikola_Petrovic_EMS ;
+    vip:ownedCompany rs:Arkshore_International ;
+    :connectionStartDate "2016"^^xsd:gYear ;
+    rdfs:comment "KRIK i RSE su 2021. izvestili da je Nikola Petrović bio vlasnik Arkshore International dok je bio direktor EMS-a; KRIK navodi početak 2016. KRIK prenosi potvrdu Agencije da firma nije prijavljena. Petrović nije odgovorio na pitanja novinara. Udeo i datum prestanka vlasništva nisu navedeni; neaktivnost od novembra 2019. ne znači prestanak vlasništva."@sr ;
+    rdfs:comment "KRIK and RFE/RL reported in 2021 that Nikola Petrović owned Arkshore International while directing EMS; KRIK dates the beginning to 2016. KRIK reports the Agency confirmed the company was not declared. Petrović did not answer journalists’ questions. His share and ownership end date are not stated; inactivity since November 2019 does not mean ownership ended."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://www.krik.rs/barka-predsednikovog-kuma-petrovic-sakrio-ofsor-firmu-i-racun-u-svajcarskoj/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "KRIK: Petrović je bio 'od 2016. godine vlasnik kompanije'; identifikuje Arkshore International LTD."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.slobodnaevropa.org/a/krik-petrovic-pandora-papers/31493609.html> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "RSE prenosi KRIK: Petrović je 'bio je vlasnik ofšor (offshore) kompanije'; u istom pasusu imenovana je Arkshore International."@sr ] .
+
+rs:SreckoKostov_ServiceForEfficientEnergy_Witness a :Connection ;
+    bio:participant rs:Srecko_Kostov_Surdulica, rs:Service_for_Efficient_Energy ;
+    rdfs:label "Svedok osnivanja"@sr, "Formation witness"@en ;
+    :connectionStartDate "2010"^^xsd:gYear ;
+    :connectionEndDate "2010"^^xsd:gYear ;
+    rdfs:comment "Prema KRIK-u, čiji izveštaj prenose Vijesti, Srećko Kostov je kao svedok potpisao osnivačka dokumenta Tončevljeve kompanije Service for Efficient Energy 2010. i potvrdio Tončevljev identitet. Kostov je rekao da poznaje Tončeva, ali je negirao vezu sa firmom. Ovo je uloga svedoka osnivanja, bez tvrdnje o vlasništvu, zaposlenju ili političkoj funkciji."@sr ;
+    rdfs:comment "KRIK, republished by Vijesti, identifies Srećko Kostov as a witness who signed the 2010 formation documents for Tončev’s Service for Efficient Energy and confirmed Tončev’s identity. Kostov acknowledged knowing Tončev but denied involvement with the company. This records his reported formation-witness role, without asserting ownership, employment or political office."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://www.krik.rs/firma-koje-se-niko-ne-seca-otkriva-veze-tonceva-i-srpskog-biznismena-iz-singapura/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "KRIK navodi da je Srećko Kostov bio 'svedok Tončevu' i potpisao osnivačka dokumenta. Kostov je negirao vezu sa firmom."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.vijesti.me/svijet/balkan/569829/pandorini-papiri-firma-koje-se-niko-ne-sjeca-otkriva-veze-tonceva-i-srpskog-biznismena-iz-singapura> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Vijesti prenose KRIK: Srećko Kostov bio je 'svedok Tončevu'; u istom članku preneta je Kostovljeva negacija veze sa firmom."@sr ] .
+
+rs:DarkoTamindzic_ServiceForEfficientEnergy_Formation a :Connection ;
+    bio:participant rs:Darko_Tamindzic, rs:Service_for_Efficient_Energy ;
+    rdfs:label "Pomoć pri osnivanju"@sr, "Formation assistance"@en ;
+    :connectionStartDate "2010"^^xsd:gYear ;
+    :connectionEndDate "2010"^^xsd:gYear ;
+    rdfs:comment "Tončev je KRIK-u rekao da je Darko Tamindžić organizovao osnivanje kompanije i obezbedio ljude koji su mu pomogli; Vijesti prenose taj iskaz. Tamindžićev advokat je potvrdio da zna za postojanje firme, navodeći da po njegovim saznanjima nije aktivno radila. Veza beleži pripisanu pomoć pri osnivanju, ne vlasništvo."@sr ;
+    rdfs:comment "Tončev told KRIK that Darko Tamindžić arranged the company’s formation and supplied people to help; Vijesti republished this account. Tamindžić’s lawyer acknowledged knowing the company existed and said it had not actively traded to his knowledge. This records attributed formation assistance, not ownership."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://www.krik.rs/firma-koje-se-niko-ne-seca-otkriva-veze-tonceva-i-srpskog-biznismena-iz-singapura/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Tončev za KRIK: 'Darko mi je registrovao firmu'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.vijesti.me/svijet/balkan/569829/pandorini-papiri-firma-koje-se-niko-ne-sjeca-otkriva-veze-tonceva-i-srpskog-biznismena-iz-singapura> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Vijesti prenose Tončevljev iskaz KRIK-u: 'Darko mi je registrovao firmu'."@sr ] .
+
+rs:NovicaToncev_DarkoTamindzic_Friendship a :Friendship ;
+    bio:participant rs:Novica_Toncev, rs:Darko_Tamindzic ;
+    rdfs:comment "Prema Tončevljevom iskazu KRIK-u, on i Darko Tamindžić su dugogodišnji prijatelji. Vijesti prenose isti iskaz; Tamindžićev odgovor preko advokata potvrđuje da Tončeva poznaje više od 20 godina. Datumi početka i prestanka prijateljstva nisu navedeni."@sr ;
+    rdfs:comment "Tončev told KRIK that he and Darko Tamindžić were longstanding friends. Vijesti republished his statement; Tamindžić’s response through his lawyer says he had known Tončev for over 20 years. Friendship start and end dates are not stated."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://www.krik.rs/firma-koje-se-niko-ne-seca-otkriva-veze-tonceva-i-srpskog-biznismena-iz-singapura/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Tončev za KRIK: 'S Darkom Tamindžićem sam odavno prijatelj'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.vijesti.me/svijet/balkan/569829/pandorini-papiri-firma-koje-se-niko-ne-sjeca-otkriva-veze-tonceva-i-srpskog-biznismena-iz-singapura> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Vijesti prenose Tončevljev iskaz: 'S Darkom Tamindžićem sam odavno prijatelj'."@sr ] .
+
+rs:SreckoKostov_DarkoTamindzic_Association a :Connection ;
+    bio:participant rs:Srecko_Kostov_Surdulica, rs:Darko_Tamindzic ;
+    rdfs:label "Poslovni saradnici"@sr, "Business associates"@en ;
+    rdfs:comment "KRIK i Vijesti opisuju Srećka Kostova kao saradnika Darka Tamindžića; navode da je Kostov osnovao NEPC koji je Tamindžić kasnije preuzeo. Veza ne određuje radno mesto, vlasnički udeo niti datume saradnje."@sr ;
+    rdfs:comment "KRIK and Vijesti describe Srećko Kostov as an associate of Darko Tamindžić and report Kostov founded NEPC, which Tamindžić later acquired. This connection does not assign an employment position, ownership share or dates of association."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://www.krik.rs/firma-koje-se-niko-ne-seca-otkriva-veze-tonceva-i-srpskog-biznismena-iz-singapura/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "KRIK za Kostova: 'Tamindžićev je saradnik'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.vijesti.me/svijet/balkan/569829/pandorini-papiri-firma-koje-se-niko-ne-sjeca-otkriva-veze-tonceva-i-srpskog-biznismena-iz-singapura> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Vijesti prenose KRIK-ov opis Kostova: 'Tamindžićev je saradnik'."@sr ] .

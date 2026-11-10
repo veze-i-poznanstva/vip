@@ -1,0 +1,20 @@
+@prefix rs: <https://w3id.org/vip/rs/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix : <http://poderopedia.com/vocab/> .
+@prefix vip: <https://w3id.org/vip/vocab#> .
+
+# Slučaj: Zrenjanin — politička pripadnost Ivana Bošnjaka.
+# Case: Zrenjanin — Ivan Bošnjak's political affiliation.
+# Obuhvata političara iz Zrenjanina, ne suvlasnika Milenijum tima.
+# Covers the Zrenjanin politician, not the co-owner of Millennium Team.
+
+rs:IvanBosnjakZrenjanin_SNS a :PoliticalConnection ;
+    :personParticipant rs:Ivan_Bosnjak_Zrenjanin ;
+    :politicalParticipant rs:SNS ;
+    rdfs:comment "Ivan Bošnjak, političar iz Zrenjanina rođen 1974, član je Srpske napredne stranke prema Istinomerovoj biografiji ažuriranoj 14. januara 2015. RTV ga je 2012. opisao kao pokrajinskog poslanika SNS prilikom izbora za gradonačelnika Zrenjanina. Datumi učlanjenja i eventualnog prestanka članstva nisu navedeni u korišćenim izvorima."@sr ;
+    rdfs:comment "Ivan Bošnjak, the Zrenjanin politician born in 1974, is identified as a Serbian Progressive Party member in Istinomer's biography updated on 14 January 2015. RTV described him as an SNS provincial assembly member when reporting his election as Zrenjanin mayor in 2012. The cited sources do not state when membership began or whether it subsequently ended."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://www.istinomer.rs/akter/ivan-bosnjak/> ; :hasDocumentType vip:factCheckProfile ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Istinomer, biografija Ivana Bošnjaka iz Zrenjanina: 'Član je Srpske napredne stranke.' Profil je ažuriran 14. januara 2015."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://rtv.rs/sr_lat/vojvodina/banat/ivan-bosnjak-novi-gradonacelnik-zrenjanina_337551.html> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "RTV, izveštaj o izboru gradonačelnika Zrenjanina: 'izabrali pokrajinskog poslanika SNS Ivana Bošnjaka (38)'."@sr ] .

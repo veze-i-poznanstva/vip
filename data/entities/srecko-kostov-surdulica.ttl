@@ -1,0 +1,24 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rs: <https://w3id.org/vip/rs/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio: <http://purl.org/vocab/bio/0.1/> .
+@prefix : <http://poderopedia.com/vocab/> .
+@prefix vip: <https://w3id.org/vip/vocab#> .
+
+# Srećko Kostov (Surdulica)
+# Matična datoteka entiteta; veze su u data/cases/pandorini-papiri.ttl.
+# Entity home file; connections are in data/cases/pandorini-papiri.ttl.
+
+rs:Srecko_Kostov_Surdulica a foaf:Person ;
+    foaf:name "Srećko Kostov (Surdulica)"@sr ;
+    foaf:firstName "Srećko" ;
+    :firstLastName "Kostov" ;
+    :alias "Srećko Kostov"@sr ;
+    rdfs:comment "Surduličanin i saradnik Darka Tamindžića, prema KRIK-u i Vijestima; naveden kao svedok u dokumentima o osnivanju Tončevljeve ofšor firme. Kostov je novinarima rekao da poznaje Tončeva, ali je negirao vezu sa firmom. Izvori ga ne predstavljaju kao političara."@sr ;
+    rdfs:comment "Surdulica associate of Darko Tamindžić, according to KRIK and Vijesti; identified as a witness in the formation documents of Tončev’s offshore company. Kostov told reporters he knew Tončev but denied involvement with the company. The sources do not identify him as a politician."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://www.krik.rs/firma-koje-se-niko-ne-seca-otkriva-veze-tonceva-i-srpskog-biznismena-iz-singapura/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "KRIK navodi da je Srećko Kostov bio 'svedok Tončevu' i potpisao osnivačka dokumenta. Kostov je negirao vezu sa firmom."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.vijesti.me/svijet/balkan/569829/pandorini-papiri-firma-koje-se-niko-ne-sjeca-otkriva-veze-tonceva-i-srpskog-biznismena-iz-singapura> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Vijesti prenose KRIK: Srećko Kostov bio je 'svedok Tončevu'; u istom članku preneta je Kostovljeva negacija veze sa firmom."@sr ] .

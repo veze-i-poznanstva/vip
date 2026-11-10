@@ -1,0 +1,23 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rs: <https://w3id.org/vip/rs/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio: <http://purl.org/vocab/bio/0.1/> .
+@prefix : <http://poderopedia.com/vocab/> .
+@prefix vip: <https://w3id.org/vip/vocab#> .
+
+# Darko Tamindžić
+# Matična datoteka entiteta; veze su u data/cases/pandorini-papiri.ttl.
+# Entity home file; connections are in data/cases/pandorini-papiri.ttl.
+
+rs:Darko_Tamindzic a foaf:Person ;
+    foaf:name "Darko Tamindžić"@sr ;
+    foaf:firstName "Darko" ;
+    :firstLastName "Tamindžić" ;
+    rdfs:comment "Biznismen iz Singapura o čijim vezama sa Novicom Tončevom i Srećkom Kostovom izveštavaju KRIK i Vijesti u projektu Pandorini papiri. Prema Tončevu, pomogao mu je da osnuje ofšor firmu; Tamindžićev advokat je potvrdio da zna za postojanje firme."@sr ;
+    rdfs:comment "Singapore-based businessman whose links to Novica Tončev and Srećko Kostov were reported by KRIK and Vijesti in the Pandora Papers investigation. Tončev said he helped establish the offshore company; Tamindžić’s lawyer acknowledged knowing of its existence."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://www.krik.rs/firma-koje-se-niko-ne-seca-otkriva-veze-tonceva-i-srpskog-biznismena-iz-singapura/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "KRIK: 'Darko Tamindžić'; poslovni saradnici i Tončev opisuju njegove poslove i ulogu u osnivanju kompanije."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.vijesti.me/svijet/balkan/569829/pandorini-papiri-firma-koje-se-niko-ne-sjeca-otkriva-veze-tonceva-i-srpskog-biznismena-iz-singapura> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Vijesti prenose KRIK-ov izveštaj o biznismenu 'Darko Tamindžić' i njegovoj vezi sa Tončevom i Kostovom."@sr ] .
