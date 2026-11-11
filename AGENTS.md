@@ -13,7 +13,7 @@ everything under `~/code/ghdl/`). THE `gh` TOOL MUST NEVER PUSH, COMMENT OR OPEN
 `danluddlum <350449005+danluddlum@users.noreply.github.com>`.**
 
 README.md is a short front page; detail
-lives in docs/ (`why-connections`, `data-guide`, `tools`). Keep this file in step with them.
+lives in docs/ (`why-connections`, `data-guide`, `tools`, `privacy`). Keep this file in step with them.
 
 ## What this is
 

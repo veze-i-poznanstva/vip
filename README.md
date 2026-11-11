@@ -53,6 +53,7 @@ The project is inspired by Chile's [Poderopedia](https://web.archive.org/web/202
 | [Why map connections](docs/why-connections.md) | The problem in depth, evidence from research, and the limits |
 | [Data guide](docs/data-guide.md) | How facts are recorded, the vocabulary, how to contribute data |
 | [Tools](docs/tools.md) | Validators, red-flag rules, the viewer, languages and the build |
+| [Privacy](docs/privacy.md) | What the viewer does with your data, and the dataset with the data of the people in it |
 | [Agent quickstart prompt](docs/agent-prompt.md) | Contributing with an AI agent |
 | [Graph explorer design](docs/ui-design.md) | Where the viewer is going |
 

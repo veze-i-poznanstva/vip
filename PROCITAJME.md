@@ -53,6 +53,7 @@ na čijoj ontologiji [PoderVocab](https://github.com/poderopedia/PoderVocabulary
 | [Zašto mapirati veze](docs/why-connections.sr.md) | Problem detaljno, nalazi istraživanja i granice |
 | [Vodič za podatke](docs/data-guide.sr.md) | Kako se beleže činjenice, rečnik, kako doprineti podacima |
 | [Alati](docs/tools.sr.md) | Validatori, pravila za crvene zastavice, pregledač, jezici i build |
+| [Privatnost](docs/privacy.sr.md) | Šta pregledač radi sa vašim podacima, a skup podataka sa podacima osoba u njemu |
 | [Prompt za brzi početak](docs/agent-prompt.sr.md) | Doprinos uz pomoć AI agenta |
 | [Dizajn istraživača grafa](docs/ui-design.sr.md) | Kuda ide pregledač |
 

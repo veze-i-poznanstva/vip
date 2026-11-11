@@ -121,6 +121,7 @@
   "about.updated": "Data last updated: {date}.",
   "about.code": "Code and data",
   "about.contribute": "Contribute with AI",
+  "about.privacy": "Privacy",
   "report.intro": "Every claim here cites at least two public sources, listed with the record.",
   "report.secondary": "VIP is a secondary source: it collects what reputable media and official registries have published, and does not investigate or decide what is true. So the first step depends on where the error is.",
   "report.case.source": "The source is wrong.",

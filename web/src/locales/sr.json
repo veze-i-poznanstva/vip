@@ -121,6 +121,7 @@
   "about.updated": "Podaci poslednji put ažurirani: {date}.",
   "about.code": "Kod i podaci",
   "about.contribute": "Doprinesi uz pomoć AI",
+  "about.privacy": "Privatnost",
   "report.intro": "Svaka tvrdnja ovde navodi najmanje dva javna izvora, koji stoje uz zapis.",
   "report.secondary": "VIP je sekundarni izvor: sabira ono što su objavili ugledni mediji i zvanični registri, i ne istražuje niti odlučuje šta je tačno. Zato prvi korak zavisi od toga gde je greška.",
   "report.case.source": "Izvor nije tačan.",

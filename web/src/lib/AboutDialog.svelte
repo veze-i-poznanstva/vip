@@ -1,6 +1,6 @@
 <script lang="ts">
   import { createEventDispatcher, onMount } from 'svelte';
-  import { t } from './i18n';
+  import { language, t } from './i18n';
 
   const dispatch = createEventDispatcher<{ close: void; report: void }>();
   const repository = 'https://github.com/veze-i-poznanstva/vip';
@@ -21,6 +21,8 @@
     <a href={repository} target="_blank" rel="noopener noreferrer">{$t('about.code')}</a>
     ·
     <a href={`${repository}/blob/main/docs/agent-prompt.sr.md`} target="_blank" rel="noopener noreferrer">{$t('about.contribute')}</a>
+    ·
+    <a href={`${repository}/blob/main/docs/${$language === 'sr' ? 'privacy.sr.md' : 'privacy.md'}`} target="_blank" rel="noopener noreferrer">{$t('about.privacy')}</a>
   </p>
   <form method="dialog">
     <button type="submit">{$t('path.close')}</button>
