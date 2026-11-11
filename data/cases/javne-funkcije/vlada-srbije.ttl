@@ -1,0 +1,51 @@
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix dbo:     <http://dbpedia.org/ontology/> .
+@prefix rs:      <https://w3id.org/vip/rs/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix :        <http://poderopedia.com/vocab/> .
+@prefix vip:     <https://w3id.org/vip/vocab#> .
+
+# Slučaj: Javne funkcije — Vlada Republike Srbije: ko je kada bio u Vladi.
+# Case: Public offices — the Government of Serbia: who sat in the Government, and when.
+# Nosioci funkcija i državni organi su deklarisani u data/entities/; ovde su samo radne veze sa tim organom, po datumu početka.
+# Office holders and government bodies are declared in data/entities/; this file holds only the work connections to that body, by start date.
+# Funkcija bez zabeleženog kraja nije dokaz da još traje; komentar daje poslednje dokumentovano stanje.
+# An office with no recorded end is not proof that it continues; the comment gives the latest documented state.
+
+rs:SinisaMali_VladaSrbije_MinistarFinansija a :WorkConnection ;
+    bio:participant rs:Sinisa_Mali ;
+    :hasEconomicOrganizationParticipant rs:Vlada_Srbije ;
+    :hasWorkRole vip:minister ;
+    :connectionStartDate "2018-05-29"^^xsd:date ;
+    rdfs:comment "Narodna skupština je 29. maja 2018. izabrala Sinišu Malog za ministra finansija, sa 154 glasa za i 30 protiv; mandat mu je počeo polaganjem zakletve (Danas, sajt Vlade). Zvanična biografija Vlade, pročitana 10. novembra 2026, vodi ga kao prvog potpredsednika Vlade i ministra finansija i navodi da je iste funkcije obavljao u mandatu do aprila 2025. Kraj nije zabeležen: to je poslednje dokumentovano stanje, ne dokaz da funkcija traje."@sr ;
+    rdfs:comment "The National Assembly elected Siniša Mali finance minister on 29 May 2018, by 154 votes to 30; his term began with the oath (Danas, the Government's site). The Government's official biography, read on 10 November 2026, lists him as First Deputy Prime Minister and Minister of Finance and says he held the same offices in the term that ended in April 2025. No end is recorded: that is the latest documented state, not proof that the office continues."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://www.danas.rs/vesti/politika/sinisa-mali-novi-ministar-finansija/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Danas, 29. maj 2018: 'poslanici su izabrali Sinišu Malog za novog ministra finansija u Vladi Srbije. Za izbor Malog glasala su 154 poslanika, protiv je bilo 30 poslanika'; 'Mali je pred poslanicima položio zakletvu, čime mu je počeo mandat.'"@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.srbija.gov.rs/vest/en/128256/sinisa-mali-appointed-new-finance-minister.php> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Sajt Vlade, 'Belgrade, 29 May 2018': 'The National Assembly of the Republic of Serbia today supported with 154 votes the proposal of Prime Minister Ana Brnabic and elected Sinisa Mali as new Minister of Finance, who up until now has served as mayor of Belgrade.'"@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.srbija.gov.rs/biografija/67114/sinisa-mali.php> ; :hasDocumentType vip:webPage ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Zvanična biografija, naslov 'Први потпредседник Владе и министар финансија': 'Од 2018. године је министар финансија у Влади Републике Србије, а од 2022. године и потпредседник Владе. Исте функције обављао је у мандату до априла 2025. године.'"@sr ] .
+
+rs:MihailoJovanovic_VladaSrbije_MinistarInformisanja a :WorkConnection ;
+    bio:participant rs:Mihailo_Jovanovic ;
+    :hasEconomicOrganizationParticipant rs:Vlada_Srbije ;
+    :hasWorkRole vip:minister ;
+    :connectionStartDate "2022-10-26"^^xsd:date ;
+    :connectionEndDate "2024-05-02"^^xsd:date ;
+    rdfs:comment "Narodna skupština je 26. oktobra 2022. izglasala treću Vladu Ane Brnabić, sa 157 glasova za i 68 protiv, i ministri su istog dana položili zakletvu; Mihailo Jovanović je u njoj ministar informisanja i telekomunikacija, novog resora izdvojenog iz Ministarstva kulture (RTS, Vreme, Vikipedija). Funkcija je prestala 2. maja 2024, kada je izabrana i zakletvu položila Vlada Miloša Vučevića sa Dejanom Ristićem kao ministrom informisanja i telekomunikacija (Biznis.rs); primopredaja dužnosti u ministarstvu obavljena je 6. maja 2024 (sajt ministarstva)."@sr ;
+    rdfs:comment "The National Assembly elected Ana Brnabić's third Government on 26 October 2022, by 157 votes to 68, and the ministers took the oath the same day; Mihailo Jovanović was its Minister of Information and Telecommunications, a new portfolio split from the Ministry of Culture (RTS, Vreme, Wikipedia). The office ended on 2 May 2024, when Miloš Vučević's Government was elected and sworn in with Dejan Ristić as Minister of Information and Telecommunications (Biznis.rs); the handover in the ministry took place on 6 May 2024 (the ministry's site)."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://www.rts.rs/lat/vesti/politika/4998728/izglasana-nova-vlada-srbije.html> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "RTS, 26. oktobar 2022: 'Premijerka i ministri nove Vlade Srbije položili su zakletvu nakon što su dobili podršku većine poslanika Narodne skupštine.'; 'podršku izboru nove vlade dalo je 157 poslanika, dok je protiv bilo 68 poslanika'; 'Na mestu ministra informisanja i telekomunikacija je Mihailo Jovanović'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.vreme.com/vesti/ministar-informisanja-mihailo-jovanovic-od-poste-do-medija-i-telekomunikacija/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Vreme, 24. oktobar 2022: 'Mihailo Jovanović dolazi na čelo Ministarstva za informisanje i telekomunikacije koje je izdvojeno iz Minstarstva kulture.'; 'Novo lice u trećoj Vladi Ane Brnabić'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://sr.wikipedia.org/wiki/Михаило_Јовановић_(политичар)> ; :hasDocumentType vip:encyclopediaArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Enciklopedijski članak: 'Најављено је 24. октобра 2022. да ће Јовановић обављати функцију министра телекомуникација и информисања у трећој влади Ане Брнабић.'; 'Заклетву је положио 26. октобра.'; uvod: 'Био је министар телекомуникација и информисања од 2022. до 2024. године.'"@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://biznis.rs/vesti/srbija/izabrana-nova-vlada-srbije/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Biznis.rs, 2. maj 2024, 'Izabrana nova Vlada Srbije': 'Za novu Vladu Srbije glasalo je 152 od 213 prisutnih poslanika, a 61 poslanik je bio protiv.'; podnaslov 'Ministri položili zakletvu'; u spisku 'ministar informisanja i telekomunikacija Dejan Ristić'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://mit.gov.rs/vest/sr/4938/primopredaja-duznosti-u-ministarstvu-informisanja-i-telekomunikacija.php> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Sajt Ministarstva informisanja i telekomunikacija, 6. maj 2024, 'Primopredaja dužnosti u Ministarstvu informisanja i telekomunikacija': 'Primopredaju su izvršili dosadašnji ministar g. dr Mihailo Jovanović i novoizabrani ministar g. Dejan Ristić.'"@sr ] .

@@ -85,6 +85,10 @@
         vip:archivedOn     "2026-11-10"^^xsd:date;
         vip:hasArchiveURL  <https://web.archive.org/web/20261110163250/https://www.companywall.rs/firma/global-media-technology-drustvo-sa-ogranicenom-odgovornoscu-beograd-stari-grad/MMz0shQD> .
 
+<https://www.vreme.com/vesti/ministar-informisanja-mihailo-jovanovic-od-poste-do-medija-i-telekomunikacija/>
+        vip:archivedOn     "2026-07-11"^^xsd:date;
+        vip:hasArchiveURL  <http://web.archive.org/web/20260711021634/https://vreme.com/vesti/ministar-informisanja-mihailo-jovanovic-od-poste-do-medija-i-telekomunikacija/> .
+
 <https://www.istinomer.rs/akter/sinisa-mali/>
         vip:archivedOn     "2026-10-30"^^xsd:date;
         vip:hasArchiveURL  <https://web.archive.org/web/20261030102432/https://www.istinomer.rs/akter/sinisa-mali/> .
@@ -341,6 +345,10 @@
         vip:archivedOn     "2026-02-17"^^xsd:date;
         vip:hasArchiveURL  <http://web.archive.org/web/20260217205038/https://www.danas.rs/vesti/ekonomija/sasa-blagojevic-alo-rock-radio-mediji-lik-dana/> .
 
+<https://biznis.rs/vesti/srbija/izabrana-nova-vlada-srbije/>
+        vip:archivedOn     "2026-03-16"^^xsd:date;
+        vip:hasArchiveURL  <http://web.archive.org/web/20260316002149/https://biznis.rs/vesti/srbija/izabrana-nova-vlada-srbije/> .
+
 <https://naled.rs/vest-premijerka-obisla-zaposlene-u-naled-u-2421>
         vip:archivedOn     "2022-12-09"^^xsd:date;
         vip:hasArchiveURL  <http://web.archive.org/web/20221209120204/https://naled.rs/vest-premijerka-obisla-zaposlene-u-naled-u-2421> .
@@ -348,6 +356,10 @@
 <https://sr.wikipedia.org/wiki/КК_Црвена_звезда>
         vip:archivedOn     "2026-06-15"^^xsd:date;
         vip:hasArchiveURL  <http://web.archive.org/web/20260615175917/https://sr.wikipedia.org/wiki/%D0%9A%D0%9A_%D0%A6%D1%80%D0%B2%D0%B5%D0%BD%D0%B0_%D0%B7%D0%B2%D0%B5%D0%B7%D0%B4%D0%B0> .
+
+<https://www.rts.rs/lat/vesti/politika/4998728/izglasana-nova-vlada-srbije.html>
+        vip:archivedOn     "2025-11-17"^^xsd:date;
+        vip:hasArchiveURL  <http://web.archive.org/web/20251117160706/https://www.rts.rs/lat/vesti/politika/4998728/izglasana-nova-vlada-srbije.html> .
 
 <https://en.wikipedia.org/wiki/Ana_Brnabi%C4%87>
         vip:archivedOn     "2026-10-28"^^xsd:date;
@@ -508,6 +520,10 @@
 <https://www.danas.rs/vesti/ekonomija/firma-koja-gradi-beograd-na-vodi-u-korupcijskom-skandalu/>
         vip:archivedOn     "2025-03-11"^^xsd:date;
         vip:hasArchiveURL  <http://web.archive.org/web/20250311005416/https://www.danas.rs/vesti/ekonomija/firma-koja-gradi-beograd-na-vodi-u-korupcijskom-skandalu/> .
+
+<https://mit.gov.rs/vest/sr/4938/primopredaja-duznosti-u-ministarstvu-informisanja-i-telekomunikacija.php>
+        vip:archivedOn     "2025-02-20"^^xsd:date;
+        vip:hasArchiveURL  <http://web.archive.org/web/20250220202734/https://mit.gov.rs/vest/sr/4938/primopredaja-duznosti-u-ministarstvu-informisanja-i-telekomunikacija.php> .
 
 <https://www.vijesti.me/svijet/balkan/569829/pandorini-papiri-firma-koje-se-niko-ne-sjeca-otkriva-veze-tonceva-i-srpskog-biznismena-iz-singapura>
         vip:archivedOn     "2024-10-14"^^xsd:date;

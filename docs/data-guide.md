@@ -96,8 +96,11 @@ Data lives in `data/` in two kinds of file:
 - `data/cases/<case>.ttl`, one per investigated case: the connections between entities, each
   with dates, roles and evidence. `milenijum-tim.ttl` holds the construction group's ownership and
   work ties; `peta-beogradska-gimnazija.ttl` holds the school class that reached the government;
-  `alo-media-system.ttl` holds the ownership of the tabloid Alo's publisher. Two files cut across
-  cases: `javne-funkcije.ttl` holds public offices and `porodicne-veze.ttl` holds kinship.
+  `alo-media-system.ttl` holds the ownership of the tabloid Alo's publisher. Two cases cut across
+  investigations: `javne-funkcije/` holds public offices, one file per public body
+  (`vlada-srbije.ttl`, `grad-beograd.ttl`), and `porodicne-veze.ttl` holds kinship. A case may be a
+  folder like that when one file would otherwise keep growing; the layout check reads only the
+  top-level folder.
   A reviewer reads one case file and sees a whole story with its sources.
 
 Working with an AI coding agent? Paste the quickstart prompt in

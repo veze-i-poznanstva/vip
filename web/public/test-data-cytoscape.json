@@ -3470,6 +3470,76 @@
   {
     "data": {
       "id": "edge27",
+      "label": "minister",
+      "source": "mihailo_jovanovic",
+      "target": "vlada_srbije",
+      "uri": "https://w3id.org/vip/rs/MihailoJovanovic_VladaSrbije_MinistarInformisanja",
+      "comment": "Narodna skupština je 26. oktobra 2022. izglasala treću Vladu Ane Brnabić, sa 157 glasova za i 68 protiv, i ministri su istog dana položili zakletvu; Mihailo Jovanović je u njoj ministar informisanja i telekomunikacija, novog resora izdvojenog iz Ministarstva kulture (RTS, Vreme, Vikipedija). Funkcija je prestala 2. maja 2024, kada je izabrana i zakletvu položila Vlada Miloša Vučevića sa Dejanom Ristićem kao ministrom informisanja i telekomunikacija (Biznis.rs); primopredaja dužnosti u ministarstvu obavljena je 6. maja 2024 (sajt ministarstva).",
+      "kind": "WorkConnection",
+      "typeLabel": "Work Connection",
+      "roles": [
+        {
+          "en": "Minister",
+          "es": "Ministro",
+          "sr": "Ministar"
+        }
+      ],
+      "start": "2022-10-26",
+      "end": "2024-05-02",
+      "file": "data/cases/javne-funkcije/vlada-srbije.ttl",
+      "line": 33,
+      "sources": [
+        {
+          "url": "https://biznis.rs/vesti/srbija/izabrana-nova-vlada-srbije/",
+          "domain": "biznis.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Biznis.rs, 2. maj 2024, \u0027Izabrana nova Vlada Srbije\u0027: \u0027Za novu Vladu Srbije glasalo je 152 od 213 prisutnih poslanika, a 61 poslanik je bio protiv.\u0027; podnaslov \u0027Ministri položili zakletvu\u0027; u spisku \u0027ministar informisanja i telekomunikacija Dejan Ristić\u0027.",
+          "archive": "http://web.archive.org/web/20260316002149/https://biznis.rs/vesti/srbija/izabrana-nova-vlada-srbije/",
+          "archivedOn": "2026-03-16"
+        },
+        {
+          "url": "https://mit.gov.rs/vest/sr/4938/primopredaja-duznosti-u-ministarstvu-informisanja-i-telekomunikacija.php",
+          "domain": "mit.gov.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Sajt Ministarstva informisanja i telekomunikacija, 6. maj 2024, \u0027Primopredaja dužnosti u Ministarstvu informisanja i telekomunikacija\u0027: \u0027Primopredaju su izvršili dosadašnji ministar g. dr Mihailo Jovanović i novoizabrani ministar g. Dejan Ristić.\u0027",
+          "archive": "http://web.archive.org/web/20250220202734/https://mit.gov.rs/vest/sr/4938/primopredaja-duznosti-u-ministarstvu-informisanja-i-telekomunikacija.php",
+          "archivedOn": "2025-02-20"
+        },
+        {
+          "url": "https://www.rts.rs/lat/vesti/politika/4998728/izglasana-nova-vlada-srbije.html",
+          "domain": "rts.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "RTS, 26. oktobar 2022: \u0027Premijerka i ministri nove Vlade Srbije položili su zakletvu nakon što su dobili podršku većine poslanika Narodne skupštine.\u0027; \u0027podršku izboru nove vlade dalo je 157 poslanika, dok je protiv bilo 68 poslanika\u0027; \u0027Na mestu ministra informisanja i telekomunikacija je Mihailo Jovanović\u0027.",
+          "archive": "http://web.archive.org/web/20251117160706/https://www.rts.rs/lat/vesti/politika/4998728/izglasana-nova-vlada-srbije.html",
+          "archivedOn": "2025-11-17"
+        },
+        {
+          "url": "https://sr.wikipedia.org/wiki/Михаило_Јовановић_(политичар)",
+          "domain": "sr.wikipedia.org",
+          "type": "encyclopediaArticle",
+          "status": "published",
+          "quote": "Enciklopedijski članak: \u0027Најављено је 24. октобра 2022. да ће Јовановић обављати функцију министра телекомуникација и информисања у трећој влади Ане Брнабић.\u0027; \u0027Заклетву је положио 26. октобра.\u0027; uvod: \u0027Био је министар телекомуникација и информисања од 2022. до 2024. године.\u0027",
+          "archive": "http://web.archive.org/web/20241226080846/https://sr.wikipedia.org/wiki/%D0%9C%D0%B8%D1%85%D0%B0%D0%B8%D0%BB%D0%BE_%D0%88%D0%BE%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%9B_(%D0%BF%D0%BE%D0%BB%D0%B8%D1%82%D0%B8%D1%87%D0%B0%D1%80)",
+          "archivedOn": "2024-12-26"
+        },
+        {
+          "url": "https://www.vreme.com/vesti/ministar-informisanja-mihailo-jovanovic-od-poste-do-medija-i-telekomunikacija/",
+          "domain": "vreme.com",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Vreme, 24. oktobar 2022: \u0027Mihailo Jovanović dolazi na čelo Ministarstva za informisanje i telekomunikacije koje je izdvojeno iz Minstarstva kulture.\u0027; \u0027Novo lice u trećoj Vladi Ane Brnabić\u0027.",
+          "archive": "http://web.archive.org/web/20260711021634/https://vreme.com/vesti/ministar-informisanja-mihailo-jovanovic-od-poste-do-medija-i-telekomunikacija/",
+          "archivedOn": "2026-07-11"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "edge28",
       "label": "ownership connection",
       "source": "milenijum_tim",
       "target": "mt_gastel",
@@ -3522,7 +3592,7 @@
   },
   {
     "data": {
-      "id": "edge28",
+      "id": "edge29",
       "label": "ownership connection",
       "source": "milenijum_tim",
       "target": "mv_investment",
@@ -3576,7 +3646,7 @@
   },
   {
     "data": {
-      "id": "edge29",
+      "id": "edge30",
       "label": "ownership connection",
       "source": "milenijum_tim",
       "target": "milenijum_adria",
@@ -3621,7 +3691,7 @@
   },
   {
     "data": {
-      "id": "edge30",
+      "id": "edge31",
       "label": "ownership connection",
       "source": "milenijum_tim",
       "target": "milenijum_resorts",
@@ -3656,7 +3726,7 @@
   },
   {
     "data": {
-      "id": "edge31",
+      "id": "edge32",
       "label": "ownership connection",
       "source": "milenijum_tim",
       "target": "milenijum_propertiz",
@@ -3700,7 +3770,7 @@
   },
   {
     "data": {
-      "id": "edge32",
+      "id": "edge33",
       "label": "ownership connection",
       "source": "milenijum_tim",
       "target": "mostogradnja_ing",
@@ -3744,7 +3814,7 @@
   },
   {
     "data": {
-      "id": "edge33",
+      "id": "edge34",
       "label": "ownership connection",
       "source": "milenijum_tim",
       "target": "pizzarotti_millennium",
@@ -3779,7 +3849,7 @@
   },
   {
     "data": {
-      "id": "edge34",
+      "id": "edge35",
       "label": "Ustupljen automobil",
       "labels": {
         "en": "Car provided",
@@ -3827,7 +3897,7 @@
   },
   {
     "data": {
-      "id": "edge35",
+      "id": "edge36",
       "label": "Ustupljen stan",
       "labels": {
         "en": "Flat provided",
@@ -3875,7 +3945,7 @@
   },
   {
     "data": {
-      "id": "edge36",
+      "id": "edge37",
       "label": "ownership connection",
       "source": "milenijum_tim",
       "target": "roberts_milenijum",
@@ -3972,7 +4042,7 @@
   },
   {
     "data": {
-      "id": "edge37",
+      "id": "edge38",
       "label": "ownership connection",
       "source": "nikola_petrovic_ems",
       "target": "arkshore_international",
@@ -4007,7 +4077,7 @@
   },
   {
     "data": {
-      "id": "edge38",
+      "id": "edge39",
       "label": "friendship",
       "source": "darko_tamindzic",
       "target": "novica_toncev",
@@ -4041,7 +4111,7 @@
   },
   {
     "data": {
-      "id": "edge39",
+      "id": "edge40",
       "label": "ownership connection",
       "source": "novica_toncev",
       "target": "service_for_efficient_energy",
@@ -4076,7 +4146,7 @@
   },
   {
     "data": {
-      "id": "edge40",
+      "id": "edge41",
       "label": "friendship",
       "source": "andrej_vucic",
       "target": "predrag_mali",
@@ -4128,7 +4198,7 @@
   },
   {
     "data": {
-      "id": "edge41",
+      "id": "edge42",
       "label": "schoolmate (same school)",
       "source": "andrej_vucic",
       "target": "predrag_mali",
@@ -4171,7 +4241,7 @@
   },
   {
     "data": {
-      "id": "edge42",
+      "id": "edge43",
       "label": "employee",
       "source": "predrag_mali",
       "target": "kbv_datacom",
@@ -4212,7 +4282,7 @@
   },
   {
     "data": {
-      "id": "edge43",
+      "id": "edge44",
       "label": "board member",
       "source": "predrag_mali",
       "target": "kk_crvena_zvezda",
@@ -4273,7 +4343,7 @@
   },
   {
     "data": {
-      "id": "edge44",
+      "id": "edge45",
       "label": "siblings",
       "source": "predrag_mali",
       "target": "sinisa_mali",
@@ -4307,7 +4377,7 @@
   },
   {
     "data": {
-      "id": "edge45",
+      "id": "edge46",
       "label": "ownership connection",
       "source": "sasa_blagojevic",
       "target": "alo_marketing",
@@ -4343,7 +4413,7 @@
   },
   {
     "data": {
-      "id": "edge46",
+      "id": "edge47",
       "label": "ownership connection",
       "source": "sasa_blagojevic",
       "target": "alo_media_system",
@@ -4415,7 +4485,7 @@
   },
   {
     "data": {
-      "id": "edge47",
+      "id": "edge48",
       "label": "ownership connection",
       "source": "sasa_blagojevic",
       "target": "global_media_technology",
@@ -4450,7 +4520,7 @@
   },
   {
     "data": {
-      "id": "edge48",
+      "id": "edge49",
       "label": "alumni",
       "source": "sasa_blagojevic",
       "target": "peta_beogradska_gimnazija",
@@ -4511,7 +4581,7 @@
   },
   {
     "data": {
-      "id": "edge49",
+      "id": "edge50",
       "label": "classmate (same class)",
       "source": "sasa_blagojevic",
       "target": "sinisa_mali",
@@ -4581,7 +4651,7 @@
   },
   {
     "data": {
-      "id": "edge50",
+      "id": "edge51",
       "label": "ownership connection",
       "source": "sasa_blagojevic",
       "target": "trilenium",
@@ -4616,7 +4686,7 @@
   },
   {
     "data": {
-      "id": "edge51",
+      "id": "edge52",
       "label": "ownership connection",
       "source": "sinisa_mali",
       "target": "brigham_holding_finance",
@@ -4652,7 +4722,7 @@
   },
   {
     "data": {
-      "id": "edge52",
+      "id": "edge53",
       "label": "alumni",
       "source": "sinisa_mali",
       "target": "ekonomski_fakultet_university_of_belgrade",
@@ -4687,7 +4757,7 @@
   },
   {
     "data": {
-      "id": "edge53",
+      "id": "edge54",
       "label": "ownership connection",
       "source": "sinisa_mali",
       "target": "etham_invest_finance",
@@ -4723,7 +4793,7 @@
   },
   {
     "data": {
-      "id": "edge54",
+      "id": "edge55",
       "label": "mayor",
       "source": "sinisa_mali",
       "target": "grad_beograd",
@@ -4740,7 +4810,7 @@
       ],
       "start": "2014-04-24",
       "end": "2018-05-28",
-      "file": "data/cases/javne-funkcije.ttl",
+      "file": "data/cases/javne-funkcije/grad-beograd.ttl",
       "line": 18,
       "sources": [
         {
@@ -4775,7 +4845,7 @@
   },
   {
     "data": {
-      "id": "edge55",
+      "id": "edge56",
       "label": "alumni",
       "source": "sinisa_mali",
       "target": "peta_beogradska_gimnazija",
@@ -4811,7 +4881,7 @@
   },
   {
     "data": {
-      "id": "edge56",
+      "id": "edge57",
       "label": "political connection",
       "source": "sinisa_mali",
       "target": "sns",
@@ -4846,7 +4916,7 @@
   },
   {
     "data": {
-      "id": "edge57",
+      "id": "edge58",
       "label": "minister",
       "source": "sinisa_mali",
       "target": "vlada_srbije",
@@ -4862,8 +4932,8 @@
         }
       ],
       "start": "2018-05-29",
-      "file": "data/cases/javne-funkcije.ttl",
-      "line": 34,
+      "file": "data/cases/javne-funkcije/vlada-srbije.ttl",
+      "line": 18,
       "sources": [
         {
           "url": "https://www.danas.rs/vesti/politika/sinisa-mali-novi-ministar-finansija/",
@@ -4897,7 +4967,7 @@
   },
   {
     "data": {
-      "id": "edge58",
+      "id": "edge59",
       "label": "Poslovni saradnici",
       "labels": {
         "en": "Business associates",
@@ -4935,7 +5005,7 @@
   },
   {
     "data": {
-      "id": "edge59",
+      "id": "edge60",
       "label": "Svedok osnivanja",
       "labels": {
         "en": "Formation witness",
@@ -4975,7 +5045,7 @@
   },
   {
     "data": {
-      "id": "edge60",
+      "id": "edge61",
       "label": "ownership connection",
       "source": "stojan_vujko",
       "target": "kbv_datacom",
@@ -5019,7 +5089,7 @@
   },
   {
     "data": {
-      "id": "edge61",
+      "id": "edge62",
       "label": "ownership connection",
       "source": "stojan_vujko",
       "target": "milenijum_tim",

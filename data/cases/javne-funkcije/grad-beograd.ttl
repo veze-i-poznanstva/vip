@@ -1,0 +1,32 @@
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix dbo:     <http://dbpedia.org/ontology/> .
+@prefix rs:      <https://w3id.org/vip/rs/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix :        <http://poderopedia.com/vocab/> .
+@prefix vip:     <https://w3id.org/vip/vocab#> .
+
+# Slučaj: Javne funkcije — Grad Beograd: ko je kada bio na čelu grada.
+# Case: Public offices — the City of Belgrade: who held the city's offices, and when.
+# Nosioci funkcija i državni organi su deklarisani u data/entities/; ovde su samo radne veze sa tim organom, po datumu početka.
+# Office holders and government bodies are declared in data/entities/; this file holds only the work connections to that body, by start date.
+# Funkcija bez zabeleženog kraja nije dokaz da još traje; komentar daje poslednje dokumentovano stanje.
+# An office with no recorded end is not proof that it continues; the comment gives the latest documented state.
+
+rs:SinisaMali_GradBeograd_Gradonacelnik a :WorkConnection ;
+    bio:participant rs:Sinisa_Mali ;
+    :hasEconomicOrganizationParticipant rs:Grad_Beograd ;
+    :hasWorkRole vip:mayor ;
+    :connectionStartDate "2014-04-24"^^xsd:date ;
+    :connectionEndDate "2018-05-28"^^xsd:date ;
+    rdfs:comment "Siniša Mali je izabran za gradonačelnika Beograda 24. aprila 2014. (Istinomer, Vikipedija) i tu funkciju vršio do maja 2018, kada je izabran za ministra finansija (zvanična biografija Vlade). Dan kraja, 28. maj 2018, daje Vikipedija; Vlada navodi samo mesec."@sr ;
+    rdfs:comment "Siniša Mali was elected mayor of Belgrade on 24 April 2014 (Istinomer, Wikipedia) and held the office until May 2018, when he was elected finance minister (the Government's official biography). The end day, 28 May 2018, comes from Wikipedia; the Government gives only the month."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://www.istinomer.rs/akter/sinisa-mali/> ; :hasDocumentType vip:factCheckProfile ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Istinomer, biografija: 'Za gradonačelnika Beograda izabran je 24. aprila 2014. godine.'"@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.srbija.gov.rs/biografija/67114/sinisa-mali.php> ; :hasDocumentType vip:webPage ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Zvanična biografija na sajtu Vlade: 'Пре ступања на дужност министра био је градоначелник Београда од априла 2014. до маја 2018. године.'"@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://sr.wikipedia.org/wiki/Синиша_Мали> ; :hasDocumentType vip:encyclopediaArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Enciklopedijski članak, infokutija: 'почетак функције 24. април 2014', 'крај функције 28. мај 2018'; tekst: 'од 2014. до 2018. градоначелник Београда'."@sr ] .

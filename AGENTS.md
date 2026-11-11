@@ -62,7 +62,9 @@ report `overlapping` or `unknown`.
 - `data/entities/<slug>.ttl`: one file per person or organisation, named after the URI local name
   lowercased with hyphens (`rs:Sinisa_Mali` -> `sinisa-mali.ttl`). Type, names, identifiers,
   identity sources.
-- `data/cases/<case>.ttl`: one file per investigation, holding only connections.
+- `data/cases/<case>.ttl`: one file per investigation, holding only connections. A case that cuts
+  across investigations may be a folder, `data/cases/javne-funkcije/<body>.ttl`, one file per public
+  body; the layout check reads only the top-level folder.
 - `archives.ttl`: machine-maintained archive records, keyed by document URL.
 - `rules/<name>.rq`: one red-flag pattern per file (nepotism, owner-in-office, schoolmates-in-power).
 - `checkDataLayout` enforces: one home file per entity; everything referenced is declared (in a

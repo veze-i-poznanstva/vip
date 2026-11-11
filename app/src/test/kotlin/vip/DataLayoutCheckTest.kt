@@ -38,6 +38,24 @@ class DataLayoutCheckTest {
     }
 
     @Test
+    fun `a case that cuts across investigations may be a folder under cases with one file per public body`() {
+        write("entities/ana.ttl", "ex:Ana a foaf:Person .")
+        write("entities/vlada.ttl", "ex:Vlada a :GovernmentOrganization .")
+        write("entities/grad.ttl", "ex:Grad a :GovernmentOrganization .")
+        write("cases/javne-funkcije/vlada.ttl", "ex:AnaVlada a :WorkConnection ; bio:participant ex:Ana, ex:Vlada .")
+        write("cases/javne-funkcije/grad.ttl", "ex:AnaGrad a :WorkConnection ; bio:participant ex:Ana, ex:Grad .")
+        assertEquals(emptyList(), problems())
+    }
+
+    @Test
+    fun `a person declared in a nested case file is still reported, nesting does not escape the rules`() {
+        write("cases/javne-funkcije/vlada.ttl", "ex:Ana a foaf:Person .")
+        val found = problems()
+        assertEquals(1, found.size, found.toString())
+        assertTrue(found.single().contains("cases/javne-funkcije/vlada.ttl") && found.single().contains("entities/"), found.toString())
+    }
+
+    @Test
     fun `blank nodes such as documentation are not entities and may appear in every file`() {
         write("entities/ana.ttl", "ex:Ana a foaf:Person ; :hasDocumentation [ a :Documentation ; :hasDocumentURL <https://a.example/> ] .")
         write("entities/ivan.ttl", "ex:Ivan a foaf:Person ; :hasDocumentation [ a :Documentation ; :hasDocumentURL <https://b.example/> ] .")
