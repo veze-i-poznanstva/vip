@@ -239,3 +239,18 @@ tasks.register<JavaExec>("ttlToCytoscape") {
     args = listOf(inputFile, outputFile, schema, archives)
     workingDir = projectDir.parentFile
 }
+
+tasks.register<JavaExec>("exportQueryData") {
+    group = "rdf"
+    description = "Publishes data.ttl (records plus entailments), schema.ttl and rules.json for the viewer's query engine"
+
+    classpath = sourceSets.main.get().runtimeClasspath
+    mainClass.set("vip.QueryExportKt")
+
+    val data = project.findProperty("data") as String? ?: "data"
+    val schema = project.findProperty("schema") as String? ?: "schema.ttl"
+    val rules = project.findProperty("rules") as String? ?: "rules"
+    val output = project.findProperty("output") as String? ?: "web/public"
+    args = listOf(data, schema, rules, output)
+    workingDir = projectDir.parentFile
+}

@@ -158,9 +158,11 @@ ne napušta pregledač osim onoga što posetilac sam odluči da preda svom AI as
 ### Odluka
 
 - **Mašina za upite.** Comunica, izdanje RDF/JS lite, čist TypeScript, nad N3.js skladištem u
-  memoriji. Oko 225 KB gzipovano, učitava se tek kada se otvori panel kome treba. Bez
-  WebAssembly-ja: mašina je čitljiva, može da se debaguje i radi u Vitestu bez binarne datoteke.
-  Lite izdanje nema ključnu reč `SERVICE`, pa upit ne može da pozove tuđi endpoint.
+  memoriji. Ceo panel za upite sa mašinom je jedan odloženo učitani deo, 339 KB gzipovano kako je
+  izmereno u bildu (sopstvena cifra lite izdanja od 225 KB prethodi njegovom parseru za SPARQL 1.2).
+  Bez WebAssembly-ja: mašina je čitljiva, može da se debaguje i radi u Vitestu bez binarne
+  datoteke. Lite izdanje nema ključnu reč `SERVICE`, pa upit ne može da pozove tuđi endpoint.
+  Njegove zavisnosti traže Node 22, koji Gradle dodatak preuzima.
 - **Jedna definicija svakog pravila.** Pravila ostaju SPARQL datoteke u `rules/`. `checkRedFlags`
   u bildu i dalje izveštava u komandnoj liniji; pregledač izvršava isti tekst.
 - **Tragovi se računaju u klijentu.** Ovo zamenjuje raniju ideju o unapred izračunatoj datoteci
@@ -174,6 +176,8 @@ Bild upisuje, pored JSON-a grafa i iz istog komita:
   `rdfs:subClassOf`, učesnici duž `rdfs:subPropertyOf`), jer mašina ne zaključuje.
 - `schema.ttl` kakav jeste, za nazive, komentare i prompt.
 - `rules.json`: ime, dvojezično objašnjenje i tekst upita svakog pravila.
+- `red-flags.json`: tragovi koje sam bild nalazi, da testovi aplikacije dokažu da mašina u
+  pregledaču daje tačno iste.
 
 ### Panel sa tragovima
 
@@ -182,7 +186,10 @@ objašnjenje svakog pravila na jeziku pregledača, broj pogodaka i svaki pogodak
 sastavljenu od naziva čvorova („Siniša Mali je vlasnik Brigham Holding & Finance i držao je
 funkciju u Gradu Beogradu kao gradonačelnik; preklapanje nepoznato“). Klik na pogodak otvara prikaz
 putanje između dva aktera, ili ego prikaz osobe. Svaki unos nosi „trag za novinara, ne nalaz“.
-Upit se ovde ne vidi.
+Upit se ovde ne vidi. Rečenica dolazi iz šablona po pravilu u rečnicima (`leads.<pravilo>`, sa
+`[opcionim]` delovima za promenljive koje red može da nema); pravilo bez šablona nabraja svoje
+promenljive i vrednosti. Red sa dve osobe otvara putanju između njih, svaki drugi red okolinu svog
+prvog aktera.
 
 ### Pitaj
 
@@ -190,14 +197,23 @@ Upit se ovde ne vidi.
 prompt i predaje ga posetiočevom asistentu.
 
 1. Prompt sadrži: zadatak (napiši jedan SPARQL 1.1 `SELECT` upit nad ovim rečnikom); sažetak
-   rečnika generisan iz `schema.ttl` na jeziku pregledača, svaku klasu i svojstvo sa nazivom i
-   komentarom, i pojedince za uloge i tipove dokumenata; prefikse; jedno ili dva pravila kao
-   rešene primere; konvencije (nepostojeći datum kraja znači nepoznato, nikad „i dalje“; datumi
-   dolaze u tri preciznosti i porede se po godini; srodstvo, kumstvo i javna funkcija su veze;
-   `rs:` imena); format odgovora (jedan ograđeni `sparql` blok, sa promenljivama za aktere koje
-   treba prikazati); i pitanje.
-2. Linkovi „Otvori u Claude-u“ i „Otvori u ChatGPT-u“ nose prompt unapred upisan u adresu, a
-   „Kopiraj prompt“ je rezerva. Stranica sama ništa ne šalje.
+   rečnika generisan iz `schema.ttl` na jeziku pregledača, ograničen na klase, svojstva i pojedince
+   koje zapisi zaista koriste (danas oko trideset klasa, dvadeset pet svojstava i dvadeset uloga,
+   vrsta i statusa dokumenata), svako sa nazivom, nadklasom ili domenom i opsegom, i komentarom;
+   prefikse; dva pravila kao rešene primere; konvencije (nepostojeći datum kraja znači nepoznato,
+   nikad „i dalje“; datumi dolaze u tri preciznosti i porede se po godini; srodstvo, kumstvo i
+   javna funkcija su veze; zaključci su materijalizovani; `rs:` imena); format odgovora (jedan
+   ograđeni `sparql` blok, sa promenljivama za aktere koje treba prikazati); i pitanje. Oko 14.000
+   znakova.
+2. Bild objavljuje uputstvo, prompt bez pitanja, kao `prompt.sr.txt` i `prompt.en.txt` pored
+   stranice. „Otvori u Claude“ i „Otvori u ChatGPT“ nose kratku instrukciju u adresi: pročitaj
+   uputstvo u celosti, pa odgovori na pitanje jednim SPARQL `SELECT` upitom. Imenovano uputstvo
+   je uvek ono na objavljenom sajtu, `https://veze-i-poznanstva.github.io/vip/prompt.<jezik>.txt`,
+   ma na kojoj stranici posetilac bio, jer asistent mora moći da ga preuzme, a do lokalnog
+   pregleda ili kopije na forku ne može da dođe. Asistent koji ne može da otvara linkove dobija
+   ceo prompt preko „Kopiraj upit za asistenta“.
+   Link je i dalje unapred popunjen samo dok se njegov tekst kodira u 8.000 znakova ili manje.
+   Stranica sama ništa ne šalje.
 3. Polje za lepljenje prima odgovor asistenta. Stranica izdvaja prvi ograđeni blok koda, ili ceo
    tekst kada ograde nema, izvršava ga istim izvršiocem kao Napredno, prikazuje redove kao
    rečenice i ističe aktere na mapi. „Prikaži upit“ otvara SPARQL; greška pri parsiranju ili
@@ -215,16 +231,18 @@ koji nauče obrasce, programerima i agentima koji generišu upite.
 ### Ograničenja
 
 - Gornja granica od 500 redova i vremensko ograničenje od pet sekundi, svako sa čitljivom porukom;
-  `LIMIT` se dodaje kada ga upit nema.
+  redovi preko granice se ne čitaju, a sopstveni `LIMIT` upita važi unutar nje.
 - Samo `SELECT`; `CONSTRUCT`, `ASK` i izmene se u interfejsu odbijaju.
 - Ceo skup podataka je u pregledaču. Pri desetinama hiljada trojki Turtle je i dalje nekoliko
   megabajta; preispitati ako naraste preko toga.
 - Vite traži poznato zaobilaženje za `process.env` kod Comunice; dokumentovano je u bildu.
-- Odloženo učitani deo ostaje ispod 250 KB gzipovano, mereno u veb bildu.
+- Odloženo učitani deo ostaje ispod 400 KB gzipovano; `web/scripts/check-bundle.mjs` obara bild
+  iznad toga, kao i kada deo više nije odvojen.
 
 ### Inkrementi
 
-Tanki, testom vođeni koraci, svaki se završava zelenim:
+Tanki, testom vođeni koraci, svaki se završava zelenim. Svih sedam je izgrađeno 10. i 11. novembra
+2026; spisak ostaje kao zapis šta koji dokazuje.
 
 1. **Izvoz.** Gradle zadatak upisuje `data.ttl` sa zaključcima, `schema.ttl` i `rules.json`.
    Kotlin testovi: veza braće i sestara izlazi tipizirana kao porodična veza; roditelj izlazi kao
@@ -233,12 +251,12 @@ Tanki, testom vođeni koraci, svaki se završava zelenim:
    ograničenje, redovi sa identifikatorima čvorova. Vitest: spoj, putanja svojstava, `SUBSTR`
    filter po godini, poruka o sintaksnoj grešci, prazan rezultat, granica.
 3. **Ekvivalencija.** Vitest: svako pravilo nad objavljenim `data.ttl` daje tačno one vezane
-   vrednosti koje je `checkRedFlags` u bildu upisao u `red-flags.json`.
+   vrednosti koje je `exportQueryData` u bildu upisao u `red-flags.json`.
 4. **Panel sa tragovima.** Rečenice iz vezanih vrednosti, klik ka putanji ili egu, ključevi
    prevoda, stanja učitavanja i greške.
 5. **Sastavljač prompta i lepljenje odgovora.** Prompt iz šeme na oba jezika (test: svaka klasa i
-   svojstvo prisutni), linkovi i kopiranje, izdvajanje bloka koda (test: ograđen, neograđen, tekst
-   pre i posle), izvršavanje i prikaz.
+   svojstvo koje podaci koriste prisutni, nekorišćeni rečnik odsutan), linkovi i kopiranje,
+   izdvajanje bloka koda (test: ograđen, neograđen, tekst pre i posle), izvršavanje i prikaz.
 6. **Napredno.** Tekstualno polje, šabloni, adresa za deljenje, tabela rezultata.
 7. **Dokumentacija i budžet.** Vodič za alate dobija zadatak; veličina paketa se proverava u veb
    bildu.

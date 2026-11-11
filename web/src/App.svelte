@@ -5,6 +5,8 @@
   import ReportDialog from './lib/ReportDialog.svelte';
   import AboutDialog from './lib/AboutDialog.svelte';
   import DetailsPanel from './lib/DetailsPanel.svelte';
+  import type { LeadFocus } from './lib/leads';
+  import { readQueryAddress } from './lib/advanced';
   import { edgeLabel, panelContent } from './lib/details';
   import type { ConnectionFields } from './lib/details';
   import { wantsCorrection, withoutCorrection } from './lib/report';
@@ -129,7 +131,14 @@
   // The details panel shows the focus node, or a clicked connection; × hides it until the next selection.
   let selectedEdgeId: string | null = null;
   let panelOpen = false;
+  // The query panel (leads, ask) takes the details panel's place; a result opens a path or a neighbourhood on the map.
+  let leadsOpen = false;
+  let queryMode: 'leads' | 'ask' | 'advanced' = 'leads';
+  let advancedQuery = '';
+  // The panel and the SPARQL engine behind it are a separate chunk, fetched the first time it opens.
+  let QueryPanel: typeof import('./lib/QueryPanel.svelte').default | null = null;
   $: panel = panelOpen ? panelContent(index, focus?.id ?? null, selectedEdgeId) : null;
+  $: if (panel) leadsOpen = false;
 
   const permalink = (id: string) => location.origin + location.pathname + writeFocusQuery(writePathQuery(location.search, null, null), id);
 
@@ -142,6 +151,29 @@
     hover = null;
     selectedEdgeId = event.detail;
     panelOpen = true;
+    leadsOpen = false;
+  }
+
+  async function openQuery(mode: typeof queryMode) {
+    hover = null;
+    closePanel();
+    queryMode = mode;
+    leadsOpen = true;
+    if (!QueryPanel) QueryPanel = (await import('./lib/QueryPanel.svelte')).default;
+  }
+
+  function showLead(event: CustomEvent<LeadFocus>) {
+    const lead = event.detail;
+    if (lead.kind === 'path') {
+      connecting = true;
+      pathFrom = lead.from;
+      pathTo = lead.to;
+      query = lead.from.label;
+      toQuery = lead.to.label;
+    } else {
+      choose(lead.node);
+      panelOpen = false;
+    }
   }
 
   let report: ReportSubject | null = null;
@@ -230,6 +262,11 @@
       index = buildIndex(data);
       loading = false;
       if (wantsCorrection(location.search)) report = { subject: $t('report.general') };
+      const shared = readQueryAddress(location.search);
+      if (shared) {
+        advancedQuery = shared;
+        openQuery('advanced');
+      }
       const linked = readPathQuery(location.search);
       if (linked.from && linked.to && index.nodes.has(linked.from) && index.nodes.has(linked.to)) {
         connecting = true;
@@ -450,6 +487,8 @@
         <button type="button" on:click={showAll}>{$t('showAll')}</button>
       {/if}
     </div>
+    <button type="button" class="link" class:strong={leadsOpen && queryMode === 'leads'} on:click={() => openQuery('leads')} disabled={loading}>{$t('leads')}</button>
+    <button type="button" class="link" class:strong={leadsOpen && queryMode === 'ask'} on:click={() => openQuery('ask')} disabled={loading}>{$t('ask')}</button>
     <button type="button" class="link" on:click={() => (about = true)}>{$t('about')}</button>
     <button type="button" class="link strong" on:click={() => (report = { subject: $t('report.general') })}>{$t('report.title')}</button>
     <select id="language-select" aria-label={$t('language')} bind:value={$language}>
@@ -525,6 +564,14 @@
         on:back={() => (selectedEdgeId = null)}
         on:report={(e) => (report = e.detail)}
       />
+    </aside>
+  {:else if leadsOpen}
+    <aside class="details" aria-label={$t('query.title')}>
+      {#if QueryPanel}
+        <svelte:component this={QueryPanel} {index} bind:mode={queryMode} bind:query={advancedQuery} on:close={() => (leadsOpen = false)} on:show={showLead} />
+      {:else}
+        <p class="panel-loading">{$t('leads.loading')}</p>
+      {/if}
     </aside>
   {/if}
   </div>
@@ -917,6 +964,11 @@
     display: flex;
     flex: 1;
     min-height: 0;
+  }
+
+  .panel-loading {
+    padding: 1rem;
+    color: #868e96;
   }
 
   .details {

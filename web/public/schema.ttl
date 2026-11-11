@@ -1,0 +1,1402 @@
+@prefix rdf:      <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl:      <http://www.w3.org/2002/07/owl#> .
+@prefix skos:     <http://www.w3.org/2004/02/skos/core#> .
+@prefix bio:      <http://purl.org/vocab/bio/0.1/> .
+@prefix rel:      <http://purl.org/vocab/relationship/> .
+@prefix foaf:     <http://xmlns.com/foaf/0.1/> .
+@prefix rdfs:     <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcterms:  <http://purl.org/dc/terms/> .
+@prefix dc:       <http://purl.org/dc/elements/1.1/> .
+@prefix label:    <http://purl.org/net/vocab/2004/03/label#> .
+@prefix vann:     <http://purl.org/vocab/vann/> .
+@prefix org:      <http://www.w3.org/ns/org#> .
+@prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
+@prefix bcnbio:   <http://datos.bcn.cl/ontologies/bcn-biographies#> .
+@prefix geo:      <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix prov:     <http://www.w3.org/ns/prov#> .
+@prefix time:     <http://www.w3.org/2006/time#> .
+@prefix sh:       <http://www.w3.org/ns/shacl#> .
+@prefix :         <http://poderopedia.com/vocab/> .
+@prefix vip:      <https://w3id.org/vip/vocab#> .
+
+
+:schema rdf:type owl:Ontology ;
+        dcterms:title "PoderVocab: A vocabulary for Poderopedia"@en, "PoderVocab: Un vocabulario para Poderopedia"@es, "PoderVocab: rečnik za Poderopediju"@sr ;
+        rdfs:label "PoderVocab: A vocabulary for Poderopedia"@en, "PoderVocab: Un vocabulario para Poderopedia"@es, "PoderVocab: rečnik za Poderopediju"@sr ;
+        dcterms:date "2025-01-07"^^xsd:date ;
+        dcterms:abstract "This document describes a vocabulary to express information about people and their relations with Organizations, Companies, etc."@en,
+                         "Este documento describe un vocabulario para expresar información acerca de personas, y sus relaciones con organizaciones y empresas"@es, "Ovaj dokument opisuje rečnik za izražavanje podataka o ljudima i njihovim vezama sa organizacijama, firmama i drugim entitetima."@sr;
+        owl:versionInfo "2.0" ;
+        vann:preferredNamespacePrefix "poder" ;
+        vann:preferredNamespaceUri "http://poderopedia.com/vocab/" .
+
+
+####################################### 
+# Classes
+#######################################
+              
+            
+foaf:Agent a owl:Class;
+           rdfs:label "Agent"@en, "Agente"@es, "Agent"@sr;
+           rdfs:comment "Un agente (humano o no)"@es, "An agent (human or not)"@en, "Agent (čovek ili ne)"@sr.
+
+foaf:Person a owl:Class;
+            rdfs:label "Person"@en, "Persona"@es, "Osoba"@sr;
+            rdfs:comment "A person"@en, "Una persona"@es, "Osoba"@sr;
+            rdfs:subClassOf foaf:Agent;
+            rdfs:subClassOf [
+                a owl:Restriction;
+                owl:onProperty :hasGender;
+                owl:maxCardinality "1"^^xsd:nonNegativeInteger
+            ];
+            rdfs:subClassOf [
+                a owl:Restriction;
+                owl:onProperty :hasTaxId;
+                owl:maxCardinality "1"^^xsd:nonNegativeInteger
+            ].
+
+foaf:Organization a owl:Class;
+            rdfs:label "Organization"@en, "Organización"@es, "Organizacija"@sr;
+            rdfs:comment "An organization or group of people with a common purpose"@en, "Una organización o grupo de personas con un propósito común"@es, "Organizacija ili grupa ljudi sa zajedničkim ciljem"@sr;
+            owl:equivalentClass org:Organization;
+            rdfs:subClassOf foaf:Agent.
+
+:depiction a rdf:Property, owl:ObjectProperty ;
+    rdfs:comment "A depiction of some organization or person."@en, "Una representación visual de una persona u organización"@es, "Vizuelni prikaz neke organizacije ili osobe."@sr ;
+    rdfs:domain foaf:Agent ;
+    rdfs:label "depiction"@en, "imagen"@es, "slika"@sr ;
+    rdfs:range foaf:Document .
+
+####################################### 
+# Properties for People
+#######################################
+
+foaf:firstName
+    a rdf:Property, owl:DatatypeProperty ;
+    rdfs:comment "The first name of a person."@en, "El primer nombre de una persona"@es, "Ime osobe."@sr ;
+    rdfs:domain foaf:Person ;
+    rdfs:label "firstName"@en, "Primer nombre"@es, "ime"@sr ;
+    rdfs:range xsd:string .
+
+:firstLastName a rdf:Property, owl:DatatypeProperty;
+               rdfs:subPropertyOf foaf:familyName;
+               rdfs:label "First last name"@en, "Primer apellido"@es, "Prvo prezime"@sr;
+               rdfs:domain foaf:Person ;
+               rdfs:range xsd:string .
+               
+:otherLastName a rdf:Property, owl:DatatypeProperty;
+                rdfs:subPropertyOf foaf:familyName;
+                rdfs:label "Other last name"@en, "Otro apellido"@es, "Drugo prezime"@sr;
+                rdfs:comment "Other last name, different from the first one"@en, "Otro apellido, que no es el primero"@es, "Drugo prezime, različito od prvog"@sr;
+                rdfs:domain foaf:Person ;
+                rdfs:range xsd:string .
+                
+rdfs:comment
+    a rdf:Property, owl:DatatypeProperty ;
+    rdfs:comment "A description of the subject resource." ;
+    rdfs:domain rdfs:Resource ;
+    rdfs:label "comment" ;
+    rdfs:range rdfs:Literal .
+
+foaf:based_near
+    a rdf:Property, owl:ObjectProperty ;
+    rdfs:comment "A location that something is based near, for some broadly human notion of near." ;
+    rdfs:domain geo:SpatialThing ;
+    rdfs:isDefinedBy <http://xmlns.com/foaf/0.1/> ;
+    rdfs:label "based near" ;
+    rdfs:range geo:SpatialThing.
+
+:alias a rdf:Property, owl:DatatypeProperty;
+         rdfs:subPropertyOf foaf:name, skos:altLabel;
+         rdfs:label "Alias"@en, "Alias"@es, "Alijas"@sr;
+         rdfs:comment "An alias for a person"@en, "Un alias de una persona"@es, "Alijas, nadimak ili skraćeni naziv"@sr;
+         rdfs:domain foaf:Agent ;
+         rdfs:range xsd:string .
+         
+:countryOfResidence a rdf:Property, owl:ObjectProperty;
+                     rdfs:subPropertyOf foaf:based_near;
+                     rdfs:label "Country of residence"@en, "País de residencia"@es, "Država boravka"@sr;
+                     rdfs:comment "Country where the organization's headquarters are located"@en, "Ubicación de los headquarters"@es, "Država u kojoj se nalazi sedište organizacije ili boravište osobe"@sr;
+                     rdfs:domain foaf:Agent;
+                     rdfs:range  :Country.
+
+foaf:givenName
+    a rdf:Property, owl:DatatypeProperty ;
+    rdfs:comment "The given name of some person."@en, "El nombre dado a una persona"@es, "Lično ime neke osobe."@sr ;
+    rdfs:isDefinedBy <http://xmlns.com/foaf/0.1/> ;
+    rdfs:label "Given name"@en, "Otro nombre"@es, "Lično ime"@sr ;
+    rdfs:range xsd:string .
+            
+:Gender a owl:Class;
+        rdfs:label "Gender"@en, "Sexo"@es, "Pol"@sr;
+        rdfs:comment "Gender of a person"@en, "Sexo de una persona"@es, "Pol osobe"@sr.
+
+# Gender individuals
+:Male a :Gender;
+      rdfs:label "Male"@en, "Masculino"@es, "Muški"@sr.
+
+:Female a :Gender;
+        rdfs:label "Female"@en, "Femenino"@es, "Ženski"@sr.
+
+:Other a :Gender;
+       rdfs:label "Other"@en, "Otro"@es, "Drugo"@sr.
+               
+:Country a owl:Class;
+        rdfs:subClassOf geo:SpatialThing;
+        rdfs:label "Country"@en, "País"@es, "Država"@sr;
+        rdfs:comment "A region legally defined as a distinct entity in political geography"@en, "Área geográfica y una entidad políticamente independiente con su propio gobierno, administración, etc."@es, "Oblast pravno definisana kao zasebna celina u političkoj geografiji"@sr.
+
+####################################### 
+# Bio Events
+#######################################
+        
+bio:Birth rdf:type owl:Class ;
+          rdfs:label "Birth"@en, "Nacimiento"@es, "Rođenje"@sr ;
+          rdfs:comment "The event of a person entering into life."@en, "El evento del nacimiento de una persona"@es, "Događaj rođenja osobe."@sr ;
+          rdfs:subClassOf bio:IndividualEvent ;
+          rdfs:isDefinedBy <http://purl.org/vocab/bio/0.1/> .
+
+bio:Death rdf:type owl:Class ;
+          rdfs:label "Death"@en, "Muerte"@es, "Smrt"@sr ;
+          rdfs:comment "The event of a person's life ending."@en, "El evento de la muerte de una persona"@es, "Događaj kojim se okončava život osobe."@sr ;
+          rdfs:subClassOf bio:IndividualEvent ;    
+          rdfs:isDefinedBy <http://purl.org/vocab/bio/0.1/> .
+
+bio:IndividualEvent rdf:type owl:Class ;
+                    rdfs:label "Individual Event"@en, "Evento individual"@es, "Pojedinačni događaj"@sr ;
+                    rdfs:comment "A type of event that is principally about a single person, group or organization. Other agents may be involved but the event is most significant for the principal agent."@en, "Un tipo de evento que concierne principalmente a una sola persona, grupo u organización. Pueden participar otros agentes, pero el evento es más significativo para el agente principal."@es, "Vrsta događaja koja se prvenstveno odnosi na jednu osobu, grupu ili organizaciju. Drugi agenti mogu biti uključeni, ali su sporedni."@sr ;
+                    rdfs:subClassOf bio:Event , [rdf:type owl:Restriction ;
+                                                 owl:cardinality "1"^^xsd:nonNegativeInteger ;
+                                                 owl:onProperty bio:principal
+                                                ] ;
+                    rdfs:isDefinedBy <http://purl.org/vocab/bio/0.1/> .
+
+bio:Event rdf:type owl:Class ;
+          rdfs:subClassOf :SourcedEntity;
+          rdfs:label "Event"@en, "Evento"@es, "Događaj"@sr ;
+          rdfs:comment "An event is an occurrence that brings about a change in the state of affairs for one or more people and/or other agents. Events are assumed to occur over a period of time and may not have precise start and end points."@en,
+                       "Suceso importante en la vida de una persona, grupo u organización"@es, "Događaj je zbivanje koje menja stanje stvari za jednu ili više osoba ili drugih agenata."@sr;
+          rdfs:isDefinedBy <http://purl.org/vocab/bio/0.1/> .
+
+####################################### 
+# Relations for foaf:Agent
+#######################################
+
+:Biography a owl:Class;
+           rdfs:subClassOf :SourcedEntity;
+           rdfs:label "Generic biography"@en, "Biografía genérica"@es, "Biografija"@sr;
+           rdfs:comment "A biographical description of a person or organization"@en, "Una descripción biográfica de una persona u organización"@es, "Biografski opis osobe ili organizacije"@sr.
+
+:hasUrl a rdf:Property, owl:ObjectProperty;
+        rdfs:label "Has URL"@en, "Página web"@es, "Veb adresa"@sr;
+        rdfs:subPropertyOf foaf:page;
+        rdfs:comment "Any URL related to this organization or person (including social media, corporate sites, etc.)"@en, "Cualquier URL relacionada con esa organización o persona (incluyendo social media, sitios corporativos, etc)"@es, "Bilo koja veb adresa povezana sa ovom organizacijom ili osobom (društvene mreže, sajt firme itd.)"@sr;
+        rdfs:domain foaf:Agent;
+        rdfs:range foaf:Document.
+        
+:ShortBiography a owl:Class;
+                owl:disjointWith :LongBiography;
+                rdfs:subClassOf :Biography;
+                rdfs:label "Short biography"@en, "Biografía corta"@es, "Kratka biografija"@sr;
+                rdfs:comment "Short description of a person, organization, etc"@en, "Descripción abreviada de una persona, organización, etc"@es, "Kratak opis osobe, organizacije itd."@sr.
+
+:LongBiography  a owl:Class;
+                owl:disjointWith :ShortBiography;
+                rdfs:subClassOf :Biography;
+                rdfs:label "Long biography"@en, "Biografía larga"@es, "Duga biografija"@sr;
+                rdfs:comment "Long description of a person, organization, etc"@en, "Descripción extendida de una persona, organización, etc"@es, "Dug opis osobe, organizacije itd."@sr.
+               
+:hasShortBiography a rdf:Property, owl:ObjectProperty;
+                   rdfs:label "Short biography"@en, "Biografía corta"@es, "Kratka biografija"@sr;
+                   rdfs:domain foaf:Agent;
+                   rdfs:range :ShortBiography .
+                   
+:hasLongBiography a rdf:Property, owl:ObjectProperty;
+                   rdfs:label "Long biography"@en, "Biografía larga"@es, "Duga biografija"@sr;
+                   rdfs:domain foaf:Agent;
+                   rdfs:range :LongBiography .
+                                   
+:hasMainSector a rdf:Property, owl:ObjectProperty;
+                     rdfs:label "Has main sector"@en, "Sector principal"@es, "Glavni sektor"@sr;
+                     rdfs:comment "Main sector related to the organization"@en, "Sector principal relacionado con la organización"@es, "Glavni sektor delatnosti organizacije"@sr;
+                     rdfs:domain foaf:Agent;
+                     rdfs:range  :Sector .
+
+:hasAlternativeMainSector a rdf:Property, owl:DatatypeProperty;
+                     rdfs:label "Has other main sector"@en, "Otro sector principal"@es, "Drugi glavni sektor"@sr;
+                     rdfs:comment "Main sector not listed in hasMainSector"@en, "Sector principal no listado en hasMainSector"@es, "Glavni sektor koji nije naveden u listi glavnih sektora"@sr;
+                     rdfs:domain foaf:Agent;
+                     rdfs:range  xsd:string .
+                     
+:hasOtherSector a rdf:Property, owl:ObjectProperty;
+                     rdfs:label "Secondary sector"@en, "Sector secundario"@es, "Sporedni sektor"@sr;
+                     rdfs:comment "Other sector related to the organization"@en, "Otros sectores relacionados con la organización"@es, "Drugi sektor delatnosti organizacije"@sr;
+                     rdfs:domain foaf:Agent;
+                     rdfs:range  :Sector .
+
+:hasAlternativeOtherSector a rdf:Property, owl:DatatypeProperty;
+                     rdfs:label "Has other secondary sector"@en, "Otro sector secundario"@es, "Drugi sporedni sektor"@sr;
+                     rdfs:comment "Other sector not listed in hasOtherSector"@en, "Otro sector no listado en hasOtherSector"@es, "Sporedni sektor koji nije naveden u listi sporednih sektora"@sr;
+                     rdfs:domain foaf:Agent;
+                     rdfs:range  xsd:string .
+
+:Sector a owl:Class;
+        rdfs:label "Sector"@en, "Sector"@es, "Sektor"@sr;
+        rdfs:comment "Productive sector related to an agent"@en, "Sector productivo relacionado con una persona"@es, "Privredni sektor povezan sa agentom"@sr.
+        
+####################################### 
+# Relations for bio:Event and subclasses
+#######################################
+
+bio:birth rdf:type rdf:Property ,
+                   owl:ObjectProperty ;
+          rdfs:subPropertyOf bio:event ,
+                             owl:differentFrom ;
+          rdfs:label "Birth Event"@en, "Nacimiento"@es, "Događaj rođenja"@sr ;
+          rdfs:comment "A birth event associated with a person, group or organization."@en, "El evento del nacimiento de una persona, grupo u organización"@es, "Događaj rođenja povezan sa osobom, grupom ili organizacijom."@sr ;
+          rdfs:domain foaf:Agent ;
+          rdfs:range bio:Birth ;
+          rdfs:isDefinedBy <http://purl.org/vocab/bio/0.1/> .
+          
+bio:death rdf:type rdf:Property ,
+                   owl:ObjectProperty ;
+          rdfs:subPropertyOf bio:event ,
+                             owl:differentFrom ;
+          rdfs:label "Death Event"@en, "Muerte"@es, "Događaj smrti"@sr ;
+          rdfs:comment "A death event associated with a person, group or organization."@en, "El evento de la muerte de una persona, grupo u organización"@es, "Događaj smrti povezan sa osobom, grupom ili organizacijom."@sr ;
+          rdfs:domain foaf:Agent ;
+          rdfs:range bio:Death ;
+          rdfs:isDefinedBy <http://purl.org/vocab/bio/0.1/> .
+          
+bio:date rdf:type rdf:Property, owl:DatatypeProperty ;
+         rdfs:label "Date"@en, "Fecha"@es, "Datum"@sr ;
+         rdfs:comment "The date at which an event occurred."@en, "La fecha cuando un evento ocurrió"@es, "Datum kada se događaj odigrao."@sr ;
+         rdfs:domain bio:Event ;
+         rdfs:subPropertyOf dc:date ;
+         rdfs:range xsd:dateTime ;
+         rdfs:isDefinedBy <http://purl.org/vocab/bio/0.1/> .
+         
+bio:place rdf:type rdf:Property, owl:ObjectProperty ;
+          rdfs:label "Place"@en, "Lugar"@es, "Mesto"@sr ;
+          rdfs:comment "The place at which an event occurred."@en, "Lugar donde ocurre un evento"@es, "Mesto gde se događaj odigrao."@sr ;
+          rdfs:domain bio:Event ;
+          rdfs:range geo:SpatialThing ;
+          rdfs:isDefinedBy <http://purl.org/vocab/bio/0.1/> .
+
+####################################### 
+# Relations for foaf:Person
+#######################################
+          
+:hasGender a rdf:Property, owl:ObjectProperty;
+        rdfs:label "Gender"@en, "Sexo"@es, "Pol"@sr;
+        rdfs:comment "Gender of this person"@en, "Sexo de esta persona"@es, "Pol ove osobe"@sr;
+        rdfs:domain foaf:Person;
+        rdfs:range :Gender .
+
+# Family relationships                  
+:hasParent a rdf:Property, owl:ObjectProperty;
+           rdfs:label "Has Parent"@en, "Tiene Padre/Madre"@es, "Roditelj"@sr;
+           rdfs:comment "Describes relation where a person (object) is a parent of this person"@en, "Describe la relación donde una persona (objeto) es el padre o madre de esta persona"@es, "Odnos u kojem je osoba (objekat) roditelj ove osobe"@sr;
+           owl:inverseOf :hasChild;
+           rdfs:domain foaf:Person;
+           rdfs:range foaf:Person.
+
+:hasChild  a rdf:Property, owl:ObjectProperty;
+           rdfs:label "Has Child"@en, "Tiene Hijo/a"@es, "Dete"@sr;
+           rdfs:comment "Describes relation where a person (object) is a child of this person"@en, "Describe la relación donde una persona (objeto) es el hijo o hija de esta persona"@es, "Odnos u kojem je osoba (objekat) dete ove osobe"@sr;
+           owl:inverseOf :hasParent;
+           rdfs:domain foaf:Person;
+           rdfs:range foaf:Person.
+           
+:hasSibling a rdf:Property, owl:ObjectProperty, owl:TransitiveProperty, owl:SymmetricProperty;
+           rdfs:label "Has sibling"@en, "Tiene Hermano/a"@es, "Brat ili sestra"@sr;
+           rdfs:comment "Describes relation where a person (object) is the sibling (i.e., they have at least one parent in common) of this person"@en, "Describe la relación donde una persona (objeto) es el hermano o hermana (i.e, tienen al menos un padre en común) de esta persona"@es, "Odnos u kojem je osoba (objekat) brat ili sestra ove osobe (imaju bar jednog zajedničkog roditelja)"@sr;
+           rdfs:domain foaf:Person;
+           rdfs:range foaf:Person.
+
+:hasHalfSibling a rdf:Property, owl:ObjectProperty, owl:SymmetricProperty;
+           rdfs:label "Has half-sibling"@en, "Tiene Medio hermano/a"@es, "Polubrat ili polusestra"@sr;
+           rdfs:comment "Describes relation where a person shares exactly one parent with this person"@en, "Describe la relación donde una persona comparte exactamente un padre con esta persona"@es, "Odnos u kojem osoba deli tačno jednog roditelja sa ovom osobom"@sr;
+           rdfs:domain foaf:Person;
+           rdfs:range foaf:Person.
+
+:hasStepParent a rdf:Property, owl:ObjectProperty;
+           rdfs:label "Has step-parent"@en, "Tiene Padrastro/Madrastra"@es, "Očuh ili maćeha"@sr;
+           rdfs:comment "Describes relation where a person is married to one of this person's parents"@en, "Describe la relación donde una persona está casada con uno de los padres de esta persona"@es, "Odnos u kojem je osoba u braku sa jednim od roditelja ove osobe"@sr;
+           owl:inverseOf :hasStepChild;
+           rdfs:domain foaf:Person;
+           rdfs:range foaf:Person.
+
+:hasStepChild a rdf:Property, owl:ObjectProperty;
+           rdfs:label "Has step-child"@en, "Tiene Hijastro/a"@es, "Pastorak ili pastorka"@sr;
+           rdfs:comment "Describes relation where a person is the child of this person's spouse"@en, "Describe la relación donde una persona es el hijo/a del cónyuge de esta persona"@es, "Odnos u kojem je osoba dete supružnika ove osobe"@sr;
+           owl:inverseOf :hasStepParent;
+           rdfs:domain foaf:Person;
+           rdfs:range foaf:Person.
+
+:hasAuntOrUncle a rdf:Property, owl:ObjectProperty;
+           rdfs:label "Has Aunt or Uncle"@en, "Tiene Tío/a"@es, "Tetka, ujak ili stric"@sr;
+           rdfs:comment "Describes relation where a person (object) is the sibling of one of the parents of this person"@en, "Describe la relación donde una persona (objeto) es el/la hermano/a de uno de los padres de esta persona"@es, "Odnos u kojem je osoba (objekat) brat ili sestra jednog od roditelja ove osobe"@sr;
+           owl:inverseOf :hasNieceOrNephew;
+           rdfs:domain foaf:Person;
+           rdfs:range foaf:Person.
+
+:hasNieceOrNephew a rdf:Property, owl:ObjectProperty;
+           rdfs:label "Has niece or nephew"@en, "Tiene Sobrino/a"@es, "Sestričina, bratanac i sl."@sr;
+           rdfs:comment "Describes relation where a person (object) is the child of one of the siblings of this person"@en, "Describe la relación donde una persona (objeto) es el/la hijo/a de uno de los hermano/as de esta persona"@es, "Odnos u kojem je osoba (objekat) dete brata ili sestre ove osobe"@sr;
+           owl:inverseOf :hasAuntOrUncle;
+           rdfs:domain foaf:Person;
+           rdfs:range foaf:Person.
+
+:hasGrandparent a rdf:Property, owl:ObjectProperty;
+           rdfs:label "Has grandparent"@en, "Tiene Abuelo/a"@es, "Deda ili baba"@sr;
+           rdfs:comment "Describes relation where a person (object) is the parent of the person's parent"@en, "Describe la relación donde una persona (objeto) es padre o madre del padre o madre de la persona"@es, "Odnos u kojem je osoba (objekat) roditelj roditelja ove osobe"@sr;
+           owl:inverseOf :hasGrandChild;
+           rdfs:domain foaf:Person;
+           rdfs:range foaf:Person.
+   
+:hasGrandChild a rdf:Property, owl:ObjectProperty;
+           rdfs:label "Has grandchild"@en, "Tiene Nieto/a"@es, "Unuk ili unuka"@sr;
+           rdfs:comment "Describes relation where a person (object) is the child of the person's child"@en, "Describe la relación donde una persona (objeto) es hijo/a del hijo/a de la persona"@es, "Odnos u kojem je osoba (objekat) dete deteta ove osobe"@sr;
+           owl:inverseOf :hasGrandparent;
+           rdfs:domain foaf:Person;
+           rdfs:range foaf:Person.
+           
+:hasCousin a rdf:Property, owl:ObjectProperty, owl:SymmetricProperty;
+           rdfs:label "Has cousin"@en, "Tiene Primo/a"@es, "Rođak"@sr;
+           rdfs:comment "Describes relation where a person (object) is the cousin (their parents are siblings) of this person"@en, "Describe la relación donde una persona (objeto) es primo o prima de esta persona"@es, "Odnos u kojem je osoba (objekat) rođak ove osobe (njihovi roditelji su braća ili sestre)"@sr;
+           rdfs:domain foaf:Person;
+           rdfs:range foaf:Person.
+
+# Professional relationships
+:hasMentor a rdf:Property, owl:ObjectProperty;
+           rdfs:label "Has mentor"@en, "Tiene Mentor"@es, "Mentor"@sr;
+           rdfs:comment "Describes a mentoring relationship"@en, "Describe una relación de mentoría"@es, "Opisuje mentorski odnos"@sr;
+           owl:inverseOf :hasMentee;
+           rdfs:domain foaf:Person;
+           rdfs:range foaf:Person.
+
+:hasMentee a rdf:Property, owl:ObjectProperty;
+           rdfs:label "Has mentee"@en, "Tiene Aprendiz"@es, "Štićenik"@sr;
+           rdfs:comment "Describes a mentoring relationship where this person mentors another"@en, "Describe una relación de mentoría donde esta persona es mentor de otra"@es, "Opisuje mentorski odnos u kojem je ova osoba mentor drugoj"@sr;
+           owl:inverseOf :hasMentor;
+           rdfs:domain foaf:Person;
+           rdfs:range foaf:Person.
+
+####################################### 
+# Organizations
+#######################################               
+         
+:AcademicOrganization a owl:Class;
+              rdfs:subClassOf  foaf:Organization;
+              rdfs:label       "Academic Organization"@en, "Organización académica"@es, "Akademska organizacija"@sr;
+              rdfs:comment     "An educational organization, such a school or university"@en, "Una organización educacional, como una escuela o una universidad"@es, "Obrazovna organizacija, kao što je škola ili univerzitet"@sr.
+
+:NonGovernmentalOrganization a owl:Class;
+              rdfs:subClassOf  foaf:Organization;
+              rdfs:label       "Non Governmental Organization"@en, "Organización no gubernamental"@es, "Nevladina organizacija"@sr;
+              rdfs:comment     "A non-governmental organization (NGO)"@en, "Una organización no gubernamental (ONG)"@es, "Nevladina organizacija (NVO)"@sr.
+
+:GovernmentOrganization a owl:Class;
+              rdfs:subClassOf  foaf:Organization;
+              rdfs:label       "Government Organization"@en, "Organización gubernamental"@es, "Državna organizacija"@sr;
+              rdfs:comment     "A governmental organization"@en, "Una organización gubernamental"@es, "Organizacija državne uprave"@sr.
+
+:NonProfitOrganization a owl:Class;
+              rdfs:subClassOf  foaf:Organization;
+              owl:disjointWith :Company;
+              rdfs:label       "Non-Profit Organization"@en, "Organización sin fines de lucro"@es, "Neprofitna organizacija"@sr;
+              rdfs:comment     "A non-profit organization"@en, "Una organización sin fines de lucro"@es, "Neprofitna organizacija"@sr.
+
+:InternationalOrganization a owl:Class;
+              rdfs:subClassOf  foaf:Organization;
+              rdfs:label       "International Organization"@en, "Organización internacional"@es, "Međunarodna organizacija"@sr;
+              rdfs:comment     "An international organization, like UN, UNESCO, etc."@en, "Una organización internacional, como ONU, UNESCO, etc."@es, "Međunarodna organizacija, kao UN, UNESKO itd."@sr.
+              
+:RestrictedAccessOrganization a owl:Class;
+              rdfs:subClassOf  foaf:Organization;
+              rdfs:label       "Restricted access organization"@en, "Organización de acceso restringido"@es, "Organizacija ograničenog pristupa"@sr;
+              rdfs:comment     "A restricted access organization, like social clubs, golf clubs, etc."@en, "Una organización de acceso restringido, como clubes sociales, de golf, etc."@es, "Organizacija ograničenog pristupa, kao društveni klubovi, golf klubovi itd."@sr.
+
+:ReligiousOrganization a owl:Class;
+              rdfs:subClassOf  foaf:Organization;
+              rdfs:label       "Religious Organization"@en, "Organización religiosa"@es, "Verska organizacija"@sr;
+              rdfs:comment     "A religious organization, like Opus Dei, Catholic church, etc."@en, "Una organización religiosa, como Opus Dei, Iglesia católica, etc."@es, "Verska organizacija, kao Opus Dei, Katolička crkva itd."@sr.
+   
+:ProgrammaticOrganization a owl:Class;
+              rdfs:subClassOf  foaf:Organization;
+              rdfs:label       "Programmatic Organization"@en, "Organización programática"@es, "Programska organizacija"@sr;
+              rdfs:comment     "A programmatic organization, like think tanks."@en, "Una organización programática, como los think tanks, etc."@es, "Programska organizacija, kao istraživački centri (think tank)."@sr.
+
+:PoliticalOrganization a owl:Class;
+              rdfs:subClassOf foaf:Organization;
+              rdfs:label       "Political Organization"@en, "Organización política"@es, "Politička organizacija"@sr;
+              rdfs:comment     "A Political organization, like parties."@en, "Una organización política, como partidos políticos."@es, "Politička organizacija, kao što su stranke."@sr.
+
+:Company a owl:Class;
+         rdfs:subClassOf  foaf:Organization;
+         rdfs:label       "Company"@en, "Empresa"@es, "Firma"@sr;
+         rdfs:comment     "A for profit organization"@en, "Una organización con fines de lucro"@es, "Organizacija koja posluje radi sticanja dobiti"@sr.
+         
+####################################### 
+# Relations for Organizations
+#######################################
+                           
+:hasLogo  a rdf:Property, owl:ObjectProperty;
+                     rdfs:label "Logo"@en, "Logo"@es, "Logo"@sr;
+                     rdfs:comment "Logo of the organization"@en, "Logo de la organización"@es, "Logo organizacije"@sr;
+                     rdfs:domain foaf:Organization;
+                     rdfs:range  foaf:Image .
+
+# Relations for NonGovernmentalOrganization                     
+:hasPhilantropySector a rdf:Property, owl:ObjectProperty;
+                     rdfs:label "Has Philantropy Sector"@en, "Tiene área de filantropía"@es, "Filantropski sektor"@sr;
+                     rdfs:comment "Sectors related to NGOs"@en, "Sectores relacionados a ONGs"@es, "Sektori povezani sa nevladinim organizacijama"@sr;
+                     rdfs:domain :NonGovernmentalOrganization;
+                     rdfs:range  :PhilantropySector .
+
+:hasAnotherPhilantropySector a rdf:Property, owl:DatatypeProperty;
+                     rdfs:label "Has another Non Government Organization Sector"@en, "Tiene otro Sector Org No Gubernamentales"@es, "Drugi filantropski sektor"@sr;
+                     rdfs:comment "Sectors related to NGOs not listed previously"@en, "Sectores relacionados a ONGs no listados"@es, "Sektori nevladinih organizacija koji nisu prethodno navedeni"@sr;
+                     rdfs:domain :NonGovernmentalOrganization;
+                     rdfs:range  xsd:string .
+
+:PhilantropySector a owl:Class;
+                   rdfs:label "Philantropy Sector"@en, "Sector de Filantropía"@es, "Filantropski sektor"@sr;
+                   rdfs:comment "Sector of philantropy activities"@en, "Sector de actividades filantrópicas"@es, "Sektor filantropskih aktivnosti"@sr.
+                     
+# Relations for Company
+:subsidiaryCompanyOf a rdf:Property, owl:ObjectProperty;
+                     rdfs:label "Subsidiary company of"@en, "Empresa filial de"@es, "Zavisno društvo firme"@sr;
+                     rdfs:comment "Relation between companies where one is the subsidiary of the second"@en, "Relación entre empresas donde la primera es la filial de la segunda"@es, "Odnos između firmi u kojem je prva zavisno društvo druge"@sr;
+                     rdfs:domain :Company;
+                     rdfs:range  :Company .
+
+:commercialRepresentativesOf a rdf:Property, owl:ObjectProperty;
+                     rdfs:label "Commercial representatives of"@en, "Representantes comerciales de"@es, "Trgovački zastupnik firme"@sr;
+                     rdfs:comment "Relation between companies where one represents the other commercially"@en, "Relación entre empresas donde una representa comercialmente a la otra"@es, "Odnos između firmi u kojem jedna trgovački zastupa drugu"@sr;
+                     rdfs:domain :Company;
+                     rdfs:range  :Company .
+
+:hasSocialReason a rdf:Property, owl:DatatypeProperty;
+         rdfs:subPropertyOf dcterms:title;
+         rdfs:label "Social Reason"@en, "Razón social"@es, "Poslovno ime"@sr;
+         rdfs:comment "Legal name of the organization"@en, "Nombre legal de la organización"@es, "Pravni naziv organizacije"@sr;
+         rdfs:domain foaf:Organization ;
+         rdfs:range xsd:string .    
+         
+:hasMap a rdf:Property, owl:ObjectProperty;
+          rdfs:label "Map"@en, "Mapa"@es, "Mapa"@sr;
+          rdfs:domain :Company ;
+          rdfs:range foaf:Document .
+
+:hasLegalConstitution a rdf:Property, owl:ObjectProperty;
+          rdfs:label "Legal constitution"@en, "Constitución legal"@es, "Pravni oblik"@sr;
+          rdfs:domain :Company ;
+          rdfs:range foaf:Document .
+
+:hasTickerSymbol a rdf:Property, owl:DatatypeProperty;
+          rdfs:label "Ticker symbol"@en, "Símbolo bursátil"@es, "Berzanska oznaka"@sr;
+          rdfs:domain :Company ;
+          rdfs:range xsd:string .
+
+# Business relationships
+:hasBusinessPartner a rdf:Property, owl:ObjectProperty, owl:SymmetricProperty;
+    rdfs:label "Has business partner"@en, "Tiene socio comercial"@es, "Poslovni partner"@sr;
+    rdfs:comment "Business partnership relationship"@en, "Relación de sociedad comercial"@es, "Odnos poslovnog partnerstva"@sr;
+    rdfs:domain foaf:Agent;
+    rdfs:range foaf:Agent.
+
+####################################### 
+# Connections
+#######################################               
+:SourcedEntity a owl:Class;
+               rdfs:label "Sourced Entity"@en, "Entidad con fuente"@es, "Entitet sa izvorom"@sr;
+               rdfs:comment "Abstract class of any entity that has a source where its information was taken from"@en, "Clase abstracta de cualquier entidad cuya información tenga una fuente"@es, "Apstraktna klasa za svaki entitet koji ima izvor iz kojeg su podaci preuzeti"@sr.
+               
+bio:Relationship rdf:type owl:Class ;
+                 rdfs:label "Agent Relationship"@en, "Relación entre Agentes"@es, "Odnos između agenata"@sr ;
+                 rdfs:comment "A particular type of connection existing between people, groups or organizations related to or having dealings with each other."@en, "Un tipo particular de conexión entre personas, grupos u organizaciones relacionados entre sí o que tratan entre sí."@es, "Posebna vrsta veze između ljudi, grupa ili organizacija koji su u međusobnom odnosu ili poslovanju."@sr ;
+                 rdfs:isDefinedBy <http://purl.org/vocab/bio/0.1/> .
+
+:Connection  a owl:Class;
+             rdfs:subClassOf bio:Relationship, :SourcedEntity;
+             rdfs:label "Generic connection"@en, "Conexión genérica"@es, "Opšta veza"@sr;
+             rdfs:comment "A generic connection between two or more entities during a certain period of time"@en, "Una conexión genérica entre dos o más entidades durante un cierto período de tiempo"@es, "Opšta veza između dva ili više entiteta tokom određenog perioda"@sr .
+
+:TemporalConnection a owl:Class;
+    rdfs:subClassOf :Connection, time:TemporalEntity;
+    rdfs:label "Temporal Connection"@en, "Conexión Temporal"@es, "Vremenski ograničena veza"@sr;
+    rdfs:comment "A connection with explicit temporal boundaries"@en, "Una conexión con límites temporales explícitos"@es, "Veza sa izričitim vremenskim granicama"@sr.
+
+####################################### 
+# Relations for Connection
+#######################################
+
+:hasSource a rdf:Property, owl:ObjectProperty;
+           rdfs:label "Source"@en, "Fuente"@es, "Izvor"@sr;
+           rdfs:comment "Source where the information about a connection was obtained"@en, "Fuente de donde se obtuvo la información acerca de una conexión"@es, "Izvor iz kojeg su dobijeni podaci o vezi"@sr;
+           rdfs:domain :SourcedEntity;
+           rdfs:range foaf:Document .
+
+# Data quality and provenance
+:hasConfidenceLevel a rdf:Property, owl:DatatypeProperty;
+    rdfs:label "Confidence level"@en, "Nivel de confianza"@es, "Nivo pouzdanosti"@sr;
+    rdfs:comment "Confidence level from 0 to 1"@en, "Nivel de confianza de 0 a 1"@es, "Nivo pouzdanosti od 0 do 1"@sr;
+    rdfs:domain :SourcedEntity;
+    rdfs:range xsd:decimal.
+
+:SourceReliability a owl:Class;
+    rdfs:label "Source Reliability"@en, "Confiabilidad de la Fuente"@es, "Pouzdanost izvora"@sr;
+    rdfs:comment "Reliability classification of a source"@en, "Clasificación de confiabilidad de una fuente"@es, "Klasifikacija pouzdanosti izvora"@sr.
+
+:hasSourceReliability a rdf:Property, owl:ObjectProperty;
+    rdfs:label "Source reliability"@en, "Confiabilidad de la fuente"@es, "Pouzdanost izvora"@sr;
+    rdfs:domain :SourcedEntity;
+    rdfs:range :SourceReliability.
+
+:hasTemporalExtent a rdf:Property, owl:ObjectProperty;
+    rdfs:label "Temporal extent"@en, "Extensión temporal"@es, "Vremenski opseg"@sr;
+    rdfs:domain :Connection;
+    rdfs:range time:TemporalEntity.
+           
+bio:participant rdf:type rdf:Property ,
+                         owl:ObjectProperty ;
+                rdfs:label "Participant"@en, "Participante"@es, "Učesnik"@sr ;
+                rdfs:comment "A person, group or organization that participates in a relationship for some time."@en, "Una persona, grupo u organización que participa en una relación durante algún tiempo."@es, "Osoba, grupa ili organizacija koja neko vreme učestvuje u odnosu."@sr ;
+                rdfs:domain bio:Relationship ;
+                rdfs:range foaf:Agent ;
+                rdfs:isDefinedBy <http://purl.org/vocab/bio/0.1/> ;
+                rdfs:subPropertyOf owl:differentFrom ;
+                owl:inverseOf bio:relationship .
+
+bio:relationship rdf:type rdf:Property ,
+                          owl:ObjectProperty ;
+                 rdfs:label "Relationship"@en, "Relación"@es, "Odnos"@sr ;
+                 rdfs:comment "A relationship that a person, group or organization participates in for some time."@en, "Una relación en la que una persona, grupo u organización participa durante algún tiempo."@es, "Odnos u kojem osoba, grupa ili organizacija neko vreme učestvuje."@sr ;
+                 rdfs:domain foaf:Agent ;
+                 rdfs:range bio:Relationship ;
+                 rdfs:isDefinedBy <http://purl.org/vocab/bio/0.1/> ;
+                 owl:inverseOf bio:participant .
+                 
+bio:initiatingEvent rdf:type rdf:Property ,
+                             owl:ObjectProperty ;
+                    rdfs:label "Initiating Event"@en, "Evento inicial"@es, "Početni događaj"@sr ;
+                    rdfs:comment "An event that marks the start of an interval and/or relationship. The event contributes to and/or causes of the state of affairs that hold during the interval. For example a period of study may be initiated by an Enrolment event."@en,
+                                 "Un evento que indica el comienzo de un intervalo o relación"@es, "Događaj koji označava početak intervala ili odnosa"@sr;
+                    rdfs:range bio:Event ;
+                    rdfs:isDefinedBy <http://purl.org/vocab/bio/0.1/> .
+                                    
+bio:concludingEvent rdf:type rdf:Property ,
+                             owl:ObjectProperty ;
+                    rdfs:label "Concluding Event"@en, "Evento final"@es, "Završni događaj"@sr ;
+                    rdfs:comment "An event that marks the end of an interval and/or relationship. The event changes of the state of affairs that held during the interval. For example a period of study may be concluded by a Graduation event."@en,
+                                 "Un evento que marca el final de un intervalo o relación"@es, "Događaj koji označava kraj intervala ili odnosa"@sr;
+                    rdfs:range bio:Event ;
+                    rdfs:isDefinedBy <http://purl.org/vocab/bio/0.1/> .
+                    
+:connectionStartDate a rdf:Property, owl:DatatypeProperty;
+                     rdfs:label "Connection start date"@en, "Fecha de inicio de conexión"@es, "Datum početka veze"@sr;
+                     rdfs:comment "When the connection between entities started, as precisely as the source states it: xsd:date, xsd:gYearMonth or xsd:gYear. Absent means unknown."@en, "Cuándo comenzó la conexión entre entidades, con la precisión que indica la fuente: xsd:date, xsd:gYearMonth o xsd:gYear. Su ausencia significa desconocido."@es, "Kada je veza između entiteta počela, onoliko precizno koliko izvor navodi: xsd:date, xsd:gYearMonth ili xsd:gYear. Odsustvo znači da je nepoznato."@sr ;
+                     rdfs:domain :Connection .
+
+:connectionEndDate a rdf:Property, owl:DatatypeProperty;
+                   rdfs:label "Connection end date"@en, "Fecha de fin de conexión"@es, "Datum kraja veze"@sr;
+                   rdfs:comment "When the connection between entities ended, as precisely as the source states it: xsd:date, xsd:gYearMonth or xsd:gYear. Absent means unknown, not ongoing."@en, "Cuándo terminó la conexión entre entidades, con la precisión que indica la fuente: xsd:date, xsd:gYearMonth o xsd:gYear. Su ausencia significa desconocido, no vigente."@es, "Kada je veza između entiteta prestala, onoliko precizno koliko izvor navodi: xsd:date, xsd:gYearMonth ili xsd:gYear. Odsustvo znači da je nepoznato, a ne da još traje."@sr ;
+                   rdfs:domain :Connection .
+   
+####################################### 
+# Social Connections
+#######################################               
+
+:SentimentalRelationshipConnection a owl:Class;
+               rdfs:subClassOf :Connection;
+               rdfs:label "Sentimental Relationship"@en, "Relación sentimental"@es, "Emotivna veza"@sr;
+               rdfs:comment "Class of possible sentimental relationships between people"@en, "Clase de las posibles relaciones sentimentales entre personas"@es, "Klasa mogućih emotivnih veza između ljudi"@sr .
+
+:hasSpouse a rdf:Property, owl:ObjectProperty;
+           rdfs:label "Spouse"@en, "Cónyuge"@es, "Supružnik"@sr;
+           rdfs:subPropertyOf bio:participant;
+           rdfs:comment "Connection between two people that establishes a marriage, domestic partnership, civil union, sentimental relationship, etc."@en, "Conexión entre dos personas que establece un matrimonio, convivencia, unión civil, relación sentimental, etc."@es, "Veza između dve osobe koja uspostavlja brak, vanbračnu zajednicu, građansku zajednicu, emotivnu vezu itd."@sr;
+           rdfs:domain :SentimentalRelationshipConnection;
+           rdfs:range foaf:Person .
+                             
+:Marriage  a owl:Class;
+          rdfs:subClassOf :SentimentalRelationshipConnection;
+          rdfs:label "Marriage"@en, "Matrimonio"@es, "Brak"@sr;
+          rdfs:comment "Legal union between spouses"@en, "Unión legal entre cónyuges"@es, "Zakonska zajednica supružnika"@sr.
+          
+:CivilUnion a owl:Class;
+          rdfs:subClassOf :SentimentalRelationshipConnection;
+          rdfs:label "Civil union"@en, "Unión civil"@es, "Građanska zajednica"@sr;
+          rdfs:comment "Civil union between partners"@en, "Unión civil entre parejas"@es, "Građanska zajednica partnera"@sr.
+          
+:DomesticPartnership  a owl:Class;
+          rdfs:subClassOf :SentimentalRelationshipConnection;
+          rdfs:label "Domestic partnership"@en, "Pareja de hecho"@es, "Vanbračna zajednica"@sr;
+          rdfs:comment "Domestic partnership between partners"@en, "Pareja de hecho entre compañeros"@es, "Vanbračna zajednica partnera"@sr.
+          
+:Dating  a owl:Class;
+          rdfs:subClassOf :SentimentalRelationshipConnection;
+          rdfs:label "Dating"@en, "Noviazgo"@es, "Zabavljanje"@sr;
+          rdfs:comment "Dating relationship between people"@en, "Relación de noviazgo entre personas"@es, "Ljubavna veza između ljudi"@sr.
+          
+:SocialConnection a owl:Class;
+                          rdfs:subClassOf :Connection;
+                          rdfs:label "Social connection"@en, "Conexión social"@es, "Društvena veza"@sr;
+                          rdfs:comment "Connection between two people, like friendship, acquaintances, etc."@en, "Relación entre dos personas descritas con un contexto (amistad, conocidos, etc)"@es, "Veza između dve osobe, kao prijateljstvo, poznanstvo itd."@sr .
+
+:connectedVia a rdf:Property, owl:ObjectProperty;
+                     rdfs:label "Connected via"@en, "Conectados via"@es, "Povezani preko"@sr;
+                     rdfs:comment "Entity from where two persons know each other (school, college, church, etc.)"@en, "Entidad por la cual 2 personas se conocen (colegio, universidad, iglesia, etc.)"@es, "Entitet preko kojeg se dve osobe poznaju (škola, fakultet, crkva itd.)"@sr ;
+                     rdfs:domain :SocialConnection ;
+                     rdfs:range foaf:Agent.
+                     
+:Friendship a owl:Class;
+            rdfs:subClassOf :SocialConnection;
+            rdfs:label "Friendship"@en, "Amistad"@es, "Prijateljstvo"@sr;
+            rdfs:comment "Social connection representing friendship"@en, "Conexión social que representa amistad"@es, "Društvena veza koja predstavlja prijateljstvo"@sr.
+            
+:Acquaintance a owl:Class;
+            rdfs:subClassOf :SocialConnection;
+            rdfs:label "Acquaintance"@en, "Conocidos"@es, "Poznanstvo"@sr;
+            rdfs:comment "Social connection between acquaintances"@en, "Conexión social entre conocidos"@es, "Društvena veza između poznanika"@sr.
+
+:Classmate a owl:Class;
+           rdfs:subClassOf :SocialConnection;
+           rdfs:label "Classmate (same class)"@en, "Compañero de la misma clase"@es, "Isti razred"@sr;
+           rdfs:comment "People who were in the same class (odeljenje) at school, as a source states it; attending the same school is an educational connection, not this"@en, "Personas que estuvieron en la misma clase en la escuela, según lo afirma una fuente; asistir a la misma escuela es una conexión educativa, no esta"@es, "Osobe koje su išle u isti razred (odeljenje), kako izvor navodi; pohađanje iste škole je obrazovna veza, a ne ova"@sr.
+
+####################################### 
+# Educational Connections
+#######################################               
+       
+:EducationalConnection a owl:Class;
+                          rdfs:subClassOf :Connection;
+                          rdfs:label "Educational connection"@en, "Conexión educacional (estudios)"@es, "Obrazovna veza"@sr;
+                          rdfs:comment "These connections reflects that a person studied (at least for some time) in an academic organization."@en, "Esta relación indica que una persona estudió (al menos por un tiempo) en una institución académica"@es, "Ove veze pokazuju da je osoba (bar neko vreme) studirala ili se školovala u akademskoj organizaciji."@sr .
+
+:hasStudent a rdf:Property, owl:ObjectProperty;
+         rdfs:subPropertyOf bio:participant;
+         rdfs:label "Student"@en, "Estudiante"@es, "Učenik ili student"@sr;
+         rdfs:comment "Person involved in an Education Connection"@en, "Persona en una conexión educacional"@es, "Osoba uključena u obrazovnu vezu"@sr ;
+         rdfs:domain :EducationalConnection ;
+         rdfs:range foaf:Person.
+
+:hasAcademicOrganization a rdf:Property, owl:ObjectProperty;
+         rdfs:subPropertyOf bio:participant;
+         rdfs:label "Academic organization"@en, "Organización académica"@es, "Akademska organizacija"@sr;
+         rdfs:comment "Academic organization involved in the educational connection"@en, "Organización académica involucrada en la conexión educacional"@es, "Akademska organizacija uključena u obrazovnu vezu"@sr ;
+         rdfs:domain :EducationalConnection ;
+         rdfs:range :AcademicOrganization.
+
+:StudentEducationalConnection a owl:Class;
+                       rdfs:subClassOf :EducationalConnection;
+                       rdfs:label "Student"@en, "Estudiante"@es, "Učenik ili student"@sr;
+                       rdfs:comment "Connection of a person as student in an educational institution"@en, "Conexión de una persona como estudiante en una institución educativa"@es, "Veza osobe kao učenika ili studenta obrazovne ustanove"@sr.
+
+:AlumniEducationalConnection a owl:Class;
+                      rdfs:subClassOf :EducationalConnection;
+                      rdfs:label "Alumni"@en, "Ex-alumno"@es, "Bivši učenik ili student"@sr;
+                      rdfs:comment "Connection of a person as alumni of an educational institution"@en, "Conexión de una persona como ex-alumno de una institución educativa"@es, "Veza osobe kao bivšeg učenika ili studenta obrazovne ustanove"@sr.
+         
+:GraduateEducationalConnection a owl:Class;
+                        rdfs:subClassOf :EducationalConnection;
+                        rdfs:label "Graduate"@en, "Titulado"@es, "Diplomac"@sr;
+                        rdfs:comment "Connection of a person as graduate of an educational institution"@en, "Conexión de una persona como graduado de una institución educativa"@es, "Veza osobe kao diplomca obrazovne ustanove"@sr.
+
+####################################### 
+# Academic Connections
+#######################################               
+              
+:AcademicConnection a owl:Class;
+                    rdfs:subClassOf :Connection;
+                    rdfs:label "Academic Connection"@en, "Conexión académica"@es, "Akademska veza"@sr;
+                    rdfs:comment "The connection between a person and an Educational Organization (university, school, etc)"@en, "La relación entre una persona y una organización académica (colegio, universidad, etc)"@es, "Veza između osobe i obrazovne organizacije (univerzitet, škola itd.)"@sr.
+                                 
+:academicParticipant a rdf:Property, owl:ObjectProperty;
+                     rdfs:subPropertyOf bio:participant ;
+                     rdfs:label "Academic organization participant"@en, "Organización académica participante"@es, "Akademska organizacija učesnik"@sr;
+                     rdfs:comment "An academic organization (school, university) who is part of this connection"@en, "Una organización académica (escuela, universidad) que participa de esta conexión"@es, "Akademska organizacija (škola, univerzitet) koja učestvuje u ovoj vezi"@sr;
+                     rdfs:domain :AcademicConnection;
+                     rdfs:range :AcademicOrganization.             
+                     
+####################################### 
+# Association Connections
+#######################################               
+
+:AssociationConnection a owl:Class;
+                     rdfs:subClassOf :Connection;
+                     rdfs:label "Association Connection"@en, "Conexión de asociación"@es, "Veza pripadnosti"@sr;
+                     rdfs:comment "The connection between an entity and a Organization (Opus Dei, a Think Tank) without been affiliated to it necessarily"@en, "La relación entre una entidad y una organización (Opus Dei, un Think Tank) sin necesariamente estar afiliado"@es, "Veza između entiteta i organizacije (Opus Dei, istraživački centar) bez nužne formalne pripadnosti"@sr.              
+                     
+:personParticipant a rdf:Property, owl:ObjectProperty;
+                     rdfs:subPropertyOf bio:participant ;
+                     rdfs:label "Member person"@en, "Persona miembro"@es, "Osoba član"@sr;
+                     rdfs:comment "A member of an organization"@en, "Un miembro de una organización"@es, "Član organizacije"@sr;
+                     rdfs:domain :AssociationConnection;
+                     rdfs:range foaf:Person.  
+
+:organizationParticipant a rdf:Property, owl:ObjectProperty;
+                     rdfs:subPropertyOf bio:participant ;
+                     rdfs:label "Participant organization"@en, "Organización participante"@es, "Organizacija učesnik"@sr;
+                     rdfs:comment "An organization who is part of this connection"@en, "Una organización que participa de esta conexión"@es, "Organizacija koja učestvuje u ovoj vezi"@sr;
+                     rdfs:domain :AssociationConnection;
+                     rdfs:range foaf:Organization.
+
+:MembershipAssociationConnection a owl:Class;
+        rdfs:subClassOf :AssociationConnection;
+        rdfs:label "Member"@en, "Miembro"@es, "Član"@sr;
+        rdfs:comment "Official member of an organization (social club, religious group, etc.)"@en, "Miembro oficial de una organización (club social, grupo religioso, etc.)"@es, "Zvanični član organizacije (društveni klub, verska grupa itd.)"@sr.
+
+:SympathizerAssociationConnection a owl:Class;
+        rdfs:subClassOf :AssociationConnection;
+        rdfs:label "Sympathizer"@en, "Simpatizante"@es, "Simpatizer"@sr;
+        rdfs:comment "Association connection representing sympathy or support"@en, "Conexión de asociación que representa simpatía o apoyo"@es, "Veza pripadnosti koja predstavlja simpatije ili podršku"@sr.
+
+:FinancierAssociationConnection a owl:Class;
+           rdfs:subClassOf :AssociationConnection;
+           rdfs:label "Financier"@en, "Financista"@es, "Finansijer"@sr;
+           rdfs:comment "Association connection representing financial support"@en, "Conexión de asociación que representa apoyo financiero"@es, "Veza pripadnosti koja predstavlja finansijsku podršku"@sr.
+
+:OtherAssociationConnection a owl:Class;
+                 rdfs:subClassOf :AssociationConnection;
+                 rdfs:label "Other"@en, "Otro"@es, "Drugo"@sr;
+                 rdfs:comment "Other type of association connection"@en, "Otro tipo de conexión de asociación"@es, "Druga vrsta veze pripadnosti"@sr.
+
+:PoliticalConnection a owl:Class;
+                     rdfs:subClassOf :AssociationConnection;
+                     rdfs:label "Political connection"@en, "Conexión política"@es, "Politička veza"@sr;
+                     rdfs:comment "Connection between a political organization and other entities"@en, "Relación entre una organización política y otra entidad"@es, "Veza između političke organizacije i drugih entiteta"@sr .
+                          
+:politicalParticipant a rdf:Property, owl:ObjectProperty;
+             rdfs:subPropertyOf :organizationParticipant;
+             rdfs:label "Political Organization participant"@en, "Organización política participante"@es, "Politička organizacija učesnik"@sr;
+             rdfs:comment "A political organization who is part of this connection"@en, "Una organización política que participa de esta conexión"@es, "Politička organizacija koja učestvuje u ovoj vezi"@sr;
+             rdfs:domain :PoliticalConnection;
+             rdfs:range :PoliticalOrganization.
+
+####################################### 
+# Entities
+#######################################
+
+:hasTaxId a rdf:Property, owl:DatatypeProperty, owl:FunctionalProperty;
+     rdfs:subPropertyOf dcterms:identifier;
+     rdfs:label "Tax ID"@en, "Rol Único Tributario (RUT)"@es, "Poreski identifikacioni broj"@sr;
+     rdfs:comment "ID that identifies an organization or person for tax purposes"@en, "ID que identifica a una organización o persona para efecto de los impuestos"@es, "Identifikator organizacije ili osobe za poreske svrhe"@sr;
+     rdfs:domain foaf:Agent ;
+     rdfs:range xsd:string .
+
+####################################### 
+# Financial Information
+#######################################
+
+:FinancialInformation a owl:Class;
+                 rdfs:subClassOf :SourcedEntity;
+                 rdfs:label "Financial Report"@en, "Información financiera"@es, "Finansijski izveštaj"@sr;
+                 rdfs:comment "Any financial information related to an organization (e.g., annual profit)"@en, "Cualquier información financiera relacionada con una organización (ej., utilidades anuales)"@es, "Bilo koja finansijska informacija o organizaciji (npr. godišnja dobit)"@sr.
+
+:hasFinancialInformationYear a rdf:Property, owl:DatatypeProperty;
+            rdfs:label "Date of financial information"@en, "Fecha de la información financiera"@es, "Godina finansijske informacije"@sr;
+            rdfs:domain :FinancialInformation;
+            rdfs:range xsd:gYear .
+                 
+:hasValue a rdf:Property, owl:DatatypeProperty;
+            rdfs:label "Value in a financial information"@en, "Valor en un reporte financiero"@es, "Vrednost u finansijskoj informaciji"@sr;
+            rdfs:domain :FinancialInformation;
+            rdfs:range xsd:decimal .
+         
+####################################### 
+# Work Connections
+#######################################
+          
+:WorkConnection a owl:Class;
+                    rdfs:subClassOf :Connection;
+                    rdfs:label "Work Connection"@en, "Conexión laboral"@es, "Radna veza"@sr;
+                    rdfs:comment "The connection between a person and an organization in a work context"@en, "La relación entre una persona y una organización en un contexto laboral"@es, "Veza između osobe i organizacije u radnom kontekstu"@sr.              
+                    
+:CompanyConnection a owl:Class;
+                    rdfs:subClassOf :Connection;
+                    rdfs:label "Company Connection"@en, "Conexión entre compañías"@es, "Veza između firmi"@sr;
+                    rdfs:comment "The connection between two companies"@en, "La relación entre dos compañías"@es, "Veza između dve firme"@sr.              
+
+:AcquisitionCompanyConnection a owl:Class;
+                       rdfs:subClassOf :CompanyConnection;
+                       rdfs:label "Company acquisition"@en, "Adquisición de empresa"@es, "Preuzimanje firme"@sr;
+                       rdfs:comment "Connection representing a company acquisition"@en, "Conexión que representa una adquisición de empresa"@es, "Veza koja predstavlja preuzimanje firme"@sr.
+
+:buyerCompany a rdf:Property, owl:ObjectProperty;
+              rdfs:subPropertyOf bio:participant;
+              rdfs:label "Buyer"@en, "Comprador"@es, "Kupac"@sr;
+              rdfs:domain :AcquisitionCompanyConnection;
+              rdfs:range :Company .
+              
+:targetCompany a rdf:Property, owl:ObjectProperty;
+              rdfs:subPropertyOf bio:participant;
+              rdfs:label "Target company"@en, "Compañía objetivo"@es, "Ciljna firma"@sr;
+              rdfs:domain :AcquisitionCompanyConnection;
+              rdfs:range :Company .
+              
+:MergeCompanyConnection a owl:Class;
+                    rdfs:subClassOf :CompanyConnection;
+                    rdfs:label "Company Merge"@en, "Fusión de empresas"@es, "Spajanje firmi"@sr;
+                    rdfs:comment "The connection representing a merge between companies"@en, "La conexión que representa una fusión entre empresas"@es, "Veza koja predstavlja spajanje firmi"@sr.              
+
+:mergeCompany a rdf:Property, owl:ObjectProperty;
+              rdfs:subPropertyOf bio:participant;
+              rdfs:label "Merge company"@en, "Compañía fusionada"@es, "Spojena firma"@sr;
+              rdfs:domain :MergeCompanyConnection;
+              rdfs:range :Company .
+              
+# WorkConnection relations
+:declarationOfPatrimony a rdf:Property, owl:ObjectProperty;
+                        rdfs:label "Declaration of Patrimony"@en, "Declaración de Patrimonio"@es, "Izveštaj o imovini"@sr;
+                        rdfs:domain :WorkConnection;
+                        rdfs:range foaf:Document.
+                        
+:declarationOfInterests a rdf:Property, owl:ObjectProperty;
+                        rdfs:label "Declaration of interests"@en, "Declaración de intereses"@es, "Izjava o interesima"@sr;
+                        rdfs:domain :WorkConnection;
+                        rdfs:range foaf:Document.
+              
+:hasWorkRole a rdf:Property, owl:ObjectProperty;
+          rdfs:label "Work role"@en, "Rol laboral"@es, "Radna uloga"@sr;
+          rdfs:comment "Position or role of the person in this work connection"@en, "Puesto o rol de la persona en esta conexión laboral"@es, "Položaj ili uloga osobe u ovoj radnoj vezi"@sr;
+          rdfs:domain :WorkConnection;
+          rdfs:range :WorkRole.
+          
+:WorkRole a owl:Class;
+          rdfs:label "Work role"@en, "Puesto de trabajo"@es, "Radna uloga"@sr;
+          rdfs:comment "Role or position in work context"@en, "Rol o posición en contexto laboral"@es, "Uloga ili položaj u radnom kontekstu"@sr.
+
+:hasEconomicOrganizationParticipant a rdf:Property, owl:ObjectProperty;
+          rdfs:subPropertyOf bio:participant;
+          rdfs:label "Organization/Company involved"@en, "Organización/empresa relacionada"@es, "Uključena organizacija ili firma"@sr;
+          rdfs:comment "Organization or company associated with this economic connection"@en, "Organización o empresa relacionada con esta conexión económica"@es, "Organizacija ili firma povezana sa ovom ekonomskom vezom"@sr;
+          rdfs:domain :WorkConnection;
+          rdfs:range foaf:Organization.
+
+# Work role individuals
+:ceo a :WorkRole;
+     rdfs:label "CEO"@en, "Gerente General"@es, "Generalni direktor"@sr.
+
+:cto a :WorkRole;
+     rdfs:label "CTO"@en, "Gerente de Tecnología"@es, "Tehnički direktor"@sr.
+
+:cfo a :WorkRole;
+     rdfs:label "CFO"@en, "Gerente de Finanzas"@es, "Finansijski direktor"@sr.
+
+:director a :WorkRole;
+     rdfs:label "Director"@en, "Director"@es, "Direktor"@sr.
+
+:manager a :WorkRole;
+     rdfs:label "Manager"@en, "Gerente"@es, "Menadžer"@sr.
+
+:employee a :WorkRole;
+     rdfs:label "Employee"@en, "Empleado"@es, "Zaposleni"@sr.
+
+:consultant a :WorkRole;
+     rdfs:label "Consultant"@en, "Consultor"@es, "Konsultant"@sr.
+
+:advisor a :WorkRole;
+     rdfs:label "Advisor"@en, "Asesor"@es, "Savetnik"@sr.
+     
+####################################### 
+# News Events
+#######################################
+
+:NewsEvent a owl:Class;
+           rdfs:subClassOf bio:Event;
+           rdfs:label "News event"@en, "Evento noticioso"@es, "Događaj iz vesti"@sr;
+           rdfs:comment "An event relevant from the point of view of journalism"@en, "Un evento de relevancia periodística"@es, "Događaj značajan iz novinarskog ugla"@sr.
+           
+:NewsEventConnection a owl:Class;
+                     rdfs:subClassOf :Connection;
+                     rdfs:label "News event connection"@en, "Conexión con evento noticioso"@es, "Veza sa događajem iz vesti"@sr;
+                     rdfs:comment "Describes the relation of a person with a news event during a specific period of time"@en, "Describe la relación de una persona con un evento noticioso durante un período de tiempo"@es, "Opisuje odnos osobe sa događajem iz vesti tokom određenog perioda"@sr.
+                     
+:newsEventParticipant a rdf:Property, owl:ObjectProperty;
+                     rdfs:subPropertyOf bio:participant ;
+                     rdfs:label "A news event participant in this connection"@en, "Evento noticioso participante"@es, "Događaj iz vesti učesnik"@sr;
+                     rdfs:comment "A news event which is part of this connection"@en, "Un evento noticioso que participa de esta conexión"@es, "Događaj iz vesti koji je deo ove veze"@sr;
+                     rdfs:domain :NewsEventConnection;
+                     rdfs:range :NewsEvent.                  
+                      
+dcterms:source a rdf:Property;
+               rdfs:label "Source"@en, "Fuente"@es, "Izvor"@sr;
+               rdfs:comment "A related resource from which the described resource is derived."@en, "Un recurso relacionado del cual se deriva el recurso descrito."@es, "Povezani resurs iz kojeg je opisani resurs izveden."@sr.
+               
+####################################### 
+# Documentation
+#######################################
+               
+:RelatedData a owl:Class;
+             rdfs:label "Related Data"@en , "Datos relacionados"@es, "Povezani podaci"@sr;
+             rdfs:comment "Class that describes any type of data related to an organization including a relevant date"@en, "Clase que describe datos relacionados con una organización, incluyendo su fecha relevante"@es, "Klasa koja opisuje bilo koju vrstu podataka o organizaciji, uključujući relevantan datum"@sr.
+
+:hasRelevantDate a rdf:Property, owl:DatatypeProperty;
+                        rdfs:subPropertyOf dcterms:coverage;
+                        rdfs:label "Relevant date"@en, "Fecha relevante"@es, "Relevantan datum"@sr;
+                        rdfs:comment "Date related to this data (e.g., release date, last modification, etc.)"@en, "Fecha relevante a este dato (ej., fecha de publicación, última modificación, etc)"@es, "Datum povezan sa ovim podatkom (npr. datum objavljivanja, poslednje izmene itd.)"@sr;
+                        rdfs:domain :RelatedData;
+                        rdfs:range xsd:date.
+                        
+:hasDocumentation a rdf:Property, owl:ObjectProperty;
+                  rdfs:label "Has documentation"@en, "Tiene documentación"@es, "Dokumentacija"@sr;
+                  rdfs:comment "Associates an agent or a sourced entity (such as a connection) with the documentation that substantiates it"@en, "Asocia un agente o una entidad con fuente (como una conexión) con la documentación que la respalda"@es, "Povezuje agenta ili entitet sa izvorom (npr. vezu) sa dokumentacijom koja ga potkrepljuje"@sr;
+                  rdfs:domain [ a owl:Class; owl:unionOf ( foaf:Agent :SourcedEntity ) ];
+                  rdfs:range :Documentation.
+                  
+:Documentation a owl:Class;
+               rdfs:subClassOf :RelatedData; 
+               rdfs:label "Documentation"@en , "Documentación"@es, "Dokumentacija"@sr;
+               rdfs:comment "Class that describes documents related to a person or organization, including its release date"@en, "Clase que describe documentos relacionados con una persona u organización, incluyendo su fecha de publicación"@es, "Klasa koja opisuje dokumente o osobi ili organizaciji, uključujući datum objavljivanja"@sr.
+
+:hasDocumentURL a rdf:Property, owl:ObjectProperty;
+               rdfs:label "Document URL"@en, "URL de documento"@es, "Adresa dokumenta"@sr;
+               rdfs:comment "URL where the document is located"@en, "URL donde se encuentra el documento"@es, "Veb adresa na kojoj se dokument nalazi"@sr;
+               rdfs:domain :Documentation;
+               rdfs:range foaf:Document.
+
+:hasSanctionDocumentation a rdf:Property, owl:ObjectProperty;
+                          rdfs:subPropertyOf :hasDocumentation;
+                          rdfs:label "Documents about sanctions"@en, "Documentación acerca de sanciones"@es, "Dokumenti o sankcijama"@sr;
+                          rdfs:comment "Documents describing legal sanctions related to this agent"@en, "Documentos que describen sanciones legales relacionadas con este agente"@es, "Dokumenti koji opisuju pravne sankcije u vezi sa ovim agentom"@sr.
+                           
+:hasOrganigramDocumentation a rdf:Property, owl:ObjectProperty;
+                          rdfs:subPropertyOf :hasDocumentation;
+                          rdfs:label "Organigram Documentation"@en, "Documentación de organigrama"@es, "Dokumentacija organizacione šeme"@sr;
+                           rdfs:comment "Documents describing the organigram this agent"@en, "Documentos que describen el organigrama de este agente"@es, "Dokumenti koji opisuju organizacionu šemu ovog agenta"@sr.
+
+:hasOtherDocumentation a rdf:Property, owl:ObjectProperty;
+                       rdfs:subPropertyOf :hasDocumentation;
+                       rdfs:label "Other documentation"@en, "Otra documentación"@es, "Ostala dokumentacija"@sr;
+                       rdfs:comment "Miscellaneous document related to this agent"@en, "Documentos misceláneos relacionados con este agente"@es, "Razni dokumenti u vezi sa ovim agentom"@sr.
+
+# Document types
+:DocumentType a owl:Class;
+    rdfs:label "Document Type"@en, "Tipo de Documento"@es, "Vrsta dokumenta"@sr;
+    rdfs:comment "Type of document"@en, "Tipo de documento"@es, "Vrsta dokumenta"@sr.
+
+:hasDocumentType a rdf:Property, owl:ObjectProperty;
+    rdfs:label "Document type"@en, "Tipo de documento"@es, "Vrsta dokumenta"@sr;
+    rdfs:domain :Documentation;
+    rdfs:range :DocumentType.
+
+# Document status
+:DocumentStatus a owl:Class;
+    rdfs:label "Document Status"@en, "Estado del Documento"@es, "Status dokumenta"@sr;
+    rdfs:comment "Status of a document"@en, "Estado de un documento"@es, "Status dokumenta"@sr.
+
+:hasDocumentStatus a rdf:Property, owl:ObjectProperty;
+    rdfs:label "Document status"@en, "Estado del documento"@es, "Status dokumenta"@sr;
+    rdfs:domain :Documentation;
+    rdfs:range :DocumentStatus.
+                           
+####################################### 
+# Numeric Data
+#######################################
+
+:NumericDatum a owl:Class;
+              rdfs:subClassOf :RelatedData;
+              rdfs:label "Numeric datum"@en, "Dato numérico"@es, "Brojčani podatak"@sr;
+              rdfs:comment "Numeric datum for an organization for a certain year"@en, "Información numérica para una organización, para cierto año"@es, "Brojčani podatak o organizaciji za određenu godinu"@sr.
+              
+:hasNumericDatum a rdf:Property, owl:ObjectProperty;
+                 rdfs:label "Has numerical datum"@en, "Tiene dato numérico"@es, "Brojčani podatak"@sr;
+                 rdfs:domain foaf:Organization;
+                 rdfs:range :NumericDatum.
+                 
+:hasNumberEmployees a rdf:Property, owl:ObjectProperty;
+                    rdfs:subPropertyOf :hasNumericDatum;
+                    rdfs:label "Number of Employees"@en, "Número de empleados"@es, "Broj zaposlenih"@sr.
+
+#######################################
+# VIP additions
+# Terms added by the VIP project on top of PoderVocab 2.0, in the namespace
+# https://w3id.org/vip/vocab# (prefix vip:). These terms, the SHACL shapes that follow them and
+# the Serbian translations throughout this file are VIP contributions offered under the
+# project's licence (LICENSE.md). The PoderVocab terms themselves keep Poderopedia's licence.
+#######################################
+
+# Ownership: PoderVocab has no way to say that an agent owns a company.
+vip:OwnershipConnection a owl:Class;
+    rdfs:subClassOf :Connection;
+    rdfs:label "Ownership connection"@en, "Conexión de propiedad"@es, "Vlasnička veza"@sr;
+    rdfs:comment "Connection stating that an agent owns a company, in whole or in part"@en, "Conexión que indica que un agente es propietario, total o parcial, de una empresa"@es, "Veza koja iskazuje da je agent vlasnik firme, u celini ili delimično"@sr.
+
+vip:owner a rdf:Property, owl:ObjectProperty;
+    rdfs:subPropertyOf bio:participant;
+    rdfs:label "Owner"@en, "Propietario"@es, "Vlasnik"@sr;
+    rdfs:comment "The agent that holds the ownership"@en, "El agente que posee la propiedad"@es, "Agent koji drži vlasništvo"@sr;
+    rdfs:domain vip:OwnershipConnection;
+    rdfs:range foaf:Agent.
+
+vip:ownedCompany a rdf:Property, owl:ObjectProperty;
+    rdfs:subPropertyOf bio:participant;
+    rdfs:label "Owned company"@en, "Empresa poseída"@es, "Firma u vlasništvu"@sr;
+    rdfs:comment "The company that is owned"@en, "La empresa que es poseída"@es, "Firma koja je predmet vlasništva"@sr;
+    rdfs:domain vip:OwnershipConnection;
+    rdfs:range :Company.
+
+vip:ownershipShare a rdf:Property, owl:DatatypeProperty;
+    rdfs:label "Ownership share"@en, "Participación"@es, "Vlasnički udeo"@sr;
+    rdfs:comment "Share of ownership, in percent"@en, "Participación en la propiedad, en porcentaje"@es, "Udeo u vlasništvu, u procentima"@sr;
+    rdfs:domain vip:OwnershipConnection;
+    rdfs:range xsd:decimal.
+
+# Kumstvo: in Serbia the godparent at a baptism and the witness at a wedding are both "kum",
+# and the bond is treated as kinship. PoderVocab has no term for it.
+vip:GodparentConnection a owl:Class;
+    rdfs:subClassOf :SocialConnection;
+    rdfs:label "Godparenthood (kumstvo)"@en, "Padrinazgo (kumstvo)"@es, "Kumstvo"@sr;
+    rdfs:comment "Connection between a godparent (kum) and the person or couple they stood for at a baptism or a wedding. In Serbian society this bond is as strong as kinship and is a frequent channel of influence."@en, "Conexión entre un padrino (kum) y la persona o pareja a la que apadrinó en un bautizo o una boda. En la sociedad serbia este vínculo equivale al parentesco y es un canal frecuente de influencia."@es, "Veza između kuma i osobe ili para kojima je kumovao na krštenju ili venčanju. U srpskom društvu ova veza je jaka kao srodstvo i čest je kanal uticaja."@sr.
+
+vip:godparent a rdf:Property, owl:ObjectProperty;
+    rdfs:subPropertyOf bio:participant;
+    rdfs:label "Godparent"@en, "Padrino"@es, "Kum"@sr;
+    rdfs:comment "The person who stood as godparent or wedding witness"@en, "La persona que actuó como padrino o testigo de boda"@es, "Osoba koja je kumovala na krštenju ili venčanju"@sr;
+    rdfs:domain vip:GodparentConnection;
+    rdfs:range foaf:Person.
+
+vip:godchild a rdf:Property, owl:ObjectProperty;
+    rdfs:subPropertyOf bio:participant;
+    rdfs:label "Godchild"@en, "Ahijado"@es, "Kumče"@sr;
+    rdfs:comment "The person, or each member of the couple, for whom the godparent stood"@en, "La persona, o cada miembro de la pareja, apadrinada"@es, "Osoba, ili svaki član para, kojima je kum kumovao"@sr;
+    rdfs:domain vip:GodparentConnection;
+    rdfs:range foaf:Person.
+
+# Schoolmates: PoderVocab's :Classmate means the same class. Reporting often says only that two
+# people went to school together, without the school, class or years; that weaker tie is this class.
+vip:Schoolmate a owl:Class;
+    rdfs:subClassOf :SocialConnection;
+    rdfs:label "Schoolmate (same school)"@en, "Compañero de escuela (misma escuela)"@es, "Školski drug (ista škola)"@sr;
+    rdfs:comment "Connection between two people reported to have gone to school together, without a claim that they shared a class; the school, when known, is :connectedVia."@en, "Conexión entre dos personas de las que se informa que fueron juntas a la escuela, sin afirmar que compartieran clase; la escuela, cuando se conoce, es :connectedVia."@es, "Veza između dve osobe za koje se izveštava da su zajedno išle u školu, bez tvrdnje da su delile razred; škola je, kada je poznata, :connectedVia."@sr.
+
+# Kinship: PoderVocab states family ties as bare properties between two people (:hasSibling,
+# :hasParent), which leaves no place for the evidence or the dates. VIP records kinship as a
+# connection, like every other relationship; the shapes refuse the bare properties in data.
+vip:FamilyConnection a owl:Class;
+    rdfs:subClassOf :SocialConnection;
+    rdfs:label "Family tie"@en, "Vínculo familiar"@es, "Srodstvo"@sr;
+    rdfs:comment "Connection between two members of one family, recorded with its own evidence and dates. The kind of kinship is the subclass."@en, "Conexión entre dos miembros de una misma familia, registrada con sus propias fuentes y fechas. El tipo de parentesco es la subclase."@es, "Veza između dva člana iste porodice, zabeležena sa sopstvenim izvorima i datumima. Vrsta srodstva je potklasa."@sr.
+
+vip:SiblingConnection a owl:Class;
+    rdfs:subClassOf vip:FamilyConnection;
+    rdfs:label "Siblings"@en, "Hermanos"@es, "Braća i sestre"@sr;
+    rdfs:comment "Connection between two siblings; both are plain participants, since the tie has no direction."@en, "Conexión entre dos hermanos; ambos son participantes simples, ya que el vínculo no tiene dirección."@es, "Veza između dva brata, dve sestre ili brata i sestre; oba su obični učesnici, jer veza nema smer."@sr.
+
+vip:ParentChildConnection a owl:Class;
+    rdfs:subClassOf vip:FamilyConnection;
+    rdfs:label "Parent and child"@en, "Padre o madre e hijo"@es, "Roditelj i dete"@sr;
+    rdfs:comment "Connection between a parent and a child, with the parent as vip:parent and the child as vip:child."@en, "Conexión entre un padre o madre y un hijo, con el padre como vip:parent y el hijo como vip:child."@es, "Veza između roditelja i deteta, sa roditeljem kao vip:parent i detetom kao vip:child."@sr.
+
+vip:parent a rdf:Property, owl:ObjectProperty;
+    rdfs:subPropertyOf bio:participant;
+    rdfs:label "Parent"@en, "Padre o madre"@es, "Roditelj"@sr;
+    rdfs:comment "The parent in a parent-and-child connection"@en, "El padre o la madre en una conexión entre padre e hijo"@es, "Roditelj u vezi roditelja i deteta"@sr;
+    rdfs:domain vip:ParentChildConnection;
+    rdfs:range foaf:Person.
+
+vip:child a rdf:Property, owl:ObjectProperty;
+    rdfs:subPropertyOf bio:participant;
+    rdfs:label "Child"@en, "Hijo o hija"@es, "Dete"@sr;
+    rdfs:comment "The child in a parent-and-child connection"@en, "El hijo o la hija en una conexión entre padre e hijo"@es, "Dete u vezi roditelja i deteta"@sr;
+    rdfs:domain vip:ParentChildConnection;
+    rdfs:range foaf:Person.
+
+# Tells same-named people apart with a public identifier; a page merely cited as evidence does
+# not say it is about the entity.
+vip:wikipediaArticle a rdf:Property, owl:ObjectProperty;
+    rdfs:label "Wikipedia article"@en, "Artículo de Wikipedia"@es, "Članak na Vikipediji"@sr;
+    rdfs:comment "The Wikipedia article whose subject is this agent; not an article that only mentions it"@en, "El artículo de Wikipedia cuyo tema es este agente; no un artículo que solo lo menciona"@es, "Članak na Vikipediji čija je tema ovaj agent; ne članak koji ga samo pominje"@sr;
+    rdfs:domain foaf:Agent;
+    rdfs:range foaf:Document.
+
+# The Wikidata item is a stable identifier that survives renaming and spans scripts and
+# languages; it says which same-named entity is meant, and is never evidence.
+vip:wikidataItem a rdf:Property, owl:ObjectProperty;
+    rdfs:label "Wikidata item"@en, "Elemento de Wikidata"@es, "Stavka na Vikidati"@sr;
+    rdfs:comment "The Wikidata item whose subject is this agent, as its entity IRI (http://www.wikidata.org/entity/Q...); an identifier, not a source"@en, "El elemento de Wikidata cuyo tema es este agente, como IRI de entidad (http://www.wikidata.org/entity/Q...); un identificador, no una fuente"@es, "Stavka na Vikidati čija je tema ovaj agent, kao IRI entiteta (http://www.wikidata.org/entity/Q...); identifikator, a ne izvor"@sr;
+    rdfs:domain foaf:Agent;
+    rdfs:range owl:Thing.
+
+# PoderVocab defines FinancialInformation but no property that attaches it to the organisation
+# it describes.
+vip:hasFinancialInformation a rdf:Property, owl:ObjectProperty;
+    rdfs:label "has financial information"@en, "tiene información financiera"@es, "ima finansijsku informaciju"@sr;
+    rdfs:comment "Links an organization to a financial report about it (e.g., the annual profit for one year)"@en, "Vincula una organización con un reporte financiero sobre ella (ej., la utilidad de un año)"@es, "Vezuje organizaciju za finansijski izveštaj o njoj (npr. dobit za jednu godinu)"@sr;
+    rdfs:domain foaf:Organization;
+    rdfs:range :FinancialInformation.
+
+# Work roles common in governance bodies
+vip:founder a :WorkRole;
+    rdfs:label "Founder"@en, "Fundador"@es, "Osnivač"@sr.
+
+vip:boardChair a :WorkRole;
+    rdfs:label "Chair of the board"@en, "Presidente del directorio"@es, "Predsednik upravnog odbora"@sr.
+
+vip:boardViceChair a :WorkRole;
+    rdfs:label "Vice chair of the board"@en, "Vicepresidente del directorio"@es, "Potpredsednik upravnog odbora"@sr.
+
+vip:boardMember a :WorkRole;
+    rdfs:label "Board member"@en, "Miembro del directorio"@es, "Član upravnog odbora"@sr.
+
+vip:executiveBoardMember a :WorkRole;
+    rdfs:label "Executive board member"@en, "Miembro del comité ejecutivo"@es, "Član izvršnog odbora"@sr.
+
+vip:mayor a :WorkRole;
+    rdfs:label "Mayor"@en, "Alcalde"@es, "Gradonačelnik"@sr.
+
+vip:minister a :WorkRole;
+    rdfs:label "Minister"@en, "Ministro"@es, "Ministar"@sr.
+
+vip:boardMember a :WorkRole;
+    rdfs:label "Board member"@en, "Miembro del directorio"@es, "Član upravnog odbora"@sr.
+
+vip:presidencyMember a :WorkRole;
+    rdfs:label "Presidency member"@en, "Miembro de la presidencia"@es, "Član predsedništva"@sr.
+
+# Document types used as evidence
+vip:newsArticle a :DocumentType;
+    rdfs:label "News article"@en, "Artículo de prensa"@es, "Novinski članak"@sr.
+
+vip:encyclopediaArticle a :DocumentType;
+    rdfs:label "Encyclopedia article"@en, "Artículo de enciclopedia"@es, "Enciklopedijski članak"@sr.
+
+vip:registryRecord a :DocumentType;
+    rdfs:label "Registry or database record"@en, "Registro de base de datos o registro público"@es, "Zapis iz registra ili baze podataka"@sr.
+
+vip:officialDocument a :DocumentType;
+    rdfs:label "Official document"@en, "Documento oficial"@es, "Zvanični dokument"@sr.
+
+vip:factCheckProfile a :DocumentType;
+    rdfs:label "Fact-checking profile"@en, "Perfil de verificación de hechos"@es, "Profil na sajtu za proveru činjenica"@sr.
+
+vip:webPage a :DocumentType;
+    rdfs:label "Web page"@en, "Página web"@es, "Veb stranica"@sr.
+
+vip:videoRecording a :DocumentType;
+    rdfs:label "Video recording"@en, "Grabación de video"@es, "Video snimak"@sr.
+
+# Archived copies of source documents. The subject is the document itself (the cited URL),
+# so the archive record can live in a machine-maintained file next to the hand-written data.
+vip:hasArchiveURL a rdf:Property, owl:ObjectProperty;
+    rdfs:label "Archive URL"@en, "URL de archivo"@es, "Arhivirana adresa"@sr;
+    rdfs:comment "Address of an archived snapshot of the document, for example in the Wayback Machine"@en, "Dirección de una copia archivada del documento, por ejemplo en Wayback Machine"@es, "Adresa arhivirane kopije dokumenta, npr. u Wayback Machine"@sr;
+    rdfs:domain foaf:Document;
+    rdfs:range foaf:Document.
+
+vip:archivedOn a rdf:Property, owl:DatatypeProperty;
+    rdfs:label "Archived on"@en, "Archivado el"@es, "Arhivirano dana"@sr;
+    rdfs:comment "Date of the archived snapshot"@en, "Fecha de la copia archivada"@es, "Datum arhivirane kopije"@sr;
+    rdfs:domain foaf:Document;
+    rdfs:range xsd:date.
+
+# Document statuses
+vip:published a :DocumentStatus;
+    rdfs:label "Published"@en, "Publicado"@es, "Objavljen"@sr.
+
+vip:archived a :DocumentStatus;
+    rdfs:label "Archived"@en, "Archivado"@es, "Arhiviran"@sr.
+
+vip:removed a :DocumentStatus;
+    rdfs:label "Removed"@en, "Eliminado"@es, "Uklonjen"@sr.
+
+####################################### 
+# SHACL Shapes for Validation
+#######################################
+
+:PersonShape a sh:NodeShape;
+    sh:targetClass foaf:Person;
+    sh:property [
+        sh:path foaf:firstName;
+        sh:minCount 1;
+        sh:datatype xsd:string;
+        sh:message "A person must have at least one first name"@en, "Una persona debe tener al menos un primer nombre"@es, "Osoba mora imati najmanje jedno ime"@sr
+    ];
+    sh:property [
+        sh:path :firstLastName;
+        sh:minCount 1;
+        sh:datatype xsd:string;
+        sh:message "A person must have at least one last name"@en, "Una persona debe tener al menos un apellido"@es, "Osoba mora imati najmanje jedno prezime"@sr
+    ];
+    sh:property [
+        sh:path :hasGender;
+        sh:maxCount 1;
+        sh:class :Gender;
+        sh:message "A person can have at most one gender"@en, "Una persona puede tener como máximo un género"@es, "Osoba može imati najviše jedan pol"@sr
+    ];
+    sh:property [
+        sh:path :hasTaxId;
+        sh:maxCount 0;
+        sh:message "Never record a person's tax ID or JMBG: it is personal data, and public facts tell namesakes apart"@en, "Nunca registre el RUT ni el número de identidad de una persona: son datos personales, y los hechos públicos distinguen a los homónimos"@es, "Nikad ne beležite PIB ni JMBG osobe: to su lični podaci, a imenjake razlikuju javne činjenice"@sr
+    ];
+    sh:property [
+        sh:path [ sh:alternativePath ( :hasParent :hasChild :hasSibling :hasHalfSibling :hasStepParent :hasStepChild :hasAuntOrUncle :hasNieceOrNephew :hasGrandparent :hasGrandChild :hasCousin ) ];
+        sh:maxCount 0;
+        sh:message "Kinship is a connection record (vip:SiblingConnection, vip:ParentChildConnection) with its own evidence, never a bare property on the person"@en, "El parentesco es un registro de conexión (vip:SiblingConnection, vip:ParentChildConnection) con su propia evidencia, nunca una propiedad suelta de la persona"@es, "Srodstvo je zapis veze (vip:SiblingConnection, vip:ParentChildConnection) sa sopstvenim dokazima, nikad golo svojstvo osobe"@sr
+    ].
+
+:AgentIdentifierShape a sh:NodeShape;
+    sh:targetClass foaf:Agent;
+    sh:property [
+        sh:path vip:wikidataItem;
+        sh:maxCount 1;
+        sh:nodeKind sh:IRI;
+        sh:pattern "^http://www\\.wikidata\\.org/entity/Q[1-9][0-9]*$";
+        sh:message "A Wikidata item is one entity IRI of the form http://www.wikidata.org/entity/Q<number>"@en, "Un elemento de Wikidata es un solo IRI de entidad de la forma http://www.wikidata.org/entity/Q<número>"@es, "Stavka na Vikidati je jedan IRI entiteta oblika http://www.wikidata.org/entity/Q<broj>"@sr
+    ].
+
+:OrganizationShape a sh:NodeShape;
+    sh:targetClass foaf:Organization;
+    sh:property [
+        sh:path foaf:name;
+        sh:minCount 1;
+        sh:nodeKind sh:Literal;
+        sh:message "An organization must have a name"@en, "Una organización debe tener un nombre"@es, "Organizacija mora imati naziv"@sr
+    ];
+    sh:property [
+        sh:path :hasTaxId;
+        sh:maxCount 1;
+        sh:datatype xsd:string;
+        sh:message "An organization can have at most one tax ID"@en, "Una organización puede tener como máximo un RUT"@es, "Organizacija može imati najviše jedan poreski identifikacioni broj"@sr
+    ].
+
+:ConnectionShape a sh:NodeShape;
+    sh:targetClass :Connection;
+    sh:property [
+        sh:path bio:participant;
+        sh:minCount 2;
+        sh:class foaf:Agent;
+        sh:message "A connection must have at least two participants"@en, "Una conexión debe tener al menos dos participantes"@es, "Veza mora imati najmanje dva učesnika"@sr
+    ];
+    sh:property [
+        sh:path :hasDocumentation;
+        sh:minCount 1;
+        sh:class :Documentation;
+        sh:message "A connection must have at least one piece of documentation"@en, "Una conexión debe tener al menos una documentación"@es, "Veza mora imati najmanje jedan dokument"@sr
+    ];
+    sh:property [
+        sh:path :hasDocumentation;
+        sh:node :QuotedDocumentationShape;
+        sh:message "Every citation of a connection must quote the passage that supports it, or say why it was removed, in rdfs:comment"@en, "Toda cita de una conexión debe citar el pasaje que la respalda, o explicar por qué fue retirada, en rdfs:comment"@es, "Svaki dokument uz vezu mora u rdfs:comment citirati odlomak koji je potvrđuje ili reći zašto je uklonjen"@sr
+    ];
+    sh:property [
+        sh:path :connectionStartDate;
+        sh:maxCount 1;
+        sh:or ( [ sh:datatype xsd:date ] [ sh:datatype xsd:gYearMonth ] [ sh:datatype xsd:gYear ] );
+        sh:message "A connection start date must be a single xsd:date, xsd:gYearMonth or xsd:gYear"@en, "La fecha de inicio de una conexión debe ser un único xsd:date, xsd:gYearMonth o xsd:gYear"@es, "Datum početka veze mora biti jedan xsd:date, xsd:gYearMonth ili xsd:gYear"@sr
+    ];
+    sh:property [
+        sh:path :connectionEndDate;
+        sh:maxCount 1;
+        sh:or ( [ sh:datatype xsd:date ] [ sh:datatype xsd:gYearMonth ] [ sh:datatype xsd:gYear ] );
+        sh:message "A connection end date must be a single xsd:date, xsd:gYearMonth or xsd:gYear"@en, "La fecha de fin de una conexión debe ser un único xsd:date, xsd:gYearMonth o xsd:gYear"@es, "Datum kraja veze mora biti jedan xsd:date, xsd:gYearMonth ili xsd:gYear"@sr
+    ].
+
+# Applies only through :ConnectionShape (no target class): a citation of a connection quotes its supporting passage
+# (or, when removed, says why); citations on people and organisations are not held to this.
+:QuotedDocumentationShape a sh:NodeShape;
+    sh:property [
+        sh:path rdfs:comment;
+        sh:minCount 1;
+        sh:message "Every citation of a connection must quote the passage that supports it, or say why it was removed, in rdfs:comment"@en, "Toda cita de una conexión debe citar el pasaje que la respalda, o explicar por qué fue retirada, en rdfs:comment"@es, "Svaki dokument uz vezu mora u rdfs:comment citirati odlomak koji je potvrđuje ili reći zašto je uklonjen"@sr
+    ].
+
+# Dates of different precision are compared on the part both state.
+:ConnectionChronologyShape a sh:NodeShape;
+    sh:targetClass :Connection;
+    sh:message "A connection cannot end before it starts"@en, "Una conexión no puede terminar antes de comenzar"@es, "Veza ne može da se završi pre nego što počne"@sr;
+    sh:sparql [
+        sh:select """
+            PREFIX : <http://poderopedia.com/vocab/>
+            SELECT $this WHERE {
+                $this :connectionStartDate ?start ; :connectionEndDate ?end .
+                BIND (STR(?start) AS ?s) BIND (STR(?end) AS ?e)
+                BIND (IF(STRLEN(?s) < STRLEN(?e), STRLEN(?s), STRLEN(?e)) AS ?common)
+                FILTER (SUBSTR(?e, 1, ?common) < SUBSTR(?s, 1, ?common))
+            }
+        """
+    ].
+
+:OwnershipConnectionShape a sh:NodeShape;
+    sh:targetClass vip:OwnershipConnection;
+    sh:property [
+        sh:path vip:ownershipShare;
+        sh:maxCount 1;
+        sh:datatype xsd:decimal;
+        sh:minExclusive 0;
+        sh:maxInclusive 100;
+        sh:message "An ownership share is one decimal percentage above 0 and at most 100, such as 51.0"@en, "Una participación es un único porcentaje decimal mayor que 0 y como máximo 100, por ejemplo 51.0"@es, "Vlasnički udeo je jedan decimalni procenat veći od 0 i najviše 100, na primer 51.0"@sr
+    ].
+
+# Shares that may apply at the same time are summed; records known to follow one another (one ends no later than
+# the other starts, on the common date precision) are not. An undated record is never known to be disjoint.
+:OwnershipTotalShape a sh:NodeShape;
+    sh:targetObjectsOf vip:ownedCompany;
+    sh:message "The ownership shares of a company that may apply at the same time total more than 100%; date the records so that an earlier state ends where the later one starts"@en, "Las participaciones de una empresa que pueden aplicarse al mismo tiempo suman más del 100%; date los registros de modo que un estado anterior termine donde empieza el posterior"@es, "Vlasnički udeo jedne firme koji mogu da važe u isto vreme zbirno prelaze 100%; datirajte zapise tako da se ranije stanje završava tamo gde kasnije počinje"@sr;
+    sh:sparql [
+        sh:select """
+            PREFIX : <http://poderopedia.com/vocab/>
+            PREFIX vip: <https://w3id.org/vip/vocab#>
+            SELECT $this ?value ?total WHERE {
+              {
+                SELECT ?company ?value (SUM(?share) AS ?total) WHERE {
+                  ?value vip:ownedCompany ?company ; vip:ownershipShare ?own .
+                  ?other vip:ownedCompany ?company ; vip:ownershipShare ?share .
+                  OPTIONAL { ?value :connectionStartDate ?rs }
+                  OPTIONAL { ?value :connectionEndDate ?re }
+                  OPTIONAL { ?other :connectionStartDate ?os }
+                  OPTIONAL { ?other :connectionEndDate ?oe }
+                  FILTER (?other = ?value || !(
+                    (bound(?oe) && bound(?rs) && SUBSTR(STR(?oe), 1, IF(STRLEN(STR(?oe)) < STRLEN(STR(?rs)), STRLEN(STR(?oe)), STRLEN(STR(?rs)))) <= SUBSTR(STR(?rs), 1, IF(STRLEN(STR(?oe)) < STRLEN(STR(?rs)), STRLEN(STR(?oe)), STRLEN(STR(?rs)))))
+                    ||
+                    (bound(?re) && bound(?os) && SUBSTR(STR(?re), 1, IF(STRLEN(STR(?re)) < STRLEN(STR(?os)), STRLEN(STR(?re)), STRLEN(STR(?os)))) <= SUBSTR(STR(?os), 1, IF(STRLEN(STR(?re)) < STRLEN(STR(?os)), STRLEN(STR(?re)), STRLEN(STR(?os)))))
+                  ))
+                } GROUP BY ?company ?value
+              }
+              FILTER (?company = $this && ?total > 100)
+            }
+        """
+    ].
+
+:FinancialInformationShape a sh:NodeShape;
+    sh:targetClass :FinancialInformation;
+    sh:property [
+        sh:path :hasFinancialInformationYear;
+        sh:minCount 1;
+        sh:datatype xsd:gYear;
+        sh:message "Financial information must have a year"@en, "La información financiera debe tener un año"@es, "Finansijska informacija mora imati godinu"@sr
+    ];
+    sh:property [
+        sh:path :hasValue;
+        sh:minCount 1;
+        sh:datatype xsd:decimal;
+        sh:message "Financial information must have a value"@en, "La información financiera debe tener un valor"@es, "Finansijska informacija mora imati vrednost"@sr
+    ];
+    sh:property [
+        sh:path :hasDocumentation;
+        sh:minCount 1;
+        sh:class :Documentation;
+        sh:message "Financial information must have at least one piece of documentation"@en, "La información financiera debe tener al menos una documentación"@es, "Finansijska informacija mora imati najmanje jedan dokument"@sr
+    ].
+
+:DocumentationShape a sh:NodeShape;
+    sh:targetClass :Documentation;
+    sh:property [
+        sh:path :hasDocumentURL;
+        sh:minCount 1;
+        sh:class foaf:Document;
+        sh:message "Documentation must have a URL"@en, "La documentación debe tener una URL"@es, "Dokumentacija mora imati veb adresu"@sr
+    ];
+    sh:property [
+        sh:path :hasRelevantDate;
+        sh:maxCount 1;
+        sh:datatype xsd:date;
+        sh:message "Documentation can have at most one relevant date"@en, "La documentación puede tener como máximo una fecha relevante"@es, "Dokumentacija može imati najviše jedan relevantan datum"@sr
+    ].
+
+####################################### 
+# End of Ontology
+#######################################

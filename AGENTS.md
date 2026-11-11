@@ -88,6 +88,7 @@ report `overlapping` or `unknown`.
 ./gradlew :app:checkWikidata     # what CI runs (CI=true): fail if a recorded item does not match the article, or an article's item is not recorded
 ./gradlew :app:ttlToCytoscape -Pinput=data -Poutput=web/public/test-data-cytoscape.json -Pschema=schema.ttl
 ./gradlew :app:checkRedFlags     # every rules/*.rq over the data; prints leads, always exits 0
+./gradlew :app:exportQueryData   # web/public/data.ttl (records plus entailments), schema.ttl, rules.json, red-flags.json for the viewer's query engine
 ```
 
 Schema tasks take `-Pfile` (default `schema.ttl`); data tasks take `-Pdata` (default `data`,
@@ -118,14 +119,30 @@ a directory tree or one file). Every tool exits 1 on failure except `analyzeSche
   (exits 1 on errors), `SchemaMetrics.kt`.
 - `RedFlags.kt` loads `rules/*.rq` (name, leading comment = bilingual explanation, SPARQL SELECT),
   runs them over the RDFS-inferred data, prints bindings; `RedFlagsTest` has a matching and a
-  non-matching fixture per rule. Add a rule = add a file + two tests.
+  non-matching fixture per rule. Add a rule = add a file + two tests. The leading comment is the title
+  line "English / Serbian", the English paragraph, a blank comment line, then the Serbian paragraph.
+- `QueryExport.kt` publishes `data.ttl` (records plus RDFS entailments, so a reasoner-free engine sees
+  what the rules see), `schema.ttl`, `rules.json` (title and explanation by language, query text) and
+  `red-flags.json` (the leads the build finds, for the viewer's equivalence test) into `web/public/`;
+  `npmTest` and `npmBuild` depend on it; CLI `QueryExportKt`.
 - Every CLI is `main = exitProcess(runXxx(args, out, err, deps))`; `runXxx` is tested in
   `<Tool>CliTest.kt`. Contributed strings are printed through `String.printable()` (`Printing.kt`),
   which turns control characters into spaces.
 
 Web (`web/src/`): `lib/i18n.ts` translation store (`$t`, `language`, `resolveLanguage`), dictionaries
 in `locales/<code>.json`, Vitest tests in `lib/i18n.test.ts`; `./gradlew :web:npmTest` runs them and
-`:web:build` depends on them.
+`:web:build` depends on them. Querying in the browser (`docs/ui-design.md`, "Querying in the browser"):
+`lib/query.ts` runs SPARQL `SELECT` with Comunica's pure-TypeScript lite build over an N3 store
+(row cap, time limit, `QueryError` kinds, `labelsOf`/`textsOf`); `lib/leads.ts` turns rule rows into
+sentences (`leads.<rule>` templates with `[optional]` segments) and map views; `lib/ask.ts` builds the
+prompt for the visitor's own assistant from the terms the data uses and extracts the query from the
+answer; `lib/advanced.ts` carries a query in `?upit=` (base64url); `lib/engine.ts` loads the published
+files once. `QueryPanel.svelte` (tabs Tragovi, Pitaj, Napredno) is imported lazily by `App.svelte`, so
+the engine is a separate chunk; `scripts/write-prompts.ts` (vite-node) publishes the assistant brief as
+`dist/prompt.<language>.txt`, which the Ask links tell the assistant to read from the published site
+(`PUBLISHED_SITE` in `lib/ask.ts`, never the page the visitor is on); `scripts/check-bundle.mjs`
+fails the build when that chunk passes 400 KB gzipped. `lib/equivalence.test.ts` proves every rule gives the build's `red-flags.json` leads.
+Node 22 (the Gradle plugin downloads it; Comunica's dependencies need it).
 
 Libraries: Apache Jena 4.10.0, Gson 2.10.1, Kotlin 1.9.21, Java 17.
 

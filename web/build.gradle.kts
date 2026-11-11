@@ -3,21 +3,23 @@ plugins {
 }
 
 node {
-    version = "20.11.0"
+    // Node 22 LTS: Comunica's HTTP dependency needs it, and Node 20 is end of life.
+    version = "22.22.1"
     download = true
     // Reproducible installs from package-lock.json; `npm install` would be free to drift.
     npmInstallCommand = "ci"
 }
 
 tasks.register<com.github.gradle.node.npm.task.NpmTask>("npmTest") {
-    // Vitest over the plain TypeScript modules (translations, later graph logic); no browser needed.
-    dependsOn("npmInstall")
+    // Vitest over the plain TypeScript modules (translations, graph logic, the query engine); no browser
+    // needed. The equivalence test reads the files exportQueryData publishes, so they are made fresh first.
+    dependsOn("npmInstall", ":app:exportQueryData")
     args = listOf("test")
 }
 
 tasks.register<com.github.gradle.node.npm.task.NpmTask>("npmBuild") {
     // The demo always renders the data that the converter just produced, and only after its tests pass.
-    dependsOn("npmInstall", "npmTest", ":app:ttlToCytoscape")
+    dependsOn("npmInstall", "npmTest", ":app:ttlToCytoscape", ":app:exportQueryData")
     args = listOf("run", "build")
 }
 

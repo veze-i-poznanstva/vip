@@ -2,11 +2,12 @@
 # Two people who went to the same school are both tied, through work or politics, to the same
 # organisation. A pattern worth a second look when the organisation is public or the roles are
 # appointed; shared schooling alone proves nothing.
+# Time: a case whose dates show the two periods never met is dropped. The rest carry a status:
+# "overlapping" when all four dates are recorded and the years meet, "unknown" when any is missing.
+#
 # Dve osobe koje su išle u istu školu obe su, kroz posao ili politiku, vezane za istu
 # organizaciju. Obrazac vredan drugog pogleda kada je organizacija javna ili su uloge
 # imenovane; samo zajednička škola ne dokazuje ništa.
-# Time: a case whose dates show the two periods never met is dropped. The rest carry a status:
-# "overlapping" when all four dates are recorded and the years meet, "unknown" when any is missing.
 # Vreme: slučaj čiji datumi pokazuju da se periodi nikad nisu dodirnuli se izostavlja. Ostali nose
 # status: "overlapping" kada su sva četiri datuma zabeležena i godine se dodiruju, "unknown" inače.
 PREFIX :    <http://poderopedia.com/vocab/>

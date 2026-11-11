@@ -153,10 +153,12 @@ leaves the browser except what the visitor chooses to hand to their own AI assis
 
 ### Decision
 
-- **Engine.** Comunica's RDF/JS lite build, pure TypeScript, over an N3.js in-memory store. About
-  225 KB gzipped, loaded only when a panel that needs it opens. No WebAssembly: the engine is
-  readable, debuggable and runs in Vitest without a binary. The lite build has no `SERVICE`
-  keyword, so a query cannot call out to another endpoint.
+- **Engine.** Comunica's RDF/JS lite build, pure TypeScript, over an N3.js in-memory store. The
+  whole query panel with the engine is one lazily loaded chunk, 339 KB gzipped as measured in the
+  build (the lite build's own figure of 225 KB predates its SPARQL 1.2 parser). No WebAssembly: the
+  engine is readable, debuggable and runs in Vitest without a binary. The lite build has no
+  `SERVICE` keyword, so a query cannot call out to another endpoint. Its dependencies need Node 22,
+  which the Gradle plugin downloads.
 - **One definition of every rule.** The rules stay SPARQL files in `rules/`. The build's
   `checkRedFlags` keeps reporting on the command line; the browser runs the same text.
 - **Leads are computed in the client.** This replaces the earlier idea of a precomputed leads
@@ -171,6 +173,8 @@ The build writes, beside the graph JSON and from the same commit:
   reasoning.
 - `schema.ttl` as it is, for labels, comments and the prompt.
 - `rules.json`: the name, the bilingual explanation and the query text of every rule.
+- `red-flags.json`: the leads the build itself finds, so the viewer's tests can prove the browser
+  engine gives exactly the same.
 
 ### Leads panel
 
@@ -179,7 +183,10 @@ name and explanation in the viewer's language, its match count, and each match a
 from node labels ("Siniša Mali owns Brigham Holding & Finance and held office at Grad Beograd as
 mayor; overlap unknown"). Clicking a match opens the path view between the two agents, or the ego
 view of the person. Every entry carries "a lead for a reporter, not a finding". No query is
-visible here.
+visible here. The sentence comes from a template per rule in the dictionaries (`leads.<rule>`,
+with `[optional]` segments for variables a row may lack); a rule without a template lists its
+variables and values. A row with two people opens the path between them, any other row the
+neighbourhood of its first agent.
 
 ### Ask
 
@@ -187,14 +194,23 @@ visible here.
 it builds a prompt and hands it to the visitor's own assistant.
 
 1. The prompt contains: the task (write one SPARQL 1.1 `SELECT` query over this vocabulary); the
-   vocabulary summary generated from `schema.ttl` in the viewer's language, every class and
-   property with its label and comment, and the role and document-type individuals; the
-   prefixes; one or two rules as worked examples; the conventions (a missing end date is unknown,
-   never current; dates come at three precisions and are compared on the year; kinship, kumstvo
-   and public office are connections; `rs:` names); the output format (a single fenced `sparql`
-   block, with variables for the agents to show); and the question.
-2. "Open in Claude" and "Open in ChatGPT" links carry the prompt prefilled in the address, with
-   "Copy prompt" as the fallback. The page itself sends nothing.
+   vocabulary summary generated from `schema.ttl` in the viewer's language, limited to the
+   classes, properties and individuals the records actually use (about thirty classes, twenty-five
+   properties and twenty roles, document types and statuses today), each with its label, parent or
+   domain and range, and comment; the prefixes; two rules as worked examples; the conventions (a
+   missing end date is unknown, never current; dates come at three precisions and are compared on
+   the year; kinship, kumstvo and public office are connections; entailments are materialised;
+   `rs:` names); the output format (a single fenced `sparql` block, with variables for the agents
+   to show); and the question. About 14,000 characters.
+2. The build publishes the brief, the prompt without the question, as `prompt.sr.txt` and
+   `prompt.en.txt` beside the page. "Open in Claude" and "Open in ChatGPT" carry a short
+   instruction in the address: read the brief in full, then answer the question with one SPARQL
+   `SELECT` query. The brief named is always the one on the published site,
+   `https://veze-i-poznanstva.github.io/vip/prompt.<language>.txt`, whatever page the visitor is
+   on, because the assistant must be able to fetch it and cannot reach a local preview or a fork's
+   copy. An assistant that cannot open links gets the whole prompt from
+   "Copy the prompt". A link is still prefilled only while its text encodes to 8,000 characters or
+   fewer. The page itself sends nothing.
 3. A paste field takes the assistant's answer. The page extracts the first fenced code block, or
    the whole text when there is no fence, runs it with the same runner as Advanced, shows the rows
    as sentences and highlights the agents on the map. "Show query" expands the SPARQL; a parse or
@@ -211,17 +227,19 @@ journalists who learn the patterns, for developers, and for agents that generate
 
 ### Limits
 
-- A result cap of 500 rows and a time limit of five seconds, each with a readable message; a
-  `LIMIT` is appended when the query has none.
+- A result cap of 500 rows and a time limit of five seconds, each with a readable message; rows
+  beyond the cap are not read, and a query's own `LIMIT` is respected within it.
 - `SELECT` only; `CONSTRUCT`, `ASK` and updates are refused in the interface.
 - The whole dataset sits in the browser. At tens of thousands of triples the Turtle is still a
   few megabytes; revisit if it grows past that.
 - Vite needs the known `process.env` workaround for Comunica; it is documented in the build.
-- The lazy chunk stays under 250 KB gzipped, measured in the web build.
+- The lazy chunk stays under 400 KB gzipped; `web/scripts/check-bundle.mjs` fails the build above
+  that, and fails it too if the chunk is no longer separate.
 
 ### Increments
 
-Thin, test-first slices, each ending green:
+Thin, test-first slices, each ending green. All seven were built on 10 and 11 November 2026; the
+list stays as the record of what each proves.
 
 1. **Export.** A Gradle task writes `data.ttl` with the entailments, `schema.ttl` and
    `rules.json`. Kotlin tests: a sibling connection comes out typed as a family connection; a
@@ -230,12 +248,12 @@ Thin, test-first slices, each ending green:
    ids. Vitest: a join, a property path, the `SUBSTR` year filter, a syntax error message, an
    empty result, the cap.
 3. **Equivalence.** Vitest: every rule over the published `data.ttl` gives exactly the bindings
-   the build's `checkRedFlags` wrote to `red-flags.json`.
+   the build's `exportQueryData` wrote to `red-flags.json`.
 4. **Leads panel.** Sentences from bindings, click to path or ego, locale keys, loading and
    error states.
 5. **Prompt builder and paste-back.** The prompt from the schema in both languages (test: every
-   class and property present), the links and the copy, code-block extraction (test: fenced,
-   unfenced, text before and after), run and display.
+   class and property the data uses present, the unused vocabulary absent), the links and the
+   copy, code-block extraction (test: fenced, unfenced, text before and after), run and display.
 6. **Advanced.** Text area, templates, share address, results table.
 7. **Docs and budget.** The tools guide gains the task; the bundle size is asserted in the web
    build.

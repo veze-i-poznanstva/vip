@@ -2,11 +2,12 @@
 # A spouse, partner, kum or family member of someone who leads an organisation holds a job at
 # that same organisation. Each match names the leader, the relative, how they are related and
 # the organisation. A lead for a reporter, not a finding: the appointment may be legitimate.
+# Time: a case whose dates show the two periods never met is dropped. The rest carry a status:
+# "overlapping" when all four dates are recorded and the years meet, "unknown" when any is missing.
+#
 # Supružnik, partner, kum ili član porodice osobe koja vodi organizaciju radi u toj istoj
 # organizaciji. Svaki pogodak imenuje rukovodioca, srodnika, vrstu veze i organizaciju. Trag za
 # novinara, ne zaključak: postavljenje može biti opravdano.
-# Time: a case whose dates show the two periods never met is dropped. The rest carry a status:
-# "overlapping" when all four dates are recorded and the years meet, "unknown" when any is missing.
 # Vreme: slučaj čiji datumi pokazuju da se periodi nikad nisu dodirnuli se izostavlja. Ostali nose
 # status: "overlapping" kada su sva četiri datuma zabeležena i godine se dodiruju, "unknown" inače.
 PREFIX :    <http://poderopedia.com/vocab/>

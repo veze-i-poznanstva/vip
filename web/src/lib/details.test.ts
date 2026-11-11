@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { buildIndex } from './graph';
 import { connectionsOf, connectionTitle, edgeLabel, githubLinks, groupSources, panelContent, period, roleNames, statesOf, isEnded, wikidataPage } from './details';
-import type { Source } from './details';
+import type { RoleLabels, Source } from './details';
 
 const dictionary: Record<string, string> = {
   'edge.OwnershipConnection': 'owns',
@@ -56,15 +56,15 @@ describe('period', () => {
 
 describe('connectionTitle', () => {
   it('uses the translated kind and the share', () => {
-    expect(connectionTitle({ kind: 'OwnershipConnection', share: 50, label: 'x' }, t)).toBe('owns 50%');
+    expect(connectionTitle({ kind: 'OwnershipConnection', share: 50, label: 'x' }, t, 'en')).toBe('owns 50%');
   });
   it('falls back to the type label, then the converter label', () => {
-    expect(connectionTitle({ kind: 'Odd', typeLabel: 'Odd connection', label: 'x' }, t)).toBe('Odd connection');
-    expect(connectionTitle({ kind: 'Odd', label: 'x' }, t)).toBe('x');
-    expect(connectionTitle({ label: 'friend' }, t)).toBe('friend');
+    expect(connectionTitle({ kind: 'Odd', typeLabel: 'Odd connection', label: 'x' }, t, 'en')).toBe('Odd connection');
+    expect(connectionTitle({ kind: 'Odd', label: 'x' }, t, 'en')).toBe('x');
+    expect(connectionTitle({ label: 'friend' }, t, 'en')).toBe('friend');
   });
   it('adds the roles in the given language when present', () => {
-    const roles = [{ en: 'chair', sr: 'predsednik' }, { en: 'member' }];
+    const roles: RoleLabels[] = [{ en: 'chair', sr: 'predsednik' }, { en: 'member' }];
     expect(connectionTitle({ kind: 'WorkConnection', roles, label: 'x' }, t, 'sr')).toBe('works at (predsednik, member)');
     expect(connectionTitle({ kind: 'WorkConnection', roles, label: 'x' }, t, 'en')).toBe('works at (chair, member)');
   });

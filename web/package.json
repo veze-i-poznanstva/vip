@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && vite-node scripts/write-prompts.ts && node scripts/check-bundle.mjs",
     "preview": "vite preview",
     "check": "svelte-check --tsconfig ./tsconfig.json",
     "test": "vitest run"
@@ -12,6 +12,7 @@
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^3.0.1",
     "@tsconfig/svelte": "^5.0.2",
+    "@types/n3": "^1.26.6",
     "svelte": "^4.2.8",
     "svelte-check": "^3.6.2",
     "tslib": "^2.6.2",
@@ -20,7 +21,9 @@
     "vitest": "^2.1.9"
   },
   "dependencies": {
+    "@comunica/query-sparql-rdfjs-lite": "^5.4.1",
     "@types/cytoscape": "^3.19.16",
-    "cytoscape": "^3.28.1"
+    "cytoscape": "^3.28.1",
+    "n3": "^2.13.12"
   }
 }

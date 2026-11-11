@@ -57,6 +57,7 @@ Java, jer build sam preuzima Node.js:
 
 ```bash
 ./gradlew :app:ttlToCytoscape   # osvežava podatke aplikacije iz data/
+./gradlew :app:exportQueryData  # objavljuje data.ttl, schema.ttl, rules.json i red-flags.json za mašinu za upite u pregledaču
 ./gradlew :web:npmDev           # pokreće aplikaciju; zaustavlja se sa Ctrl+C
 ```
 
@@ -234,7 +235,8 @@ datume, pa ni prazan rezultat ne govori mnogo.
 Pokretač učitava podatke zajedno sa onim što rečnik povlači, pa pravilo napisano nad
 `bio:participant` vidi svako specijalizovano svojstvo učesnika. Pogoci su tragovi, ne zaključci:
 zadatak ih ispisuje i uvek vraća 0. Novo pravilo se dodaje kao `.rq` datoteka u `rules/` čiji prvi
-redovi komentara objašnjavaju pravilo na engleskom i srpskom; jedinični testovi pokreću svako
+redovi komentara objašnjavaju pravilo: naslovni red „engleski / srpski“, engleski pasus, prazan red
+komentara, pa srpski pasus; jedinični testovi pokreću svako
 pravilo nad primerom koji mora da se poklopi i jednim koji ne sme.
 
 ## Pregledač grafa
@@ -245,7 +247,16 @@ konvertuju komandom:
 
 ```bash
 ./gradlew :app:ttlToCytoscape -Pinput=data -Poutput=web/public/test-data-cytoscape.json -Pschema=schema.ttl
+./gradlew :app:exportQueryData -Pdata=data -Pschema=schema.ttl -Prules=rules -Poutput=web/public
 ```
+
+Drugi zadatak objavljuje ono što panelima za upite u pregledaču treba: `data.ttl` (zapisi uz RDFS
+zaključke, da mašina u pregledaču vidi ono što pravila vide bez zaključivanja), `schema.ttl`,
+`rules.json` (naslov i objašnjenje svakog pravila po jeziku i tekst upita) i `red-flags.json`
+(tragovi koje bild nalazi; testovi aplikacije izvršavaju svako pravilo u mašini pregledača i moraju
+da dobiju tačno njih). `./gradlew :web:npmTest` zavisi od njega. Veb bild takođe upisuje uputstvo za
+asistenta iz panela Pitaj kao `dist/prompt.en.txt` i `dist/prompt.sr.txt` (`web/scripts/write-prompts.ts`)
+i pada kada odloženo učitani deo sa upitima pređe 400 KB gzipovano (`web/scripts/check-bundle.mjs`).
 
 Konverter vodi rečnik: agenti postaju čvorovi, svaka veza postaje ivica između svakog para
 svojih učesnika, označena sopstvenom oznakom veze, njenim radnim ulogama ili vrstom, a direktna

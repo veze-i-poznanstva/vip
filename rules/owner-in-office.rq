@@ -1,10 +1,11 @@
 # Owner in office / Vlasnik na funkciji
 # A person who owns a company, in whole or in part, also holds a position in a government
 # organisation. A possible conflict of interest between the business and the office.
-# Osoba koja je vlasnik ili suvlasnik firme istovremeno ima položaj u državnoj organizaciji.
-# Mogući sukob interesa između posla i funkcije.
 # Time: a case whose dates show the two periods never met is dropped. The rest carry a status:
 # "overlapping" when all four dates are recorded and the years meet, "unknown" when any is missing.
+#
+# Osoba koja je vlasnik ili suvlasnik firme istovremeno ima položaj u državnoj organizaciji.
+# Mogući sukob interesa između posla i funkcije.
 # Vreme: slučaj čiji datumi pokazuju da se periodi nikad nisu dodirnuli se izostavlja. Ostali nose
 # status: "overlapping" kada su sva četiri datuma zabeležena i godine se dodiruju, "unknown" inače.
 PREFIX :    <http://poderopedia.com/vocab/>

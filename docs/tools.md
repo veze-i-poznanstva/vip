@@ -57,6 +57,7 @@ requirement, because the build downloads its own Node.js:
 
 ```bash
 ./gradlew :app:ttlToCytoscape   # refresh the viewer's data from data/
+./gradlew :app:exportQueryData  # publish data.ttl, schema.ttl, rules.json and red-flags.json for the viewer's query engine
 ./gradlew :web:npmDev           # start the viewer; stop it with Ctrl+C
 ```
 
@@ -233,7 +234,8 @@ says little either.
 The runner loads the data with what the vocabulary entails, so a rule written against
 `bio:participant` sees every specialised participant property. Matches are leads, not findings:
 the task prints them and always exits 0. To add a rule, drop a `.rq` file into `rules/` whose first
-comment lines explain it in English and Serbian; the unit tests run each rule against a fixture
+comment lines explain it: the title line as "English / Serbian", the English paragraph, a blank
+comment line, then the Serbian paragraph; the unit tests run each rule against a fixture
 that must match and one that must not.
 
 ## Web viewer
@@ -244,7 +246,17 @@ connections as labelled edges. Convert data for it with:
 
 ```bash
 ./gradlew :app:ttlToCytoscape -Pinput=data -Poutput=web/public/test-data-cytoscape.json -Pschema=schema.ttl
+./gradlew :app:exportQueryData -Pdata=data -Pschema=schema.ttl -Prules=rules -Poutput=web/public
 ```
+
+The second task publishes what the viewer's query panels need: `data.ttl` (the records plus the
+RDFS entailments, so the browser engine sees what the rules see without reasoning), `schema.ttl`,
+`rules.json` (each rule's title and explanation by language and its query text) and
+`red-flags.json` (the leads the build finds; the viewer's test suite runs every rule in the browser
+engine and must get exactly these). `./gradlew :web:npmTest` depends on it. The web build also
+writes the assistant brief for the Ask panel as `dist/prompt.en.txt` and `dist/prompt.sr.txt`
+(`web/scripts/write-prompts.ts`) and fails when the lazily loaded query chunk passes 400 KB gzipped
+(`web/scripts/check-bundle.mjs`).
 
 The converter is driven by the vocabulary: agents become nodes, each connection becomes an edge
 between every pair of its participants, labelled by the connection's own label, its work roles

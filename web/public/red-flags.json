@@ -1,0 +1,70 @@
+[
+  {
+    "name": "nepotism",
+    "variables": [
+      "leader",
+      "leaderRole",
+      "relative",
+      "relation",
+      "relativeRole",
+      "organization",
+      "overlap"
+    ],
+    "matches": []
+  },
+  {
+    "name": "owner-in-office",
+    "variables": [
+      "person",
+      "company",
+      "office",
+      "role",
+      "overlap"
+    ],
+    "matches": [
+      {
+        "person": "https://w3id.org/vip/rs/Sinisa_Mali",
+        "company": "https://w3id.org/vip/rs/Brigham_Holding_Finance",
+        "office": "https://w3id.org/vip/rs/Grad_Beograd",
+        "role": "https://w3id.org/vip/vocab#mayor",
+        "overlap": "unknown"
+      },
+      {
+        "person": "https://w3id.org/vip/rs/Sinisa_Mali",
+        "company": "https://w3id.org/vip/rs/Etham_Invest_Finance",
+        "office": "https://w3id.org/vip/rs/Grad_Beograd",
+        "role": "https://w3id.org/vip/vocab#mayor",
+        "overlap": "unknown"
+      }
+    ]
+  },
+  {
+    "name": "schoolmates-in-power",
+    "variables": [
+      "personA",
+      "personB",
+      "school",
+      "organization",
+      "schoolOverlap",
+      "organizationOverlap"
+    ],
+    "matches": [
+      {
+        "personA": "https://w3id.org/vip/rs/Ana_Brnabic",
+        "personB": "https://w3id.org/vip/rs/Sinisa_Mali",
+        "school": "https://w3id.org/vip/rs/Peta_Beogradska_Gimnazija",
+        "organization": "https://w3id.org/vip/rs/SNS",
+        "schoolOverlap": "unknown",
+        "organizationOverlap": "unknown"
+      },
+      {
+        "personA": "https://w3id.org/vip/rs/Mihailo_Jovanovic",
+        "personB": "https://w3id.org/vip/rs/Sinisa_Mali",
+        "school": "https://w3id.org/vip/rs/Peta_Beogradska_Gimnazija",
+        "organization": "https://w3id.org/vip/rs/Vlada_Srbije",
+        "schoolOverlap": "overlapping",
+        "organizationOverlap": "unknown"
+      }
+    ]
+  }
+]
