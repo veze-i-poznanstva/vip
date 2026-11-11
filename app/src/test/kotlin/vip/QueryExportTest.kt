@@ -63,6 +63,26 @@ class QueryExportTest {
     }
 
     @Test
+    fun `the exported Turtle is the same text on every run, so the published file changes only when the records do`() {
+        val once = dataTurtle(entail(loadDataSet(java.io.File("data")).merged, schema))
+        val again = dataTurtle(entail(loadDataSet(java.io.File("data")).merged, schema))
+        assertEquals(once, again)
+    }
+
+    @Test
+    fun `an entailed type that is only an anonymous class of the schema is left out, a bare label says nothing`() {
+        val restriction = ModelFactory.createDefaultModel().read(("""
+            @prefix owl: <http://www.w3.org/2002/07/owl#> . @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+            @prefix rs: <https://w3id.org/vip/rs/> .
+            rs:C rdfs:subClassOf [ a owl:Restriction ; owl:onProperty rs:p ; owl:someValuesFrom rs:D ] .
+        """).byteInputStream(), null, "TTL")
+        val turtle = dataTurtle(entail(data("rs:x a rs:C ."), restriction))
+        val written = ModelFactory.createDefaultModel().read(turtle.byteInputStream(), null, "TTL")
+        assertTrue(written.listObjects().toList().none { it.isAnon }, turtle)
+        assertTrue(written.has("https://w3id.org/vip/rs/x", RDF.type.uri, "https://w3id.org/vip/rs/C"), turtle)
+    }
+
+    @Test
     fun `rules are exported as JSON with the title and the explanation split by language, and the query text`() {
         val rule = Rule("nepotism", "Nepotism / Nepotizam\nA spouse works there.\nTime: years meet.\n\nSupružnik radi tamo.\nVreme: godine se dodiruju.", "# Nepotism / Nepotizam\nSELECT * WHERE { ?s ?p ?o }")
         val exported = JsonParser.parseString(rulesJson(listOf(rule))).asJsonArray.single().asJsonObject

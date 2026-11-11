@@ -1,7 +1,10 @@
 package vip
 
 import com.google.gson.GsonBuilder
+import org.apache.jena.rdf.model.AnonId
 import org.apache.jena.rdf.model.Model
+import org.apache.jena.rdf.model.RDFNode
+import org.apache.jena.rdf.model.Resource
 import org.apache.jena.rdf.model.ModelFactory
 import org.apache.jena.vocabulary.RDF
 import org.apache.jena.riot.Lang
@@ -30,6 +33,59 @@ fun entail(data: Model, schema: Model): Model {
     }
     return out
 }
+
+/**
+ * The entailed data as Turtle that is the same text on every build. Jena labels blank nodes at
+ * random and its writer orders by those labels, so a documentation node would move from build to
+ * build; here every blank node is relabelled from where it hangs and what it says, and the
+ * statements are added in sorted order, which fixes the text. An entailed type that is only an
+ * anonymous class of the schema (an OWL restriction) is left out: without its description it would
+ * be a bare label that says nothing.
+ */
+fun dataTurtle(entailed: Model): String {
+    val stable = StableBlankNodes(entailed).copy()
+    return java.io.ByteArrayOutputStream().also { RDFDataMgr.write(it, stable, Lang.TURTLE) }.toString(Charsets.UTF_8)
+}
+
+private class StableBlankNodes(private val model: Model) {
+    private val labels = HashMap<Resource, Resource>()
+    private val taken = HashSet<String>()
+    private val out: Model = ModelFactory.createDefaultModel().setNsPrefixes(model.nsPrefixMap)
+
+    fun copy(): Model {
+        val statements = model.listStatements().toList().mapNotNull { st ->
+            val obj = st.`object`
+            // An entailed type that is only an anonymous class of the schema (an OWL restriction) would be a bare label here.
+            if (obj.isAnon && !described(obj.asResource())) return@mapNotNull null
+            out.createStatement(stable(st.subject), st.predicate, if (obj.isAnon) stable(obj.asResource()) else obj)
+        }
+        statements.sortedBy { it.toString() }.forEach { out.add(it) }
+        return out
+    }
+
+    private fun described(node: Resource) = model.listStatements(node, null, null as RDFNode?).hasNext()
+
+    private fun stable(node: Resource): Resource = if (!node.isAnon) node else labels.getOrPut(node) {
+        val hangingOn = model.listStatements(null, null, node).toList().map { key(it.subject, setOf(node)) + " " + it.predicate.uri }.sorted()
+        val base = sha1(hangingOn.joinToString("\n") + "\n\n" + description(node, setOf(node)))
+        var label = base
+        var n = 2
+        while (!taken.add(label)) label = "$base-${n++}"
+        out.createResource(AnonId.create(label))
+    }
+
+    /** What a blank node says, in a fixed order, nested blank nodes included. */
+    private fun description(node: Resource, seen: Set<Resource>): String =
+        model.listStatements(node, null, null as RDFNode?).toList().map { it.predicate.uri + " " + key(it.`object`, seen) }.sorted().joinToString("\n")
+
+    private fun key(node: RDFNode, seen: Set<Resource>): String = when {
+        !node.isAnon -> node.asNode().toString()
+        node.asResource() in seen -> "_:cycle"
+        else -> "[" + description(node.asResource(), seen + node.asResource()) + "]"
+    }
+}
+
+private fun sha1(text: String) = java.security.MessageDigest.getInstance("SHA-1").digest(text.toByteArray()).joinToString("") { "%02x".format(it) }
 
 /**
  * The rules for the browser as JSON: name, title and explanation by language, and the query text.
@@ -88,7 +144,7 @@ fun runQueryExport(args: Array<String>, out: PrintStream, err: PrintStream): Int
         val dir = File(args[3]).also { it.mkdirs() }
 
         val entailed = entail(data, schema)
-        File(dir, "data.ttl").outputStream().use { RDFDataMgr.write(it, entailed, Lang.TURTLE) }
+        File(dir, "data.ttl").writeText(dataTurtle(entailed))
         out.println("Wrote ${File(dir, "data.ttl").path}: ${entailed.size()} statements (${data.size()} recorded, the rest entailed)")
 
         File(dir, "schema.ttl").writeBytes(schemaFile.readBytes())

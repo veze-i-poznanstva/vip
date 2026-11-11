@@ -255,8 +255,11 @@ zaključke, da mašina u pregledaču vidi ono što pravila vide bez zaključivan
 `rules.json` (naslov i objašnjenje svakog pravila po jeziku i tekst upita) i `red-flags.json`
 (tragovi koje bild nalazi; testovi aplikacije izvršavaju svako pravilo u mašini pregledača i moraju
 da dobiju tačno njih). `./gradlew :web:npmTest` zavisi od njega. Veb bild takođe upisuje uputstvo za
-asistenta iz panela Pitaj kao `dist/prompt.en.txt` i `dist/prompt.sr.txt` (`web/scripts/write-prompts.ts`)
-i pada kada odloženo učitani deo sa upitima pređe 400 KB gzipovano (`web/scripts/check-bundle.mjs`).
+asistenta iz panela Pitaj kao `dist/prompt.en.txt` i `dist/prompt.sr.txt`
+(`web/scripts/write-prompts.ts`) i pada kada odloženo učitani deo sa upitima pređe 400 KB gzipovano
+(`web/scripts/check-bundle.mjs`). `data.ttl` se piše isto pri svakom bildu: prazni čvorovi dobijaju
+oznake prema tome gde vise i šta kažu, iskazi se dodaju sortirani, a zaključeni tip koji je samo
+anonimna klasa šeme se izostavlja, pa se objavljena kopija menja samo kada se promene zapisi.
 
 Konverter vodi rečnik: agenti postaju čvorovi, svaka veza postaje ivica između svakog para
 svojih učesnika, označena sopstvenom oznakom veze, njenim radnim ulogama ili vrstom, a direktna

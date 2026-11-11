@@ -122,7 +122,8 @@ a directory tree or one file). Every tool exits 1 on failure except `analyzeSche
   non-matching fixture per rule. Add a rule = add a file + two tests. The leading comment is the title
   line "English / Serbian", the English paragraph, a blank comment line, then the Serbian paragraph.
 - `QueryExport.kt` publishes `data.ttl` (records plus RDFS entailments, so a reasoner-free engine sees
-  what the rules see), `schema.ttl`, `rules.json` (title and explanation by language, query text) and
+  what the rules see; written the same on every build: blank nodes relabelled from where they hang and
+  what they say, statements sorted, bare anonymous types left out), `schema.ttl`, `rules.json` (title and explanation by language, query text) and
   `red-flags.json` (the leads the build finds, for the viewer's equivalence test) into `web/public/`;
   `npmTest` and `npmBuild` depend on it; CLI `QueryExportKt`.
 - Every CLI is `main = exitProcess(runXxx(args, out, err, deps))`; `runXxx` is tested in

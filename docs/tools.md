@@ -249,14 +249,17 @@ connections as labelled edges. Convert data for it with:
 ./gradlew :app:exportQueryData -Pdata=data -Pschema=schema.ttl -Prules=rules -Poutput=web/public
 ```
 
-The second task publishes what the viewer's query panels need: `data.ttl` (the records plus the
-RDFS entailments, so the browser engine sees what the rules see without reasoning), `schema.ttl`,
-`rules.json` (each rule's title and explanation by language and its query text) and
-`red-flags.json` (the leads the build finds; the viewer's test suite runs every rule in the browser
-engine and must get exactly these). `./gradlew :web:npmTest` depends on it. The web build also
-writes the assistant brief for the Ask panel as `dist/prompt.en.txt` and `dist/prompt.sr.txt`
+The second task publishes what the viewer's query panels need: `data.ttl` (the records plus the RDFS
+entailments, so the browser engine sees what the rules see without reasoning), `schema.ttl`,
+`rules.json` (each rule's title and explanation by language and its query text) and `red-flags.json`
+(the leads the build finds; the viewer's test suite runs every rule in the browser engine and must
+get exactly these). `./gradlew :web:npmTest` depends on it. The web build also writes the assistant
+brief for the Ask panel as `dist/prompt.en.txt` and `dist/prompt.sr.txt`
 (`web/scripts/write-prompts.ts`) and fails when the lazily loaded query chunk passes 400 KB gzipped
-(`web/scripts/check-bundle.mjs`).
+(`web/scripts/check-bundle.mjs`). `data.ttl` is written the same on every build: blank nodes are
+relabelled from where they hang and what they say, statements are added in sorted order, and an
+entailed type that is only an anonymous class of the schema is left out, so the committed copy
+changes only when the records do.
 
 The converter is driven by the vocabulary: agents become nodes, each connection becomes an edge
 between every pair of its participants, labelled by the connection's own label, its work roles
