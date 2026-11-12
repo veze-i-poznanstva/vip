@@ -54,17 +54,22 @@ rs:IvanBosnjak_NALED a :WorkConnection ;
         [ a :Documentation ; :hasDocumentURL <https://nova.rs/vesti/hronika/suvlasnik-milenijum-tima-bosnjak-zakupac-plantaze-u-leskovcu/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
           rdfs:comment "Nova.rs, 28. januar 2021: ista rečenica o suvlasniku Milenijum tima; nije nezavisna potvrda KRIK-a."@sr ] .
 
-rs:AnaBrnabic_NALED_Osnivanje a :WorkConnection ;
-    bio:participant rs:Ana_Brnabic ;
-    :hasEconomicOrganizationParticipant rs:NALED ;
-    :hasWorkRole vip:founder ;
+rs:AnaBrnabic_NALED_Osnivanje a :Connection ;
+    bio:participant rs:Ana_Brnabic, rs:NALED ;
+    rdfs:label "učešće u osnivanju"@sr, "took part in the founding"@en ;
     :connectionStartDate "2006"^^xsd:gYear ;
-    rdfs:comment "Ana Brnabić je aktivno učestvovala u osnivanju NALED-a 2006. godine."@sr ;
+    :connectionEndDate "2006"^^xsd:gYear ;
+    rdfs:comment "Ana Brnabić je učestvovala u osnivanju NALED-a 2006. godine; N1 navodi da je to bilo u svojstvu višeg koordinatora USAID-ovog programa za ekonomski razvoj opština. Radio Slobodna Evropa prenosi biografiju sa sajta Vlade. Izvori govore o učešću u osnivanju, ne o zaposlenju u NALED-u; osnivanje je događaj iz 2006, pa veza počinje i završava se te godine."@sr ;
+    rdfs:comment "Ana Brnabić took part in founding NALED in 2006; N1 says she did so as senior coordinator of USAID's Municipal Economic Growth programme. Radio Slobodna Evropa relays the biography on the Government's site. The sources speak of taking part in the founding, not of a job at NALED; the founding is an event of 2006, so the connection starts and ends in that year."@en ;
     :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://www.slobodnaevropa.org/a/vucic-mandatar-vlada-srbija/28557169.html> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Radio Slobodna Evropa, 15. jun 2017, prenosi biografiju sa sajta Vlade Srbije: 'Aktivno je učestvovala u osnivanju Nacionalne alijanse za lokalni ekonomski razvoj (NALED) 2006. godine.'"@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://n1info.rs/vesti/a276314-Ana-Brnabic-nova-premijerka/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "N1, 15. jun 2017: 'Aktivno je učestvovala u osnivanju Nacionalne alijanse za lokalni ekonomski razvoj (NALED) kao viši koordinator USAID-ovog programa za ekonomski razvoj opština'."@sr ] ,
         [ a :Documentation ; :hasDocumentURL <https://www.kurir.rs/vesti/politika/2864945/ovo-je-biografija-nove-premijerke-ana-brnabic-prva-zena-na-celu-vlade-srbije-u-istoriji> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
-          rdfs:comment "Biografija, jun 2017: Aktivno učestvuje u osnivanju NALED-a 2006."@sr ] ,
+          rdfs:comment "Kurir, 15. jun 2017, biografija: 'Aktivno učestvuje u osnivanju Nacionalne alijanse za lokalni ekonomski razvoj (NALED) 2006.'"@sr ] ,
         [ a :Documentation ; :hasDocumentURL <https://sr.wikipedia.org/wiki/Ана_Брнабић> ; :hasDocumentType vip:encyclopediaArticle ; :hasDocumentStatus vip:published ;
-          rdfs:comment "Aktivno je učestvovala u osnivanju alijanse 2006. godine."@sr ] .
+          rdfs:comment "Vikipedija: 'Активно је учествовала у оснивању Националне алијансе за локални економски развој 2006. године.'"@sr ] .
 
 rs:AnaBrnabic_NALED_Potpredsednica a :WorkConnection ;
     bio:participant rs:Ana_Brnabic ;

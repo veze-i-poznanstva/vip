@@ -1,0 +1,28 @@
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix dbo:     <http://dbpedia.org/ontology/> .
+@prefix rs:      <https://w3id.org/vip/rs/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix :        <http://poderopedia.com/vocab/> .
+@prefix vip:     <https://w3id.org/vip/vocab#> .
+
+# Asseco SEE d.o.o. Beograd
+# Matična datoteka: Asseco SEE d.o.o. Beograd. Veze su u data/cases/asseco-see.ttl.
+# Entity home: Asseco SEE d.o.o. Beograd. Connections are in data/cases/asseco-see.ttl.
+
+rs:Asseco_SEE a :Company ;
+    foaf:name "Asseco SEE d.o.o. Beograd"@sr ;
+    :alias "Asseco SEE"@sr ;
+    :alias "Aseko SEE"@sr ;
+    dbo:location "Beograd, Srbija"@sr ;
+    rdfs:comment "IT kompanija iz Beograda, srpska kompanija grupe Asseco South Eastern Europe; prema godišnjem izveštaju Grupe za 2023, u potpunom je vlasništvu društva Asseco South Eastern Europe S.A. iz Poljske."@sr ;
+    rdfs:comment "An IT company in Belgrade, the Serbian company of the Asseco South Eastern Europe group; the group's 2023 annual report shows it wholly owned by Asseco South Eastern Europe S.A. of Poland."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://asee.io/wp-content/uploads/2025/12/Group-Asseco-SEE-Management-report-Consolidated-and-Standalone-1.pdf> ; :hasDocumentType vip:officialDocument ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Asseco South Eastern Europe S.A., godišnji izveštaj Grupe za 2023 (asee.io): 'our subsidiary Asseco SEE d.o.o. Belgrade'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://n1info.rs/vesti/a652983-Aseko-odgovorio-na-optuzbe-Marinike-Tepic/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "N1, 23. septembar 2020, prenosi saopštenje kompanije: 'Grupacija Asseco South Eastern Europe, u čijem je vlasništvu kompanija Asseco SEE u Srbiji'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://nova.rs/vesti/politika/svi-poslovi-brata-ane-brnabic-od-grcicevog-eps-a-20-miliona-evra/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Nova.rs, 23. novembar 2020: 'čiji član Asseco See d.o.o. Beograd'."@sr ] .

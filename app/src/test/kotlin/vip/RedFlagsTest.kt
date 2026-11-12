@@ -190,6 +190,17 @@ class RedFlagsTest {
     }
 
     @Test
+    fun `nepotism matches a sibling of a prime minister employed by the government`() {
+        val found = matches("nepotism", """
+            ex:A a foaf:Person . ex:S a foaf:Person . ex:Gov a :GovernmentOrganization .
+            ex:A_Gov a :WorkConnection ; bio:participant ex:A ; :hasEconomicOrganizationParticipant ex:Gov ; :hasWorkRole vip:primeMinister .
+            ex:S_Gov a :WorkConnection ; bio:participant ex:S ; :hasEconomicOrganizationParticipant ex:Gov ; :hasWorkRole :advisor .
+            ex:AS a vip:SiblingConnection ; bio:participant ex:A, ex:S .
+        """)
+        assertEquals(listOf("https://w3id.org/vip/rs/S" to "https://w3id.org/vip/vocab#primeMinister"), found.map { it["relative"] to it["leaderRole"] })
+    }
+
+    @Test
     fun `nepotism matches a kum of a minister employed by the government`() {
         val found = matches("nepotism", """
             ex:A a foaf:Person . ex:K a foaf:Person . ex:Gov a :GovernmentOrganization .

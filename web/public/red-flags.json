@@ -58,6 +58,22 @@
         "organizationOverlap": "unknown"
       },
       {
+        "personA": "https://w3id.org/vip/rs/Ana_Brnabic",
+        "personB": "https://w3id.org/vip/rs/Mihailo_Jovanovic",
+        "school": "https://w3id.org/vip/rs/Peta_Beogradska_Gimnazija",
+        "organization": "https://w3id.org/vip/rs/Vlada_Srbije",
+        "schoolOverlap": "unknown",
+        "organizationOverlap": "overlapping"
+      },
+      {
+        "personA": "https://w3id.org/vip/rs/Ana_Brnabic",
+        "personB": "https://w3id.org/vip/rs/Sinisa_Mali",
+        "school": "https://w3id.org/vip/rs/Peta_Beogradska_Gimnazija",
+        "organization": "https://w3id.org/vip/rs/Vlada_Srbije",
+        "schoolOverlap": "unknown",
+        "organizationOverlap": "unknown"
+      },
+      {
         "personA": "https://w3id.org/vip/rs/Mihailo_Jovanovic",
         "personB": "https://w3id.org/vip/rs/Sinisa_Mali",
         "school": "https://w3id.org/vip/rs/Peta_Beogradska_Gimnazija",

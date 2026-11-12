@@ -22,7 +22,7 @@ WHERE {
         :hasEconomicOrganizationParticipant ?organization ;
         :hasWorkRole ?leaderRole .
   ?leader a foaf:Person .
-  VALUES ?leaderRole { :ceo :director :manager vip:founder vip:boardChair vip:boardViceChair vip:executiveBoardMember vip:mayor vip:minister }
+  VALUES ?leaderRole { :ceo :director :manager vip:founder vip:boardChair vip:boardViceChair vip:executiveBoardMember vip:mayor vip:minister vip:primeMinister }
 
   ?job a :WorkConnection ;
        bio:participant ?relative ;

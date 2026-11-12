@@ -224,24 +224,35 @@ rs:Sinisa_Mali  rdf:type      foaf:Agent , foaf:Person;
         vip:wikipediaArticle  <https://sr.wikipedia.org/wiki/Синиша_Мали> .
 
 rs:AnaBrnabic_NALED_Osnivanje
-        rdf:type              :Connection , :SourcedEntity , :WorkConnection , bio:Relationship;
-        rdfs:comment          "Ana Brnabić je aktivno učestvovala u osnivanju NALED-a 2006. godine."@sr;
+        rdf:type              :Connection , :SourcedEntity , bio:Relationship;
+        rdfs:comment          "Ana Brnabić je učestvovala u osnivanju NALED-a 2006. godine; N1 navodi da je to bilo u svojstvu višeg koordinatora USAID-ovog programa za ekonomski razvoj opština. Radio Slobodna Evropa prenosi biografiju sa sajta Vlade. Izvori govore o učešću u osnivanju, ne o zaposlenju u NALED-u; osnivanje je događaj iz 2006, pa veza počinje i završava se te godine."@sr , "Ana Brnabić took part in founding NALED in 2006; N1 says she did so as senior coordinator of USAID's Municipal Economic Growth programme. Radio Slobodna Evropa relays the biography on the Government's site. The sources speak of taking part in the founding, not of a job at NALED; the founding is an event of 2006, so the connection starts and ends in that year."@en;
+        rdfs:label            "took part in the founding"@en , "učešće u osnivanju"@sr;
+        :connectionEndDate    "2006"^^xsd:gYear;
         :connectionStartDate  "2006"^^xsd:gYear;
         :hasDocumentation     [ rdf:type            :RelatedData , :Documentation;
-                                rdfs:comment        "Aktivno je učestvovala u osnivanju alijanse 2006. godine."@sr;
+                                rdfs:comment        "N1, 15. jun 2017: 'Aktivno je učestvovala u osnivanju Nacionalne alijanse za lokalni ekonomski razvoj (NALED) kao viši koordinator USAID-ovog programa za ekonomski razvoj opština'."@sr;
+                                :hasDocumentStatus  vip:published;
+                                :hasDocumentType    vip:newsArticle;
+                                :hasDocumentURL     <https://n1info.rs/vesti/a276314-Ana-Brnabic-nova-premijerka/>
+                              ];
+        :hasDocumentation     [ rdf:type            :RelatedData , :Documentation;
+                                rdfs:comment        "Radio Slobodna Evropa, 15. jun 2017, prenosi biografiju sa sajta Vlade Srbije: 'Aktivno je učestvovala u osnivanju Nacionalne alijanse za lokalni ekonomski razvoj (NALED) 2006. godine.'"@sr;
+                                :hasDocumentStatus  vip:published;
+                                :hasDocumentType    vip:newsArticle;
+                                :hasDocumentURL     <https://www.slobodnaevropa.org/a/vucic-mandatar-vlada-srbija/28557169.html>
+                              ];
+        :hasDocumentation     [ rdf:type            :RelatedData , :Documentation;
+                                rdfs:comment        "Vikipedija: 'Активно је учествовала у оснивању Националне алијансе за локални економски развој 2006. године.'"@sr;
                                 :hasDocumentStatus  vip:published;
                                 :hasDocumentType    vip:encyclopediaArticle;
                                 :hasDocumentURL     <https://sr.wikipedia.org/wiki/Ана_Брнабић>
                               ];
         :hasDocumentation     [ rdf:type            :RelatedData , :Documentation;
-                                rdfs:comment        "Biografija, jun 2017: Aktivno učestvuje u osnivanju NALED-a 2006."@sr;
+                                rdfs:comment        "Kurir, 15. jun 2017, biografija: 'Aktivno učestvuje u osnivanju Nacionalne alijanse za lokalni ekonomski razvoj (NALED) 2006.'"@sr;
                                 :hasDocumentStatus  vip:published;
                                 :hasDocumentType    vip:newsArticle;
                                 :hasDocumentURL     <https://www.kurir.rs/vesti/politika/2864945/ovo-je-biografija-nove-premijerke-ana-brnabic-prva-zena-na-celu-vlade-srbije-u-istoriji>
                               ];
-        :hasEconomicOrganizationParticipant
-                rs:NALED;
-        :hasWorkRole          vip:founder;
         bio:participant       rs:Ana_Brnabic , rs:NALED;
         owl:differentFrom     rs:Ana_Brnabic , rs:NALED .
 
@@ -645,6 +656,62 @@ rs:NikolaTrivic_Starting_Direktor
         :hasWorkRole        :director;
         bio:participant     rs:Nikola_Trivic , rs:Starting;
         owl:differentFrom   rs:Nikola_Trivic , rs:Starting .
+
+rs:IgorBrnabic_AssecoSEE_Direktor
+        rdf:type            :SourcedEntity , bio:Relationship , :Connection , :WorkConnection;
+        rdfs:comment        "Izvori opisuju Igora Brnabića kao direktora srpskog ogranka Asseco SEE ili kao jednog od njegovih direktora (Danas, Radio Slobodna Evropa, Nova.rs, Insajder). Funkciju je napustio u novembru 2020. (Nova.rs; Insajder, prenosi N1). Izvori se ne slažu o tome kada je postavljen (Danas: februar 2017; Insajder: 2015), pa početak nije zabeležen."@sr , "Sources describe Igor Brnabić as director of the Serbian branch of Asseco SEE, or as one of its directors (Danas, Radio Slobodna Evropa, Nova.rs, Insajder). He left the post in November 2020 (Nova.rs; Insajder, carried by N1). The sources do not agree on when he was appointed (Danas: February 2017; Insajder: 2015), so no start is recorded."@en;
+        :connectionEndDate  "2020-11"^^xsd:gYearMonth;
+        :hasDocumentation   [ rdf:type            :RelatedData , :Documentation;
+                              rdfs:comment        "N1, 22. decembar 2020, prenosi Insajder: 'od 2015. do 2020. bio je direktor predstavništva te kompanije u Srbiji'; 'Ostavku je podneo u novembru ove godine'."@sr;
+                              :hasDocumentStatus  vip:published;
+                              :hasDocumentType    vip:newsArticle;
+                              :hasDocumentURL     <https://n1info.rs/vesti/a686233-Politika-kao-biznis-drzava-kao-partijski-plen-treci-deo/>
+                            ];
+        :hasDocumentation   [ rdf:type            :RelatedData , :Documentation;
+                              rdfs:comment        "Danas, 26. septembar 2020: 'Igor Brnabić direktor je srpskog ogranka Aseko SEE.'"@sr;
+                              :hasDocumentStatus  vip:published;
+                              :hasDocumentType    vip:newsArticle;
+                              :hasDocumentURL     <https://www.danas.rs/ljudi/igor-brnabic-prozvani-direktor-premijerkin-brat/>
+                            ];
+        :hasDocumentation   [ rdf:type            :RelatedData , :Documentation;
+                              rdfs:comment        "Radio Slobodna Evropa, 25. septembar 2020: 'Igor Brnabić, jedan od direktora u Asseco SEE'."@sr;
+                              :hasDocumentStatus  vip:published;
+                              :hasDocumentType    vip:newsArticle;
+                              :hasDocumentURL     <https://www.slobodnaevropa.org/a/ana-brnabic-asseco-vlada-budzet-tender-korupcija-srbija/30857881.html>
+                            ];
+        :hasDocumentation   [ rdf:type            :RelatedData , :Documentation;
+                              rdfs:comment        "Nova.rs, 23. novembar 2020 (stranica izmenjena 14. februara 2025): 'Igor Brnabić napustio je direktorsku funkciju u kompaniji Aseko u novembru 2020. godine'."@sr;
+                              :hasDocumentStatus  vip:published;
+                              :hasDocumentType    vip:newsArticle;
+                              :hasDocumentURL     <https://nova.rs/vesti/politika/svi-poslovi-brata-ane-brnabic-od-grcicevog-eps-a-20-miliona-evra/>
+                            ];
+        :hasEconomicOrganizationParticipant
+                rs:Asseco_SEE;
+        :hasWorkRole        :director;
+        bio:participant     rs:Igor_Brnabic , rs:Asseco_SEE;
+        owl:differentFrom   rs:Asseco_SEE , rs:Igor_Brnabic .
+
+rs:MihailoJovanovic_KancelarijaIT_Direktor_2024
+        rdf:type              :SourcedEntity , bio:Relationship , :Connection , :WorkConnection;
+        rdfs:comment          "Vlada je 29. avgusta 2024. izabrala Mihaila Jovanovića za v. d. direktora Kancelarije, na predlog predsednika Vlade Miloša Vučevića (Novosti); sajt Kancelarije, pročitan 12. novembra 2026, navodi ga kao direktora i kaže da je tu funkciju obavljao u dva navrata. Kraj nije zabeležen: to je poslednje dokumentovano stanje, ne dokaz da funkcija traje."@sr , "On 29 August 2024 the Government appointed him acting director of the Office, on the proposal of Prime Minister Miloš Vučević (Novosti); the Office's site, read on 12 November 2026, names him as its director and says he has held the post twice. No end is recorded: that is the latest documented state, not proof that the office continues."@en;
+        :connectionStartDate  "2024-08-29"^^xsd:date;
+        :hasDocumentation     [ rdf:type            :RelatedData , :Documentation;
+                                rdfs:comment        "Sajt Kancelarije, strana 'Direktor' (pročitano 12. novembra 2026): 'dr Mihailo Jovanović, direktor Kancelarije za IT i eUpravu'; 'čiji je direktor u dva navrata'."@sr;
+                                :hasDocumentStatus  vip:published;
+                                :hasDocumentType    vip:webPage;
+                                :hasDocumentURL     <https://www.ite.gov.rs/tekst/sr/150/direktor.php>
+                              ];
+        :hasDocumentation     [ rdf:type            :RelatedData , :Documentation;
+                                rdfs:comment        "Novosti, 29. avgust 2024: 'na današnjoj sednici Vlade dr Mihailo Jovanović izabran je za v. d. direktora Kancelarije'."@sr;
+                                :hasDocumentStatus  vip:published;
+                                :hasDocumentType    vip:newsArticle;
+                                :hasDocumentURL     <https://www.novosti.rs/vesti/politika/1403964/predlog-premijera-vucevica-mihailo-jovanovic-novi-direktor-kancelarije-eupravu>
+                              ];
+        :hasEconomicOrganizationParticipant
+                rs:Kancelarija_za_IT_i_eUpravu;
+        :hasWorkRole          :director;
+        bio:participant       rs:Kancelarija_za_IT_i_eUpravu , rs:Mihailo_Jovanovic;
+        owl:differentFrom     rs:Mihailo_Jovanovic , rs:Kancelarija_za_IT_i_eUpravu .
 
 rs:Predrag_Mali  rdf:type  foaf:Agent , foaf:Person;
         rdfs:comment       "Younger brother of Siniša Mali, per KRIK and per Siniša Mali himself (Globus, 2014, as relayed by KRIK). KRIK reports he directed his brother's firm Oli Consulting from 2005 to 2013 and the family firm Kompost grup, and sat on the board of KK Crvena zvezda in 2014; those roles are not recorded here as connections."@en , "Mlađi brat Siniše Malog, prema KRIK-u i prema samom Siniši Malom (Globus, 2014, preneo KRIK). KRIK navodi da je bio direktor bratovljeve firme Oli Consulting od 2005. do 2013, direktor porodične firme Kompost grup i 2014. član Upravnog odbora KK Crvena zvezda; te uloge ovde nisu zabeležene kao veze."@sr;
@@ -1164,6 +1231,31 @@ rs:Etham_Invest_Finance
                            ];
         foaf:name          "Etham Invest & Finance Corp."@sr .
 
+rs:Asseco_SEE  rdf:type    :Company , foaf:Organization , foaf:Agent;
+        rdfs:comment       "An IT company in Belgrade, the Serbian company of the Asseco South Eastern Europe group; the group's 2023 annual report shows it wholly owned by Asseco South Eastern Europe S.A. of Poland."@en , "IT kompanija iz Beograda, srpska kompanija grupe Asseco South Eastern Europe; prema godišnjem izveštaju Grupe za 2023, u potpunom je vlasništvu društva Asseco South Eastern Europe S.A. iz Poljske."@sr;
+        dbo:location       "Beograd, Srbija"@sr;
+        :alias             "Asseco SEE"@sr , "Aseko SEE"@sr;
+        :hasDocumentation  [ rdf:type            :RelatedData , :Documentation;
+                             rdfs:comment        "Nova.rs, 23. novembar 2020: 'čiji član Asseco See d.o.o. Beograd'."@sr;
+                             :hasDocumentStatus  vip:published;
+                             :hasDocumentType    vip:newsArticle;
+                             :hasDocumentURL     <https://nova.rs/vesti/politika/svi-poslovi-brata-ane-brnabic-od-grcicevog-eps-a-20-miliona-evra/>
+                           ];
+        :hasDocumentation  [ rdf:type            :RelatedData , :Documentation;
+                             rdfs:comment        "Asseco South Eastern Europe S.A., godišnji izveštaj Grupe za 2023 (asee.io): 'our subsidiary Asseco SEE d.o.o. Belgrade'."@sr;
+                             :hasDocumentStatus  vip:published;
+                             :hasDocumentType    vip:officialDocument;
+                             :hasDocumentURL     <https://asee.io/wp-content/uploads/2025/12/Group-Asseco-SEE-Management-report-Consolidated-and-Standalone-1.pdf>
+                           ];
+        :hasDocumentation  [ rdf:type            :RelatedData , :Documentation;
+                             rdfs:comment        "N1, 23. septembar 2020, prenosi saopštenje kompanije: 'Grupacija Asseco South Eastern Europe, u čijem je vlasništvu kompanija Asseco SEE u Srbiji'."@sr;
+                             :hasDocumentStatus  vip:published;
+                             :hasDocumentType    vip:newsArticle;
+                             :hasDocumentURL     <https://n1info.rs/vesti/a652983-Aseko-odgovorio-na-optuzbe-Marinike-Tepic/>
+                           ];
+        skos:altLabel      "Aseko SEE"@sr , "Asseco SEE"@sr;
+        foaf:name          "Asseco SEE"@sr , "Asseco SEE d.o.o. Beograd"@sr , "Aseko SEE"@sr .
+
 rs:MilanVukovljak_BobNoviSad
         rdf:type           :Connection , :SourcedEntity , vip:OwnershipConnection , bio:Relationship;
         rdfs:comment       "Vlasnik prema 021.rs (27. januar 2025) i prema Srni u Glasu Srpske (30. avgust 2021), koja navodi samo firmu „Bob“ i Novi Sad kao mesto gde on živi. Udeo i datumi nisu poznati."@sr , "Owner per 021.rs (27 January 2025) and per Srna in Glas Srpske (30 August 2021), which names only the firm \"Bob\" and Novi Sad as where he lives. Share and dates are unknown."@en;
@@ -1212,6 +1304,33 @@ rs:SinisaMali_GradBeograd_Gradonacelnik
         :hasWorkRole          vip:mayor;
         bio:participant       rs:Sinisa_Mali , rs:Grad_Beograd;
         owl:differentFrom     rs:Sinisa_Mali , rs:Grad_Beograd .
+
+rs:Kancelarija_za_IT_i_eUpravu
+        rdf:type              foaf:Agent , :GovernmentOrganization , foaf:Organization;
+        rdfs:comment          "A body of the Government of Serbia for information technology and electronic government, formed as a service of the Government on 5 August 2017; according to its own site it now continues as a special organisation (\"posebna organizacija\")."@en , "Organ Vlade Srbije za informacione tehnologije i elektronsku upravu, obrazovan kao služba Vlade 5. avgusta 2017; prema sopstvenom sajtu, danas nastavlja rad kao posebna organizacija."@sr;
+        dbo:location          "Beograd, Srbija"@sr;
+        :alias                "Kancelarija za IT i eUpravu"@sr;
+        :hasDocumentation     [ rdf:type            :RelatedData , :Documentation;
+                                rdfs:comment        "N1, 27. jul 2017, prenosi Betu: 'Vlada Srbije saopštila je da je donela Uredbu o formiranju Kancelarije za informacione tehnologije i elektronsku upravu'."@sr;
+                                :hasDocumentStatus  vip:published;
+                                :hasDocumentType    vip:newsArticle;
+                                :hasDocumentURL     <https://n1info.rs/vesti/a286708-Osnovana-Kancelarija-za-informacione-tehnologije-i-elektronsku-upravu/>
+                              ];
+        :hasDocumentation     [ rdf:type            :RelatedData , :Documentation;
+                                rdfs:comment        "Sajt Kancelarije (pročitano 12. novembra 2026): 'Kancelarija za informacione tehnologije i elektronsku upravu obrazovana kao služba Vlade dana 05.08.2017. godine'."@sr;
+                                :hasDocumentStatus  vip:published;
+                                :hasDocumentType    vip:webPage;
+                                :hasDocumentURL     <https://www.ite.gov.rs/tekst/sr/149/kancelarija-za-it-i-eupravu.php>
+                              ];
+        :hasDocumentation     [ rdf:type            :RelatedData , :Documentation;
+                                rdfs:comment        "Enciklopedijski članak: 'Пре него што је била посебна организација, Канцеларија је била служба Владе Републике Србије.'"@sr;
+                                :hasDocumentStatus  vip:published;
+                                :hasDocumentType    vip:encyclopediaArticle;
+                                :hasDocumentURL     <https://sr.wikipedia.org/wiki/Канцеларија_за_информационе_технологије_и_електронску_управу>
+                              ];
+        skos:altLabel         "Kancelarija za IT i eUpravu"@sr;
+        foaf:name             "Kancelarija za IT i eUpravu"@sr , "Kancelarija za informacione tehnologije i elektronsku upravu"@sr;
+        vip:wikipediaArticle  <https://sr.wikipedia.org/wiki/Канцеларија_за_информационе_технологије_и_електронску_управу> .
 
 rs:GlobalMediaTechnology_MaximMediaPlus
         rdf:type              :Connection , vip:OwnershipConnection , :SourcedEntity , bio:Relationship;
@@ -1395,6 +1514,41 @@ rs:SinisaMali_BrighamHoldingFinance
         vip:ownedCompany    rs:Brigham_Holding_Finance;
         vip:owner           rs:Sinisa_Mali;
         vip:ownershipShare  100.0 .
+
+rs:MihailoJovanovic_KancelarijaIT_Direktor
+        rdf:type              :Connection , :WorkConnection , bio:Relationship , :SourcedEntity;
+        rdfs:comment          "Mihailo Jovanović je postao direktor Kancelarije kada je osnovana 2017. (sajt Kancelarije). Novosti navode da je bio na njenom čelu do decembra 2022, a ministar je postao 26. oktobra 2022 (zapis u vlada-srbije.ttl); zato je kraj zabeležen samo kao godina. Mesec početka sajt Kancelarije ne navodi."@sr , "Mihailo Jovanović became director of the Office when it was founded in 2017 (the Office's site). Novosti says he led it until December 2022, while he became a minister on 26 October 2022 (the record in vlada-srbije.ttl); the end is therefore recorded as the year only. The Office's site gives no month for the start."@en;
+        :connectionEndDate    "2022"^^xsd:gYear;
+        :connectionStartDate  "2017"^^xsd:gYear;
+        :hasDocumentation     [ rdf:type            :RelatedData , :Documentation;
+                                rdfs:comment        "Novosti, 29. avgust 2024: 'od 2017. godine do decembra 2022. godine je već bio na čelu Kancelarije'."@sr;
+                                :hasDocumentStatus  vip:published;
+                                :hasDocumentType    vip:newsArticle;
+                                :hasDocumentURL     <https://www.novosti.rs/vesti/politika/1403964/predlog-premijera-vucevica-mihailo-jovanovic-novi-direktor-kancelarije-eupravu>
+                              ];
+        :hasDocumentation     [ rdf:type            :RelatedData , :Documentation;
+                                rdfs:comment        "Sajt Kancelarije, strana 'Direktor' (pročitano 12. novembra 2026): 'Kancelarije za informacione tehnologije i elektronsku upravu Vlade Republike Srbije 2017. godine, kada je postao i njen direktor'."@sr;
+                                :hasDocumentStatus  vip:published;
+                                :hasDocumentType    vip:webPage;
+                                :hasDocumentURL     <https://www.ite.gov.rs/tekst/sr/150/direktor.php>
+                              ];
+        :hasDocumentation     [ rdf:type            :RelatedData , :Documentation;
+                                rdfs:comment        "Danas, 26. septembar 2020: 'reagovao je direktor Kancelarije, Mihailo Jovanović'."@sr;
+                                :hasDocumentStatus  vip:published;
+                                :hasDocumentType    vip:newsArticle;
+                                :hasDocumentURL     <https://www.danas.rs/vesti/ekonomija/ugovori-aseka-s-18-miliona-evra-skocili-na-16-miliona/>
+                              ];
+        :hasDocumentation     [ rdf:type            :RelatedData , :Documentation;
+                                rdfs:comment        "Radio Slobodna Evropa, 23. septembar 2020: 'Direktor Vladine Kancelarije za IT Mihajlo Jovanović'."@sr;
+                                :hasDocumentStatus  vip:published;
+                                :hasDocumentType    vip:newsArticle;
+                                :hasDocumentURL     <https://www.slobodnaevropa.org/a/tepić-firma-premijerkinog-brata-iz-budžeta-dobila-40-miliona-evra/30854137.html>
+                              ];
+        :hasEconomicOrganizationParticipant
+                rs:Kancelarija_za_IT_i_eUpravu;
+        :hasWorkRole          :director;
+        bio:participant       rs:Mihailo_Jovanovic , rs:Kancelarija_za_IT_i_eUpravu;
+        owl:differentFrom     rs:Kancelarija_za_IT_i_eUpravu , rs:Mihailo_Jovanovic .
 
 rs:Ekonomski_fakultet_University_of_Belgrade
         rdf:type              foaf:Organization , :AcademicOrganization , foaf:Agent;
@@ -1658,6 +1812,35 @@ rs:Milan_Vukovljak  rdf:type  foaf:Person , foaf:Agent;
         foaf:familyName    "Vukovljak";
         foaf:firstName     "Milan";
         foaf:name          "Milan Vukovljak"@sr .
+
+rs:AnaBrnabic_VladaSrbije_MinistarkaDrzavneUprave
+        rdf:type              :WorkConnection , bio:Relationship , :Connection , :SourcedEntity;
+        rdfs:comment          "Ana Brnabić je u avgustu 2016. izabrana za ministarku državne uprave i lokalne samouprave i tu funkciju je obavljala do izbora za predsednicu Vlade 29. juna 2017. (sajt Narodne skupštine, Vikipedija). Sajt Skupštine navodi mesec izbora; dan, 11. avgust 2016, navodi samo Vikipedija, pa je početak zabeležen do meseca."@sr , "Ana Brnabić was elected Minister of Public Administration and Local Self-Government in August 2016 and held the office until she was elected Prime Minister on 29 June 2017 (the National Assembly's site, Wikipedia). The Assembly's site gives the month of the election; only Wikipedia gives the day, 11 August 2016, so the start is recorded to the month."@en;
+        :connectionEndDate    "2017-06-29"^^xsd:date;
+        :connectionStartDate  "2016-08"^^xsd:gYearMonth;
+        :hasDocumentation     [ rdf:type            :RelatedData , :Documentation;
+                                rdfs:comment        "Enciklopedijski članak: '11. август 2016 — 29. јун 2017.'; 'У августу 2016. године, именована је за министра државне управе и локалне самоуправе.'"@sr;
+                                :hasDocumentStatus  vip:published;
+                                :hasDocumentType    vip:encyclopediaArticle;
+                                :hasDocumentURL     <https://sr.wikipedia.org/wiki/Ана_Брнабић>
+                              ];
+        :hasDocumentation     [ rdf:type            :RelatedData , :Documentation;
+                                rdfs:comment        "Sajt Narodne skupštine (pročitano 12. novembra 2026): 'U avgustu 2016. godine izabrana je za ministarku državne uprave i lokalne samouprave u Vladi Srbije, i tu funkciju je obavljala do izbora za predsednicu Vlade'."@sr;
+                                :hasDocumentStatus  vip:published;
+                                :hasDocumentType    vip:webPage;
+                                :hasDocumentURL     <https://www.parlament.gov.rs/ANA_BRNABIĆ.1190.891.html>
+                              ];
+        :hasDocumentation     [ rdf:type            :RelatedData , :Documentation;
+                                rdfs:comment        "N1, 15. jun 2017: 'Dosadašnja ministarka državne uprave i lokalne samouprave Ana Brnabić biće mandatarka za sastav nove Vlade Srbije'."@sr;
+                                :hasDocumentStatus  vip:published;
+                                :hasDocumentType    vip:newsArticle;
+                                :hasDocumentURL     <https://n1info.rs/vesti/a276314-Ana-Brnabic-nova-premijerka/>
+                              ];
+        :hasEconomicOrganizationParticipant
+                rs:Vlada_Srbije;
+        :hasWorkRole          vip:minister;
+        bio:participant       rs:Vlada_Srbije , rs:Ana_Brnabic;
+        owl:differentFrom     rs:Ana_Brnabic , rs:Vlada_Srbije .
 
 rs:Andrej_Vucic  rdf:type     foaf:Agent , foaf:Person;
         rdfs:comment          "Brother of Aleksandar Vučić; per Wikipedia a senior SNS official and formerly executive director of the National Bank's banknote and coin mint. Member of the Presidency of KK Crvena zvezda from January to June 2014. The kinship with Aleksandar Vučić is not yet recorded as a connection, because Aleksandar Vučić is not in the dataset."@en , "Brat Aleksandra Vučića; prema Vikipediji visoki funkcioner SNS i ranije izvršni direktor Zavoda za izradu novčanica i kovanog novca NBS. Član Predsedništva KK Crvena zvezda od januara do juna 2014. Srodstvo sa Aleksandrom Vučićem ovde još nije zabeleženo kao veza, jer Aleksandar Vučić nije unet u bazu."@sr;
@@ -2141,6 +2324,53 @@ rs:Alo_Media_System  rdf:type  :Company , foaf:Organization , foaf:Agent;
         skos:altLabel       "Dnevne novine Alo"@sr , "Alo media system doo Beograd"@sr;
         foaf:name           "Alo media system"@sr , "Dnevne novine Alo"@sr , "Alo media system doo Beograd"@sr .
 
+rs:AnaBrnabic_VladaSrbije_PredsednicaVlade
+        rdf:type              :Connection , :WorkConnection , :SourcedEntity , bio:Relationship;
+        rdfs:comment          "The National Assembly elected the Government of Ana Brnabić on 29 June 2017, by 157 votes, and she and the ministers took the oath the same day (the Assembly's stenographic record, N1). She was elected Prime Minister again on 28 October 2020 and on 26 October 2022 (the Assembly's site, RTS). On 20 March 2024 she was elected Speaker of the National Assembly (the Assembly's site), and the next Government, of Miloš Vučević, was elected on 2 May 2024 (Vreme). The sources read do not state the day on which her term as Prime Minister ended, so the end is recorded as the year only."@en , "Narodna skupština je 29. juna 2017. izabrala Vladu Ane Brnabić, sa 157 glasova za, i ona i ministri su istog dana položili zakletvu (stenografske beleške Skupštine, N1). Ponovo je izabrana za predsednicu Vlade 28. oktobra 2020. i 26. oktobra 2022. (sajt Skupštine, RTS). Za predsednicu Narodne skupštine izabrana je 20. marta 2024. (sajt Skupštine), a sledeća Vlada, Miloša Vučevića, izabrana je 2. maja 2024. (Vreme). Pročitani izvori ne navode dan kada joj je prestao mandat predsednice Vlade, pa je kraj zabeležen samo kao godina."@sr;
+        :connectionEndDate    "2024"^^xsd:gYear;
+        :connectionStartDate  "2017-06-29"^^xsd:date;
+        :hasDocumentation     [ rdf:type            :RelatedData , :Documentation;
+                                rdfs:comment        "N1, 29. jun 2017: 'Ana Brnabić i 21 ministar u novoj vladi Srbije položili su zakletvu'."@sr;
+                                :hasDocumentStatus  vip:published;
+                                :hasDocumentType    vip:newsArticle;
+                                :hasDocumentURL     <https://n1info.rs/vesti/a279662-Ana-Brnabic-i-ministri-polozili-zakletvu/>
+                              ];
+        :hasDocumentation     [ rdf:type            :RelatedData , :Documentation;
+                                rdfs:comment        "Sajt Narodne skupštine, strana 'Predsednik Narodne skupštine' (pročitano 12. novembra 2026): 'dana 20. marta 2024. godine, za predsednika Narodne skupštine izabrana je narodna poslanica Ana Brnabić'."@sr;
+                                :hasDocumentStatus  vip:published;
+                                :hasDocumentType    vip:webPage;
+                                :hasDocumentURL     <https://www.parlament.gov.rs/narodna-skupstina-/organizacija-i-strucna-sluzba/predsednik-narodne-skupstine.914.html>
+                              ];
+        :hasDocumentation     [ rdf:type            :RelatedData , :Documentation;
+                                rdfs:comment        "Vreme, 2. maj 2024: 'Novu Vladu Srbije će predvoditi premijer Miloš Vučević.'"@sr;
+                                :hasDocumentStatus  vip:published;
+                                :hasDocumentType    vip:newsArticle;
+                                :hasDocumentURL     <https://vreme.com/vesti/izabrana-nova-vlada-srbije-nakon-osmocasovne-rasprave-u-parlamentu/>
+                              ];
+        :hasDocumentation     [ rdf:type            :RelatedData , :Documentation;
+                                rdfs:comment        "RTS, 26. oktobar 2022: 'Predsednica Vlade Srbije Ana Brnabić i ministri položili su zakletvu u Skupštini Srbije'."@sr;
+                                :hasDocumentStatus  vip:published;
+                                :hasDocumentType    vip:newsArticle;
+                                :hasDocumentURL     <https://www.rts.rs/lat/vesti/politika/4998728/izglasana-nova-vlada-srbije.html>
+                              ];
+        :hasDocumentation     [ rdf:type            :RelatedData , :Documentation;
+                                rdfs:comment        "Sajt Narodne skupštine (pročitano 12. novembra 2026): 'Na sednici Narodne skupštine Republike Srbije, 28. oktobra 2020. godine, izabrana je po drugi put za predsednicu Vlade Srbije.'; 'Mandat u tom sazivu Vlade trajao je do 26. oktobra 2022. godine, kada je, po treći put, izabrana za predsednicu Vlade Srbije.'"@sr;
+                                :hasDocumentStatus  vip:published;
+                                :hasDocumentType    vip:webPage;
+                                :hasDocumentURL     <https://www.parlament.gov.rs/ANA_BRNABIĆ.1190.891.html>
+                              ];
+        :hasDocumentation     [ rdf:type            :RelatedData , :Documentation;
+                                rdfs:comment        "Narodna skupština, stenografske beleške, Deveta posebna sednica, 29. jun 2017: 'za predlog je glasalo 157 narodnih poslanika'; 'izabrala Vladu u predloženom sastavu'."@sr;
+                                :hasDocumentStatus  vip:published;
+                                :hasDocumentType    vip:officialDocument;
+                                :hasDocumentURL     <https://www.parlament.gov.rs/upload/archive/files/lat/doc/stenografske_beleske/29.%20jun%202017.%20LAT.pdf>
+                              ];
+        :hasEconomicOrganizationParticipant
+                rs:Vlada_Srbije;
+        :hasWorkRole          vip:primeMinister;
+        bio:participant       rs:Vlada_Srbije , rs:Ana_Brnabic;
+        owl:differentFrom     rs:Vlada_Srbije , rs:Ana_Brnabic .
+
 rs:MilenijumTim_PredragMali_Stan
         rdf:type            :Connection , :SourcedEntity , bio:Relationship;
         rdfs:comment        "Per KRIK (22 July 2019), a duplex in Voždovac owned by a Milenijum Tim subsidiary, unnamed in the article, housed Predrag Mali's then girlfriend until 2016; KRIK calls it a flat provided to Predrag Mali. Milenijum Tim said the building was built in 2009, all flats were sold and it keeps no record of who lives there. Bošnjak in court on 22 January 2026: Predrag never used a company flat, nor does the company own flats (Nova.rs). No start is given."@en , "Prema KRIK-u (22. jul 2019), u dupleksu na Voždovcu u vlasništvu „ćerke firme“ Milenijum tima, koju članak ne imenuje, do 2016. stanovala je tadašnja devojka Predraga Malog; KRIK to naziva stanom ustupljenim Predragu Malom. Milenijum tim: zgrada je građena 2009, svi stanovi su prodati i nemaju evidenciju ko u njima stanuje. Bošnjak na sudu 22. januara 2026: Predrag „nikada nije koristio službeni stan, niti kompanija poseduje stanove“ (Nova.rs). Početak nije naveden."@sr;
@@ -2322,6 +2552,31 @@ rs:INI_Media  rdf:type     foaf:Organization , foaf:Agent , :Company;
                              :hasDocumentURL     <https://vreme.com/vesti/lokalni-mediji-kupovina-alo-informer/>
                            ];
         foaf:name          "INI Media"@sr .
+
+rs:AssecoSEE_KancelarijaIT_RegistarStanovnistva
+        rdf:type           :SourcedEntity , :Connection , bio:Relationship;
+        rdfs:comment       "Na tenderu Kancelarije za IT i eUpravu za izradu Centralnog registra stanovništva, Asseco SEE je dobio ugovor vredan 180 miliona dinara (Radio Slobodna Evropa, Danas). Direktor Kancelarije Mihailo Jovanović rekao je 23. septembra 2020. da je Asseco dao najbolju od dve ispravne ponude i da je Kancelarija, znajući da je Igor Brnabić jedan od direktora kompanije, 14. novembra 2019. zatražila od Uprave za javne nabavke da se izjasni da li se ugovor može zaključiti. Izvori se ne slažu o datumu ugovora, pa nijedan nije zabeležen."@sr , "On a tender of the Office for IT and eGovernment for building the Central Population Register, Asseco SEE won a contract worth 180 million dinars (Radio Slobodna Evropa, Danas). The Office's director Mihailo Jovanović said on 23 September 2020 that Asseco gave the best of two valid bids, and that, knowing that Igor Brnabić was one of the company's directors, the Office had asked the Public Procurement Office on 14 November 2019 whether the contract could be concluded. The sources do not agree on the date of the contract, so none is recorded."@en;
+        rdfs:label         "contract: Central Population Register"@en , "ugovor: Centralni registar stanovništva"@sr;
+        :hasDocumentation  [ rdf:type            :RelatedData , :Documentation;
+                             rdfs:comment        "Radio Slobodna Evropa, 23. septembar 2020, prenosi izjavu direktora Kancelarije Mihaila Jovanovića: 'kompanija Asseco na tenderu za izradu Centralnog registra stanovništva dala najbolju ponudu'; 'imamo samo dve ispravne ponude i da je najpovoljniju dala kompanija Asseco'; '14. novembra 2019. godine zatraženo da se izjasni da li može sa kompanijom Asseco da se zaključi ugovor'."@sr;
+                             :hasDocumentStatus  vip:published;
+                             :hasDocumentType    vip:newsArticle;
+                             :hasDocumentURL     <https://www.slobodnaevropa.org/a/tepić-firma-premijerkinog-brata-iz-budžeta-dobila-40-miliona-evra/30854137.html>
+                           ];
+        :hasDocumentation  [ rdf:type            :RelatedData , :Documentation;
+                             rdfs:comment        "Radio Slobodna Evropa, 25. septembar 2020: 'tenderu u kojem je firma brata premijerke Srbije dobila ugovor vredan 180 miliona dinara'."@sr;
+                             :hasDocumentStatus  vip:published;
+                             :hasDocumentType    vip:newsArticle;
+                             :hasDocumentURL     <https://www.slobodnaevropa.org/a/ana-brnabic-asseco-vlada-budzet-tender-korupcija-srbija/30857881.html>
+                           ];
+        :hasDocumentation  [ rdf:type            :RelatedData , :Documentation;
+                             rdfs:comment        "Danas, 26. septembar 2020: 'posao vredan 180 miliona dinara'; 'kazao je Jovanović koji je dan nakon zatraženog mišljenja i zaključio ugovor sa Asekom'."@sr;
+                             :hasDocumentStatus  vip:published;
+                             :hasDocumentType    vip:newsArticle;
+                             :hasDocumentURL     <https://www.danas.rs/vesti/ekonomija/ugovori-aseka-s-18-miliona-evra-skocili-na-16-miliona/>
+                           ];
+        bio:participant    rs:Asseco_SEE , rs:Kancelarija_za_IT_i_eUpravu;
+        owl:differentFrom  rs:Kancelarija_za_IT_i_eUpravu , rs:Asseco_SEE .
 
 rs:AloMediaSystem_BestMediaTeam_Initial
         rdf:type              vip:OwnershipConnection , bio:Relationship , :SourcedEntity , :Connection;
@@ -2916,8 +3171,8 @@ rs:VistaRicaAD_VistaRicaCorporate_Management
         bio:participant    rs:Vista_Rica_Corporate , rs:Vista_Rica_AD;
         owl:differentFrom  rs:Vista_Rica_Corporate , rs:Vista_Rica_AD .
 
-rs:NALED  rdf:type            foaf:Agent , foaf:Organization;
-        rdfs:comment          "NALED je najveća privatno-javna asocijacija u Srbiji koja okuplja kompanije, lokalne samouprave i nevladine organizacije; 330 članova u 2025. prema sopstvenom sajtu."@sr;
+rs:NALED  rdf:type            :NonProfitOrganization , foaf:Agent , foaf:Organization;
+        rdfs:comment          "NALED is the largest private-public association in Serbia, bringing together companies, local governments and non-governmental organisations; 330 members in 2025 according to its own site. By its Statute it is a non-partisan, independent and non-profit association with legal personality, registration number 17646877; it was founded in 2006 within a USAID project for municipal economic development."@en , "NALED je najveća privatno-javna asocijacija u Srbiji koja okuplja kompanije, lokalne samouprave i nevladine organizacije; 330 članova u 2025. prema sopstvenom sajtu. Prema svom Statutu, nestranačko, nezavisno i neprofitno udruženje sa svojstvom pravnog lica, matični broj 17646877; osnovano je 2006. u okviru USAID-ovog projekta za podsticanje ekonomskog razvoja opština."@sr;
         dbo:foundationDate    "2006"^^xsd:gYear;
         dbo:location          "Beograd, Srbija"@sr;
         :alias                "NALED";
@@ -2933,10 +3188,25 @@ rs:NALED  rdf:type            foaf:Agent , foaf:Organization;
                                 :hasDocumentURL     <https://naled.rs/en/istorijat>
                               ];
         :hasDocumentation     [ rdf:type            :RelatedData , :Documentation;
+                                rdfs:comment        "Statut udruženja, usvojen 15. maja 2026: 'je nestranačko, nezavisno i neprofitno udruženje'; 'NALED je pravno lice sa pravima, obavezama i odgovornostima utvrđenim zakonom i ovim'; 'matični broj: 17646877'."@sr;
+                                :hasDocumentStatus  vip:published;
+                                :hasDocumentType    vip:officialDocument;
+                                :hasDocumentURL     <https://naled.rs/preuzimanje/skupstina/Statut_NALED-a_2026.pdf>
+                              ];
+        :hasDocumentation     [ rdf:type            :RelatedData , :Documentation;
+                                rdfs:comment        "Sajt NALED-a, strana „O nama“ (pročitano 12. novembra 2026): 'PIB: 104478656'; 'Matični broj: 17646877'."@sr;
                                 :hasDocumentStatus  vip:published;
                                 :hasDocumentType    vip:webPage;
                                 :hasDocumentURL     <https://naled.rs/o-nama>
                               ];
+        :hasDocumentation     [ rdf:type            :RelatedData , :Documentation;
+                                rdfs:comment        "Sajt NALED-a, strana „Istorijat“ (pročitano 12. novembra 2026), pod godinom 2006: 'Osnovana je Nacionalna alijansa za lokalni ekonomski razvoj u okviru USAID Projekta za podsticanje ekonomskog razvoja opština'; 'Pokrovitelji i potpisnici Deklaracije o osnivanju NALED-a bili su predsednik Republike Srbije i ambasador Sjedinjenih Američkih Država.'"@sr;
+                                :hasDocumentStatus  vip:published;
+                                :hasDocumentType    vip:webPage;
+                                :hasDocumentURL     <https://naled.rs/istorijat>
+                              ];
+        :hasTaxId             "104478656";
+        dcterms:identifier    "104478656";
         skos:altLabel         "NALED";
         foaf:name             "Nacionalna alijansa za lokalni ekonomski razvoj (NALED)"@sr , "NALED";
         vip:wikidataItem      <http://www.wikidata.org/entity/Q20436524>;
@@ -3490,6 +3760,32 @@ rs:DarkoTamindzic_ServiceForEfficientEnergy_Formation
                               ];
         bio:participant       rs:Service_for_Efficient_Energy , rs:Darko_Tamindzic;
         owl:differentFrom     rs:Service_for_Efficient_Energy , rs:Darko_Tamindzic .
+
+rs:KancelarijaIT_VladaSrbije_SluzbaVlade
+        rdf:type              :Connection , bio:Relationship , :SourcedEntity;
+        rdfs:comment          "Kancelarija je obrazovana kao služba Vlade 5. avgusta 2017. (sajt Kancelarije); Vlada ju je najavila kao centralnu funkciju u Vladi koja direktno odgovara premijeru (N1, prenosi Betu); Danas navodi rešenje o imenovanju njenog direktora: odgovoran je Vladi i predsedniku Vlade. Kraj nije zabeležen: sajt Kancelarije navodi da danas nastavlja rad kao posebna organizacija, bez datuma."@sr , "The Office was formed as a service of the Government on 5 August 2017 (the Office's site); the Government announced it as a central function in the Government that answers directly to the Prime Minister (N1 carrying Beta); Danas quotes the decision appointing its director: he answers to the Government and the Prime Minister. No end is recorded: the Office's site says it now continues as a special organisation, without a date."@en;
+        rdfs:label            "služba Vlade"@sr , "service of the Government"@en;
+        :connectionStartDate  "2017-08-05"^^xsd:date;
+        :hasDocumentation     [ rdf:type            :RelatedData , :Documentation;
+                                rdfs:comment        "N1, 27. jul 2017, prenosi Betu: 'koja će biti pozicionirana kao centralna funkcija u Vladi, koja direktno odgovara premijeru'."@sr;
+                                :hasDocumentStatus  vip:published;
+                                :hasDocumentType    vip:newsArticle;
+                                :hasDocumentURL     <https://n1info.rs/vesti/a286708-Osnovana-Kancelarija-za-informacione-tehnologije-i-elektronsku-upravu/>
+                              ];
+        :hasDocumentation     [ rdf:type            :RelatedData , :Documentation;
+                                rdfs:comment        "Sajt Kancelarije (pročitano 12. novembra 2026): 'Kancelarija za informacione tehnologije i elektronsku upravu obrazovana kao služba Vlade dana 05.08.2017. godine'; 'nastavlja rad kao posebna organizacija'."@sr;
+                                :hasDocumentStatus  vip:published;
+                                :hasDocumentType    vip:webPage;
+                                :hasDocumentURL     <https://www.ite.gov.rs/tekst/sr/149/kancelarija-za-it-i-eupravu.php>
+                              ];
+        :hasDocumentation     [ rdf:type            :RelatedData , :Documentation;
+                                rdfs:comment        "Danas, 26. septembar 2020: 'za direktora kancelarije – „odgovoran je Vladi i predsedniku Vlade“'."@sr;
+                                :hasDocumentStatus  vip:published;
+                                :hasDocumentType    vip:newsArticle;
+                                :hasDocumentURL     <https://www.danas.rs/vesti/ekonomija/ugovori-aseka-s-18-miliona-evra-skocili-na-16-miliona/>
+                              ];
+        bio:participant       rs:Vlada_Srbije , rs:Kancelarija_za_IT_i_eUpravu;
+        owl:differentFrom     rs:Vlada_Srbije , rs:Kancelarija_za_IT_i_eUpravu .
 
 rs:Srdjan_Davidovic  rdf:type  foaf:Agent , foaf:Person;
         rdfs:comment       "Osnivač i nekadašnji akcionar društva Vista Rica AD Beograd sa udelom od 25%; Nova Ekonomija izveštava o njegovom izlasku iz vlasništva."@sr , "Founder and former 25% shareholder of Vista Rica AD Beograd; Nova Ekonomija reports his exit from ownership."@en;

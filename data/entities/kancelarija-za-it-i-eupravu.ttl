@@ -1,0 +1,29 @@
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix dbo:     <http://dbpedia.org/ontology/> .
+@prefix rs:      <https://w3id.org/vip/rs/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix :        <http://poderopedia.com/vocab/> .
+@prefix vip:     <https://w3id.org/vip/vocab#> .
+
+# Kancelarija za informacione tehnologije i elektronsku upravu
+# Matična datoteka entiteta: tip, imena, identifikatori i izvori koji potvrđuju identitet.
+# Home file of this entity: type, names, identifiers and the sources for its identity.
+# Veze se nalaze u data/cases/. Connections live in data/cases/.
+
+rs:Kancelarija_za_IT_i_eUpravu a :GovernmentOrganization ;
+    foaf:name "Kancelarija za informacione tehnologije i elektronsku upravu"@sr ;
+    vip:wikipediaArticle <https://sr.wikipedia.org/wiki/Канцеларија_за_информационе_технологије_и_електронску_управу> ;
+    :alias "Kancelarija za IT i eUpravu"@sr ;
+    dbo:location "Beograd, Srbija"@sr ;
+    rdfs:comment "Organ Vlade Srbije za informacione tehnologije i elektronsku upravu, obrazovan kao služba Vlade 5. avgusta 2017; prema sopstvenom sajtu, danas nastavlja rad kao posebna organizacija."@sr ;
+    rdfs:comment "A body of the Government of Serbia for information technology and electronic government, formed as a service of the Government on 5 August 2017; according to its own site it now continues as a special organisation (\"posebna organizacija\")."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://www.ite.gov.rs/tekst/sr/149/kancelarija-za-it-i-eupravu.php> ; :hasDocumentType vip:webPage ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Sajt Kancelarije (pročitano 12. novembra 2026): 'Kancelarija za informacione tehnologije i elektronsku upravu obrazovana kao služba Vlade dana 05.08.2017. godine'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://sr.wikipedia.org/wiki/Канцеларија_за_информационе_технологије_и_електронску_управу> ; :hasDocumentType vip:encyclopediaArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Enciklopedijski članak: 'Пре него што је била посебна организација, Канцеларија је била служба Владе Републике Србије.'"@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://n1info.rs/vesti/a286708-Osnovana-Kancelarija-za-informacione-tehnologije-i-elektronsku-upravu/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "N1, 27. jul 2017, prenosi Betu: 'Vlada Srbije saopštila je da je donela Uredbu o formiranju Kancelarije za informacione tehnologije i elektronsku upravu'."@sr ] .

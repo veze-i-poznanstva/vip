@@ -232,38 +232,6 @@
   },
   {
     "data": {
-      "id": "igor_brnabic",
-      "label": "Igor Brnabić",
-      "type": "instance",
-      "nodeType": "person",
-      "uri": "https://w3id.org/vip/rs/Igor_Brnabic",
-      "comment": "Brat Ane Brnabić, identifikovan u izveštaju Radara i prilogu N1 koji prenosi isti izveštaj.",
-      "file": "data/entities/igor-brnabic.ttl",
-      "line": 12,
-      "sources": [
-        {
-          "url": "https://n1info.rs/vesti/poreski-raj-za-naprednjake-smislili-su-svoje-ostrvo-usred-srbije-jeste-li-culi-za-investicioni-fond-vista-rika/",
-          "domain": "n1info.rs",
-          "type": "newsArticle",
-          "status": "published",
-          "quote": "N1, 11. decembar 2025, prenosi Radar (nije nezavisna potvrda): \u0027List Radar otkriva da su na spisku klijenata rođena braća najviših državnih funkcionera.\u0027; \u0027Rekorder među funkcionerskom braćom, ipak je Igor Brnabić\u0027; urednik Radara Milan Ćulibrk: \u0027brat Siniše Malog i brat Ane Brnabić\u0027.",
-          "archive": "http://web.archive.org/web/20260125022145/https://n1info.rs/vesti/poreski-raj-za-naprednjake-smislili-su-svoje-ostrvo-usred-srbije-jeste-li-culi-za-investicioni-fond-vista-rika/",
-          "archivedOn": "2026-01-25"
-        },
-        {
-          "url": "https://radar.nova.rs/ekonomija/investicioni-fond-nedic-tatjana-vukic/",
-          "domain": "radar.nova.rs",
-          "type": "newsArticle",
-          "status": "published",
-          "quote": "Radar, 11. decembar 2025: \u0027rođena braća najviših državnih funkcionera\u0027; \u0027predsednice parlamenta i bivše premijerke Ane Brnabić\u0027; \u0027Rekorder među funkcionerskom braćom je, ipak, Igor Brnabić\u0027.",
-          "archive": "http://web.archive.org/web/20261030111957/https://radar.nova.rs/ekonomija/investicioni-fond-nedic-tatjana-vukic/",
-          "archivedOn": "2026-10-30"
-        }
-      ]
-    }
-  },
-  {
-    "data": {
       "id": "hidro_tehna_novi_sad",
       "label": "Hidro-tehna d.o.o. Novi Sad",
       "type": "instance",
@@ -290,6 +258,38 @@
           "quote": "Spisak objavljene dokumentacije (mss.jt.rs, PDF izrađen 27. januara 2025; prema 021.rs i Vremenu, dokumentaciju je objavilo Više javno tužilaštvo u Novom Sadu), stavka 509: \u0027Хидро-техна д.о.о. Нови Сад упућена Стартинг д.о.о. Београд. Датум: 29.09.2022.\u0027",
           "archive": "http://web.archive.org/web/20250826060221/https://mss.jt.rs/wp-content/uploads/2025/01/%D0%A1%D0%BF%D0%B8%D1%81%D0%B0%D0%BA-%D0%BE%D0%B1%D1%98%D0%B0%D0%B2%D1%99%D0%B5%D0%BD%D0%B5-%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D1%98%D0%B5-1.pdf",
           "archivedOn": "2025-08-26"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "igor_brnabic",
+      "label": "Igor Brnabić",
+      "type": "instance",
+      "nodeType": "person",
+      "uri": "https://w3id.org/vip/rs/Igor_Brnabic",
+      "comment": "Brat Ane Brnabić, identifikovan u izveštaju Radara i prilogu N1 koji prenosi isti izveštaj.",
+      "file": "data/entities/igor-brnabic.ttl",
+      "line": 12,
+      "sources": [
+        {
+          "url": "https://n1info.rs/vesti/poreski-raj-za-naprednjake-smislili-su-svoje-ostrvo-usred-srbije-jeste-li-culi-za-investicioni-fond-vista-rika/",
+          "domain": "n1info.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "N1, 11. decembar 2025, prenosi Radar (nije nezavisna potvrda): \u0027List Radar otkriva da su na spisku klijenata rođena braća najviših državnih funkcionera.\u0027; \u0027Rekorder među funkcionerskom braćom, ipak je Igor Brnabić\u0027; urednik Radara Milan Ćulibrk: \u0027brat Siniše Malog i brat Ane Brnabić\u0027.",
+          "archive": "http://web.archive.org/web/20260125022145/https://n1info.rs/vesti/poreski-raj-za-naprednjake-smislili-su-svoje-ostrvo-usred-srbije-jeste-li-culi-za-investicioni-fond-vista-rika/",
+          "archivedOn": "2026-01-25"
+        },
+        {
+          "url": "https://radar.nova.rs/ekonomija/investicioni-fond-nedic-tatjana-vukic/",
+          "domain": "radar.nova.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Radar, 11. decembar 2025: \u0027rođena braća najviših državnih funkcionera\u0027; \u0027predsednice parlamenta i bivše premijerke Ane Brnabić\u0027; \u0027Rekorder među funkcionerskom braćom je, ipak, Igor Brnabić\u0027.",
+          "archive": "http://web.archive.org/web/20261030111957/https://radar.nova.rs/ekonomija/investicioni-fond-nedic-tatjana-vukic/",
+          "archivedOn": "2026-10-30"
         }
       ]
     }
@@ -604,6 +604,58 @@
   },
   {
     "data": {
+      "id": "kancelarija_za_it_i_eupravu",
+      "label": "Kancelarija za informacione tehnologije i elektronsku upravu",
+      "type": "instance",
+      "nodeType": "organization",
+      "uri": "https://w3id.org/vip/rs/Kancelarija_za_IT_i_eUpravu",
+      "comment": "Organ Vlade Srbije za informacione tehnologije i elektronsku upravu, obrazovan kao služba Vlade 5. avgusta 2017; prema sopstvenom sajtu, danas nastavlja rad kao posebna organizacija.",
+      "wikipedia": "https://sr.wikipedia.org/wiki/Канцеларија_за_информационе_технологије_и_електронску_управу",
+      "aliases": [
+        "Kancelarija za IT i eUpravu"
+      ],
+      "facts": [
+        {
+          "property": "location",
+          "label": "location",
+          "value": "Beograd, Srbija"
+        }
+      ],
+      "file": "data/entities/kancelarija-za-it-i-eupravu.ttl",
+      "line": 16,
+      "sources": [
+        {
+          "url": "https://www.ite.gov.rs/tekst/sr/149/kancelarija-za-it-i-eupravu.php",
+          "domain": "ite.gov.rs",
+          "type": "webPage",
+          "status": "published",
+          "quote": "Sajt Kancelarije (pročitano 12. novembra 2026): \u0027Kancelarija za informacione tehnologije i elektronsku upravu obrazovana kao služba Vlade dana 05.08.2017. godine\u0027.",
+          "archive": "http://web.archive.org/web/20261009174715/https://ite.gov.rs/tekst/sr/149/kancelarija-za-it-i-eupravu.php",
+          "archivedOn": "2026-10-09"
+        },
+        {
+          "url": "https://n1info.rs/vesti/a286708-Osnovana-Kancelarija-za-informacione-tehnologije-i-elektronsku-upravu/",
+          "domain": "n1info.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "N1, 27. jul 2017, prenosi Betu: \u0027Vlada Srbije saopštila je da je donela Uredbu o formiranju Kancelarije za informacione tehnologije i elektronsku upravu\u0027.",
+          "archive": "http://web.archive.org/web/20250307033730/https://n1info.rs/vesti/a286708-osnovana-kancelarija-za-informacione-tehnologije-i-elektronsku-upravu/",
+          "archivedOn": "2025-03-07"
+        },
+        {
+          "url": "https://sr.wikipedia.org/wiki/Канцеларија_за_информационе_технологије_и_електронску_управу",
+          "domain": "sr.wikipedia.org",
+          "type": "encyclopediaArticle",
+          "status": "published",
+          "quote": "Enciklopedijski članak: \u0027Пре него што је била посебна организација, Канцеларија је била служба Владе Републике Србије.\u0027",
+          "archive": "http://web.archive.org/web/20250124060551/https://sr.wikipedia.org/wiki/%D0%9A%D0%B0%D0%BD%D1%86%D0%B5%D0%BB%D0%B0%D1%80%D0%B8%D1%98%D0%B0_%D0%B7%D0%B0_%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%B5_%D1%82%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%98%D0%B5_%D0%B8_%D0%B5%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%BE%D0%BD%D1%81%D0%BA%D1%83_%D1%83%D0%BF%D1%80%D0%B0%D0%B2%D1%83",
+          "archivedOn": "2025-01-24"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
       "id": "ivan_bosnjak_milenijum_tim",
       "label": "Ivan Bošnjak (Milenijum tim)",
       "type": "instance",
@@ -868,7 +920,7 @@
       "type": "instance",
       "nodeType": "organization",
       "uri": "https://w3id.org/vip/rs/NALED",
-      "comment": "NALED je najveća privatno-javna asocijacija u Srbiji koja okuplja kompanije, lokalne samouprave i nevladine organizacije; 330 članova u 2025. prema sopstvenom sajtu.",
+      "comment": "NALED je najveća privatno-javna asocijacija u Srbiji koja okuplja kompanije, lokalne samouprave i nevladine organizacije; 330 članova u 2025. prema sopstvenom sajtu. Prema svom Statutu, nestranačko, nezavisno i neprofitno udruženje sa svojstvom pravnog lica, matični broj 17646877; osnovano je 2006. u okviru USAID-ovog projekta za podsticanje ekonomskog razvoja opština.",
       "wikipedia": "https://sr.wikipedia.org/wiki/Nacionalna_alijansa_za_lokalni_ekonomski_razvoj",
       "wikidata": "http://www.wikidata.org/entity/Q20436524",
       "aliases": [
@@ -879,6 +931,11 @@
           "property": "foundationDate",
           "label": "foundation date",
           "value": "2006"
+        },
+        {
+          "property": "hasTaxId",
+          "label": "Tax ID",
+          "value": "104478656"
         },
         {
           "property": "location",
@@ -899,12 +956,31 @@
           "archivedOn": "2026-06-17"
         },
         {
+          "url": "https://naled.rs/istorijat",
+          "domain": "naled.rs",
+          "type": "webPage",
+          "status": "published",
+          "quote": "Sajt NALED-a, strana „Istorijat“ (pročitano 12. novembra 2026), pod godinom 2006: \u0027Osnovana je Nacionalna alijansa za lokalni ekonomski razvoj u okviru USAID Projekta za podsticanje ekonomskog razvoja opština\u0027; \u0027Pokrovitelji i potpisnici Deklaracije o osnivanju NALED-a bili su predsednik Republike Srbije i ambasador Sjedinjenih Američkih Država.\u0027",
+          "archive": "http://web.archive.org/web/20260417133044/https://naled.rs/istorijat",
+          "archivedOn": "2026-04-17"
+        },
+        {
           "url": "https://naled.rs/o-nama",
           "domain": "naled.rs",
           "type": "webPage",
           "status": "published",
+          "quote": "Sajt NALED-a, strana „O nama“ (pročitano 12. novembra 2026): \u0027PIB: 104478656\u0027; \u0027Matični broj: 17646877\u0027.",
           "archive": "http://web.archive.org/web/20260521021217/https://naled.rs/o-nama",
           "archivedOn": "2026-05-21"
+        },
+        {
+          "url": "https://naled.rs/preuzimanje/skupstina/Statut_NALED-a_2026.pdf",
+          "domain": "naled.rs",
+          "type": "officialDocument",
+          "status": "published",
+          "quote": "Statut udruženja, usvojen 15. maja 2026: \u0027je nestranačko, nezavisno i neprofitno udruženje\u0027; \u0027NALED je pravno lice sa pravima, obavezama i odgovornostima utvrđenim zakonom i ovim\u0027; \u0027matični broj: 17646877\u0027.",
+          "archive": "http://web.archive.org/web/20260615182247/https://naled.rs/preuzimanje/skupstina/Statut_NALED-a_2026.pdf",
+          "archivedOn": "2026-06-15"
         },
         {
           "url": "https://sr.wikipedia.org/wiki/Nacionalna_alijansa_za_lokalni_ekonomski_razvoj",
@@ -1638,6 +1714,58 @@
   },
   {
     "data": {
+      "id": "asseco_see",
+      "label": "Asseco SEE d.o.o. Beograd",
+      "type": "instance",
+      "nodeType": "organization",
+      "uri": "https://w3id.org/vip/rs/Asseco_SEE",
+      "comment": "IT kompanija iz Beograda, srpska kompanija grupe Asseco South Eastern Europe; prema godišnjem izveštaju Grupe za 2023, u potpunom je vlasništvu društva Asseco South Eastern Europe S.A. iz Poljske.",
+      "aliases": [
+        "Aseko SEE",
+        "Asseco SEE"
+      ],
+      "facts": [
+        {
+          "property": "location",
+          "label": "location",
+          "value": "Beograd, Srbija"
+        }
+      ],
+      "file": "data/entities/asseco-see.ttl",
+      "line": 15,
+      "sources": [
+        {
+          "url": "https://asee.io/wp-content/uploads/2025/12/Group-Asseco-SEE-Management-report-Consolidated-and-Standalone-1.pdf",
+          "domain": "asee.io",
+          "type": "officialDocument",
+          "status": "published",
+          "quote": "Asseco South Eastern Europe S.A., godišnji izveštaj Grupe za 2023 (asee.io): \u0027our subsidiary Asseco SEE d.o.o. Belgrade\u0027.",
+          "archive": "http://web.archive.org/web/20260417192019/https://asee.io/wp-content/uploads/2025/12/Group-Asseco-SEE-Management-report-Consolidated-and-Standalone-1.pdf",
+          "archivedOn": "2026-04-17"
+        },
+        {
+          "url": "https://n1info.rs/vesti/a652983-Aseko-odgovorio-na-optuzbe-Marinike-Tepic/",
+          "domain": "n1info.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "N1, 23. septembar 2020, prenosi saopštenje kompanije: \u0027Grupacija Asseco South Eastern Europe, u čijem je vlasništvu kompanija Asseco SEE u Srbiji\u0027.",
+          "archive": "http://web.archive.org/web/20250307050850/https://n1info.rs/vesti/a652983-aseko-odgovorio-na-optuzbe-marinike-tepic/",
+          "archivedOn": "2025-03-07"
+        },
+        {
+          "url": "https://nova.rs/vesti/politika/svi-poslovi-brata-ane-brnabic-od-grcicevog-eps-a-20-miliona-evra/",
+          "domain": "nova.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Nova.rs, 23. novembar 2020: \u0027čiji član Asseco See d.o.o. Beograd\u0027.",
+          "archive": "http://web.archive.org/web/20250214133248/https://nova.rs/vesti/politika/svi-poslovi-brata-ane-brnabic-od-grcicevog-eps-a-20-miliona-evra/",
+          "archivedOn": "2025-02-14"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
       "id": "ccecc_balkan_ogranak_beograd",
       "label": "China Civil Engineering Construction Corporation Balkan, ogranak Beograd",
       "type": "instance",
@@ -2342,38 +2470,6 @@
   },
   {
     "data": {
-      "id": "predrag_mali",
-      "label": "Predrag Mali",
-      "type": "instance",
-      "nodeType": "person",
-      "uri": "https://w3id.org/vip/rs/Predrag_Mali",
-      "comment": "Mlađi brat Siniše Malog, prema KRIK-u i prema samom Siniši Malom (Globus, 2014, preneo KRIK). KRIK navodi da je bio direktor bratovljeve firme Oli Consulting od 2005. do 2013, direktor porodične firme Kompost grup i 2014. član Upravnog odbora KK Crvena zvezda; te uloge ovde nisu zabeležene kao veze.",
-      "file": "data/entities/predrag-mali.ttl",
-      "line": 16,
-      "sources": [
-        {
-          "url": "https://www.krik.rs/koruptivne-veze-milenijum-tim-ustupio-audi-i-stan-bratu-sinise-malog/",
-          "domain": "krik.rs",
-          "type": "newsArticle",
-          "status": "published",
-          "quote": "KRIK, 22. jul 2019: \u0027Predrag Mali, rođeni brat ministra finansija Siniše Malog\u0027; Siniša Mali za Globus 2014, kako prenosi KRIK: \u0027moj mlađi brat Predrag\u0027.",
-          "archive": "http://web.archive.org/web/20260925060313/https://www.krik.rs/koruptivne-veze-milenijum-tim-ustupio-audi-i-stan-bratu-sinise-malog/",
-          "archivedOn": "2026-09-25"
-        },
-        {
-          "url": "https://n1info.rs/vesti/a501712-Milenijum-tim-ustupio-audi-i-stan-bratu-Sinise-Malog/",
-          "domain": "n1info.rs",
-          "type": "newsArticle",
-          "status": "published",
-          "quote": "N1 (Beta, KRIK), 22. jul 2019: \u0027Rođeni brat ministra finansija Siniše Malog Predrag Mali\u0027; prenosi KRIK, nije nezavisna potvrda.",
-          "archive": "http://web.archive.org/web/20261029214400/https://n1info.rs/vesti/a501712-Milenijum-tim-ustupio-audi-i-stan-bratu-Sinise-Malog/",
-          "archivedOn": "2026-10-29"
-        }
-      ]
-    }
-  },
-  {
-    "data": {
       "id": "miomedia",
       "label": "Miomedia",
       "type": "instance",
@@ -2400,6 +2496,38 @@
           "quote": "Vreme prenosi ANEM-ov izveštaj o ćerkama firmama Best Media Team: \u002730. decembra Miomediu u Mionici\u0027.",
           "archive": "http://web.archive.org/web/20260419063743/https://vreme.com/vesti/lokalni-mediji-kupovina-alo-informer/",
           "archivedOn": "2026-04-19"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "predrag_mali",
+      "label": "Predrag Mali",
+      "type": "instance",
+      "nodeType": "person",
+      "uri": "https://w3id.org/vip/rs/Predrag_Mali",
+      "comment": "Mlađi brat Siniše Malog, prema KRIK-u i prema samom Siniši Malom (Globus, 2014, preneo KRIK). KRIK navodi da je bio direktor bratovljeve firme Oli Consulting od 2005. do 2013, direktor porodične firme Kompost grup i 2014. član Upravnog odbora KK Crvena zvezda; te uloge ovde nisu zabeležene kao veze.",
+      "file": "data/entities/predrag-mali.ttl",
+      "line": 16,
+      "sources": [
+        {
+          "url": "https://www.krik.rs/koruptivne-veze-milenijum-tim-ustupio-audi-i-stan-bratu-sinise-malog/",
+          "domain": "krik.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "KRIK, 22. jul 2019: \u0027Predrag Mali, rođeni brat ministra finansija Siniše Malog\u0027; Siniša Mali za Globus 2014, kako prenosi KRIK: \u0027moj mlađi brat Predrag\u0027.",
+          "archive": "http://web.archive.org/web/20260925060313/https://www.krik.rs/koruptivne-veze-milenijum-tim-ustupio-audi-i-stan-bratu-sinise-malog/",
+          "archivedOn": "2026-09-25"
+        },
+        {
+          "url": "https://n1info.rs/vesti/a501712-Milenijum-tim-ustupio-audi-i-stan-bratu-Sinise-Malog/",
+          "domain": "n1info.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "N1 (Beta, KRIK), 22. jul 2019: \u0027Rođeni brat ministra finansija Siniše Malog Predrag Mali\u0027; prenosi KRIK, nije nezavisna potvrda.",
+          "archive": "http://web.archive.org/web/20261029214400/https://n1info.rs/vesti/a501712-Milenijum-tim-ustupio-audi-i-stan-bratu-Sinise-Malog/",
+          "archivedOn": "2026-10-29"
         }
       ]
     }
@@ -3061,21 +3189,19 @@
   {
     "data": {
       "id": "edge4",
-      "label": "founder",
+      "label": "učešće u osnivanju",
+      "labels": {
+        "en": "took part in the founding",
+        "sr": "učešće u osnivanju"
+      },
       "source": "ana_brnabic",
       "target": "naled",
       "uri": "https://w3id.org/vip/rs/AnaBrnabic_NALED_Osnivanje",
-      "comment": "Ana Brnabić je aktivno učestvovala u osnivanju NALED-a 2006. godine.",
-      "kind": "WorkConnection",
-      "typeLabel": "Work Connection",
-      "roles": [
-        {
-          "en": "Founder",
-          "es": "Fundador",
-          "sr": "Osnivač"
-        }
-      ],
+      "comment": "Ana Brnabić je učestvovala u osnivanju NALED-a 2006. godine; N1 navodi da je to bilo u svojstvu višeg koordinatora USAID-ovog programa za ekonomski razvoj opština. Radio Slobodna Evropa prenosi biografiju sa sajta Vlade. Izvori govore o učešću u osnivanju, ne o zaposlenju u NALED-u; osnivanje je događaj iz 2006, pa veza počinje i završava se te godine.",
+      "kind": "Connection",
+      "typeLabel": "Generic connection",
       "start": "2006",
+      "end": "2006",
       "file": "data/cases/milenijum-tim.ttl",
       "line": 57,
       "sources": [
@@ -3084,16 +3210,34 @@
           "domain": "kurir.rs",
           "type": "newsArticle",
           "status": "published",
-          "quote": "Biografija, jun 2017: Aktivno učestvuje u osnivanju NALED-a 2006.",
+          "quote": "Kurir, 15. jun 2017, biografija: \u0027Aktivno učestvuje u osnivanju Nacionalne alijanse za lokalni ekonomski razvoj (NALED) 2006.\u0027",
           "archive": "http://web.archive.org/web/20261013002115/https://www.kurir.rs/vesti/politika/2864945/ovo-je-biografija-nove-premijerke-ana-brnabic-prva-zena-na-celu-vlade-srbije-u-istoriji",
           "archivedOn": "2026-10-13"
+        },
+        {
+          "url": "https://n1info.rs/vesti/a276314-Ana-Brnabic-nova-premijerka/",
+          "domain": "n1info.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "N1, 15. jun 2017: \u0027Aktivno je učestvovala u osnivanju Nacionalne alijanse za lokalni ekonomski razvoj (NALED) kao viši koordinator USAID-ovog programa za ekonomski razvoj opština\u0027.",
+          "archive": "https://web.archive.org/web/20261112151815/https://n1info.rs/vesti/a276314-Ana-Brnabic-nova-premijerka/",
+          "archivedOn": "2026-11-12"
+        },
+        {
+          "url": "https://www.slobodnaevropa.org/a/vucic-mandatar-vlada-srbija/28557169.html",
+          "domain": "slobodnaevropa.org",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Radio Slobodna Evropa, 15. jun 2017, prenosi biografiju sa sajta Vlade Srbije: \u0027Aktivno je učestvovala u osnivanju Nacionalne alijanse za lokalni ekonomski razvoj (NALED) 2006. godine.\u0027",
+          "archive": "http://web.archive.org/web/20260104164857/https://www.slobodnaevropa.org/a/vucic-mandatar-vlada-srbija/28557169.html",
+          "archivedOn": "2026-01-04"
         },
         {
           "url": "https://sr.wikipedia.org/wiki/Ана_Брнабић",
           "domain": "sr.wikipedia.org",
           "type": "encyclopediaArticle",
           "status": "published",
-          "quote": "Aktivno je učestvovala u osnivanju alijanse 2006. godine.",
+          "quote": "Vikipedija: \u0027Активно је учествовала у оснивању Националне алијансе за локални економски развој 2006. године.\u0027",
           "archive": "http://web.archive.org/web/20260927001708/https://sr.wikipedia.org/wiki/%D0%90%D0%BD%D0%B0_%D0%91%D1%80%D0%BD%D0%B0%D0%B1%D0%B8%D1%9B",
           "archivedOn": "2026-09-27"
         }
@@ -3120,7 +3264,7 @@
       "start": "2013",
       "end": "2016-04",
       "file": "data/cases/milenijum-tim.ttl",
-      "line": 69,
+      "line": 74,
       "sources": [
         {
           "url": "https://capitalsummit.naled.rs/ana-brnabic.php",
@@ -3163,7 +3307,7 @@
       "start": "2016-04",
       "end": "2016-08",
       "file": "data/cases/milenijum-tim.ttl",
-      "line": 82,
+      "line": 87,
       "sources": [
         {
           "url": "https://www.diplomacyandcommerce.rs/naled-has-chosen-a-new-president-and-members-of-the-board-of-directors/",
@@ -3312,6 +3456,137 @@
   {
     "data": {
       "id": "edge10",
+      "label": "minister",
+      "source": "ana_brnabic",
+      "target": "vlada_srbije",
+      "uri": "https://w3id.org/vip/rs/AnaBrnabic_VladaSrbije_MinistarkaDrzavneUprave",
+      "comment": "Ana Brnabić je u avgustu 2016. izabrana za ministarku državne uprave i lokalne samouprave i tu funkciju je obavljala do izbora za predsednicu Vlade 29. juna 2017. (sajt Narodne skupštine, Vikipedija). Sajt Skupštine navodi mesec izbora; dan, 11. avgust 2016, navodi samo Vikipedija, pa je početak zabeležen do meseca.",
+      "kind": "WorkConnection",
+      "typeLabel": "Work Connection",
+      "roles": [
+        {
+          "en": "Minister",
+          "es": "Ministro",
+          "sr": "Ministar"
+        }
+      ],
+      "start": "2016-08",
+      "end": "2017-06-29",
+      "file": "data/cases/javne-funkcije/vlada-srbije.ttl",
+      "line": 18,
+      "sources": [
+        {
+          "url": "https://n1info.rs/vesti/a276314-Ana-Brnabic-nova-premijerka/",
+          "domain": "n1info.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "N1, 15. jun 2017: \u0027Dosadašnja ministarka državne uprave i lokalne samouprave Ana Brnabić biće mandatarka za sastav nove Vlade Srbije\u0027.",
+          "archive": "https://web.archive.org/web/20261112151815/https://n1info.rs/vesti/a276314-Ana-Brnabic-nova-premijerka/",
+          "archivedOn": "2026-11-12"
+        },
+        {
+          "url": "https://www.parlament.gov.rs/ANA_BRNABIĆ.1190.891.html",
+          "domain": "parlament.gov.rs",
+          "type": "webPage",
+          "status": "published",
+          "quote": "Sajt Narodne skupštine (pročitano 12. novembra 2026): \u0027U avgustu 2016. godine izabrana je za ministarku državne uprave i lokalne samouprave u Vladi Srbije, i tu funkciju je obavljala do izbora za predsednicu Vlade\u0027.",
+          "archive": "http://web.archive.org/web/20261029052951/https://www.parlament.gov.rs/ANA_BRNABI%C4%86.1190.891.html",
+          "archivedOn": "2026-10-29"
+        },
+        {
+          "url": "https://sr.wikipedia.org/wiki/Ана_Брнабић",
+          "domain": "sr.wikipedia.org",
+          "type": "encyclopediaArticle",
+          "status": "published",
+          "quote": "Enciklopedijski članak: \u002711. август 2016 — 29. јун 2017.\u0027; \u0027У августу 2016. године, именована је за министра државне управе и локалне самоуправе.\u0027",
+          "archive": "http://web.archive.org/web/20260927001708/https://sr.wikipedia.org/wiki/%D0%90%D0%BD%D0%B0_%D0%91%D1%80%D0%BD%D0%B0%D0%B1%D0%B8%D1%9B",
+          "archivedOn": "2026-09-27"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "edge11",
+      "label": "prime minister",
+      "source": "ana_brnabic",
+      "target": "vlada_srbije",
+      "uri": "https://w3id.org/vip/rs/AnaBrnabic_VladaSrbije_PredsednicaVlade",
+      "comment": "Narodna skupština je 29. juna 2017. izabrala Vladu Ane Brnabić, sa 157 glasova za, i ona i ministri su istog dana položili zakletvu (stenografske beleške Skupštine, N1). Ponovo je izabrana za predsednicu Vlade 28. oktobra 2020. i 26. oktobra 2022. (sajt Skupštine, RTS). Za predsednicu Narodne skupštine izabrana je 20. marta 2024. (sajt Skupštine), a sledeća Vlada, Miloša Vučevića, izabrana je 2. maja 2024. (Vreme). Pročitani izvori ne navode dan kada joj je prestao mandat predsednice Vlade, pa je kraj zabeležen samo kao godina.",
+      "kind": "WorkConnection",
+      "typeLabel": "Work Connection",
+      "roles": [
+        {
+          "en": "Prime minister",
+          "es": "Primer ministro",
+          "sr": "Predsednik Vlade"
+        }
+      ],
+      "start": "2017-06-29",
+      "end": "2024",
+      "file": "data/cases/javne-funkcije/vlada-srbije.ttl",
+      "line": 34,
+      "sources": [
+        {
+          "url": "https://n1info.rs/vesti/a279662-Ana-Brnabic-i-ministri-polozili-zakletvu/",
+          "domain": "n1info.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "N1, 29. jun 2017: \u0027Ana Brnabić i 21 ministar u novoj vladi Srbije položili su zakletvu\u0027.",
+          "archive": "http://web.archive.org/web/20250314150007/https://n1info.rs/vesti/a279662-ana-brnabic-i-ministri-polozili-zakletvu/",
+          "archivedOn": "2025-03-14"
+        },
+        {
+          "url": "https://www.parlament.gov.rs/ANA_BRNABIĆ.1190.891.html",
+          "domain": "parlament.gov.rs",
+          "type": "webPage",
+          "status": "published",
+          "quote": "Sajt Narodne skupštine (pročitano 12. novembra 2026): \u0027Na sednici Narodne skupštine Republike Srbije, 28. oktobra 2020. godine, izabrana je po drugi put za predsednicu Vlade Srbije.\u0027; \u0027Mandat u tom sazivu Vlade trajao je do 26. oktobra 2022. godine, kada je, po treći put, izabrana za predsednicu Vlade Srbije.\u0027",
+          "archive": "http://web.archive.org/web/20261029052951/https://www.parlament.gov.rs/ANA_BRNABI%C4%86.1190.891.html",
+          "archivedOn": "2026-10-29"
+        },
+        {
+          "url": "https://www.parlament.gov.rs/narodna-skupstina-/organizacija-i-strucna-sluzba/predsednik-narodne-skupstine.914.html",
+          "domain": "parlament.gov.rs",
+          "type": "webPage",
+          "status": "published",
+          "quote": "Sajt Narodne skupštine, strana \u0027Predsednik Narodne skupštine\u0027 (pročitano 12. novembra 2026): \u0027dana 20. marta 2024. godine, za predsednika Narodne skupštine izabrana je narodna poslanica Ana Brnabić\u0027.",
+          "archive": "http://web.archive.org/web/20261028191643/https://www.parlament.gov.rs/narodna-skupstina-/organizacija-i-strucna-sluzba/predsednik-narodne-skupstine.914.html",
+          "archivedOn": "2026-10-28"
+        },
+        {
+          "url": "https://www.parlament.gov.rs/upload/archive/files/lat/doc/stenografske_beleske/29.%20jun%202017.%20LAT.pdf",
+          "domain": "parlament.gov.rs",
+          "type": "officialDocument",
+          "status": "published",
+          "quote": "Narodna skupština, stenografske beleške, Deveta posebna sednica, 29. jun 2017: \u0027za predlog je glasalo 157 narodnih poslanika\u0027; \u0027izabrala Vladu u predloženom sastavu\u0027.",
+          "archive": "http://web.archive.org/web/20261027214507/https://www.parlament.gov.rs/upload/archive/files/lat/doc/stenografske_beleske/29.%20jun%202017.%20LAT.pdf",
+          "archivedOn": "2026-10-27"
+        },
+        {
+          "url": "https://www.rts.rs/lat/vesti/politika/4998728/izglasana-nova-vlada-srbije.html",
+          "domain": "rts.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "RTS, 26. oktobar 2022: \u0027Predsednica Vlade Srbije Ana Brnabić i ministri položili su zakletvu u Skupštini Srbije\u0027.",
+          "archive": "http://web.archive.org/web/20251117160706/https://www.rts.rs/lat/vesti/politika/4998728/izglasana-nova-vlada-srbije.html",
+          "archivedOn": "2025-11-17"
+        },
+        {
+          "url": "https://vreme.com/vesti/izabrana-nova-vlada-srbije-nakon-osmocasovne-rasprave-u-parlamentu/",
+          "domain": "vreme.com",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Vreme, 2. maj 2024: \u0027Novu Vladu Srbije će predvoditi premijer Miloš Vučević.\u0027",
+          "archive": "http://web.archive.org/web/20241004101435/https://vreme.com/vesti/izabrana-nova-vlada-srbije-nakon-osmocasovne-rasprave-u-parlamentu/",
+          "archivedOn": "2024-10-04"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "edge12",
       "label": "presidency member",
       "source": "andrej_vucic",
       "target": "kk_crvena_zvezda",
@@ -3363,7 +3638,54 @@
   },
   {
     "data": {
-      "id": "edge11",
+      "id": "edge13",
+      "label": "ugovor: Centralni registar stanovništva",
+      "labels": {
+        "en": "contract: Central Population Register",
+        "sr": "ugovor: Centralni registar stanovništva"
+      },
+      "source": "asseco_see",
+      "target": "kancelarija_za_it_i_eupravu",
+      "uri": "https://w3id.org/vip/rs/AssecoSEE_KancelarijaIT_RegistarStanovnistva",
+      "comment": "Na tenderu Kancelarije za IT i eUpravu za izradu Centralnog registra stanovništva, Asseco SEE je dobio ugovor vredan 180 miliona dinara (Radio Slobodna Evropa, Danas). Direktor Kancelarije Mihailo Jovanović rekao je 23. septembra 2020. da je Asseco dao najbolju od dve ispravne ponude i da je Kancelarija, znajući da je Igor Brnabić jedan od direktora kompanije, 14. novembra 2019. zatražila od Uprave za javne nabavke da se izjasni da li se ugovor može zaključiti. Izvori se ne slažu o datumu ugovora, pa nijedan nije zabeležen.",
+      "kind": "Connection",
+      "typeLabel": "Generic connection",
+      "file": "data/cases/asseco-see.ttl",
+      "line": 33,
+      "sources": [
+        {
+          "url": "https://www.danas.rs/vesti/ekonomija/ugovori-aseka-s-18-miliona-evra-skocili-na-16-miliona/",
+          "domain": "danas.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Danas, 26. septembar 2020: \u0027posao vredan 180 miliona dinara\u0027; \u0027kazao je Jovanović koji je dan nakon zatraženog mišljenja i zaključio ugovor sa Asekom\u0027.",
+          "archive": "http://web.archive.org/web/20261112152032/https://www.danas.rs/vesti/ekonomija/ugovori-aseka-s-18-miliona-evra-skocili-na-16-miliona/",
+          "archivedOn": "2026-11-12"
+        },
+        {
+          "url": "https://www.slobodnaevropa.org/a/ana-brnabic-asseco-vlada-budzet-tender-korupcija-srbija/30857881.html",
+          "domain": "slobodnaevropa.org",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Radio Slobodna Evropa, 25. septembar 2020: \u0027tenderu u kojem je firma brata premijerke Srbije dobila ugovor vredan 180 miliona dinara\u0027.",
+          "archive": "https://web.archive.org/web/20261112152142/https://www.slobodnaevropa.org/a/ana-brnabic-asseco-vlada-budzet-tender-korupcija-srbija/30857881.html",
+          "archivedOn": "2026-11-12"
+        },
+        {
+          "url": "https://www.slobodnaevropa.org/a/tepić-firma-premijerkinog-brata-iz-budžeta-dobila-40-miliona-evra/30854137.html",
+          "domain": "slobodnaevropa.org",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Radio Slobodna Evropa, 23. septembar 2020, prenosi izjavu direktora Kancelarije Mihaila Jovanovića: \u0027kompanija Asseco na tenderu za izradu Centralnog registra stanovništva dala najbolju ponudu\u0027; \u0027imamo samo dve ispravne ponude i da je najpovoljniju dala kompanija Asseco\u0027; \u002714. novembra 2019. godine zatraženo da se izjasni da li može sa kompanijom Asseco da se zaključi ugovor\u0027.",
+          "archive": "http://web.archive.org/web/20250810225755/https://www.slobodnaevropa.org/a/tepi%C4%87-firma-premijerkinog-brata-iz-bud%C5%BEeta-dobila-40-miliona-evra/30854137.html",
+          "archivedOn": "2025-08-10"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "edge14",
       "label": "ownership connection",
       "source": "best_media_team",
       "target": "infomacva",
@@ -3399,7 +3721,7 @@
   },
   {
     "data": {
-      "id": "edge12",
+      "id": "edge15",
       "label": "ownership connection",
       "source": "best_media_team",
       "target": "miomedia",
@@ -3434,7 +3756,7 @@
   },
   {
     "data": {
-      "id": "edge13",
+      "id": "edge16",
       "label": "podizvođenje obnove stanice",
       "labels": {
         "en": "station renovation subcontract",
@@ -3482,7 +3804,7 @@
   },
   {
     "data": {
-      "id": "edge14",
+      "id": "edge17",
       "label": "Pomoć pri osnivanju",
       "labels": {
         "en": "Formation assistance",
@@ -3522,7 +3844,7 @@
   },
   {
     "data": {
-      "id": "edge15",
+      "id": "edge18",
       "label": "ownership connection",
       "source": "global_media_technology",
       "target": "matrix_d",
@@ -3556,7 +3878,7 @@
   },
   {
     "data": {
-      "id": "edge16",
+      "id": "edge19",
       "label": "ownership connection",
       "source": "global_media_technology",
       "target": "maxim_media_plus",
@@ -3592,7 +3914,7 @@
   },
   {
     "data": {
-      "id": "edge17",
+      "id": "edge20",
       "label": "ownership connection",
       "source": "global_media_technology",
       "target": "rimi_media_group",
@@ -3626,7 +3948,7 @@
   },
   {
     "data": {
-      "id": "edge18",
+      "id": "edge21",
       "label": "siblings",
       "source": "ana_brnabic",
       "target": "igor_brnabic",
@@ -3660,7 +3982,67 @@
   },
   {
     "data": {
-      "id": "edge19",
+      "id": "edge22",
+      "label": "director",
+      "source": "igor_brnabic",
+      "target": "asseco_see",
+      "uri": "https://w3id.org/vip/rs/IgorBrnabic_AssecoSEE_Direktor",
+      "comment": "Izvori opisuju Igora Brnabića kao direktora srpskog ogranka Asseco SEE ili kao jednog od njegovih direktora (Danas, Radio Slobodna Evropa, Nova.rs, Insajder). Funkciju je napustio u novembru 2020. (Nova.rs; Insajder, prenosi N1). Izvori se ne slažu o tome kada je postavljen (Danas: februar 2017; Insajder: 2015), pa početak nije zabeležen.",
+      "kind": "WorkConnection",
+      "typeLabel": "Work Connection",
+      "roles": [
+        {
+          "en": "Director",
+          "es": "Director",
+          "sr": "Direktor"
+        }
+      ],
+      "end": "2020-11",
+      "file": "data/cases/asseco-see.ttl",
+      "line": 16,
+      "sources": [
+        {
+          "url": "https://www.danas.rs/ljudi/igor-brnabic-prozvani-direktor-premijerkin-brat/",
+          "domain": "danas.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Danas, 26. septembar 2020: \u0027Igor Brnabić direktor je srpskog ogranka Aseko SEE.\u0027",
+          "archive": "http://web.archive.org/web/20220926115411/https://www.danas.rs/ljudi/igor-brnabic-prozvani-direktor-premijerkin-brat/",
+          "archivedOn": "2022-09-26"
+        },
+        {
+          "url": "https://n1info.rs/vesti/a686233-Politika-kao-biznis-drzava-kao-partijski-plen-treci-deo/",
+          "domain": "n1info.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "N1, 22. decembar 2020, prenosi Insajder: \u0027od 2015. do 2020. bio je direktor predstavništva te kompanije u Srbiji\u0027; \u0027Ostavku je podneo u novembru ove godine\u0027.",
+          "archive": "https://web.archive.org/web/20261112151933/https://n1info.rs/vesti/a686233-Politika-kao-biznis-drzava-kao-partijski-plen-treci-deo/",
+          "archivedOn": "2026-11-12"
+        },
+        {
+          "url": "https://nova.rs/vesti/politika/svi-poslovi-brata-ane-brnabic-od-grcicevog-eps-a-20-miliona-evra/",
+          "domain": "nova.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Nova.rs, 23. novembar 2020 (stranica izmenjena 14. februara 2025): \u0027Igor Brnabić napustio je direktorsku funkciju u kompaniji Aseko u novembru 2020. godine\u0027.",
+          "archive": "http://web.archive.org/web/20250214133248/https://nova.rs/vesti/politika/svi-poslovi-brata-ane-brnabic-od-grcicevog-eps-a-20-miliona-evra/",
+          "archivedOn": "2025-02-14"
+        },
+        {
+          "url": "https://www.slobodnaevropa.org/a/ana-brnabic-asseco-vlada-budzet-tender-korupcija-srbija/30857881.html",
+          "domain": "slobodnaevropa.org",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Radio Slobodna Evropa, 25. septembar 2020: \u0027Igor Brnabić, jedan od direktora u Asseco SEE\u0027.",
+          "archive": "https://web.archive.org/web/20261112152142/https://www.slobodnaevropa.org/a/ana-brnabic-asseco-vlada-budzet-tender-korupcija-srbija/30857881.html",
+          "archivedOn": "2026-11-12"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "edge23",
       "label": "ownership connection",
       "source": "insajder_tim",
       "target": "best_media_team",
@@ -3696,7 +4078,7 @@
   },
   {
     "data": {
-      "id": "edge20",
+      "id": "edge24",
       "label": "ownership connection",
       "source": "ivan_bosnjak_milenijum_tim",
       "target": "kbv_datacom",
@@ -3740,7 +4122,7 @@
   },
   {
     "data": {
-      "id": "edge21",
+      "id": "edge25",
       "label": "board member",
       "source": "ivan_bosnjak_milenijum_tim",
       "target": "kk_crvena_zvezda",
@@ -3792,7 +4174,7 @@
   },
   {
     "data": {
-      "id": "edge22",
+      "id": "edge26",
       "label": "political connection",
       "source": "ivan_bosnjak_zrenjanin",
       "target": "sns",
@@ -3826,7 +4208,7 @@
   },
   {
     "data": {
-      "id": "edge23",
+      "id": "edge27",
       "label": "ownership connection",
       "source": "ivan_bosnjak_milenijum_tim",
       "target": "milenijum_tim",
@@ -3862,7 +4244,7 @@
   },
   {
     "data": {
-      "id": "edge24",
+      "id": "edge28",
       "label": "executive board member",
       "source": "ivan_bosnjak_milenijum_tim",
       "target": "naled",
@@ -3903,7 +4285,55 @@
   },
   {
     "data": {
-      "id": "edge25",
+      "id": "edge29",
+      "label": "služba Vlade",
+      "labels": {
+        "en": "service of the Government",
+        "sr": "služba Vlade"
+      },
+      "source": "kancelarija_za_it_i_eupravu",
+      "target": "vlada_srbije",
+      "uri": "https://w3id.org/vip/rs/KancelarijaIT_VladaSrbije_SluzbaVlade",
+      "comment": "Kancelarija je obrazovana kao služba Vlade 5. avgusta 2017. (sajt Kancelarije); Vlada ju je najavila kao centralnu funkciju u Vladi koja direktno odgovara premijeru (N1, prenosi Betu); Danas navodi rešenje o imenovanju njenog direktora: odgovoran je Vladi i predsedniku Vlade. Kraj nije zabeležen: sajt Kancelarije navodi da danas nastavlja rad kao posebna organizacija, bez datuma.",
+      "kind": "Connection",
+      "typeLabel": "Generic connection",
+      "start": "2017-08-05",
+      "file": "data/cases/asseco-see.ttl",
+      "line": 46,
+      "sources": [
+        {
+          "url": "https://www.danas.rs/vesti/ekonomija/ugovori-aseka-s-18-miliona-evra-skocili-na-16-miliona/",
+          "domain": "danas.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Danas, 26. septembar 2020: \u0027za direktora kancelarije – „odgovoran je Vladi i predsedniku Vlade“\u0027.",
+          "archive": "http://web.archive.org/web/20261112152032/https://www.danas.rs/vesti/ekonomija/ugovori-aseka-s-18-miliona-evra-skocili-na-16-miliona/",
+          "archivedOn": "2026-11-12"
+        },
+        {
+          "url": "https://www.ite.gov.rs/tekst/sr/149/kancelarija-za-it-i-eupravu.php",
+          "domain": "ite.gov.rs",
+          "type": "webPage",
+          "status": "published",
+          "quote": "Sajt Kancelarije (pročitano 12. novembra 2026): \u0027Kancelarija za informacione tehnologije i elektronsku upravu obrazovana kao služba Vlade dana 05.08.2017. godine\u0027; \u0027nastavlja rad kao posebna organizacija\u0027.",
+          "archive": "http://web.archive.org/web/20261009174715/https://ite.gov.rs/tekst/sr/149/kancelarija-za-it-i-eupravu.php",
+          "archivedOn": "2026-10-09"
+        },
+        {
+          "url": "https://n1info.rs/vesti/a286708-Osnovana-Kancelarija-za-informacione-tehnologije-i-elektronsku-upravu/",
+          "domain": "n1info.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "N1, 27. jul 2017, prenosi Betu: \u0027koja će biti pozicionirana kao centralna funkcija u Vladi, koja direktno odgovara premijeru\u0027.",
+          "archive": "http://web.archive.org/web/20250307033730/https://n1info.rs/vesti/a286708-osnovana-kancelarija-za-informacione-tehnologije-i-elektronsku-upravu/",
+          "archivedOn": "2025-03-07"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "edge30",
       "label": "ownership connection",
       "source": "ljiljana_tripkovic",
       "target": "starting",
@@ -3947,7 +4377,7 @@
   },
   {
     "data": {
-      "id": "edge26",
+      "id": "edge31",
       "label": "director",
       "source": "malisa_nedeljkovic",
       "target": "starting",
@@ -3998,7 +4428,7 @@
   },
   {
     "data": {
-      "id": "edge27",
+      "id": "edge32",
       "label": "ownership connection",
       "source": "maxim_media_plus",
       "target": "baltazar",
@@ -4033,7 +4463,7 @@
   },
   {
     "data": {
-      "id": "edge28",
+      "id": "edge33",
       "label": "ownership connection",
       "source": "maxim_media_plus",
       "target": "bis_komerc",
@@ -4068,7 +4498,7 @@
   },
   {
     "data": {
-      "id": "edge29",
+      "id": "edge34",
       "label": "ownership connection",
       "source": "maxim_media_plus",
       "target": "new_agency",
@@ -4103,7 +4533,138 @@
   },
   {
     "data": {
-      "id": "edge30",
+      "id": "edge35",
+      "label": "director",
+      "source": "mihailo_jovanovic",
+      "target": "kancelarija_za_it_i_eupravu",
+      "uri": "https://w3id.org/vip/rs/MihailoJovanovic_KancelarijaIT_Direktor_2024",
+      "comment": "Vlada je 29. avgusta 2024. izabrala Mihaila Jovanovića za v. d. direktora Kancelarije, na predlog predsednika Vlade Miloša Vučevića (Novosti); sajt Kancelarije, pročitan 12. novembra 2026, navodi ga kao direktora i kaže da je tu funkciju obavljao u dva navrata. Kraj nije zabeležen: to je poslednje dokumentovano stanje, ne dokaz da funkcija traje.",
+      "kind": "WorkConnection",
+      "typeLabel": "Work Connection",
+      "roles": [
+        {
+          "en": "Director",
+          "es": "Director",
+          "sr": "Direktor"
+        }
+      ],
+      "start": "2024-08-29",
+      "file": "data/cases/javne-funkcije/kancelarija-za-it-i-eupravu.ttl",
+      "line": 36,
+      "sources": [
+        {
+          "url": "https://www.ite.gov.rs/tekst/sr/150/direktor.php",
+          "domain": "ite.gov.rs",
+          "type": "webPage",
+          "status": "published",
+          "quote": "Sajt Kancelarije, strana \u0027Direktor\u0027 (pročitano 12. novembra 2026): \u0027dr Mihailo Jovanović, direktor Kancelarije za IT i eUpravu\u0027; \u0027čiji je direktor u dva navrata\u0027.",
+          "archive": "http://web.archive.org/web/20261009165017/https://ite.gov.rs/tekst/sr/150/direktor.php",
+          "archivedOn": "2026-10-09"
+        },
+        {
+          "url": "https://www.novosti.rs/vesti/politika/1403964/predlog-premijera-vucevica-mihailo-jovanovic-novi-direktor-kancelarije-eupravu",
+          "domain": "novosti.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Novosti, 29. avgust 2024: \u0027na današnjoj sednici Vlade dr Mihailo Jovanović izabran je za v. d. direktora Kancelarije\u0027.",
+          "archive": "http://web.archive.org/web/20250815104258/https://www.novosti.rs/vesti/politika/1403964/predlog-premijera-vucevica-mihailo-jovanovic-novi-direktor-kancelarije-eupravu",
+          "archivedOn": "2025-08-15"
+        }
+      ],
+      "history": [
+        {
+          "uri": "https://w3id.org/vip/rs/MihailoJovanovic_KancelarijaIT_Direktor",
+          "roles": [
+            {
+              "en": "Director",
+              "es": "Director",
+              "sr": "Direktor"
+            }
+          ],
+          "start": "2017",
+          "end": "2022",
+          "comment": "Mihailo Jovanović je postao direktor Kancelarije kada je osnovana 2017. (sajt Kancelarije). Novosti navode da je bio na njenom čelu do decembra 2022, a ministar je postao 26. oktobra 2022 (zapis u vlada-srbije.ttl); zato je kraj zabeležen samo kao godina. Mesec početka sajt Kancelarije ne navodi.",
+          "file": "data/cases/javne-funkcije/kancelarija-za-it-i-eupravu.ttl",
+          "line": 18,
+          "sources": [
+            {
+              "url": "https://www.danas.rs/vesti/ekonomija/ugovori-aseka-s-18-miliona-evra-skocili-na-16-miliona/",
+              "domain": "danas.rs",
+              "type": "newsArticle",
+              "status": "published",
+              "quote": "Danas, 26. septembar 2020: \u0027reagovao je direktor Kancelarije, Mihailo Jovanović\u0027.",
+              "archive": "http://web.archive.org/web/20261112152032/https://www.danas.rs/vesti/ekonomija/ugovori-aseka-s-18-miliona-evra-skocili-na-16-miliona/",
+              "archivedOn": "2026-11-12"
+            },
+            {
+              "url": "https://www.ite.gov.rs/tekst/sr/150/direktor.php",
+              "domain": "ite.gov.rs",
+              "type": "webPage",
+              "status": "published",
+              "quote": "Sajt Kancelarije, strana \u0027Direktor\u0027 (pročitano 12. novembra 2026): \u0027Kancelarije za informacione tehnologije i elektronsku upravu Vlade Republike Srbije 2017. godine, kada je postao i njen direktor\u0027.",
+              "archive": "http://web.archive.org/web/20261009165017/https://ite.gov.rs/tekst/sr/150/direktor.php",
+              "archivedOn": "2026-10-09"
+            },
+            {
+              "url": "https://www.novosti.rs/vesti/politika/1403964/predlog-premijera-vucevica-mihailo-jovanovic-novi-direktor-kancelarije-eupravu",
+              "domain": "novosti.rs",
+              "type": "newsArticle",
+              "status": "published",
+              "quote": "Novosti, 29. avgust 2024: \u0027od 2017. godine do decembra 2022. godine je već bio na čelu Kancelarije\u0027.",
+              "archive": "http://web.archive.org/web/20250815104258/https://www.novosti.rs/vesti/politika/1403964/predlog-premijera-vucevica-mihailo-jovanovic-novi-direktor-kancelarije-eupravu",
+              "archivedOn": "2025-08-15"
+            },
+            {
+              "url": "https://www.slobodnaevropa.org/a/tepić-firma-premijerkinog-brata-iz-budžeta-dobila-40-miliona-evra/30854137.html",
+              "domain": "slobodnaevropa.org",
+              "type": "newsArticle",
+              "status": "published",
+              "quote": "Radio Slobodna Evropa, 23. septembar 2020: \u0027Direktor Vladine Kancelarije za IT Mihajlo Jovanović\u0027.",
+              "archive": "http://web.archive.org/web/20250810225755/https://www.slobodnaevropa.org/a/tepi%C4%87-firma-premijerkinog-brata-iz-bud%C5%BEeta-dobila-40-miliona-evra/30854137.html",
+              "archivedOn": "2025-08-10"
+            }
+          ]
+        },
+        {
+          "uri": "https://w3id.org/vip/rs/MihailoJovanovic_KancelarijaIT_Direktor_2024",
+          "roles": [
+            {
+              "en": "Director",
+              "es": "Director",
+              "sr": "Direktor"
+            }
+          ],
+          "start": "2024-08-29",
+          "comment": "Vlada je 29. avgusta 2024. izabrala Mihaila Jovanovića za v. d. direktora Kancelarije, na predlog predsednika Vlade Miloša Vučevića (Novosti); sajt Kancelarije, pročitan 12. novembra 2026, navodi ga kao direktora i kaže da je tu funkciju obavljao u dva navrata. Kraj nije zabeležen: to je poslednje dokumentovano stanje, ne dokaz da funkcija traje.",
+          "file": "data/cases/javne-funkcije/kancelarija-za-it-i-eupravu.ttl",
+          "line": 36,
+          "sources": [
+            {
+              "url": "https://www.ite.gov.rs/tekst/sr/150/direktor.php",
+              "domain": "ite.gov.rs",
+              "type": "webPage",
+              "status": "published",
+              "quote": "Sajt Kancelarije, strana \u0027Direktor\u0027 (pročitano 12. novembra 2026): \u0027dr Mihailo Jovanović, direktor Kancelarije za IT i eUpravu\u0027; \u0027čiji je direktor u dva navrata\u0027.",
+              "archive": "http://web.archive.org/web/20261009165017/https://ite.gov.rs/tekst/sr/150/direktor.php",
+              "archivedOn": "2026-10-09"
+            },
+            {
+              "url": "https://www.novosti.rs/vesti/politika/1403964/predlog-premijera-vucevica-mihailo-jovanovic-novi-direktor-kancelarije-eupravu",
+              "domain": "novosti.rs",
+              "type": "newsArticle",
+              "status": "published",
+              "quote": "Novosti, 29. avgust 2024: \u0027na današnjoj sednici Vlade dr Mihailo Jovanović izabran je za v. d. direktora Kancelarije\u0027.",
+              "archive": "http://web.archive.org/web/20250815104258/https://www.novosti.rs/vesti/politika/1403964/predlog-premijera-vucevica-mihailo-jovanovic-novi-direktor-kancelarije-eupravu",
+              "archivedOn": "2025-08-15"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "edge36",
       "label": "alumni",
       "source": "mihailo_jovanovic",
       "target": "peta_beogradska_gimnazija",
@@ -4139,7 +4700,7 @@
   },
   {
     "data": {
-      "id": "edge31",
+      "id": "edge37",
       "label": "minister",
       "source": "mihailo_jovanovic",
       "target": "vlada_srbije",
@@ -4157,7 +4718,7 @@
       "start": "2022-10-26",
       "end": "2024-05-02",
       "file": "data/cases/javne-funkcije/vlada-srbije.ttl",
-      "line": 33,
+      "line": 71,
       "sources": [
         {
           "url": "https://biznis.rs/vesti/srbija/izabrana-nova-vlada-srbije/",
@@ -4209,7 +4770,7 @@
   },
   {
     "data": {
-      "id": "edge32",
+      "id": "edge38",
       "label": "ownership connection",
       "source": "milan_vukovljak",
       "target": "bob_novi_sad",
@@ -4243,7 +4804,7 @@
   },
   {
     "data": {
-      "id": "edge33",
+      "id": "edge39",
       "label": "ownership connection",
       "source": "milenijum_tim",
       "target": "mt_gastel",
@@ -4253,7 +4814,7 @@
       "typeLabel": "Ownership connection",
       "share": 100.0,
       "file": "data/cases/milenijum-tim.ttl",
-      "line": 110,
+      "line": 115,
       "sources": [
         {
           "url": "https://www.emis.cn/php/company-profile/YU/Millennium_Team_DOO_Beograd_en_2585748.html",
@@ -4296,7 +4857,7 @@
   },
   {
     "data": {
-      "id": "edge34",
+      "id": "edge40",
       "label": "ownership connection",
       "source": "milenijum_tim",
       "target": "mv_investment",
@@ -4307,7 +4868,7 @@
       "share": 100.0,
       "start": "2022-11-04",
       "file": "data/cases/milenijum-tim.ttl",
-      "line": 189,
+      "line": 194,
       "sources": [
         {
           "url": "https://biznis.rs/vesti/srbija/rusenje-hotela-jugoslavija-od-hipo-alpe-adrija-banke-do-milenijum-tima-preko-paname-grcke-i-kipra/",
@@ -4350,7 +4911,7 @@
   },
   {
     "data": {
-      "id": "edge35",
+      "id": "edge41",
       "label": "ownership connection",
       "source": "milenijum_tim",
       "target": "milenijum_adria",
@@ -4361,7 +4922,7 @@
       "share": 100.0,
       "start": "2020",
       "file": "data/cases/milenijum-tim.ttl",
-      "line": 125,
+      "line": 130,
       "sources": [
         {
           "url": "https://www.danas.rs/vesti/ekonomija/sta-sve-ima-milenijum-tim-novi-vlasnik-hotela-jugoslavija/",
@@ -4395,7 +4956,7 @@
   },
   {
     "data": {
-      "id": "edge36",
+      "id": "edge42",
       "label": "ownership connection",
       "source": "milenijum_tim",
       "target": "milenijum_resorts",
@@ -4405,7 +4966,7 @@
       "typeLabel": "Ownership connection",
       "share": 100.0,
       "file": "data/cases/milenijum-tim.ttl",
-      "line": 99,
+      "line": 104,
       "sources": [
         {
           "url": "https://www.companywall.rs/firma/drustvo--za-inzenjering-i-usluge-millennium-resorts-doo-beograd/MMxxIjkxY",
@@ -4430,7 +4991,7 @@
   },
   {
     "data": {
-      "id": "edge37",
+      "id": "edge43",
       "label": "ownership connection",
       "source": "milenijum_tim",
       "target": "milenijum_propertiz",
@@ -4440,7 +5001,7 @@
       "typeLabel": "Ownership connection",
       "share": 26.0,
       "file": "data/cases/milenijum-tim.ttl",
-      "line": 139,
+      "line": 144,
       "sources": [
         {
           "url": "https://www.companywall.rs/firma/millennium-properties-doo-beograd/MMsCs0qC",
@@ -4474,7 +5035,7 @@
   },
   {
     "data": {
-      "id": "edge38",
+      "id": "edge44",
       "label": "ownership connection",
       "source": "milenijum_tim",
       "target": "mostogradnja_ing",
@@ -4484,7 +5045,7 @@
       "typeLabel": "Ownership connection",
       "share": 100.0,
       "file": "data/cases/milenijum-tim.ttl",
-      "line": 205,
+      "line": 210,
       "sources": [
         {
           "url": "https://www.companywall.rs/firma/mostogradnja-ing-doo/MMxEWFnzR",
@@ -4518,7 +5079,7 @@
   },
   {
     "data": {
-      "id": "edge39",
+      "id": "edge45",
       "label": "ownership connection",
       "source": "milenijum_tim",
       "target": "pizzarotti_millennium",
@@ -4528,7 +5089,7 @@
       "typeLabel": "Ownership connection",
       "share": 4.0,
       "file": "data/cases/milenijum-tim.ttl",
-      "line": 152,
+      "line": 157,
       "sources": [
         {
           "url": "https://www.companywall.rs/firma/pizzarotti-millennium-doo/MMx04LqfY",
@@ -4553,7 +5114,7 @@
   },
   {
     "data": {
-      "id": "edge40",
+      "id": "edge46",
       "label": "Ustupljen automobil",
       "labels": {
         "en": "Car provided",
@@ -4567,7 +5128,7 @@
       "typeLabel": "Generic connection",
       "start": "2014",
       "file": "data/cases/milenijum-tim.ttl",
-      "line": 218,
+      "line": 223,
       "sources": [
         {
           "url": "https://www.krik.rs/koruptivne-veze-milenijum-tim-ustupio-audi-i-stan-bratu-sinise-malog/",
@@ -4601,7 +5162,7 @@
   },
   {
     "data": {
-      "id": "edge41",
+      "id": "edge47",
       "label": "Ustupljen stan",
       "labels": {
         "en": "Flat provided",
@@ -4615,7 +5176,7 @@
       "typeLabel": "Generic connection",
       "end": "2016",
       "file": "data/cases/milenijum-tim.ttl",
-      "line": 232,
+      "line": 237,
       "sources": [
         {
           "url": "https://www.krik.rs/koruptivne-veze-milenijum-tim-ustupio-audi-i-stan-bratu-sinise-malog/",
@@ -4649,7 +5210,7 @@
   },
   {
     "data": {
-      "id": "edge42",
+      "id": "edge48",
       "label": "ownership connection",
       "source": "milenijum_tim",
       "target": "roberts_milenijum",
@@ -4661,7 +5222,7 @@
       "start": "2022-07",
       "end": "2024-12-03",
       "file": "data/cases/milenijum-tim.ttl",
-      "line": 176,
+      "line": 181,
       "sources": [
         {
           "url": "https://www.companywall.rs/firma/roberts-millennium-doo/MMx15PUYY",
@@ -4690,7 +5251,7 @@
           "end": "2022-07",
           "comment": "Milenijum tim je od osnivanja imao 50% društva Roberts Millennium; drugu polovinu držala je Roberts Constructions Serbia Pty Limited iz Australije.",
           "file": "data/cases/milenijum-tim.ttl",
-          "line": 163,
+          "line": 168,
           "sources": [
             {
               "url": "https://www.danas.rs/vesti/ekonomija/prijatelji-milenijum-tima-ne-placaju-turske-radnike/",
@@ -4719,7 +5280,7 @@
           "end": "2024-12-03",
           "comment": "Milenijum tim je u julu 2022. preuzeo 100% društva Roberts Millennium, koje je izbrisano iz registra 3. decembra 2024.",
           "file": "data/cases/milenijum-tim.ttl",
-          "line": 176,
+          "line": 181,
           "sources": [
             {
               "url": "https://www.companywall.rs/firma/roberts-millennium-doo/MMx15PUYY",
@@ -4746,7 +5307,7 @@
   },
   {
     "data": {
-      "id": "edge43",
+      "id": "edge49",
       "label": "ownership connection",
       "source": "nenad_ignjatovic_deko_tim",
       "target": "deko_tim",
@@ -4780,7 +5341,7 @@
   },
   {
     "data": {
-      "id": "edge44",
+      "id": "edge50",
       "label": "ownership connection",
       "source": "nikola_petrovic_ems",
       "target": "arkshore_international",
@@ -4815,7 +5376,7 @@
   },
   {
     "data": {
-      "id": "edge45",
+      "id": "edge51",
       "label": "ownership connection",
       "source": "nikola_trivic",
       "target": "starting",
@@ -4859,7 +5420,7 @@
   },
   {
     "data": {
-      "id": "edge46",
+      "id": "edge52",
       "label": "director",
       "source": "nikola_trivic",
       "target": "starting",
@@ -4910,7 +5471,7 @@
   },
   {
     "data": {
-      "id": "edge47",
+      "id": "edge53",
       "label": "friendship",
       "source": "darko_tamindzic",
       "target": "novica_toncev",
@@ -4944,7 +5505,7 @@
   },
   {
     "data": {
-      "id": "edge48",
+      "id": "edge54",
       "label": "ownership connection",
       "source": "novica_toncev",
       "target": "service_for_efficient_energy",
@@ -4979,7 +5540,7 @@
   },
   {
     "data": {
-      "id": "edge49",
+      "id": "edge55",
       "label": "friendship",
       "source": "andrej_vucic",
       "target": "predrag_mali",
@@ -5031,7 +5592,7 @@
   },
   {
     "data": {
-      "id": "edge50",
+      "id": "edge56",
       "label": "schoolmate (same school)",
       "source": "andrej_vucic",
       "target": "predrag_mali",
@@ -5074,7 +5635,7 @@
   },
   {
     "data": {
-      "id": "edge51",
+      "id": "edge57",
       "label": "employee",
       "source": "predrag_mali",
       "target": "kbv_datacom",
@@ -5115,7 +5676,7 @@
   },
   {
     "data": {
-      "id": "edge52",
+      "id": "edge58",
       "label": "board member",
       "source": "predrag_mali",
       "target": "kk_crvena_zvezda",
@@ -5176,7 +5737,7 @@
   },
   {
     "data": {
-      "id": "edge53",
+      "id": "edge59",
       "label": "siblings",
       "source": "predrag_mali",
       "target": "sinisa_mali",
@@ -5210,7 +5771,7 @@
   },
   {
     "data": {
-      "id": "edge54",
+      "id": "edge60",
       "label": "ownership connection",
       "source": "sasa_blagojevic",
       "target": "alo_marketing",
@@ -5246,7 +5807,7 @@
   },
   {
     "data": {
-      "id": "edge55",
+      "id": "edge61",
       "label": "ownership connection",
       "source": "sasa_blagojevic",
       "target": "alo_media_system",
@@ -5318,7 +5879,7 @@
   },
   {
     "data": {
-      "id": "edge56",
+      "id": "edge62",
       "label": "ownership connection",
       "source": "sasa_blagojevic",
       "target": "global_media_technology",
@@ -5353,7 +5914,7 @@
   },
   {
     "data": {
-      "id": "edge57",
+      "id": "edge63",
       "label": "alumni",
       "source": "sasa_blagojevic",
       "target": "peta_beogradska_gimnazija",
@@ -5414,7 +5975,7 @@
   },
   {
     "data": {
-      "id": "edge58",
+      "id": "edge64",
       "label": "classmate (same class)",
       "source": "sasa_blagojevic",
       "target": "sinisa_mali",
@@ -5484,7 +6045,7 @@
   },
   {
     "data": {
-      "id": "edge59",
+      "id": "edge65",
       "label": "ownership connection",
       "source": "sasa_blagojevic",
       "target": "trilenium",
@@ -5519,7 +6080,7 @@
   },
   {
     "data": {
-      "id": "edge60",
+      "id": "edge66",
       "label": "ownership connection",
       "source": "sinisa_mali",
       "target": "brigham_holding_finance",
@@ -5555,7 +6116,7 @@
   },
   {
     "data": {
-      "id": "edge61",
+      "id": "edge67",
       "label": "alumni",
       "source": "sinisa_mali",
       "target": "ekonomski_fakultet_university_of_belgrade",
@@ -5590,7 +6151,7 @@
   },
   {
     "data": {
-      "id": "edge62",
+      "id": "edge68",
       "label": "ownership connection",
       "source": "sinisa_mali",
       "target": "etham_invest_finance",
@@ -5626,7 +6187,7 @@
   },
   {
     "data": {
-      "id": "edge63",
+      "id": "edge69",
       "label": "mayor",
       "source": "sinisa_mali",
       "target": "grad_beograd",
@@ -5678,7 +6239,7 @@
   },
   {
     "data": {
-      "id": "edge64",
+      "id": "edge70",
       "label": "alumni",
       "source": "sinisa_mali",
       "target": "peta_beogradska_gimnazija",
@@ -5714,7 +6275,7 @@
   },
   {
     "data": {
-      "id": "edge65",
+      "id": "edge71",
       "label": "political connection",
       "source": "sinisa_mali",
       "target": "sns",
@@ -5749,7 +6310,7 @@
   },
   {
     "data": {
-      "id": "edge66",
+      "id": "edge72",
       "label": "minister",
       "source": "sinisa_mali",
       "target": "vlada_srbije",
@@ -5766,7 +6327,7 @@
       ],
       "start": "2018-05-29",
       "file": "data/cases/javne-funkcije/vlada-srbije.ttl",
-      "line": 18,
+      "line": 56,
       "sources": [
         {
           "url": "https://www.danas.rs/vesti/politika/sinisa-mali-novi-ministar-finansija/",
@@ -5800,7 +6361,7 @@
   },
   {
     "data": {
-      "id": "edge67",
+      "id": "edge73",
       "label": "ownership connection",
       "source": "srdjan_davidovic",
       "target": "vista_rica_ad",
@@ -5845,7 +6406,7 @@
   },
   {
     "data": {
-      "id": "edge68",
+      "id": "edge74",
       "label": "Poslovni saradnici",
       "labels": {
         "en": "Business associates",
@@ -5883,7 +6444,7 @@
   },
   {
     "data": {
-      "id": "edge69",
+      "id": "edge75",
       "label": "Svedok osnivanja",
       "labels": {
         "en": "Formation witness",
@@ -5923,7 +6484,7 @@
   },
   {
     "data": {
-      "id": "edge70",
+      "id": "edge76",
       "label": "podizvođenje obnove stanice",
       "labels": {
         "en": "station renovation subcontract",
@@ -5962,7 +6523,7 @@
   },
   {
     "data": {
-      "id": "edge71",
+      "id": "edge77",
       "label": "podizvođenje obnove stanice",
       "labels": {
         "en": "station renovation subcontract",
@@ -6010,7 +6571,7 @@
   },
   {
     "data": {
-      "id": "edge72",
+      "id": "edge78",
       "label": "podizvođenje obnove stanice",
       "labels": {
         "en": "station renovation subcontract",
@@ -6048,7 +6609,7 @@
   },
   {
     "data": {
-      "id": "edge73",
+      "id": "edge79",
       "label": "ownership connection",
       "source": "stojan_vujko",
       "target": "kbv_datacom",
@@ -6092,7 +6653,7 @@
   },
   {
     "data": {
-      "id": "edge74",
+      "id": "edge80",
       "label": "ownership connection",
       "source": "stojan_vujko",
       "target": "milenijum_tim",
@@ -6128,7 +6689,7 @@
   },
   {
     "data": {
-      "id": "edge75",
+      "id": "edge81",
       "label": "ownership connection",
       "source": "tatjana_vukic",
       "target": "vista_rica_ad",
@@ -6231,7 +6792,7 @@
   },
   {
     "data": {
-      "id": "edge76",
+      "id": "edge82",
       "label": "upravlja fondom",
       "labels": {
         "en": "manages fund",
@@ -6269,7 +6830,7 @@
   },
   {
     "data": {
-      "id": "edge77",
+      "id": "edge83",
       "label": "upravlja fondom",
       "labels": {
         "en": "manages fund",
@@ -6307,7 +6868,7 @@
   },
   {
     "data": {
-      "id": "edge78",
+      "id": "edge84",
       "label": "ownership connection",
       "source": "vojislav_nedic",
       "target": "vista_rica_ad",

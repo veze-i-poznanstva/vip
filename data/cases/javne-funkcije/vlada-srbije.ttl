@@ -15,6 +15,44 @@
 # Funkcija bez zabeleženog kraja nije dokaz da još traje; komentar daje poslednje dokumentovano stanje.
 # An office with no recorded end is not proof that it continues; the comment gives the latest documented state.
 
+rs:AnaBrnabic_VladaSrbije_MinistarkaDrzavneUprave a :WorkConnection ;
+    bio:participant rs:Ana_Brnabic ;
+    :hasEconomicOrganizationParticipant rs:Vlada_Srbije ;
+    :hasWorkRole vip:minister ;
+    :connectionStartDate "2016-08"^^xsd:gYearMonth ;
+    :connectionEndDate "2017-06-29"^^xsd:date ;
+    rdfs:comment "Ana Brnabić je u avgustu 2016. izabrana za ministarku državne uprave i lokalne samouprave i tu funkciju je obavljala do izbora za predsednicu Vlade 29. juna 2017. (sajt Narodne skupštine, Vikipedija). Sajt Skupštine navodi mesec izbora; dan, 11. avgust 2016, navodi samo Vikipedija, pa je početak zabeležen do meseca."@sr ;
+    rdfs:comment "Ana Brnabić was elected Minister of Public Administration and Local Self-Government in August 2016 and held the office until she was elected Prime Minister on 29 June 2017 (the National Assembly's site, Wikipedia). The Assembly's site gives the month of the election; only Wikipedia gives the day, 11 August 2016, so the start is recorded to the month."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://www.parlament.gov.rs/ANA_BRNABIĆ.1190.891.html> ; :hasDocumentType vip:webPage ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Sajt Narodne skupštine (pročitano 12. novembra 2026): 'U avgustu 2016. godine izabrana je za ministarku državne uprave i lokalne samouprave u Vladi Srbije, i tu funkciju je obavljala do izbora za predsednicu Vlade'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://sr.wikipedia.org/wiki/Ана_Брнабић> ; :hasDocumentType vip:encyclopediaArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Enciklopedijski članak: '11. август 2016 — 29. јун 2017.'; 'У августу 2016. године, именована је за министра државне управе и локалне самоуправе.'"@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://n1info.rs/vesti/a276314-Ana-Brnabic-nova-premijerka/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "N1, 15. jun 2017: 'Dosadašnja ministarka državne uprave i lokalne samouprave Ana Brnabić biće mandatarka za sastav nove Vlade Srbije'."@sr ] .
+
+rs:AnaBrnabic_VladaSrbije_PredsednicaVlade a :WorkConnection ;
+    bio:participant rs:Ana_Brnabic ;
+    :hasEconomicOrganizationParticipant rs:Vlada_Srbije ;
+    :hasWorkRole vip:primeMinister ;
+    :connectionStartDate "2017-06-29"^^xsd:date ;
+    :connectionEndDate "2024"^^xsd:gYear ;
+    rdfs:comment "Narodna skupština je 29. juna 2017. izabrala Vladu Ane Brnabić, sa 157 glasova za, i ona i ministri su istog dana položili zakletvu (stenografske beleške Skupštine, N1). Ponovo je izabrana za predsednicu Vlade 28. oktobra 2020. i 26. oktobra 2022. (sajt Skupštine, RTS). Za predsednicu Narodne skupštine izabrana je 20. marta 2024. (sajt Skupštine), a sledeća Vlada, Miloša Vučevića, izabrana je 2. maja 2024. (Vreme). Pročitani izvori ne navode dan kada joj je prestao mandat predsednice Vlade, pa je kraj zabeležen samo kao godina."@sr ;
+    rdfs:comment "The National Assembly elected the Government of Ana Brnabić on 29 June 2017, by 157 votes, and she and the ministers took the oath the same day (the Assembly's stenographic record, N1). She was elected Prime Minister again on 28 October 2020 and on 26 October 2022 (the Assembly's site, RTS). On 20 March 2024 she was elected Speaker of the National Assembly (the Assembly's site), and the next Government, of Miloš Vučević, was elected on 2 May 2024 (Vreme). The sources read do not state the day on which her term as Prime Minister ended, so the end is recorded as the year only."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://www.parlament.gov.rs/upload/archive/files/lat/doc/stenografske_beleske/29.%20jun%202017.%20LAT.pdf> ; :hasDocumentType vip:officialDocument ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Narodna skupština, stenografske beleške, Deveta posebna sednica, 29. jun 2017: 'za predlog je glasalo 157 narodnih poslanika'; 'izabrala Vladu u predloženom sastavu'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://n1info.rs/vesti/a279662-Ana-Brnabic-i-ministri-polozili-zakletvu/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "N1, 29. jun 2017: 'Ana Brnabić i 21 ministar u novoj vladi Srbije položili su zakletvu'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.parlament.gov.rs/ANA_BRNABIĆ.1190.891.html> ; :hasDocumentType vip:webPage ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Sajt Narodne skupštine (pročitano 12. novembra 2026): 'Na sednici Narodne skupštine Republike Srbije, 28. oktobra 2020. godine, izabrana je po drugi put za predsednicu Vlade Srbije.'; 'Mandat u tom sazivu Vlade trajao je do 26. oktobra 2022. godine, kada je, po treći put, izabrana za predsednicu Vlade Srbije.'"@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.rts.rs/lat/vesti/politika/4998728/izglasana-nova-vlada-srbije.html> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "RTS, 26. oktobar 2022: 'Predsednica Vlade Srbije Ana Brnabić i ministri položili su zakletvu u Skupštini Srbije'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.parlament.gov.rs/narodna-skupstina-/organizacija-i-strucna-sluzba/predsednik-narodne-skupstine.914.html> ; :hasDocumentType vip:webPage ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Sajt Narodne skupštine, strana 'Predsednik Narodne skupštine' (pročitano 12. novembra 2026): 'dana 20. marta 2024. godine, za predsednika Narodne skupštine izabrana je narodna poslanica Ana Brnabić'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://vreme.com/vesti/izabrana-nova-vlada-srbije-nakon-osmocasovne-rasprave-u-parlamentu/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Vreme, 2. maj 2024: 'Novu Vladu Srbije će predvoditi premijer Miloš Vučević.'"@sr ] .
+
 rs:SinisaMali_VladaSrbije_MinistarFinansija a :WorkConnection ;
     bio:participant rs:Sinisa_Mali ;
     :hasEconomicOrganizationParticipant rs:Vlada_Srbije ;

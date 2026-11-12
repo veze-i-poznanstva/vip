@@ -1151,6 +1151,9 @@ vip:mayor a :WorkRole;
 vip:minister a :WorkRole;
     rdfs:label "Minister"@en, "Ministro"@es, "Ministar"@sr.
 
+vip:primeMinister a :WorkRole;
+    rdfs:label "Prime minister"@en, "Primer ministro"@es, "Predsednik Vlade"@sr.
+
 vip:boardMember a :WorkRole;
     rdfs:label "Board member"@en, "Miembro del directorio"@es, "Član upravnog odbora"@sr.
 

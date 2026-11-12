@@ -1,0 +1,58 @@
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix dbo:     <http://dbpedia.org/ontology/> .
+@prefix rs:      <https://w3id.org/vip/rs/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix :        <http://poderopedia.com/vocab/> .
+@prefix vip:     <https://w3id.org/vip/vocab#> .
+
+# Slučaj: Asseco SEE i Kancelarija za IT i eUpravu, ko je gde radio i koji ugovor navode izvori.
+# Case: Asseco SEE and the Office for IT and eGovernment, who worked where and which contract the sources report.
+# Ugovor ili radno mesto je veza, a ne nalaz. Nedostajući datum je nepoznat.
+# A contract or a job is a connection, not a finding. A missing date is unknown.
+
+rs:IgorBrnabic_AssecoSEE_Direktor a :WorkConnection ;
+    bio:participant rs:Igor_Brnabic ;
+    :hasEconomicOrganizationParticipant rs:Asseco_SEE ;
+    :hasWorkRole :director ;
+    :connectionEndDate "2020-11"^^xsd:gYearMonth ;
+    rdfs:comment "Izvori opisuju Igora Brnabića kao direktora srpskog ogranka Asseco SEE ili kao jednog od njegovih direktora (Danas, Radio Slobodna Evropa, Nova.rs, Insajder). Funkciju je napustio u novembru 2020. (Nova.rs; Insajder, prenosi N1). Izvori se ne slažu o tome kada je postavljen (Danas: februar 2017; Insajder: 2015), pa početak nije zabeležen."@sr ;
+    rdfs:comment "Sources describe Igor Brnabić as director of the Serbian branch of Asseco SEE, or as one of its directors (Danas, Radio Slobodna Evropa, Nova.rs, Insajder). He left the post in November 2020 (Nova.rs; Insajder, carried by N1). The sources do not agree on when he was appointed (Danas: February 2017; Insajder: 2015), so no start is recorded."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://www.danas.rs/ljudi/igor-brnabic-prozvani-direktor-premijerkin-brat/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Danas, 26. septembar 2020: 'Igor Brnabić direktor je srpskog ogranka Aseko SEE.'"@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.slobodnaevropa.org/a/ana-brnabic-asseco-vlada-budzet-tender-korupcija-srbija/30857881.html> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Radio Slobodna Evropa, 25. septembar 2020: 'Igor Brnabić, jedan od direktora u Asseco SEE'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://nova.rs/vesti/politika/svi-poslovi-brata-ane-brnabic-od-grcicevog-eps-a-20-miliona-evra/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Nova.rs, 23. novembar 2020 (stranica izmenjena 14. februara 2025): 'Igor Brnabić napustio je direktorsku funkciju u kompaniji Aseko u novembru 2020. godine'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://n1info.rs/vesti/a686233-Politika-kao-biznis-drzava-kao-partijski-plen-treci-deo/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "N1, 22. decembar 2020, prenosi Insajder: 'od 2015. do 2020. bio je direktor predstavništva te kompanije u Srbiji'; 'Ostavku je podneo u novembru ove godine'."@sr ] .
+
+rs:AssecoSEE_KancelarijaIT_RegistarStanovnistva a :Connection ;
+    bio:participant rs:Asseco_SEE, rs:Kancelarija_za_IT_i_eUpravu ;
+    rdfs:label "ugovor: Centralni registar stanovništva"@sr, "contract: Central Population Register"@en ;
+    rdfs:comment "Na tenderu Kancelarije za IT i eUpravu za izradu Centralnog registra stanovništva, Asseco SEE je dobio ugovor vredan 180 miliona dinara (Radio Slobodna Evropa, Danas). Direktor Kancelarije Mihailo Jovanović rekao je 23. septembra 2020. da je Asseco dao najbolju od dve ispravne ponude i da je Kancelarija, znajući da je Igor Brnabić jedan od direktora kompanije, 14. novembra 2019. zatražila od Uprave za javne nabavke da se izjasni da li se ugovor može zaključiti. Izvori se ne slažu o datumu ugovora, pa nijedan nije zabeležen."@sr ;
+    rdfs:comment "On a tender of the Office for IT and eGovernment for building the Central Population Register, Asseco SEE won a contract worth 180 million dinars (Radio Slobodna Evropa, Danas). The Office's director Mihailo Jovanović said on 23 September 2020 that Asseco gave the best of two valid bids, and that, knowing that Igor Brnabić was one of the company's directors, the Office had asked the Public Procurement Office on 14 November 2019 whether the contract could be concluded. The sources do not agree on the date of the contract, so none is recorded."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://www.slobodnaevropa.org/a/ana-brnabic-asseco-vlada-budzet-tender-korupcija-srbija/30857881.html> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Radio Slobodna Evropa, 25. septembar 2020: 'tenderu u kojem je firma brata premijerke Srbije dobila ugovor vredan 180 miliona dinara'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.danas.rs/vesti/ekonomija/ugovori-aseka-s-18-miliona-evra-skocili-na-16-miliona/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Danas, 26. septembar 2020: 'posao vredan 180 miliona dinara'; 'kazao je Jovanović koji je dan nakon zatraženog mišljenja i zaključio ugovor sa Asekom'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.slobodnaevropa.org/a/tepić-firma-premijerkinog-brata-iz-budžeta-dobila-40-miliona-evra/30854137.html> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Radio Slobodna Evropa, 23. septembar 2020, prenosi izjavu direktora Kancelarije Mihaila Jovanovića: 'kompanija Asseco na tenderu za izradu Centralnog registra stanovništva dala najbolju ponudu'; 'imamo samo dve ispravne ponude i da je najpovoljniju dala kompanija Asseco'; '14. novembra 2019. godine zatraženo da se izjasni da li može sa kompanijom Asseco da se zaključi ugovor'."@sr ] .
+
+rs:KancelarijaIT_VladaSrbije_SluzbaVlade a :Connection ;
+    bio:participant rs:Kancelarija_za_IT_i_eUpravu, rs:Vlada_Srbije ;
+    rdfs:label "služba Vlade"@sr, "service of the Government"@en ;
+    :connectionStartDate "2017-08-05"^^xsd:date ;
+    rdfs:comment "Kancelarija je obrazovana kao služba Vlade 5. avgusta 2017. (sajt Kancelarije); Vlada ju je najavila kao centralnu funkciju u Vladi koja direktno odgovara premijeru (N1, prenosi Betu); Danas navodi rešenje o imenovanju njenog direktora: odgovoran je Vladi i predsedniku Vlade. Kraj nije zabeležen: sajt Kancelarije navodi da danas nastavlja rad kao posebna organizacija, bez datuma."@sr ;
+    rdfs:comment "The Office was formed as a service of the Government on 5 August 2017 (the Office's site); the Government announced it as a central function in the Government that answers directly to the Prime Minister (N1 carrying Beta); Danas quotes the decision appointing its director: he answers to the Government and the Prime Minister. No end is recorded: the Office's site says it now continues as a special organisation, without a date."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://www.ite.gov.rs/tekst/sr/149/kancelarija-za-it-i-eupravu.php> ; :hasDocumentType vip:webPage ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Sajt Kancelarije (pročitano 12. novembra 2026): 'Kancelarija za informacione tehnologije i elektronsku upravu obrazovana kao služba Vlade dana 05.08.2017. godine'; 'nastavlja rad kao posebna organizacija'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://n1info.rs/vesti/a286708-Osnovana-Kancelarija-za-informacione-tehnologije-i-elektronsku-upravu/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "N1, 27. jul 2017, prenosi Betu: 'koja će biti pozicionirana kao centralna funkcija u Vladi, koja direktno odgovara premijeru'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.danas.rs/vesti/ekonomija/ugovori-aseka-s-18-miliona-evra-skocili-na-16-miliona/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Danas, 26. septembar 2020: 'za direktora kancelarije – „odgovoran je Vladi i predsedniku Vlade“'."@sr ] .

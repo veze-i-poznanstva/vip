@@ -46,8 +46,9 @@ Sedam pravila važi za svaki zapis. Validatori sprovode njihov oblik; da li izvo
 - **Odnosi su resursi veze, nikad gola svojstva.** Članstvo u stranci je `:PoliticalConnection`
   između osobe i stranke. Zaposlenje i mesta u odborima su `:WorkConnection` sa jednom ili više
   radnih uloga i opcionim datumima početka i kraja. Javna funkcija je takođe `:WorkConnection`:
-  gradonačelnikova sa gradom (`rs:Grad_Beograd`, tipa `:GovernmentOrganization`), ministrova sa
-  Vladom (`rs:Vlada_Srbije`), sa ulogom `vip:mayor` ili `vip:minister` i resorom u komentaru;
+  gradonačelnikova sa gradom (`rs:Grad_Beograd`, tipa `:GovernmentOrganization`), ministrova i
+  premijerova sa Vladom (`rs:Vlada_Srbije`), sa ulogom `vip:mayor`, `vip:minister` ili
+  `vip:primeMinister` i resorom u komentaru;
   pravilo „vlasnik na funkciji“ čita upravo njih. Školovanje je `:AlumniEducationalConnection`. Vlasništvo nad firmom je `vip:OwnershipConnection` sa opcionim
   udelom (decimalni procenat, od 0 do 100). Svaka veza nosi sopstvenu dokumentaciju, pa je dokaz
   za „X sedi u odboru Y“ odvojen od dokaza da X i Y postoje.

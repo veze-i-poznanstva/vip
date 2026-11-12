@@ -48,8 +48,9 @@ Seven conventions apply to every record. The validators enforce their form; whet
   `:PoliticalConnection` between the person and the party. Employment and board seats are a
   `:WorkConnection` with one or more work roles and optional start and end dates. A public
   office is a `:WorkConnection` too: a mayor's with the city (`rs:Grad_Beograd`, a
-  `:GovernmentOrganization`), a minister's with the Government (`rs:Vlada_Srbije`), with the
-  role `vip:mayor` or `vip:minister` and the portfolio in the comment; the owner-in-office rule
+  `:GovernmentOrganization`), a minister's or the prime minister's with the Government
+  (`rs:Vlada_Srbije`), with the role `vip:mayor`, `vip:minister` or `vip:primeMinister` and the
+  portfolio in the comment; the owner-in-office rule
   reads exactly these. Schooling is an `:AlumniEducationalConnection`. Company ownership is a `vip:OwnershipConnection` with an
   optional share (a decimal percentage, 0 to 100). Each connection carries its own documentation,
   so the evidence for "X sits on the board of Y" is separate from the evidence that X and Y exist.

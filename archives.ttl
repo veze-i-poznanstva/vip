@@ -61,6 +61,10 @@
         vip:archivedOn     "2026-05-21"^^xsd:date;
         vip:hasArchiveURL  <http://web.archive.org/web/20260521145618/https://www.krik.rs/tag/ana-brnabic/> .
 
+<https://www.slobodnaevropa.org/a/vucic-mandatar-vlada-srbija/28557169.html>
+        vip:archivedOn     "2026-01-04"^^xsd:date;
+        vip:hasArchiveURL  <http://web.archive.org/web/20260104164857/https://www.slobodnaevropa.org/a/vucic-mandatar-vlada-srbija/28557169.html> .
+
 <https://www.slobodnaevropa.org/a/krik-petrovic-pandora-papers/31493609.html>
         vip:archivedOn     "2026-04-21"^^xsd:date;
         vip:hasArchiveURL  <http://web.archive.org/web/20260421015209/https://www.slobodnaevropa.org/a/krik-petrovic-pandora-papers/31493609.html> .
@@ -101,6 +105,10 @@
         vip:archivedOn     "2025-07-16"^^xsd:date;
         vip:hasArchiveURL  <http://web.archive.org/web/20250716051444/https://nova.rs/vesti/hronika/suvlasnik-milenijum-tima-bosnjak-zakupac-plantaze-u-leskovcu/> .
 
+<https://www.parlament.gov.rs/upload/archive/files/lat/doc/stenografske_beleske/29.%20jun%202017.%20LAT.pdf>
+        vip:archivedOn     "2026-10-27"^^xsd:date;
+        vip:hasArchiveURL  <http://web.archive.org/web/20261027214507/https://www.parlament.gov.rs/upload/archive/files/lat/doc/stenografske_beleske/29.%20jun%202017.%20LAT.pdf> .
+
 <https://24sedam.rs/biznis/privreda/290129/mv-investment-kupio-hotel-jugoslavija/vest>
         vip:archivedOn     "2026-11-01"^^xsd:date;
         vip:hasArchiveURL  <https://web.archive.org/web/20261101142153/https://24sedam.rs/biznis/privreda/290129/mv-investment-kupio-hotel-jugoslavija/vest> .
@@ -121,6 +129,10 @@
         vip:archivedOn     "2026-10-30"^^xsd:date;
         vip:hasArchiveURL  <http://web.archive.org/web/20261030102519/https://www.istinomer.rs/akter/mihailo-jovanovic/> .
 
+<https://www.parlament.gov.rs/ANA_BRNABIĆ.1190.891.html>
+        vip:archivedOn     "2026-10-29"^^xsd:date;
+        vip:hasArchiveURL  <http://web.archive.org/web/20261029052951/https://www.parlament.gov.rs/ANA_BRNABI%C4%86.1190.891.html> .
+
 <https://www.danas.rs/vesti/ekonomija/beogradsko-gradjevinsko-preduzece-mostogradnja-postalo-vlasnistvo-milenijum-tima/>
         vip:archivedOn     "2025-11-11"^^xsd:date;
         vip:hasArchiveURL  <http://web.archive.org/web/20251111040945/https://www.danas.rs/vesti/ekonomija/beogradsko-gradjevinsko-preduzece-mostogradnja-postalo-vlasnistvo-milenijum-tima/> .
@@ -132,6 +144,10 @@
 <https://www.companywall.rs/firma/bizmedia-doo-beograd/MMx3lKQZD>
         vip:archivedOn     "2026-11-10"^^xsd:date;
         vip:hasArchiveURL  <https://web.archive.org/web/20261110163136/https://www.companywall.rs/firma/bizmedia-doo-beograd/MMx3lKQZD> .
+
+<https://naled.rs/istorijat>
+        vip:archivedOn     "2026-04-17"^^xsd:date;
+        vip:hasArchiveURL  <http://web.archive.org/web/20260417133044/https://naled.rs/istorijat> .
 
 <https://jugmedia.rs/milenijum-timu-iz-beograda-10-bespovratnih-miliona-evra-za-investiranje-u-vranjskoj-banji/>
         vip:archivedOn     "2022-12-10"^^xsd:date;
@@ -172,6 +188,10 @@
 <https://www.companywall.rs/firma/kbv-datacom-doo-beograd/MMu9ivZ0>
         vip:archivedOn     "2026-11-10"^^xsd:date;
         vip:hasArchiveURL  <https://web.archive.org/web/20261110214229/https://www.companywall.rs/firma/kbv-datacom-doo-beograd/MMu9ivZ0> .
+
+<https://n1info.rs/vesti/a276314-Ana-Brnabic-nova-premijerka/>
+        vip:archivedOn     "2026-11-12"^^xsd:date;
+        vip:hasArchiveURL  <https://web.archive.org/web/20261112151815/https://n1info.rs/vesti/a276314-Ana-Brnabic-nova-premijerka/> .
 
 <https://balkaninsight.com/2021/10/07/pandora-papers-reveal-second-serbian-ministers-hidden-offshore/>
         vip:archivedOn     "2025-07-22"^^xsd:date;
@@ -233,9 +253,17 @@
         vip:archivedOn     "2025-06-15"^^xsd:date;
         vip:hasArchiveURL  <http://web.archive.org/web/20250615121956/https://www.nedeljnik.rs/od-trgovine-na-malo-do-rekonstrukcije-zeleznicke-stanice-u-roku-od-tri-godine-ko-je-firma-koja-se-spomenjinje-u-izvestaju-vestaka-ftn/> .
 
+<https://nova.rs/vesti/politika/svi-poslovi-brata-ane-brnabic-od-grcicevog-eps-a-20-miliona-evra/>
+        vip:archivedOn     "2025-02-14"^^xsd:date;
+        vip:hasArchiveURL  <http://web.archive.org/web/20250214133248/https://nova.rs/vesti/politika/svi-poslovi-brata-ane-brnabic-od-grcicevog-eps-a-20-miliona-evra/> .
+
 <https://novaekonomija.rs/vesti-iz-zemlje/tatjana-vukic-po-pisanju-medija-partnerka-andreja-vucica-postala-vecinski-vlasnik-investicionog-fonda-vista-rica>
         vip:archivedOn     "2026-03-31"^^xsd:date;
         vip:hasArchiveURL  <http://web.archive.org/web/20260331143934/https://novaekonomija.rs/vesti-iz-zemlje/tatjana-vukic-po-pisanju-medija-partnerka-andreja-vucica-postala-vecinski-vlasnik-investicionog-fonda-vista-rica> .
+
+<https://www.novosti.rs/vesti/politika/1403964/predlog-premijera-vucevica-mihailo-jovanovic-novi-direktor-kancelarije-eupravu>
+        vip:archivedOn     "2025-08-15"^^xsd:date;
+        vip:hasArchiveURL  <http://web.archive.org/web/20250815104258/https://www.novosti.rs/vesti/politika/1403964/predlog-premijera-vucevica-mihailo-jovanovic-novi-direktor-kancelarije-eupravu> .
 
 <https://serbia.mom-gmr.org/sr/vlasnik/companies/detail/company/company/show/maxim-media-plus-1/>
         vip:archivedOn     "2025-09-15"^^xsd:date;
@@ -249,6 +277,10 @@
         vip:archivedOn     "2026-10-30"^^xsd:date;
         vip:hasArchiveURL  <https://web.archive.org/web/20261030132947/https://www.youtube.com/watch?v=tHgNZtQdGrg&t=5s> .
 
+<https://www.danas.rs/ljudi/igor-brnabic-prozvani-direktor-premijerkin-brat/>
+        vip:archivedOn     "2022-09-26"^^xsd:date;
+        vip:hasArchiveURL  <http://web.archive.org/web/20220926115411/https://www.danas.rs/ljudi/igor-brnabic-prozvani-direktor-premijerkin-brat/> .
+
 <https://nova.rs/vesti/politika/brat-sinise-malog-zaposlen-u-firmi-vlasnika-milenijum-tima-radi-tamo-duze-od-10-godina/>
         vip:archivedOn     "2026-01-27"^^xsd:date;
         vip:hasArchiveURL  <http://web.archive.org/web/20260127051217/https://nova.rs/vesti/politika/brat-sinise-malog-zaposlen-u-firmi-vlasnika-milenijum-tima-radi-tamo-duze-od-10-godina/> .
@@ -257,9 +289,17 @@
         vip:archivedOn     "2025-02-20"^^xsd:date;
         vip:hasArchiveURL  <http://web.archive.org/web/20250220202734/https://mit.gov.rs/vest/sr/4938/primopredaja-duznosti-u-ministarstvu-informisanja-i-telekomunikacija.php> .
 
+<https://www.slobodnaevropa.org/a/ana-brnabic-asseco-vlada-budzet-tender-korupcija-srbija/30857881.html>
+        vip:archivedOn     "2026-11-12"^^xsd:date;
+        vip:hasArchiveURL  <https://web.archive.org/web/20261112152142/https://www.slobodnaevropa.org/a/ana-brnabic-asseco-vlada-budzet-tender-korupcija-srbija/30857881.html> .
+
 <https://sr.wikipedia.org/wiki/Ivan_Bo%C5%A1njak_(privrednik)>
         vip:archivedOn     "2026-11-01"^^xsd:date;
         vip:hasArchiveURL  <https://web.archive.org/web/20261101020949/https://sr.wikipedia.org/wiki/Ivan_Bo%C5%A1njak_(privrednik)> .
+
+<https://www.danas.rs/vesti/ekonomija/ugovori-aseka-s-18-miliona-evra-skocili-na-16-miliona/>
+        vip:archivedOn     "2026-11-12"^^xsd:date;
+        vip:hasArchiveURL  <http://web.archive.org/web/20261112152032/https://www.danas.rs/vesti/ekonomija/ugovori-aseka-s-18-miliona-evra-skocili-na-16-miliona/> .
 
 <https://kbvdatacom.rs/>
         vip:archivedOn     "2026-11-10"^^xsd:date;
@@ -333,6 +373,10 @@
         vip:archivedOn     "2026-11-01"^^xsd:date;
         vip:hasArchiveURL  <https://web.archive.org/web/20261101142452/https://www.companywall.rs/firma/millennium-properties-doo-beograd/MMsCs0qC> .
 
+<https://n1info.rs/vesti/a652983-Aseko-odgovorio-na-optuzbe-Marinike-Tepic/>
+        vip:archivedOn     "2025-03-07"^^xsd:date;
+        vip:hasArchiveURL  <http://web.archive.org/web/20250307050850/https://n1info.rs/vesti/a652983-aseko-odgovorio-na-optuzbe-marinike-tepic/> .
+
 <https://nova.rs/vesti/politika/sta-je-milenijum-tim-sns-fabrika-za-izvlacenje-para/>
         vip:archivedOn     "2025-12-15"^^xsd:date;
         vip:hasArchiveURL  <http://web.archive.org/web/20251215204745/https://nova.rs/vesti/politika/sta-je-milenijum-tim-sns-fabrika-za-izvlacenje-para/> .
@@ -364,6 +408,10 @@
 <https://millenniumteam.rs/en/news/investment-in-tourism-vranjska-banja-resort-is-the-largest-current-project-in-the-south-of-serbia/>
         vip:archivedOn     "2025-10-15"^^xsd:date;
         vip:hasArchiveURL  <http://web.archive.org/web/20251015050343/https://millenniumteam.rs/en/news/investment-in-tourism-vranjska-banja-resort-is-the-largest-current-project-in-the-south-of-serbia/> .
+
+<https://www.slobodnaevropa.org/a/tepić-firma-premijerkinog-brata-iz-budžeta-dobila-40-miliona-evra/30854137.html>
+        vip:archivedOn     "2025-08-10"^^xsd:date;
+        vip:hasArchiveURL  <http://web.archive.org/web/20250810225755/https://www.slobodnaevropa.org/a/tepi%C4%87-firma-premijerkinog-brata-iz-bud%C5%BEeta-dobila-40-miliona-evra/30854137.html> .
 
 <https://sr.wikipedia.org/wiki/КК_Црвена_звезда>
         vip:archivedOn     "2026-06-15"^^xsd:date;
@@ -433,6 +481,14 @@
         vip:archivedOn     "2026-05-16"^^xsd:date;
         vip:hasArchiveURL  <http://web.archive.org/web/20260516045552/https://raskrikavanje.rs/vlasnik-tabloida-alo-za-manje-od-mesec-dana-kupio-dve-televizije-i-radio-za-skoro-200-000-evra/> .
 
+<https://vreme.com/vesti/izabrana-nova-vlada-srbije-nakon-osmocasovne-rasprave-u-parlamentu/>
+        vip:archivedOn     "2024-10-04"^^xsd:date;
+        vip:hasArchiveURL  <http://web.archive.org/web/20241004101435/https://vreme.com/vesti/izabrana-nova-vlada-srbije-nakon-osmocasovne-rasprave-u-parlamentu/> .
+
+<https://n1info.rs/vesti/a286708-Osnovana-Kancelarija-za-informacione-tehnologije-i-elektronsku-upravu/>
+        vip:archivedOn     "2025-03-07"^^xsd:date;
+        vip:hasArchiveURL  <http://web.archive.org/web/20250307033730/https://n1info.rs/vesti/a286708-osnovana-kancelarija-za-informacione-tehnologije-i-elektronsku-upravu/> .
+
 <https://www.danas.rs/vesti/politika/sinisa-mali-novi-ministar-finansija/>
         vip:archivedOn     "2025-05-22"^^xsd:date;
         vip:hasArchiveURL  <http://web.archive.org/web/20250522101622/https://www.danas.rs/vesti/politika/sinisa-mali-novi-ministar-finansija/> .
@@ -448,6 +504,14 @@
 <https://n1info.rs/vesti/poreski-raj-za-naprednjake-smislili-su-svoje-ostrvo-usred-srbije-jeste-li-culi-za-investicioni-fond-vista-rika/>
         vip:archivedOn     "2026-01-25"^^xsd:date;
         vip:hasArchiveURL  <http://web.archive.org/web/20260125022145/https://n1info.rs/vesti/poreski-raj-za-naprednjake-smislili-su-svoje-ostrvo-usred-srbije-jeste-li-culi-za-investicioni-fond-vista-rika/> .
+
+<https://sr.wikipedia.org/wiki/Канцеларија_за_информационе_технологије_и_електронску_управу>
+        vip:archivedOn     "2025-01-24"^^xsd:date;
+        vip:hasArchiveURL  <http://web.archive.org/web/20250124060551/https://sr.wikipedia.org/wiki/%D0%9A%D0%B0%D0%BD%D1%86%D0%B5%D0%BB%D0%B0%D1%80%D0%B8%D1%98%D0%B0_%D0%B7%D0%B0_%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%B5_%D1%82%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%98%D0%B5_%D0%B8_%D0%B5%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%BE%D0%BD%D1%81%D0%BA%D1%83_%D1%83%D0%BF%D1%80%D0%B0%D0%B2%D1%83> .
+
+<https://naled.rs/preuzimanje/skupstina/Statut_NALED-a_2026.pdf>
+        vip:archivedOn     "2026-06-15"^^xsd:date;
+        vip:hasArchiveURL  <http://web.archive.org/web/20260615182247/https://naled.rs/preuzimanje/skupstina/Statut_NALED-a_2026.pdf> .
 
 <https://biznis.rs/vesti/srbija/rusenje-hotela-jugoslavija-od-hipo-alpe-adrija-banke-do-milenijum-tima-preko-paname-grcke-i-kipra/>
         vip:archivedOn     "2025-08-14"^^xsd:date;
@@ -497,6 +561,14 @@
         vip:archivedOn     "2026-08-08"^^xsd:date;
         vip:hasArchiveURL  <http://web.archive.org/web/20260808120436/https://www.beograd.rs/lat/gradska-vlast> .
 
+<https://asee.io/wp-content/uploads/2025/12/Group-Asseco-SEE-Management-report-Consolidated-and-Standalone-1.pdf>
+        vip:archivedOn     "2026-04-17"^^xsd:date;
+        vip:hasArchiveURL  <http://web.archive.org/web/20260417192019/https://asee.io/wp-content/uploads/2025/12/Group-Asseco-SEE-Management-report-Consolidated-and-Standalone-1.pdf> .
+
+<https://n1info.rs/vesti/a686233-Politika-kao-biznis-drzava-kao-partijski-plen-treci-deo/>
+        vip:archivedOn     "2026-11-12"^^xsd:date;
+        vip:hasArchiveURL  <https://web.archive.org/web/20261112151933/https://n1info.rs/vesti/a686233-Politika-kao-biznis-drzava-kao-partijski-plen-treci-deo/> .
+
 <https://www.srbija.gov.rs/templates/vlada/sastav.php?id=177>
         vip:archivedOn     "2026-11-10"^^xsd:date;
         vip:hasArchiveURL  <http://web.archive.org/web/20261110191536/https://www.srbija.gov.rs/templates/vlada/sastav.php?id=177> .
@@ -505,9 +577,17 @@
         vip:archivedOn     "2025-09-15"^^xsd:date;
         vip:hasArchiveURL  <http://web.archive.org/web/20250915222803/https://serbia.mom-gmr.org/sr/vlasnik/individual-owners/detail/owner/owner/show/sasa-blagojevic-2/> .
 
+<https://www.ite.gov.rs/tekst/sr/149/kancelarija-za-it-i-eupravu.php>
+        vip:archivedOn     "2026-10-09"^^xsd:date;
+        vip:hasArchiveURL  <http://web.archive.org/web/20261009174715/https://ite.gov.rs/tekst/sr/149/kancelarija-za-it-i-eupravu.php> .
+
 <https://millenniumteam.rs/en/news/ivan-bosnjak-elected-vice-president-of-the-serbian-chamber-of-commerce/>
         vip:archivedOn     "2026-02-14"^^xsd:date;
         vip:hasArchiveURL  <http://web.archive.org/web/20260214133819/https://millenniumteam.rs/en/news/ivan-bosnjak-elected-vice-president-of-the-serbian-chamber-of-commerce/> .
+
+<https://n1info.rs/vesti/a279662-Ana-Brnabic-i-ministri-polozili-zakletvu/>
+        vip:archivedOn     "2025-03-14"^^xsd:date;
+        vip:hasArchiveURL  <http://web.archive.org/web/20250314150007/https://n1info.rs/vesti/a279662-ana-brnabic-i-ministri-polozili-zakletvu/> .
 
 <https://www.millenniumteam.rs/>
         vip:archivedOn     "2026-10-12"^^xsd:date;
@@ -592,6 +672,10 @@
 <https://n1info.rs/vesti/a501712-Milenijum-tim-ustupio-audi-i-stan-bratu-Sinise-Malog/>
         vip:archivedOn     "2026-10-29"^^xsd:date;
         vip:hasArchiveURL  <http://web.archive.org/web/20261029214400/https://n1info.rs/vesti/a501712-Milenijum-tim-ustupio-audi-i-stan-bratu-Sinise-Malog/> .
+
+<https://www.parlament.gov.rs/narodna-skupstina-/organizacija-i-strucna-sluzba/predsednik-narodne-skupstine.914.html>
+        vip:archivedOn     "2026-10-28"^^xsd:date;
+        vip:hasArchiveURL  <http://web.archive.org/web/20261028191643/https://www.parlament.gov.rs/narodna-skupstina-/organizacija-i-strucna-sluzba/predsednik-narodne-skupstine.914.html> .
 
 <https://www.sns.org.rs/>
         vip:archivedOn     "2025-10-23"^^xsd:date;

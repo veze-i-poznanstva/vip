@@ -13,16 +13,23 @@
 # Home file of this entity: type, names, identifiers and the sources for its identity.
 # Veze se nalaze u data/cases/. Connections live in data/cases/.
 
-rs:NALED a foaf:Organization ;
+rs:NALED a :NonProfitOrganization ;
     foaf:name "Nacionalna alijansa za lokalni ekonomski razvoj (NALED)"@sr ;
     vip:wikipediaArticle <https://sr.wikipedia.org/wiki/Nacionalna_alijansa_za_lokalni_ekonomski_razvoj> ;
     vip:wikidataItem <http://www.wikidata.org/entity/Q20436524> ;
     :alias "NALED" ;
     dbo:foundationDate "2006"^^xsd:gYear ;
     dbo:location "Beograd, Srbija"@sr ;
-    rdfs:comment "NALED je najveća privatno-javna asocijacija u Srbiji koja okuplja kompanije, lokalne samouprave i nevladine organizacije; 330 članova u 2025. prema sopstvenom sajtu."@sr ;
+    :hasTaxId "104478656" ;
+    rdfs:comment "NALED je najveća privatno-javna asocijacija u Srbiji koja okuplja kompanije, lokalne samouprave i nevladine organizacije; 330 članova u 2025. prema sopstvenom sajtu. Prema svom Statutu, nestranačko, nezavisno i neprofitno udruženje sa svojstvom pravnog lica, matični broj 17646877; osnovano je 2006. u okviru USAID-ovog projekta za podsticanje ekonomskog razvoja opština."@sr ;
+    rdfs:comment "NALED is the largest private-public association in Serbia, bringing together companies, local governments and non-governmental organisations; 330 members in 2025 according to its own site. By its Statute it is a non-partisan, independent and non-profit association with legal personality, registration number 17646877; it was founded in 2006 within a USAID project for municipal economic development."@en ;
     :hasDocumentation
         [ a :Documentation ; :hasDocumentURL <https://naled.rs/en/istorijat> ; :hasDocumentType vip:webPage ; :hasDocumentStatus vip:published ;
           rdfs:comment "NALED: osnovan 2006; 2025: NALED has 330 members."@sr ] ,
         [ a :Documentation ; :hasDocumentURL <https://sr.wikipedia.org/wiki/Nacionalna_alijansa_za_lokalni_ekonomski_razvoj> ; :hasDocumentType vip:encyclopediaArticle ; :hasDocumentStatus vip:published ] ,
-        [ a :Documentation ; :hasDocumentURL <https://naled.rs/o-nama> ; :hasDocumentType vip:webPage ; :hasDocumentStatus vip:published ] .
+        [ a :Documentation ; :hasDocumentURL <https://naled.rs/o-nama> ; :hasDocumentType vip:webPage ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Sajt NALED-a, strana „O nama“ (pročitano 12. novembra 2026): 'PIB: 104478656'; 'Matični broj: 17646877'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://naled.rs/istorijat> ; :hasDocumentType vip:webPage ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Sajt NALED-a, strana „Istorijat“ (pročitano 12. novembra 2026), pod godinom 2006: 'Osnovana je Nacionalna alijansa za lokalni ekonomski razvoj u okviru USAID Projekta za podsticanje ekonomskog razvoja opština'; 'Pokrovitelji i potpisnici Deklaracije o osnivanju NALED-a bili su predsednik Republike Srbije i ambasador Sjedinjenih Američkih Država.'"@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://naled.rs/preuzimanje/skupstina/Statut_NALED-a_2026.pdf> ; :hasDocumentType vip:officialDocument ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Statut udruženja, usvojen 15. maja 2026: 'je nestranačko, nezavisno i neprofitno udruženje'; 'NALED je pravno lice sa pravima, obavezama i odgovornostima utvrđenim zakonom i ovim'; 'matični broj: 17646877'."@sr ] .

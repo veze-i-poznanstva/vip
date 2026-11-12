@@ -1,0 +1,47 @@
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix dbo:     <http://dbpedia.org/ontology/> .
+@prefix rs:      <https://w3id.org/vip/rs/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio:     <http://purl.org/vocab/bio/0.1/> .
+@prefix :        <http://poderopedia.com/vocab/> .
+@prefix vip:     <https://w3id.org/vip/vocab#> .
+
+# Slučaj: Javne funkcije — Kancelarija za informacione tehnologije i elektronsku upravu: ko je kada bio njen direktor.
+# Case: Public offices — the Office for Information Technology and Electronic Government: who was its director, and when.
+# Nosioci funkcija i državni organi su deklarisani u data/entities/; ovde su samo radne veze sa tim organom, po datumu početka.
+# Office holders and government bodies are declared in data/entities/; this file holds only the work connections to that body, by start date.
+# Funkcija bez zabeleženog kraja nije dokaz da još traje; komentar daje poslednje dokumentovano stanje.
+# An office with no recorded end is not proof that it continues; the comment gives the latest documented state.
+
+rs:MihailoJovanovic_KancelarijaIT_Direktor a :WorkConnection ;
+    bio:participant rs:Mihailo_Jovanovic ;
+    :hasEconomicOrganizationParticipant rs:Kancelarija_za_IT_i_eUpravu ;
+    :hasWorkRole :director ;
+    :connectionStartDate "2017"^^xsd:gYear ;
+    :connectionEndDate "2022"^^xsd:gYear ;
+    rdfs:comment "Mihailo Jovanović je postao direktor Kancelarije kada je osnovana 2017. (sajt Kancelarije). Novosti navode da je bio na njenom čelu do decembra 2022, a ministar je postao 26. oktobra 2022 (zapis u vlada-srbije.ttl); zato je kraj zabeležen samo kao godina. Mesec početka sajt Kancelarije ne navodi."@sr ;
+    rdfs:comment "Mihailo Jovanović became director of the Office when it was founded in 2017 (the Office's site). Novosti says he led it until December 2022, while he became a minister on 26 October 2022 (the record in vlada-srbije.ttl); the end is therefore recorded as the year only. The Office's site gives no month for the start."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://www.ite.gov.rs/tekst/sr/150/direktor.php> ; :hasDocumentType vip:webPage ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Sajt Kancelarije, strana 'Direktor' (pročitano 12. novembra 2026): 'Kancelarije za informacione tehnologije i elektronsku upravu Vlade Republike Srbije 2017. godine, kada je postao i njen direktor'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.novosti.rs/vesti/politika/1403964/predlog-premijera-vucevica-mihailo-jovanovic-novi-direktor-kancelarije-eupravu> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Novosti, 29. avgust 2024: 'od 2017. godine do decembra 2022. godine je već bio na čelu Kancelarije'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.danas.rs/vesti/ekonomija/ugovori-aseka-s-18-miliona-evra-skocili-na-16-miliona/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Danas, 26. septembar 2020: 'reagovao je direktor Kancelarije, Mihailo Jovanović'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.slobodnaevropa.org/a/tepić-firma-premijerkinog-brata-iz-budžeta-dobila-40-miliona-evra/30854137.html> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Radio Slobodna Evropa, 23. septembar 2020: 'Direktor Vladine Kancelarije za IT Mihajlo Jovanović'."@sr ] .
+
+rs:MihailoJovanovic_KancelarijaIT_Direktor_2024 a :WorkConnection ;
+    bio:participant rs:Mihailo_Jovanovic ;
+    :hasEconomicOrganizationParticipant rs:Kancelarija_za_IT_i_eUpravu ;
+    :hasWorkRole :director ;
+    :connectionStartDate "2024-08-29"^^xsd:date ;
+    rdfs:comment "Vlada je 29. avgusta 2024. izabrala Mihaila Jovanovića za v. d. direktora Kancelarije, na predlog predsednika Vlade Miloša Vučevića (Novosti); sajt Kancelarije, pročitan 12. novembra 2026, navodi ga kao direktora i kaže da je tu funkciju obavljao u dva navrata. Kraj nije zabeležen: to je poslednje dokumentovano stanje, ne dokaz da funkcija traje."@sr ;
+    rdfs:comment "On 29 August 2024 the Government appointed him acting director of the Office, on the proposal of Prime Minister Miloš Vučević (Novosti); the Office's site, read on 12 November 2026, names him as its director and says he has held the post twice. No end is recorded: that is the latest documented state, not proof that the office continues."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://www.novosti.rs/vesti/politika/1403964/predlog-premijera-vucevica-mihailo-jovanovic-novi-direktor-kancelarije-eupravu> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Novosti, 29. avgust 2024: 'na današnjoj sednici Vlade dr Mihailo Jovanović izabran je za v. d. direktora Kancelarije'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.ite.gov.rs/tekst/sr/150/direktor.php> ; :hasDocumentType vip:webPage ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Sajt Kancelarije, strana 'Direktor' (pročitano 12. novembra 2026): 'dr Mihailo Jovanović, direktor Kancelarije za IT i eUpravu'; 'čiji je direktor u dva navrata'."@sr ] .
