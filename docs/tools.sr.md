@@ -253,11 +253,11 @@ konvertuju komandom:
 Drugi zadatak objavljuje ono što panelima za upite u pregledaču treba: `data.ttl` (zapisi uz RDFS
 zaključke, da mašina u pregledaču vidi ono što pravila vide bez zaključivanja), `schema.ttl`,
 `rules.json` (naslov i objašnjenje svakog pravila po jeziku i tekst upita) i `red-flags.json`
-(tragovi koje bild nalazi; testovi aplikacije izvršavaju svako pravilo u mašini pregledača i moraju
-da dobiju tačno njih). `./gradlew :web:npmTest` zavisi od njega. Veb bild takođe upisuje uputstvo za
+(tragovi koje build nalazi; testovi aplikacije izvršavaju svako pravilo u mašini pregledača i moraju
+da dobiju tačno njih). `./gradlew :web:npmTest` zavisi od njega. Veb build takođe upisuje uputstvo za
 asistenta iz panela Pitaj kao `dist/prompt.en.txt` i `dist/prompt.sr.txt`
 (`web/scripts/write-prompts.ts`) i pada kada odloženo učitani deo sa upitima pređe 400 KB gzipovano
-(`web/scripts/check-bundle.mjs`). `data.ttl` se piše isto pri svakom bildu: prazni čvorovi dobijaju
+(`web/scripts/check-bundle.mjs`). `data.ttl` se piše isto pri svakom build-u: prazni čvorovi dobijaju
 oznake prema tome gde vise i šta kažu, iskazi se dodaju sortirani, a zaključeni tip koji je samo
 anonimna klasa šeme se izostavlja, pa se objavljena kopija menja samo kada se promene zapisi.
 
@@ -288,8 +288,9 @@ Sve što čitalac sreće postoji na engleskom i na srpskom, latinicom:
   i `@sr`, kako je opisano u odeljku „Kako se beleže činjenice“.
 - **Pregledač.** Tekst interfejsa stoji u `web/src/locales/<kod>.json`, po jedna datoteka za
   svaki jezik sa istim ključevima; Vitest test pada kada ključ nedostaje u bilo kom jeziku. Jezik
-  se uzima iz `?lang=` u adresi, zatim iz poslednjeg izbora u tom pregledaču, zatim iz jezika samog
-  pregledača. Novi jezik se dodaje njegovim rečnikom i njegovim kodom u `supportedLanguages` u
+  se uzima iz `?lang=` u adresi, zatim iz poslednjeg izbora u tom pregledaču, a inače je srpski;
+  jezik samog pregledača se namerno ne razmatra. Novi jezik se dodaje njegovim rečnikom i njegovim
+  kodom u `supportedLanguages` u
   `web/src/lib/i18n.ts`, i prevedenim dokumentima pored originala.
 
 Još nije lokalizovano: izveštaji alata komandne linije, koji su na engleskom, i oznake veza koje

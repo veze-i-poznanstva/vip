@@ -1,6 +1,6 @@
 # Graph explorer: UI design
 
-Status: increments 2, 3, 4 (the details panel) and the expand half of 5 are built, as is the focus part of 7 (see Increments); the rest is design. This document describes the first real user interface of VIP,
+Status: increments 2, 3, 4 (the details panel) and the expand half of 5 are built, as is the focus part of 7 (see Increments), and so is querying in the browser (Leads, Ask, Advanced), built and published on 10 and 11 November 2026; the rest is design. This document describes the first real user interface of VIP,
 replacing the current demo viewer that dumps the whole dataset on one canvas.
 
 ## Who it is for and what they do
@@ -178,11 +178,11 @@ The build writes, beside the graph JSON and from the same commit:
 
 ### Leads panel
 
-"Tragovi". On opening it loads the engine and the data and runs every rule. It shows each rule's
+"Leads (Tragovi)". On opening it loads the engine and the data and runs every rule. It shows each rule's
 name and explanation in the viewer's language, its match count, and each match as a sentence built
 from node labels ("Siniša Mali owns Brigham Holding & Finance and held office at Grad Beograd as
 mayor; overlap unknown"). Clicking a match opens the path view between the two agents, or the ego
-view of the person. Every entry carries "a lead for a reporter, not a finding". No query is
+view of the person. The panel shows "a lead for a reporter, not a finding" once, at its foot. No query is
 visible here. The sentence comes from a template per rule in the dictionaries (`leads.<rule>`,
 with `[optional]` segments for variables a row may lack); a rule without a template lists its
 variables and values. A row with two people opens the path between them, any other row the
@@ -190,13 +190,13 @@ neighbourhood of its first agent.
 
 ### Ask
 
-"Pitaj". A box for a question in Serbian or English. The page does not interpret the question;
+"Ask (Pitaj)". A box for a question in Serbian or English. The page does not interpret the question;
 it builds a prompt and hands it to the visitor's own assistant.
 
 1. The prompt contains: the task (write one SPARQL 1.1 `SELECT` query over this vocabulary); the
    vocabulary summary generated from `schema.ttl` in the viewer's language, limited to the
-   classes, properties and individuals the records actually use (about thirty classes, twenty-five
-   properties and twenty roles, document types and statuses today), each with its label, parent or
+   classes, properties and individuals the records actually use (about twenty-five classes, twenty-five
+   properties and twenty roles, document types and statuses), each with its label, parent or
    domain and range, and comment; the prefixes; two rules as worked examples; the conventions (a
    missing end date is unknown, never current; dates come at three precisions and are compared on
    the year; kinship, kumstvo and public office are connections; entailments are materialised;
@@ -220,7 +220,7 @@ it builds a prompt and hands it to the visitor's own assistant.
 
 ### Advanced
 
-"Napredno", reachable from a link under an answer and from the address `?upit=<base64url>`. A
+"Advanced (Napredno)", reachable from a link under an answer and from the address `?upit=<base64url>`. A
 plain text area to paste or edit SPARQL, "Run", the rules loadable as templates, a results table
 with "show on map" per row, and "Share", which writes the query into the address. Meant for
 journalists who learn the patterns, for developers, and for agents that generate queries.
@@ -229,6 +229,11 @@ journalists who learn the patterns, for developers, and for agents that generate
 
 - A result cap of 500 rows and a time limit of five seconds, each with a readable message; rows
   beyond the cap are not read, and a query's own `LIMIT` is respected within it.
+- The query is evaluated on the page's main thread. The time limit is checked when a row arrives
+  and by a timer, so a single long synchronous evaluation (for example a regular expression with
+  catastrophic backtracking in a pasted query) cannot be interrupted and can freeze the tab until
+  it ends. A query only runs when the visitor presses Run. The recommended remedy, not yet built,
+  is to evaluate in a Web Worker that the page can terminate at the deadline.
 - `SELECT` only; `CONSTRUCT`, `ASK` and updates are refused in the interface.
 - The whole dataset sits in the browser. At tens of thousands of triples the Turtle is still a
   few megabytes; revisit if it grows past that.
@@ -241,8 +246,8 @@ journalists who learn the patterns, for developers, and for agents that generate
 Thin, test-first slices, each ending green. All seven were built on 10 and 11 November 2026; the
 list stays as the record of what each proves.
 
-1. **Export.** A Gradle task writes `data.ttl` with the entailments, `schema.ttl` and
-   `rules.json`. Kotlin tests: a sibling connection comes out typed as a family connection; a
+1. **Export.** A Gradle task writes `data.ttl` with the entailments, `schema.ttl`,
+   `rules.json` and `red-flags.json`. Kotlin tests: a sibling connection comes out typed as a family connection; a
    parent comes out as a participant; the JSON carries both explanations.
 2. **Query module.** `web/src/lib/query.ts`: load Turtle, run, cap, time limit, rows with node
    ids. Vitest: a join, a property path, the `SUBSTR` year filter, a syntax error message, an
@@ -272,7 +277,7 @@ list stays as the record of what each proves.
 - **Connections with many participants.** A board of directors is one connection with many
   participants. Rendering it as a node is correct but visually different from pairwise edges.
   Needs a visual treatment.
-- **Status.** The viewer is published as the project's site; the increments above remain open.
+- **Status.** The viewer is published as the project's site; querying in the browser (all seven increments of Leads, Ask and Advanced) is built and published, 10 and 11 November 2026.
 - **Testing the canvas.** Cytoscape rendering is hard to unit test. Keep graph construction
   (nodes, edges, adjacency, folding, trail state) in plain TypeScript modules with Vitest
   tests, and leave the Svelte components as thin rendering shells.

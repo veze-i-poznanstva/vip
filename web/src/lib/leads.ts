@@ -52,7 +52,8 @@ export function leadSentence(rule: string, row: Row, naming: Naming): string {
 export type LeadFocus = { kind: 'path'; from: GraphNode; to: GraphNode } | { kind: 'ego'; node: GraphNode };
 
 export function leadFocus(row: Row, nodes: Map<string, GraphNode>): LeadFocus | null {
-  const agents = Object.values(row).filter((v) => v.kind === 'iri').map((v) => nodes.get(v.value)).filter((n): n is GraphNode => !!n);
+  const found = Object.values(row).filter((v) => v.kind === 'iri').map((v) => nodes.get(v.value)).filter((n): n is GraphNode => !!n);
+  const agents = [...new Map(found.map((n) => [n.uri, n])).values()]; // each agent once, however many variables name it
   const people = agents.filter((n) => n.nodeType === 'person');
   if (people.length === 2) return { kind: 'path', from: people[0], to: people[1] };
   const first = people[0] ?? agents[0];

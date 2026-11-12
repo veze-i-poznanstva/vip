@@ -12,7 +12,7 @@
   import { wantsCorrection, withoutCorrection } from './lib/report';
   import type { ReportSubject } from './lib/report';
   import type { ElementDefinition, StylesheetStyle } from 'cytoscape';
-  import { language, resolveLanguage, supportedLanguages, t } from './lib/i18n';
+  import { language, resolveLanguage, supportedLanguage, supportedLanguages, t } from './lib/i18n';
   import type { Language } from './lib/i18n';
   import { buildIndex, egoGraph, expand, filterByType, hoverContent, pathElements, pathSteps, pushTrail, readFocusQuery, readPathQuery, shortestPaths, subgraph, writeFocusQuery, writePathQuery } from './lib/graph';
   import type { Element, GraphIndex, GraphNode, HoverContent } from './lib/graph';
@@ -240,13 +240,14 @@
 
   // The language comes from ?lang=, then the last choice on this browser, else Serbian; the browser's own language is not consulted.
   const stored = (key: string): string | null => { try { return localStorage.getItem(key); } catch { return null; } };
-  language.set(resolveLanguage(supportedLanguages as unknown as string[], [
-    new URLSearchParams(location.search).get('lang'), stored('lang')
-  ]) as Language);
+  // Only a choice is remembered (a ?lang= address or the selector), so a visit that picks nothing stores nothing.
+  const rememberLanguage = (chosen: string) => { try { localStorage.setItem('lang', chosen); } catch { /* private mode: the choice lasts the session */ } };
+  const asked = supportedLanguage(supportedLanguages, new URLSearchParams(location.search).get('lang'));
+  language.set(resolveLanguage(supportedLanguages, [asked, stored('lang')]) as Language);
+  if (asked) rememberLanguage(asked);
   $: {
     document.documentElement.lang = $language;
     document.title = $t('app.title');
-    try { localStorage.setItem('lang', $language); } catch { /* private mode: the choice lasts the session */ }
   }
 
   onMount(async () => {
@@ -262,11 +263,6 @@
       index = buildIndex(data);
       loading = false;
       if (wantsCorrection(location.search)) report = { subject: $t('report.general') };
-      const shared = readQueryAddress(location.search);
-      if (shared) {
-        advancedQuery = shared;
-        openQuery('advanced');
-      }
       const linked = readPathQuery(location.search);
       if (linked.from && linked.to && index.nodes.has(linked.from) && index.nodes.has(linked.to)) {
         connecting = true;
@@ -277,6 +273,12 @@
       } else {
         const linkedFocus = readFocusQuery(location.search);
         if (linkedFocus && index.nodes.has(linkedFocus)) choose(index.nodes.get(linkedFocus)!);
+      }
+      // A shared query opens last: restoring a linked focus opens the details panel, which would take the query panel's place.
+      const shared = readQueryAddress(location.search);
+      if (shared) {
+        advancedQuery = shared;
+        openQuery('advanced');
       }
     } catch (e) {
       console.error('Error loading graph data:', e);
@@ -491,7 +493,7 @@
     <button type="button" class="link" class:strong={leadsOpen && queryMode === 'ask'} on:click={() => openQuery('ask')} disabled={loading}>{$t('ask')}</button>
     <button type="button" class="link" on:click={() => (about = true)}>{$t('about')}</button>
     <button type="button" class="link strong" on:click={() => (report = { subject: $t('report.general') })}>{$t('report.title')}</button>
-    <select id="language-select" aria-label={$t('language')} bind:value={$language}>
+    <select id="language-select" aria-label={$t('language')} bind:value={$language} on:change={(e) => rememberLanguage(e.currentTarget.value)}>
       {#each supportedLanguages as code}
         <option value={code} aria-label={$t('language.' + code)}>{code.toUpperCase()}</option>
       {/each}

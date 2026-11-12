@@ -19,7 +19,8 @@ import kotlin.system.exitProcess
  * reasoning, so the types along `rdfs:subClassOf`, the participants along `rdfs:subPropertyOf` and the
  * domain and range typings that the rules see in the build are written out as plain statements.
  * Only statements about the data's own subjects are kept, so the vocabulary itself and RDFS
- * housekeeping such as `rdf:type rdfs:Resource` stay out.
+ * housekeeping such as `rdf:type rdfs:Resource` stay out, and so does a type that is only an
+ * anonymous class of the schema, which the export could write only as a bare label.
  */
 fun entail(data: Model, schema: Model): Model {
     val subjects = data.listSubjects().toSet()
@@ -29,7 +30,9 @@ fun entail(data: Model, schema: Model): Model {
     out.setNsPrefixes(data.nsPrefixMap)
     inferred.listStatements().forEach { st ->
         val housekeeping = st.predicate == RDF.type && st.`object`.isURIResource && st.`object`.asResource().nameSpace == RDFS.uri
-        if (st.subject in subjects && !housekeeping) out.add(st)
+        // A type that is only an anonymous class of the schema (an OWL restriction) would be a bare label in the export.
+        val anonymousClass = st.`object`.isAnon && !data.containsResource(st.`object`)
+        if (st.subject in subjects && !housekeeping && !anonymousClass) out.add(st)
     }
     return out
 }
@@ -38,9 +41,7 @@ fun entail(data: Model, schema: Model): Model {
  * The entailed data as Turtle that is the same text on every build. Jena labels blank nodes at
  * random and its writer orders by those labels, so a documentation node would move from build to
  * build; here every blank node is relabelled from where it hangs and what it says, and the
- * statements are added in sorted order, which fixes the text. An entailed type that is only an
- * anonymous class of the schema (an OWL restriction) is left out: without its description it would
- * be a bare label that says nothing.
+ * statements are added in sorted order, which fixes the text.
  */
 fun dataTurtle(entailed: Model): String {
     val stable = StableBlankNodes(entailed).copy()
@@ -53,17 +54,13 @@ private class StableBlankNodes(private val model: Model) {
     private val out: Model = ModelFactory.createDefaultModel().setNsPrefixes(model.nsPrefixMap)
 
     fun copy(): Model {
-        val statements = model.listStatements().toList().mapNotNull { st ->
+        val statements = model.listStatements().toList().map { st ->
             val obj = st.`object`
-            // An entailed type that is only an anonymous class of the schema (an OWL restriction) would be a bare label here.
-            if (obj.isAnon && !described(obj.asResource())) return@mapNotNull null
             out.createStatement(stable(st.subject), st.predicate, if (obj.isAnon) stable(obj.asResource()) else obj)
         }
         statements.sortedBy { it.toString() }.forEach { out.add(it) }
         return out
     }
-
-    private fun described(node: Resource) = model.listStatements(node, null, null as RDFNode?).hasNext()
 
     private fun stable(node: Resource): Resource = if (!node.isAnon) node else labels.getOrPut(node) {
         val hangingOn = model.listStatements(null, null, node).toList().map { key(it.subject, setOf(node)) + " " + it.predicate.uri }.sorted()

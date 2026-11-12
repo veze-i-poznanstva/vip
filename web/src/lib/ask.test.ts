@@ -81,6 +81,10 @@ describe('extractQuery', () => {
     expect(extractQuery('')).toBe('');
     expect(extractQuery('```sparql\n```')).toBe('');
   });
+
+  it('takes the rest of the answer when the fence is never closed, as a cut-off answer leaves it', () => {
+    expect(extractQuery('Query:\n```sparql\nSELECT ?s WHERE { ?s ?p ?o }')).toBe('SELECT ?s WHERE { ?s ?p ?o }');
+  });
 });
 
 describe('assistantLinks', () => {

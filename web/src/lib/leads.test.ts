@@ -66,6 +66,11 @@ describe('leadFocus', () => {
     expect(leadFocus({ company: iri(firma.uri) }, nodes)).toEqual({ kind: 'ego', node: firma });
     expect(leadFocus({ overlap: { kind: 'literal', value: 'unknown' } }, nodes)).toBeNull();
   });
+
+  it('counts distinct people, so a row naming the same person twice opens their map rather than a path to themselves', () => {
+    expect(leadFocus({ a: iri(ana.uri), b: iri(ana.uri) }, nodes)).toEqual({ kind: 'ego', node: ana });
+    expect(leadFocus({ a: iri(ana.uri), b: iri(cile.uri), c: iri(ana.uri) }, nodes)).toEqual({ kind: 'path', from: ana, to: cile });
+  });
 });
 
 describe('nodesByUri', () => {

@@ -140,9 +140,9 @@ export function briefAddress(language: string): string {
   return new URL(`prompt.${language}.txt`, PUBLISHED_SITE).href;
 }
 
-/** The query in an assistant's answer: the first fenced code block, else the whole text, trimmed. */
+/** The query in an assistant's answer: the first fenced code block (to its end, or to the end of the text when the fence is never closed), else the whole text, trimmed. */
 export function extractQuery(answer: string): string {
-  const fenced = answer.match(/```[^\n]*\n([\s\S]*?)```/);
+  const fenced = answer.match(/```[^\n]*\n([\s\S]*?)(?:```|$)/);
   return (fenced ? fenced[1] : answer).trim();
 }
 

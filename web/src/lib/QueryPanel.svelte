@@ -1,8 +1,19 @@
+<script context="module" lang="ts">
+  import { cachedEngine } from './engine';
+
+  // One engine for the page: the data and the rules are fetched and parsed the first time the panel
+  // opens, and a panel opened again gets the same engine. A failed load is tried again next time.
+  const engineOnce = cachedEngine(async (name) => {
+    const response = await fetch(`${import.meta.env.BASE_URL}${name}`);
+    if (!response.ok) throw new Error(`${name}: ${response.status}`);
+    return response.text();
+  });
+</script>
+
 <script lang="ts">
   import { createEventDispatcher, onMount } from 'svelte';
   import { t } from './i18n';
   import type { GraphIndex } from './graph';
-  import { loadEngine } from './engine';
   import type { Engine } from './engine';
   import type { LeadFocus } from './leads';
   import LeadsPanel from './LeadsPanel.svelte';
@@ -18,20 +29,13 @@
 
   const dispatch = createEventDispatcher<{ close: void; show: LeadFocus }>();
 
-  // The engine, its data and its rules load when the panel first opens. The whole panel is imported
-  // on demand by the app, so the SPARQL engine stays out of the page's first load.
+  // The whole panel is imported on demand by the app, so the SPARQL engine stays out of the page's first load.
   let engine: Engine | null = null;
   let error = '';
 
-  const fetchText = async (name: string) => {
-    const response = await fetch(`${import.meta.env.BASE_URL}${name}`);
-    if (!response.ok) throw new Error(`${name}: ${response.status}`);
-    return response.text();
-  };
-
   onMount(async () => {
     try {
-      engine = await loadEngine(fetchText);
+      engine = await engineOnce();
     } catch (e) {
       error = e instanceof Error ? e.message : String(e);
     }
@@ -63,12 +67,13 @@
     <p class="error">{$t('leads.error', { message: error })}</p>
   {:else if !engine}
     <p class="quiet">{$t('leads.loading')}</p>
-  {:else if mode === 'leads'}
-    <LeadsPanel {engine} {index} on:show />
-  {:else if mode === 'ask'}
-    <AskPanel {engine} {index} on:show on:advanced={editQuery} />
-  {:else if mode === 'advanced'}
-    <AdvancedPanel {engine} {index} bind:query on:show />
+  {:else}
+    <!-- Every view stays mounted and the others are hidden, so a question, an answer and their results survive a change of tab. -->
+    <div hidden={mode !== 'leads'}><LeadsPanel {engine} {index} on:show /></div>
+    <div hidden={mode !== 'ask'}><AskPanel {engine} {index} on:show on:advanced={editQuery} /></div>
+    {#if advancedSeen}
+      <div hidden={mode !== 'advanced'}><AdvancedPanel {engine} {index} bind:query on:show /></div>
+    {/if}
   {/if}
 </div>
 

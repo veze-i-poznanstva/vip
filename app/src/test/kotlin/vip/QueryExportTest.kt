@@ -83,6 +83,39 @@ class QueryExportTest {
     }
 
     @Test
+    fun `a blank node of the data that says nothing is kept, only a type that is an anonymous class of the schema is left out`() {
+        val turtle = dataTurtle(entail(data("rs:x a foaf:Person ; <http://poderopedia.com/vocab/hasDocumentation> [] ."), schema))
+        val written = ModelFactory.createDefaultModel().read(turtle.byteInputStream(), null, "TTL")
+        val x = written.createResource("https://w3id.org/vip/rs/x")
+        assertTrue(written.contains(x, written.createProperty("http://poderopedia.com/vocab/hasDocumentation")), turtle)
+        assertTrue(written.listObjectsOfProperty(x, RDF.type).toList().none { it.isAnon }, turtle)
+    }
+
+    @Test
+    fun `two identical documentation nodes under one subject both survive the relabelling`() {
+        val doc = "[ a <http://poderopedia.com/vocab/Documentation> ; <http://poderopedia.com/vocab/hasDocumentURL> <https://example.org/a> ]"
+        val turtle = dataTurtle(entail(data("rs:x a foaf:Person ; <http://poderopedia.com/vocab/hasDocumentation> $doc, $doc ."), schema))
+        val written = ModelFactory.createDefaultModel().read(turtle.byteInputStream(), null, "TTL")
+        val x = written.createResource("https://w3id.org/vip/rs/x")
+        assertEquals(2, written.listObjectsOfProperty(x, written.createProperty("http://poderopedia.com/vocab/hasDocumentation")).toList().size, turtle)
+    }
+
+    @Test
+    fun `a blank node shared by two subjects, with a nested child pointing back, is written the same on every load and loses nothing`() {
+        val ttl = """
+            rs:A <http://poderopedia.com/vocab/hasDocumentation> _:d .
+            rs:B <http://poderopedia.com/vocab/hasDocumentation> _:d .
+            _:d a <http://poderopedia.com/vocab/Documentation> ; <http://example.org/child> [ <http://example.org/parent> _:d ; <http://example.org/name> "child" ] .
+        """
+        val empty = ModelFactory.createDefaultModel()
+        val once = dataTurtle(entail(data(ttl), empty))
+        val again = dataTurtle(entail(data(ttl), empty))
+        assertEquals(once, again)
+        val written = ModelFactory.createDefaultModel().read(once.byteInputStream(), null, "TTL")
+        assertTrue(written.isIsomorphicWith(data(ttl)), once)
+    }
+
+    @Test
     fun `rules are exported as JSON with the title and the explanation split by language, and the query text`() {
         val rule = Rule("nepotism", "Nepotism / Nepotizam\nA spouse works there.\nTime: years meet.\n\nSupružnik radi tamo.\nVreme: godine se dodiruju.", "# Nepotism / Nepotizam\nSELECT * WHERE { ?s ?p ?o }")
         val exported = JsonParser.parseString(rulesJson(listOf(rule))).asJsonArray.single().asJsonObject

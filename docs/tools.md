@@ -288,8 +288,9 @@ Everything a reader meets exists in English and in Serbian, Latin script:
   `@sr` text, as described under "How facts are recorded".
 - **Viewer.** The interface text lives in `web/src/locales/<code>.json`, one file per language
   with the same keys; a Vitest test fails when a key is missing in any language. The language is
-  taken from `?lang=` in the address, then from the last choice made on that browser, then from
-  the browser's own language. To add a language, add its dictionary and its code to
+  taken from `?lang=` in the address, then from the last choice made on that browser, and otherwise
+  it is Serbian; the browser's own language is deliberately not consulted. To add a language, add
+  its dictionary and its code to
   `supportedLanguages` in `web/src/lib/i18n.ts`, and the translated documents beside the
   originals.
 

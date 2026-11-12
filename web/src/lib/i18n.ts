@@ -11,14 +11,20 @@ export function translate(dictionary: Dictionary, key: string, params: Params = 
   return text.replace(/\{(\w+)\}/g, (match, name) => (name in params ? String(params[name]) : match));
 }
 
+/** The supported language a candidate names, its region ignored; null when it names none, so nothing was chosen. */
+export function supportedLanguage(supported: readonly string[], candidate: string | null | undefined): string | null {
+  const language = (candidate ?? '').toLowerCase().split('-')[0];
+  return language && supported.includes(language) ? language : null;
+}
+
 /**
- * The first candidate (a URL parameter, a stored choice, the browser's languages) whose
- * language part is supported; the first supported language when none matches.
+ * The first candidate (a URL parameter, a stored choice) that names a supported language; the
+ * first supported language when none does.
  */
-export function resolveLanguage(supported: string[], candidates: (string | null | undefined)[]): string {
+export function resolveLanguage(supported: readonly string[], candidates: (string | null | undefined)[]): string {
   for (const candidate of candidates) {
-    const language = (candidate ?? '').toLowerCase().split('-')[0];
-    if (language && supported.includes(language)) return language;
+    const language = supportedLanguage(supported, candidate);
+    if (language) return language;
   }
   return supported[0];
 }

@@ -12,7 +12,8 @@ const toBase64Url = (text: string): string => {
   return btoa(binary).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
 };
 
-const fromBase64Url = (value: string): string | null => {
+const fromBase64Url = (padded: string): string | null => {
+  const value = padded.replace(/=+$/, ''); // other encoders pad; ours does not
   if (!/^[A-Za-z0-9_-]+$/.test(value)) return null;
   try {
     const binary = atob(value.replace(/-/g, '+').replace(/_/g, '/'));

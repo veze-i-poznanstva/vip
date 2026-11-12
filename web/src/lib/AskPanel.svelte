@@ -21,6 +21,7 @@
   let ran = '';
   let error = '';
   let showQuery = false;
+  let running = false;
 
   // Only the terms the records use: a shorter prompt that still names everything a query can match.
   const used = usedTerms(engine.dataset);
@@ -28,7 +29,8 @@
   $: prompt = buildPrompt(summary, engine.rules, question, $t);
   // The link carries a short instruction to read the brief on the published site, not the brief itself.
   $: brief = briefAddress($language);
-  $: links = assistantLinks($t('ask.link', { url: brief, question: question.trim() }));
+  // Without a question there is nothing to hand over, and a link without an address cannot be followed by pointer or keyboard.
+  $: links = question.trim() ? assistantLinks($t('ask.link', { url: brief, question: question.trim() })) : null;
   $: naming = { nodes: nodesByUri(index.nodes.values()), labels: engine.labels($language), t: $t } satisfies Naming;
 
   async function copyPrompt() {
@@ -39,7 +41,9 @@
     } catch { /* the text area below the button stays selectable */ }
   }
 
+  // One query at a time: a second press while the first still runs would let the slower answer overwrite the newer one.
   async function run() {
+    if (running) return;
     error = '';
     result = null;
     ran = extractQuery(answer);
@@ -47,11 +51,14 @@
       error = $t('ask.noQuery');
       return;
     }
+    running = true;
     try {
       result = await engine.select(ran);
     } catch (e) {
       const kind = e instanceof QueryError ? e.kind : 'run';
       error = $t(`ask.error.${kind}`, { message: e instanceof Error ? e.message : String(e) });
+    } finally {
+      running = false;
     }
   }
 
@@ -69,8 +76,8 @@
 </label>
 <div class="actions">
   <button type="button" on:click={copyPrompt} disabled={!question.trim()}>{copied ? $t('ask.copied') : $t('ask.copy')}</button>
-  <a href={links.claude} target="_blank" rel="noopener noreferrer" class:disabled={!question.trim()}>{$t('ask.open.claude')}</a>
-  <a href={links.chatgpt} target="_blank" rel="noopener noreferrer" class:disabled={!question.trim()}>{$t('ask.open.chatgpt')}</a>
+  <a href={links?.claude} target="_blank" rel="noopener noreferrer" class:disabled={!links} aria-disabled={!links}>{$t('ask.open.claude')}</a>
+  <a href={links?.chatgpt} target="_blank" rel="noopener noreferrer" class:disabled={!links} aria-disabled={!links}>{$t('ask.open.chatgpt')}</a>
 </div>
 <p class="quiet">{$t('ask.open.note', { url: brief })}</p>
 
@@ -79,7 +86,7 @@
   <textarea rows="5" bind:value={answer} placeholder={$t('ask.answer.placeholder')}></textarea>
 </label>
 <div class="actions">
-  <button type="button" class="primary" on:click={run} disabled={!answer.trim()}>{$t('ask.run')}</button>
+  <button type="button" class="primary" on:click={run} disabled={!answer.trim() || running}>{$t('ask.run')}</button>
   {#if ran}
     <button type="button" class="link" on:click={() => (showQuery = !showQuery)}>{$t('ask.showQuery')}</button>
     <button type="button" class="link" on:click={() => dispatch('advanced', ran)}>{$t('ask.advanced')}</button>

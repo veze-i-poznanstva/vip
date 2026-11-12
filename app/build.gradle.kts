@@ -242,7 +242,7 @@ tasks.register<JavaExec>("ttlToCytoscape") {
 
 tasks.register<JavaExec>("exportQueryData") {
     group = "rdf"
-    description = "Publishes data.ttl (records plus entailments), schema.ttl and rules.json for the viewer's query engine"
+    description = "Publishes data.ttl (records plus entailments), schema.ttl, rules.json and red-flags.json (the leads the build finds) for the viewer's query engine"
 
     classpath = sourceSets.main.get().runtimeClasspath
     mainClass.set("vip.QueryExportKt")

@@ -41,3 +41,12 @@ export async function loadEngine(fetchText: FetchText): Promise<Engine> {
     runRules: (limits) => runRules(dataset, rules, limits)
   };
 }
+
+/** A loader that fetches and parses once and then hands every caller the same engine; a failed load is forgotten, so the next call retries. */
+export function cachedEngine(fetchText: FetchText): () => Promise<Engine> {
+  let loading: Promise<Engine> | undefined;
+  return () => {
+    loading ??= loadEngine(fetchText).catch((e) => { loading = undefined; throw e; });
+    return loading;
+  };
+}

@@ -20,17 +20,23 @@
   let error = '';
   let shared = false;
   let template = '';
+  let running = false;
 
   $: naming = { nodes: nodesByUri(index.nodes.values()), labels: engine.labels($language), t: $t } satisfies Naming;
 
+  // One query at a time: a second press while the first still runs would let the slower answer overwrite the newer one.
   async function run() {
+    if (running) return;
     error = '';
     result = null;
+    running = true;
     try {
       result = await engine.select(query);
     } catch (e) {
       const kind = e instanceof QueryError ? e.kind : 'run';
       error = $t(`ask.error.${kind}`, { message: e instanceof Error ? e.message : String(e) });
+    } finally {
+      running = false;
     }
   }
 
@@ -63,7 +69,7 @@
   <textarea rows="10" bind:value={query} spellcheck="false" placeholder={'SELECT ?person WHERE { ... }'}></textarea>
 </label>
 <div class="actions">
-  <button type="button" class="primary" on:click={run} disabled={!query.trim()}>{$t('ask.run')}</button>
+  <button type="button" class="primary" on:click={run} disabled={!query.trim() || running}>{$t('ask.run')}</button>
   <select bind:value={template} on:change={loadTemplate} aria-label={$t('advanced.templates')}>
     <option value="">{$t('advanced.templates')}</option>
     {#each engine.rules as rule}

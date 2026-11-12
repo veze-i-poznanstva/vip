@@ -16,6 +16,13 @@ describe('the query in the address', () => {
     expect(writeQueryAddress('?upit=abc', null)).toBe('');
   });
 
+  it('accepts a padded value, as other base64url encoders write it', () => {
+    const sparql = 'SELECT * WHERE { ?s ?p ?o } ';
+    const padded = Buffer.from(sparql, 'utf8').toString('base64').replace(/\+/g, '-').replace(/\//g, '_');
+    expect(padded.endsWith('=')).toBe(true);
+    expect(readQueryAddress('?upit=' + padded)).toBe(sparql);
+  });
+
   it('ignores a value that is not valid base64url', () => {
     expect(readQueryAddress('?upit=%%%')).toBeNull();
     expect(readQueryAddress('?upit=!!!')).toBeNull();
