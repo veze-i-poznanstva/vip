@@ -1,0 +1,22 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rs: <https://w3id.org/vip/rs/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio: <http://purl.org/vocab/bio/0.1/> .
+@prefix : <http://poderopedia.com/vocab/> .
+@prefix vip: <https://w3id.org/vip/vocab#> .
+
+# Matična datoteka: Starting d.o.o. Beograd. Veze su u data/cases/zeleznicka-stanica-novi-sad.ttl.
+# Entity home: Starting d.o.o. Beograd. Connections are in data/cases/zeleznicka-stanica-novi-sad.ttl.
+
+rs:Starting a :Company ;
+    foaf:name "Starting d.o.o. Beograd"@sr ;
+    rdfs:comment "Građevinska firma iz Beograda; spisak objavljene dokumentacije navodi njeno puno ime sa sedištem „Beograd (Zemun)“. Prema Nova.rs, glavni podizvođač na rekonstrukciji zgrade Železničke stanice u Novom Sadu."@sr ;
+    rdfs:comment "A construction company from Belgrade; the document index prints its full name with the seat \"Beograd (Zemun)\". Per Nova.rs, the main subcontractor on the reconstruction of the Novi Sad railway station building."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://n1info.rs/vesti/svi-drzavni-poslovi-firme-starting-koja-je-rekonstruisala-zeleznicku-stanicu-u-novom-sadu> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "N1, 11. novembar 2024: 'građevinska kompanija Starting, koja je bila podizvođač radova na stanici'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://nova.rs/vesti/biznis/firma-starting-postavila-novog-direktora-nakon-hapsenja-nikole-trivica> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Nova.rs, 8. avgust 2025: 'Firma Starting bila je glavni podizvođač na rekonstrukciji stanice'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://mss.jt.rs/wp-content/uploads/2025/01/%D0%A1%D0%BF%D0%B8%D1%81%D0%B0%D0%BA-%D0%BE%D0%B1%D1%98%D0%B0%D0%B2%D1%99%D0%B5%D0%BD%D0%B5-%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D1%98%D0%B5-1.pdf> ; :hasDocumentType vip:officialDocument ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Spisak objavljene dokumentacije (mss.jt.rs, PDF izrađen 27. januara 2025; prema 021.rs i Vremenu, dokumentaciju je objavilo Više javno tužilaštvo u Novom Sadu), stavka 421: 'GRAĐEVINSKO-ZANATSKE RADOVE I INŽENJERING STARTING DOO BEOGRAD (ZEMUN)'."@sr ] .

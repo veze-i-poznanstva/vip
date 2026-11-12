@@ -1,0 +1,22 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rs: <https://w3id.org/vip/rs/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio: <http://purl.org/vocab/bio/0.1/> .
+@prefix : <http://poderopedia.com/vocab/> .
+@prefix vip: <https://w3id.org/vip/vocab#> .
+
+# Matična datoteka: Milan Vukovljak. Veze su u data/cases/zeleznicka-stanica-novi-sad.ttl.
+# Entity home: Milan Vukovljak. Connections are in data/cases/zeleznicka-stanica-novi-sad.ttl.
+
+rs:Milan_Vukovljak a foaf:Person ;
+    foaf:name "Milan Vukovljak"@sr ;
+    foaf:firstName "Milan" ;
+    :firstLastName "Vukovljak" ;
+    rdfs:comment "Vlasnik firme Bob, prema 021.rs (2025). Srna je 2021. u Glasu Srpske navela Milana Vukovljaka koji živi u Novom Sadu kao vlasnika firme „Bob“, bez sedišta firme i matičnog broja; da je to ista firma zasniva se na imenu, gradu i vrsti posla."@sr ;
+    rdfs:comment "Owner of Bob, per 021.rs (2025). A 2021 Srna report in Glas Srpske names a Milan Vukovljak who lives in Novi Sad as owner of the firm \"Bob\", without the firm's seat or registration number; that it is the same firm rests on the name, the town and the kind of work."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://www.021.rs/novi-sad/vesti/400000/objavljen-ugovor-startinga-sa-jos-jednim-podizvodjacem-ko-je-postavljao-staklo-na-nadstresnicu> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "021.rs, 27. januar 2025: 'Privredno društvo \"Bob doo\" registrovano je za proizvodnju, usluge, spoljnu i unutrašnju trgovinu.'; 'Vlasnik je Milan Vukovljak.'"@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.glassrpske.com/lat/novosti/drustvo/prikupljene-brojne-donacije-za-izgradnju-konaka-pri-hramu-u-selu-gubin-nadomak-livna/374914> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Glas Srpske, 30. avgust 2021 (Srna): 'Milan Vukovljak porijeklom iz Gubina, koji živi u Novom Sadu i vlasnik je firme \"Bob\"'."@sr ] .

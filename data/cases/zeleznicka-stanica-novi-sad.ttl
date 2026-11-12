@@ -1,0 +1,147 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rs: <https://w3id.org/vip/rs/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio: <http://purl.org/vocab/bio/0.1/> .
+@prefix : <http://poderopedia.com/vocab/> .
+@prefix vip: <https://w3id.org/vip/vocab#> .
+
+# Slučaj: Železnička stanica Novi Sad, lanac izvođača na rekonstrukciji zgrade stanice, čija se nadstrešnica srušila 1. novembra 2024.
+# Case: Novi Sad railway station, the chain of contractors on the reconstruction of the station building, whose canopy collapsed on 1 November 2024.
+# Beleži ko je posedovao i vodio firme i ko je koga angažovao, onako kako to prenose mediji i objavljeni spisak dokumentacije.
+# It records who owned and ran the firms and who engaged whom, as media and the published document index report it.
+# Ugovor nije utvrđivanje odgovornosti i nijedan zapis ovde ne kaže da je iko kriv. Nedostajući datum je nepoznat.
+# A contract is not a finding of responsibility and no record here says anyone is guilty. A missing date is unknown.
+# Vlasništvo prijavljeno 2024. i 2025. ne pokazuje ko je posedovao firmu kada su potpisani ugovori iz 2021. i 2022.
+# Ownership reported in 2024 and 2025 does not show who owned a firm when the 2021 and 2022 contracts were signed.
+
+rs:LjiljanaTripkovic_Starting a vip:OwnershipConnection ;
+    vip:owner rs:Ljiljana_Tripkovic ;
+    vip:ownedCompany rs:Starting ;
+    vip:ownershipShare 70.0 ;
+    rdfs:comment "Nova.rs (11. novembar 2024 i 1. avgust 2025) i N1, koji prenosi Novu ekonomiju (11. novembar 2024), navode da Ljiljana Tripković ima 70 odsto firme Starting. Nijedan izvor ne navodi registar niti od kada."@sr ;
+    rdfs:comment "Nova.rs (11 November 2024 and 1 August 2025) and N1 relaying Nova ekonomija (11 November 2024) give Ljiljana Tripković 70 percent of Starting. No source names a registry or says since when."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://nova.rs/vesti/biznis/sve-o-firmi-starting-koja-je-izvodila-radove-na-zeleznickoj-stanici> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Nova.rs, 11. novembar 2024: 'Ljiljana Tripković poseduje 70 odsto udela u Startingu'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://n1info.rs/vesti/svi-drzavni-poslovi-firme-starting-koja-je-rekonstruisala-zeleznicku-stanicu-u-novom-sadu> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "N1, 11. novembar 2024, prenosi Novu ekonomiju: 'U suvlasništvu je Ljiljane Tripković (70 odsto)'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://nova.rs/vesti/hronika/uhapsen-i-nikola-trivic-suvlasnik-startinga/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Nova.rs, 1. avgust 2025: 'Udeo od 70 odsto u Startingu ima Ljiljana Tripković iz Beograda'."@sr ] .
+
+rs:NikolaTrivic_Starting a vip:OwnershipConnection ;
+    vip:owner rs:Nikola_Trivic ;
+    vip:ownedCompany rs:Starting ;
+    vip:ownershipShare 30.0 ;
+    rdfs:comment "N1, koji prenosi Novu ekonomiju, i Nova.rs od 1. avgusta 2025. navode 30 odsto; Nova.rs od 11. novembra 2024. piše „preostali deo“. Nema registra ni datuma."@sr ;
+    rdfs:comment "N1 relaying Nova ekonomija and Nova.rs of 1 August 2025 give 30 percent; Nova.rs of 11 November 2024 says \"the remaining part\". No registry, no dates."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://n1info.rs/vesti/svi-drzavni-poslovi-firme-starting-koja-je-rekonstruisala-zeleznicku-stanicu-u-novom-sadu> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "N1, 11. novembar 2024, prenosi Novu ekonomiju: 'Nikole Trivića (30 odsto)'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://nova.rs/vesti/hronika/uhapsen-i-nikola-trivic-suvlasnik-startinga/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Nova.rs, 1. avgust 2025: 'a 30 odsto Nikola Trivić'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://nova.rs/vesti/biznis/sve-o-firmi-starting-koja-je-izvodila-radove-na-zeleznickoj-stanici> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Nova.rs, 11. novembar 2024: 'preostali deo pripada Nikoli Triviću'."@sr ] .
+
+rs:NikolaTrivic_Starting_Direktor a :WorkConnection ;
+    bio:participant rs:Nikola_Trivic ;
+    :hasEconomicOrganizationParticipant rs:Starting ;
+    :hasWorkRole :director ;
+    :connectionEndDate "2025-08"^^xsd:gYearMonth ;
+    rdfs:comment "Nova.rs (8. avgust 2025) ga naziva direktorom firme Starting, kada prenosi naredbu o sprovođenju istrage, i prethodnikom novog direktora; od kada je bio direktor nije navedeno. Mesec kraja je izveden: Nova.rs je 1. avgusta 2025. javio njegovo hapšenje, a 8. avgusta 2025. da je Starting posle tog hapšenja dobio novog direktora; dan promene nije naveden. Hapšenje je pomenuto samo da objasni datum."@sr ;
+    rdfs:comment "Nova.rs (8 August 2025) calls him director of Starting in relaying the order to conduct an investigation, and the predecessor of the new director; since when he was director is not stated. The month of the end is inferred: Nova.rs reported his arrest on 1 August 2025 and, on 8 August 2025, that Starting had a new director appointed after that arrest; the day of the change is not stated. The arrest is mentioned only to explain the date."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://nova.rs/vesti/biznis/firma-starting-postavila-novog-direktora-nakon-hapsenja-nikole-trivica> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Nova.rs, 8. avgust 2025, prenosi naredbu o sprovođenju istrage: 'direktor privrednog društva „Starting“ d.o.o. iz Beograda'; 'hapšenja njegovog prethodnika'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://direktno.rs/vesti/drustvo-i-ekonomija/627014/startign-malisa-nedeljkovic.html> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Direktno, 8. avgust 2025, prenosi Nova.rs (nije nezavisna potvrda): 'direktor privrednog društva \"Starting\" d.o.o. iz Beograda'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://nova.rs/vesti/hronika/uhapsen-i-nikola-trivic-suvlasnik-startinga/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Nova.rs, 1. avgust 2025: 'Suvlasnik firme Starting Nikola Trivić jedan je od 14 uhapšenih'."@sr ] .
+
+rs:MalisaNedeljkovic_Starting_Direktor a :WorkConnection ;
+    bio:participant rs:Malisa_Nedeljkovic ;
+    :hasEconomicOrganizationParticipant rs:Starting ;
+    :hasWorkRole :director ;
+    :connectionStartDate "2025-08"^^xsd:gYearMonth ;
+    rdfs:comment "Nova.rs je 8. avgusta 2025. javio da je on novi direktor, postavljen posle hapšenja Nikole Trivića, koje je Nova.rs javio 1. avgusta 2025. Mesec je izveden iz ta dva datuma; dan postavljenja i njegov izvor (registar ili firma) nisu navedeni. Direktno prenosi izveštaj Nova.rs i nije nezavisna potvrda."@sr ;
+    rdfs:comment "Reported by Nova.rs on 8 August 2025 as the new director, appointed after the arrest of Nikola Trivić, which Nova.rs reported on 1 August 2025. The month is inferred from those two dates; the day of appointment and its source (registry or company) are not stated. Direktno carries the Nova.rs report and is not independent confirmation."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://nova.rs/vesti/biznis/firma-starting-postavila-novog-direktora-nakon-hapsenja-nikole-trivica> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Nova.rs, 8. avgust 2025: 'dobila je novog direktora Mališu Nedeljkovića'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://direktno.rs/vesti/drustvo-i-ekonomija/627014/startign-malisa-nedeljkovic.html> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Direktno, 8. avgust 2025, prenosi Nova.rs (nije nezavisna potvrda): 'dobila je novog direktora Mališu Nedeljkovića'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://nova.rs/vesti/hronika/uhapsen-i-nikola-trivic-suvlasnik-startinga/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Nova.rs, 1. avgust 2025: 'Suvlasnik firme Starting Nikola Trivić jedan je od 14 uhapšenih'."@sr ] .
+
+rs:MilanVukovljak_BobNoviSad a vip:OwnershipConnection ;
+    vip:owner rs:Milan_Vukovljak ;
+    vip:ownedCompany rs:Bob_Novi_Sad ;
+    rdfs:comment "Vlasnik prema 021.rs (27. januar 2025) i prema Srni u Glasu Srpske (30. avgust 2021), koja navodi samo firmu „Bob“ i Novi Sad kao mesto gde on živi. Udeo i datumi nisu poznati."@sr ;
+    rdfs:comment "Owner per 021.rs (27 January 2025) and per Srna in Glas Srpske (30 August 2021), which names only the firm \"Bob\" and Novi Sad as where he lives. Share and dates are unknown."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://www.021.rs/novi-sad/vesti/400000/objavljen-ugovor-startinga-sa-jos-jednim-podizvodjacem-ko-je-postavljao-staklo-na-nadstresnicu> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "021.rs, 27. januar 2025, pod naslovom 'Šta se zna o Bob doo?': 'Vlasnik je Milan Vukovljak.'"@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.glassrpske.com/lat/novosti/drustvo/prikupljene-brojne-donacije-za-izgradnju-konaka-pri-hramu-u-selu-gubin-nadomak-livna/374914> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Glas Srpske, 30. avgust 2021 (Srna): 'Milan Vukovljak porijeklom iz Gubina, koji živi u Novom Sadu i vlasnik je firme \"Bob\"'."@sr ] .
+
+rs:NenadIgnjatovic_DekoTim a vip:OwnershipConnection ;
+    vip:owner rs:Nenad_Ignjatovic_Deko_Tim ;
+    vip:ownedCompany rs:Deko_Tim ;
+    rdfs:comment "Vlasnik prema Nedeljniku (20. decembar 2024) i BBC-ju (članak objavljen 1. avgusta 2025, ažuriran 30. januara 2026). Udeo i datumi nisu poznati. Nedeljnik piše da nije hteo da odgovori na njegova pitanja dok je postupak u toku."@sr ;
+    rdfs:comment "Owner per Nedeljnik (20 December 2024) and the BBC (article published 1 August 2025, updated 30 January 2026). Share and dates are unknown. Nedeljnik reports that he declined to answer its questions while proceedings are under way."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://www.nedeljnik.rs/od-trgovine-na-malo-do-rekonstrukcije-zeleznicke-stanice-u-roku-od-tri-godine-ko-je-firma-koja-se-spomenjinje-u-izvestaju-vestaka-ftn/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Nedeljnik, 20. decembar 2024, o Nenadu Ignjatoviću: 'vlasnik „Deko-tima“ nije hteo da odgovori na pitanja sajta Nedeljnika'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.bbc.com/serbian/articles/cn47xjzq395o/lat> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "BBC na srpskom, objavljeno 1. avgusta 2025: 'Nenad Ignjatović, vlasnik „Deko tim\"'."@sr ] .
+
+rs:CCECCBalkan_Starting_Stanica a :Connection ;
+    bio:participant rs:CCECC_Balkan_Ogranak_Beograd, rs:Starting ;
+    rdfs:label "podizvođenje obnove stanice"@sr, "station renovation subcontract"@en ;
+    :connectionStartDate "2021-11"^^xsd:gYearMonth ;
+    rdfs:comment "Beogradski ogranak CCECC Balkan angažovao je Starting kao podizvođača za obnovu zgrade stanice u Novom Sadu. Spisak dokumentacije navodi Sporazum br. 209-2021 od 1. novembra 2021. (stavka 421) i Podizvođački ugovor od 20. jula 2022. (stavka 419) između njih. Vreme, prenoseći Forbes, piše da je sporazum potpisan u novembru 2021, a ugovor u julu 2022, i da su strane ušle u podizvođački ugovor 10. novembra 2021; Nova.rs, prenoseći naredbu o sprovođenju istrage, navodi da je Starting ponudu dao po pozivu tog ogranka, a ugovor zaključio 1. novembra 2021. sa konzorcijumom ogranaka CCECCB i „11th China Railway“. Početak je zabeležen na mesec jer se dan razlikuje među izvorima. Spisak opisuje dokumente; sami ugovori nisu pročitani."@sr ;
+    rdfs:comment "CCECC Balkan's Belgrade branch engaged Starting as subcontractor for the renovation of the Novi Sad station building. The document index lists an Agreement no. 209-2021 dated 1 November 2021 (item 421) and a Subcontract dated 20 July 2022 (item 419) between them. Vreme, relaying Forbes, writes that the agreement was signed in November 2021 and the contract in July 2022, and that the parties entered into the subcontract on 10 November 2021; Nova.rs, relaying the order to conduct an investigation, says that Starting made its offer at that branch's invitation and concluded the contract on 1 November 2021 with a consortium of the branches of CCECCB and \"11th China Railway\". The start is recorded to the month because the day differs between the sources. The index describes documents; the contracts themselves were not read."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://mss.jt.rs/wp-content/uploads/2025/01/%D0%A1%D0%BF%D0%B8%D1%81%D0%B0%D0%BA-%D0%BE%D0%B1%D1%98%D0%B0%D0%B2%D1%99%D0%B5%D0%BD%D0%B5-%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D1%98%D0%B5-1.pdf> ; :hasDocumentType vip:officialDocument ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Spisak objavljene dokumentacije (mss.jt.rs, PDF izrađen 27. januara 2025; prema 021.rs i Vremenu, dokumentaciju je objavilo Više javno tužilaštvo u Novom Sadu), stavka 421: 'CONSTRUCTION CORPORATION BALKAN OGRANAK BEOGRAD AND PRIVREDNO DRUŠTVO'; 'GRAĐEVINSKO-ZANATSKE RADOVE I INŽENJERING STARTING DOO BEOGRAD (ZEMUN)'; 'Број: 209-2021. Датум: 01.11.2021.'; stavka 419: 'Subcontract for Novi Sad Staton Renovaton Project Works.'; 'CCECC Balkan NO. 27. Date: 20.7.2022.'"@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://vreme.com/vesti/forbs-kinezi-angazovali-srpsku-firmu-starting-za-renoviranje-zeleznicke-stanice-u-novom-sadu/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Vreme, 3. januar 2025, prenosi Forbes: 'Kineska kompanija China Civil Engineering Construction Corporation (CCECC) i srpsko privredno društvo Starting potpisale su sporazum i ugovor po kojima je Starting kao podizvođač dobio za posao rekonstrukcije stanične zgrade u Novom Sadu'; 'Sporazum je potpisan u novembru 2021. godine, a ugovor u julu 2022. godine'; 'ušli u podizvođački ugovor 10. novembra 2021.'"@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://nova.rs/vesti/biznis/firma-starting-postavila-novog-direktora-nakon-hapsenja-nikole-trivica> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Nova.rs, 8. avgust 2025, prenosi naredbu o sprovođenju istrage: 'po pozivu za davanje ponude od privrednog društva „China Civil Engineering Constuction Corporation Balkan – Ogranak Beograd“'; 'zaključio ugovor 1. novembra 2021.'"@sr ] .
+
+rs:Starting_BobNoviSad_Stanica a :Connection ;
+    bio:participant rs:Starting, rs:Bob_Novi_Sad ;
+    rdfs:label "podizvođenje obnove stanice"@sr, "station renovation subcontract"@en ;
+    :connectionStartDate "2022"^^xsd:gYear ;
+    rdfs:comment "Starting je angažovao firmu Bob za aluminarske i bravarske radove na stanici, uključujući svetlarnik nadstrešnice nad ulazom u krilo B (021.rs, prema ugovoru koji je objavilo Više javno tužilaštvo u Novom Sadu; 021.rs piše da je ugovor zaključen u julu 2022). Spisak (stavka 503) navodi broj Startinga od 28. jula 2022. i broj firme Bob od 3. avgusta 2022; početak je zabeležen na godinu jer se ta dva datuma razlikuju."@sr ;
+    rdfs:comment "Starting engaged Bob for aluminium joinery and metalwork on the station, including the skylight of the canopy over the entrance to wing B (021.rs, from the contract published by the Higher Public Prosecutor's Office in Novi Sad; 021.rs says the contract was concluded in July 2022). The index (item 503) gives Starting's number dated 28 July 2022 and Bob's dated 3 August 2022; the start is recorded to the year because the two dates differ."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://mss.jt.rs/wp-content/uploads/2025/01/%D0%A1%D0%BF%D0%B8%D1%81%D0%B0%D0%BA-%D0%BE%D0%B1%D1%98%D0%B0%D0%B2%D1%99%D0%B5%D0%BD%D0%B5-%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D1%98%D0%B5-1.pdf> ; :hasDocumentType vip:officialDocument ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Spisak objavljene dokumentacije (mss.jt.rs, PDF izrađen 27. januara 2025; prema 021.rs i Vremenu, dokumentaciju je objavilo Više javno tužilaštvo u Novom Sadu), stavka 503: '(Број: 104-2022, дана 28.07.2022.) и БОБ д.о.о. (Број 75-2022, дана 03.08.2022.).'"@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.021.rs/novi-sad/vesti/400000/objavljen-ugovor-startinga-sa-jos-jednim-podizvodjacem-ko-je-postavljao-staklo-na-nadstresnicu> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "021.rs, 27. januar 2025: 'ugovor podizvođača, firme Starting sa firmom Bob doo iz Novog Sada'; 'Ugovor koji je zaključen u julu 2022. godine'; 'svetlarnik nadstrešnice nad ulazom u krilo B'."@sr ] .
+
+rs:Starting_DekoTim_Stanica a :Connection ;
+    bio:participant rs:Starting, rs:Deko_Tim ;
+    rdfs:label "podizvođenje obnove stanice"@sr, "station renovation subcontract"@en ;
+    :connectionStartDate "2022-08-08"^^xsd:date ;
+    rdfs:comment "Ugovor o kamenorezačkim i fasaderskim radovima br. 117-2022, Novi Sad, 8. avgust 2022, prema spisku dokumentacije (stavka 508); 021.rs i Nedeljnik navode da je Starting angažovao Deko-tim, 021.rs sa istim obimom radova; dan potiče samo iz spiska."@sr ;
+    rdfs:comment "Contract for stonecutting and facade work, no. 117-2022, Novi Sad, 8 August 2022, per the document index (item 508); 021.rs and Nedeljnik report Deko-tim as engaged by Starting, 021.rs with the same scope; the day comes from the index alone."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://mss.jt.rs/wp-content/uploads/2025/01/%D0%A1%D0%BF%D0%B8%D1%81%D0%B0%D0%BA-%D0%BE%D0%B1%D1%98%D0%B0%D0%B2%D1%99%D0%B5%D0%BD%D0%B5-%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D1%98%D0%B5-1.pdf> ; :hasDocumentType vip:officialDocument ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Spisak objavljene dokumentacije (mss.jt.rs, PDF izrađen 27. januara 2025; prema 021.rs i Vremenu, dokumentaciju je objavilo Više javno tužilaštvo u Novom Sadu), stavka 508: 'Уговор о извођењу каменорезачких и фасадерских радова, Број: 117-2022 (Стартинг), закључен'; 'између Стартинг д.о.о. и ДЕКО-ТИМ д.о.о. Место и датум: Нови Сад, 08.08.2022.'"@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.021.rs/novi-sad/vesti/400000/objavljen-ugovor-startinga-sa-jos-jednim-podizvodjacem-ko-je-postavljao-staklo-na-nadstresnicu> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "021.rs, 27. januar 2025: 'Deko-tim bio je angažovan za \"izvođenje kamenorezačkih i fasaderskih radova\"'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.nedeljnik.rs/od-trgovine-na-malo-do-rekonstrukcije-zeleznicke-stanice-u-roku-od-tri-godine-ko-je-firma-koja-se-spomenjinje-u-izvestaju-vestaka-ftn/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Nedeljnik, 20. decembar 2024: 'angažovan je kao jedan od podizvođača firme „Starting“'."@sr ] .
+
+rs:Starting_HidroTehna_Stanica a :Connection ;
+    bio:participant rs:Starting, rs:Hidro_Tehna_Novi_Sad ;
+    rdfs:label "podizvođenje obnove stanice"@sr, "station renovation subcontract"@en ;
+    rdfs:comment "Spisak dokumentacije (stavka 509) navodi ponudu br. 96 firme Hidro-tehna d.o.o. Novi Sad firmi Starting za hidroizolaciju zgrade stanice, od 29. septembra 2022, i dopunu te ponude za hidroizolaterske radove na krovu, od 8. decembra 2022; to su ponude, spisak ne navodi ugovor. Forbes Srbija (5. maj 2025) prenosi iskaz inženjera firme Starting da je hidroizolaciju radila „Hidrotehna“ kao podizvođač firme Starting. Forbes ne navodi grad, pa da je to novosadska firma zasniva se na imenu i vrsti posla. Kada su radovi počeli i završeni nije poznato."@sr ;
+    rdfs:comment "The document index (item 509) lists offer no. 96 of Hidro-tehna d.o.o. Novi Sad to Starting for waterproofing the station building, dated 29 September 2022, and a supplement to it for waterproofing work on the roof, dated 8 December 2022; these are offers, the index lists no contract. Forbes Srbija (5 May 2025) reports the testimony of a Starting engineer that the waterproofing was done by \"Hidrotehna\" as Starting's subcontractor. Forbes names no town, so that this is the Novi Sad company rests on the name and the kind of work. When the work began and ended is unknown."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://mss.jt.rs/wp-content/uploads/2025/01/%D0%A1%D0%BF%D0%B8%D1%81%D0%B0%D0%BA-%D0%BE%D0%B1%D1%98%D0%B0%D0%B2%D1%99%D0%B5%D0%BD%D0%B5-%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D1%98%D0%B5-1.pdf> ; :hasDocumentType vip:officialDocument ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Spisak objavljene dokumentacije (mss.jt.rs, PDF izrađen 27. januara 2025; prema 021.rs i Vremenu, dokumentaciju je objavilo Više javno tužilaštvo u Novom Sadu), stavka 509: 'Понуда бр. 96, за израду хидроизолације објекта железничке станице у Новом Саду, од стране'; 'Хидро-техна д.о.о. Нови Сад упућена Стартинг д.о.о. Београд. Датум: 29.09.2022.'; 'Допина понуди бр. 96, за израду хидроизолатерске радове на крову железничке'; 'Београд. Датум: 08.12.2022.'"@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://forbes.n1info.rs/biznis/svedoci-startinga-i-kineza-otkrili-ko-je-uklonio-betonske-kocke-sa-krova-stanice-i-zasto-ih-nema-u-gradjevinskom-dnevniku/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Forbes Srbija, 5. maj 2025: 'A na krovu su radile firma Starting i njen podizvođač Hidrotehna.'; 'postavljanje hidroizolacije radila Hidrotehna'."@sr ] .

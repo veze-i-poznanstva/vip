@@ -1,0 +1,22 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rs: <https://w3id.org/vip/rs/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio: <http://purl.org/vocab/bio/0.1/> .
+@prefix : <http://poderopedia.com/vocab/> .
+@prefix vip: <https://w3id.org/vip/vocab#> .
+
+# Matična datoteka: CCECC Balkan, ogranak Beograd. Veze su u data/cases/zeleznicka-stanica-novi-sad.ttl.
+# Entity home: CCECC Balkan, Belgrade branch. Connections are in data/cases/zeleznicka-stanica-novi-sad.ttl.
+
+rs:CCECC_Balkan_Ogranak_Beograd a :Company ;
+    foaf:name "China Civil Engineering Construction Corporation Balkan, ogranak Beograd"@sr ;
+    rdfs:comment "Beogradski ogranak kineske kompanije CCECC Balkan, koji je angažovao firmu Starting na stanici; nije isto što i CRIC i CCCC, koje isti izvori navode odvojeno."@sr ;
+    rdfs:comment "The Belgrade branch of the Chinese company CCECC Balkan, which engaged Starting on the station; a different company from CRIC and CCCC, which the same sources name separately."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://mss.jt.rs/wp-content/uploads/2025/01/%D0%A1%D0%BF%D0%B8%D1%81%D0%B0%D0%BA-%D0%BE%D0%B1%D1%98%D0%B0%D0%B2%D1%99%D0%B5%D0%BD%D0%B5-%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D1%98%D0%B5-1.pdf> ; :hasDocumentType vip:officialDocument ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Spisak objavljene dokumentacije (mss.jt.rs, PDF izrađen 27. januara 2025; prema 021.rs i Vremenu, dokumentaciju je objavilo Više javno tužilaštvo u Novom Sadu), stavka 421: 'CONSTRUCTION CORPORATION BALKAN OGRANAK BEOGRAD AND PRIVREDNO DRUŠTVO'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://vreme.com/vesti/forbs-kinezi-angazovali-srpsku-firmu-starting-za-renoviranje-zeleznicke-stanice-u-novom-sadu/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Vreme, 3. januar 2025, prenosi Forbes: 'Kineska kompanija China Civil Engineering Construction Corporation (CCECC) i srpsko privredno društvo Starting potpisale su sporazum i ugovor'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://nova.rs/vesti/biznis/firma-starting-postavila-novog-direktora-nakon-hapsenja-nikole-trivica> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Nova.rs, 8. avgust 2025, prenosi naredbu o sprovođenju istrage: 'China Civil Engineering Constuction Corporation Balkan – Ogranak Beograd“ (u daljem tekstu: „CCECCB“), inače kineskog podizvođača glavnih izvođača CRIC-CCCC'."@sr ] .

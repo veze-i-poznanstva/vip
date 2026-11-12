@@ -72,6 +72,38 @@
   },
   {
     "data": {
+      "id": "vista_rica_invest",
+      "label": "Vista Rica Invest",
+      "type": "instance",
+      "nodeType": "organization",
+      "uri": "https://w3id.org/vip/rs/Vista_Rica_Invest",
+      "comment": "Otvoreni alternativni investicioni fond sa javnom ponudom kojim upravlja Vista Rica AD Beograd. Fond nema svojstvo pravnog lica; nije društvo za upravljanje.",
+      "file": "data/entities/vista-rica-invest.ttl",
+      "line": 12,
+      "sources": [
+        {
+          "url": "https://novaekonomija.rs/vesti-iz-zemlje/tatjana-vukic-po-pisanju-medija-partnerka-andreja-vucica-postala-vecinski-vlasnik-investicionog-fonda-vista-rica",
+          "domain": "novaekonomija.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Nova Ekonomija: \u0027Društvo Vista Rica upravlja fondovima kao što su “Vista Rica Invest” i “Vista Rica Corporate”.\u0027",
+          "archive": "http://web.archive.org/web/20260331143934/https://novaekonomija.rs/vesti-iz-zemlje/tatjana-vukic-po-pisanju-medija-partnerka-andreja-vucica-postala-vecinski-vlasnik-investicionog-fonda-vista-rica",
+          "archivedOn": "2026-03-31"
+        },
+        {
+          "url": "https://vistarica.rs/wp-content/uploads/2026/09/Prospekt-VR-Invest-2026-final-potpisan.pdf",
+          "domain": "vistarica.rs",
+          "type": "officialDocument",
+          "status": "published",
+          "quote": "Prospekt: \u0027Prospekt Vista Rica Invest\u0027; vrsta: \u0027otvoreni alternativni investicioni fond sa javnom ponudom\u0027; \u0027Otvoreni AIF je zasebna imovina, koja nema svojstvo pravnog lica\u0027.",
+          "archive": "https://web.archive.org/web/20261111190825/https://vistarica.rs/wp-content/uploads/2026/09/Prospekt-VR-Invest-2026-final-potpisan.pdf",
+          "archivedOn": "2026-11-11"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
       "id": "trilenium",
       "label": "Trilenium",
       "type": "instance",
@@ -162,6 +194,102 @@
           "quote": "Vreme navodi osnivanje ćerke firme Best Media Team: \u002715. januara Infomačvu u Šapcu\u0027, uz Mandićevih 20%.",
           "archive": "http://web.archive.org/web/20260419063743/https://vreme.com/vesti/lokalni-mediji-kupovina-alo-informer/",
           "archivedOn": "2026-04-19"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "vista_rica_corporate",
+      "label": "Vista Rica Corporate",
+      "type": "instance",
+      "nodeType": "organization",
+      "uri": "https://w3id.org/vip/rs/Vista_Rica_Corporate",
+      "comment": "Otvoreni alternativni investicioni fond sa javnom ponudom kojim upravlja Vista Rica AD Beograd. Fond nema svojstvo pravnog lica; nije društvo za upravljanje.",
+      "file": "data/entities/vista-rica-corporate.ttl",
+      "line": 12,
+      "sources": [
+        {
+          "url": "https://novaekonomija.rs/vesti-iz-zemlje/tatjana-vukic-po-pisanju-medija-partnerka-andreja-vucica-postala-vecinski-vlasnik-investicionog-fonda-vista-rica",
+          "domain": "novaekonomija.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Nova Ekonomija: \u0027Društvo Vista Rica upravlja fondovima kao što su “Vista Rica Invest” i “Vista Rica Corporate”.\u0027",
+          "archive": "http://web.archive.org/web/20260331143934/https://novaekonomija.rs/vesti-iz-zemlje/tatjana-vukic-po-pisanju-medija-partnerka-andreja-vucica-postala-vecinski-vlasnik-investicionog-fonda-vista-rica",
+          "archivedOn": "2026-03-31"
+        },
+        {
+          "url": "https://vistarica.rs/wp-content/uploads/2024/09/VISTA-RICA-CORPORATE_PROSPEKT_.pdf",
+          "domain": "vistarica.rs",
+          "type": "officialDocument",
+          "status": "published",
+          "quote": "Prospekt: \u0027VISTA RICA CORPORATE\u0027; \u0027otvoreni alternativni investicioni fond sa javnom ponudom\u0027; \u0027Otvoreni AIF je zasebna imovina, koja nema svojstvo pravnog lica\u0027.",
+          "archive": "https://web.archive.org/web/20261111190811/https://vistarica.rs/wp-content/uploads/2024/09/VISTA-RICA-CORPORATE_PROSPEKT_.pdf",
+          "archivedOn": "2026-11-11"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "igor_brnabic",
+      "label": "Igor Brnabić",
+      "type": "instance",
+      "nodeType": "person",
+      "uri": "https://w3id.org/vip/rs/Igor_Brnabic",
+      "comment": "Brat Ane Brnabić, identifikovan u izveštaju Radara i prilogu N1 koji prenosi isti izveštaj.",
+      "file": "data/entities/igor-brnabic.ttl",
+      "line": 12,
+      "sources": [
+        {
+          "url": "https://n1info.rs/vesti/poreski-raj-za-naprednjake-smislili-su-svoje-ostrvo-usred-srbije-jeste-li-culi-za-investicioni-fond-vista-rika/",
+          "domain": "n1info.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "N1, 11. decembar 2025, prenosi Radar (nije nezavisna potvrda): \u0027List Radar otkriva da su na spisku klijenata rođena braća najviših državnih funkcionera.\u0027; \u0027Rekorder među funkcionerskom braćom, ipak je Igor Brnabić\u0027; urednik Radara Milan Ćulibrk: \u0027brat Siniše Malog i brat Ane Brnabić\u0027.",
+          "archive": "http://web.archive.org/web/20260125022145/https://n1info.rs/vesti/poreski-raj-za-naprednjake-smislili-su-svoje-ostrvo-usred-srbije-jeste-li-culi-za-investicioni-fond-vista-rika/",
+          "archivedOn": "2026-01-25"
+        },
+        {
+          "url": "https://radar.nova.rs/ekonomija/investicioni-fond-nedic-tatjana-vukic/",
+          "domain": "radar.nova.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Radar, 11. decembar 2025: \u0027rođena braća najviših državnih funkcionera\u0027; \u0027predsednice parlamenta i bivše premijerke Ane Brnabić\u0027; \u0027Rekorder među funkcionerskom braćom je, ipak, Igor Brnabić\u0027.",
+          "archive": "http://web.archive.org/web/20261030111957/https://radar.nova.rs/ekonomija/investicioni-fond-nedic-tatjana-vukic/",
+          "archivedOn": "2026-10-30"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "hidro_tehna_novi_sad",
+      "label": "Hidro-tehna d.o.o. Novi Sad",
+      "type": "instance",
+      "nodeType": "organization",
+      "uri": "https://w3id.org/vip/rs/Hidro_Tehna_Novi_Sad",
+      "comment": "Firma iz Novog Sada za završne radove u građevinarstvu, matični broj 20326689, osnovana 4. septembra 2007. (imenik firmi ls.rs, bez datuma); spisak objavljene dokumentacije navodi njenu ponudu firmi Starting za hidroizolaciju stanice.",
+      "file": "data/entities/hidro-tehna-novi-sad.ttl",
+      "line": 12,
+      "sources": [
+        {
+          "url": "https://hidrotehna-novi-sad.ls.rs/rs",
+          "domain": "hidrotehna-novi-sad.ls.rs",
+          "type": "webPage",
+          "status": "published",
+          "quote": "Imenik firmi ls.rs, bez datuma: \u0027Matični broj preduzeća je 20326689.\u0027",
+          "archive": "http://web.archive.org/web/20251216072937/https://hidrotehna-novi-sad.ls.rs/rs/",
+          "archivedOn": "2025-12-16"
+        },
+        {
+          "url": "https://mss.jt.rs/wp-content/uploads/2025/01/%D0%A1%D0%BF%D0%B8%D1%81%D0%B0%D0%BA-%D0%BE%D0%B1%D1%98%D0%B0%D0%B2%D1%99%D0%B5%D0%BD%D0%B5-%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D1%98%D0%B5-1.pdf",
+          "domain": "mss.jt.rs",
+          "type": "officialDocument",
+          "status": "published",
+          "quote": "Spisak objavljene dokumentacije (mss.jt.rs, PDF izrađen 27. januara 2025; prema 021.rs i Vremenu, dokumentaciju je objavilo Više javno tužilaštvo u Novom Sadu), stavka 509: \u0027Хидро-техна д.о.о. Нови Сад упућена Стартинг д.о.о. Београд. Датум: 29.09.2022.\u0027",
+          "archive": "http://web.archive.org/web/20250826060221/https://mss.jt.rs/wp-content/uploads/2025/01/%D0%A1%D0%BF%D0%B8%D1%81%D0%B0%D0%BA-%D0%BE%D0%B1%D1%98%D0%B0%D0%B2%D1%99%D0%B5%D0%BD%D0%B5-%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D1%98%D0%B5-1.pdf",
+          "archivedOn": "2025-08-26"
         }
       ]
     }
@@ -271,12 +399,6 @@
           "status": "published",
           "archive": "http://web.archive.org/web/20250522100926/https://nova.rs/vesti/biznis/od-vinograda-preko-naucnih-instituta-do-banja-i-giganata-sfrj-sta-je-sve-za-male-pare-kupila-sns-firma-milenijum-tim/",
           "archivedOn": "2025-05-22"
-        },
-        {
-          "url": "https://www.companywall.rs/firma/mostogradnja-ing-doo-beograd/MBksspYq",
-          "domain": "companywall.rs",
-          "type": "registryRecord",
-          "status": "removed"
         }
       ]
     }
@@ -540,6 +662,38 @@
   },
   {
     "data": {
+      "id": "tatjana_vukic",
+      "label": "Tatjana Vukić",
+      "type": "instance",
+      "nodeType": "person",
+      "uri": "https://w3id.org/vip/rs/Tatjana_Vukic",
+      "comment": "Osnivačica i akcionarka društva Vista Rica AD Beograd; izveštaj Nove Ekonomije beleži povećanje njenog udela sa 50% na 75%.",
+      "file": "data/entities/tatjana-vukic.ttl",
+      "line": 12,
+      "sources": [
+        {
+          "url": "https://novaekonomija.rs/vesti-iz-zemlje/tatjana-vukic-po-pisanju-medija-partnerka-andreja-vucica-postala-vecinski-vlasnik-investicionog-fonda-vista-rica",
+          "domain": "novaekonomija.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Nova Ekonomija: \u0027Vukić je uvećala svoj udeo u akcionarskom društvu Vista Rica sa 50 na 75 odsto\u0027.",
+          "archive": "http://web.archive.org/web/20260331143934/https://novaekonomija.rs/vesti-iz-zemlje/tatjana-vukic-po-pisanju-medija-partnerka-andreja-vucica-postala-vecinski-vlasnik-investicionog-fonda-vista-rica",
+          "archivedOn": "2026-03-31"
+        },
+        {
+          "url": "https://vistarica.rs/wp-content/uploads/2026/09/Prospekt-VR-Invest-2026-final-potpisan.pdf",
+          "domain": "vistarica.rs",
+          "type": "officialDocument",
+          "status": "published",
+          "quote": "Prospekt iz septembra 2026: \u0027Tatjana Vukić, osnivač i akcionar\u0027 sa učešćem od 75% u društvu za upravljanje.",
+          "archive": "https://web.archive.org/web/20261111190825/https://vistarica.rs/wp-content/uploads/2026/09/Prospekt-VR-Invest-2026-final-potpisan.pdf",
+          "archivedOn": "2026-11-11"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
       "id": "nikola_petrovic_ems",
       "label": "Nikola Petrović (EMS)",
       "type": "instance",
@@ -601,6 +755,38 @@
           "quote": "Nova, Owp info: \u0027ostalih 85 je u vlasništvu Alo Media Sistema\u0027, uz Milosavljevićevih 15%.",
           "archive": "http://web.archive.org/web/20261102131221/https://nova.rs/vesti/biznis/vlasnici-aloa-i-informera-vlasnici-skoro-25-medija-u-srbiji/",
           "archivedOn": "2026-11-02"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "srdjan_davidovic",
+      "label": "Srđan Davidović",
+      "type": "instance",
+      "nodeType": "person",
+      "uri": "https://w3id.org/vip/rs/Srdjan_Davidovic",
+      "comment": "Osnivač i nekadašnji akcionar društva Vista Rica AD Beograd sa udelom od 25%; Nova Ekonomija izveštava o njegovom izlasku iz vlasništva.",
+      "file": "data/entities/srdjan-davidovic.ttl",
+      "line": 12,
+      "sources": [
+        {
+          "url": "https://novaekonomija.rs/vesti-iz-zemlje/tatjana-vukic-po-pisanju-medija-partnerka-andreja-vucica-postala-vecinski-vlasnik-investicionog-fonda-vista-rica",
+          "domain": "novaekonomija.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Nova Ekonomija: \u0027Iz vlasništva firme je istupio Srđan Davidović\u0027.",
+          "archive": "http://web.archive.org/web/20260331143934/https://novaekonomija.rs/vesti-iz-zemlje/tatjana-vukic-po-pisanju-medija-partnerka-andreja-vucica-postala-vecinski-vlasnik-investicionog-fonda-vista-rica",
+          "archivedOn": "2026-03-31"
+        },
+        {
+          "url": "https://vistarica.rs/wp-content/uploads/2024/09/VISTA-RICA-CORPORATE_PROSPEKT_.pdf",
+          "domain": "vistarica.rs",
+          "type": "officialDocument",
+          "status": "published",
+          "quote": "Prospekt: \u0027Srđan Davidović, osnivač i akcionar\u0027 sa učešćem od 25% u društvu za upravljanje.",
+          "archive": "https://web.archive.org/web/20261111190811/https://vistarica.rs/wp-content/uploads/2024/09/VISTA-RICA-CORPORATE_PROSPEKT_.pdf",
+          "archivedOn": "2026-11-11"
         }
       ]
     }
@@ -671,12 +857,6 @@
           "status": "published",
           "archive": "http://web.archive.org/web/20260213161228/https://nova.rs/vesti/biznis/zavrsetak-hotela-u-vranjskoj-banji-za-koje-dobija-drzavnu-subvenciju-milenijum-tim-odlozio-za-2026-godinu/",
           "archivedOn": "2026-02-13"
-        },
-        {
-          "url": "https://nova.rs/vesti/biznis/milenijum-resorts-u-turizmu/",
-          "domain": "nova.rs",
-          "type": "newsArticle",
-          "status": "removed"
         }
       ]
     }
@@ -812,12 +992,6 @@
           "status": "published",
           "archive": "http://web.archive.org/web/20260414192229/https://n1info.rs/biznis/cime-se-sve-bavi-novi-vlasnik-hotela-jugoslavija-milenijum-tim-od-bolnice-do-gradjevine/",
           "archivedOn": "2026-04-14"
-        },
-        {
-          "url": "https://www.companywall.rs/firma/mt-gastel-doo-beograd/MGksspYq",
-          "domain": "companywall.rs",
-          "type": "registryRecord",
-          "status": "removed"
         }
       ]
     }
@@ -864,6 +1038,38 @@
           "quote": "Vikipedija: \u0027Андреј Вучић (Београд, 9. април 1972) српски је политичар и предузетник. Вучић је високи званичник Српске напредне странке, претходно је био извршни директор Завода за израду новчаница и кованог новца Народне банке Србије (НБС).\u0027",
           "archive": "http://web.archive.org/web/20260115000320/https://sr.wikipedia.org/wiki/%D0%90%D0%BD%D0%B4%D1%80%D0%B5%D1%98_%D0%92%D1%83%D1%87%D0%B8%D1%9B",
           "archivedOn": "2026-01-15"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "milan_vukovljak",
+      "label": "Milan Vukovljak",
+      "type": "instance",
+      "nodeType": "person",
+      "uri": "https://w3id.org/vip/rs/Milan_Vukovljak",
+      "comment": "Vlasnik firme Bob, prema 021.rs (2025). Srna je 2021. u Glasu Srpske navela Milana Vukovljaka koji živi u Novom Sadu kao vlasnika firme „Bob“, bez sedišta firme i matičnog broja; da je to ista firma zasniva se na imenu, gradu i vrsti posla.",
+      "file": "data/entities/milan-vukovljak.ttl",
+      "line": 12,
+      "sources": [
+        {
+          "url": "https://www.021.rs/novi-sad/vesti/400000/objavljen-ugovor-startinga-sa-jos-jednim-podizvodjacem-ko-je-postavljao-staklo-na-nadstresnicu",
+          "domain": "021.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "021.rs, 27. januar 2025: \u0027Privredno društvo \"Bob doo\" registrovano je za proizvodnju, usluge, spoljnu i unutrašnju trgovinu.\u0027; \u0027Vlasnik je Milan Vukovljak.\u0027",
+          "archive": "https://web.archive.org/web/20261111213759/https://www.021.rs/novi-sad/vesti/400000/objavljen-ugovor-startinga-sa-jos-jednim-podizvodjacem-ko-je-postavljao-staklo-na-nadstresnicu",
+          "archivedOn": "2026-11-11"
+        },
+        {
+          "url": "https://www.glassrpske.com/lat/novosti/drustvo/prikupljene-brojne-donacije-za-izgradnju-konaka-pri-hramu-u-selu-gubin-nadomak-livna/374914",
+          "domain": "glassrpske.com",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Glas Srpske, 30. avgust 2021 (Srna): \u0027Milan Vukovljak porijeklom iz Gubina, koji živi u Novom Sadu i vlasnik je firme \"Bob\"\u0027.",
+          "archive": "https://web.archive.org/web/20261111213836/https://www.glassrpske.com/lat/novosti/drustvo/prikupljene-brojne-donacije-za-izgradnju-konaka-pri-hramu-u-selu-gubin-nadomak-livna/374914",
+          "archivedOn": "2026-11-11"
         }
       ]
     }
@@ -1119,12 +1325,129 @@
           "status": "published",
           "archive": "http://web.archive.org/web/20260729132920/https://vreme.com/drustvo/poslovi-milenijum-tima-na-red-dosla-i-sanacija-leve-obale-save/",
           "archivedOn": "2026-07-29"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "starting",
+      "label": "Starting d.o.o. Beograd",
+      "type": "instance",
+      "nodeType": "organization",
+      "uri": "https://w3id.org/vip/rs/Starting",
+      "comment": "Građevinska firma iz Beograda; spisak objavljene dokumentacije navodi njeno puno ime sa sedištem „Beograd (Zemun)“. Prema Nova.rs, glavni podizvođač na rekonstrukciji zgrade Železničke stanice u Novom Sadu.",
+      "file": "data/entities/starting.ttl",
+      "line": 12,
+      "sources": [
+        {
+          "url": "https://mss.jt.rs/wp-content/uploads/2025/01/%D0%A1%D0%BF%D0%B8%D1%81%D0%B0%D0%BA-%D0%BE%D0%B1%D1%98%D0%B0%D0%B2%D1%99%D0%B5%D0%BD%D0%B5-%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D1%98%D0%B5-1.pdf",
+          "domain": "mss.jt.rs",
+          "type": "officialDocument",
+          "status": "published",
+          "quote": "Spisak objavljene dokumentacije (mss.jt.rs, PDF izrađen 27. januara 2025; prema 021.rs i Vremenu, dokumentaciju je objavilo Više javno tužilaštvo u Novom Sadu), stavka 421: \u0027GRAĐEVINSKO-ZANATSKE RADOVE I INŽENJERING STARTING DOO BEOGRAD (ZEMUN)\u0027.",
+          "archive": "http://web.archive.org/web/20250826060221/https://mss.jt.rs/wp-content/uploads/2025/01/%D0%A1%D0%BF%D0%B8%D1%81%D0%B0%D0%BA-%D0%BE%D0%B1%D1%98%D0%B0%D0%B2%D1%99%D0%B5%D0%BD%D0%B5-%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D1%98%D0%B5-1.pdf",
+          "archivedOn": "2025-08-26"
         },
         {
-          "url": "https://www.companywall.rs/firma/milenijum-picaroti-doo-beograd/MPksspYq",
-          "domain": "companywall.rs",
-          "type": "registryRecord",
-          "status": "removed"
+          "url": "https://n1info.rs/vesti/svi-drzavni-poslovi-firme-starting-koja-je-rekonstruisala-zeleznicku-stanicu-u-novom-sadu",
+          "domain": "n1info.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "N1, 11. novembar 2024: \u0027građevinska kompanija Starting, koja je bila podizvođač radova na stanici\u0027.",
+          "archive": "http://web.archive.org/web/20250802003221/https://n1info.rs/vesti/svi-drzavni-poslovi-firme-starting-koja-je-rekonstruisala-zeleznicku-stanicu-u-novom-sadu/",
+          "archivedOn": "2025-08-02"
+        },
+        {
+          "url": "https://nova.rs/vesti/biznis/firma-starting-postavila-novog-direktora-nakon-hapsenja-nikole-trivica",
+          "domain": "nova.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Nova.rs, 8. avgust 2025: \u0027Firma Starting bila je glavni podizvođač na rekonstrukciji stanice\u0027.",
+          "archive": "http://web.archive.org/web/20250808151026/https://nova.rs/vesti/biznis/firma-starting-postavila-novog-direktora-nakon-hapsenja-nikole-trivica/",
+          "archivedOn": "2025-08-08"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "nikola_trivic",
+      "label": "Nikola Trivić",
+      "type": "instance",
+      "nodeType": "person",
+      "uri": "https://w3id.org/vip/rs/Nikola_Trivic",
+      "comment": "Suvlasnik firme Starting sa 30 odsto udela (N1 prenosi Novu ekonomiju; Nova.rs) i njen direktor do avgusta 2025.",
+      "file": "data/entities/nikola-trivic.ttl",
+      "line": 12,
+      "sources": [
+        {
+          "url": "https://www.bbc.com/serbian/articles/cn47xjzq395o/lat",
+          "domain": "bbc.com",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "BBC na srpskom, objavljeno 1. avgusta 2025: \u0027Nikola Trivić iz kompanije „Starting\"\u0027.",
+          "archive": "http://web.archive.org/web/20261030083905/https://www.bbc.com/serbian/articles/cn47xjzq395o/lat",
+          "archivedOn": "2026-10-30"
+        },
+        {
+          "url": "https://n1info.rs/vesti/svi-drzavni-poslovi-firme-starting-koja-je-rekonstruisala-zeleznicku-stanicu-u-novom-sadu",
+          "domain": "n1info.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "N1, 11. novembar 2024, prenosi Novu ekonomiju: \u0027Nikole Trivića (30 odsto)\u0027.",
+          "archive": "http://web.archive.org/web/20250802003221/https://n1info.rs/vesti/svi-drzavni-poslovi-firme-starting-koja-je-rekonstruisala-zeleznicku-stanicu-u-novom-sadu/",
+          "archivedOn": "2025-08-02"
+        },
+        {
+          "url": "https://nova.rs/vesti/hronika/uhapsen-i-nikola-trivic-suvlasnik-startinga/",
+          "domain": "nova.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Nova.rs, 1. avgust 2025: \u0027Suvlasnik firme Starting Nikola Trivić\u0027; \u0027a 30 odsto Nikola Trivić\u0027.",
+          "archive": "http://web.archive.org/web/20250801121744/https://nova.rs/vesti/hronika/uhapsen-i-nikola-trivic-suvlasnik-startinga/",
+          "archivedOn": "2025-08-01"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "ljiljana_tripkovic",
+      "label": "Ljiljana Tripković",
+      "type": "instance",
+      "nodeType": "person",
+      "uri": "https://w3id.org/vip/rs/Ljiljana_Tripkovic",
+      "comment": "Suvlasnica firme Starting sa 70 odsto udela, prema Nova.rs i N1.",
+      "file": "data/entities/ljiljana-tripkovic.ttl",
+      "line": 12,
+      "sources": [
+        {
+          "url": "https://n1info.rs/vesti/svi-drzavni-poslovi-firme-starting-koja-je-rekonstruisala-zeleznicku-stanicu-u-novom-sadu",
+          "domain": "n1info.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "N1, 11. novembar 2024, prenosi Novu ekonomiju: \u0027U suvlasništvu je Ljiljane Tripković (70 odsto)\u0027.",
+          "archive": "http://web.archive.org/web/20250802003221/https://n1info.rs/vesti/svi-drzavni-poslovi-firme-starting-koja-je-rekonstruisala-zeleznicku-stanicu-u-novom-sadu/",
+          "archivedOn": "2025-08-02"
+        },
+        {
+          "url": "https://nova.rs/vesti/biznis/sve-o-firmi-starting-koja-je-izvodila-radove-na-zeleznickoj-stanici",
+          "domain": "nova.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Nova.rs, 11. novembar 2024: \u0027Ljiljana Tripković poseduje 70 odsto udela u Startingu\u0027.",
+          "archive": "http://web.archive.org/web/20241224221057/https://nova.rs/vesti/biznis/sve-o-firmi-starting-koja-je-izvodila-radove-na-zeleznickoj-stanici/",
+          "archivedOn": "2024-12-24"
+        },
+        {
+          "url": "https://nova.rs/vesti/hronika/uhapsen-i-nikola-trivic-suvlasnik-startinga/",
+          "domain": "nova.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Nova.rs, 1. avgust 2025: \u0027Udeo od 70 odsto u Startingu ima Ljiljana Tripković iz Beograda\u0027.",
+          "archive": "http://web.archive.org/web/20250801121744/https://nova.rs/vesti/hronika/uhapsen-i-nikola-trivic-suvlasnik-startinga/",
+          "archivedOn": "2025-08-01"
         }
       ]
     }
@@ -1309,12 +1632,47 @@
           "status": "published",
           "archive": "http://web.archive.org/web/20240401222308/https://rs.bloombergadria.com/ekonomija/srbija/55076/milenijum-tim-kupio-hotel-jugoslaviju-i-najavio-400-miliona-evra-ulaganja/news",
           "archivedOn": "2024-04-01"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "ccecc_balkan_ogranak_beograd",
+      "label": "China Civil Engineering Construction Corporation Balkan, ogranak Beograd",
+      "type": "instance",
+      "nodeType": "organization",
+      "uri": "https://w3id.org/vip/rs/CCECC_Balkan_Ogranak_Beograd",
+      "comment": "Beogradski ogranak kineske kompanije CCECC Balkan, koji je angažovao firmu Starting na stanici; nije isto što i CRIC i CCCC, koje isti izvori navode odvojeno.",
+      "file": "data/entities/ccecc-balkan-ogranak-beograd.ttl",
+      "line": 12,
+      "sources": [
+        {
+          "url": "https://mss.jt.rs/wp-content/uploads/2025/01/%D0%A1%D0%BF%D0%B8%D1%81%D0%B0%D0%BA-%D0%BE%D0%B1%D1%98%D0%B0%D0%B2%D1%99%D0%B5%D0%BD%D0%B5-%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D1%98%D0%B5-1.pdf",
+          "domain": "mss.jt.rs",
+          "type": "officialDocument",
+          "status": "published",
+          "quote": "Spisak objavljene dokumentacije (mss.jt.rs, PDF izrađen 27. januara 2025; prema 021.rs i Vremenu, dokumentaciju je objavilo Više javno tužilaštvo u Novom Sadu), stavka 421: \u0027CONSTRUCTION CORPORATION BALKAN OGRANAK BEOGRAD AND PRIVREDNO DRUŠTVO\u0027.",
+          "archive": "http://web.archive.org/web/20250826060221/https://mss.jt.rs/wp-content/uploads/2025/01/%D0%A1%D0%BF%D0%B8%D1%81%D0%B0%D0%BA-%D0%BE%D0%B1%D1%98%D0%B0%D0%B2%D1%99%D0%B5%D0%BD%D0%B5-%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D1%98%D0%B5-1.pdf",
+          "archivedOn": "2025-08-26"
         },
         {
-          "url": "https://www.companywall.rs/firma/mv-investment-doo-beograd/MVksppYq",
-          "domain": "companywall.rs",
-          "type": "registryRecord",
-          "status": "removed"
+          "url": "https://nova.rs/vesti/biznis/firma-starting-postavila-novog-direktora-nakon-hapsenja-nikole-trivica",
+          "domain": "nova.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Nova.rs, 8. avgust 2025, prenosi naredbu o sprovođenju istrage: \u0027China Civil Engineering Constuction Corporation Balkan – Ogranak Beograd“ (u daljem tekstu: „CCECCB“), inače kineskog podizvođača glavnih izvođača CRIC-CCCC\u0027.",
+          "archive": "http://web.archive.org/web/20250808151026/https://nova.rs/vesti/biznis/firma-starting-postavila-novog-direktora-nakon-hapsenja-nikole-trivica/",
+          "archivedOn": "2025-08-08"
+        },
+        {
+          "url": "https://vreme.com/vesti/forbs-kinezi-angazovali-srpsku-firmu-starting-za-renoviranje-zeleznicke-stanice-u-novom-sadu/",
+          "domain": "vreme.com",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Vreme, 3. januar 2025, prenosi Forbes: \u0027Kineska kompanija China Civil Engineering Construction Corporation (CCECC) i srpsko privredno društvo Starting potpisale su sporazum i ugovor\u0027.",
+          "archive": "http://web.archive.org/web/20251017044449/https://vreme.com/vesti/forbs-kinezi-angazovali-srpsku-firmu-starting-za-renoviranje-zeleznicke-stanice-u-novom-sadu/",
+          "archivedOn": "2025-10-17"
         }
       ]
     }
@@ -1420,13 +1778,6 @@
           "status": "published",
           "archive": "http://web.archive.org/web/20250711221553/https://nova.rs/vesti/biznis/novi-rekord-milenijum-tima-od-250-miliona-evra-za-cetiri-godine-prihodi-porasli-tri-puta-nanizali-poslove-na-najvecim-drzavnim-projektima/",
           "archivedOn": "2025-07-11"
-        },
-        {
-          "url": "https://sr.wikipedia.org/wiki/Milenijum_tim",
-          "domain": "sr.wikipedia.org",
-          "type": "encyclopediaArticle",
-          "status": "removed",
-          "quote": "Povučeno 5. novembra 2026: članak sr.wikipedia.org/wiki/Milenijum_tim ne postoji i prema dnevniku Vikipedije nikada nije ni postojao ni bio obrisan (HTTP 404; API javlja missing, dnevnik brisanja prazan), a Wayback Machine nema nijedan snimak ni latinične ni ćirilične adrese; ne može da potkrepi vlasništvo."
         }
       ]
     }
@@ -1551,21 +1902,6 @@
           "status": "published",
           "archive": "http://web.archive.org/web/20241109195604/https://www.fininfo.hr/Poduzece/Pregled/millennium-adria/Detaljno/780814",
           "archivedOn": "2024-11-09"
-        },
-        {
-          "url": "https://www.companywall.rs/firma/milenijum-adria-doo-zagreb/MAksspYq",
-          "domain": "companywall.rs",
-          "type": "registryRecord",
-          "status": "removed"
-        },
-        {
-          "url": "https://nova.rs/vesti/politika/sta-je-milenijum-tim-sns-fabrika-za-izvlacenje-para/",
-          "domain": "nova.rs",
-          "type": "newsArticle",
-          "status": "removed",
-          "quote": "Povučeno 1. novembra 2026: članak ne pominje Millennium Adria ni Hrvatsku.",
-          "archive": "http://web.archive.org/web/20251215204745/https://nova.rs/vesti/politika/sta-je-milenijum-tim-sns-fabrika-za-izvlacenje-para/",
-          "archivedOn": "2025-12-15"
         }
       ]
     }
@@ -1709,6 +2045,38 @@
   },
   {
     "data": {
+      "id": "nenad_ignjatovic_deko_tim",
+      "label": "Nenad Ignjatović (Deko-tim)",
+      "type": "instance",
+      "nodeType": "person",
+      "uri": "https://w3id.org/vip/rs/Nenad_Ignjatovic_Deko_Tim",
+      "comment": "Vlasnik firme Deko-tim, prema Nedeljniku (decembar 2024) i BBC-ju; izvori ga identifikuju samo preko firme.",
+      "file": "data/entities/nenad-ignjatovic-deko-tim.ttl",
+      "line": 15,
+      "sources": [
+        {
+          "url": "https://www.bbc.com/serbian/articles/cn47xjzq395o/lat",
+          "domain": "bbc.com",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "BBC na srpskom, objavljeno 1. avgusta 2025: \u0027Nenad Ignjatović, vlasnik „Deko tim\"\u0027.",
+          "archive": "http://web.archive.org/web/20261030083905/https://www.bbc.com/serbian/articles/cn47xjzq395o/lat",
+          "archivedOn": "2026-10-30"
+        },
+        {
+          "url": "https://www.nedeljnik.rs/od-trgovine-na-malo-do-rekonstrukcije-zeleznicke-stanice-u-roku-od-tri-godine-ko-je-firma-koja-se-spomenjinje-u-izvestaju-vestaka-ftn/",
+          "domain": "nedeljnik.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Nedeljnik, 20. decembar 2024, o Nenadu Ignjatoviću: \u0027vlasnik „Deko-tima“ nije hteo da odgovori na pitanja sajta Nedeljnika\u0027.",
+          "archive": "http://web.archive.org/web/20250615121956/https://www.nedeljnik.rs/od-trgovine-na-malo-do-rekonstrukcije-zeleznicke-stanice-u-roku-od-tri-godine-ko-je-firma-koja-se-spomenjinje-u-izvestaju-vestaka-ftn/",
+          "archivedOn": "2025-06-15"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
       "id": "roberts_milenijum",
       "label": "Roberts Millennium",
       "type": "instance",
@@ -1782,12 +2150,6 @@
           "status": "published",
           "archive": "https://web.archive.org/web/20261101142259/https://pretraga.cubepartner.rs/sr/kompanija/0e55cb2461a3e2c0/roberts-millennium-doo",
           "archivedOn": "2026-11-01"
-        },
-        {
-          "url": "https://www.krik.rs/tag/roberts-milenijum/",
-          "domain": "krik.rs",
-          "type": "webPage",
-          "status": "removed"
         }
       ]
     }
@@ -1831,6 +2193,47 @@
           "status": "published",
           "archive": "http://web.archive.org/web/20251211120109/https://sr.wikipedia.org/wiki/%D0%A1%D0%B8%D0%BD%D0%B8%D1%88%D0%B0_%D0%9C%D0%B0%D0%BB%D0%B8",
           "archivedOn": "2025-12-11"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "deko_tim",
+      "label": "Deko-tim d.o.o. Beška",
+      "type": "instance",
+      "nodeType": "organization",
+      "uri": "https://w3id.org/vip/rs/Deko_Tim",
+      "comment": "Firma iz Beške osnovana u avgustu 2020. (Nedeljnik, prema poslovnom registru); podizvođač firme Starting za kamenorezačke i fasaderske radove na stanici.",
+      "file": "data/entities/deko-tim.ttl",
+      "line": 12,
+      "sources": [
+        {
+          "url": "https://www.021.rs/novi-sad/vesti/400000/objavljen-ugovor-startinga-sa-jos-jednim-podizvodjacem-ko-je-postavljao-staklo-na-nadstresnicu",
+          "domain": "021.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "021.rs, 27. januar 2025: \u0027Starting je, kako je 021.rs pisao, angažovao i podizvođača Deko-tim.\u0027",
+          "archive": "https://web.archive.org/web/20261111213759/https://www.021.rs/novi-sad/vesti/400000/objavljen-ugovor-startinga-sa-jos-jednim-podizvodjacem-ko-je-postavljao-staklo-na-nadstresnicu",
+          "archivedOn": "2026-11-11"
+        },
+        {
+          "url": "https://mss.jt.rs/wp-content/uploads/2025/01/%D0%A1%D0%BF%D0%B8%D1%81%D0%B0%D0%BA-%D0%BE%D0%B1%D1%98%D0%B0%D0%B2%D1%99%D0%B5%D0%BD%D0%B5-%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D1%98%D0%B5-1.pdf",
+          "domain": "mss.jt.rs",
+          "type": "officialDocument",
+          "status": "published",
+          "quote": "Spisak objavljene dokumentacije (mss.jt.rs, PDF izrađen 27. januara 2025; prema 021.rs i Vremenu, dokumentaciju je objavilo Više javno tužilaštvo u Novom Sadu), stavka 508: \u0027између Стартинг д.о.о. и ДЕКО-ТИМ д.о.о. Место и датум: Нови Сад, 08.08.2022.\u0027",
+          "archive": "http://web.archive.org/web/20250826060221/https://mss.jt.rs/wp-content/uploads/2025/01/%D0%A1%D0%BF%D0%B8%D1%81%D0%B0%D0%BA-%D0%BE%D0%B1%D1%98%D0%B0%D0%B2%D1%99%D0%B5%D0%BD%D0%B5-%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D1%98%D0%B5-1.pdf",
+          "archivedOn": "2025-08-26"
+        },
+        {
+          "url": "https://www.nedeljnik.rs/od-trgovine-na-malo-do-rekonstrukcije-zeleznicke-stanice-u-roku-od-tri-godine-ko-je-firma-koja-se-spomenjinje-u-izvestaju-vestaka-ftn/",
+          "domain": "nedeljnik.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Nedeljnik, 20. decembar 2024: \u0027Jedna firma iz Beške\u0027; \u0027Reč je firmi „Deko-tim“, osnovanoj u avgustu 2020.\u0027",
+          "archive": "http://web.archive.org/web/20250615121956/https://www.nedeljnik.rs/od-trgovine-na-malo-do-rekonstrukcije-zeleznicke-stanice-u-roku-od-tri-godine-ko-je-firma-koja-se-spomenjinje-u-izvestaju-vestaka-ftn/",
+          "archivedOn": "2025-06-15"
         }
       ]
     }
@@ -2003,6 +2406,38 @@
   },
   {
     "data": {
+      "id": "malisa_nedeljkovic",
+      "label": "Mališa Nedeljković",
+      "type": "instance",
+      "nodeType": "person",
+      "uri": "https://w3id.org/vip/rs/Malisa_Nedeljkovic",
+      "comment": "Direktor firme Starting, prema izveštaju Nova.rs od 8. avgusta 2025. Direktno prenosi isti izveštaj Nova.rs, pa je nezavisan izvor jedan. Nova.rs piše da njegova biografija nije javno poznata.",
+      "file": "data/entities/malisa-nedeljkovic.ttl",
+      "line": 12,
+      "sources": [
+        {
+          "url": "https://direktno.rs/vesti/drustvo-i-ekonomija/627014/startign-malisa-nedeljkovic.html",
+          "domain": "direktno.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Direktno, 8. avgust 2025, prenosi Nova.rs (nije nezavisna potvrda): \u0027dobila je novog direktora Mališu Nedeljkovića\u0027.",
+          "archive": "http://web.archive.org/web/20250912102817/https://direktno.rs/vesti/drustvo-i-ekonomija/627014/startign-malisa-nedeljkovic.html",
+          "archivedOn": "2025-09-12"
+        },
+        {
+          "url": "https://nova.rs/vesti/biznis/firma-starting-postavila-novog-direktora-nakon-hapsenja-nikole-trivica",
+          "domain": "nova.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Nova.rs, 8. avgust 2025: \u0027dobila je novog direktora Mališu Nedeljkovića\u0027; \u0027niti je javnosti poznata njegova biografija\u0027.",
+          "archive": "http://web.archive.org/web/20250808151026/https://nova.rs/vesti/biznis/firma-starting-postavila-novog-direktora-nakon-hapsenja-nikole-trivica/",
+          "archivedOn": "2025-08-08"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
       "id": "kk_crvena_zvezda",
       "label": "Košarkaški klub Crvena zvezda",
       "type": "instance",
@@ -2047,6 +2482,38 @@
   },
   {
     "data": {
+      "id": "vista_rica_ad",
+      "label": "Vista Rica AD Beograd",
+      "type": "instance",
+      "nodeType": "organization",
+      "uri": "https://w3id.org/vip/rs/Vista_Rica_AD",
+      "comment": "Društvo za upravljanje fondovima Vista Rica Invest i Vista Rica Corporate. Odvojeno od fondova i njihove imovine.",
+      "file": "data/entities/vista-rica-ad.ttl",
+      "line": 12,
+      "sources": [
+        {
+          "url": "https://novaekonomija.rs/vesti-iz-zemlje/tatjana-vukic-po-pisanju-medija-partnerka-andreja-vucica-postala-vecinski-vlasnik-investicionog-fonda-vista-rica",
+          "domain": "novaekonomija.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Nova Ekonomija: \u0027Društvo Vista Rica upravlja fondovima kao što su “Vista Rica Invest” i “Vista Rica Corporate”.\u0027",
+          "archive": "http://web.archive.org/web/20260331143934/https://novaekonomija.rs/vesti-iz-zemlje/tatjana-vukic-po-pisanju-medija-partnerka-andreja-vucica-postala-vecinski-vlasnik-investicionog-fonda-vista-rica",
+          "archivedOn": "2026-03-31"
+        },
+        {
+          "url": "https://vistarica.rs/wp-content/uploads/2026/09/Prospekt-VR-Invest-2026-final-potpisan.pdf",
+          "domain": "vistarica.rs",
+          "type": "officialDocument",
+          "status": "published",
+          "quote": "Prospekt Vista Rica Invest, ažuriran 18.09.2026: \u0027alternativnim investicionim fondovima Vista Rica AD Beograd\u0027 — poslovno ime društva za upravljanje.",
+          "archive": "https://web.archive.org/web/20261111190825/https://vistarica.rs/wp-content/uploads/2026/09/Prospekt-VR-Invest-2026-final-potpisan.pdf",
+          "archivedOn": "2026-11-11"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
       "id": "baltazar",
       "label": "Baltazar",
       "type": "instance",
@@ -2073,6 +2540,38 @@
           "quote": "MOM, profil kompanije Maxim Media Plus, odeljak Biznis / Marketing: \u0027Baltazar (100%)\u0027.",
           "archive": "http://web.archive.org/web/20250915220442/https://serbia.mom-gmr.org/sr/vlasnik/companies/detail/company/company/show/maxim-media-plus-1/",
           "archivedOn": "2025-09-15"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "vojislav_nedic",
+      "label": "Vojislav Nedić",
+      "type": "instance",
+      "nodeType": "person",
+      "uri": "https://w3id.org/vip/rs/Vojislav_Nedic",
+      "comment": "Advokat, osnivač i akcionar društva Vista Rica AD Beograd sa udelom od 25%, prema prospektu i Novoj Ekonomiji.",
+      "file": "data/entities/vojislav-nedic.ttl",
+      "line": 12,
+      "sources": [
+        {
+          "url": "https://novaekonomija.rs/vesti-iz-zemlje/tatjana-vukic-po-pisanju-medija-partnerka-andreja-vucica-postala-vecinski-vlasnik-investicionog-fonda-vista-rica",
+          "domain": "novaekonomija.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Nova Ekonomija: \u0027preostalih 25 odsto je u rukama advokata Vojislava Nedića\u0027.",
+          "archive": "http://web.archive.org/web/20260331143934/https://novaekonomija.rs/vesti-iz-zemlje/tatjana-vukic-po-pisanju-medija-partnerka-andreja-vucica-postala-vecinski-vlasnik-investicionog-fonda-vista-rica",
+          "archivedOn": "2026-03-31"
+        },
+        {
+          "url": "https://vistarica.rs/wp-content/uploads/2026/09/Prospekt-VR-Invest-2026-final-potpisan.pdf",
+          "domain": "vistarica.rs",
+          "type": "officialDocument",
+          "status": "published",
+          "quote": "Prospekt: \u0027Vojislav Nedić, osnivač i akcionar\u0027 sa učešćem od 25% u društvu za upravljanje.",
+          "archive": "https://web.archive.org/web/20261111190825/https://vistarica.rs/wp-content/uploads/2026/09/Prospekt-VR-Invest-2026-final-potpisan.pdf",
+          "archivedOn": "2026-11-11"
         }
       ]
     }
@@ -2118,12 +2617,6 @@
           "status": "published",
           "archive": "http://web.archive.org/web/20250620082052/https://www.danas.rs/vesti/ekonomija/sta-sve-ima-milenijum-tim-novi-vlasnik-hotela-jugoslavija/",
           "archivedOn": "2025-06-20"
-        },
-        {
-          "url": "https://www.companywall.rs/firma/milenijum-propertiz-doo-beograd/MPksspYq",
-          "domain": "companywall.rs",
-          "type": "registryRecord",
-          "status": "removed"
         }
       ]
     }
@@ -2254,6 +2747,38 @@
           "status": "published",
           "archive": "http://web.archive.org/web/20260927001708/https://sr.wikipedia.org/wiki/%D0%90%D0%BD%D0%B0_%D0%91%D1%80%D0%BD%D0%B0%D0%B1%D0%B8%D1%9B",
           "archivedOn": "2026-09-27"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "bob_novi_sad",
+      "label": "Bob d.o.o. Novi Sad",
+      "type": "instance",
+      "nodeType": "organization",
+      "uri": "https://w3id.org/vip/rs/Bob_Novi_Sad",
+      "comment": "Firma iz Novog Sada registrovana za proizvodnju, usluge i trgovinu (021.rs); podizvođač firme Starting za aluminarske i bravarske radove na stanici.",
+      "file": "data/entities/bob-novi-sad.ttl",
+      "line": 12,
+      "sources": [
+        {
+          "url": "https://www.021.rs/novi-sad/vesti/400000/objavljen-ugovor-startinga-sa-jos-jednim-podizvodjacem-ko-je-postavljao-staklo-na-nadstresnicu",
+          "domain": "021.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "021.rs, 27. januar 2025: \u0027ugovor podizvođača, firme Starting sa firmom Bob doo iz Novog Sada\u0027; \u0027Privredno društvo \"Bob doo\" registrovano je za proizvodnju, usluge, spoljnu i unutrašnju trgovinu.\u0027",
+          "archive": "https://web.archive.org/web/20261111213759/https://www.021.rs/novi-sad/vesti/400000/objavljen-ugovor-startinga-sa-jos-jednim-podizvodjacem-ko-je-postavljao-staklo-na-nadstresnicu",
+          "archivedOn": "2026-11-11"
+        },
+        {
+          "url": "https://mss.jt.rs/wp-content/uploads/2025/01/%D0%A1%D0%BF%D0%B8%D1%81%D0%B0%D0%BA-%D0%BE%D0%B1%D1%98%D0%B0%D0%B2%D1%99%D0%B5%D0%BD%D0%B5-%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D1%98%D0%B5-1.pdf",
+          "domain": "mss.jt.rs",
+          "type": "officialDocument",
+          "status": "published",
+          "quote": "Spisak objavljene dokumentacije (mss.jt.rs, PDF izrađen 27. januara 2025; prema 021.rs i Vremenu, dokumentaciju je objavilo Više javno tužilaštvo u Novom Sadu), stavka 503: \u0027трговину БОБ, д.о.о. Нови Сад, за извођење алуминарије и браварских радова.\u0027",
+          "archive": "http://web.archive.org/web/20250826060221/https://mss.jt.rs/wp-content/uploads/2025/01/%D0%A1%D0%BF%D0%B8%D1%81%D0%B0%D0%BA-%D0%BE%D0%B1%D1%98%D0%B0%D0%B2%D1%99%D0%B5%D0%BD%D0%B5-%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D1%98%D0%B5-1.pdf",
+          "archivedOn": "2025-08-26"
         }
       ]
     }
@@ -2552,7 +3077,7 @@
       ],
       "start": "2006",
       "file": "data/cases/milenijum-tim.ttl",
-      "line": 63,
+      "line": 57,
       "sources": [
         {
           "url": "https://www.kurir.rs/vesti/politika/2864945/ovo-je-biografija-nove-premijerke-ana-brnabic-prva-zena-na-celu-vlade-srbije-u-istoriji",
@@ -2595,7 +3120,7 @@
       "start": "2013",
       "end": "2016-04",
       "file": "data/cases/milenijum-tim.ttl",
-      "line": 75,
+      "line": 69,
       "sources": [
         {
           "url": "https://capitalsummit.naled.rs/ana-brnabic.php",
@@ -2638,7 +3163,7 @@
       "start": "2016-04",
       "end": "2016-08",
       "file": "data/cases/milenijum-tim.ttl",
-      "line": 88,
+      "line": 82,
       "sources": [
         {
           "url": "https://www.diplomacyandcommerce.rs/naled-has-chosen-a-new-president-and-members-of-the-board-of-directors/",
@@ -2675,13 +3200,6 @@
           "quote": "NALED, 18. jul 2019: sa mesta predsednice Upravnog odbora NALED-a izabrana za ministarku državne uprave i lokalne samouprave.",
           "archive": "http://web.archive.org/web/20221209120204/https://naled.rs/vest-premijerka-obisla-zaposlene-u-naled-u-2421",
           "archivedOn": "2022-12-09"
-        },
-        {
-          "url": "https://naled.rs/o-naled-u/vesti/ana-brnabic-novi-predsednik-upravnog-odbora-naleda/",
-          "domain": "naled.rs",
-          "type": "webPage",
-          "status": "removed",
-          "quote": "Sajt NALED-a preusmerava ovu adresu na stranicu greške (404); nikada nije arhivirana."
         }
       ]
     }
@@ -2917,6 +3435,54 @@
   {
     "data": {
       "id": "edge13",
+      "label": "podizvođenje obnove stanice",
+      "labels": {
+        "en": "station renovation subcontract",
+        "sr": "podizvođenje obnove stanice"
+      },
+      "source": "ccecc_balkan_ogranak_beograd",
+      "target": "starting",
+      "uri": "https://w3id.org/vip/rs/CCECCBalkan_Starting_Stanica",
+      "comment": "Beogradski ogranak CCECC Balkan angažovao je Starting kao podizvođača za obnovu zgrade stanice u Novom Sadu. Spisak dokumentacije navodi Sporazum br. 209-2021 od 1. novembra 2021. (stavka 421) i Podizvođački ugovor od 20. jula 2022. (stavka 419) između njih. Vreme, prenoseći Forbes, piše da je sporazum potpisan u novembru 2021, a ugovor u julu 2022, i da su strane ušle u podizvođački ugovor 10. novembra 2021; Nova.rs, prenoseći naredbu o sprovođenju istrage, navodi da je Starting ponudu dao po pozivu tog ogranka, a ugovor zaključio 1. novembra 2021. sa konzorcijumom ogranaka CCECCB i „11th China Railway“. Početak je zabeležen na mesec jer se dan razlikuje među izvorima. Spisak opisuje dokumente; sami ugovori nisu pročitani.",
+      "kind": "Connection",
+      "typeLabel": "Generic connection",
+      "start": "2021-11",
+      "file": "data/cases/zeleznicka-stanica-novi-sad.ttl",
+      "line": 98,
+      "sources": [
+        {
+          "url": "https://mss.jt.rs/wp-content/uploads/2025/01/%D0%A1%D0%BF%D0%B8%D1%81%D0%B0%D0%BA-%D0%BE%D0%B1%D1%98%D0%B0%D0%B2%D1%99%D0%B5%D0%BD%D0%B5-%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D1%98%D0%B5-1.pdf",
+          "domain": "mss.jt.rs",
+          "type": "officialDocument",
+          "status": "published",
+          "quote": "Spisak objavljene dokumentacije (mss.jt.rs, PDF izrađen 27. januara 2025; prema 021.rs i Vremenu, dokumentaciju je objavilo Više javno tužilaštvo u Novom Sadu), stavka 421: \u0027CONSTRUCTION CORPORATION BALKAN OGRANAK BEOGRAD AND PRIVREDNO DRUŠTVO\u0027; \u0027GRAĐEVINSKO-ZANATSKE RADOVE I INŽENJERING STARTING DOO BEOGRAD (ZEMUN)\u0027; \u0027Број: 209-2021. Датум: 01.11.2021.\u0027; stavka 419: \u0027Subcontract for Novi Sad Staton Renovaton Project Works.\u0027; \u0027CCECC Balkan NO. 27. Date: 20.7.2022.\u0027",
+          "archive": "http://web.archive.org/web/20250826060221/https://mss.jt.rs/wp-content/uploads/2025/01/%D0%A1%D0%BF%D0%B8%D1%81%D0%B0%D0%BA-%D0%BE%D0%B1%D1%98%D0%B0%D0%B2%D1%99%D0%B5%D0%BD%D0%B5-%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D1%98%D0%B5-1.pdf",
+          "archivedOn": "2025-08-26"
+        },
+        {
+          "url": "https://nova.rs/vesti/biznis/firma-starting-postavila-novog-direktora-nakon-hapsenja-nikole-trivica",
+          "domain": "nova.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Nova.rs, 8. avgust 2025, prenosi naredbu o sprovođenju istrage: \u0027po pozivu za davanje ponude od privrednog društva „China Civil Engineering Constuction Corporation Balkan – Ogranak Beograd“\u0027; \u0027zaključio ugovor 1. novembra 2021.\u0027",
+          "archive": "http://web.archive.org/web/20250808151026/https://nova.rs/vesti/biznis/firma-starting-postavila-novog-direktora-nakon-hapsenja-nikole-trivica/",
+          "archivedOn": "2025-08-08"
+        },
+        {
+          "url": "https://vreme.com/vesti/forbs-kinezi-angazovali-srpsku-firmu-starting-za-renoviranje-zeleznicke-stanice-u-novom-sadu/",
+          "domain": "vreme.com",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Vreme, 3. januar 2025, prenosi Forbes: \u0027Kineska kompanija China Civil Engineering Construction Corporation (CCECC) i srpsko privredno društvo Starting potpisale su sporazum i ugovor po kojima je Starting kao podizvođač dobio za posao rekonstrukcije stanične zgrade u Novom Sadu\u0027; \u0027Sporazum je potpisan u novembru 2021. godine, a ugovor u julu 2022. godine\u0027; \u0027ušli u podizvođački ugovor 10. novembra 2021.\u0027",
+          "archive": "http://web.archive.org/web/20251017044449/https://vreme.com/vesti/forbs-kinezi-angazovali-srpsku-firmu-starting-za-renoviranje-zeleznicke-stanice-u-novom-sadu/",
+          "archivedOn": "2025-10-17"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "edge14",
       "label": "Pomoć pri osnivanju",
       "labels": {
         "en": "Formation assistance",
@@ -2956,7 +3522,7 @@
   },
   {
     "data": {
-      "id": "edge14",
+      "id": "edge15",
       "label": "ownership connection",
       "source": "global_media_technology",
       "target": "matrix_d",
@@ -2990,7 +3556,7 @@
   },
   {
     "data": {
-      "id": "edge15",
+      "id": "edge16",
       "label": "ownership connection",
       "source": "global_media_technology",
       "target": "maxim_media_plus",
@@ -3026,7 +3592,7 @@
   },
   {
     "data": {
-      "id": "edge16",
+      "id": "edge17",
       "label": "ownership connection",
       "source": "global_media_technology",
       "target": "rimi_media_group",
@@ -3060,7 +3626,41 @@
   },
   {
     "data": {
-      "id": "edge17",
+      "id": "edge18",
+      "label": "siblings",
+      "source": "ana_brnabic",
+      "target": "igor_brnabic",
+      "uri": "https://w3id.org/vip/rs/IgorBrnabic_AnaBrnabic",
+      "comment": "Igor Brnabić je brat Ane Brnabić, prema Radaru i N1. N1 prenosi Radar i razgovor sa autorima; nije nezavisna potvrda.",
+      "kind": "SiblingConnection",
+      "typeLabel": "Siblings",
+      "file": "data/cases/porodicne-veze.ttl",
+      "line": 28,
+      "sources": [
+        {
+          "url": "https://n1info.rs/vesti/poreski-raj-za-naprednjake-smislili-su-svoje-ostrvo-usred-srbije-jeste-li-culi-za-investicioni-fond-vista-rika/",
+          "domain": "n1info.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "N1, 11. decembar 2025, prenosi Radar (nije nezavisna potvrda): \u0027List Radar otkriva da su na spisku klijenata rođena braća najviših državnih funkcionera.\u0027; \u0027Rekorder među funkcionerskom braćom, ipak je Igor Brnabić\u0027; urednik Radara Milan Ćulibrk: \u0027brat Siniše Malog i brat Ane Brnabić\u0027.",
+          "archive": "http://web.archive.org/web/20260125022145/https://n1info.rs/vesti/poreski-raj-za-naprednjake-smislili-su-svoje-ostrvo-usred-srbije-jeste-li-culi-za-investicioni-fond-vista-rika/",
+          "archivedOn": "2026-01-25"
+        },
+        {
+          "url": "https://radar.nova.rs/ekonomija/investicioni-fond-nedic-tatjana-vukic/",
+          "domain": "radar.nova.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Radar, 11. decembar 2025: \u0027rođena braća najviših državnih funkcionera\u0027; \u0027predsednice parlamenta i bivše premijerke Ane Brnabić\u0027; \u0027Rekorder među funkcionerskom braćom je, ipak, Igor Brnabić\u0027.",
+          "archive": "http://web.archive.org/web/20261030111957/https://radar.nova.rs/ekonomija/investicioni-fond-nedic-tatjana-vukic/",
+          "archivedOn": "2026-10-30"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "edge19",
       "label": "ownership connection",
       "source": "insajder_tim",
       "target": "best_media_team",
@@ -3096,7 +3696,7 @@
   },
   {
     "data": {
-      "id": "edge18",
+      "id": "edge20",
       "label": "ownership connection",
       "source": "ivan_bosnjak_milenijum_tim",
       "target": "kbv_datacom",
@@ -3140,7 +3740,7 @@
   },
   {
     "data": {
-      "id": "edge19",
+      "id": "edge21",
       "label": "board member",
       "source": "ivan_bosnjak_milenijum_tim",
       "target": "kk_crvena_zvezda",
@@ -3192,7 +3792,7 @@
   },
   {
     "data": {
-      "id": "edge20",
+      "id": "edge22",
       "label": "political connection",
       "source": "ivan_bosnjak_zrenjanin",
       "target": "sns",
@@ -3226,7 +3826,7 @@
   },
   {
     "data": {
-      "id": "edge21",
+      "id": "edge23",
       "label": "ownership connection",
       "source": "ivan_bosnjak_milenijum_tim",
       "target": "milenijum_tim",
@@ -3256,20 +3856,13 @@
           "quote": "Enciklopedijski članak, infokutija: \u0027Owner: Ivan Bošnjak (50%), Stojan Vujko (50%)\u0027; tekst: \u0027The company was founded on 4 September 2003. Founded and formally owned by Ivan Bošnjak and Stojan Vujko\u0027.",
           "archive": "http://web.archive.org/web/20251013140940/https://en.wikipedia.org/wiki/Millennium_Team",
           "archivedOn": "2025-10-13"
-        },
-        {
-          "url": "https://sr.wikipedia.org/wiki/Milenijum_tim",
-          "domain": "sr.wikipedia.org",
-          "type": "encyclopediaArticle",
-          "status": "removed",
-          "quote": "Povučeno 5. novembra 2026: članak sr.wikipedia.org/wiki/Milenijum_tim ne postoji i prema dnevniku Vikipedije nikada nije ni postojao ni bio obrisan (HTTP 404; API javlja missing, dnevnik brisanja prazan), a Wayback Machine nema nijedan snimak ni latinične ni ćirilične adrese; ne može da potkrepi vlasništvo."
         }
       ]
     }
   },
   {
     "data": {
-      "id": "edge22",
+      "id": "edge24",
       "label": "executive board member",
       "source": "ivan_bosnjak_milenijum_tim",
       "target": "naled",
@@ -3285,7 +3878,7 @@
         }
       ],
       "file": "data/cases/milenijum-tim.ttl",
-      "line": 48,
+      "line": 46,
       "sources": [
         {
           "url": "https://www.krik.rs/koruptivne-veze-milenijum-tim-ustupio-audi-i-stan-bratu-sinise-malog/",
@@ -3304,31 +3897,108 @@
           "quote": "Nova.rs, 28. januar 2021: ista rečenica o suvlasniku Milenijum tima; nije nezavisna potvrda KRIK-a.",
           "archive": "http://web.archive.org/web/20250716051444/https://nova.rs/vesti/hronika/suvlasnik-milenijum-tima-bosnjak-zakupac-plantaze-u-leskovcu/",
           "archivedOn": "2025-07-16"
-        },
-        {
-          "url": "https://naled.rs/htdocs/Files/15388/II-Kvartalni-izvestaj_2024.pdf",
-          "domain": "naled.rs",
-          "type": "officialDocument",
-          "status": "removed",
-          "quote": "Povučeno 1. novembra 2026: izveštaj navodi imenjaka, državnog sekretara, među predstavnicima ministarstva; ne potkrepljuje ovu vezu.",
-          "archive": "http://web.archive.org/web/20250516231427/https://naled.rs/htdocs/Files/15388/II-Kvartalni-izvestaj_2024.pdf",
-          "archivedOn": "2025-05-16"
-        },
-        {
-          "url": "https://www.uzmiracun.rs/vest-otvorene-wifi-zone-u-titelu-i-bakom-petrovcu-1345",
-          "domain": "uzmiracun.rs",
-          "type": "newsArticle",
-          "status": "removed",
-          "quote": "Povučeno 1. novembra 2026: članak navodi imenjaka kao državnog sekretara, a menadžer za razvoj članstva u NALED-u je Višnja Račić. Raniji navod o toj ulozi bio je pogrešan.",
-          "archive": "http://web.archive.org/web/20200809000902/http://uzmiracun.rs/vest-otvorene-wifi-zone-u-titelu-i-bakom-petrovcu-1345",
-          "archivedOn": "2020-08-09"
         }
       ]
     }
   },
   {
     "data": {
-      "id": "edge23",
+      "id": "edge25",
+      "label": "ownership connection",
+      "source": "ljiljana_tripkovic",
+      "target": "starting",
+      "uri": "https://w3id.org/vip/rs/LjiljanaTripkovic_Starting",
+      "comment": "Nova.rs (11. novembar 2024 i 1. avgust 2025) i N1, koji prenosi Novu ekonomiju (11. novembar 2024), navode da Ljiljana Tripković ima 70 odsto firme Starting. Nijedan izvor ne navodi registar niti od kada.",
+      "kind": "OwnershipConnection",
+      "typeLabel": "Ownership connection",
+      "share": 70.0,
+      "file": "data/cases/zeleznicka-stanica-novi-sad.ttl",
+      "line": 18,
+      "sources": [
+        {
+          "url": "https://n1info.rs/vesti/svi-drzavni-poslovi-firme-starting-koja-je-rekonstruisala-zeleznicku-stanicu-u-novom-sadu",
+          "domain": "n1info.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "N1, 11. novembar 2024, prenosi Novu ekonomiju: \u0027U suvlasništvu je Ljiljane Tripković (70 odsto)\u0027.",
+          "archive": "http://web.archive.org/web/20250802003221/https://n1info.rs/vesti/svi-drzavni-poslovi-firme-starting-koja-je-rekonstruisala-zeleznicku-stanicu-u-novom-sadu/",
+          "archivedOn": "2025-08-02"
+        },
+        {
+          "url": "https://nova.rs/vesti/biznis/sve-o-firmi-starting-koja-je-izvodila-radove-na-zeleznickoj-stanici",
+          "domain": "nova.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Nova.rs, 11. novembar 2024: \u0027Ljiljana Tripković poseduje 70 odsto udela u Startingu\u0027.",
+          "archive": "http://web.archive.org/web/20241224221057/https://nova.rs/vesti/biznis/sve-o-firmi-starting-koja-je-izvodila-radove-na-zeleznickoj-stanici/",
+          "archivedOn": "2024-12-24"
+        },
+        {
+          "url": "https://nova.rs/vesti/hronika/uhapsen-i-nikola-trivic-suvlasnik-startinga/",
+          "domain": "nova.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Nova.rs, 1. avgust 2025: \u0027Udeo od 70 odsto u Startingu ima Ljiljana Tripković iz Beograda\u0027.",
+          "archive": "http://web.archive.org/web/20250801121744/https://nova.rs/vesti/hronika/uhapsen-i-nikola-trivic-suvlasnik-startinga/",
+          "archivedOn": "2025-08-01"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "edge26",
+      "label": "director",
+      "source": "malisa_nedeljkovic",
+      "target": "starting",
+      "uri": "https://w3id.org/vip/rs/MalisaNedeljkovic_Starting_Direktor",
+      "comment": "Nova.rs je 8. avgusta 2025. javio da je on novi direktor, postavljen posle hapšenja Nikole Trivića, koje je Nova.rs javio 1. avgusta 2025. Mesec je izveden iz ta dva datuma; dan postavljenja i njegov izvor (registar ili firma) nisu navedeni. Direktno prenosi izveštaj Nova.rs i nije nezavisna potvrda.",
+      "kind": "WorkConnection",
+      "typeLabel": "Work Connection",
+      "roles": [
+        {
+          "en": "Director",
+          "es": "Director",
+          "sr": "Direktor"
+        }
+      ],
+      "start": "2025-08",
+      "file": "data/cases/zeleznicka-stanica-novi-sad.ttl",
+      "line": 61,
+      "sources": [
+        {
+          "url": "https://direktno.rs/vesti/drustvo-i-ekonomija/627014/startign-malisa-nedeljkovic.html",
+          "domain": "direktno.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Direktno, 8. avgust 2025, prenosi Nova.rs (nije nezavisna potvrda): \u0027dobila je novog direktora Mališu Nedeljkovića\u0027.",
+          "archive": "http://web.archive.org/web/20250912102817/https://direktno.rs/vesti/drustvo-i-ekonomija/627014/startign-malisa-nedeljkovic.html",
+          "archivedOn": "2025-09-12"
+        },
+        {
+          "url": "https://nova.rs/vesti/biznis/firma-starting-postavila-novog-direktora-nakon-hapsenja-nikole-trivica",
+          "domain": "nova.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Nova.rs, 8. avgust 2025: \u0027dobila je novog direktora Mališu Nedeljkovića\u0027.",
+          "archive": "http://web.archive.org/web/20250808151026/https://nova.rs/vesti/biznis/firma-starting-postavila-novog-direktora-nakon-hapsenja-nikole-trivica/",
+          "archivedOn": "2025-08-08"
+        },
+        {
+          "url": "https://nova.rs/vesti/hronika/uhapsen-i-nikola-trivic-suvlasnik-startinga/",
+          "domain": "nova.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Nova.rs, 1. avgust 2025: \u0027Suvlasnik firme Starting Nikola Trivić jedan je od 14 uhapšenih\u0027.",
+          "archive": "http://web.archive.org/web/20250801121744/https://nova.rs/vesti/hronika/uhapsen-i-nikola-trivic-suvlasnik-startinga/",
+          "archivedOn": "2025-08-01"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "edge27",
       "label": "ownership connection",
       "source": "maxim_media_plus",
       "target": "baltazar",
@@ -3363,7 +4033,7 @@
   },
   {
     "data": {
-      "id": "edge24",
+      "id": "edge28",
       "label": "ownership connection",
       "source": "maxim_media_plus",
       "target": "bis_komerc",
@@ -3398,7 +4068,7 @@
   },
   {
     "data": {
-      "id": "edge25",
+      "id": "edge29",
       "label": "ownership connection",
       "source": "maxim_media_plus",
       "target": "new_agency",
@@ -3433,7 +4103,7 @@
   },
   {
     "data": {
-      "id": "edge26",
+      "id": "edge30",
       "label": "alumni",
       "source": "mihailo_jovanovic",
       "target": "peta_beogradska_gimnazija",
@@ -3469,12 +4139,12 @@
   },
   {
     "data": {
-      "id": "edge27",
+      "id": "edge31",
       "label": "minister",
       "source": "mihailo_jovanovic",
       "target": "vlada_srbije",
       "uri": "https://w3id.org/vip/rs/MihailoJovanovic_VladaSrbije_MinistarInformisanja",
-      "comment": "Narodna skupština je 26. oktobra 2022. izglasala treću Vladu Ane Brnabić, sa 157 glasova za i 68 protiv, i ministri su istog dana položili zakletvu; Mihailo Jovanović je u njoj ministar informisanja i telekomunikacija, novog resora izdvojenog iz Ministarstva kulture (RTS, Vreme, Vikipedija). Funkcija je prestala 2. maja 2024, kada je izabrana i zakletvu položila Vlada Miloša Vučevića sa Dejanom Ristićem kao ministrom informisanja i telekomunikacija (Biznis.rs); primopredaja dužnosti u ministarstvu obavljena je 6. maja 2024 (sajt ministarstva).",
+      "comment": "Narodna skupština je 26. oktobra 2022. izglasala treću Vladu Ane Brnabić, sa 157 glasova za i 68 protiv, i ministri su istog dana položili zakletvu; Mihailo Jovanović je u njoj ministar informisanja i telekomunikacija (RTS, Vikipedija), novog resora izdvojenog iz Ministarstva kulture (Vreme). Kraj je datum izbora sledeće Vlade: 2. maja 2024. izabrana je i zakletvu položila Vlada Miloša Vučevića, sa Dejanom Ristićem kao ministrom informisanja i telekomunikacija (Biznis.rs); primopredaja dužnosti u ministarstvu obavljena je 6. maja 2024 (sajt ministarstva).",
       "kind": "WorkConnection",
       "typeLabel": "Work Connection",
       "roles": [
@@ -3494,7 +4164,7 @@
           "domain": "biznis.rs",
           "type": "newsArticle",
           "status": "published",
-          "quote": "Biznis.rs, 2. maj 2024, \u0027Izabrana nova Vlada Srbije\u0027: \u0027Za novu Vladu Srbije glasalo je 152 od 213 prisutnih poslanika, a 61 poslanik je bio protiv.\u0027; podnaslov \u0027Ministri položili zakletvu\u0027; u spisku \u0027ministar informisanja i telekomunikacija Dejan Ristić\u0027.",
+          "quote": "Biznis.rs, 2. maj 2024, \u0027Izabrana nova Vlada Srbije\u0027: \u0027Skupština Republike Srbije izglasala je danas novu vladu na čijem čelu će biti Miloš Vučević, dosadašnji ministar odbrane.\u0027; \u0027Za novu Vladu Srbije glasalo je 152 od 213 prisutnih poslanika, a 61 poslanik je bio protiv.\u0027; podnaslov \u0027Ministri položili zakletvu\u0027; u spisku \u0027ministar informisanja i telekomunikacija Dejan Ristić\u0027.",
           "archive": "http://web.archive.org/web/20260316002149/https://biznis.rs/vesti/srbija/izabrana-nova-vlada-srbije/",
           "archivedOn": "2026-03-16"
         },
@@ -3539,7 +4209,41 @@
   },
   {
     "data": {
-      "id": "edge28",
+      "id": "edge32",
+      "label": "ownership connection",
+      "source": "milan_vukovljak",
+      "target": "bob_novi_sad",
+      "uri": "https://w3id.org/vip/rs/MilanVukovljak_BobNoviSad",
+      "comment": "Vlasnik prema 021.rs (27. januar 2025) i prema Srni u Glasu Srpske (30. avgust 2021), koja navodi samo firmu „Bob“ i Novi Sad kao mesto gde on živi. Udeo i datumi nisu poznati.",
+      "kind": "OwnershipConnection",
+      "typeLabel": "Ownership connection",
+      "file": "data/cases/zeleznicka-stanica-novi-sad.ttl",
+      "line": 76,
+      "sources": [
+        {
+          "url": "https://www.021.rs/novi-sad/vesti/400000/objavljen-ugovor-startinga-sa-jos-jednim-podizvodjacem-ko-je-postavljao-staklo-na-nadstresnicu",
+          "domain": "021.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "021.rs, 27. januar 2025, pod naslovom \u0027Šta se zna o Bob doo?\u0027: \u0027Vlasnik je Milan Vukovljak.\u0027",
+          "archive": "https://web.archive.org/web/20261111213759/https://www.021.rs/novi-sad/vesti/400000/objavljen-ugovor-startinga-sa-jos-jednim-podizvodjacem-ko-je-postavljao-staklo-na-nadstresnicu",
+          "archivedOn": "2026-11-11"
+        },
+        {
+          "url": "https://www.glassrpske.com/lat/novosti/drustvo/prikupljene-brojne-donacije-za-izgradnju-konaka-pri-hramu-u-selu-gubin-nadomak-livna/374914",
+          "domain": "glassrpske.com",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Glas Srpske, 30. avgust 2021 (Srna): \u0027Milan Vukovljak porijeklom iz Gubina, koji živi u Novom Sadu i vlasnik je firme \"Bob\"\u0027.",
+          "archive": "https://web.archive.org/web/20261111213836/https://www.glassrpske.com/lat/novosti/drustvo/prikupljene-brojne-donacije-za-izgradnju-konaka-pri-hramu-u-selu-gubin-nadomak-livna/374914",
+          "archivedOn": "2026-11-11"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "edge33",
       "label": "ownership connection",
       "source": "milenijum_tim",
       "target": "mt_gastel",
@@ -3549,7 +4253,7 @@
       "typeLabel": "Ownership connection",
       "share": 100.0,
       "file": "data/cases/milenijum-tim.ttl",
-      "line": 118,
+      "line": 110,
       "sources": [
         {
           "url": "https://www.emis.cn/php/company-profile/YU/Millennium_Team_DOO_Beograd_en_2585748.html",
@@ -3592,7 +4296,7 @@
   },
   {
     "data": {
-      "id": "edge29",
+      "id": "edge34",
       "label": "ownership connection",
       "source": "milenijum_tim",
       "target": "mv_investment",
@@ -3603,7 +4307,7 @@
       "share": 100.0,
       "start": "2022-11-04",
       "file": "data/cases/milenijum-tim.ttl",
-      "line": 197,
+      "line": 189,
       "sources": [
         {
           "url": "https://biznis.rs/vesti/srbija/rusenje-hotela-jugoslavija-od-hipo-alpe-adrija-banke-do-milenijum-tima-preko-paname-grcke-i-kipra/",
@@ -3646,7 +4350,7 @@
   },
   {
     "data": {
-      "id": "edge30",
+      "id": "edge35",
       "label": "ownership connection",
       "source": "milenijum_tim",
       "target": "milenijum_adria",
@@ -3657,7 +4361,7 @@
       "share": 100.0,
       "start": "2020",
       "file": "data/cases/milenijum-tim.ttl",
-      "line": 133,
+      "line": 125,
       "sources": [
         {
           "url": "https://www.danas.rs/vesti/ekonomija/sta-sve-ima-milenijum-tim-novi-vlasnik-hotela-jugoslavija/",
@@ -3691,7 +4395,7 @@
   },
   {
     "data": {
-      "id": "edge31",
+      "id": "edge36",
       "label": "ownership connection",
       "source": "milenijum_tim",
       "target": "milenijum_resorts",
@@ -3701,7 +4405,7 @@
       "typeLabel": "Ownership connection",
       "share": 100.0,
       "file": "data/cases/milenijum-tim.ttl",
-      "line": 107,
+      "line": 99,
       "sources": [
         {
           "url": "https://www.companywall.rs/firma/drustvo--za-inzenjering-i-usluge-millennium-resorts-doo-beograd/MMxxIjkxY",
@@ -3726,7 +4430,7 @@
   },
   {
     "data": {
-      "id": "edge32",
+      "id": "edge37",
       "label": "ownership connection",
       "source": "milenijum_tim",
       "target": "milenijum_propertiz",
@@ -3736,7 +4440,7 @@
       "typeLabel": "Ownership connection",
       "share": 26.0,
       "file": "data/cases/milenijum-tim.ttl",
-      "line": 147,
+      "line": 139,
       "sources": [
         {
           "url": "https://www.companywall.rs/firma/millennium-properties-doo-beograd/MMsCs0qC",
@@ -3770,7 +4474,7 @@
   },
   {
     "data": {
-      "id": "edge33",
+      "id": "edge38",
       "label": "ownership connection",
       "source": "milenijum_tim",
       "target": "mostogradnja_ing",
@@ -3780,7 +4484,7 @@
       "typeLabel": "Ownership connection",
       "share": 100.0,
       "file": "data/cases/milenijum-tim.ttl",
-      "line": 213,
+      "line": 205,
       "sources": [
         {
           "url": "https://www.companywall.rs/firma/mostogradnja-ing-doo/MMxEWFnzR",
@@ -3814,7 +4518,7 @@
   },
   {
     "data": {
-      "id": "edge34",
+      "id": "edge39",
       "label": "ownership connection",
       "source": "milenijum_tim",
       "target": "pizzarotti_millennium",
@@ -3824,7 +4528,7 @@
       "typeLabel": "Ownership connection",
       "share": 4.0,
       "file": "data/cases/milenijum-tim.ttl",
-      "line": 160,
+      "line": 152,
       "sources": [
         {
           "url": "https://www.companywall.rs/firma/pizzarotti-millennium-doo/MMx04LqfY",
@@ -3849,7 +4553,7 @@
   },
   {
     "data": {
-      "id": "edge35",
+      "id": "edge40",
       "label": "Ustupljen automobil",
       "labels": {
         "en": "Car provided",
@@ -3863,7 +4567,7 @@
       "typeLabel": "Generic connection",
       "start": "2014",
       "file": "data/cases/milenijum-tim.ttl",
-      "line": 226,
+      "line": 218,
       "sources": [
         {
           "url": "https://www.krik.rs/koruptivne-veze-milenijum-tim-ustupio-audi-i-stan-bratu-sinise-malog/",
@@ -3897,7 +4601,7 @@
   },
   {
     "data": {
-      "id": "edge36",
+      "id": "edge41",
       "label": "Ustupljen stan",
       "labels": {
         "en": "Flat provided",
@@ -3911,7 +4615,7 @@
       "typeLabel": "Generic connection",
       "end": "2016",
       "file": "data/cases/milenijum-tim.ttl",
-      "line": 240,
+      "line": 232,
       "sources": [
         {
           "url": "https://www.krik.rs/koruptivne-veze-milenijum-tim-ustupio-audi-i-stan-bratu-sinise-malog/",
@@ -3945,7 +4649,7 @@
   },
   {
     "data": {
-      "id": "edge37",
+      "id": "edge42",
       "label": "ownership connection",
       "source": "milenijum_tim",
       "target": "roberts_milenijum",
@@ -3957,7 +4661,7 @@
       "start": "2022-07",
       "end": "2024-12-03",
       "file": "data/cases/milenijum-tim.ttl",
-      "line": 184,
+      "line": 176,
       "sources": [
         {
           "url": "https://www.companywall.rs/firma/roberts-millennium-doo/MMx15PUYY",
@@ -3986,7 +4690,7 @@
           "end": "2022-07",
           "comment": "Milenijum tim je od osnivanja imao 50% društva Roberts Millennium; drugu polovinu držala je Roberts Constructions Serbia Pty Limited iz Australije.",
           "file": "data/cases/milenijum-tim.ttl",
-          "line": 171,
+          "line": 163,
           "sources": [
             {
               "url": "https://www.danas.rs/vesti/ekonomija/prijatelji-milenijum-tima-ne-placaju-turske-radnike/",
@@ -4015,7 +4719,7 @@
           "end": "2024-12-03",
           "comment": "Milenijum tim je u julu 2022. preuzeo 100% društva Roberts Millennium, koje je izbrisano iz registra 3. decembra 2024.",
           "file": "data/cases/milenijum-tim.ttl",
-          "line": 184,
+          "line": 176,
           "sources": [
             {
               "url": "https://www.companywall.rs/firma/roberts-millennium-doo/MMx15PUYY",
@@ -4042,7 +4746,41 @@
   },
   {
     "data": {
-      "id": "edge38",
+      "id": "edge43",
+      "label": "ownership connection",
+      "source": "nenad_ignjatovic_deko_tim",
+      "target": "deko_tim",
+      "uri": "https://w3id.org/vip/rs/NenadIgnjatovic_DekoTim",
+      "comment": "Vlasnik prema Nedeljniku (20. decembar 2024) i BBC-ju (članak objavljen 1. avgusta 2025, ažuriran 30. januara 2026). Udeo i datumi nisu poznati. Nedeljnik piše da nije hteo da odgovori na njegova pitanja dok je postupak u toku.",
+      "kind": "OwnershipConnection",
+      "typeLabel": "Ownership connection",
+      "file": "data/cases/zeleznicka-stanica-novi-sad.ttl",
+      "line": 87,
+      "sources": [
+        {
+          "url": "https://www.bbc.com/serbian/articles/cn47xjzq395o/lat",
+          "domain": "bbc.com",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "BBC na srpskom, objavljeno 1. avgusta 2025: \u0027Nenad Ignjatović, vlasnik „Deko tim\"\u0027.",
+          "archive": "http://web.archive.org/web/20261030083905/https://www.bbc.com/serbian/articles/cn47xjzq395o/lat",
+          "archivedOn": "2026-10-30"
+        },
+        {
+          "url": "https://www.nedeljnik.rs/od-trgovine-na-malo-do-rekonstrukcije-zeleznicke-stanice-u-roku-od-tri-godine-ko-je-firma-koja-se-spomenjinje-u-izvestaju-vestaka-ftn/",
+          "domain": "nedeljnik.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Nedeljnik, 20. decembar 2024, o Nenadu Ignjatoviću: \u0027vlasnik „Deko-tima“ nije hteo da odgovori na pitanja sajta Nedeljnika\u0027.",
+          "archive": "http://web.archive.org/web/20250615121956/https://www.nedeljnik.rs/od-trgovine-na-malo-do-rekonstrukcije-zeleznicke-stanice-u-roku-od-tri-godine-ko-je-firma-koja-se-spomenjinje-u-izvestaju-vestaka-ftn/",
+          "archivedOn": "2025-06-15"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "edge44",
       "label": "ownership connection",
       "source": "nikola_petrovic_ems",
       "target": "arkshore_international",
@@ -4077,7 +4815,102 @@
   },
   {
     "data": {
-      "id": "edge39",
+      "id": "edge45",
+      "label": "ownership connection",
+      "source": "nikola_trivic",
+      "target": "starting",
+      "uri": "https://w3id.org/vip/rs/NikolaTrivic_Starting",
+      "comment": "N1, koji prenosi Novu ekonomiju, i Nova.rs od 1. avgusta 2025. navode 30 odsto; Nova.rs od 11. novembra 2024. piše „preostali deo“. Nema registra ni datuma.",
+      "kind": "OwnershipConnection",
+      "typeLabel": "Ownership connection",
+      "share": 30.0,
+      "file": "data/cases/zeleznicka-stanica-novi-sad.ttl",
+      "line": 32,
+      "sources": [
+        {
+          "url": "https://n1info.rs/vesti/svi-drzavni-poslovi-firme-starting-koja-je-rekonstruisala-zeleznicku-stanicu-u-novom-sadu",
+          "domain": "n1info.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "N1, 11. novembar 2024, prenosi Novu ekonomiju: \u0027Nikole Trivića (30 odsto)\u0027.",
+          "archive": "http://web.archive.org/web/20250802003221/https://n1info.rs/vesti/svi-drzavni-poslovi-firme-starting-koja-je-rekonstruisala-zeleznicku-stanicu-u-novom-sadu/",
+          "archivedOn": "2025-08-02"
+        },
+        {
+          "url": "https://nova.rs/vesti/biznis/sve-o-firmi-starting-koja-je-izvodila-radove-na-zeleznickoj-stanici",
+          "domain": "nova.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Nova.rs, 11. novembar 2024: \u0027preostali deo pripada Nikoli Triviću\u0027.",
+          "archive": "http://web.archive.org/web/20241224221057/https://nova.rs/vesti/biznis/sve-o-firmi-starting-koja-je-izvodila-radove-na-zeleznickoj-stanici/",
+          "archivedOn": "2024-12-24"
+        },
+        {
+          "url": "https://nova.rs/vesti/hronika/uhapsen-i-nikola-trivic-suvlasnik-startinga/",
+          "domain": "nova.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Nova.rs, 1. avgust 2025: \u0027a 30 odsto Nikola Trivić\u0027.",
+          "archive": "http://web.archive.org/web/20250801121744/https://nova.rs/vesti/hronika/uhapsen-i-nikola-trivic-suvlasnik-startinga/",
+          "archivedOn": "2025-08-01"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "edge46",
+      "label": "director",
+      "source": "nikola_trivic",
+      "target": "starting",
+      "uri": "https://w3id.org/vip/rs/NikolaTrivic_Starting_Direktor",
+      "comment": "Nova.rs (8. avgust 2025) ga naziva direktorom firme Starting, kada prenosi naredbu o sprovođenju istrage, i prethodnikom novog direktora; od kada je bio direktor nije navedeno. Mesec kraja je izveden: Nova.rs je 1. avgusta 2025. javio njegovo hapšenje, a 8. avgusta 2025. da je Starting posle tog hapšenja dobio novog direktora; dan promene nije naveden. Hapšenje je pomenuto samo da objasni datum.",
+      "kind": "WorkConnection",
+      "typeLabel": "Work Connection",
+      "roles": [
+        {
+          "en": "Director",
+          "es": "Director",
+          "sr": "Direktor"
+        }
+      ],
+      "end": "2025-08",
+      "file": "data/cases/zeleznicka-stanica-novi-sad.ttl",
+      "line": 46,
+      "sources": [
+        {
+          "url": "https://direktno.rs/vesti/drustvo-i-ekonomija/627014/startign-malisa-nedeljkovic.html",
+          "domain": "direktno.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Direktno, 8. avgust 2025, prenosi Nova.rs (nije nezavisna potvrda): \u0027direktor privrednog društva \"Starting\" d.o.o. iz Beograda\u0027.",
+          "archive": "http://web.archive.org/web/20250912102817/https://direktno.rs/vesti/drustvo-i-ekonomija/627014/startign-malisa-nedeljkovic.html",
+          "archivedOn": "2025-09-12"
+        },
+        {
+          "url": "https://nova.rs/vesti/biznis/firma-starting-postavila-novog-direktora-nakon-hapsenja-nikole-trivica",
+          "domain": "nova.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Nova.rs, 8. avgust 2025, prenosi naredbu o sprovođenju istrage: \u0027direktor privrednog društva „Starting“ d.o.o. iz Beograda\u0027; \u0027hapšenja njegovog prethodnika\u0027.",
+          "archive": "http://web.archive.org/web/20250808151026/https://nova.rs/vesti/biznis/firma-starting-postavila-novog-direktora-nakon-hapsenja-nikole-trivica/",
+          "archivedOn": "2025-08-08"
+        },
+        {
+          "url": "https://nova.rs/vesti/hronika/uhapsen-i-nikola-trivic-suvlasnik-startinga/",
+          "domain": "nova.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Nova.rs, 1. avgust 2025: \u0027Suvlasnik firme Starting Nikola Trivić jedan je od 14 uhapšenih\u0027.",
+          "archive": "http://web.archive.org/web/20250801121744/https://nova.rs/vesti/hronika/uhapsen-i-nikola-trivic-suvlasnik-startinga/",
+          "archivedOn": "2025-08-01"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "edge47",
       "label": "friendship",
       "source": "darko_tamindzic",
       "target": "novica_toncev",
@@ -4111,7 +4944,7 @@
   },
   {
     "data": {
-      "id": "edge40",
+      "id": "edge48",
       "label": "ownership connection",
       "source": "novica_toncev",
       "target": "service_for_efficient_energy",
@@ -4146,7 +4979,7 @@
   },
   {
     "data": {
-      "id": "edge41",
+      "id": "edge49",
       "label": "friendship",
       "source": "andrej_vucic",
       "target": "predrag_mali",
@@ -4198,7 +5031,7 @@
   },
   {
     "data": {
-      "id": "edge42",
+      "id": "edge50",
       "label": "schoolmate (same school)",
       "source": "andrej_vucic",
       "target": "predrag_mali",
@@ -4241,7 +5074,7 @@
   },
   {
     "data": {
-      "id": "edge43",
+      "id": "edge51",
       "label": "employee",
       "source": "predrag_mali",
       "target": "kbv_datacom",
@@ -4282,7 +5115,7 @@
   },
   {
     "data": {
-      "id": "edge44",
+      "id": "edge52",
       "label": "board member",
       "source": "predrag_mali",
       "target": "kk_crvena_zvezda",
@@ -4343,7 +5176,7 @@
   },
   {
     "data": {
-      "id": "edge45",
+      "id": "edge53",
       "label": "siblings",
       "source": "predrag_mali",
       "target": "sinisa_mali",
@@ -4377,7 +5210,7 @@
   },
   {
     "data": {
-      "id": "edge46",
+      "id": "edge54",
       "label": "ownership connection",
       "source": "sasa_blagojevic",
       "target": "alo_marketing",
@@ -4413,7 +5246,7 @@
   },
   {
     "data": {
-      "id": "edge47",
+      "id": "edge55",
       "label": "ownership connection",
       "source": "sasa_blagojevic",
       "target": "alo_media_system",
@@ -4485,7 +5318,7 @@
   },
   {
     "data": {
-      "id": "edge48",
+      "id": "edge56",
       "label": "ownership connection",
       "source": "sasa_blagojevic",
       "target": "global_media_technology",
@@ -4520,7 +5353,7 @@
   },
   {
     "data": {
-      "id": "edge49",
+      "id": "edge57",
       "label": "alumni",
       "source": "sasa_blagojevic",
       "target": "peta_beogradska_gimnazija",
@@ -4581,7 +5414,7 @@
   },
   {
     "data": {
-      "id": "edge50",
+      "id": "edge58",
       "label": "classmate (same class)",
       "source": "sasa_blagojevic",
       "target": "sinisa_mali",
@@ -4651,7 +5484,7 @@
   },
   {
     "data": {
-      "id": "edge51",
+      "id": "edge59",
       "label": "ownership connection",
       "source": "sasa_blagojevic",
       "target": "trilenium",
@@ -4686,7 +5519,7 @@
   },
   {
     "data": {
-      "id": "edge52",
+      "id": "edge60",
       "label": "ownership connection",
       "source": "sinisa_mali",
       "target": "brigham_holding_finance",
@@ -4722,7 +5555,7 @@
   },
   {
     "data": {
-      "id": "edge53",
+      "id": "edge61",
       "label": "alumni",
       "source": "sinisa_mali",
       "target": "ekonomski_fakultet_university_of_belgrade",
@@ -4757,7 +5590,7 @@
   },
   {
     "data": {
-      "id": "edge54",
+      "id": "edge62",
       "label": "ownership connection",
       "source": "sinisa_mali",
       "target": "etham_invest_finance",
@@ -4793,7 +5626,7 @@
   },
   {
     "data": {
-      "id": "edge55",
+      "id": "edge63",
       "label": "mayor",
       "source": "sinisa_mali",
       "target": "grad_beograd",
@@ -4845,7 +5678,7 @@
   },
   {
     "data": {
-      "id": "edge56",
+      "id": "edge64",
       "label": "alumni",
       "source": "sinisa_mali",
       "target": "peta_beogradska_gimnazija",
@@ -4881,7 +5714,7 @@
   },
   {
     "data": {
-      "id": "edge57",
+      "id": "edge65",
       "label": "political connection",
       "source": "sinisa_mali",
       "target": "sns",
@@ -4916,7 +5749,7 @@
   },
   {
     "data": {
-      "id": "edge58",
+      "id": "edge66",
       "label": "minister",
       "source": "sinisa_mali",
       "target": "vlada_srbije",
@@ -4967,7 +5800,52 @@
   },
   {
     "data": {
-      "id": "edge59",
+      "id": "edge67",
+      "label": "ownership connection",
+      "source": "srdjan_davidovic",
+      "target": "vista_rica_ad",
+      "uri": "https://w3id.org/vip/rs/SrdjanDavidovic_VistaRica",
+      "comment": "Prospekt iz 2024. navodi udeo Srđana Davidovića od 25%; Nova Ekonomija izveštava da je izašao iz vlasništva, dok je udeo Vukić povećan sa 50% na 75%. Mesec promene je izveden: prospekt navodi saglasnost Komisije za hartije od vrednosti na sticanje kvalifikovanog učešća od 25. marta 2026, a Nova Ekonomija 31. marta 2026. piše da je povećanje udela objavljeno u Centralnom registru hartija od vrednosti; dan prenosa nije naveden.",
+      "kind": "OwnershipConnection",
+      "typeLabel": "Ownership connection",
+      "share": 25.0,
+      "end": "2026-03",
+      "file": "data/cases/vista-rica.ttl",
+      "line": 58,
+      "sources": [
+        {
+          "url": "https://novaekonomija.rs/vesti-iz-zemlje/tatjana-vukic-po-pisanju-medija-partnerka-andreja-vucica-postala-vecinski-vlasnik-investicionog-fonda-vista-rica",
+          "domain": "novaekonomija.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Nova Ekonomija, 31. mart 2026: \u0027Iz vlasništva firme je istupio Srđan Davidović\u0027; opisuje povećanje udela Vukić sa 50% na 75%.",
+          "archive": "http://web.archive.org/web/20260331143934/https://novaekonomija.rs/vesti-iz-zemlje/tatjana-vukic-po-pisanju-medija-partnerka-andreja-vucica-postala-vecinski-vlasnik-investicionog-fonda-vista-rica",
+          "archivedOn": "2026-03-31"
+        },
+        {
+          "url": "https://vistarica.rs/wp-content/uploads/2024/09/VISTA-RICA-CORPORATE_PROSPEKT_.pdf",
+          "domain": "vistarica.rs",
+          "type": "officialDocument",
+          "status": "published",
+          "quote": "Prospekt: \u0027Srđan Davidović, osnivač i akcionar koji poseduje kvalifikovano učešće od 25%\u0027.",
+          "archive": "https://web.archive.org/web/20261111190811/https://vistarica.rs/wp-content/uploads/2024/09/VISTA-RICA-CORPORATE_PROSPEKT_.pdf",
+          "archivedOn": "2026-11-11"
+        },
+        {
+          "url": "https://vistarica.rs/wp-content/uploads/2026/09/Prospekt-VR-Invest-2026-final-potpisan.pdf",
+          "domain": "vistarica.rs",
+          "type": "officialDocument",
+          "status": "published",
+          "quote": "Prospekt Vista Rica Invest, ažuriran 18.09.2026, Davidovića više ne navodi; pod \u0027Akcionari Društva su:\u0027 stoje samo \u0027Tatjana Vukić, osnivač i akcionar koja poseduje kvalifikovano učešće od 75%\u0027 i \u0027Vojislav Nedić, osnivač i akcionar koji poseduje kvalifikovano učešće od 25%\u0027.",
+          "archive": "https://web.archive.org/web/20261111190825/https://vistarica.rs/wp-content/uploads/2026/09/Prospekt-VR-Invest-2026-final-potpisan.pdf",
+          "archivedOn": "2026-11-11"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "edge68",
       "label": "Poslovni saradnici",
       "labels": {
         "en": "Business associates",
@@ -5005,7 +5883,7 @@
   },
   {
     "data": {
-      "id": "edge60",
+      "id": "edge69",
       "label": "Svedok osnivanja",
       "labels": {
         "en": "Formation witness",
@@ -5045,7 +5923,132 @@
   },
   {
     "data": {
-      "id": "edge61",
+      "id": "edge70",
+      "label": "podizvođenje obnove stanice",
+      "labels": {
+        "en": "station renovation subcontract",
+        "sr": "podizvođenje obnove stanice"
+      },
+      "source": "bob_novi_sad",
+      "target": "starting",
+      "uri": "https://w3id.org/vip/rs/Starting_BobNoviSad_Stanica",
+      "comment": "Starting je angažovao firmu Bob za aluminarske i bravarske radove na stanici, uključujući svetlarnik nadstrešnice nad ulazom u krilo B (021.rs, prema ugovoru koji je objavilo Više javno tužilaštvo u Novom Sadu; 021.rs piše da je ugovor zaključen u julu 2022). Spisak (stavka 503) navodi broj Startinga od 28. jula 2022. i broj firme Bob od 3. avgusta 2022; početak je zabeležen na godinu jer se ta dva datuma razlikuju.",
+      "kind": "Connection",
+      "typeLabel": "Generic connection",
+      "start": "2022",
+      "file": "data/cases/zeleznicka-stanica-novi-sad.ttl",
+      "line": 112,
+      "sources": [
+        {
+          "url": "https://www.021.rs/novi-sad/vesti/400000/objavljen-ugovor-startinga-sa-jos-jednim-podizvodjacem-ko-je-postavljao-staklo-na-nadstresnicu",
+          "domain": "021.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "021.rs, 27. januar 2025: \u0027ugovor podizvođača, firme Starting sa firmom Bob doo iz Novog Sada\u0027; \u0027Ugovor koji je zaključen u julu 2022. godine\u0027; \u0027svetlarnik nadstrešnice nad ulazom u krilo B\u0027.",
+          "archive": "https://web.archive.org/web/20261111213759/https://www.021.rs/novi-sad/vesti/400000/objavljen-ugovor-startinga-sa-jos-jednim-podizvodjacem-ko-je-postavljao-staklo-na-nadstresnicu",
+          "archivedOn": "2026-11-11"
+        },
+        {
+          "url": "https://mss.jt.rs/wp-content/uploads/2025/01/%D0%A1%D0%BF%D0%B8%D1%81%D0%B0%D0%BA-%D0%BE%D0%B1%D1%98%D0%B0%D0%B2%D1%99%D0%B5%D0%BD%D0%B5-%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D1%98%D0%B5-1.pdf",
+          "domain": "mss.jt.rs",
+          "type": "officialDocument",
+          "status": "published",
+          "quote": "Spisak objavljene dokumentacije (mss.jt.rs, PDF izrađen 27. januara 2025; prema 021.rs i Vremenu, dokumentaciju je objavilo Više javno tužilaštvo u Novom Sadu), stavka 503: \u0027(Број: 104-2022, дана 28.07.2022.) и БОБ д.о.о. (Број 75-2022, дана 03.08.2022.).\u0027",
+          "archive": "http://web.archive.org/web/20250826060221/https://mss.jt.rs/wp-content/uploads/2025/01/%D0%A1%D0%BF%D0%B8%D1%81%D0%B0%D0%BA-%D0%BE%D0%B1%D1%98%D0%B0%D0%B2%D1%99%D0%B5%D0%BD%D0%B5-%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D1%98%D0%B5-1.pdf",
+          "archivedOn": "2025-08-26"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "edge71",
+      "label": "podizvođenje obnove stanice",
+      "labels": {
+        "en": "station renovation subcontract",
+        "sr": "podizvođenje obnove stanice"
+      },
+      "source": "deko_tim",
+      "target": "starting",
+      "uri": "https://w3id.org/vip/rs/Starting_DekoTim_Stanica",
+      "comment": "Ugovor o kamenorezačkim i fasaderskim radovima br. 117-2022, Novi Sad, 8. avgust 2022, prema spisku dokumentacije (stavka 508); 021.rs i Nedeljnik navode da je Starting angažovao Deko-tim, 021.rs sa istim obimom radova; dan potiče samo iz spiska.",
+      "kind": "Connection",
+      "typeLabel": "Generic connection",
+      "start": "2022-08-08",
+      "file": "data/cases/zeleznicka-stanica-novi-sad.ttl",
+      "line": 124,
+      "sources": [
+        {
+          "url": "https://www.021.rs/novi-sad/vesti/400000/objavljen-ugovor-startinga-sa-jos-jednim-podizvodjacem-ko-je-postavljao-staklo-na-nadstresnicu",
+          "domain": "021.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "021.rs, 27. januar 2025: \u0027Deko-tim bio je angažovan za \"izvođenje kamenorezačkih i fasaderskih radova\"\u0027.",
+          "archive": "https://web.archive.org/web/20261111213759/https://www.021.rs/novi-sad/vesti/400000/objavljen-ugovor-startinga-sa-jos-jednim-podizvodjacem-ko-je-postavljao-staklo-na-nadstresnicu",
+          "archivedOn": "2026-11-11"
+        },
+        {
+          "url": "https://mss.jt.rs/wp-content/uploads/2025/01/%D0%A1%D0%BF%D0%B8%D1%81%D0%B0%D0%BA-%D0%BE%D0%B1%D1%98%D0%B0%D0%B2%D1%99%D0%B5%D0%BD%D0%B5-%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D1%98%D0%B5-1.pdf",
+          "domain": "mss.jt.rs",
+          "type": "officialDocument",
+          "status": "published",
+          "quote": "Spisak objavljene dokumentacije (mss.jt.rs, PDF izrađen 27. januara 2025; prema 021.rs i Vremenu, dokumentaciju je objavilo Više javno tužilaštvo u Novom Sadu), stavka 508: \u0027Уговор о извођењу каменорезачких и фасадерских радова, Број: 117-2022 (Стартинг), закључен\u0027; \u0027између Стартинг д.о.о. и ДЕКО-ТИМ д.о.о. Место и датум: Нови Сад, 08.08.2022.\u0027",
+          "archive": "http://web.archive.org/web/20250826060221/https://mss.jt.rs/wp-content/uploads/2025/01/%D0%A1%D0%BF%D0%B8%D1%81%D0%B0%D0%BA-%D0%BE%D0%B1%D1%98%D0%B0%D0%B2%D1%99%D0%B5%D0%BD%D0%B5-%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D1%98%D0%B5-1.pdf",
+          "archivedOn": "2025-08-26"
+        },
+        {
+          "url": "https://www.nedeljnik.rs/od-trgovine-na-malo-do-rekonstrukcije-zeleznicke-stanice-u-roku-od-tri-godine-ko-je-firma-koja-se-spomenjinje-u-izvestaju-vestaka-ftn/",
+          "domain": "nedeljnik.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Nedeljnik, 20. decembar 2024: \u0027angažovan je kao jedan od podizvođača firme „Starting“\u0027.",
+          "archive": "http://web.archive.org/web/20250615121956/https://www.nedeljnik.rs/od-trgovine-na-malo-do-rekonstrukcije-zeleznicke-stanice-u-roku-od-tri-godine-ko-je-firma-koja-se-spomenjinje-u-izvestaju-vestaka-ftn/",
+          "archivedOn": "2025-06-15"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "edge72",
+      "label": "podizvođenje obnove stanice",
+      "labels": {
+        "en": "station renovation subcontract",
+        "sr": "podizvođenje obnove stanice"
+      },
+      "source": "hidro_tehna_novi_sad",
+      "target": "starting",
+      "uri": "https://w3id.org/vip/rs/Starting_HidroTehna_Stanica",
+      "comment": "Spisak dokumentacije (stavka 509) navodi ponudu br. 96 firme Hidro-tehna d.o.o. Novi Sad firmi Starting za hidroizolaciju zgrade stanice, od 29. septembra 2022, i dopunu te ponude za hidroizolaterske radove na krovu, od 8. decembra 2022; to su ponude, spisak ne navodi ugovor. Forbes Srbija (5. maj 2025) prenosi iskaz inženjera firme Starting da je hidroizolaciju radila „Hidrotehna“ kao podizvođač firme Starting. Forbes ne navodi grad, pa da je to novosadska firma zasniva se na imenu i vrsti posla. Kada su radovi počeli i završeni nije poznato.",
+      "kind": "Connection",
+      "typeLabel": "Generic connection",
+      "file": "data/cases/zeleznicka-stanica-novi-sad.ttl",
+      "line": 138,
+      "sources": [
+        {
+          "url": "https://forbes.n1info.rs/biznis/svedoci-startinga-i-kineza-otkrili-ko-je-uklonio-betonske-kocke-sa-krova-stanice-i-zasto-ih-nema-u-gradjevinskom-dnevniku/",
+          "domain": "forbes.n1info.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Forbes Srbija, 5. maj 2025: \u0027A na krovu su radile firma Starting i njen podizvođač Hidrotehna.\u0027; \u0027postavljanje hidroizolacije radila Hidrotehna\u0027.",
+          "archive": "http://web.archive.org/web/20260411022704/https://forbes.n1info.rs/biznis/svedoci-startinga-i-kineza-otkrili-ko-je-uklonio-betonske-kocke-sa-krova-stanice-i-zasto-ih-nema-u-gradjevinskom-dnevniku/",
+          "archivedOn": "2026-04-11"
+        },
+        {
+          "url": "https://mss.jt.rs/wp-content/uploads/2025/01/%D0%A1%D0%BF%D0%B8%D1%81%D0%B0%D0%BA-%D0%BE%D0%B1%D1%98%D0%B0%D0%B2%D1%99%D0%B5%D0%BD%D0%B5-%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D1%98%D0%B5-1.pdf",
+          "domain": "mss.jt.rs",
+          "type": "officialDocument",
+          "status": "published",
+          "quote": "Spisak objavljene dokumentacije (mss.jt.rs, PDF izrađen 27. januara 2025; prema 021.rs i Vremenu, dokumentaciju je objavilo Više javno tužilaštvo u Novom Sadu), stavka 509: \u0027Понуда бр. 96, за израду хидроизолације објекта железничке станице у Новом Саду, од стране\u0027; \u0027Хидро-техна д.о.о. Нови Сад упућена Стартинг д.о.о. Београд. Датум: 29.09.2022.\u0027; \u0027Допина понуди бр. 96, за израду хидроизолатерске радове на крову железничке\u0027; \u0027Београд. Датум: 08.12.2022.\u0027",
+          "archive": "http://web.archive.org/web/20250826060221/https://mss.jt.rs/wp-content/uploads/2025/01/%D0%A1%D0%BF%D0%B8%D1%81%D0%B0%D0%BA-%D0%BE%D0%B1%D1%98%D0%B0%D0%B2%D1%99%D0%B5%D0%BD%D0%B5-%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D1%98%D0%B5-1.pdf",
+          "archivedOn": "2025-08-26"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "edge73",
       "label": "ownership connection",
       "source": "stojan_vujko",
       "target": "kbv_datacom",
@@ -5089,7 +6092,7 @@
   },
   {
     "data": {
-      "id": "edge62",
+      "id": "edge74",
       "label": "ownership connection",
       "source": "stojan_vujko",
       "target": "milenijum_tim",
@@ -5100,7 +6103,7 @@
       "share": 50.0,
       "start": "2003-09-04",
       "file": "data/cases/milenijum-tim.ttl",
-      "line": 36,
+      "line": 34,
       "sources": [
         {
           "url": "https://www.companywall.rs/firma/millennium-team-doo-beograd/MMksspYq",
@@ -5119,6 +6122,229 @@
           "quote": "Enciklopedijski članak, infokutija: \u0027Owner: Ivan Bošnjak (50%), Stojan Vujko (50%)\u0027; \u0027Stojan Vujko (Director)\u0027; tekst: \u0027Founded and formally owned by Ivan Bošnjak and Stojan Vujko\u0027.",
           "archive": "http://web.archive.org/web/20251013140940/https://en.wikipedia.org/wiki/Millennium_Team",
           "archivedOn": "2025-10-13"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "edge75",
+      "label": "ownership connection",
+      "source": "tatjana_vukic",
+      "target": "vista_rica_ad",
+      "uri": "https://w3id.org/vip/rs/TatjanaVukic_VistaRica_75",
+      "comment": "Prospekt iz septembra 2026. i Nova Ekonomija navode udeo Tatjane Vukić od 75% u Vista Rica AD Beograd. Mesec promene je izveden: prospekt navodi saglasnost Komisije za hartije od vrednosti na sticanje kvalifikovanog učešća od 25. marta 2026, a Nova Ekonomija 31. marta 2026. piše da je povećanje udela objavljeno u Centralnom registru hartija od vrednosti; dan prenosa nije naveden.",
+      "kind": "OwnershipConnection",
+      "typeLabel": "Ownership connection",
+      "share": 75.0,
+      "start": "2026-03",
+      "file": "data/cases/vista-rica.ttl",
+      "line": 31,
+      "sources": [
+        {
+          "url": "https://novaekonomija.rs/vesti-iz-zemlje/tatjana-vukic-po-pisanju-medija-partnerka-andreja-vucica-postala-vecinski-vlasnik-investicionog-fonda-vista-rica",
+          "domain": "novaekonomija.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Nova Ekonomija, 31. mart 2026: \u0027Vukić je uvećala svoj udeo u akcionarskom društvu Vista Rica sa 50 na 75 odsto, objavljeno je u Centralnom registru hartija od vrednosti.\u0027",
+          "archive": "http://web.archive.org/web/20260331143934/https://novaekonomija.rs/vesti-iz-zemlje/tatjana-vukic-po-pisanju-medija-partnerka-andreja-vucica-postala-vecinski-vlasnik-investicionog-fonda-vista-rica",
+          "archivedOn": "2026-03-31"
+        },
+        {
+          "url": "https://vistarica.rs/wp-content/uploads/2026/09/Prospekt-VR-Invest-2026-final-potpisan.pdf",
+          "domain": "vistarica.rs",
+          "type": "officialDocument",
+          "status": "published",
+          "quote": "Prospekt Vista Rica Invest, ažuriran 18.09.2026: \u0027Tatjana Vukić, osnivač i akcionar koja poseduje kvalifikovano učešće od 75%\u0027; \u0027Rešenje Komisije o saglasnosti na sticanje kvalifikovanog učešća br. 2/5-101-2546/4-23, od dana 28.11.2023. godine i br. 2/5-103-549/5-26 od dana 25.03.2026. godine\u0027.",
+          "archive": "https://web.archive.org/web/20261111190825/https://vistarica.rs/wp-content/uploads/2026/09/Prospekt-VR-Invest-2026-final-potpisan.pdf",
+          "archivedOn": "2026-11-11"
+        }
+      ],
+      "history": [
+        {
+          "uri": "https://w3id.org/vip/rs/TatjanaVukic_VistaRica_50",
+          "share": 50.0,
+          "end": "2026-03",
+          "comment": "Prospekt iz 2024. navodi da Tatjana Vukić poseduje 50% društva za upravljanje Vista Rica AD Beograd. Mesec promene je izveden: prospekt navodi saglasnost Komisije za hartije od vrednosti na sticanje kvalifikovanog učešća od 25. marta 2026, a Nova Ekonomija 31. marta 2026. piše da je povećanje udela objavljeno u Centralnom registru hartija od vrednosti; dan prenosa nije naveden.",
+          "file": "data/cases/vista-rica.ttl",
+          "line": 16,
+          "sources": [
+            {
+              "url": "https://novaekonomija.rs/vesti-iz-zemlje/tatjana-vukic-po-pisanju-medija-partnerka-andreja-vucica-postala-vecinski-vlasnik-investicionog-fonda-vista-rica",
+              "domain": "novaekonomija.rs",
+              "type": "newsArticle",
+              "status": "published",
+              "quote": "Nova Ekonomija, 31. mart 2026: \u0027Vukić je uvećala svoj udeo u akcionarskom društvu Vista Rica sa 50 na 75 odsto, objavljeno je u Centralnom registru hartija od vrednosti.\u0027",
+              "archive": "http://web.archive.org/web/20260331143934/https://novaekonomija.rs/vesti-iz-zemlje/tatjana-vukic-po-pisanju-medija-partnerka-andreja-vucica-postala-vecinski-vlasnik-investicionog-fonda-vista-rica",
+              "archivedOn": "2026-03-31"
+            },
+            {
+              "url": "https://vistarica.rs/wp-content/uploads/2024/09/VISTA-RICA-CORPORATE_PROSPEKT_.pdf",
+              "domain": "vistarica.rs",
+              "type": "officialDocument",
+              "status": "published",
+              "quote": "Prospekt: \u0027Tatjana Vukić, osnivač i akcionar koji poseduje kvalifikovano učešće od 50%\u0027.",
+              "archive": "https://web.archive.org/web/20261111190811/https://vistarica.rs/wp-content/uploads/2024/09/VISTA-RICA-CORPORATE_PROSPEKT_.pdf",
+              "archivedOn": "2026-11-11"
+            },
+            {
+              "url": "https://vistarica.rs/wp-content/uploads/2026/09/Prospekt-VR-Invest-2026-final-potpisan.pdf",
+              "domain": "vistarica.rs",
+              "type": "officialDocument",
+              "status": "published",
+              "quote": "Prospekt Vista Rica Invest, ažuriran 18.09.2026: \u0027Tatjana Vukić, osnivač i akcionar koja poseduje kvalifikovano učešće od 75%\u0027; \u0027Rešenje Komisije o saglasnosti na sticanje kvalifikovanog učešća br. 2/5-101-2546/4-23, od dana 28.11.2023. godine i br. 2/5-103-549/5-26 od dana 25.03.2026. godine\u0027.",
+              "archive": "https://web.archive.org/web/20261111190825/https://vistarica.rs/wp-content/uploads/2026/09/Prospekt-VR-Invest-2026-final-potpisan.pdf",
+              "archivedOn": "2026-11-11"
+            }
+          ]
+        },
+        {
+          "uri": "https://w3id.org/vip/rs/TatjanaVukic_VistaRica_75",
+          "share": 75.0,
+          "start": "2026-03",
+          "comment": "Prospekt iz septembra 2026. i Nova Ekonomija navode udeo Tatjane Vukić od 75% u Vista Rica AD Beograd. Mesec promene je izveden: prospekt navodi saglasnost Komisije za hartije od vrednosti na sticanje kvalifikovanog učešća od 25. marta 2026, a Nova Ekonomija 31. marta 2026. piše da je povećanje udela objavljeno u Centralnom registru hartija od vrednosti; dan prenosa nije naveden.",
+          "file": "data/cases/vista-rica.ttl",
+          "line": 31,
+          "sources": [
+            {
+              "url": "https://novaekonomija.rs/vesti-iz-zemlje/tatjana-vukic-po-pisanju-medija-partnerka-andreja-vucica-postala-vecinski-vlasnik-investicionog-fonda-vista-rica",
+              "domain": "novaekonomija.rs",
+              "type": "newsArticle",
+              "status": "published",
+              "quote": "Nova Ekonomija, 31. mart 2026: \u0027Vukić je uvećala svoj udeo u akcionarskom društvu Vista Rica sa 50 na 75 odsto, objavljeno je u Centralnom registru hartija od vrednosti.\u0027",
+              "archive": "http://web.archive.org/web/20260331143934/https://novaekonomija.rs/vesti-iz-zemlje/tatjana-vukic-po-pisanju-medija-partnerka-andreja-vucica-postala-vecinski-vlasnik-investicionog-fonda-vista-rica",
+              "archivedOn": "2026-03-31"
+            },
+            {
+              "url": "https://vistarica.rs/wp-content/uploads/2026/09/Prospekt-VR-Invest-2026-final-potpisan.pdf",
+              "domain": "vistarica.rs",
+              "type": "officialDocument",
+              "status": "published",
+              "quote": "Prospekt Vista Rica Invest, ažuriran 18.09.2026: \u0027Tatjana Vukić, osnivač i akcionar koja poseduje kvalifikovano učešće od 75%\u0027; \u0027Rešenje Komisije o saglasnosti na sticanje kvalifikovanog učešća br. 2/5-101-2546/4-23, od dana 28.11.2023. godine i br. 2/5-103-549/5-26 od dana 25.03.2026. godine\u0027.",
+              "archive": "https://web.archive.org/web/20261111190825/https://vistarica.rs/wp-content/uploads/2026/09/Prospekt-VR-Invest-2026-final-potpisan.pdf",
+              "archivedOn": "2026-11-11"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "edge76",
+      "label": "upravlja fondom",
+      "labels": {
+        "en": "manages fund",
+        "sr": "upravlja fondom"
+      },
+      "source": "vista_rica_ad",
+      "target": "vista_rica_corporate",
+      "uri": "https://w3id.org/vip/rs/VistaRicaAD_VistaRicaCorporate_Management",
+      "comment": "Vista Rica AD Beograd upravlja fondom Vista Rica Corporate, prema prospektu fonda i Novoj Ekonomiji. Veza označava upravljanje, ne vlasništvo nad fondom. Datumi nisu utvrđeni.",
+      "kind": "Connection",
+      "typeLabel": "Generic connection",
+      "file": "data/cases/vista-rica.ttl",
+      "line": 84,
+      "sources": [
+        {
+          "url": "https://novaekonomija.rs/vesti-iz-zemlje/tatjana-vukic-po-pisanju-medija-partnerka-andreja-vucica-postala-vecinski-vlasnik-investicionog-fonda-vista-rica",
+          "domain": "novaekonomija.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Nova Ekonomija: \u0027Društvo Vista Rica upravlja fondovima kao što su “Vista Rica Invest” i “Vista Rica Corporate”.\u0027",
+          "archive": "http://web.archive.org/web/20260331143934/https://novaekonomija.rs/vesti-iz-zemlje/tatjana-vukic-po-pisanju-medija-partnerka-andreja-vucica-postala-vecinski-vlasnik-investicionog-fonda-vista-rica",
+          "archivedOn": "2026-03-31"
+        },
+        {
+          "url": "https://vistarica.rs/wp-content/uploads/2024/09/VISTA-RICA-CORPORATE_PROSPEKT_.pdf",
+          "domain": "vistarica.rs",
+          "type": "officialDocument",
+          "status": "published",
+          "quote": "Prospekt fonda Vista Rica Corporate, 4.9.2024: \u0027za upis u registar Fonda Vista Rica Corporate, kojim upravlja Društvo za upravljanje Vista Rica AD\u0027.",
+          "archive": "https://web.archive.org/web/20261111190811/https://vistarica.rs/wp-content/uploads/2024/09/VISTA-RICA-CORPORATE_PROSPEKT_.pdf",
+          "archivedOn": "2026-11-11"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "edge77",
+      "label": "upravlja fondom",
+      "labels": {
+        "en": "manages fund",
+        "sr": "upravlja fondom"
+      },
+      "source": "vista_rica_ad",
+      "target": "vista_rica_invest",
+      "uri": "https://w3id.org/vip/rs/VistaRicaAD_VistaRicaInvest_Management",
+      "comment": "Vista Rica AD Beograd upravlja fondom Vista Rica Invest, prema prospektu fonda i Novoj Ekonomiji. Veza označava upravljanje, ne vlasništvo nad fondom. Datumi nisu utvrđeni.",
+      "kind": "Connection",
+      "typeLabel": "Generic connection",
+      "file": "data/cases/vista-rica.ttl",
+      "line": 73,
+      "sources": [
+        {
+          "url": "https://novaekonomija.rs/vesti-iz-zemlje/tatjana-vukic-po-pisanju-medija-partnerka-andreja-vucica-postala-vecinski-vlasnik-investicionog-fonda-vista-rica",
+          "domain": "novaekonomija.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Nova Ekonomija: \u0027Društvo Vista Rica upravlja fondovima kao što su “Vista Rica Invest” i “Vista Rica Corporate”.\u0027",
+          "archive": "http://web.archive.org/web/20260331143934/https://novaekonomija.rs/vesti-iz-zemlje/tatjana-vukic-po-pisanju-medija-partnerka-andreja-vucica-postala-vecinski-vlasnik-investicionog-fonda-vista-rica",
+          "archivedOn": "2026-03-31"
+        },
+        {
+          "url": "https://vistarica.rs/wp-content/uploads/2026/09/Prospekt-VR-Invest-2026-final-potpisan.pdf",
+          "domain": "vistarica.rs",
+          "type": "officialDocument",
+          "status": "published",
+          "quote": "Prospekt fonda Vista Rica Invest, ažuriran 18.09.2026: \u0027u registar Fonda Vista Rica Invest, kojim upravlja Društvo za upravljanje Vista Rica AD\u0027.",
+          "archive": "https://web.archive.org/web/20261111190825/https://vistarica.rs/wp-content/uploads/2026/09/Prospekt-VR-Invest-2026-final-potpisan.pdf",
+          "archivedOn": "2026-11-11"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "edge78",
+      "label": "ownership connection",
+      "source": "vojislav_nedic",
+      "target": "vista_rica_ad",
+      "uri": "https://w3id.org/vip/rs/VojislavNedic_VistaRica",
+      "comment": "Prospekti i Nova Ekonomija navode Vojislava Nedića kao vlasnika 25% društva Vista Rica AD Beograd. Datumi početka i prestanka vlasništva nisu utvrđeni.",
+      "kind": "OwnershipConnection",
+      "typeLabel": "Ownership connection",
+      "share": 25.0,
+      "file": "data/cases/vista-rica.ttl",
+      "line": 44,
+      "sources": [
+        {
+          "url": "https://novaekonomija.rs/vesti-iz-zemlje/tatjana-vukic-po-pisanju-medija-partnerka-andreja-vucica-postala-vecinski-vlasnik-investicionog-fonda-vista-rica",
+          "domain": "novaekonomija.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Nova Ekonomija: \u0027preostalih 25 odsto je u rukama advokata Vojislava Nedića\u0027.",
+          "archive": "http://web.archive.org/web/20260331143934/https://novaekonomija.rs/vesti-iz-zemlje/tatjana-vukic-po-pisanju-medija-partnerka-andreja-vucica-postala-vecinski-vlasnik-investicionog-fonda-vista-rica",
+          "archivedOn": "2026-03-31"
+        },
+        {
+          "url": "https://vistarica.rs/wp-content/uploads/2024/09/VISTA-RICA-CORPORATE_PROSPEKT_.pdf",
+          "domain": "vistarica.rs",
+          "type": "officialDocument",
+          "status": "published",
+          "quote": "Prospekt Vista Rica Corporate, 4.9.2024: \u0027Vojislav Nedić, osnivač i akcionar koji poseduje kvalifikovano učešće od 25%\u0027.",
+          "archive": "https://web.archive.org/web/20261111190811/https://vistarica.rs/wp-content/uploads/2024/09/VISTA-RICA-CORPORATE_PROSPEKT_.pdf",
+          "archivedOn": "2026-11-11"
+        },
+        {
+          "url": "https://vistarica.rs/wp-content/uploads/2026/09/Prospekt-VR-Invest-2026-final-potpisan.pdf",
+          "domain": "vistarica.rs",
+          "type": "officialDocument",
+          "status": "published",
+          "quote": "Prospekt Vista Rica Invest, ažuriran 18.09.2026: \u0027Vojislav Nedić, osnivač i akcionar koji poseduje kvalifikovano učešće od 25%\u0027.",
+          "archive": "https://web.archive.org/web/20261111190825/https://vistarica.rs/wp-content/uploads/2026/09/Prospekt-VR-Invest-2026-final-potpisan.pdf",
+          "archivedOn": "2026-11-11"
         }
       ]
     }

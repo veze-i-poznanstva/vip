@@ -1,0 +1,24 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rs: <https://w3id.org/vip/rs/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio: <http://purl.org/vocab/bio/0.1/> .
+@prefix : <http://poderopedia.com/vocab/> .
+@prefix vip: <https://w3id.org/vip/vocab#> .
+
+# Matična datoteka: Ljiljana Tripković. Veze su u data/cases/zeleznicka-stanica-novi-sad.ttl.
+# Entity home: Ljiljana Tripković. Connections are in data/cases/zeleznicka-stanica-novi-sad.ttl.
+
+rs:Ljiljana_Tripkovic a foaf:Person ;
+    foaf:name "Ljiljana Tripković"@sr ;
+    foaf:firstName "Ljiljana" ;
+    :firstLastName "Tripković" ;
+    rdfs:comment "Suvlasnica firme Starting sa 70 odsto udela, prema Nova.rs i N1."@sr ;
+    rdfs:comment "Co-owner of Starting with a 70 percent share, per Nova.rs and N1."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://nova.rs/vesti/biznis/sve-o-firmi-starting-koja-je-izvodila-radove-na-zeleznickoj-stanici> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Nova.rs, 11. novembar 2024: 'Ljiljana Tripković poseduje 70 odsto udela u Startingu'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://n1info.rs/vesti/svi-drzavni-poslovi-firme-starting-koja-je-rekonstruisala-zeleznicku-stanicu-u-novom-sadu> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "N1, 11. novembar 2024, prenosi Novu ekonomiju: 'U suvlasništvu je Ljiljane Tripković (70 odsto)'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://nova.rs/vesti/hronika/uhapsen-i-nikola-trivic-suvlasnik-startinga/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Nova.rs, 1. avgust 2025: 'Udeo od 70 odsto u Startingu ima Ljiljana Tripković iz Beograda'."@sr ] .

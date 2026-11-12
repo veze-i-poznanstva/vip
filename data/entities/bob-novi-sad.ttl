@@ -1,0 +1,20 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rs: <https://w3id.org/vip/rs/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio: <http://purl.org/vocab/bio/0.1/> .
+@prefix : <http://poderopedia.com/vocab/> .
+@prefix vip: <https://w3id.org/vip/vocab#> .
+
+# Matična datoteka: Bob d.o.o. Novi Sad. Veze su u data/cases/zeleznicka-stanica-novi-sad.ttl.
+# Entity home: Bob d.o.o. Novi Sad. Connections are in data/cases/zeleznicka-stanica-novi-sad.ttl.
+
+rs:Bob_Novi_Sad a :Company ;
+    foaf:name "Bob d.o.o. Novi Sad"@sr ;
+    rdfs:comment "Firma iz Novog Sada registrovana za proizvodnju, usluge i trgovinu (021.rs); podizvođač firme Starting za aluminarske i bravarske radove na stanici."@sr ;
+    rdfs:comment "A company from Novi Sad registered for production, services and trade (021.rs); Starting's subcontractor for aluminium joinery and metalwork on the station."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://www.021.rs/novi-sad/vesti/400000/objavljen-ugovor-startinga-sa-jos-jednim-podizvodjacem-ko-je-postavljao-staklo-na-nadstresnicu> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "021.rs, 27. januar 2025: 'ugovor podizvođača, firme Starting sa firmom Bob doo iz Novog Sada'; 'Privredno društvo \"Bob doo\" registrovano je za proizvodnju, usluge, spoljnu i unutrašnju trgovinu.'"@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://mss.jt.rs/wp-content/uploads/2025/01/%D0%A1%D0%BF%D0%B8%D1%81%D0%B0%D0%BA-%D0%BE%D0%B1%D1%98%D0%B0%D0%B2%D1%99%D0%B5%D0%BD%D0%B5-%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D1%98%D0%B5-1.pdf> ; :hasDocumentType vip:officialDocument ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Spisak objavljene dokumentacije (mss.jt.rs, PDF izrađen 27. januara 2025; prema 021.rs i Vremenu, dokumentaciju je objavilo Više javno tužilaštvo u Novom Sadu), stavka 503: 'трговину БОБ, д.о.о. Нови Сад, за извођење алуминарије и браварских радова.'"@sr ] .

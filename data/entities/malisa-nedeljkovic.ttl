@@ -1,0 +1,22 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rs: <https://w3id.org/vip/rs/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio: <http://purl.org/vocab/bio/0.1/> .
+@prefix : <http://poderopedia.com/vocab/> .
+@prefix vip: <https://w3id.org/vip/vocab#> .
+
+# Matična datoteka: Mališa Nedeljković. Veze su u data/cases/zeleznicka-stanica-novi-sad.ttl.
+# Entity home: Mališa Nedeljković. Connections are in data/cases/zeleznicka-stanica-novi-sad.ttl.
+
+rs:Malisa_Nedeljkovic a foaf:Person ;
+    foaf:name "Mališa Nedeljković"@sr ;
+    foaf:firstName "Mališa" ;
+    :firstLastName "Nedeljković" ;
+    rdfs:comment "Direktor firme Starting, prema izveštaju Nova.rs od 8. avgusta 2025. Direktno prenosi isti izveštaj Nova.rs, pa je nezavisan izvor jedan. Nova.rs piše da njegova biografija nije javno poznata."@sr ;
+    rdfs:comment "Director of Starting, per Nova.rs on 8 August 2025. Direktno carries the same Nova.rs report, so there is one independent source. Nova.rs writes that his biography is not publicly known."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://nova.rs/vesti/biznis/firma-starting-postavila-novog-direktora-nakon-hapsenja-nikole-trivica> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Nova.rs, 8. avgust 2025: 'dobila je novog direktora Mališu Nedeljkovića'; 'niti je javnosti poznata njegova biografija'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://direktno.rs/vesti/drustvo-i-ekonomija/627014/startign-malisa-nedeljkovic.html> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Direktno, 8. avgust 2025, prenosi Nova.rs (nije nezavisna potvrda): 'dobila je novog direktora Mališu Nedeljkovića'."@sr ] .

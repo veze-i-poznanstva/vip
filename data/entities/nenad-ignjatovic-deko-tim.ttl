@@ -1,0 +1,25 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rs: <https://w3id.org/vip/rs/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio: <http://purl.org/vocab/bio/0.1/> .
+@prefix : <http://poderopedia.com/vocab/> .
+@prefix vip: <https://w3id.org/vip/vocab#> .
+
+# Nenad Ignjatović, vlasnik firme Deko-tim iz Beške / owner of Deko-tim from Beška
+# Ime je često; ovaj zapis je vlasnik firme Deko-tim iz Beške.
+# The name is common; this record is the owner of Deko-tim from Beška.
+# Matična datoteka: Nenad Ignjatović (Deko-tim). Veze su u data/cases/zeleznicka-stanica-novi-sad.ttl.
+# Entity home: Nenad Ignjatović (Deko-tim). Connections are in data/cases/zeleznicka-stanica-novi-sad.ttl.
+
+rs:Nenad_Ignjatovic_Deko_Tim a foaf:Person ;
+    foaf:name "Nenad Ignjatović (Deko-tim)"@sr ;
+    foaf:firstName "Nenad" ;
+    :firstLastName "Ignjatović" ;
+    rdfs:comment "Vlasnik firme Deko-tim, prema Nedeljniku (decembar 2024) i BBC-ju; izvori ga identifikuju samo preko firme."@sr ;
+    rdfs:comment "Owner of Deko-tim, per Nedeljnik (December 2024) and the BBC; the sources identify him only by the firm."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://www.nedeljnik.rs/od-trgovine-na-malo-do-rekonstrukcije-zeleznicke-stanice-u-roku-od-tri-godine-ko-je-firma-koja-se-spomenjinje-u-izvestaju-vestaka-ftn/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Nedeljnik, 20. decembar 2024, o Nenadu Ignjatoviću: 'vlasnik „Deko-tima“ nije hteo da odgovori na pitanja sajta Nedeljnika'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.bbc.com/serbian/articles/cn47xjzq395o/lat> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "BBC na srpskom, objavljeno 1. avgusta 2025: 'Nenad Ignjatović, vlasnik „Deko tim\"'."@sr ] .

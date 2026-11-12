@@ -1,0 +1,24 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rs: <https://w3id.org/vip/rs/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio: <http://purl.org/vocab/bio/0.1/> .
+@prefix : <http://poderopedia.com/vocab/> .
+@prefix vip: <https://w3id.org/vip/vocab#> .
+
+# Matična datoteka: Nikola Trivić. Veze su u data/cases/zeleznicka-stanica-novi-sad.ttl.
+# Entity home: Nikola Trivić. Connections are in data/cases/zeleznicka-stanica-novi-sad.ttl.
+
+rs:Nikola_Trivic a foaf:Person ;
+    foaf:name "Nikola Trivić"@sr ;
+    foaf:firstName "Nikola" ;
+    :firstLastName "Trivić" ;
+    rdfs:comment "Suvlasnik firme Starting sa 30 odsto udela (N1 prenosi Novu ekonomiju; Nova.rs) i njen direktor do avgusta 2025."@sr ;
+    rdfs:comment "Co-owner of Starting with a 30 percent share (N1 relaying Nova ekonomija; Nova.rs) and its director until August 2025."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://n1info.rs/vesti/svi-drzavni-poslovi-firme-starting-koja-je-rekonstruisala-zeleznicku-stanicu-u-novom-sadu> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "N1, 11. novembar 2024, prenosi Novu ekonomiju: 'Nikole Trivića (30 odsto)'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://nova.rs/vesti/hronika/uhapsen-i-nikola-trivic-suvlasnik-startinga/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Nova.rs, 1. avgust 2025: 'Suvlasnik firme Starting Nikola Trivić'; 'a 30 odsto Nikola Trivić'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://www.bbc.com/serbian/articles/cn47xjzq395o/lat> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "BBC na srpskom, objavljeno 1. avgusta 2025: 'Nikola Trivić iz kompanije „Starting\"'."@sr ] .

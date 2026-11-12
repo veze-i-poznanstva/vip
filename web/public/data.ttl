@@ -84,12 +84,6 @@ rs:Milenijum_Tim  rdf:type    foaf:Agent , :Company , foaf:Organization;
                                 :hasDocumentURL     <https://www.krik.rs/tag/milenijum-tim/>
                               ];
         :hasDocumentation     [ rdf:type            :RelatedData , :Documentation;
-                                rdfs:comment        "Povučeno 5. novembra 2026: članak sr.wikipedia.org/wiki/Milenijum_tim ne postoji i prema dnevniku Vikipedije nikada nije ni postojao ni bio obrisan (HTTP 404; API javlja missing, dnevnik brisanja prazan), a Wayback Machine nema nijedan snimak ni latinične ni ćirilične adrese; ne može da potkrepi vlasništvo."@sr;
-                                :hasDocumentStatus  vip:removed;
-                                :hasDocumentType    vip:encyclopediaArticle;
-                                :hasDocumentURL     <https://sr.wikipedia.org/wiki/Milenijum_tim>
-                              ];
-        :hasDocumentation     [ rdf:type            :RelatedData , :Documentation;
                                 :hasDocumentStatus  vip:published;
                                 :hasDocumentType    vip:newsArticle;
                                 :hasDocumentURL     <https://nova.rs/vesti/biznis/novi-rekord-milenijum-tima-od-250-miliona-evra-za-cetiri-godine-prihodi-porasli-tri-puta-nanizali-poslove-na-najvecim-drzavnim-projektima/>
@@ -152,6 +146,33 @@ rs:SinisaMali_VladaSrbije_MinistarFinansija
         bio:participant       rs:Sinisa_Mali , rs:Vlada_Srbije;
         owl:differentFrom     rs:Vlada_Srbije , rs:Sinisa_Mali .
 
+rs:NikolaTrivic_Starting
+        rdf:type            bio:Relationship , vip:OwnershipConnection , :Connection , :SourcedEntity;
+        rdfs:comment        "N1, koji prenosi Novu ekonomiju, i Nova.rs od 1. avgusta 2025. navode 30 odsto; Nova.rs od 11. novembra 2024. piše „preostali deo“. Nema registra ni datuma."@sr , "N1 relaying Nova ekonomija and Nova.rs of 1 August 2025 give 30 percent; Nova.rs of 11 November 2024 says \"the remaining part\". No registry, no dates."@en;
+        :hasDocumentation   [ rdf:type            :RelatedData , :Documentation;
+                              rdfs:comment        "Nova.rs, 1. avgust 2025: 'a 30 odsto Nikola Trivić'."@sr;
+                              :hasDocumentStatus  vip:published;
+                              :hasDocumentType    vip:newsArticle;
+                              :hasDocumentURL     <https://nova.rs/vesti/hronika/uhapsen-i-nikola-trivic-suvlasnik-startinga/>
+                            ];
+        :hasDocumentation   [ rdf:type            :RelatedData , :Documentation;
+                              rdfs:comment        "N1, 11. novembar 2024, prenosi Novu ekonomiju: 'Nikole Trivića (30 odsto)'."@sr;
+                              :hasDocumentStatus  vip:published;
+                              :hasDocumentType    vip:newsArticle;
+                              :hasDocumentURL     <https://n1info.rs/vesti/svi-drzavni-poslovi-firme-starting-koja-je-rekonstruisala-zeleznicku-stanicu-u-novom-sadu>
+                            ];
+        :hasDocumentation   [ rdf:type            :RelatedData , :Documentation;
+                              rdfs:comment        "Nova.rs, 11. novembar 2024: 'preostali deo pripada Nikoli Triviću'."@sr;
+                              :hasDocumentStatus  vip:published;
+                              :hasDocumentType    vip:newsArticle;
+                              :hasDocumentURL     <https://nova.rs/vesti/biznis/sve-o-firmi-starting-koja-je-izvodila-radove-na-zeleznickoj-stanici>
+                            ];
+        bio:participant     rs:Starting , rs:Nikola_Trivic;
+        owl:differentFrom   rs:Nikola_Trivic , rs:Starting;
+        vip:ownedCompany    rs:Starting;
+        vip:owner           rs:Nikola_Trivic;
+        vip:ownershipShare  30.0 .
+
 rs:Pizzarotti_Millennium
         rdf:type            foaf:Organization , :Company , foaf:Agent;
         rdfs:comment        "Pizzarotti Millennium je preduzeće preko kog italijanski Pizzarotti nastupa u Srbiji, izvođač kule u Beogradu na vodi. Osnovano 13. decembra 2018, matični broj 21440639. Većinski vlasnik je Pizzarotti SA sa 96%; Milenijum tim ima 4% i nije matično društvo. Mediji ga nazivaju i Milenijum Picaroti."@sr;
@@ -161,11 +182,6 @@ rs:Pizzarotti_Millennium
                               :hasDocumentStatus  vip:published;
                               :hasDocumentType    vip:newsArticle;
                               :hasDocumentURL     <https://www.danas.rs/vesti/ekonomija/sta-sve-ima-milenijum-tim-novi-vlasnik-hotela-jugoslavija/>
-                            ];
-        :hasDocumentation   [ rdf:type            :RelatedData , :Documentation;
-                              :hasDocumentStatus  vip:removed;
-                              :hasDocumentType    vip:registryRecord;
-                              :hasDocumentURL     <https://www.companywall.rs/firma/milenijum-picaroti-doo-beograd/MPksspYq>
                             ];
         :hasDocumentation   [ rdf:type            :RelatedData , :Documentation;
                               :hasDocumentStatus  vip:published;
@@ -291,6 +307,23 @@ rs:PredragMali_AndrejVucic_Friendship
         bio:participant    rs:Andrej_Vucic , rs:Predrag_Mali;
         owl:differentFrom  rs:Andrej_Vucic , rs:Predrag_Mali .
 
+rs:Vista_Rica_Corporate
+        rdf:type           foaf:Organization , foaf:Agent;
+        rdfs:comment       "Otvoreni alternativni investicioni fond sa javnom ponudom kojim upravlja Vista Rica AD Beograd. Fond nema svojstvo pravnog lica; nije društvo za upravljanje."@sr , "An open-ended alternative investment fund with a public offering, managed by Vista Rica AD Beograd. The fund has no legal personality and is separate from its management company."@en;
+        :hasDocumentation  [ rdf:type            :RelatedData , :Documentation;
+                             rdfs:comment        "Prospekt: 'VISTA RICA CORPORATE'; 'otvoreni alternativni investicioni fond sa javnom ponudom'; 'Otvoreni AIF je zasebna imovina, koja nema svojstvo pravnog lica'."@sr;
+                             :hasDocumentStatus  vip:published;
+                             :hasDocumentType    vip:officialDocument;
+                             :hasDocumentURL     <https://vistarica.rs/wp-content/uploads/2024/09/VISTA-RICA-CORPORATE_PROSPEKT_.pdf>
+                           ];
+        :hasDocumentation  [ rdf:type            :RelatedData , :Documentation;
+                             rdfs:comment        "Nova Ekonomija: 'Društvo Vista Rica upravlja fondovima kao što su “Vista Rica Invest” i “Vista Rica Corporate”.'"@sr;
+                             :hasDocumentStatus  vip:published;
+                             :hasDocumentType    vip:newsArticle;
+                             :hasDocumentURL     <https://novaekonomija.rs/vesti-iz-zemlje/tatjana-vukic-po-pisanju-medija-partnerka-andreja-vucica-postala-vecinski-vlasnik-investicionog-fonda-vista-rica>
+                           ];
+        foaf:name          "Vista Rica Corporate"@sr .
+
 rs:AndrejVucic_KKCrvenaZvezda
         rdf:type              :WorkConnection , :SourcedEntity , :Connection , bio:Relationship;
         rdfs:comment          "Member of the Presidency of KK Crvena zvezda: elected at the first regular assembly session of 2014 (club notice archived on 30 January 2014) with a mandate to 12 August 2016; resigned by the second regular assembly session (notice archived on 30 June 2014). Vreme (1 October 2014) writes that this was his only formal public position and that he left the management \"this summer\". The months follow from those facts."@en , "Član Predsedništva KK Crvena zvezda: izabran na prvoj redovnoj sednici Skupštine 2014 (obaveštenje kluba arhivirano 30. januara 2014) sa mandatom do 12. avgusta 2016; ostavku podneo pre druge redovne sednice Skupštine (obaveštenje arhivirano 30. juna 2014). Vreme (1. oktobar 2014) piše da je to bila njegova jedina formalna javna funkcija i da je upravu napustio „ovog leta“. Meseci su izvedeni iz tih podataka."@sr;
@@ -319,6 +352,25 @@ rs:AndrejVucic_KKCrvenaZvezda
         :hasWorkRole          vip:presidencyMember;
         bio:participant       rs:KK_Crvena_Zvezda , rs:Andrej_Vucic;
         owl:differentFrom     rs:Andrej_Vucic , rs:KK_Crvena_Zvezda .
+
+rs:Tatjana_Vukic  rdf:type  foaf:Person , foaf:Agent;
+        rdfs:comment       "Osnivačica i akcionarka društva Vista Rica AD Beograd; izveštaj Nove Ekonomije beleži povećanje njenog udela sa 50% na 75%."@sr , "Founder and shareholder of Vista Rica AD Beograd; Nova Ekonomija reports her stake increased from 50% to 75%."@en;
+        :firstLastName     "Vukić";
+        :hasDocumentation  [ rdf:type            :RelatedData , :Documentation;
+                             rdfs:comment        "Prospekt iz septembra 2026: 'Tatjana Vukić, osnivač i akcionar' sa učešćem od 75% u društvu za upravljanje."@sr;
+                             :hasDocumentStatus  vip:published;
+                             :hasDocumentType    vip:officialDocument;
+                             :hasDocumentURL     <https://vistarica.rs/wp-content/uploads/2026/09/Prospekt-VR-Invest-2026-final-potpisan.pdf>
+                           ];
+        :hasDocumentation  [ rdf:type            :RelatedData , :Documentation;
+                             rdfs:comment        "Nova Ekonomija: 'Vukić je uvećala svoj udeo u akcionarskom društvu Vista Rica sa 50 na 75 odsto'."@sr;
+                             :hasDocumentStatus  vip:published;
+                             :hasDocumentType    vip:newsArticle;
+                             :hasDocumentURL     <https://novaekonomija.rs/vesti-iz-zemlje/tatjana-vukic-po-pisanju-medija-partnerka-andreja-vucica-postala-vecinski-vlasnik-investicionog-fonda-vista-rica>
+                           ];
+        foaf:familyName    "Vukić";
+        foaf:firstName     "Tatjana";
+        foaf:name          "Tatjana Vukić"@sr .
 
 rs:Peta_Beogradska_Gimnazija
         rdf:type              foaf:Organization , foaf:Agent , :AcademicOrganization;
@@ -356,6 +408,25 @@ rs:AloMediaSystem_Bizmedia
         owl:differentFrom  rs:Bizmedia , rs:Alo_Media_System;
         vip:ownedCompany   rs:Bizmedia;
         vip:owner          rs:Alo_Media_System .
+
+rs:Igor_Brnabic  rdf:type  foaf:Agent , foaf:Person;
+        rdfs:comment       "Brother of Ana Brnabić, identified in Radar’s report and N1’s coverage of that report."@en , "Brat Ane Brnabić, identifikovan u izveštaju Radara i prilogu N1 koji prenosi isti izveštaj."@sr;
+        :firstLastName     "Brnabić";
+        :hasDocumentation  [ rdf:type            :RelatedData , :Documentation;
+                             rdfs:comment        "Radar, 11. decembar 2025: 'rođena braća najviših državnih funkcionera'; 'predsednice parlamenta i bivše premijerke Ane Brnabić'; 'Rekorder među funkcionerskom braćom je, ipak, Igor Brnabić'."@sr;
+                             :hasDocumentStatus  vip:published;
+                             :hasDocumentType    vip:newsArticle;
+                             :hasDocumentURL     <https://radar.nova.rs/ekonomija/investicioni-fond-nedic-tatjana-vukic/>
+                           ];
+        :hasDocumentation  [ rdf:type            :RelatedData , :Documentation;
+                             rdfs:comment        "N1, 11. decembar 2025, prenosi Radar (nije nezavisna potvrda): 'List Radar otkriva da su na spisku klijenata rođena braća najviših državnih funkcionera.'; 'Rekorder među funkcionerskom braćom, ipak je Igor Brnabić'; urednik Radara Milan Ćulibrk: 'brat Siniše Malog i brat Ane Brnabić'."@sr;
+                             :hasDocumentStatus  vip:published;
+                             :hasDocumentType    vip:newsArticle;
+                             :hasDocumentURL     <https://n1info.rs/vesti/poreski-raj-za-naprednjake-smislili-su-svoje-ostrvo-usred-srbije-jeste-li-culi-za-investicioni-fond-vista-rika/>
+                           ];
+        foaf:familyName    "Brnabić";
+        foaf:firstName     "Igor";
+        foaf:name          "Igor Brnabić"@sr .
 
 rs:Northwood_University_Michigan
         rdf:type              foaf:Organization , foaf:Agent , :AcademicOrganization;
@@ -395,6 +466,28 @@ rs:Srecko_Kostov_Surdulica
         foaf:familyName    "Kostov";
         foaf:firstName     "Srećko";
         foaf:name          "Srećko Kostov (Surdulica)"@sr , "Srećko Kostov"@sr .
+
+rs:Starting  rdf:type      foaf:Organization , foaf:Agent , :Company;
+        rdfs:comment       "Građevinska firma iz Beograda; spisak objavljene dokumentacije navodi njeno puno ime sa sedištem „Beograd (Zemun)“. Prema Nova.rs, glavni podizvođač na rekonstrukciji zgrade Železničke stanice u Novom Sadu."@sr , "A construction company from Belgrade; the document index prints its full name with the seat \"Beograd (Zemun)\". Per Nova.rs, the main subcontractor on the reconstruction of the Novi Sad railway station building."@en;
+        :hasDocumentation  [ rdf:type            :RelatedData , :Documentation;
+                             rdfs:comment        "N1, 11. novembar 2024: 'građevinska kompanija Starting, koja je bila podizvođač radova na stanici'."@sr;
+                             :hasDocumentStatus  vip:published;
+                             :hasDocumentType    vip:newsArticle;
+                             :hasDocumentURL     <https://n1info.rs/vesti/svi-drzavni-poslovi-firme-starting-koja-je-rekonstruisala-zeleznicku-stanicu-u-novom-sadu>
+                           ];
+        :hasDocumentation  [ rdf:type            :RelatedData , :Documentation;
+                             rdfs:comment        "Nova.rs, 8. avgust 2025: 'Firma Starting bila je glavni podizvođač na rekonstrukciji stanice'."@sr;
+                             :hasDocumentStatus  vip:published;
+                             :hasDocumentType    vip:newsArticle;
+                             :hasDocumentURL     <https://nova.rs/vesti/biznis/firma-starting-postavila-novog-direktora-nakon-hapsenja-nikole-trivica>
+                           ];
+        :hasDocumentation  [ rdf:type            :RelatedData , :Documentation;
+                             rdfs:comment        "Spisak objavljene dokumentacije (mss.jt.rs, PDF izrađen 27. januara 2025; prema 021.rs i Vremenu, dokumentaciju je objavilo Više javno tužilaštvo u Novom Sadu), stavka 421: 'GRAĐEVINSKO-ZANATSKE RADOVE I INŽENJERING STARTING DOO BEOGRAD (ZEMUN)'."@sr;
+                             :hasDocumentStatus  vip:published;
+                             :hasDocumentType    vip:officialDocument;
+                             :hasDocumentURL     <https://mss.jt.rs/wp-content/uploads/2025/01/%D0%A1%D0%BF%D0%B8%D1%81%D0%B0%D0%BA-%D0%BE%D0%B1%D1%98%D0%B0%D0%B2%D1%99%D0%B5%D0%BD%D0%B5-%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D1%98%D0%B5-1.pdf>
+                           ];
+        foaf:name          "Starting d.o.o. Beograd"@sr .
 
 rs:SinisaMali_EkonomskiFakultet
         rdf:type                  :EducationalConnection , :SourcedEntity , :Connection , :AlumniEducationalConnection , bio:Relationship;
@@ -459,6 +552,34 @@ rs:MilenijumTim_PizzarottiMillennium
         vip:owner           rs:Milenijum_Tim;
         vip:ownershipShare  4.0 .
 
+rs:TatjanaVukic_VistaRica_50
+        rdf:type            :SourcedEntity , vip:OwnershipConnection , :Connection , bio:Relationship;
+        rdfs:comment        "The 2024 prospectus lists Tatjana Vukić as owning 50% of the management company Vista Rica AD Beograd. The month of the change is inferred: the prospectus lists the Securities Commission's consent to the acquisition of a qualified holding, dated 25 March 2026, and Nova Ekonomija wrote on 31 March 2026 that the increase had been published in the Central Securities Register; the day of the transfer is not stated."@en , "Prospekt iz 2024. navodi da Tatjana Vukić poseduje 50% društva za upravljanje Vista Rica AD Beograd. Mesec promene je izveden: prospekt navodi saglasnost Komisije za hartije od vrednosti na sticanje kvalifikovanog učešća od 25. marta 2026, a Nova Ekonomija 31. marta 2026. piše da je povećanje udela objavljeno u Centralnom registru hartija od vrednosti; dan prenosa nije naveden."@sr;
+        :connectionEndDate  "2026-03"^^xsd:gYearMonth;
+        :hasDocumentation   [ rdf:type            :RelatedData , :Documentation;
+                              rdfs:comment        "Prospekt: 'Tatjana Vukić, osnivač i akcionar koji poseduje kvalifikovano učešće od 50%'."@sr;
+                              :hasDocumentStatus  vip:published;
+                              :hasDocumentType    vip:officialDocument;
+                              :hasDocumentURL     <https://vistarica.rs/wp-content/uploads/2024/09/VISTA-RICA-CORPORATE_PROSPEKT_.pdf>
+                            ];
+        :hasDocumentation   [ rdf:type            :RelatedData , :Documentation;
+                              rdfs:comment        "Nova Ekonomija, 31. mart 2026: 'Vukić je uvećala svoj udeo u akcionarskom društvu Vista Rica sa 50 na 75 odsto, objavljeno je u Centralnom registru hartija od vrednosti.'"@sr;
+                              :hasDocumentStatus  vip:published;
+                              :hasDocumentType    vip:newsArticle;
+                              :hasDocumentURL     <https://novaekonomija.rs/vesti-iz-zemlje/tatjana-vukic-po-pisanju-medija-partnerka-andreja-vucica-postala-vecinski-vlasnik-investicionog-fonda-vista-rica>
+                            ];
+        :hasDocumentation   [ rdf:type            :RelatedData , :Documentation;
+                              rdfs:comment        "Prospekt Vista Rica Invest, ažuriran 18.09.2026: 'Tatjana Vukić, osnivač i akcionar koja poseduje kvalifikovano učešće od 75%'; 'Rešenje Komisije o saglasnosti na sticanje kvalifikovanog učešća br. 2/5-101-2546/4-23, od dana 28.11.2023. godine i br. 2/5-103-549/5-26 od dana 25.03.2026. godine'."@sr;
+                              :hasDocumentStatus  vip:published;
+                              :hasDocumentType    vip:officialDocument;
+                              :hasDocumentURL     <https://vistarica.rs/wp-content/uploads/2026/09/Prospekt-VR-Invest-2026-final-potpisan.pdf>
+                            ];
+        bio:participant     rs:Vista_Rica_AD , rs:Tatjana_Vukic;
+        owl:differentFrom   rs:Vista_Rica_AD , rs:Tatjana_Vukic;
+        vip:ownedCompany    rs:Vista_Rica_AD;
+        vip:owner           rs:Tatjana_Vukic;
+        vip:ownershipShare  50.0 .
+
 rs:Service_for_Efficient_Energy
         rdf:type           foaf:Organization , foaf:Agent , :Company;
         rdfs:comment       "Ofšor kompanija sa Britanskih Devičanskih Ostrva koju je Novica Tončev osnovao 2010, prema KRIK-u i Vijestima. Postala je neaktivna 2013. i ugašena 2020. Tončev je posle početnog negiranja priznao vlasništvo, ali je rekao da firma nije poslovala."@sr , "British Virgin Islands offshore company established by Novica Tončev in 2010, according to KRIK and Vijesti. It became inactive in 2013 and was dissolved in 2020. After initially denying involvement, Tončev acknowledged ownership but said the company never traded."@en;
@@ -496,6 +617,34 @@ rs:BestMediaTeam_Miomedia
         owl:differentFrom     rs:Miomedia , rs:Best_Media_Team;
         vip:ownedCompany      rs:Miomedia;
         vip:owner             rs:Best_Media_Team .
+
+rs:NikolaTrivic_Starting_Direktor
+        rdf:type            :SourcedEntity , :WorkConnection , bio:Relationship , :Connection;
+        rdfs:comment        "Nova.rs (8 August 2025) calls him director of Starting in relaying the order to conduct an investigation, and the predecessor of the new director; since when he was director is not stated. The month of the end is inferred: Nova.rs reported his arrest on 1 August 2025 and, on 8 August 2025, that Starting had a new director appointed after that arrest; the day of the change is not stated. The arrest is mentioned only to explain the date."@en , "Nova.rs (8. avgust 2025) ga naziva direktorom firme Starting, kada prenosi naredbu o sprovođenju istrage, i prethodnikom novog direktora; od kada je bio direktor nije navedeno. Mesec kraja je izveden: Nova.rs je 1. avgusta 2025. javio njegovo hapšenje, a 8. avgusta 2025. da je Starting posle tog hapšenja dobio novog direktora; dan promene nije naveden. Hapšenje je pomenuto samo da objasni datum."@sr;
+        :connectionEndDate  "2025-08"^^xsd:gYearMonth;
+        :hasDocumentation   [ rdf:type            :RelatedData , :Documentation;
+                              rdfs:comment        "Direktno, 8. avgust 2025, prenosi Nova.rs (nije nezavisna potvrda): 'direktor privrednog društva \"Starting\" d.o.o. iz Beograda'."@sr;
+                              :hasDocumentStatus  vip:published;
+                              :hasDocumentType    vip:newsArticle;
+                              :hasDocumentURL     <https://direktno.rs/vesti/drustvo-i-ekonomija/627014/startign-malisa-nedeljkovic.html>
+                            ];
+        :hasDocumentation   [ rdf:type            :RelatedData , :Documentation;
+                              rdfs:comment        "Nova.rs, 8. avgust 2025, prenosi naredbu o sprovođenju istrage: 'direktor privrednog društva „Starting“ d.o.o. iz Beograda'; 'hapšenja njegovog prethodnika'."@sr;
+                              :hasDocumentStatus  vip:published;
+                              :hasDocumentType    vip:newsArticle;
+                              :hasDocumentURL     <https://nova.rs/vesti/biznis/firma-starting-postavila-novog-direktora-nakon-hapsenja-nikole-trivica>
+                            ];
+        :hasDocumentation   [ rdf:type            :RelatedData , :Documentation;
+                              rdfs:comment        "Nova.rs, 1. avgust 2025: 'Suvlasnik firme Starting Nikola Trivić jedan je od 14 uhapšenih'."@sr;
+                              :hasDocumentStatus  vip:published;
+                              :hasDocumentType    vip:newsArticle;
+                              :hasDocumentURL     <https://nova.rs/vesti/hronika/uhapsen-i-nikola-trivic-suvlasnik-startinga/>
+                            ];
+        :hasEconomicOrganizationParticipant
+                rs:Starting;
+        :hasWorkRole        :director;
+        bio:participant     rs:Nikola_Trivic , rs:Starting;
+        owl:differentFrom   rs:Nikola_Trivic , rs:Starting .
 
 rs:Predrag_Mali  rdf:type  foaf:Agent , foaf:Person;
         rdfs:comment       "Younger brother of Siniša Mali, per KRIK and per Siniša Mali himself (Globus, 2014, as relayed by KRIK). KRIK reports he directed his brother's firm Oli Consulting from 2005 to 2013 and the family firm Kompost grup, and sat on the board of KK Crvena zvezda in 2014; those roles are not recorded here as connections."@en , "Mlađi brat Siniše Malog, prema KRIK-u i prema samom Siniši Malom (Globus, 2014, preneo KRIK). KRIK navodi da je bio direktor bratovljeve firme Oli Consulting od 2005. do 2013, direktor porodične firme Kompost grup i 2014. član Upravnog odbora KK Crvena zvezda; te uloge ovde nisu zabeležene kao veze."@sr;
@@ -574,6 +723,39 @@ rs:PredragMali_AndrejVucic_Schoolmates
         bio:participant    rs:Predrag_Mali , rs:Andrej_Vucic;
         owl:differentFrom  rs:Predrag_Mali , rs:Andrej_Vucic .
 
+rs:Hidro_Tehna_Novi_Sad
+        rdf:type           foaf:Organization , foaf:Agent , :Company;
+        rdfs:comment       "Firma iz Novog Sada za završne radove u građevinarstvu, matični broj 20326689, osnovana 4. septembra 2007. (imenik firmi ls.rs, bez datuma); spisak objavljene dokumentacije navodi njenu ponudu firmi Starting za hidroizolaciju stanice."@sr , "A company from Novi Sad for finishing works in construction, registration number 20326689, founded 4 September 2007 (the company directory ls.rs, undated); the document index lists its offer to Starting for waterproofing the station."@en;
+        :hasDocumentation  [ rdf:type            :RelatedData , :Documentation;
+                             rdfs:comment        "Imenik firmi ls.rs, bez datuma: 'Matični broj preduzeća je 20326689.'"@sr;
+                             :hasDocumentStatus  vip:published;
+                             :hasDocumentType    vip:webPage;
+                             :hasDocumentURL     <https://hidrotehna-novi-sad.ls.rs/rs>
+                           ];
+        :hasDocumentation  [ rdf:type            :RelatedData , :Documentation;
+                             rdfs:comment        "Spisak objavljene dokumentacije (mss.jt.rs, PDF izrađen 27. januara 2025; prema 021.rs i Vremenu, dokumentaciju je objavilo Više javno tužilaštvo u Novom Sadu), stavka 509: 'Хидро-техна д.о.о. Нови Сад упућена Стартинг д.о.о. Београд. Датум: 29.09.2022.'"@sr;
+                             :hasDocumentStatus  vip:published;
+                             :hasDocumentType    vip:officialDocument;
+                             :hasDocumentURL     <https://mss.jt.rs/wp-content/uploads/2025/01/%D0%A1%D0%BF%D0%B8%D1%81%D0%B0%D0%BA-%D0%BE%D0%B1%D1%98%D0%B0%D0%B2%D1%99%D0%B5%D0%BD%D0%B5-%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D1%98%D0%B5-1.pdf>
+                           ];
+        foaf:name          "Hidro-tehna d.o.o. Novi Sad"@sr .
+
+rs:Bob_Novi_Sad  rdf:type  foaf:Organization , foaf:Agent , :Company;
+        rdfs:comment       "Firma iz Novog Sada registrovana za proizvodnju, usluge i trgovinu (021.rs); podizvođač firme Starting za aluminarske i bravarske radove na stanici."@sr , "A company from Novi Sad registered for production, services and trade (021.rs); Starting's subcontractor for aluminium joinery and metalwork on the station."@en;
+        :hasDocumentation  [ rdf:type            :RelatedData , :Documentation;
+                             rdfs:comment        "Spisak objavljene dokumentacije (mss.jt.rs, PDF izrađen 27. januara 2025; prema 021.rs i Vremenu, dokumentaciju je objavilo Više javno tužilaštvo u Novom Sadu), stavka 503: 'трговину БОБ, д.о.о. Нови Сад, за извођење алуминарије и браварских радова.'"@sr;
+                             :hasDocumentStatus  vip:published;
+                             :hasDocumentType    vip:officialDocument;
+                             :hasDocumentURL     <https://mss.jt.rs/wp-content/uploads/2025/01/%D0%A1%D0%BF%D0%B8%D1%81%D0%B0%D0%BA-%D0%BE%D0%B1%D1%98%D0%B0%D0%B2%D1%99%D0%B5%D0%BD%D0%B5-%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D1%98%D0%B5-1.pdf>
+                           ];
+        :hasDocumentation  [ rdf:type            :RelatedData , :Documentation;
+                             rdfs:comment        "021.rs, 27. januar 2025: 'ugovor podizvođača, firme Starting sa firmom Bob doo iz Novog Sada'; 'Privredno društvo \"Bob doo\" registrovano je za proizvodnju, usluge, spoljnu i unutrašnju trgovinu.'"@sr;
+                             :hasDocumentStatus  vip:published;
+                             :hasDocumentType    vip:newsArticle;
+                             :hasDocumentURL     <https://www.021.rs/novi-sad/vesti/400000/objavljen-ugovor-startinga-sa-jos-jednim-podizvodjacem-ko-je-postavljao-staklo-na-nadstresnicu>
+                           ];
+        foaf:name          "Bob d.o.o. Novi Sad"@sr .
+
 rs:NikolaPetrovicEMS_ArkshoreInternational
         rdf:type              :SourcedEntity , vip:OwnershipConnection , :Connection , bio:Relationship;
         rdfs:comment          "KRIK i RSE su 2021. izvestili da je Nikola Petrović bio vlasnik Arkshore International dok je bio direktor EMS-a; KRIK navodi početak 2016. KRIK prenosi potvrdu Agencije da firma nije prijavljena. Petrović nije odgovorio na pitanja novinara. Udeo i datum prestanka vlasništva nisu navedeni; neaktivnost od novembra 2019. ne znači prestanak vlasništva."@sr , "KRIK and RFE/RL reported in 2021 that Nikola Petrović owned Arkshore International while directing EMS; KRIK dates the beginning to 2016. KRIK reports the Agency confirmed the company was not declared. Petrović did not answer journalists’ questions. His share and ownership end date are not stated; inactivity since November 2019 does not mean ownership ended."@en;
@@ -594,6 +776,32 @@ rs:NikolaPetrovicEMS_ArkshoreInternational
         owl:differentFrom     rs:Arkshore_International , rs:Nikola_Petrovic_EMS;
         vip:ownedCompany      rs:Arkshore_International;
         vip:owner             rs:Nikola_Petrovic_EMS .
+
+rs:CCECCBalkan_Starting_Stanica
+        rdf:type              bio:Relationship , :Connection , :SourcedEntity;
+        rdfs:comment          "Beogradski ogranak CCECC Balkan angažovao je Starting kao podizvođača za obnovu zgrade stanice u Novom Sadu. Spisak dokumentacije navodi Sporazum br. 209-2021 od 1. novembra 2021. (stavka 421) i Podizvođački ugovor od 20. jula 2022. (stavka 419) između njih. Vreme, prenoseći Forbes, piše da je sporazum potpisan u novembru 2021, a ugovor u julu 2022, i da su strane ušle u podizvođački ugovor 10. novembra 2021; Nova.rs, prenoseći naredbu o sprovođenju istrage, navodi da je Starting ponudu dao po pozivu tog ogranka, a ugovor zaključio 1. novembra 2021. sa konzorcijumom ogranaka CCECCB i „11th China Railway“. Početak je zabeležen na mesec jer se dan razlikuje među izvorima. Spisak opisuje dokumente; sami ugovori nisu pročitani."@sr , "CCECC Balkan's Belgrade branch engaged Starting as subcontractor for the renovation of the Novi Sad station building. The document index lists an Agreement no. 209-2021 dated 1 November 2021 (item 421) and a Subcontract dated 20 July 2022 (item 419) between them. Vreme, relaying Forbes, writes that the agreement was signed in November 2021 and the contract in July 2022, and that the parties entered into the subcontract on 10 November 2021; Nova.rs, relaying the order to conduct an investigation, says that Starting made its offer at that branch's invitation and concluded the contract on 1 November 2021 with a consortium of the branches of CCECCB and \"11th China Railway\". The start is recorded to the month because the day differs between the sources. The index describes documents; the contracts themselves were not read."@en;
+        rdfs:label            "podizvođenje obnove stanice"@sr , "station renovation subcontract"@en;
+        :connectionStartDate  "2021-11"^^xsd:gYearMonth;
+        :hasDocumentation     [ rdf:type            :RelatedData , :Documentation;
+                                rdfs:comment        "Vreme, 3. januar 2025, prenosi Forbes: 'Kineska kompanija China Civil Engineering Construction Corporation (CCECC) i srpsko privredno društvo Starting potpisale su sporazum i ugovor po kojima je Starting kao podizvođač dobio za posao rekonstrukcije stanične zgrade u Novom Sadu'; 'Sporazum je potpisan u novembru 2021. godine, a ugovor u julu 2022. godine'; 'ušli u podizvođački ugovor 10. novembra 2021.'"@sr;
+                                :hasDocumentStatus  vip:published;
+                                :hasDocumentType    vip:newsArticle;
+                                :hasDocumentURL     <https://vreme.com/vesti/forbs-kinezi-angazovali-srpsku-firmu-starting-za-renoviranje-zeleznicke-stanice-u-novom-sadu/>
+                              ];
+        :hasDocumentation     [ rdf:type            :RelatedData , :Documentation;
+                                rdfs:comment        "Nova.rs, 8. avgust 2025, prenosi naredbu o sprovođenju istrage: 'po pozivu za davanje ponude od privrednog društva „China Civil Engineering Constuction Corporation Balkan – Ogranak Beograd“'; 'zaključio ugovor 1. novembra 2021.'"@sr;
+                                :hasDocumentStatus  vip:published;
+                                :hasDocumentType    vip:newsArticle;
+                                :hasDocumentURL     <https://nova.rs/vesti/biznis/firma-starting-postavila-novog-direktora-nakon-hapsenja-nikole-trivica>
+                              ];
+        :hasDocumentation     [ rdf:type            :RelatedData , :Documentation;
+                                rdfs:comment        "Spisak objavljene dokumentacije (mss.jt.rs, PDF izrađen 27. januara 2025; prema 021.rs i Vremenu, dokumentaciju je objavilo Više javno tužilaštvo u Novom Sadu), stavka 421: 'CONSTRUCTION CORPORATION BALKAN OGRANAK BEOGRAD AND PRIVREDNO DRUŠTVO'; 'GRAĐEVINSKO-ZANATSKE RADOVE I INŽENJERING STARTING DOO BEOGRAD (ZEMUN)'; 'Број: 209-2021. Датум: 01.11.2021.'; stavka 419: 'Subcontract for Novi Sad Staton Renovaton Project Works.'; 'CCECC Balkan NO. 27. Date: 20.7.2022.'"@sr;
+                                :hasDocumentStatus  vip:published;
+                                :hasDocumentType    vip:officialDocument;
+                                :hasDocumentURL     <https://mss.jt.rs/wp-content/uploads/2025/01/%D0%A1%D0%BF%D0%B8%D1%81%D0%B0%D0%BA-%D0%BE%D0%B1%D1%98%D0%B0%D0%B2%D1%99%D0%B5%D0%BD%D0%B5-%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D1%98%D0%B5-1.pdf>
+                              ];
+        bio:participant       rs:CCECC_Balkan_Ogranak_Beograd , rs:Starting;
+        owl:differentFrom     rs:CCECC_Balkan_Ogranak_Beograd , rs:Starting .
 
 rs:MilenijumTim_RobertsMillennium_Vlasnistvo
         rdf:type              bio:Relationship , :Connection , :SourcedEntity , vip:OwnershipConnection;
@@ -731,6 +939,45 @@ rs:KK_Crvena_Zvezda  rdf:type  foaf:Organization , foaf:Agent , :NonProfitOrgani
         vip:wikidataItem      <http://www.wikidata.org/entity/Q1132627>;
         vip:wikipediaArticle  <https://sr.wikipedia.org/wiki/КК_Црвена_звезда> .
 
+rs:Nenad_Ignjatovic_Deko_Tim
+        rdf:type           foaf:Person , foaf:Agent;
+        rdfs:comment       "Owner of Deko-tim, per Nedeljnik (December 2024) and the BBC; the sources identify him only by the firm."@en , "Vlasnik firme Deko-tim, prema Nedeljniku (decembar 2024) i BBC-ju; izvori ga identifikuju samo preko firme."@sr;
+        :firstLastName     "Ignjatović";
+        :hasDocumentation  [ rdf:type            :RelatedData , :Documentation;
+                             rdfs:comment        "Nedeljnik, 20. decembar 2024, o Nenadu Ignjatoviću: 'vlasnik „Deko-tima“ nije hteo da odgovori na pitanja sajta Nedeljnika'."@sr;
+                             :hasDocumentStatus  vip:published;
+                             :hasDocumentType    vip:newsArticle;
+                             :hasDocumentURL     <https://www.nedeljnik.rs/od-trgovine-na-malo-do-rekonstrukcije-zeleznicke-stanice-u-roku-od-tri-godine-ko-je-firma-koja-se-spomenjinje-u-izvestaju-vestaka-ftn/>
+                           ];
+        :hasDocumentation  [ rdf:type            :RelatedData , :Documentation;
+                             rdfs:comment        "BBC na srpskom, objavljeno 1. avgusta 2025: 'Nenad Ignjatović, vlasnik „Deko tim\"'."@sr;
+                             :hasDocumentStatus  vip:published;
+                             :hasDocumentType    vip:newsArticle;
+                             :hasDocumentURL     <https://www.bbc.com/serbian/articles/cn47xjzq395o/lat>
+                           ];
+        foaf:familyName    "Ignjatović";
+        foaf:firstName     "Nenad";
+        foaf:name          "Nenad Ignjatović (Deko-tim)"@sr .
+
+rs:Starting_HidroTehna_Stanica
+        rdf:type           bio:Relationship , :Connection , :SourcedEntity;
+        rdfs:comment       "Spisak dokumentacije (stavka 509) navodi ponudu br. 96 firme Hidro-tehna d.o.o. Novi Sad firmi Starting za hidroizolaciju zgrade stanice, od 29. septembra 2022, i dopunu te ponude za hidroizolaterske radove na krovu, od 8. decembra 2022; to su ponude, spisak ne navodi ugovor. Forbes Srbija (5. maj 2025) prenosi iskaz inženjera firme Starting da je hidroizolaciju radila „Hidrotehna“ kao podizvođač firme Starting. Forbes ne navodi grad, pa da je to novosadska firma zasniva se na imenu i vrsti posla. Kada su radovi počeli i završeni nije poznato."@sr , "The document index (item 509) lists offer no. 96 of Hidro-tehna d.o.o. Novi Sad to Starting for waterproofing the station building, dated 29 September 2022, and a supplement to it for waterproofing work on the roof, dated 8 December 2022; these are offers, the index lists no contract. Forbes Srbija (5 May 2025) reports the testimony of a Starting engineer that the waterproofing was done by \"Hidrotehna\" as Starting's subcontractor. Forbes names no town, so that this is the Novi Sad company rests on the name and the kind of work. When the work began and ended is unknown."@en;
+        rdfs:label         "podizvođenje obnove stanice"@sr , "station renovation subcontract"@en;
+        :hasDocumentation  [ rdf:type            :RelatedData , :Documentation;
+                             rdfs:comment        "Forbes Srbija, 5. maj 2025: 'A na krovu su radile firma Starting i njen podizvođač Hidrotehna.'; 'postavljanje hidroizolacije radila Hidrotehna'."@sr;
+                             :hasDocumentStatus  vip:published;
+                             :hasDocumentType    vip:newsArticle;
+                             :hasDocumentURL     <https://forbes.n1info.rs/biznis/svedoci-startinga-i-kineza-otkrili-ko-je-uklonio-betonske-kocke-sa-krova-stanice-i-zasto-ih-nema-u-gradjevinskom-dnevniku/>
+                           ];
+        :hasDocumentation  [ rdf:type            :RelatedData , :Documentation;
+                             rdfs:comment        "Spisak objavljene dokumentacije (mss.jt.rs, PDF izrađen 27. januara 2025; prema 021.rs i Vremenu, dokumentaciju je objavilo Više javno tužilaštvo u Novom Sadu), stavka 509: 'Понуда бр. 96, за израду хидроизолације објекта железничке станице у Новом Саду, од стране'; 'Хидро-техна д.о.о. Нови Сад упућена Стартинг д.о.о. Београд. Датум: 29.09.2022.'; 'Допина понуди бр. 96, за израду хидроизолатерске радове на крову железничке'; 'Београд. Датум: 08.12.2022.'"@sr;
+                             :hasDocumentStatus  vip:published;
+                             :hasDocumentType    vip:officialDocument;
+                             :hasDocumentURL     <https://mss.jt.rs/wp-content/uploads/2025/01/%D0%A1%D0%BF%D0%B8%D1%81%D0%B0%D0%BA-%D0%BE%D0%B1%D1%98%D0%B0%D0%B2%D1%99%D0%B5%D0%BD%D0%B5-%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D1%98%D0%B5-1.pdf>
+                           ];
+        bio:participant    rs:Hidro_Tehna_Novi_Sad , rs:Starting;
+        owl:differentFrom  rs:Hidro_Tehna_Novi_Sad , rs:Starting .
+
 rs:AloMediaSystem_INIMedia
         rdf:type            :SourcedEntity , vip:OwnershipConnection , bio:Relationship , :Connection;
         rdfs:comment        "Danas navodi udeo Alo Media System od 51% u INI Media, a Vreme potvrđuje suvlasništvo sa Bojanom Avramovićem. Datum sticanja nije utvrđen."@sr , "Danas reports Alo Media System holds 51% of INI Media; Vreme corroborates co-ownership with Bojan Avramović. The acquisition date is unknown."@en;
@@ -778,6 +1025,33 @@ rs:MilenijumTim_MilleniumProperties
         vip:ownedCompany    rs:Milenijum_Propertiz;
         vip:owner           rs:Milenijum_Tim;
         vip:ownershipShare  26.0 .
+
+rs:LjiljanaTripkovic_Starting
+        rdf:type            :SourcedEntity , :Connection , bio:Relationship , vip:OwnershipConnection;
+        rdfs:comment        "Nova.rs (11. novembar 2024 i 1. avgust 2025) i N1, koji prenosi Novu ekonomiju (11. novembar 2024), navode da Ljiljana Tripković ima 70 odsto firme Starting. Nijedan izvor ne navodi registar niti od kada."@sr , "Nova.rs (11 November 2024 and 1 August 2025) and N1 relaying Nova ekonomija (11 November 2024) give Ljiljana Tripković 70 percent of Starting. No source names a registry or says since when."@en;
+        :hasDocumentation   [ rdf:type            :RelatedData , :Documentation;
+                              rdfs:comment        "Nova.rs, 11. novembar 2024: 'Ljiljana Tripković poseduje 70 odsto udela u Startingu'."@sr;
+                              :hasDocumentStatus  vip:published;
+                              :hasDocumentType    vip:newsArticle;
+                              :hasDocumentURL     <https://nova.rs/vesti/biznis/sve-o-firmi-starting-koja-je-izvodila-radove-na-zeleznickoj-stanici>
+                            ];
+        :hasDocumentation   [ rdf:type            :RelatedData , :Documentation;
+                              rdfs:comment        "Nova.rs, 1. avgust 2025: 'Udeo od 70 odsto u Startingu ima Ljiljana Tripković iz Beograda'."@sr;
+                              :hasDocumentStatus  vip:published;
+                              :hasDocumentType    vip:newsArticle;
+                              :hasDocumentURL     <https://nova.rs/vesti/hronika/uhapsen-i-nikola-trivic-suvlasnik-startinga/>
+                            ];
+        :hasDocumentation   [ rdf:type            :RelatedData , :Documentation;
+                              rdfs:comment        "N1, 11. novembar 2024, prenosi Novu ekonomiju: 'U suvlasništvu je Ljiljane Tripković (70 odsto)'."@sr;
+                              :hasDocumentStatus  vip:published;
+                              :hasDocumentType    vip:newsArticle;
+                              :hasDocumentURL     <https://n1info.rs/vesti/svi-drzavni-poslovi-firme-starting-koja-je-rekonstruisala-zeleznicku-stanicu-u-novom-sadu>
+                            ];
+        bio:participant     rs:Starting , rs:Ljiljana_Tripkovic;
+        owl:differentFrom   rs:Starting , rs:Ljiljana_Tripkovic;
+        vip:ownedCompany    rs:Starting;
+        vip:owner           rs:Ljiljana_Tripkovic;
+        vip:ownershipShare  70.0 .
 
 rs:Maxim_Media_Plus  rdf:type  foaf:Organization , foaf:Agent , :Company;
         rdfs:comment       "Kompanija za komunikacije, medije i marketing; MOM opisuje vlasništvo Global Media Technology i porodice Krdžić."@sr , "Communications, media and marketing company; MOM describes its ownership by Global Media Technology and the Krdžić family."@en;
@@ -890,6 +1164,26 @@ rs:Etham_Invest_Finance
                            ];
         foaf:name          "Etham Invest & Finance Corp."@sr .
 
+rs:MilanVukovljak_BobNoviSad
+        rdf:type           :Connection , :SourcedEntity , vip:OwnershipConnection , bio:Relationship;
+        rdfs:comment       "Vlasnik prema 021.rs (27. januar 2025) i prema Srni u Glasu Srpske (30. avgust 2021), koja navodi samo firmu „Bob“ i Novi Sad kao mesto gde on živi. Udeo i datumi nisu poznati."@sr , "Owner per 021.rs (27 January 2025) and per Srna in Glas Srpske (30 August 2021), which names only the firm \"Bob\" and Novi Sad as where he lives. Share and dates are unknown."@en;
+        :hasDocumentation  [ rdf:type            :RelatedData , :Documentation;
+                             rdfs:comment        "021.rs, 27. januar 2025, pod naslovom 'Šta se zna o Bob doo?': 'Vlasnik je Milan Vukovljak.'"@sr;
+                             :hasDocumentStatus  vip:published;
+                             :hasDocumentType    vip:newsArticle;
+                             :hasDocumentURL     <https://www.021.rs/novi-sad/vesti/400000/objavljen-ugovor-startinga-sa-jos-jednim-podizvodjacem-ko-je-postavljao-staklo-na-nadstresnicu>
+                           ];
+        :hasDocumentation  [ rdf:type            :RelatedData , :Documentation;
+                             rdfs:comment        "Glas Srpske, 30. avgust 2021 (Srna): 'Milan Vukovljak porijeklom iz Gubina, koji živi u Novom Sadu i vlasnik je firme \"Bob\"'."@sr;
+                             :hasDocumentStatus  vip:published;
+                             :hasDocumentType    vip:newsArticle;
+                             :hasDocumentURL     <https://www.glassrpske.com/lat/novosti/drustvo/prikupljene-brojne-donacije-za-izgradnju-konaka-pri-hramu-u-selu-gubin-nadomak-livna/374914>
+                           ];
+        bio:participant    rs:Milan_Vukovljak , rs:Bob_Novi_Sad;
+        owl:differentFrom  rs:Milan_Vukovljak , rs:Bob_Novi_Sad;
+        vip:ownedCompany   rs:Bob_Novi_Sad;
+        vip:owner          rs:Milan_Vukovljak .
+
 rs:SinisaMali_GradBeograd_Gradonacelnik
         rdf:type              :WorkConnection , :SourcedEntity , :Connection , bio:Relationship;
         rdfs:comment          "Siniša Mali je izabran za gradonačelnika Beograda 24. aprila 2014. (Istinomer, Vikipedija) i tu funkciju vršio do maja 2018, kada je izabran za ministra finansija (zvanična biografija Vlade). Dan kraja, 28. maj 2018, daje Vikipedija; Vlada navodi samo mesec."@sr , "Siniša Mali was elected mayor of Belgrade on 24 April 2014 (Istinomer, Wikipedia) and held the office until May 2018, when he was elected finance minister (the Government's official biography). The end day, 28 May 2018, comes from Wikipedia; the Government gives only the month."@en;
@@ -990,6 +1284,34 @@ rs:KBV_Datacom  rdf:type    foaf:Agent , :Company , foaf:Organization;
         skos:altLabel       "KBV datakom"@sr , "Društvo za informacione tehnologije i telekomunikacije KBV DATACOM d.o.o. Beograd"@sr;
         foaf:name           "KBV datakom"@sr , "Društvo za informacione tehnologije i telekomunikacije KBV DATACOM d.o.o. Beograd"@sr , "KBV Datacom d.o.o. Beograd"@sr .
 
+rs:SrdjanDavidovic_VistaRica
+        rdf:type            :Connection , :SourcedEntity , vip:OwnershipConnection , bio:Relationship;
+        rdfs:comment        "Prospekt iz 2024. navodi udeo Srđana Davidovića od 25%; Nova Ekonomija izveštava da je izašao iz vlasništva, dok je udeo Vukić povećan sa 50% na 75%. Mesec promene je izveden: prospekt navodi saglasnost Komisije za hartije od vrednosti na sticanje kvalifikovanog učešća od 25. marta 2026, a Nova Ekonomija 31. marta 2026. piše da je povećanje udela objavljeno u Centralnom registru hartija od vrednosti; dan prenosa nije naveden."@sr , "The 2024 prospectus lists Srđan Davidović’s 25% stake; Nova Ekonomija reports his exit while Vukić’s stake increased from 50% to 75%. The month of the change is inferred: the prospectus lists the Securities Commission's consent to the acquisition of a qualified holding, dated 25 March 2026, and Nova Ekonomija wrote on 31 March 2026 that the increase had been published in the Central Securities Register; the day of the transfer is not stated."@en;
+        :connectionEndDate  "2026-03"^^xsd:gYearMonth;
+        :hasDocumentation   [ rdf:type            :RelatedData , :Documentation;
+                              rdfs:comment        "Nova Ekonomija, 31. mart 2026: 'Iz vlasništva firme je istupio Srđan Davidović'; opisuje povećanje udela Vukić sa 50% na 75%."@sr;
+                              :hasDocumentStatus  vip:published;
+                              :hasDocumentType    vip:newsArticle;
+                              :hasDocumentURL     <https://novaekonomija.rs/vesti-iz-zemlje/tatjana-vukic-po-pisanju-medija-partnerka-andreja-vucica-postala-vecinski-vlasnik-investicionog-fonda-vista-rica>
+                            ];
+        :hasDocumentation   [ rdf:type            :RelatedData , :Documentation;
+                              rdfs:comment        "Prospekt Vista Rica Invest, ažuriran 18.09.2026, Davidovića više ne navodi; pod 'Akcionari Društva su:' stoje samo 'Tatjana Vukić, osnivač i akcionar koja poseduje kvalifikovano učešće od 75%' i 'Vojislav Nedić, osnivač i akcionar koji poseduje kvalifikovano učešće od 25%'."@sr;
+                              :hasDocumentStatus  vip:published;
+                              :hasDocumentType    vip:officialDocument;
+                              :hasDocumentURL     <https://vistarica.rs/wp-content/uploads/2026/09/Prospekt-VR-Invest-2026-final-potpisan.pdf>
+                            ];
+        :hasDocumentation   [ rdf:type            :RelatedData , :Documentation;
+                              rdfs:comment        "Prospekt: 'Srđan Davidović, osnivač i akcionar koji poseduje kvalifikovano učešće od 25%'."@sr;
+                              :hasDocumentStatus  vip:published;
+                              :hasDocumentType    vip:officialDocument;
+                              :hasDocumentURL     <https://vistarica.rs/wp-content/uploads/2024/09/VISTA-RICA-CORPORATE_PROSPEKT_.pdf>
+                            ];
+        bio:participant     rs:Vista_Rica_AD , rs:Srdjan_Davidovic;
+        owl:differentFrom   rs:Srdjan_Davidovic , rs:Vista_Rica_AD;
+        vip:ownedCompany    rs:Vista_Rica_AD;
+        vip:owner           rs:Srdjan_Davidovic;
+        vip:ownershipShare  25.0 .
+
 rs:Darko_Tamindzic  rdf:type  foaf:Agent , foaf:Person;
         rdfs:comment       "Singapore-based businessman whose links to Novica Tončev and Srećko Kostov were reported by KRIK and Vijesti in the Pandora Papers investigation. Tončev said he helped establish the offshore company; Tamindžić’s lawyer acknowledged knowing of its existence."@en , "Biznismen iz Singapura o čijim vezama sa Novicom Tončevom i Srećkom Kostovom izveštavaju KRIK i Vijesti u projektu Pandorini papiri. Prema Tončevu, pomogao mu je da osnuje ofšor firmu; Tamindžićev advokat je potvrdio da zna za postojanje firme."@sr;
         :firstLastName     "Tamindžić";
@@ -1008,6 +1330,31 @@ rs:Darko_Tamindzic  rdf:type  foaf:Agent , foaf:Person;
         foaf:familyName    "Tamindžić";
         foaf:firstName     "Darko";
         foaf:name          "Darko Tamindžić"@sr .
+
+rs:Nikola_Trivic  rdf:type  foaf:Person , foaf:Agent;
+        rdfs:comment       "Suvlasnik firme Starting sa 30 odsto udela (N1 prenosi Novu ekonomiju; Nova.rs) i njen direktor do avgusta 2025."@sr , "Co-owner of Starting with a 30 percent share (N1 relaying Nova ekonomija; Nova.rs) and its director until August 2025."@en;
+        :firstLastName     "Trivić";
+        :hasDocumentation  [ rdf:type            :RelatedData , :Documentation;
+                             rdfs:comment        "N1, 11. novembar 2024, prenosi Novu ekonomiju: 'Nikole Trivića (30 odsto)'."@sr;
+                             :hasDocumentStatus  vip:published;
+                             :hasDocumentType    vip:newsArticle;
+                             :hasDocumentURL     <https://n1info.rs/vesti/svi-drzavni-poslovi-firme-starting-koja-je-rekonstruisala-zeleznicku-stanicu-u-novom-sadu>
+                           ];
+        :hasDocumentation  [ rdf:type            :RelatedData , :Documentation;
+                             rdfs:comment        "Nova.rs, 1. avgust 2025: 'Suvlasnik firme Starting Nikola Trivić'; 'a 30 odsto Nikola Trivić'."@sr;
+                             :hasDocumentStatus  vip:published;
+                             :hasDocumentType    vip:newsArticle;
+                             :hasDocumentURL     <https://nova.rs/vesti/hronika/uhapsen-i-nikola-trivic-suvlasnik-startinga/>
+                           ];
+        :hasDocumentation  [ rdf:type            :RelatedData , :Documentation;
+                             rdfs:comment        "BBC na srpskom, objavljeno 1. avgusta 2025: 'Nikola Trivić iz kompanije „Starting\"'."@sr;
+                             :hasDocumentStatus  vip:published;
+                             :hasDocumentType    vip:newsArticle;
+                             :hasDocumentURL     <https://www.bbc.com/serbian/articles/cn47xjzq395o/lat>
+                           ];
+        foaf:familyName    "Trivić";
+        foaf:firstName     "Nikola";
+        foaf:name          "Nikola Trivić"@sr .
 
 rs:NovicaToncev_DarkoTamindzic_Friendship
         rdf:type           :Connection , :SocialConnection , bio:Relationship , :SourcedEntity , :Friendship;
@@ -1071,6 +1418,25 @@ rs:Ekonomski_fakultet_University_of_Belgrade
         foaf:name             "Ekonomski fakultet Univerziteta u Beogradu"@sr;
         vip:wikidataItem      <http://www.wikidata.org/entity/Q4864983>;
         vip:wikipediaArticle  <https://sr.wikipedia.org/wiki/Економски_факултет_Универзитета_у_Београду> .
+
+rs:Vojislav_Nedic  rdf:type  foaf:Person , foaf:Agent;
+        rdfs:comment       "Advokat, osnivač i akcionar društva Vista Rica AD Beograd sa udelom od 25%, prema prospektu i Novoj Ekonomiji."@sr , "Lawyer, founder and 25% shareholder of Vista Rica AD Beograd, according to the prospectus and Nova Ekonomija."@en;
+        :firstLastName     "Nedić";
+        :hasDocumentation  [ rdf:type            :RelatedData , :Documentation;
+                             rdfs:comment        "Prospekt: 'Vojislav Nedić, osnivač i akcionar' sa učešćem od 25% u društvu za upravljanje."@sr;
+                             :hasDocumentStatus  vip:published;
+                             :hasDocumentType    vip:officialDocument;
+                             :hasDocumentURL     <https://vistarica.rs/wp-content/uploads/2026/09/Prospekt-VR-Invest-2026-final-potpisan.pdf>
+                           ];
+        :hasDocumentation  [ rdf:type            :RelatedData , :Documentation;
+                             rdfs:comment        "Nova Ekonomija: 'preostalih 25 odsto je u rukama advokata Vojislava Nedića'."@sr;
+                             :hasDocumentStatus  vip:published;
+                             :hasDocumentType    vip:newsArticle;
+                             :hasDocumentURL     <https://novaekonomija.rs/vesti-iz-zemlje/tatjana-vukic-po-pisanju-medija-partnerka-andreja-vucica-postala-vecinski-vlasnik-investicionog-fonda-vista-rica>
+                           ];
+        foaf:familyName    "Nedić";
+        foaf:firstName     "Vojislav";
+        foaf:name          "Vojislav Nedić"@sr .
 
 rs:Miomedia  rdf:type      foaf:Organization , foaf:Agent , :Company;
         rdfs:comment       "Medijska kompanija u Mionici koju je osnovao Best Media Team, prema ANEM-u i Vremenu."@sr , "Media company in Mionica established by Best Media Team, according to ANEM and Vreme."@en;
@@ -1163,6 +1529,32 @@ rs:StojanVujko_MilenijumTim
         vip:owner             rs:Stojan_Vujko;
         vip:ownershipShare    50.0 .
 
+rs:Ljiljana_Tripkovic
+        rdf:type           foaf:Person , foaf:Agent;
+        rdfs:comment       "Suvlasnica firme Starting sa 70 odsto udela, prema Nova.rs i N1."@sr , "Co-owner of Starting with a 70 percent share, per Nova.rs and N1."@en;
+        :firstLastName     "Tripković";
+        :hasDocumentation  [ rdf:type            :RelatedData , :Documentation;
+                             rdfs:comment        "N1, 11. novembar 2024, prenosi Novu ekonomiju: 'U suvlasništvu je Ljiljane Tripković (70 odsto)'."@sr;
+                             :hasDocumentStatus  vip:published;
+                             :hasDocumentType    vip:newsArticle;
+                             :hasDocumentURL     <https://n1info.rs/vesti/svi-drzavni-poslovi-firme-starting-koja-je-rekonstruisala-zeleznicku-stanicu-u-novom-sadu>
+                           ];
+        :hasDocumentation  [ rdf:type            :RelatedData , :Documentation;
+                             rdfs:comment        "Nova.rs, 11. novembar 2024: 'Ljiljana Tripković poseduje 70 odsto udela u Startingu'."@sr;
+                             :hasDocumentStatus  vip:published;
+                             :hasDocumentType    vip:newsArticle;
+                             :hasDocumentURL     <https://nova.rs/vesti/biznis/sve-o-firmi-starting-koja-je-izvodila-radove-na-zeleznickoj-stanici>
+                           ];
+        :hasDocumentation  [ rdf:type            :RelatedData , :Documentation;
+                             rdfs:comment        "Nova.rs, 1. avgust 2025: 'Udeo od 70 odsto u Startingu ima Ljiljana Tripković iz Beograda'."@sr;
+                             :hasDocumentStatus  vip:published;
+                             :hasDocumentType    vip:newsArticle;
+                             :hasDocumentURL     <https://nova.rs/vesti/hronika/uhapsen-i-nikola-trivic-suvlasnik-startinga/>
+                           ];
+        foaf:familyName    "Tripković";
+        foaf:firstName     "Ljiljana";
+        foaf:name          "Ljiljana Tripković"@sr .
+
 rs:IvanBosnjak_MilenijumTim
         rdf:type              vip:OwnershipConnection , :SourcedEntity , bio:Relationship , :Connection;
         rdfs:comment          "Ivan Bošnjak je jedan od osnivača i suvlasnik kompanije Milenijum tim, osnovane 4. septembra 2003. Udeo od 50% je aktuelno stanje u registru; udeo pri osnivanju nije poznat."@sr;
@@ -1179,17 +1571,27 @@ rs:IvanBosnjak_MilenijumTim
                                 :hasDocumentType    vip:encyclopediaArticle;
                                 :hasDocumentURL     <https://en.wikipedia.org/wiki/Millennium_Team>
                               ];
-        :hasDocumentation     [ rdf:type            :RelatedData , :Documentation;
-                                rdfs:comment        "Povučeno 5. novembra 2026: članak sr.wikipedia.org/wiki/Milenijum_tim ne postoji i prema dnevniku Vikipedije nikada nije ni postojao ni bio obrisan (HTTP 404; API javlja missing, dnevnik brisanja prazan), a Wayback Machine nema nijedan snimak ni latinične ni ćirilične adrese; ne može da potkrepi vlasništvo."@sr;
-                                :hasDocumentStatus  vip:removed;
-                                :hasDocumentType    vip:encyclopediaArticle;
-                                :hasDocumentURL     <https://sr.wikipedia.org/wiki/Milenijum_tim>
-                              ];
         bio:participant       rs:Milenijum_Tim , rs:Ivan_Bosnjak_Milenijum_Tim;
         owl:differentFrom     rs:Milenijum_Tim , rs:Ivan_Bosnjak_Milenijum_Tim;
         vip:ownedCompany      rs:Milenijum_Tim;
         vip:owner             rs:Ivan_Bosnjak_Milenijum_Tim;
         vip:ownershipShare    50.0 .
+
+rs:Vista_Rica_Invest  rdf:type  foaf:Organization , foaf:Agent;
+        rdfs:comment       "Otvoreni alternativni investicioni fond sa javnom ponudom kojim upravlja Vista Rica AD Beograd. Fond nema svojstvo pravnog lica; nije društvo za upravljanje."@sr , "An open-ended alternative investment fund with a public offering, managed by Vista Rica AD Beograd. The fund has no legal personality and is separate from its management company."@en;
+        :hasDocumentation  [ rdf:type            :RelatedData , :Documentation;
+                             rdfs:comment        "Prospekt: 'Prospekt Vista Rica Invest'; vrsta: 'otvoreni alternativni investicioni fond sa javnom ponudom'; 'Otvoreni AIF je zasebna imovina, koja nema svojstvo pravnog lica'."@sr;
+                             :hasDocumentStatus  vip:published;
+                             :hasDocumentType    vip:officialDocument;
+                             :hasDocumentURL     <https://vistarica.rs/wp-content/uploads/2026/09/Prospekt-VR-Invest-2026-final-potpisan.pdf>
+                           ];
+        :hasDocumentation  [ rdf:type            :RelatedData , :Documentation;
+                             rdfs:comment        "Nova Ekonomija: 'Društvo Vista Rica upravlja fondovima kao što su “Vista Rica Invest” i “Vista Rica Corporate”.'"@sr;
+                             :hasDocumentStatus  vip:published;
+                             :hasDocumentType    vip:newsArticle;
+                             :hasDocumentURL     <https://novaekonomija.rs/vesti-iz-zemlje/tatjana-vukic-po-pisanju-medija-partnerka-andreja-vucica-postala-vecinski-vlasnik-investicionog-fonda-vista-rica>
+                           ];
+        foaf:name          "Vista Rica Invest"@sr .
 
 rs:Mostogradnja_ING  rdf:type  foaf:Organization , foaf:Agent , :Company;
         rdfs:comment        "Mostogradnja ING je građevinska kompanija osnovana 24. novembra 2020, matični broj 21634166. U decembru 2024. kupila je imovinu preduzeća Mostogradnja u stečaju; to je kupovina imovine, a ne trenutak kada je sama prešla u vlasništvo Milenijum tima."@sr;
@@ -1198,11 +1600,6 @@ rs:Mostogradnja_ING  rdf:type  foaf:Organization , foaf:Agent , :Company;
                               :hasDocumentStatus  vip:published;
                               :hasDocumentType    vip:newsArticle;
                               :hasDocumentURL     <https://n1info.rs/biznis/milenijum-tim-kupio-mostogradnju-u-stecaju-za-10-miliona-evra/>
-                            ];
-        :hasDocumentation   [ rdf:type            :RelatedData , :Documentation;
-                              :hasDocumentStatus  vip:removed;
-                              :hasDocumentType    vip:registryRecord;
-                              :hasDocumentURL     <https://www.companywall.rs/firma/mostogradnja-ing-doo-beograd/MBksspYq>
                             ];
         :hasDocumentation   [ rdf:type            :RelatedData , :Documentation;
                               :hasDocumentStatus  vip:published;
@@ -1242,6 +1639,25 @@ rs:Bis_Komerc  rdf:type    foaf:Organization , foaf:Agent , :Company;
                              :hasDocumentURL     <https://serbia.mom-gmr.org/sr/vlasnik/companies/detail/company/company/show/maxim-media-plus-1/>
                            ];
         foaf:name          "Bis-komerc"@sr .
+
+rs:Milan_Vukovljak  rdf:type  foaf:Person , foaf:Agent;
+        rdfs:comment       "Vlasnik firme Bob, prema 021.rs (2025). Srna je 2021. u Glasu Srpske navela Milana Vukovljaka koji živi u Novom Sadu kao vlasnika firme „Bob“, bez sedišta firme i matičnog broja; da je to ista firma zasniva se na imenu, gradu i vrsti posla."@sr , "Owner of Bob, per 021.rs (2025). A 2021 Srna report in Glas Srpske names a Milan Vukovljak who lives in Novi Sad as owner of the firm \"Bob\", without the firm's seat or registration number; that it is the same firm rests on the name, the town and the kind of work."@en;
+        :firstLastName     "Vukovljak";
+        :hasDocumentation  [ rdf:type            :RelatedData , :Documentation;
+                             rdfs:comment        "021.rs, 27. januar 2025: 'Privredno društvo \"Bob doo\" registrovano je za proizvodnju, usluge, spoljnu i unutrašnju trgovinu.'; 'Vlasnik je Milan Vukovljak.'"@sr;
+                             :hasDocumentStatus  vip:published;
+                             :hasDocumentType    vip:newsArticle;
+                             :hasDocumentURL     <https://www.021.rs/novi-sad/vesti/400000/objavljen-ugovor-startinga-sa-jos-jednim-podizvodjacem-ko-je-postavljao-staklo-na-nadstresnicu>
+                           ];
+        :hasDocumentation  [ rdf:type            :RelatedData , :Documentation;
+                             rdfs:comment        "Glas Srpske, 30. avgust 2021 (Srna): 'Milan Vukovljak porijeklom iz Gubina, koji živi u Novom Sadu i vlasnik je firme \"Bob\"'."@sr;
+                             :hasDocumentStatus  vip:published;
+                             :hasDocumentType    vip:newsArticle;
+                             :hasDocumentURL     <https://www.glassrpske.com/lat/novosti/drustvo/prikupljene-brojne-donacije-za-izgradnju-konaka-pri-hramu-u-selu-gubin-nadomak-livna/374914>
+                           ];
+        foaf:familyName    "Vukovljak";
+        foaf:firstName     "Milan";
+        foaf:name          "Milan Vukovljak"@sr .
 
 rs:Andrej_Vucic  rdf:type     foaf:Agent , foaf:Person;
         rdfs:comment          "Brother of Aleksandar Vučić; per Wikipedia a senior SNS official and formerly executive director of the National Bank's banknote and coin mint. Member of the Presidency of KK Crvena zvezda from January to June 2014. The kinship with Aleksandar Vučić is not yet recorded as a connection, because Aleksandar Vučić is not in the dataset."@en , "Brat Aleksandra Vučića; prema Vikipediji visoki funkcioner SNS i ranije izvršni direktor Zavoda za izradu novčanica i kovanog novca NBS. Član Predsedništva KK Crvena zvezda od januara do juna 2014. Srodstvo sa Aleksandrom Vučićem ovde još nije zabeleženo kao veza, jer Aleksandar Vučić nije unet u bazu."@sr;
@@ -1386,7 +1802,7 @@ rs:Brigham_Holding_Finance
 
 rs:MihailoJovanovic_VladaSrbije_MinistarInformisanja
         rdf:type              bio:Relationship , :Connection , :WorkConnection , :SourcedEntity;
-        rdfs:comment          "Narodna skupština je 26. oktobra 2022. izglasala treću Vladu Ane Brnabić, sa 157 glasova za i 68 protiv, i ministri su istog dana položili zakletvu; Mihailo Jovanović je u njoj ministar informisanja i telekomunikacija, novog resora izdvojenog iz Ministarstva kulture (RTS, Vreme, Vikipedija). Funkcija je prestala 2. maja 2024, kada je izabrana i zakletvu položila Vlada Miloša Vučevića sa Dejanom Ristićem kao ministrom informisanja i telekomunikacija (Biznis.rs); primopredaja dužnosti u ministarstvu obavljena je 6. maja 2024 (sajt ministarstva)."@sr , "The National Assembly elected Ana Brnabić's third Government on 26 October 2022, by 157 votes to 68, and the ministers took the oath the same day; Mihailo Jovanović was its Minister of Information and Telecommunications, a new portfolio split from the Ministry of Culture (RTS, Vreme, Wikipedia). The office ended on 2 May 2024, when Miloš Vučević's Government was elected and sworn in with Dejan Ristić as Minister of Information and Telecommunications (Biznis.rs); the handover in the ministry took place on 6 May 2024 (the ministry's site)."@en;
+        rdfs:comment          "Narodna skupština je 26. oktobra 2022. izglasala treću Vladu Ane Brnabić, sa 157 glasova za i 68 protiv, i ministri su istog dana položili zakletvu; Mihailo Jovanović je u njoj ministar informisanja i telekomunikacija (RTS, Vikipedija), novog resora izdvojenog iz Ministarstva kulture (Vreme). Kraj je datum izbora sledeće Vlade: 2. maja 2024. izabrana je i zakletvu položila Vlada Miloša Vučevića, sa Dejanom Ristićem kao ministrom informisanja i telekomunikacija (Biznis.rs); primopredaja dužnosti u ministarstvu obavljena je 6. maja 2024 (sajt ministarstva)."@sr , "The National Assembly elected Ana Brnabić's third Government on 26 October 2022, by 157 votes to 68, and the ministers took the oath the same day; Mihailo Jovanović was its Minister of Information and Telecommunications (RTS, Wikipedia), a new portfolio split from the Ministry of Culture (Vreme). The end is the day the next Government was elected: on 2 May 2024 Miloš Vučević's Government was elected and sworn in, with Dejan Ristić as Minister of Information and Telecommunications (Biznis.rs); the handover in the ministry took place on 6 May 2024 (the ministry's site)."@en;
         :connectionEndDate    "2024-05-02"^^xsd:date;
         :connectionStartDate  "2022-10-26"^^xsd:date;
         :hasDocumentation     [ rdf:type            :RelatedData , :Documentation;
@@ -1402,16 +1818,16 @@ rs:MihailoJovanovic_VladaSrbije_MinistarInformisanja
                                 :hasDocumentURL     <https://www.rts.rs/lat/vesti/politika/4998728/izglasana-nova-vlada-srbije.html>
                               ];
         :hasDocumentation     [ rdf:type            :RelatedData , :Documentation;
+                                rdfs:comment        "Biznis.rs, 2. maj 2024, 'Izabrana nova Vlada Srbije': 'Skupština Republike Srbije izglasala je danas novu vladu na čijem čelu će biti Miloš Vučević, dosadašnji ministar odbrane.'; 'Za novu Vladu Srbije glasalo je 152 od 213 prisutnih poslanika, a 61 poslanik je bio protiv.'; podnaslov 'Ministri položili zakletvu'; u spisku 'ministar informisanja i telekomunikacija Dejan Ristić'."@sr;
+                                :hasDocumentStatus  vip:published;
+                                :hasDocumentType    vip:newsArticle;
+                                :hasDocumentURL     <https://biznis.rs/vesti/srbija/izabrana-nova-vlada-srbije/>
+                              ];
+        :hasDocumentation     [ rdf:type            :RelatedData , :Documentation;
                                 rdfs:comment        "Sajt Ministarstva informisanja i telekomunikacija, 6. maj 2024, 'Primopredaja dužnosti u Ministarstvu informisanja i telekomunikacija': 'Primopredaju su izvršili dosadašnji ministar g. dr Mihailo Jovanović i novoizabrani ministar g. Dejan Ristić.'"@sr;
                                 :hasDocumentStatus  vip:published;
                                 :hasDocumentType    vip:newsArticle;
                                 :hasDocumentURL     <https://mit.gov.rs/vest/sr/4938/primopredaja-duznosti-u-ministarstvu-informisanja-i-telekomunikacija.php>
-                              ];
-        :hasDocumentation     [ rdf:type            :RelatedData , :Documentation;
-                                rdfs:comment        "Biznis.rs, 2. maj 2024, 'Izabrana nova Vlada Srbije': 'Za novu Vladu Srbije glasalo je 152 od 213 prisutnih poslanika, a 61 poslanik je bio protiv.'; podnaslov 'Ministri položili zakletvu'; u spisku 'ministar informisanja i telekomunikacija Dejan Ristić'."@sr;
-                                :hasDocumentStatus  vip:published;
-                                :hasDocumentType    vip:newsArticle;
-                                :hasDocumentURL     <https://biznis.rs/vesti/srbija/izabrana-nova-vlada-srbije/>
                               ];
         :hasDocumentation     [ rdf:type            :RelatedData , :Documentation;
                                 rdfs:comment        "Enciklopedijski članak: 'Најављено је 24. октобра 2022. да ће Јовановић обављати функцију министра телекомуникација и информисања у трећој влади Ане Брнабић.'; 'Заклетву је положио 26. октобра.'; uvod: 'Био је министар телекомуникација и информисања од 2022. до 2024. године.'"@sr;
@@ -1424,6 +1840,32 @@ rs:MihailoJovanovic_VladaSrbije_MinistarInformisanja
         :hasWorkRole          vip:minister;
         bio:participant       rs:Mihailo_Jovanovic , rs:Vlada_Srbije;
         owl:differentFrom     rs:Mihailo_Jovanovic , rs:Vlada_Srbije .
+
+rs:Starting_DekoTim_Stanica
+        rdf:type              :SourcedEntity , :Connection , bio:Relationship;
+        rdfs:comment          "Contract for stonecutting and facade work, no. 117-2022, Novi Sad, 8 August 2022, per the document index (item 508); 021.rs and Nedeljnik report Deko-tim as engaged by Starting, 021.rs with the same scope; the day comes from the index alone."@en , "Ugovor o kamenorezačkim i fasaderskim radovima br. 117-2022, Novi Sad, 8. avgust 2022, prema spisku dokumentacije (stavka 508); 021.rs i Nedeljnik navode da je Starting angažovao Deko-tim, 021.rs sa istim obimom radova; dan potiče samo iz spiska."@sr;
+        rdfs:label            "podizvođenje obnove stanice"@sr , "station renovation subcontract"@en;
+        :connectionStartDate  "2022-08-08"^^xsd:date;
+        :hasDocumentation     [ rdf:type            :RelatedData , :Documentation;
+                                rdfs:comment        "Spisak objavljene dokumentacije (mss.jt.rs, PDF izrađen 27. januara 2025; prema 021.rs i Vremenu, dokumentaciju je objavilo Više javno tužilaštvo u Novom Sadu), stavka 508: 'Уговор о извођењу каменорезачких и фасадерских радова, Број: 117-2022 (Стартинг), закључен'; 'између Стартинг д.о.о. и ДЕКО-ТИМ д.о.о. Место и датум: Нови Сад, 08.08.2022.'"@sr;
+                                :hasDocumentStatus  vip:published;
+                                :hasDocumentType    vip:officialDocument;
+                                :hasDocumentURL     <https://mss.jt.rs/wp-content/uploads/2025/01/%D0%A1%D0%BF%D0%B8%D1%81%D0%B0%D0%BA-%D0%BE%D0%B1%D1%98%D0%B0%D0%B2%D1%99%D0%B5%D0%BD%D0%B5-%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D1%98%D0%B5-1.pdf>
+                              ];
+        :hasDocumentation     [ rdf:type            :RelatedData , :Documentation;
+                                rdfs:comment        "021.rs, 27. januar 2025: 'Deko-tim bio je angažovan za \"izvođenje kamenorezačkih i fasaderskih radova\"'."@sr;
+                                :hasDocumentStatus  vip:published;
+                                :hasDocumentType    vip:newsArticle;
+                                :hasDocumentURL     <https://www.021.rs/novi-sad/vesti/400000/objavljen-ugovor-startinga-sa-jos-jednim-podizvodjacem-ko-je-postavljao-staklo-na-nadstresnicu>
+                              ];
+        :hasDocumentation     [ rdf:type            :RelatedData , :Documentation;
+                                rdfs:comment        "Nedeljnik, 20. decembar 2024: 'angažovan je kao jedan od podizvođača firme „Starting“'."@sr;
+                                :hasDocumentStatus  vip:published;
+                                :hasDocumentType    vip:newsArticle;
+                                :hasDocumentURL     <https://www.nedeljnik.rs/od-trgovine-na-malo-do-rekonstrukcije-zeleznicke-stanice-u-roku-od-tri-godine-ko-je-firma-koja-se-spomenjinje-u-izvestaju-vestaka-ftn/>
+                              ];
+        bio:participant       rs:Starting , rs:Deko_Tim;
+        owl:differentFrom     rs:Deko_Tim , rs:Starting .
 
 rs:Ivan_Bosnjak_Zrenjanin
         rdf:type              foaf:Agent , foaf:Person;
@@ -1466,11 +1908,6 @@ rs:MT_Gastel  rdf:type     foaf:Organization , foaf:Agent , :Company;
                              :hasDocumentStatus  vip:published;
                              :hasDocumentType    vip:registryRecord;
                              :hasDocumentURL     <https://www.emis.cn/php/company-profile/YU/Millennium_Team_DOO_Beograd_en_2585748.html>
-                           ];
-        :hasDocumentation  [ rdf:type            :RelatedData , :Documentation;
-                             :hasDocumentStatus  vip:removed;
-                             :hasDocumentType    vip:registryRecord;
-                             :hasDocumentURL     <https://www.companywall.rs/firma/mt-gastel-doo-beograd/MGksspYq>
                            ];
         :hasDocumentation  [ rdf:type            :RelatedData , :Documentation;
                              :hasDocumentStatus  vip:published;
@@ -1554,11 +1991,6 @@ rs:Milenijum_Resorts  rdf:type  :Company , foaf:Organization , foaf:Agent;
                               :hasDocumentStatus  vip:published;
                               :hasDocumentType    vip:webPage;
                               :hasDocumentURL     <https://millenniumteam.rs/en/news/investment-in-tourism-vranjska-banja-resort-is-the-largest-current-project-in-the-south-of-serbia/>
-                            ];
-        :hasDocumentation   [ rdf:type            :RelatedData , :Documentation;
-                              :hasDocumentStatus  vip:removed;
-                              :hasDocumentType    vip:newsArticle;
-                              :hasDocumentURL     <https://nova.rs/vesti/biznis/milenijum-resorts-u-turizmu/>
                             ];
         foaf:name           "Milenijum resorts"@sr .
 
@@ -1735,6 +2167,26 @@ rs:MilenijumTim_PredragMali_Stan
         bio:participant     rs:Milenijum_Tim , rs:Predrag_Mali;
         owl:differentFrom   rs:Milenijum_Tim , rs:Predrag_Mali .
 
+rs:NenadIgnjatovic_DekoTim
+        rdf:type           :Connection , bio:Relationship , vip:OwnershipConnection , :SourcedEntity;
+        rdfs:comment       "Vlasnik prema Nedeljniku (20. decembar 2024) i BBC-ju (članak objavljen 1. avgusta 2025, ažuriran 30. januara 2026). Udeo i datumi nisu poznati. Nedeljnik piše da nije hteo da odgovori na njegova pitanja dok je postupak u toku."@sr , "Owner per Nedeljnik (20 December 2024) and the BBC (article published 1 August 2025, updated 30 January 2026). Share and dates are unknown. Nedeljnik reports that he declined to answer its questions while proceedings are under way."@en;
+        :hasDocumentation  [ rdf:type            :RelatedData , :Documentation;
+                             rdfs:comment        "Nedeljnik, 20. decembar 2024, o Nenadu Ignjatoviću: 'vlasnik „Deko-tima“ nije hteo da odgovori na pitanja sajta Nedeljnika'."@sr;
+                             :hasDocumentStatus  vip:published;
+                             :hasDocumentType    vip:newsArticle;
+                             :hasDocumentURL     <https://www.nedeljnik.rs/od-trgovine-na-malo-do-rekonstrukcije-zeleznicke-stanice-u-roku-od-tri-godine-ko-je-firma-koja-se-spomenjinje-u-izvestaju-vestaka-ftn/>
+                           ];
+        :hasDocumentation  [ rdf:type            :RelatedData , :Documentation;
+                             rdfs:comment        "BBC na srpskom, objavljeno 1. avgusta 2025: 'Nenad Ignjatović, vlasnik „Deko tim\"'."@sr;
+                             :hasDocumentStatus  vip:published;
+                             :hasDocumentType    vip:newsArticle;
+                             :hasDocumentURL     <https://www.bbc.com/serbian/articles/cn47xjzq395o/lat>
+                           ];
+        bio:participant    rs:Nenad_Ignjatovic_Deko_Tim , rs:Deko_Tim;
+        owl:differentFrom  rs:Deko_Tim , rs:Nenad_Ignjatovic_Deko_Tim;
+        vip:ownedCompany   rs:Deko_Tim;
+        vip:owner          rs:Nenad_Ignjatovic_Deko_Tim .
+
 rs:StojanVujko_KBVDatacom
         rdf:type            :Connection , :SourcedEntity , vip:OwnershipConnection , bio:Relationship;
         rdfs:comment        "Stojan Vujko is a co-owner of KBV Datacom: Ivan Bošnjak said in court on 22 January 2026 that he and Vujko are \"minority owners\" of the firm (Nova.rs); KRIK wrote in 2019 that the firm is \"majority-owned by the same businessmen, Bošnjak and Vujko\". Per the registry (APR via CompanyWall, read 10 November 2026) the share is 30%, alongside Dragan Kilibarda 30%, Miloš Janjić 5% and Rade Sekulić 5%; the acquisition date is not stated."@en , "Stojan Vujko je suvlasnik KBV Datacom-a: Ivan Bošnjak je na sudu 22. januara 2026. rekao da su on i Vujko „manjinski vlasnici“ te firme (Nova.rs); KRIK je 2019. pisao da je firma „u većinskom vlasništvu istih biznismena – Bošnjaka i Vujka“. Prema registru (APR preko CompanyWall, očitano 10. novembra 2026) udeo je 30%, uz Dragana Kilibardu 30%, Miloša Janjića 5% i Rade Sekulića 5%; datum sticanja nije naveden."@sr;
@@ -1793,17 +2245,6 @@ rs:Milenijum_Adria  rdf:type  :Company , foaf:Organization , foaf:Agent;
                               :hasDocumentType    vip:registryRecord;
                               :hasDocumentURL     <https://www.fininfo.hr/Poduzece/Pregled/millennium-adria/Detaljno/780814>
                             ];
-        :hasDocumentation   [ rdf:type            :RelatedData , :Documentation;
-                              :hasDocumentStatus  vip:removed;
-                              :hasDocumentType    vip:registryRecord;
-                              :hasDocumentURL     <https://www.companywall.rs/firma/milenijum-adria-doo-zagreb/MAksspYq>
-                            ];
-        :hasDocumentation   [ rdf:type            :RelatedData , :Documentation;
-                              rdfs:comment        "Povučeno 1. novembra 2026: članak ne pominje Millennium Adria ni Hrvatsku."@sr;
-                              :hasDocumentStatus  vip:removed;
-                              :hasDocumentType    vip:newsArticle;
-                              :hasDocumentURL     <https://nova.rs/vesti/politika/sta-je-milenijum-tim-sns-fabrika-za-izvlacenje-para/>
-                            ];
         :hasTaxId           "53546365408";
         dcterms:identifier  "53546365408";
         skos:altLabel       "Milenijum Adria";
@@ -1830,6 +2271,25 @@ rs:BestMediaTeam_Infomacva
         vip:ownedCompany      rs:Infomacva;
         vip:owner             rs:Best_Media_Team;
         vip:ownershipShare    80.0 .
+
+rs:VistaRicaAD_VistaRicaInvest_Management
+        rdf:type           bio:Relationship , :SourcedEntity , :Connection;
+        rdfs:comment       "Vista Rica AD Beograd manages Vista Rica Invest, according to the fund prospectus and Nova Ekonomija. This records management, not ownership of the fund. Dates are unknown."@en , "Vista Rica AD Beograd upravlja fondom Vista Rica Invest, prema prospektu fonda i Novoj Ekonomiji. Veza označava upravljanje, ne vlasništvo nad fondom. Datumi nisu utvrđeni."@sr;
+        rdfs:label         "upravlja fondom"@sr , "manages fund"@en;
+        :hasDocumentation  [ rdf:type            :RelatedData , :Documentation;
+                             rdfs:comment        "Prospekt fonda Vista Rica Invest, ažuriran 18.09.2026: 'u registar Fonda Vista Rica Invest, kojim upravlja Društvo za upravljanje Vista Rica AD'."@sr;
+                             :hasDocumentStatus  vip:published;
+                             :hasDocumentType    vip:officialDocument;
+                             :hasDocumentURL     <https://vistarica.rs/wp-content/uploads/2026/09/Prospekt-VR-Invest-2026-final-potpisan.pdf>
+                           ];
+        :hasDocumentation  [ rdf:type            :RelatedData , :Documentation;
+                             rdfs:comment        "Nova Ekonomija: 'Društvo Vista Rica upravlja fondovima kao što su “Vista Rica Invest” i “Vista Rica Corporate”.'"@sr;
+                             :hasDocumentStatus  vip:published;
+                             :hasDocumentType    vip:newsArticle;
+                             :hasDocumentURL     <https://novaekonomija.rs/vesti-iz-zemlje/tatjana-vukic-po-pisanju-medija-partnerka-andreja-vucica-postala-vecinski-vlasnik-investicionog-fonda-vista-rica>
+                           ];
+        bio:participant    rs:Vista_Rica_AD , rs:Vista_Rica_Invest;
+        owl:differentFrom  rs:Vista_Rica_AD , rs:Vista_Rica_Invest .
 
 rs:Matrix_D  rdf:type      foaf:Organization , foaf:Agent , :Company;
         rdfs:comment       "Beogradska kompanija za proizvodnju i emitovanje televizijskog programa; CompanyWall navodi Global Media Technology i Miloša Krdžića kao suvlasnike."@sr , "Belgrade television production and broadcasting company; CompanyWall identifies Global Media Technology and Miloš Krdžić as co-owners."@en;
@@ -1918,21 +2378,33 @@ rs:New_Agency  rdf:type    foaf:Organization , foaf:Agent , :Company;
                            ];
         foaf:name          "New Agency"@sr .
 
-rs:OWP_Info  rdf:type      foaf:Organization , foaf:Agent , :Company;
-        rdfs:comment       "Beogradska kompanija za veb portale, povezana sa portalom Objektiv.rs prema Novoj; CompanyWall navodi Alo Media System i Boška Milosavljevića kao suvlasnike."@sr , "Belgrade web portal company associated with Objektiv.rs according to Nova; CompanyWall lists Alo Media System and Boško Milosavljević as co-owners."@en;
-        :hasDocumentation  [ rdf:type            :RelatedData , :Documentation;
-                             rdfs:comment        "Nova, Owp info: 'ostalih 85 je u vlasništvu Alo Media Sistema', uz Milosavljevićevih 15%."@sr;
-                             :hasDocumentStatus  vip:published;
-                             :hasDocumentType    vip:newsArticle;
-                             :hasDocumentURL     <https://nova.rs/vesti/biznis/vlasnici-aloa-i-informera-vlasnici-skoro-25-medija-u-srbiji>
-                           ];
-        :hasDocumentation  [ rdf:type            :RelatedData , :Documentation;
-                             rdfs:comment        "CompanyWall: 'Trenutni vlasnici kompanije su Alo media system doo Beograd, Boško Milosavljević'."@sr;
-                             :hasDocumentStatus  vip:published;
-                             :hasDocumentType    vip:registryRecord;
-                             :hasDocumentURL     <https://www.companywall.rs/firma/owp-info/MMxI9WKCC>
-                           ];
-        foaf:name          "OWP Info"@sr .
+rs:MalisaNedeljkovic_Starting_Direktor
+        rdf:type              bio:Relationship , :Connection , :SourcedEntity , :WorkConnection;
+        rdfs:comment          "Reported by Nova.rs on 8 August 2025 as the new director, appointed after the arrest of Nikola Trivić, which Nova.rs reported on 1 August 2025. The month is inferred from those two dates; the day of appointment and its source (registry or company) are not stated. Direktno carries the Nova.rs report and is not independent confirmation."@en , "Nova.rs je 8. avgusta 2025. javio da je on novi direktor, postavljen posle hapšenja Nikole Trivića, koje je Nova.rs javio 1. avgusta 2025. Mesec je izveden iz ta dva datuma; dan postavljenja i njegov izvor (registar ili firma) nisu navedeni. Direktno prenosi izveštaj Nova.rs i nije nezavisna potvrda."@sr;
+        :connectionStartDate  "2025-08"^^xsd:gYearMonth;
+        :hasDocumentation     [ rdf:type            :RelatedData , :Documentation;
+                                rdfs:comment        "Direktno, 8. avgust 2025, prenosi Nova.rs (nije nezavisna potvrda): 'dobila je novog direktora Mališu Nedeljkovića'."@sr;
+                                :hasDocumentStatus  vip:published;
+                                :hasDocumentType    vip:newsArticle;
+                                :hasDocumentURL     <https://direktno.rs/vesti/drustvo-i-ekonomija/627014/startign-malisa-nedeljkovic.html>
+                              ];
+        :hasDocumentation     [ rdf:type            :RelatedData , :Documentation;
+                                rdfs:comment        "Nova.rs, 1. avgust 2025: 'Suvlasnik firme Starting Nikola Trivić jedan je od 14 uhapšenih'."@sr;
+                                :hasDocumentStatus  vip:published;
+                                :hasDocumentType    vip:newsArticle;
+                                :hasDocumentURL     <https://nova.rs/vesti/hronika/uhapsen-i-nikola-trivic-suvlasnik-startinga/>
+                              ];
+        :hasDocumentation     [ rdf:type            :RelatedData , :Documentation;
+                                rdfs:comment        "Nova.rs, 8. avgust 2025: 'dobila je novog direktora Mališu Nedeljkovića'."@sr;
+                                :hasDocumentStatus  vip:published;
+                                :hasDocumentType    vip:newsArticle;
+                                :hasDocumentURL     <https://nova.rs/vesti/biznis/firma-starting-postavila-novog-direktora-nakon-hapsenja-nikole-trivica>
+                              ];
+        :hasEconomicOrganizationParticipant
+                rs:Starting;
+        :hasWorkRole          :director;
+        bio:participant       rs:Starting , rs:Malisa_Nedeljkovic;
+        owl:differentFrom     rs:Malisa_Nedeljkovic , rs:Starting .
 
 rs:MilenijumTim_PredragMali_Automobil
         rdf:type              bio:Relationship , :SourcedEntity , :Connection;
@@ -1988,6 +2460,22 @@ rs:Novica_Toncev  rdf:type    foaf:Agent , foaf:Person;
         foaf:name             "Novica Tončev"@sr;
         vip:wikidataItem      <http://www.wikidata.org/entity/Q55584331>;
         vip:wikipediaArticle  <https://sr.wikipedia.org/wiki/Новица_Тончев> .
+
+rs:OWP_Info  rdf:type      foaf:Organization , foaf:Agent , :Company;
+        rdfs:comment       "Beogradska kompanija za veb portale, povezana sa portalom Objektiv.rs prema Novoj; CompanyWall navodi Alo Media System i Boška Milosavljevića kao suvlasnike."@sr , "Belgrade web portal company associated with Objektiv.rs according to Nova; CompanyWall lists Alo Media System and Boško Milosavljević as co-owners."@en;
+        :hasDocumentation  [ rdf:type            :RelatedData , :Documentation;
+                             rdfs:comment        "Nova, Owp info: 'ostalih 85 je u vlasništvu Alo Media Sistema', uz Milosavljevićevih 15%."@sr;
+                             :hasDocumentStatus  vip:published;
+                             :hasDocumentType    vip:newsArticle;
+                             :hasDocumentURL     <https://nova.rs/vesti/biznis/vlasnici-aloa-i-informera-vlasnici-skoro-25-medija-u-srbiji>
+                           ];
+        :hasDocumentation  [ rdf:type            :RelatedData , :Documentation;
+                             rdfs:comment        "CompanyWall: 'Trenutni vlasnici kompanije su Alo media system doo Beograd, Boško Milosavljević'."@sr;
+                             :hasDocumentStatus  vip:published;
+                             :hasDocumentType    vip:registryRecord;
+                             :hasDocumentURL     <https://www.companywall.rs/firma/owp-info/MMxI9WKCC>
+                           ];
+        foaf:name          "OWP Info"@sr .
 
 rs:Nikola_Petrovic_EMS
         rdf:type           foaf:Person , foaf:Agent;
@@ -2047,11 +2535,6 @@ rs:Roberts_Milenijum  rdf:type  :Company , foaf:Organization , foaf:Agent;
                               :hasDocumentURL     <https://www.belgradewaterfront.com/en/news/the-main-works-commence-for-bw-metropolitan/>
                             ];
         :hasDocumentation   [ rdf:type            :RelatedData , :Documentation;
-                              :hasDocumentStatus  vip:removed;
-                              :hasDocumentType    vip:webPage;
-                              :hasDocumentURL     <https://www.krik.rs/tag/roberts-milenijum/>
-                            ];
-        :hasDocumentation   [ rdf:type            :RelatedData , :Documentation;
                               :hasDocumentStatus  vip:published;
                               :hasDocumentType    vip:registryRecord;
                               :hasDocumentURL     <https://pretraga.cubepartner.rs/sr/kompanija/0e55cb2461a3e2c0/roberts-millennium-doo>
@@ -2102,11 +2585,6 @@ rs:Milenijum_Propertiz
         rdfs:comment        "Millennium Properties je društvo za inženjering i investicije, osnovano 30. juna 2008, matični broj 20435887. Milenijum tim ima manjinski udeo; nije zavisno društvo."@sr;
         dbo:foundationDate  "2008-06-30"^^xsd:date;
         :alias              "Milenijum propertiz";
-        :hasDocumentation   [ rdf:type            :RelatedData , :Documentation;
-                              :hasDocumentStatus  vip:removed;
-                              :hasDocumentType    vip:registryRecord;
-                              :hasDocumentURL     <https://www.companywall.rs/firma/milenijum-propertiz-doo-beograd/MPksspYq>
-                            ];
         :hasDocumentation   [ rdf:type            :RelatedData , :Documentation;
                               :hasDocumentStatus  vip:published;
                               :hasDocumentType    vip:registryRecord;
@@ -2160,22 +2638,6 @@ rs:SasaBlagojevic_PetaGimnazija
         bio:participant           rs:Peta_Beogradska_Gimnazija , rs:Sasa_Blagojevic;
         owl:differentFrom         rs:Sasa_Blagojevic , rs:Peta_Beogradska_Gimnazija .
 
-rs:Stojan_Vujko  rdf:type  foaf:Person , foaf:Agent;
-        :firstLastName     "Vujko";
-        :hasDocumentation  [ rdf:type            :RelatedData , :Documentation;
-                             :hasDocumentStatus  vip:published;
-                             :hasDocumentType    vip:encyclopediaArticle;
-                             :hasDocumentURL     <https://en.wikipedia.org/wiki/Millennium_Team>
-                           ];
-        :hasDocumentation  [ rdf:type            :RelatedData , :Documentation;
-                             :hasDocumentStatus  vip:published;
-                             :hasDocumentType    vip:registryRecord;
-                             :hasDocumentURL     <https://www.companywall.rs/firma/millennium-team-doo-beograd/MMksspYq>
-                           ];
-        foaf:familyName    "Vujko";
-        foaf:firstName     "Stojan";
-        foaf:name          "Stojan Vujko"@sr .
-
 rs:MihailoJovanovic_PetaGimnazija
         rdf:type                  :AlumniEducationalConnection , :EducationalConnection , :SourcedEntity , bio:Relationship , :Connection;
         rdfs:comment              "Isto odeljenje kao Siniša Mali, prema članku lista Alo; generacija je došla u školu 1987, prema Siniši Malom, i završila je 1991, prema razrednoj Divni Jovanović."@sr;
@@ -2197,6 +2659,22 @@ rs:MihailoJovanovic_PetaGimnazija
         :hasStudent               rs:Mihailo_Jovanovic;
         bio:participant           rs:Mihailo_Jovanovic , rs:Peta_Beogradska_Gimnazija;
         owl:differentFrom         rs:Peta_Beogradska_Gimnazija , rs:Mihailo_Jovanovic .
+
+rs:Stojan_Vujko  rdf:type  foaf:Person , foaf:Agent;
+        :firstLastName     "Vujko";
+        :hasDocumentation  [ rdf:type            :RelatedData , :Documentation;
+                             :hasDocumentStatus  vip:published;
+                             :hasDocumentType    vip:encyclopediaArticle;
+                             :hasDocumentURL     <https://en.wikipedia.org/wiki/Millennium_Team>
+                           ];
+        :hasDocumentation  [ rdf:type            :RelatedData , :Documentation;
+                             :hasDocumentStatus  vip:published;
+                             :hasDocumentType    vip:registryRecord;
+                             :hasDocumentURL     <https://www.companywall.rs/firma/millennium-team-doo-beograd/MMksspYq>
+                           ];
+        foaf:familyName    "Vujko";
+        foaf:firstName     "Stojan";
+        foaf:name          "Stojan Vujko"@sr .
 
 rs:Trilenium  rdf:type     foaf:Organization , foaf:Agent , :Company;
         rdfs:comment       "Beogradska marketinška i konsultantska kompanija; MOM i Nova navode vlasnički udeo Saše Blagojevića."@sr , "Belgrade marketing and consulting company; MOM and Nova report Saša Blagojević's ownership interest."@en;
@@ -2279,6 +2757,29 @@ rs:SinisaMali_EthamInvestFinance
         vip:owner           rs:Sinisa_Mali;
         vip:ownershipShare  100.0 .
 
+rs:CCECC_Balkan_Ogranak_Beograd
+        rdf:type           foaf:Organization , foaf:Agent , :Company;
+        rdfs:comment       "The Belgrade branch of the Chinese company CCECC Balkan, which engaged Starting on the station; a different company from CRIC and CCCC, which the same sources name separately."@en , "Beogradski ogranak kineske kompanije CCECC Balkan, koji je angažovao firmu Starting na stanici; nije isto što i CRIC i CCCC, koje isti izvori navode odvojeno."@sr;
+        :hasDocumentation  [ rdf:type            :RelatedData , :Documentation;
+                             rdfs:comment        "Vreme, 3. januar 2025, prenosi Forbes: 'Kineska kompanija China Civil Engineering Construction Corporation (CCECC) i srpsko privredno društvo Starting potpisale su sporazum i ugovor'."@sr;
+                             :hasDocumentStatus  vip:published;
+                             :hasDocumentType    vip:newsArticle;
+                             :hasDocumentURL     <https://vreme.com/vesti/forbs-kinezi-angazovali-srpsku-firmu-starting-za-renoviranje-zeleznicke-stanice-u-novom-sadu/>
+                           ];
+        :hasDocumentation  [ rdf:type            :RelatedData , :Documentation;
+                             rdfs:comment        "Spisak objavljene dokumentacije (mss.jt.rs, PDF izrađen 27. januara 2025; prema 021.rs i Vremenu, dokumentaciju je objavilo Više javno tužilaštvo u Novom Sadu), stavka 421: 'CONSTRUCTION CORPORATION BALKAN OGRANAK BEOGRAD AND PRIVREDNO DRUŠTVO'."@sr;
+                             :hasDocumentStatus  vip:published;
+                             :hasDocumentType    vip:officialDocument;
+                             :hasDocumentURL     <https://mss.jt.rs/wp-content/uploads/2025/01/%D0%A1%D0%BF%D0%B8%D1%81%D0%B0%D0%BA-%D0%BE%D0%B1%D1%98%D0%B0%D0%B2%D1%99%D0%B5%D0%BD%D0%B5-%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D1%98%D0%B5-1.pdf>
+                           ];
+        :hasDocumentation  [ rdf:type            :RelatedData , :Documentation;
+                             rdfs:comment        "Nova.rs, 8. avgust 2025, prenosi naredbu o sprovođenju istrage: 'China Civil Engineering Constuction Corporation Balkan – Ogranak Beograd“ (u daljem tekstu: „CCECCB“), inače kineskog podizvođača glavnih izvođača CRIC-CCCC'."@sr;
+                             :hasDocumentStatus  vip:published;
+                             :hasDocumentType    vip:newsArticle;
+                             :hasDocumentURL     <https://nova.rs/vesti/biznis/firma-starting-postavila-novog-direktora-nakon-hapsenja-nikole-trivica>
+                           ];
+        foaf:name          "China Civil Engineering Construction Corporation Balkan, ogranak Beograd"@sr .
+
 rs:SasaBlagojevic_SinisaMali_Classmates
         rdf:type           :SocialConnection , :Connection , :SourcedEntity , bio:Relationship , :Classmate;
         rdfs:comment       "Saša Blagojević i Siniša Mali bili su u istom odeljenju Pete beogradske gimnazije krajem osamdesetih, prema Pištaljci i kasnijim izveštajima. Tačne godine nisu navedene; navod o istom odeljenju nije izveden samo iz pohađanja iste škole."@sr , "Saša Blagojević and Siniša Mali were in the same class at Peta beogradska gimnazija in the late 1980s, according to Pištaljka and subsequent reporting. Exact years are not stated; the same-class claim is explicit, rather than inferred from attending the same school."@en;
@@ -2321,6 +2822,22 @@ rs:SasaBlagojevic_SinisaMali_Classmates
                            ];
         bio:participant    rs:Sinisa_Mali , rs:Sasa_Blagojevic;
         owl:differentFrom  rs:Sasa_Blagojevic , rs:Sinisa_Mali .
+
+rs:Vista_Rica_AD  rdf:type  foaf:Organization , foaf:Agent , :Company;
+        rdfs:comment       "The management company for Vista Rica Invest and Vista Rica Corporate, separate from the funds and their assets."@en , "Društvo za upravljanje fondovima Vista Rica Invest i Vista Rica Corporate. Odvojeno od fondova i njihove imovine."@sr;
+        :hasDocumentation  [ rdf:type            :RelatedData , :Documentation;
+                             rdfs:comment        "Nova Ekonomija: 'Društvo Vista Rica upravlja fondovima kao što su “Vista Rica Invest” i “Vista Rica Corporate”.'"@sr;
+                             :hasDocumentStatus  vip:published;
+                             :hasDocumentType    vip:newsArticle;
+                             :hasDocumentURL     <https://novaekonomija.rs/vesti-iz-zemlje/tatjana-vukic-po-pisanju-medija-partnerka-andreja-vucica-postala-vecinski-vlasnik-investicionog-fonda-vista-rica>
+                           ];
+        :hasDocumentation  [ rdf:type            :RelatedData , :Documentation;
+                             rdfs:comment        "Prospekt Vista Rica Invest, ažuriran 18.09.2026: 'alternativnim investicionim fondovima Vista Rica AD Beograd' — poslovno ime društva za upravljanje."@sr;
+                             :hasDocumentStatus  vip:published;
+                             :hasDocumentType    vip:officialDocument;
+                             :hasDocumentURL     <https://vistarica.rs/wp-content/uploads/2026/09/Prospekt-VR-Invest-2026-final-potpisan.pdf>
+                           ];
+        foaf:name          "Vista Rica AD Beograd"@sr .
 
 rs:Infomacva  rdf:type     foaf:Organization , foaf:Agent , :Company;
         rdfs:comment       "Medijska kompanija u Šapcu koju je osnovao Best Media Team; drugi suvlasnik je Dragan Mandić, prema Vremenu i Novoj."@sr , "Media company in Šabac established by Best Media Team; the other co-owner is Dragan Mandić, according to Vreme and Nova."@en;
@@ -2379,6 +2896,25 @@ rs:SasaBlagojevic_AloMarketing
         vip:ownedCompany      rs:Alo_Marketing;
         vip:owner             rs:Sasa_Blagojevic;
         vip:ownershipShare    100.0 .
+
+rs:VistaRicaAD_VistaRicaCorporate_Management
+        rdf:type           :SourcedEntity , bio:Relationship , :Connection;
+        rdfs:comment       "Vista Rica AD Beograd upravlja fondom Vista Rica Corporate, prema prospektu fonda i Novoj Ekonomiji. Veza označava upravljanje, ne vlasništvo nad fondom. Datumi nisu utvrđeni."@sr , "Vista Rica AD Beograd manages Vista Rica Corporate, according to the fund prospectus and Nova Ekonomija. This records management, not ownership of the fund. Dates are unknown."@en;
+        rdfs:label         "upravlja fondom"@sr , "manages fund"@en;
+        :hasDocumentation  [ rdf:type            :RelatedData , :Documentation;
+                             rdfs:comment        "Prospekt fonda Vista Rica Corporate, 4.9.2024: 'za upis u registar Fonda Vista Rica Corporate, kojim upravlja Društvo za upravljanje Vista Rica AD'."@sr;
+                             :hasDocumentStatus  vip:published;
+                             :hasDocumentType    vip:officialDocument;
+                             :hasDocumentURL     <https://vistarica.rs/wp-content/uploads/2024/09/VISTA-RICA-CORPORATE_PROSPEKT_.pdf>
+                           ];
+        :hasDocumentation  [ rdf:type            :RelatedData , :Documentation;
+                             rdfs:comment        "Nova Ekonomija: 'Društvo Vista Rica upravlja fondovima kao što su “Vista Rica Invest” i “Vista Rica Corporate”.'"@sr;
+                             :hasDocumentStatus  vip:published;
+                             :hasDocumentType    vip:newsArticle;
+                             :hasDocumentURL     <https://novaekonomija.rs/vesti-iz-zemlje/tatjana-vukic-po-pisanju-medija-partnerka-andreja-vucica-postala-vecinski-vlasnik-investicionog-fonda-vista-rica>
+                           ];
+        bio:participant    rs:Vista_Rica_Corporate , rs:Vista_Rica_AD;
+        owl:differentFrom  rs:Vista_Rica_Corporate , rs:Vista_Rica_AD .
 
 rs:NALED  rdf:type            foaf:Agent , foaf:Organization;
         rdfs:comment          "NALED je najveća privatno-javna asocijacija u Srbiji koja okuplja kompanije, lokalne samouprave i nevladine organizacije; 330 članova u 2025. prema sopstvenom sajtu."@sr;
@@ -2547,11 +3083,6 @@ rs:MV_Investment  rdf:type  foaf:Agent , foaf:Organization , :Company;
                              :hasDocumentURL     <https://www.danas.rs/vesti/ekonomija/sta-sve-ima-milenijum-tim-novi-vlasnik-hotela-jugoslavija/>
                            ];
         :hasDocumentation  [ rdf:type            :RelatedData , :Documentation;
-                             :hasDocumentStatus  vip:removed;
-                             :hasDocumentType    vip:registryRecord;
-                             :hasDocumentURL     <https://www.companywall.rs/firma/mv-investment-doo-beograd/MVksppYq>
-                           ];
-        :hasDocumentation  [ rdf:type            :RelatedData , :Documentation;
                              :hasDocumentStatus  vip:published;
                              :hasDocumentType    vip:newsArticle;
                              :hasDocumentURL     <https://www.danas.rs/vesti/ekonomija/milenijum-timhotel-jugoslavija/>
@@ -2593,6 +3124,28 @@ rs:SreckoKostov_DarkoTamindzic_Association
         bio:participant    rs:Darko_Tamindzic , rs:Srecko_Kostov_Surdulica;
         owl:differentFrom  rs:Darko_Tamindzic , rs:Srecko_Kostov_Surdulica .
 
+rs:Deko_Tim  rdf:type      foaf:Organization , foaf:Agent , :Company;
+        rdfs:comment       "Firma iz Beške osnovana u avgustu 2020. (Nedeljnik, prema poslovnom registru); podizvođač firme Starting za kamenorezačke i fasaderske radove na stanici."@sr , "A firm from Beška founded in August 2020 (Nedeljnik, from the business registry); Starting's subcontractor for stonecutting and facade work on the station."@en;
+        :hasDocumentation  [ rdf:type            :RelatedData , :Documentation;
+                             rdfs:comment        "021.rs, 27. januar 2025: 'Starting je, kako je 021.rs pisao, angažovao i podizvođača Deko-tim.'"@sr;
+                             :hasDocumentStatus  vip:published;
+                             :hasDocumentType    vip:newsArticle;
+                             :hasDocumentURL     <https://www.021.rs/novi-sad/vesti/400000/objavljen-ugovor-startinga-sa-jos-jednim-podizvodjacem-ko-je-postavljao-staklo-na-nadstresnicu>
+                           ];
+        :hasDocumentation  [ rdf:type            :RelatedData , :Documentation;
+                             rdfs:comment        "Nedeljnik, 20. decembar 2024: 'Jedna firma iz Beške'; 'Reč je firmi „Deko-tim“, osnovanoj u avgustu 2020.'"@sr;
+                             :hasDocumentStatus  vip:published;
+                             :hasDocumentType    vip:newsArticle;
+                             :hasDocumentURL     <https://www.nedeljnik.rs/od-trgovine-na-malo-do-rekonstrukcije-zeleznicke-stanice-u-roku-od-tri-godine-ko-je-firma-koja-se-spomenjinje-u-izvestaju-vestaka-ftn/>
+                           ];
+        :hasDocumentation  [ rdf:type            :RelatedData , :Documentation;
+                             rdfs:comment        "Spisak objavljene dokumentacije (mss.jt.rs, PDF izrađen 27. januara 2025; prema 021.rs i Vremenu, dokumentaciju je objavilo Više javno tužilaštvo u Novom Sadu), stavka 508: 'између Стартинг д.о.о. и ДЕКО-ТИМ д.о.о. Место и датум: Нови Сад, 08.08.2022.'"@sr;
+                             :hasDocumentStatus  vip:published;
+                             :hasDocumentType    vip:officialDocument;
+                             :hasDocumentURL     <https://mss.jt.rs/wp-content/uploads/2025/01/%D0%A1%D0%BF%D0%B8%D1%81%D0%B0%D0%BA-%D0%BE%D0%B1%D1%98%D0%B0%D0%B2%D1%99%D0%B5%D0%BD%D0%B5-%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D1%98%D0%B5-1.pdf>
+                           ];
+        foaf:name          "Deko-tim d.o.o. Beška"@sr .
+
 rs:AnaBrnabic_NALED_Predsednica
         rdf:type              bio:Relationship , :SourcedEntity , :WorkConnection , :Connection;
         rdfs:comment          "Ana Brnabić je bila predsednica Upravnog odbora NALED-a od aprila 2016. do izbora za ministarku u avgustu 2016."@sr;
@@ -2609,12 +3162,6 @@ rs:AnaBrnabic_NALED_Predsednica
                                 :hasDocumentStatus  vip:published;
                                 :hasDocumentType    vip:encyclopediaArticle;
                                 :hasDocumentURL     <https://en.wikipedia.org/wiki/Ana_Brnabi%C4%87>
-                              ];
-        :hasDocumentation     [ rdf:type            :RelatedData , :Documentation;
-                                rdfs:comment        "Sajt NALED-a preusmerava ovu adresu na stranicu greške (404); nikada nije arhivirana."@sr;
-                                :hasDocumentStatus  vip:removed;
-                                :hasDocumentType    vip:webPage;
-                                :hasDocumentURL     <https://naled.rs/o-naled-u/vesti/ana-brnabic-novi-predsednik-upravnog-odbora-naleda/>
                               ];
         :hasDocumentation     [ rdf:type            :RelatedData , :Documentation;
                                 rdfs:comment        "Biografija, jun 2017: od aprila 2016. predsednica Upravnog odbora."@sr;
@@ -2742,6 +3289,90 @@ rs:IvanBosnjakMilenijumTim_KKCrvenaZvezda
         bio:participant       rs:KK_Crvena_Zvezda , rs:Ivan_Bosnjak_Milenijum_Tim;
         owl:differentFrom     rs:Ivan_Bosnjak_Milenijum_Tim , rs:KK_Crvena_Zvezda .
 
+rs:TatjanaVukic_VistaRica_75
+        rdf:type              :SourcedEntity , :Connection , bio:Relationship , vip:OwnershipConnection;
+        rdfs:comment          "The September 2026 prospectus and Nova Ekonomija list Tatjana Vukić’s 75% stake in Vista Rica AD Beograd. The month of the change is inferred: the prospectus lists the Securities Commission's consent to the acquisition of a qualified holding, dated 25 March 2026, and Nova Ekonomija wrote on 31 March 2026 that the increase had been published in the Central Securities Register; the day of the transfer is not stated."@en , "Prospekt iz septembra 2026. i Nova Ekonomija navode udeo Tatjane Vukić od 75% u Vista Rica AD Beograd. Mesec promene je izveden: prospekt navodi saglasnost Komisije za hartije od vrednosti na sticanje kvalifikovanog učešća od 25. marta 2026, a Nova Ekonomija 31. marta 2026. piše da je povećanje udela objavljeno u Centralnom registru hartija od vrednosti; dan prenosa nije naveden."@sr;
+        :connectionStartDate  "2026-03"^^xsd:gYearMonth;
+        :hasDocumentation     [ rdf:type            :RelatedData , :Documentation;
+                                rdfs:comment        "Nova Ekonomija, 31. mart 2026: 'Vukić je uvećala svoj udeo u akcionarskom društvu Vista Rica sa 50 na 75 odsto, objavljeno je u Centralnom registru hartija od vrednosti.'"@sr;
+                                :hasDocumentStatus  vip:published;
+                                :hasDocumentType    vip:newsArticle;
+                                :hasDocumentURL     <https://novaekonomija.rs/vesti-iz-zemlje/tatjana-vukic-po-pisanju-medija-partnerka-andreja-vucica-postala-vecinski-vlasnik-investicionog-fonda-vista-rica>
+                              ];
+        :hasDocumentation     [ rdf:type            :RelatedData , :Documentation;
+                                rdfs:comment        "Prospekt Vista Rica Invest, ažuriran 18.09.2026: 'Tatjana Vukić, osnivač i akcionar koja poseduje kvalifikovano učešće od 75%'; 'Rešenje Komisije o saglasnosti na sticanje kvalifikovanog učešća br. 2/5-101-2546/4-23, od dana 28.11.2023. godine i br. 2/5-103-549/5-26 od dana 25.03.2026. godine'."@sr;
+                                :hasDocumentStatus  vip:published;
+                                :hasDocumentType    vip:officialDocument;
+                                :hasDocumentURL     <https://vistarica.rs/wp-content/uploads/2026/09/Prospekt-VR-Invest-2026-final-potpisan.pdf>
+                              ];
+        bio:participant       rs:Tatjana_Vukic , rs:Vista_Rica_AD;
+        owl:differentFrom     rs:Tatjana_Vukic , rs:Vista_Rica_AD;
+        vip:ownedCompany      rs:Vista_Rica_AD;
+        vip:owner             rs:Tatjana_Vukic;
+        vip:ownershipShare    75.0 .
+
+rs:IgorBrnabic_AnaBrnabic
+        rdf:type           vip:SiblingConnection , :Connection , :SourcedEntity , vip:FamilyConnection , :SocialConnection , bio:Relationship;
+        rdfs:comment       "Igor Brnabić je brat Ane Brnabić, prema Radaru i N1. N1 prenosi Radar i razgovor sa autorima; nije nezavisna potvrda."@sr , "Igor Brnabić is Ana Brnabić’s brother, according to Radar and N1. N1 relays Radar and interviews its authors; it is not independent corroboration."@en;
+        :hasDocumentation  [ rdf:type            :RelatedData , :Documentation;
+                             rdfs:comment        "Radar, 11. decembar 2025: 'rođena braća najviših državnih funkcionera'; 'predsednice parlamenta i bivše premijerke Ane Brnabić'; 'Rekorder među funkcionerskom braćom je, ipak, Igor Brnabić'."@sr;
+                             :hasDocumentStatus  vip:published;
+                             :hasDocumentType    vip:newsArticle;
+                             :hasDocumentURL     <https://radar.nova.rs/ekonomija/investicioni-fond-nedic-tatjana-vukic/>
+                           ];
+        :hasDocumentation  [ rdf:type            :RelatedData , :Documentation;
+                             rdfs:comment        "N1, 11. decembar 2025, prenosi Radar (nije nezavisna potvrda): 'List Radar otkriva da su na spisku klijenata rođena braća najviših državnih funkcionera.'; 'Rekorder među funkcionerskom braćom, ipak je Igor Brnabić'; urednik Radara Milan Ćulibrk: 'brat Siniše Malog i brat Ane Brnabić'."@sr;
+                             :hasDocumentStatus  vip:published;
+                             :hasDocumentType    vip:newsArticle;
+                             :hasDocumentURL     <https://n1info.rs/vesti/poreski-raj-za-naprednjake-smislili-su-svoje-ostrvo-usred-srbije-jeste-li-culi-za-investicioni-fond-vista-rika/>
+                           ];
+        bio:participant    rs:Ana_Brnabic , rs:Igor_Brnabic;
+        owl:differentFrom  rs:Igor_Brnabic , rs:Ana_Brnabic .
+
+rs:VojislavNedic_VistaRica
+        rdf:type            vip:OwnershipConnection , :Connection , :SourcedEntity , bio:Relationship;
+        rdfs:comment        "The prospectuses and Nova Ekonomija list Vojislav Nedić as a 25% owner of Vista Rica AD Beograd. Ownership start and end dates are unknown."@en , "Prospekti i Nova Ekonomija navode Vojislava Nedića kao vlasnika 25% društva Vista Rica AD Beograd. Datumi početka i prestanka vlasništva nisu utvrđeni."@sr;
+        :hasDocumentation   [ rdf:type            :RelatedData , :Documentation;
+                              rdfs:comment        "Nova Ekonomija: 'preostalih 25 odsto je u rukama advokata Vojislava Nedića'."@sr;
+                              :hasDocumentStatus  vip:published;
+                              :hasDocumentType    vip:newsArticle;
+                              :hasDocumentURL     <https://novaekonomija.rs/vesti-iz-zemlje/tatjana-vukic-po-pisanju-medija-partnerka-andreja-vucica-postala-vecinski-vlasnik-investicionog-fonda-vista-rica>
+                            ];
+        :hasDocumentation   [ rdf:type            :RelatedData , :Documentation;
+                              rdfs:comment        "Prospekt Vista Rica Invest, ažuriran 18.09.2026: 'Vojislav Nedić, osnivač i akcionar koji poseduje kvalifikovano učešće od 25%'."@sr;
+                              :hasDocumentStatus  vip:published;
+                              :hasDocumentType    vip:officialDocument;
+                              :hasDocumentURL     <https://vistarica.rs/wp-content/uploads/2026/09/Prospekt-VR-Invest-2026-final-potpisan.pdf>
+                            ];
+        :hasDocumentation   [ rdf:type            :RelatedData , :Documentation;
+                              rdfs:comment        "Prospekt Vista Rica Corporate, 4.9.2024: 'Vojislav Nedić, osnivač i akcionar koji poseduje kvalifikovano učešće od 25%'."@sr;
+                              :hasDocumentStatus  vip:published;
+                              :hasDocumentType    vip:officialDocument;
+                              :hasDocumentURL     <https://vistarica.rs/wp-content/uploads/2024/09/VISTA-RICA-CORPORATE_PROSPEKT_.pdf>
+                            ];
+        bio:participant     rs:Vista_Rica_AD , rs:Vojislav_Nedic;
+        owl:differentFrom   rs:Vista_Rica_AD , rs:Vojislav_Nedic;
+        vip:ownedCompany    rs:Vista_Rica_AD;
+        vip:owner           rs:Vojislav_Nedic;
+        vip:ownershipShare  25.0 .
+
+rs:Global_Media_Technology
+        rdf:type           foaf:Organization , foaf:Agent , :Company;
+        rdfs:comment       "Beogradska kompanija za televizijsku delatnost; MOM i CompanyWall navode Sašu Blagojevića kao vlasnika."@sr , "Belgrade television company; MOM and CompanyWall identify Saša Blagojević as its owner."@en;
+        :hasDocumentation  [ rdf:type            :RelatedData , :Documentation;
+                             rdfs:comment        "MOM Crna Gora: 'Saša Blagojević je 100% vlasnik Global Media Tehnologi d.o.o. Beograd'."@sr;
+                             :hasDocumentStatus  vip:published;
+                             :hasDocumentType    vip:registryRecord;
+                             :hasDocumentURL     <https://montenegro.mom-gmr.org/cg/vlasnici/pojedinci/detail/owner/owner/show/sasa-blagojevic-3/>
+                           ];
+        :hasDocumentation  [ rdf:type            :RelatedData , :Documentation;
+                             rdfs:comment        "CompanyWall: 'Vlasnik kompanije je Saša Blagojević'."@sr;
+                             :hasDocumentStatus  vip:published;
+                             :hasDocumentType    vip:registryRecord;
+                             :hasDocumentURL     <https://www.companywall.rs/firma/global-media-technology-drustvo-sa-ogranicenom-odgovornoscu-beograd-stari-grad/MMz0shQD>
+                           ];
+        foaf:name          "Global Media Technology"@sr .
+
 rs:IvanBosnjakZrenjanin_SNS
         rdf:type                  :AssociationConnection , :SourcedEntity , :Connection , :PoliticalConnection , bio:Relationship;
         rdfs:comment              "Ivan Bošnjak, političar iz Zrenjanina rođen 1974, član je Srpske napredne stranke prema Istinomerovoj biografiji ažuriranoj 14. januara 2015. RTV ga je 2012. opisao kao pokrajinskog poslanika SNS prilikom izbora za gradonačelnika Zrenjanina. Datumi učlanjenja i eventualnog prestanka članstva nisu navedeni u korišćenim izvorima."@sr , "Ivan Bošnjak, the Zrenjanin politician born in 1974, is identified as a Serbian Progressive Party member in Istinomer's biography updated on 14 January 2015. RTV described him as an SNS provincial assembly member when reporting his election as Zrenjanin mayor in 2012. The cited sources do not state when membership began or whether it subsequently ended."@en;
@@ -2763,23 +3394,6 @@ rs:IvanBosnjakZrenjanin_SNS
         bio:participant           rs:SNS , rs:Ivan_Bosnjak_Zrenjanin;
         owl:differentFrom         rs:SNS , rs:Ivan_Bosnjak_Zrenjanin .
 
-rs:Global_Media_Technology
-        rdf:type           foaf:Organization , foaf:Agent , :Company;
-        rdfs:comment       "Beogradska kompanija za televizijsku delatnost; MOM i CompanyWall navode Sašu Blagojevića kao vlasnika."@sr , "Belgrade television company; MOM and CompanyWall identify Saša Blagojević as its owner."@en;
-        :hasDocumentation  [ rdf:type            :RelatedData , :Documentation;
-                             rdfs:comment        "MOM Crna Gora: 'Saša Blagojević je 100% vlasnik Global Media Tehnologi d.o.o. Beograd'."@sr;
-                             :hasDocumentStatus  vip:published;
-                             :hasDocumentType    vip:registryRecord;
-                             :hasDocumentURL     <https://montenegro.mom-gmr.org/cg/vlasnici/pojedinci/detail/owner/owner/show/sasa-blagojevic-3/>
-                           ];
-        :hasDocumentation  [ rdf:type            :RelatedData , :Documentation;
-                             rdfs:comment        "CompanyWall: 'Vlasnik kompanije je Saša Blagojević'."@sr;
-                             :hasDocumentStatus  vip:published;
-                             :hasDocumentType    vip:registryRecord;
-                             :hasDocumentURL     <https://www.companywall.rs/firma/global-media-technology-drustvo-sa-ogranicenom-odgovornoscu-beograd-stari-grad/MMz0shQD>
-                           ];
-        foaf:name          "Global Media Technology"@sr .
-
 rs:Insajder_Tim  rdf:type  foaf:Organization , foaf:Agent , :Company;
         rdfs:comment       "Publisher of the tabloid Informer; a co-owner of Best Media Team from February 2026, according to ANEM and 021."@en , "Izdavač tabloida Informer; od februara 2026. suvlasnik firme Best Media Team, prema izveštajima ANEM-a i 021."@sr;
         :hasDocumentation  [ rdf:type            :RelatedData , :Documentation;
@@ -2796,25 +3410,33 @@ rs:Insajder_Tim  rdf:type  foaf:Organization , foaf:Agent , :Company;
                            ];
         foaf:name          "Insajder Tim"@sr .
 
+rs:Starting_BobNoviSad_Stanica
+        rdf:type              :SourcedEntity , bio:Relationship , :Connection;
+        rdfs:comment          "Starting engaged Bob for aluminium joinery and metalwork on the station, including the skylight of the canopy over the entrance to wing B (021.rs, from the contract published by the Higher Public Prosecutor's Office in Novi Sad; 021.rs says the contract was concluded in July 2022). The index (item 503) gives Starting's number dated 28 July 2022 and Bob's dated 3 August 2022; the start is recorded to the year because the two dates differ."@en , "Starting je angažovao firmu Bob za aluminarske i bravarske radove na stanici, uključujući svetlarnik nadstrešnice nad ulazom u krilo B (021.rs, prema ugovoru koji je objavilo Više javno tužilaštvo u Novom Sadu; 021.rs piše da je ugovor zaključen u julu 2022). Spisak (stavka 503) navodi broj Startinga od 28. jula 2022. i broj firme Bob od 3. avgusta 2022; početak je zabeležen na godinu jer se ta dva datuma razlikuju."@sr;
+        rdfs:label            "station renovation subcontract"@en , "podizvođenje obnove stanice"@sr;
+        :connectionStartDate  "2022"^^xsd:gYear;
+        :hasDocumentation     [ rdf:type            :RelatedData , :Documentation;
+                                rdfs:comment        "021.rs, 27. januar 2025: 'ugovor podizvođača, firme Starting sa firmom Bob doo iz Novog Sada'; 'Ugovor koji je zaključen u julu 2022. godine'; 'svetlarnik nadstrešnice nad ulazom u krilo B'."@sr;
+                                :hasDocumentStatus  vip:published;
+                                :hasDocumentType    vip:newsArticle;
+                                :hasDocumentURL     <https://www.021.rs/novi-sad/vesti/400000/objavljen-ugovor-startinga-sa-jos-jednim-podizvodjacem-ko-je-postavljao-staklo-na-nadstresnicu>
+                              ];
+        :hasDocumentation     [ rdf:type            :RelatedData , :Documentation;
+                                rdfs:comment        "Spisak objavljene dokumentacije (mss.jt.rs, PDF izrađen 27. januara 2025; prema 021.rs i Vremenu, dokumentaciju je objavilo Više javno tužilaštvo u Novom Sadu), stavka 503: '(Број: 104-2022, дана 28.07.2022.) и БОБ д.о.о. (Број 75-2022, дана 03.08.2022.).'"@sr;
+                                :hasDocumentStatus  vip:published;
+                                :hasDocumentType    vip:officialDocument;
+                                :hasDocumentURL     <https://mss.jt.rs/wp-content/uploads/2025/01/%D0%A1%D0%BF%D0%B8%D1%81%D0%B0%D0%BA-%D0%BE%D0%B1%D1%98%D0%B0%D0%B2%D1%99%D0%B5%D0%BD%D0%B5-%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D1%98%D0%B5-1.pdf>
+                              ];
+        bio:participant       rs:Bob_Novi_Sad , rs:Starting;
+        owl:differentFrom     rs:Bob_Novi_Sad , rs:Starting .
+
 rs:IvanBosnjak_NALED  rdf:type  bio:Relationship , :WorkConnection , :SourcedEntity , :Connection;
         rdfs:comment       "Ivan Bošnjak, suvlasnik Milenijum tima, bio je član Izvršnog odbora NALED-a. Period nije poznat, osim da je članstvo završeno pre jula 2019. Izvor je jedan: Nova.rs preuzima navod KRIK-a."@sr;
-        :hasDocumentation  [ rdf:type            :RelatedData , :Documentation;
-                             rdfs:comment        "Povučeno 1. novembra 2026: izveštaj navodi imenjaka, državnog sekretara, među predstavnicima ministarstva; ne potkrepljuje ovu vezu."@sr;
-                             :hasDocumentStatus  vip:removed;
-                             :hasDocumentType    vip:officialDocument;
-                             :hasDocumentURL     <https://naled.rs/htdocs/Files/15388/II-Kvartalni-izvestaj_2024.pdf>
-                           ];
         :hasDocumentation  [ rdf:type            :RelatedData , :Documentation;
                              rdfs:comment        "KRIK, 22. jul 2019: Bošnjak je bio član Izvršnog odbora NALED-a i sa Vujkom sedi u upravi Sportskog društva Crvena zvezda."@sr;
                              :hasDocumentStatus  vip:published;
                              :hasDocumentType    vip:newsArticle;
                              :hasDocumentURL     <https://www.krik.rs/koruptivne-veze-milenijum-tim-ustupio-audi-i-stan-bratu-sinise-malog/>
-                           ];
-        :hasDocumentation  [ rdf:type            :RelatedData , :Documentation;
-                             rdfs:comment        "Povučeno 1. novembra 2026: članak navodi imenjaka kao državnog sekretara, a menadžer za razvoj članstva u NALED-u je Višnja Račić. Raniji navod o toj ulozi bio je pogrešan."@sr;
-                             :hasDocumentStatus  vip:removed;
-                             :hasDocumentType    vip:newsArticle;
-                             :hasDocumentURL     <https://www.uzmiracun.rs/vest-otvorene-wifi-zone-u-titelu-i-bakom-petrovcu-1345>
                            ];
         :hasDocumentation  [ rdf:type            :RelatedData , :Documentation;
                              rdfs:comment        "Nova.rs, 28. januar 2021: ista rečenica o suvlasniku Milenijum tima; nije nezavisna potvrda KRIK-a."@sr;
@@ -2827,6 +3449,26 @@ rs:IvanBosnjak_NALED  rdf:type  bio:Relationship , :WorkConnection , :SourcedEnt
         :hasWorkRole       vip:executiveBoardMember;
         bio:participant    rs:NALED , rs:Ivan_Bosnjak_Milenijum_Tim;
         owl:differentFrom  rs:NALED , rs:Ivan_Bosnjak_Milenijum_Tim .
+
+rs:Malisa_Nedeljkovic
+        rdf:type           foaf:Agent , foaf:Person;
+        rdfs:comment       "Director of Starting, per Nova.rs on 8 August 2025. Direktno carries the same Nova.rs report, so there is one independent source. Nova.rs writes that his biography is not publicly known."@en , "Direktor firme Starting, prema izveštaju Nova.rs od 8. avgusta 2025. Direktno prenosi isti izveštaj Nova.rs, pa je nezavisan izvor jedan. Nova.rs piše da njegova biografija nije javno poznata."@sr;
+        :firstLastName     "Nedeljković";
+        :hasDocumentation  [ rdf:type            :RelatedData , :Documentation;
+                             rdfs:comment        "Nova.rs, 8. avgust 2025: 'dobila je novog direktora Mališu Nedeljkovića'; 'niti je javnosti poznata njegova biografija'."@sr;
+                             :hasDocumentStatus  vip:published;
+                             :hasDocumentType    vip:newsArticle;
+                             :hasDocumentURL     <https://nova.rs/vesti/biznis/firma-starting-postavila-novog-direktora-nakon-hapsenja-nikole-trivica>
+                           ];
+        :hasDocumentation  [ rdf:type            :RelatedData , :Documentation;
+                             rdfs:comment        "Direktno, 8. avgust 2025, prenosi Nova.rs (nije nezavisna potvrda): 'dobila je novog direktora Mališu Nedeljkovića'."@sr;
+                             :hasDocumentStatus  vip:published;
+                             :hasDocumentType    vip:newsArticle;
+                             :hasDocumentURL     <https://direktno.rs/vesti/drustvo-i-ekonomija/627014/startign-malisa-nedeljkovic.html>
+                           ];
+        foaf:familyName    "Nedeljković";
+        foaf:firstName     "Mališa";
+        foaf:name          "Mališa Nedeljković"@sr .
 
 rs:DarkoTamindzic_ServiceForEfficientEnergy_Formation
         rdf:type              bio:Relationship , :Connection , :SourcedEntity;
@@ -2848,3 +3490,22 @@ rs:DarkoTamindzic_ServiceForEfficientEnergy_Formation
                               ];
         bio:participant       rs:Service_for_Efficient_Energy , rs:Darko_Tamindzic;
         owl:differentFrom     rs:Service_for_Efficient_Energy , rs:Darko_Tamindzic .
+
+rs:Srdjan_Davidovic  rdf:type  foaf:Agent , foaf:Person;
+        rdfs:comment       "Osnivač i nekadašnji akcionar društva Vista Rica AD Beograd sa udelom od 25%; Nova Ekonomija izveštava o njegovom izlasku iz vlasništva."@sr , "Founder and former 25% shareholder of Vista Rica AD Beograd; Nova Ekonomija reports his exit from ownership."@en;
+        :firstLastName     "Davidović";
+        :hasDocumentation  [ rdf:type            :RelatedData , :Documentation;
+                             rdfs:comment        "Nova Ekonomija: 'Iz vlasništva firme je istupio Srđan Davidović'."@sr;
+                             :hasDocumentStatus  vip:published;
+                             :hasDocumentType    vip:newsArticle;
+                             :hasDocumentURL     <https://novaekonomija.rs/vesti-iz-zemlje/tatjana-vukic-po-pisanju-medija-partnerka-andreja-vucica-postala-vecinski-vlasnik-investicionog-fonda-vista-rica>
+                           ];
+        :hasDocumentation  [ rdf:type            :RelatedData , :Documentation;
+                             rdfs:comment        "Prospekt: 'Srđan Davidović, osnivač i akcionar' sa učešćem od 25% u društvu za upravljanje."@sr;
+                             :hasDocumentStatus  vip:published;
+                             :hasDocumentType    vip:officialDocument;
+                             :hasDocumentURL     <https://vistarica.rs/wp-content/uploads/2024/09/VISTA-RICA-CORPORATE_PROSPEKT_.pdf>
+                           ];
+        foaf:familyName    "Davidović";
+        foaf:firstName     "Srđan";
+        foaf:name          "Srđan Davidović"@sr .
