@@ -24,5 +24,4 @@ rs:Pizzarotti_Millennium a :Company ;
         [ a :Documentation ; :hasDocumentURL <https://www.danas.rs/vesti/ekonomija/firma-koja-gradi-beograd-na-vodi-u-korupcijskom-skandalu/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
           rdfs:comment "Danas, 10. decembar 2021: U Srbiji Pizzarotti nastupa preko preduzeća Pizzarotti Milennium."@sr ] ,
         [ a :Documentation ; :hasDocumentURL <https://www.danas.rs/vesti/ekonomija/sta-sve-ima-milenijum-tim-novi-vlasnik-hotela-jugoslavija/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ] ,
-        [ a :Documentation ; :hasDocumentURL <https://vreme.com/drustvo/poslovi-milenijum-tima-na-red-dosla-i-sanacija-leve-obale-save/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ] ,
-        [ a :Documentation ; :hasDocumentURL <https://www.companywall.rs/firma/milenijum-picaroti-doo-beograd/MPksspYq> ; :hasDocumentType vip:registryRecord ; :hasDocumentStatus vip:removed ] .
+        [ a :Documentation ; :hasDocumentURL <https://vreme.com/drustvo/poslovi-milenijum-tima-na-red-dosla-i-sanacija-leve-obale-save/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ] .

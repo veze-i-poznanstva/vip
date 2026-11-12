@@ -29,15 +29,23 @@ Kotlin tools validate it; a Svelte viewer in `web/` is published to GitHub Pages
 
 Every agent and every connection carries `:Documentation` nodes with at least two document URLs
 from two different domains (www ignored), each reachable live or through a Wayback Machine
-snapshot recorded in `archives.ttl`. A dead source is kept with `:hasDocumentStatus vip:removed`
-and no longer counts. Only genuine `web.archive.org/web/<14 digits>/` addresses count as archives.
+snapshot recorded in `archives.ttl`. A source that is dead with no archived copy, or shown to be
+wrong, is deleted and the commit message says why; a record left with fewer than two sources gets
+another or goes too. `:hasDocumentStatus vip:removed` (kept in the file with a comment saying why,
+not counted) stays in the vocabulary, unused, for an emblematic case that deserves to be shown. Only genuine `web.archive.org/web/<14 digits>/` addresses count as archives.
 Editorial standard: VIP aggregates what reputable media and official registries report; it does
 not fact-check them and needs no legal proof. Trust the source, but aggregate it correctly: the
-record must say what the source says, with its attribution, and nothing more.
+record must say what the source says, with its attribution, and nothing more. Quotes are verbatim,
+with the source's own spelling and typos. An outlet carrying another's report is not a second
+source in substance, and the citation says whose report it carries. A record carries no notes of
+our own on guilt or investigation status; proceedings are mentioned only where a date or an
+attribution depends on them (`docs/data-guide.md`, "Editorial standard").
 The build proves form and reachability, not that: read each source before citing it, quote the
 passage on the document's `rdfs:comment` (the build enforces this for connections), and check that it means this person (same-named people
 get separate URIs, `rs:Ivan_Bosnjak_Milenijum_Tim` and `rs:Ivan_Bosnjak_Zrenjanin` are two men).
-A citation found wrong stays with `vip:removed` and a comment saying why. Corrections: `?ispravka=1`
+A citation found wrong is deleted, with the reason in the commit message. When reputable sources
+conflict, VIP does not resolve it: the disputed claim is left out, and a connection the sources
+themselves dispute is not recorded. Corrections: `?ispravka=1`
 opens the page. VIP is a secondary source: a wrong source is corrected at the source first, then VIP
 follows; a record that misstates its source is our error and is fixed directly.
 
@@ -130,7 +138,7 @@ a directory tree or one file). Every tool exits 1 on failure except `analyzeSche
   `<Tool>CliTest.kt`. Contributed strings are printed through `String.printable()` (`Printing.kt`),
   which turns control characters into spaces.
 
-Web (`web/src/`): `lib/i18n.ts` translation store (`$t`, `language`, `resolveLanguage`), dictionaries
+Web (`web/src/`): `lib/i18n.ts` translation store (`$t`, `language`, `resolveLanguage`; `lang` is stored only on a choice), dictionaries
 in `locales/<code>.json`, Vitest tests in `lib/i18n.test.ts`; `./gradlew :web:npmTest` runs them and
 `:web:build` depends on them. Querying in the browser (`docs/ui-design.md`, "Querying in the browser"):
 `lib/query.ts` runs SPARQL `SELECT` with Comunica's pure-TypeScript lite build over an N3 store
@@ -138,8 +146,10 @@ in `locales/<code>.json`, Vitest tests in `lib/i18n.test.ts`; `./gradlew :web:np
 sentences (`leads.<rule>` templates with `[optional]` segments) and map views; `lib/ask.ts` builds the
 prompt for the visitor's own assistant from the terms the data uses and extracts the query from the
 answer; `lib/advanced.ts` carries a query in `?upit=` (base64url); `lib/engine.ts` loads the published
-files once. `QueryPanel.svelte` (tabs Tragovi, Pitaj, Napredno) is imported lazily by `App.svelte`, so
-the engine is a separate chunk; `scripts/write-prompts.ts` (vite-node) publishes the assistant brief as
+files once per page (`cachedEngine`). `QueryPanel.svelte` (tabs Leads (Tragovi) and Ask (Pitaj); Advanced
+(Napredno) becomes a tab only once an answer's "Edit the query" or a `?upit=` address has opened it;
+the views stay mounted, hidden, so their state survives a change of tab) is imported lazily by
+`App.svelte`, so the engine is a separate chunk; `scripts/write-prompts.ts` (vite-node) publishes the assistant brief as
 `dist/prompt.<language>.txt`, which the Ask links tell the assistant to read from the published site
 (`PUBLISHED_SITE` in `lib/ask.ts`, never the page the visitor is on); `scripts/check-bundle.mjs`
 fails the build when that chunk passes 400 KB gzipped. `lib/equivalence.test.ts` proves every rule gives the build's `red-flags.json` leads.

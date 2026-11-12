@@ -84,8 +84,8 @@ Step 3, the rules. Read docs/data-guide.md (or docs/data-guide.sr.md) and AGENTS
 "Data layout". Summarise them for the contributor
 in a few sentences: one file per person or organisation under data/entities/, one file per
 case under data/cases/ holding only connections, every entity and every connection backed by
-at least two documents from two different domains, each reachable, dead sources kept with
-status removed. List what is already in data/entities/ so nothing is declared twice.
+at least two documents from two different domains, each reachable, dead or wrong sources
+deleted with the reason in the commit message. List what is already in data/entities/ so nothing is declared twice.
 
 Step 4, whom to add. Ask the contributor what they want to record: a person, an organisation,
 a case, and what they already know. If they have no suggestion, pick a Serbian politician who
@@ -107,7 +107,11 @@ Step 5, the data. For each claim:
 - write the entity files and the case file by copying the prefixes, the header comment and
   the structure of an existing file, with names in Serbian tagged @sr, a short rdfs:comment in
   Serbian on every connection, and a rdfs:comment on each document quoting the passage it
-  supports;
+  supports. Copy the passage character for character, with the source's own spelling and typos,
+  and never correct it. When an outlet carries another outlet's or an agency's report, say so in
+  that comment: it is not an independent second source. Add no notes of your own about guilt or
+  whether someone is under investigation; mention an arrest or an investigation only where a date
+  or an attribution depends on it, as a dated report by a named outlet;
 - record vip:wikipediaArticle when there is an article about the entity itself, not one that
   only mentions it. Do not look up Wikidata: the build fills in vip:wikidataItem from the
   article, and an entity without an article is identified by its VIP URI;
@@ -135,8 +139,9 @@ Open every cited document again and, for each claim, answer from the page itself
 - Does the record say what the source says, with the same attribution, and nothing it does not?
 Show the contributor a table with one row per claim: the claim, the source, the quoted passage,
 and your verdict (supported, partly supported, not supported). Fix or remove anything that is not
-fully supported, and record a citation that turned out to be wrong with status removed and a
-comment saying why. If you can start a second, independent agent, have it repeat this reading
+fully supported, and delete a citation that turned out to be wrong, saying why in the commit
+message. Where reputable sources contradict each other, do not choose between them: leave the
+disputed claim out. If you can start a second, independent agent, have it repeat this reading
 without seeing your verdicts, and show both.
 
 Step 7, checks. Run `./gradlew verify`. Explain every reported problem in plain words and fix

@@ -27,5 +27,4 @@ rs:Roberts_Milenijum a :Company ;
         [ a :Documentation ; :hasDocumentURL <https://www.danas.rs/vesti/ekonomija/sta-sve-ima-milenijum-tim-novi-vlasnik-hotela-jugoslavija/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ] ,
         [ a :Documentation ; :hasDocumentURL <https://pretraga.cubepartner.rs/sr/kompanija/0e55cb2461a3e2c0/roberts-millennium-doo> ; :hasDocumentType vip:registryRecord ; :hasDocumentStatus vip:published ] ,
         [ a :Documentation ; :hasDocumentURL <https://poslovi.infostud.com/posao/Inzenjer-tehnicke-pripreme/Roberts-Millennium-doo/432801> ; :hasDocumentType vip:webPage ; :hasDocumentStatus vip:published ] ,
-        [ a :Documentation ; :hasDocumentURL <https://www.belgradewaterfront.com/en/news/the-main-works-commence-for-bw-metropolitan/> ; :hasDocumentType vip:webPage ; :hasDocumentStatus vip:published ] ,
-        [ a :Documentation ; :hasDocumentURL <https://www.krik.rs/tag/roberts-milenijum/> ; :hasDocumentType vip:webPage ; :hasDocumentStatus vip:removed ] .
+        [ a :Documentation ; :hasDocumentURL <https://www.belgradewaterfront.com/en/news/the-main-works-commence-for-bw-metropolitan/> ; :hasDocumentType vip:webPage ; :hasDocumentStatus vip:published ] .

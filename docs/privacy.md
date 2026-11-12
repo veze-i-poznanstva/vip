@@ -16,7 +16,7 @@ One thing is stored in your browser: the language you choose, under the key `lan
 when you pick a language and read on your next visit. Clearing the site's data in your browser
 removes it.
 
-When you share a query from Napredno, the query text travels in the link you copy, and nowhere
+When you share a query from Advanced (Napredno), the query text travels in the link you copy, and nowhere
 else.
 
 ## Hosting
@@ -32,7 +32,7 @@ We never see them. See
 Nothing leaves your browser until you click a link or paste a text somewhere. Then the site you
 reach sees the visit, under its own terms:
 
-- **Open in Claude** and **Open in ChatGPT** (the Pitaj panel) open the assistant with your
+- **Open in Claude** and **Open in ChatGPT** (the Ask (Pitaj) panel) open the assistant with your
   question and an instruction to read the published brief. Your question goes to Anthropic or
   OpenAI only then, under your account with them and their terms. **Copy the prompt** keeps
   everything on your device until you paste it.
@@ -67,8 +67,9 @@ Rules we keep, whoever the person is:
 If you are in the data and a record is wrong, use **Information wrong?** on the page. A record
 that misstates its source or confuses two people of the same name is corrected. A record that says
 what its sources say is not changed by us: the source has to be corrected first, by the outlet or
-registry that published it, and VIP follows. A citation found wrong stays in the file marked
-removed, with a note saying why, and the repository's history keeps earlier versions of every
-file. Both report routes are public.
+registry that published it, and VIP follows. Where reputable sources contradict each other, VIP
+does not choose between them; the disputed claim is left out. A citation found wrong is deleted from the file;
+the repository's history keeps earlier versions of every file, and the commit that deletes it
+says why. Both report routes are public.
 
 *Last changed: 11 November 2026.*

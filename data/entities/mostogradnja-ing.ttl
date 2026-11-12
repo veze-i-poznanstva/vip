@@ -23,5 +23,4 @@ rs:Mostogradnja_ING a :Company ;
         [ a :Documentation ; :hasDocumentURL <https://nova.rs/vesti/biznis/od-vinograda-preko-naucnih-instituta-do-banja-i-giganata-sfrj-sta-je-sve-za-male-pare-kupila-sns-firma-milenijum-tim/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ] ,
         [ a :Documentation ; :hasDocumentURL <https://n1info.rs/biznis/milenijum-tim-kupio-mostogradnju-u-stecaju-za-10-miliona-evra/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ] ,
         [ a :Documentation ; :hasDocumentURL <https://www.danas.rs/vesti/ekonomija/beogradsko-gradjevinsko-preduzece-mostogradnja-postalo-vlasnistvo-milenijum-tima/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ] ,
-        [ a :Documentation ; :hasDocumentURL <https://bif.rs/2025/02/milenijum-tim-novi-vlasnik-mostogradnje/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ] ,
-        [ a :Documentation ; :hasDocumentURL <https://www.companywall.rs/firma/mostogradnja-ing-doo-beograd/MBksspYq> ; :hasDocumentType vip:registryRecord ; :hasDocumentStatus vip:removed ] .
+        [ a :Documentation ; :hasDocumentURL <https://bif.rs/2025/02/milenijum-tim-novi-vlasnik-mostogradnje/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ] .

@@ -2,7 +2,30 @@
 
 *Srpska verzija: [data-guide.sr.md](data-guide.sr.md)*
 
-How facts are recorded in VIP and how to add your own. Back to the [README](../README.md).
+The editorial standard, how facts are recorded in VIP and how to add your own. Back to the [README](../README.md).
+
+## Editorial standard
+
+VIP is a secondary source. It aggregates what reputable media and official registries have
+published; it does not fact-check them and needs no legal proof. What it owes them is accuracy: a
+record says what its sources say, with their attribution, and nothing more.
+
+- **Two reputable sources.** Every person, organisation and connection cites at least two
+  documents from two different domains. An outlet that carries another outlet's or an agency's
+  report is not a second source in substance: it may be cited, and the comment on the citation
+  says whose report it carries.
+- **Quotes are verbatim.** The passage quoted on a citation is copied character for character,
+  with the source's own spelling, typos and punctuation. Corrected forms belong only in our own
+  words, outside the quotation marks.
+- **We do not correct a source.** A wrong source is corrected by the outlet or registry that
+  published it, and VIP follows. A record that misstates its source is our error and is fixed
+  directly. What to do with a source shown to be wrong, and with sources that contradict each
+  other, is under "Dead and wrong sources" and "Conflicting sources" in the practical notes below.
+- **No judgement of our own.** A record states the connection and what the sources say about it.
+  It carries no notes on guilt, innocence or whether someone is under investigation, and no
+  balancing sentences: such statements are not connections, and they go stale. Proceedings (an
+  arrest, an investigation order) are mentioned only where a date or an attribution depends on
+  them, and then as a dated report by a named outlet.
 
 ## How facts are recorded
 
@@ -12,8 +35,10 @@ Seven conventions apply to every record. The validators enforce their form; whet
   resource with its URL, a document type (news article, encyclopedia article, registry record,
   official document, fact-checking profile, web page, video recording) and a status (published,
   archived, removed). It is attached to the person, organization or connection it supports
-  through `:hasDocumentation`. A source that no longer resolves keeps its record with status
-  removed, so the history is preserved, but it no longer counts as evidence.
+  through `:hasDocumentation`. A source that no longer resolves and has no archived copy, or that
+  turned out to be wrong, is deleted; the repository's history keeps it. The status removed, which
+  keeps a citation in the file without counting it as evidence, is reserved for the rare case
+  that deserves to stay visible.
 - **Every source has an archived copy.** Pages get deleted or quietly edited under pressure, so
   each cited URL is captured in the Internet Archive's Wayback Machine and the snapshot address
   and date are recorded in `archives.ttl`, keyed by the document URL. That file is maintained by
@@ -147,9 +172,16 @@ Practical notes:
   longer, and check progress with `./gradlew :app:checkArchives`, which never contacts the archive. It also requests at most 25 new captures per run and lists the rest for the next
   run, so one branch cannot flood the archive. Read the cited addresses before running `verify`
   on a stranger's branch: the archiver will ask the Wayback Machine to fetch each of them.
-- **Dead sources.** Never delete a citation. Set `:hasDocumentStatus vip:removed` and add an
-  `rdfs:comment` saying what happened; the validator then ignores it as evidence and the archiver
-  skips it. Replace it with a live source so the entity still has two domains.
+- **Dead and wrong sources.** Delete the citation and say why in the commit message; the
+  repository's history keeps it. Replace it with a live source so the entity or connection still
+  has two domains; a record that cannot be given two sources is deleted too.
+  `:hasDocumentStatus vip:removed` with an `rdfs:comment` saying what happened (the validator then
+  ignores the citation as evidence and the archiver skips it) is kept for the rare case that
+  deserves to stay visible, such as a retraction worth showing.
+- **Conflicting sources.** When reputable sources disagree, VIP does not decide between them.
+  Leave the disputed claim out: record a date only to the precision on which the sources agree,
+  leave out a share they give differently, and do not record a connection that the sources
+  themselves dispute.
 - **Fast checks.** `./gradlew :app:test :app:checkDataLayout :app:validateShacl` needs no network.
   `./gradlew :app:validateData` runs the archiver locally; with the environment variable `CI`
   set to `true` it only checks, as on the build server.

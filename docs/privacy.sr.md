@@ -66,8 +66,9 @@ Pravila kojih se držimo, ko god da je osoba:
 Ako ste u podacima i zapis je pogrešan, upotrebite **Informacija nije tačna?** na stranici. Zapis
 koji pogrešno prenosi svoj izvor ili meša dve istoimene osobe se ispravlja. Zapis koji kaže ono
 što njegovi izvori kažu mi ne menjamo: izvor prvo mora da ispravi onaj ko ga je objavio, redakcija
-ili registar, a VIP ga prati. Citat za koji se utvrdi da je pogrešan ostaje u datoteci označen kao
-uklonjen, sa napomenom zašto, a istorija repozitorijuma čuva ranije verzije svake datoteke. Oba
+ili registar, a VIP ga prati. Kada se ugledni izvori međusobno ne slažu, VIP ne bira među njima;
+sporna tvrdnja se izostavlja. Citat za koji se utvrdi da je pogrešan briše se iz datoteke;
+istorija repozitorijuma čuva ranije verzije svake datoteke, a komit koji ga briše kaže zašto. Oba
 puta za prijavu su javna.
 
 *Poslednja izmena: 11. novembar 2026.*

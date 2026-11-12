@@ -22,7 +22,4 @@ rs:Milenijum_Adria a :Company ;
     rdfs:comment "Millennium Adria je društvo sa sedištem u Splitu, osnovano 2020, preko kog Milenijum tim posluje u Hrvatskoj."@sr ;
     :hasDocumentation
         [ a :Documentation ; :hasDocumentURL <https://www.danas.rs/vesti/ekonomija/sta-sve-ima-milenijum-tim-novi-vlasnik-hotela-jugoslavija/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ] ,
-        [ a :Documentation ; :hasDocumentURL <https://www.fininfo.hr/Poduzece/Pregled/millennium-adria/Detaljno/780814> ; :hasDocumentType vip:registryRecord ; :hasDocumentStatus vip:published ] ,
-        [ a :Documentation ; :hasDocumentURL <https://nova.rs/vesti/politika/sta-je-milenijum-tim-sns-fabrika-za-izvlacenje-para/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:removed ;
-          rdfs:comment "Povučeno 1. novembra 2026: članak ne pominje Millennium Adria ni Hrvatsku."@sr ] ,
-        [ a :Documentation ; :hasDocumentURL <https://www.companywall.rs/firma/milenijum-adria-doo-zagreb/MAksspYq> ; :hasDocumentType vip:registryRecord ; :hasDocumentStatus vip:removed ] .
+        [ a :Documentation ; :hasDocumentURL <https://www.fininfo.hr/Poduzece/Pregled/millennium-adria/Detaljno/780814> ; :hasDocumentType vip:registryRecord ; :hasDocumentStatus vip:published ] .

@@ -29,9 +29,7 @@ rs:IvanBosnjak_MilenijumTim a vip:OwnershipConnection ;
         [ a :Documentation ; :hasDocumentURL <https://www.companywall.rs/firma/millennium-team-doo-beograd/MMksspYq> ; :hasDocumentType vip:registryRecord ; :hasDocumentStatus vip:published ;
           rdfs:comment "Registarski podaci (APR preko CompanyWall, snimak od 13. marta 2026): vlasnici 'Ivan Bošnjak(50,00%)' i 'Stojan Vujko(50,00%)'; 'Datum osnivanja 4.9.2003.'; 'Ivan Bošnjak, zastupnik'."@sr ] ,
         [ a :Documentation ; :hasDocumentURL <https://en.wikipedia.org/wiki/Millennium_Team> ; :hasDocumentType vip:encyclopediaArticle ; :hasDocumentStatus vip:published ;
-          rdfs:comment "Enciklopedijski članak, infokutija: 'Owner: Ivan Bošnjak (50%), Stojan Vujko (50%)'; tekst: 'The company was founded on 4 September 2003. Founded and formally owned by Ivan Bošnjak and Stojan Vujko'."@sr ] ,
-        [ a :Documentation ; :hasDocumentURL <https://sr.wikipedia.org/wiki/Milenijum_tim> ; :hasDocumentType vip:encyclopediaArticle ; :hasDocumentStatus vip:removed ;
-          rdfs:comment "Povučeno 5. novembra 2026: članak sr.wikipedia.org/wiki/Milenijum_tim ne postoji i prema dnevniku Vikipedije nikada nije ni postojao ni bio obrisan (HTTP 404; API javlja missing, dnevnik brisanja prazan), a Wayback Machine nema nijedan snimak ni latinične ni ćirilične adrese; ne može da potkrepi vlasništvo."@sr ] .
+          rdfs:comment "Enciklopedijski članak, infokutija: 'Owner: Ivan Bošnjak (50%), Stojan Vujko (50%)'; tekst: 'The company was founded on 4 September 2003. Founded and formally owned by Ivan Bošnjak and Stojan Vujko'."@sr ] .
 
 rs:StojanVujko_MilenijumTim a vip:OwnershipConnection ;
     vip:owner rs:Stojan_Vujko ;
@@ -54,11 +52,7 @@ rs:IvanBosnjak_NALED a :WorkConnection ;
         [ a :Documentation ; :hasDocumentURL <https://www.krik.rs/koruptivne-veze-milenijum-tim-ustupio-audi-i-stan-bratu-sinise-malog/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
           rdfs:comment "KRIK, 22. jul 2019: Bošnjak je bio član Izvršnog odbora NALED-a i sa Vujkom sedi u upravi Sportskog društva Crvena zvezda."@sr ] ,
         [ a :Documentation ; :hasDocumentURL <https://nova.rs/vesti/hronika/suvlasnik-milenijum-tima-bosnjak-zakupac-plantaze-u-leskovcu/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
-          rdfs:comment "Nova.rs, 28. januar 2021: ista rečenica o suvlasniku Milenijum tima; nije nezavisna potvrda KRIK-a."@sr ] ,
-        [ a :Documentation ; :hasDocumentURL <https://naled.rs/htdocs/Files/15388/II-Kvartalni-izvestaj_2024.pdf> ; :hasDocumentType vip:officialDocument ; :hasDocumentStatus vip:removed ;
-          rdfs:comment "Povučeno 1. novembra 2026: izveštaj navodi imenjaka, državnog sekretara, među predstavnicima ministarstva; ne potkrepljuje ovu vezu."@sr ] ,
-        [ a :Documentation ; :hasDocumentURL <https://www.uzmiracun.rs/vest-otvorene-wifi-zone-u-titelu-i-bakom-petrovcu-1345> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:removed ;
-          rdfs:comment "Povučeno 1. novembra 2026: članak navodi imenjaka kao državnog sekretara, a menadžer za razvoj članstva u NALED-u je Višnja Račić. Raniji navod o toj ulozi bio je pogrešan."@sr ] .
+          rdfs:comment "Nova.rs, 28. januar 2021: ista rečenica o suvlasniku Milenijum tima; nije nezavisna potvrda KRIK-a."@sr ] .
 
 rs:AnaBrnabic_NALED_Osnivanje a :WorkConnection ;
     bio:participant rs:Ana_Brnabic ;
@@ -100,9 +94,7 @@ rs:AnaBrnabic_NALED_Predsednica a :WorkConnection ;
         [ a :Documentation ; :hasDocumentURL <https://en.wikipedia.org/wiki/Ana_Brnabi%C4%87> ; :hasDocumentType vip:encyclopediaArticle ; :hasDocumentStatus vip:published ;
           rdfs:comment "Ministarka od 11. avgusta 2016."@sr ] ,
         [ a :Documentation ; :hasDocumentURL <https://www.diplomacyandcommerce.rs/naled-has-chosen-a-new-president-and-members-of-the-board-of-directors/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
-          rdfs:comment "Diplomacy and Commerce, 3. oktobar 2016: novi predsednik umesto ministarke Ane Brnabić je Goran Kovačević."@sr ] ,
-        [ a :Documentation ; :hasDocumentURL <https://naled.rs/o-naled-u/vesti/ana-brnabic-novi-predsednik-upravnog-odbora-naleda/> ; :hasDocumentType vip:webPage ; :hasDocumentStatus vip:removed ;
-          rdfs:comment "Sajt NALED-a preusmerava ovu adresu na stranicu greške (404); nikada nije arhivirana."@sr ] .
+          rdfs:comment "Diplomacy and Commerce, 3. oktobar 2016: novi predsednik umesto ministarke Ane Brnabić je Goran Kovačević."@sr ] .
 
 rs:MilenijumTim_MilenijumResorts a vip:OwnershipConnection ;
     vip:owner rs:Milenijum_Tim ;

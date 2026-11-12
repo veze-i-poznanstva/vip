@@ -2,7 +2,29 @@
 
 *English version: [data-guide.md](data-guide.md)*
 
-Kako se činjenice beleže u VIP-u i kako da dodate svoje. Nazad na [PROCITAJME](../PROCITAJME.md).
+Urednički standard, kako se činjenice beleže u VIP-u i kako da dodate svoje. Nazad na [PROCITAJME](../PROCITAJME.md).
+
+## Urednički standard
+
+VIP je sekundarni izvor. On sabira ono što su objavili ugledni mediji i zvanični registri; ne
+proverava ih i ne traži pravni dokaz. Ono što im duguje jeste tačnost: zapis kaže ono što kažu
+njegovi izvori, sa njihovim pripisivanjem, i ništa više.
+
+- **Dva ugledna izvora.** Svaka osoba, organizacija i veza navodi najmanje dva dokumenta sa dva
+  različita domena. Redakcija koja prenosi izveštaj druge redakcije ili agencije nije drugi izvor
+  u suštini: može se navesti, a komentar uz citat kaže čiji izveštaj prenosi.
+- **Citati su doslovni.** Odlomak naveden uz citat prepisuje se znak po znak, sa pravopisom,
+  slovnim greškama i interpunkcijom samog izvora. Ispravljeni oblici stoje samo u našim rečima,
+  izvan navodnika.
+- **Izvor ne ispravljamo.** Pogrešan izvor ispravlja redakcija ili registar koji ga je objavio, a
+  VIP ga prati. Zapis koji pogrešno prenosi svoj izvor naša je greška i ispravlja se odmah. Šta se
+  radi sa izvorom za koji se pokaže da je pogrešan i sa izvorima koji se ne slažu stoji pod
+  „Mrtvi i pogrešni izvori“ i „Izvori koji se ne slažu“ u praktičnim napomenama ispod.
+- **Bez sopstvenog suda.** Zapis navodi vezu i ono što izvori o njoj kažu. Ne nosi napomene o
+  krivici, nevinosti ili o tome da li se protiv nekoga vodi istraga, niti rečenice radi
+  ravnoteže: takve tvrdnje nisu veze i zastarevaju. Postupci (hapšenje, naredba o sprovođenju
+  istrage) pominju se samo tamo gde od njih zavisi datum ili pripisivanje, i tada kao datirani
+  izveštaj imenovane redakcije.
 
 ## Kako se beleže činjenice
 
@@ -12,8 +34,10 @@ Sedam pravila važi za svaki zapis. Validatori sprovode njihov oblik; da li izvo
   svojom adresom, vrstom dokumenta (novinski članak, enciklopedijski članak, zapis iz registra,
   zvanični dokument, profil na sajtu za proveru činjenica, veb stranica, video snimak) i
   statusom (objavljen, arhiviran, uklonjen). Vezuje se za osobu, organizaciju ili vezu koju
-  potkrepljuje preko `:hasDocumentation`. Izvor koji više ne postoji zadržava svoj zapis sa
-  statusom uklonjen, tako da se istorija čuva, ali se više ne računa kao dokaz.
+  potkrepljuje preko `:hasDocumentation`. Izvor koji više ne postoji i nema arhiviranu kopiju, ili
+  za koji se pokaže da je pogrešan, briše se; čuva ga istorija repozitorijuma. Status uklonjen,
+  koji citat zadržava u datoteci a ne računa ga kao dokaz, rezervisan je za redak slučaj koji
+  zaslužuje da ostane vidljiv.
 - **Svaki izvor ima arhiviranu kopiju.** Stranice se brišu ili tiho menjaju pod pritiskom, pa se
   svaka citirana adresa snima u Wayback Machine Internet arhiva, a adresa i datum snimka beleže
   se u `archives.ttl`, po adresi dokumenta. Tu datoteku održava build, nikad ruka. Adresa snimka
@@ -145,9 +169,15 @@ Praktične napomene:
   traži najviše 25 novih snimaka po pokretanju, a ostatak ispisuje za sledeće pokretanje, da jedna
   grana ne bi zatrpala arhiv. Pročitajte citirane adrese pre nego što pokrenete `verify` na tuđoj
   grani: arhiver će zatražiti od Wayback Machine-a da preuzme svaku od njih.
-- **Mrtvi izvori.** Nikad ne brišite citat. Postavite `:hasDocumentStatus vip:removed` i dodajte
-  `rdfs:comment` šta se desilo; validator ga tada ne računa kao dokaz, a arhiver ga preskače.
-  Zamenite ga živim izvorom da entitet i dalje ima dva domena.
+- **Mrtvi i pogrešni izvori.** Obrišite citat i u poruci komita navedite zašto; čuva ga istorija
+  repozitorijuma. Zamenite ga živim izvorom da entitet ili veza i dalje imaju dva domena; zapis
+  kome se ne mogu naći dva izvora takođe se briše. `:hasDocumentStatus vip:removed` sa
+  `rdfs:comment` koji kaže šta se desilo (validator tada citat ne računa kao dokaz, a arhiver ga
+  preskače) ostaje za redak slučaj koji zaslužuje da ostane vidljiv, na primer povlačenje teksta
+  koje vredi pokazati.
+- **Izvori koji se ne slažu.** Kada se ugledni izvori ne slažu, VIP ne presuđuje među njima.
+  Spornu tvrdnju izostavite: datum zabeležite samo do preciznosti u kojoj se izvori slažu, udeo
+  koji navode različito ne unosite, a vezu koju sami izvori osporavaju ne beležite.
 - **Brze provere.** `./gradlew :app:test :app:checkDataLayout :app:validateShacl` ne traži mrežu.
   `./gradlew :app:validateData` lokalno pokreće arhiver; sa promenljivom okruženja `CI`
   postavljenom na `true` samo proverava, kao na serveru.

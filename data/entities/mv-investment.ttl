@@ -23,5 +23,4 @@ rs:MV_Investment a :Company ;
         [ a :Documentation ; :hasDocumentURL <https://forbes.n1info.rs/vesti/vlasnici-milenijum-tima-kupili-hotel-jugoslavija/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ] ,
         [ a :Documentation ; :hasDocumentURL <https://www.danas.rs/vesti/ekonomija/milenijum-timhotel-jugoslavija/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ] ,
         [ a :Documentation ; :hasDocumentURL <https://24sedam.rs/biznis/privreda/290129/mv-investment-kupio-hotel-jugoslavija/vest> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ] ,
-        [ a :Documentation ; :hasDocumentURL <https://rs.bloombergadria.com/ekonomija/srbija/55076/milenijum-tim-kupio-hotel-jugoslaviju-i-najavio-400-miliona-evra-ulaganja/news> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ] ,
-        [ a :Documentation ; :hasDocumentURL <https://www.companywall.rs/firma/mv-investment-doo-beograd/MVksppYq> ; :hasDocumentType vip:registryRecord ; :hasDocumentStatus vip:removed ] .
+        [ a :Documentation ; :hasDocumentURL <https://rs.bloombergadria.com/ekonomija/srbija/55076/milenijum-tim-kupio-hotel-jugoslaviju-i-najavio-400-miliona-evra-ulaganja/news> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ] .
