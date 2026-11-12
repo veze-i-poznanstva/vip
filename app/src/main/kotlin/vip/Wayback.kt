@@ -99,9 +99,13 @@ class WaybackClient(
         return requestedPath == capturedPath
     }
 
-    /** Same page regardless of scheme, a leading www, percent-encoding, a fragment or a trailing slash. */
+    /**
+     * Same page regardless of scheme, a leading www, percent-encoding, a fragment, a trailing slash
+     * or letter case: the archive indexes addresses without regard to case and may answer with the
+     * spelling it first captured.
+     */
     private fun normalise(url: String): String = runCatching { java.net.URLDecoder.decode(url, "UTF-8") }.getOrDefault(url)
-        .substringBefore('#').removePrefix("https://").removePrefix("http://").removePrefix("www.").trimEnd('/')
+        .lowercase().substringBefore('#').removePrefix("https://").removePrefix("http://").removePrefix("www.").trimEnd('/')
 
     private fun failIfRateLimited(code: Int) {
         if (code == 429) throw ArchiveException("the archive is rate limiting us (HTTP 429); wait a few minutes and retry")

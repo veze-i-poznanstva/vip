@@ -112,7 +112,7 @@ a directory tree or one file). Every tool exits 1 on failure except `analyzeSche
   loopback/private hosts; tests use `HostPolicy.AnyHost`), archive fallback; CLI `VeracityValidator.kt`.
 - `Wayback.kt` Internet Archive client: availability lookup, Save Page Now, rate-limit errors,
   separate save timeout, refuses snapshots of a different page (error page, home page) but accepts
-  a host move with the same path.
+  a host move with the same path and an address that differs only in letter case.
 - `SourceArchiver.kt` which URLs need records, lookup then save, writes `archives.ttl`, `--check`.
 - `Wikidata.kt` Wikipedia/Wikidata client (`ItemLookup`, `WikimediaClient`): item of an article, item exists; tests on a local server.
 - `WikidataLinker.kt` fills `vip:wikidataItem` into entity files from the article (text insertion after the article line) and checks recorded items; CLI with `--check`.

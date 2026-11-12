@@ -31,6 +31,7 @@ class WaybackClientTest {
                 query.contains("known.example") -> """{"url":"$requested","archived_snapshots":{"closest":{"status":"200","available":true,"url":"http://web.archive.org/web/20261020063300/$requested","timestamp":"20261020063300"}}}"""
                 query.contains("redirected.example") -> """{"url":"https://redirected.example/news/a","archived_snapshots":{"closest":{"status":"200","available":true,"url":"http://web.archive.org/web/20261020063300/https://redirected.example/404.php","timestamp":"20261020063300"}}}"""
                 query.contains("moved.example") -> """{"url":"https://moved.example/firm/1","archived_snapshots":{"closest":{"status":"200","available":true,"url":"http://web.archive.org/web/20261020063300/https://newname.example/firm/1","timestamp":"20261020063300"}}}"""
+                query.contains("lowered.example") -> """{"url":"https://lowered.example/vesti/a1-Nova-Vlada/","archived_snapshots":{"closest":{"status":"200","available":true,"url":"http://web.archive.org/web/20261020063300/https://lowered.example/vesti/a1-nova-vlada/","timestamp":"20261020063300"}}}"""
                 query.contains("captured404.example") -> """{"url":"https://captured404.example/x","archived_snapshots":{"closest":{"status":"404","available":false,"url":"http://web.archive.org/web/20261020063300/https://captured404.example/x","timestamp":"20261020063300"}}}"""
                 query.contains("nokey.example") -> """{"url":"x"}"""
                 query.contains("maintenance.example") -> "<html>archive.org is down for maintenance</html>"
@@ -160,6 +161,13 @@ class WaybackClientTest {
         val snapshot = client().lookup("https://moved.example/firm/1")
         assertNotNull(snapshot)
         assertTrue(snapshot.url.endsWith("https://newname.example/firm/1"))
+    }
+
+    @Test
+    fun `lookup accepts a snapshot whose address differs only in letter case, as the archive indexes it`() {
+        val snapshot = client().lookup("https://lowered.example/vesti/a1-Nova-Vlada/")
+        assertNotNull(snapshot)
+        assertTrue(snapshot.url.endsWith("https://lowered.example/vesti/a1-nova-vlada/"))
     }
 
     @Test
