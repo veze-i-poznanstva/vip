@@ -24,3 +24,13 @@ rs:PredragMali_SinisaMali_Braca a vip:SiblingConnection ;
           rdfs:comment "KRIK, 22. jul 2019: 'Predrag Mali, rođeni brat ministra finansija Siniše Malog'; Siniša Mali za Globus 2014, kako prenosi KRIK: 'moj mlađi brat Predrag'."@sr ] ,
         [ a :Documentation ; :hasDocumentURL <https://n1info.rs/vesti/a501712-Milenijum-tim-ustupio-audi-i-stan-bratu-Sinise-Malog/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
           rdfs:comment "N1 (Beta, KRIK), 22. jul 2019: 'Rođeni brat ministra finansija Siniše Malog Predrag Mali'; prenosi KRIK, nije nezavisna potvrda."@sr ] .
+
+rs:IgorBrnabic_AnaBrnabic a vip:SiblingConnection ;
+    bio:participant rs:Igor_Brnabic, rs:Ana_Brnabic ;
+    rdfs:comment "Igor Brnabić je brat Ane Brnabić, prema Radaru i N1. N1 prenosi Radar i razgovor sa autorima; nije nezavisna potvrda."@sr ;
+    rdfs:comment "Igor Brnabić is Ana Brnabić’s brother, according to Radar and N1. N1 relays Radar and interviews its authors; it is not independent corroboration."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://radar.nova.rs/ekonomija/investicioni-fond-nedic-tatjana-vukic/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Radar, 11. decembar 2025: 'rođena braća najviših državnih funkcionera'; 'predsednice parlamenta i bivše premijerke Ane Brnabić'; 'Rekorder među funkcionerskom braćom je, ipak, Igor Brnabić'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://n1info.rs/vesti/poreski-raj-za-naprednjake-smislili-su-svoje-ostrvo-usred-srbije-jeste-li-culi-za-investicioni-fond-vista-rika/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "N1, 11. decembar 2025, prenosi Radar (nije nezavisna potvrda): 'List Radar otkriva da su na spisku klijenata rođena braća najviših državnih funkcionera.'; 'Rekorder među funkcionerskom braćom, ipak je Igor Brnabić'; urednik Radara Milan Ćulibrk: 'brat Siniše Malog i brat Ane Brnabić'."@sr ] .

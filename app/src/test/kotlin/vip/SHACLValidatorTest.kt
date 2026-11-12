@@ -184,6 +184,78 @@ class SHACLValidatorTest {
     }
 
     @Test
+    fun `a continuing stake does not sum mutually exclusive states of another owner`() {
+        val report = ownerships("""
+            rs:A a vip:OwnershipConnection ; vip:owner rs:OwnerA ; vip:ownedCompany rs:Firm ; vip:ownershipShare 50.0 ; $quoted ; :connectionEndDate "2026-03"^^xsd:gYearMonth .
+            rs:B a vip:OwnershipConnection ; vip:owner rs:OwnerA ; vip:ownedCompany rs:Firm ; vip:ownershipShare 75.0 ; $quoted ; :connectionStartDate "2026-03"^^xsd:gYearMonth .
+            rs:C a vip:OwnershipConnection ; vip:owner rs:OwnerB ; vip:ownedCompany rs:Firm ; vip:ownershipShare 25.0 ; $quoted .
+            rs:D a vip:OwnershipConnection ; vip:owner rs:OwnerC ; vip:ownedCompany rs:Firm ; vip:ownershipShare 25.0 ; $quoted ; :connectionEndDate "2026-03"^^xsd:gYearMonth .
+        """)
+        assertTrue(report.conforms(), report.entries.joinToString { it.message() })
+    }
+
+    @Test
+    fun `the later state of a changed stake is still summed with a stake that continues`() {
+        val report = ownerships("""
+            rs:A a vip:OwnershipConnection ; vip:owner rs:OwnerA ; vip:ownedCompany rs:Firm ; vip:ownershipShare 50.0 ; $quoted ; :connectionEndDate "2026-03"^^xsd:gYearMonth .
+            rs:B a vip:OwnershipConnection ; vip:owner rs:OwnerA ; vip:ownedCompany rs:Firm ; vip:ownershipShare 75.0 ; $quoted ; :connectionStartDate "2026-03"^^xsd:gYearMonth .
+            rs:C a vip:OwnershipConnection ; vip:owner rs:OwnerB ; vip:ownedCompany rs:Firm ; vip:ownershipShare 30.0 ; $quoted .
+        """)
+        assertFalse(report.conforms())
+        assertTrue(report.entries.any { it.value().toString().endsWith("B") }, report.entries.joinToString { it.value().toString() })
+    }
+
+    @Test
+    fun `the earlier state of a changed stake is still summed with what applied before the change`() {
+        val report = ownerships("""
+            rs:A a vip:OwnershipConnection ; vip:owner rs:OwnerA ; vip:ownedCompany rs:Firm ; vip:ownershipShare 50.0 ; $quoted ; :connectionEndDate "2026-03"^^xsd:gYearMonth .
+            rs:B a vip:OwnershipConnection ; vip:owner rs:OwnerA ; vip:ownedCompany rs:Firm ; vip:ownershipShare 60.0 ; $quoted ; :connectionStartDate "2026-03"^^xsd:gYearMonth .
+            rs:C a vip:OwnershipConnection ; vip:owner rs:OwnerB ; vip:ownedCompany rs:Firm ; vip:ownershipShare 30.0 ; $quoted .
+            rs:D a vip:OwnershipConnection ; vip:owner rs:OwnerC ; vip:ownedCompany rs:Firm ; vip:ownershipShare 30.0 ; $quoted ; :connectionEndDate "2026-03"^^xsd:gYearMonth .
+        """)
+        assertFalse(report.conforms())
+        assertTrue(report.entries.none { it.value().toString().endsWith("B") }, report.entries.joinToString { it.value().toString() })
+    }
+
+    @Test
+    fun `records without a start are summed with each other whatever their ends`() {
+        val report = ownerships("""
+            rs:A a vip:OwnershipConnection ; vip:owner rs:OwnerA ; vip:ownedCompany rs:Firm ; vip:ownershipShare 60.0 ; $quoted ; :connectionEndDate "2020"^^xsd:gYear .
+            rs:B a vip:OwnershipConnection ; vip:owner rs:OwnerB ; vip:ownedCompany rs:Firm ; vip:ownershipShare 60.0 ; $quoted ; :connectionEndDate "2025"^^xsd:gYear .
+        """)
+        assertFalse(report.conforms())
+    }
+
+    @Test
+    fun `a record without a start that ended is not summed with one that starts later`() {
+        val report = ownerships("""
+            rs:A a vip:OwnershipConnection ; vip:owner rs:OwnerA ; vip:ownedCompany rs:Firm ; vip:ownershipShare 60.0 ; $quoted ; :connectionEndDate "2020"^^xsd:gYear .
+            rs:B a vip:OwnershipConnection ; vip:owner rs:OwnerB ; vip:ownedCompany rs:Firm ; vip:ownershipShare 60.0 ; $quoted ; :connectionStartDate "2021-05"^^xsd:gYearMonth .
+        """)
+        assertTrue(report.conforms(), report.entries.joinToString { it.message() })
+    }
+
+    @Test
+    fun `a year-precise start is summed with a month-precise start in the same year`() {
+        val report = ownerships("""
+            rs:A a vip:OwnershipConnection ; vip:owner rs:OwnerA ; vip:ownedCompany rs:Firm ; vip:ownershipShare 60.0 ; $quoted ; :connectionStartDate "2026"^^xsd:gYear .
+            rs:B a vip:OwnershipConnection ; vip:owner rs:OwnerB ; vip:ownedCompany rs:Firm ; vip:ownershipShare 60.0 ; $quoted ; :connectionStartDate "2026-03"^^xsd:gYearMonth .
+        """)
+        assertFalse(report.conforms())
+    }
+
+    @Test
+    fun `three states of one stake in a row are never summed with each other`() {
+        val report = ownerships("""
+            rs:A a vip:OwnershipConnection ; vip:owner rs:OwnerA ; vip:ownedCompany rs:Firm ; vip:ownershipShare 100.0 ; $quoted ; :connectionStartDate "2020"^^xsd:gYear ; :connectionEndDate "2022"^^xsd:gYear .
+            rs:B a vip:OwnershipConnection ; vip:owner rs:OwnerA ; vip:ownedCompany rs:Firm ; vip:ownershipShare 80.0 ; $quoted ; :connectionStartDate "2022"^^xsd:gYear ; :connectionEndDate "2024-06"^^xsd:gYearMonth .
+            rs:C a vip:OwnershipConnection ; vip:owner rs:OwnerA ; vip:ownedCompany rs:Firm ; vip:ownershipShare 60.0 ; $quoted ; :connectionStartDate "2024-06"^^xsd:gYearMonth .
+            rs:D a vip:OwnershipConnection ; vip:owner rs:OwnerB ; vip:ownedCompany rs:Firm ; vip:ownershipShare 20.0 ; $quoted ; :connectionStartDate "2022"^^xsd:gYear .
+        """)
+        assertTrue(report.conforms(), report.entries.joinToString { it.message() })
+    }
+
+    @Test
     fun `ownership states that overlap in time are summed`() {
         val report = ownerships("""
             rs:A a vip:OwnershipConnection ; vip:owner rs:OwnerA ; vip:ownedCompany rs:Firm ; vip:ownershipShare 100.0 ; $quoted ; :connectionStartDate "2025-12-24"^^xsd:date ; :connectionEndDate "2026-03"^^xsd:gYearMonth .

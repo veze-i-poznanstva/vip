@@ -1,0 +1,20 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rs: <https://w3id.org/vip/rs/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio: <http://purl.org/vocab/bio/0.1/> .
+@prefix : <http://poderopedia.com/vocab/> .
+@prefix vip: <https://w3id.org/vip/vocab#> .
+
+# Matična datoteka: Vista Rica AD Beograd. Veze su u data/cases/vista-rica.ttl.
+# Entity home: Vista Rica AD Beograd. Connections are in data/cases/vista-rica.ttl.
+
+rs:Vista_Rica_AD a :Company ;
+    foaf:name "Vista Rica AD Beograd"@sr ;
+    rdfs:comment "Društvo za upravljanje fondovima Vista Rica Invest i Vista Rica Corporate. Odvojeno od fondova i njihove imovine."@sr ;
+    rdfs:comment "The management company for Vista Rica Invest and Vista Rica Corporate, separate from the funds and their assets."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://vistarica.rs/wp-content/uploads/2026/09/Prospekt-VR-Invest-2026-final-potpisan.pdf> ; :hasDocumentType vip:officialDocument ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Prospekt Vista Rica Invest, ažuriran 18.09.2026: 'alternativnim investicionim fondovima Vista Rica AD Beograd' — poslovno ime društva za upravljanje."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://novaekonomija.rs/vesti-iz-zemlje/tatjana-vukic-po-pisanju-medija-partnerka-andreja-vucica-postala-vecinski-vlasnik-investicionog-fonda-vista-rica> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Nova Ekonomija: 'Društvo Vista Rica upravlja fondovima kao što su “Vista Rica Invest” i “Vista Rica Corporate”.'"@sr ] .

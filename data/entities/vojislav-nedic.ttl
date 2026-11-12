@@ -1,0 +1,22 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rs: <https://w3id.org/vip/rs/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio: <http://purl.org/vocab/bio/0.1/> .
+@prefix : <http://poderopedia.com/vocab/> .
+@prefix vip: <https://w3id.org/vip/vocab#> .
+
+# Matična datoteka: Vojislav Nedić. Veze su u data/cases/.
+# Entity home: Vojislav Nedić. Connections are in data/cases/.
+
+rs:Vojislav_Nedic a foaf:Person ;
+    foaf:name "Vojislav Nedić"@sr ;
+    foaf:firstName "Vojislav" ;
+    :firstLastName "Nedić" ;
+    rdfs:comment "Advokat, osnivač i akcionar društva Vista Rica AD Beograd sa udelom od 25%, prema prospektu i Novoj Ekonomiji."@sr ;
+    rdfs:comment "Lawyer, founder and 25% shareholder of Vista Rica AD Beograd, according to the prospectus and Nova Ekonomija."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://vistarica.rs/wp-content/uploads/2026/09/Prospekt-VR-Invest-2026-final-potpisan.pdf> ; :hasDocumentType vip:officialDocument ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Prospekt: 'Vojislav Nedić, osnivač i akcionar' sa učešćem od 25% u društvu za upravljanje."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://novaekonomija.rs/vesti-iz-zemlje/tatjana-vukic-po-pisanju-medija-partnerka-andreja-vucica-postala-vecinski-vlasnik-investicionog-fonda-vista-rica> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Nova Ekonomija: 'preostalih 25 odsto je u rukama advokata Vojislava Nedića'."@sr ] .

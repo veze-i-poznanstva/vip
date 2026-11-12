@@ -1,0 +1,22 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rs: <https://w3id.org/vip/rs/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio: <http://purl.org/vocab/bio/0.1/> .
+@prefix : <http://poderopedia.com/vocab/> .
+@prefix vip: <https://w3id.org/vip/vocab#> .
+
+# Matična datoteka: Igor Brnabić. Veze su u data/cases/.
+# Entity home: Igor Brnabić. Connections are in data/cases/.
+
+rs:Igor_Brnabic a foaf:Person ;
+    foaf:name "Igor Brnabić"@sr ;
+    foaf:firstName "Igor" ;
+    :firstLastName "Brnabić" ;
+    rdfs:comment "Brat Ane Brnabić, identifikovan u izveštaju Radara i prilogu N1 koji prenosi isti izveštaj."@sr ;
+    rdfs:comment "Brother of Ana Brnabić, identified in Radar’s report and N1’s coverage of that report."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://radar.nova.rs/ekonomija/investicioni-fond-nedic-tatjana-vukic/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Radar, 11. decembar 2025: 'rođena braća najviših državnih funkcionera'; 'predsednice parlamenta i bivše premijerke Ane Brnabić'; 'Rekorder među funkcionerskom braćom je, ipak, Igor Brnabić'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://n1info.rs/vesti/poreski-raj-za-naprednjake-smislili-su-svoje-ostrvo-usred-srbije-jeste-li-culi-za-investicioni-fond-vista-rika/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "N1, 11. decembar 2025, prenosi Radar (nije nezavisna potvrda): 'List Radar otkriva da su na spisku klijenata rođena braća najviših državnih funkcionera.'; 'Rekorder među funkcionerskom braćom, ipak je Igor Brnabić'; urednik Radara Milan Ćulibrk: 'brat Siniše Malog i brat Ane Brnabić'."@sr ] .

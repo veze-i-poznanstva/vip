@@ -1,0 +1,94 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rs: <https://w3id.org/vip/rs/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio: <http://purl.org/vocab/bio/0.1/> .
+@prefix : <http://poderopedia.com/vocab/> .
+@prefix vip: <https://w3id.org/vip/vocab#> .
+
+# Slučaj: Vista Rica — vlasništvo društva za upravljanje i upravljanje fondovima.
+# Case: Vista Rica — ownership of the management company and fund management.
+# Ulaganja klijenata nisu vlasništvo društva za upravljanje; ovde nisu uneta.
+# Client investments are distinct from ownership of the manager and are not recorded here.
+# Fondovi su zasebne celine bez svojstva pravnog lica, predstavljene kao foaf:Organization.
+# Funds are separate pools without legal personality, represented as foaf:Organization.
+
+rs:TatjanaVukic_VistaRica_50 a vip:OwnershipConnection ;
+    vip:owner rs:Tatjana_Vukic ;
+    vip:ownedCompany rs:Vista_Rica_AD ;
+    vip:ownershipShare 50.0 ;
+    :connectionEndDate "2026-03"^^xsd:gYearMonth ;
+    rdfs:comment "Prospekt iz 2024. navodi da Tatjana Vukić poseduje 50% društva za upravljanje Vista Rica AD Beograd. Mesec promene je izveden: prospekt navodi saglasnost Komisije za hartije od vrednosti na sticanje kvalifikovanog učešća od 25. marta 2026, a Nova Ekonomija 31. marta 2026. piše da je povećanje udela objavljeno u Centralnom registru hartija od vrednosti; dan prenosa nije naveden."@sr ;
+    rdfs:comment "The 2024 prospectus lists Tatjana Vukić as owning 50% of the management company Vista Rica AD Beograd. The month of the change is inferred: the prospectus lists the Securities Commission's consent to the acquisition of a qualified holding, dated 25 March 2026, and Nova Ekonomija wrote on 31 March 2026 that the increase had been published in the Central Securities Register; the day of the transfer is not stated."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://vistarica.rs/wp-content/uploads/2024/09/VISTA-RICA-CORPORATE_PROSPEKT_.pdf> ; :hasDocumentType vip:officialDocument ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Prospekt: 'Tatjana Vukić, osnivač i akcionar koji poseduje kvalifikovano učešće od 50%'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://novaekonomija.rs/vesti-iz-zemlje/tatjana-vukic-po-pisanju-medija-partnerka-andreja-vucica-postala-vecinski-vlasnik-investicionog-fonda-vista-rica> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Nova Ekonomija, 31. mart 2026: 'Vukić je uvećala svoj udeo u akcionarskom društvu Vista Rica sa 50 na 75 odsto, objavljeno je u Centralnom registru hartija od vrednosti.'"@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://vistarica.rs/wp-content/uploads/2026/09/Prospekt-VR-Invest-2026-final-potpisan.pdf> ; :hasDocumentType vip:officialDocument ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Prospekt Vista Rica Invest, ažuriran 18.09.2026: 'Tatjana Vukić, osnivač i akcionar koja poseduje kvalifikovano učešće od 75%'; 'Rešenje Komisije o saglasnosti na sticanje kvalifikovanog učešća br. 2/5-101-2546/4-23, od dana 28.11.2023. godine i br. 2/5-103-549/5-26 od dana 25.03.2026. godine'."@sr ] .
+
+rs:TatjanaVukic_VistaRica_75 a vip:OwnershipConnection ;
+    vip:owner rs:Tatjana_Vukic ;
+    vip:ownedCompany rs:Vista_Rica_AD ;
+    vip:ownershipShare 75.0 ;
+    :connectionStartDate "2026-03"^^xsd:gYearMonth ;
+    rdfs:comment "Prospekt iz septembra 2026. i Nova Ekonomija navode udeo Tatjane Vukić od 75% u Vista Rica AD Beograd. Mesec promene je izveden: prospekt navodi saglasnost Komisije za hartije od vrednosti na sticanje kvalifikovanog učešća od 25. marta 2026, a Nova Ekonomija 31. marta 2026. piše da je povećanje udela objavljeno u Centralnom registru hartija od vrednosti; dan prenosa nije naveden."@sr ;
+    rdfs:comment "The September 2026 prospectus and Nova Ekonomija list Tatjana Vukić’s 75% stake in Vista Rica AD Beograd. The month of the change is inferred: the prospectus lists the Securities Commission's consent to the acquisition of a qualified holding, dated 25 March 2026, and Nova Ekonomija wrote on 31 March 2026 that the increase had been published in the Central Securities Register; the day of the transfer is not stated."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://vistarica.rs/wp-content/uploads/2026/09/Prospekt-VR-Invest-2026-final-potpisan.pdf> ; :hasDocumentType vip:officialDocument ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Prospekt Vista Rica Invest, ažuriran 18.09.2026: 'Tatjana Vukić, osnivač i akcionar koja poseduje kvalifikovano učešće od 75%'; 'Rešenje Komisije o saglasnosti na sticanje kvalifikovanog učešća br. 2/5-101-2546/4-23, od dana 28.11.2023. godine i br. 2/5-103-549/5-26 od dana 25.03.2026. godine'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://novaekonomija.rs/vesti-iz-zemlje/tatjana-vukic-po-pisanju-medija-partnerka-andreja-vucica-postala-vecinski-vlasnik-investicionog-fonda-vista-rica> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Nova Ekonomija, 31. mart 2026: 'Vukić je uvećala svoj udeo u akcionarskom društvu Vista Rica sa 50 na 75 odsto, objavljeno je u Centralnom registru hartija od vrednosti.'"@sr ] .
+
+rs:VojislavNedic_VistaRica a vip:OwnershipConnection ;
+    vip:owner rs:Vojislav_Nedic ;
+    vip:ownedCompany rs:Vista_Rica_AD ;
+    vip:ownershipShare 25.0 ;
+    rdfs:comment "Prospekti i Nova Ekonomija navode Vojislava Nedića kao vlasnika 25% društva Vista Rica AD Beograd. Datumi početka i prestanka vlasništva nisu utvrđeni."@sr ;
+    rdfs:comment "The prospectuses and Nova Ekonomija list Vojislav Nedić as a 25% owner of Vista Rica AD Beograd. Ownership start and end dates are unknown."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://vistarica.rs/wp-content/uploads/2026/09/Prospekt-VR-Invest-2026-final-potpisan.pdf> ; :hasDocumentType vip:officialDocument ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Prospekt Vista Rica Invest, ažuriran 18.09.2026: 'Vojislav Nedić, osnivač i akcionar koji poseduje kvalifikovano učešće od 25%'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://vistarica.rs/wp-content/uploads/2024/09/VISTA-RICA-CORPORATE_PROSPEKT_.pdf> ; :hasDocumentType vip:officialDocument ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Prospekt Vista Rica Corporate, 4.9.2024: 'Vojislav Nedić, osnivač i akcionar koji poseduje kvalifikovano učešće od 25%'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://novaekonomija.rs/vesti-iz-zemlje/tatjana-vukic-po-pisanju-medija-partnerka-andreja-vucica-postala-vecinski-vlasnik-investicionog-fonda-vista-rica> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Nova Ekonomija: 'preostalih 25 odsto je u rukama advokata Vojislava Nedića'."@sr ] .
+
+rs:SrdjanDavidovic_VistaRica a vip:OwnershipConnection ;
+    vip:owner rs:Srdjan_Davidovic ;
+    vip:ownedCompany rs:Vista_Rica_AD ;
+    vip:ownershipShare 25.0 ;
+    :connectionEndDate "2026-03"^^xsd:gYearMonth ;
+    rdfs:comment "Prospekt iz 2024. navodi udeo Srđana Davidovića od 25%; Nova Ekonomija izveštava da je izašao iz vlasništva, dok je udeo Vukić povećan sa 50% na 75%. Mesec promene je izveden: prospekt navodi saglasnost Komisije za hartije od vrednosti na sticanje kvalifikovanog učešća od 25. marta 2026, a Nova Ekonomija 31. marta 2026. piše da je povećanje udela objavljeno u Centralnom registru hartija od vrednosti; dan prenosa nije naveden."@sr ;
+    rdfs:comment "The 2024 prospectus lists Srđan Davidović’s 25% stake; Nova Ekonomija reports his exit while Vukić’s stake increased from 50% to 75%. The month of the change is inferred: the prospectus lists the Securities Commission's consent to the acquisition of a qualified holding, dated 25 March 2026, and Nova Ekonomija wrote on 31 March 2026 that the increase had been published in the Central Securities Register; the day of the transfer is not stated."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://vistarica.rs/wp-content/uploads/2024/09/VISTA-RICA-CORPORATE_PROSPEKT_.pdf> ; :hasDocumentType vip:officialDocument ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Prospekt: 'Srđan Davidović, osnivač i akcionar koji poseduje kvalifikovano učešće od 25%'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://novaekonomija.rs/vesti-iz-zemlje/tatjana-vukic-po-pisanju-medija-partnerka-andreja-vucica-postala-vecinski-vlasnik-investicionog-fonda-vista-rica> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Nova Ekonomija, 31. mart 2026: 'Iz vlasništva firme je istupio Srđan Davidović'; opisuje povećanje udela Vukić sa 50% na 75%."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://vistarica.rs/wp-content/uploads/2026/09/Prospekt-VR-Invest-2026-final-potpisan.pdf> ; :hasDocumentType vip:officialDocument ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Prospekt Vista Rica Invest, ažuriran 18.09.2026, Davidovića više ne navodi; pod 'Akcionari Društva su:' stoje samo 'Tatjana Vukić, osnivač i akcionar koja poseduje kvalifikovano učešće od 75%' i 'Vojislav Nedić, osnivač i akcionar koji poseduje kvalifikovano učešće od 25%'."@sr ] .
+
+rs:VistaRicaAD_VistaRicaInvest_Management a :Connection ;
+    bio:participant rs:Vista_Rica_AD, rs:Vista_Rica_Invest ;
+    rdfs:label "upravlja fondom"@sr, "manages fund"@en ;
+    rdfs:comment "Vista Rica AD Beograd upravlja fondom Vista Rica Invest, prema prospektu fonda i Novoj Ekonomiji. Veza označava upravljanje, ne vlasništvo nad fondom. Datumi nisu utvrđeni."@sr ;
+    rdfs:comment "Vista Rica AD Beograd manages Vista Rica Invest, according to the fund prospectus and Nova Ekonomija. This records management, not ownership of the fund. Dates are unknown."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://vistarica.rs/wp-content/uploads/2026/09/Prospekt-VR-Invest-2026-final-potpisan.pdf> ; :hasDocumentType vip:officialDocument ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Prospekt fonda Vista Rica Invest, ažuriran 18.09.2026: 'u registar Fonda Vista Rica Invest, kojim upravlja Društvo za upravljanje Vista Rica AD'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://novaekonomija.rs/vesti-iz-zemlje/tatjana-vukic-po-pisanju-medija-partnerka-andreja-vucica-postala-vecinski-vlasnik-investicionog-fonda-vista-rica> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Nova Ekonomija: 'Društvo Vista Rica upravlja fondovima kao što su “Vista Rica Invest” i “Vista Rica Corporate”.'"@sr ] .
+
+rs:VistaRicaAD_VistaRicaCorporate_Management a :Connection ;
+    bio:participant rs:Vista_Rica_AD, rs:Vista_Rica_Corporate ;
+    rdfs:label "upravlja fondom"@sr, "manages fund"@en ;
+    rdfs:comment "Vista Rica AD Beograd upravlja fondom Vista Rica Corporate, prema prospektu fonda i Novoj Ekonomiji. Veza označava upravljanje, ne vlasništvo nad fondom. Datumi nisu utvrđeni."@sr ;
+    rdfs:comment "Vista Rica AD Beograd manages Vista Rica Corporate, according to the fund prospectus and Nova Ekonomija. This records management, not ownership of the fund. Dates are unknown."@en ;
+    :hasDocumentation
+        [ a :Documentation ; :hasDocumentURL <https://vistarica.rs/wp-content/uploads/2024/09/VISTA-RICA-CORPORATE_PROSPEKT_.pdf> ; :hasDocumentType vip:officialDocument ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Prospekt fonda Vista Rica Corporate, 4.9.2024: 'za upis u registar Fonda Vista Rica Corporate, kojim upravlja Društvo za upravljanje Vista Rica AD'."@sr ] ,
+        [ a :Documentation ; :hasDocumentURL <https://novaekonomija.rs/vesti-iz-zemlje/tatjana-vukic-po-pisanju-medija-partnerka-andreja-vucica-postala-vecinski-vlasnik-investicionog-fonda-vista-rica> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Nova Ekonomija: 'Društvo Vista Rica upravlja fondovima kao što su “Vista Rica Invest” i “Vista Rica Corporate”.'"@sr ] .
+
