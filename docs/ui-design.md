@@ -155,7 +155,9 @@ leaves the browser except what the visitor chooses to hand to their own AI assis
 
 - **Engine.** Comunica's RDF/JS lite build, pure TypeScript, over an N3.js in-memory store. The
   whole query panel with the engine is one lazily loaded chunk, 339 KB gzipped as measured in the
-  build (the lite build's own figure of 225 KB predates its SPARQL 1.2 parser). No WebAssembly: the
+  build (the lite build's own figure of 225 KB predates its SPARQL 1.2 parser). A deploy replaces
+  the chunk, so a page opened before it cannot fetch it any more; the panel then says so and offers
+  a reload instead of loading forever. No WebAssembly: the
   engine is readable, debuggable and runs in Vitest without a binary. The lite build has no
   `SERVICE` keyword, so a query cannot call out to another endpoint. Its dependencies need Node 22,
   which the Gradle plugin downloads.

@@ -160,6 +160,8 @@ ne napušta pregledač osim onoga što posetilac sam odluči da preda svom AI as
 - **Mašina za upite.** Comunica, izdanje RDF/JS lite, čist TypeScript, nad N3.js skladištem u
   memoriji. Ceo panel za upite sa mašinom je jedan odloženo učitani deo, 339 KB gzipovano kako je
   izmereno u build-u (sopstvena cifra lite izdanja od 225 KB prethodi njegovom parseru za SPARQL 1.2).
+  Objavljivanje nove verzije zamenjuje taj deo, pa stranica otvorena pre toga više ne može da ga
+  preuzme; panel tada to kaže i nudi ponovno učitavanje umesto da se učitava bez kraja.
   Bez WebAssembly-ja: mašina je čitljiva, može da se debaguje i radi u Vitestu bez binarne
   datoteke. Lite izdanje nema ključnu reč `SERVICE`, pa upit ne može da pozove tuđi endpoint.
   Njegove zavisnosti traže Node 22, koji Gradle dodatak preuzima.

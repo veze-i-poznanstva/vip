@@ -44,6 +44,8 @@
   "path.swap": "Swap from and to",
   "query.title": "Questions",
   "query.close": "Close questions",
+  "query.unavailable": "This part of the page could not be loaded. The site may have been updated since you opened it, or the connection dropped. Reload the page to continue.",
+  "query.reload": "Reload the page",
   "leads": "Leads",
   "leads.hint": "Patterns worth a reporter's look, found in your browser from the published data",
   "leads.loading": "Loading the rules and the data…",

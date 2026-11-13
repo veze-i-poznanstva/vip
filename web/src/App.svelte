@@ -7,6 +7,7 @@
   import DetailsPanel from './lib/DetailsPanel.svelte';
   import type { LeadFocus } from './lib/leads';
   import { readQueryAddress } from './lib/advanced';
+  import { loadPart } from './lib/lazy';
   import { edgeLabel, panelContent } from './lib/details';
   import type { ConnectionFields } from './lib/details';
   import { wantsCorrection, withoutCorrection } from './lib/report';
@@ -137,6 +138,7 @@
   let advancedQuery = '';
   // The panel and the SPARQL engine behind it are a separate chunk, fetched the first time it opens.
   let QueryPanel: typeof import('./lib/QueryPanel.svelte').default | null = null;
+  let queryPanelFailed = false;
   $: panel = panelOpen ? panelContent(index, focus?.id ?? null, selectedEdgeId) : null;
   $: if (panel) leadsOpen = false;
 
@@ -159,7 +161,11 @@
     closePanel();
     queryMode = mode;
     leadsOpen = true;
-    if (!QueryPanel) QueryPanel = (await import('./lib/QueryPanel.svelte')).default;
+    if (QueryPanel) return;
+    queryPanelFailed = false;
+    const part = await loadPart(() => import('./lib/QueryPanel.svelte'));
+    if (part) QueryPanel = part.default;
+    else queryPanelFailed = true;
   }
 
   function showLead(event: CustomEvent<LeadFocus>) {
@@ -571,6 +577,11 @@
     <aside class="details" aria-label={$t('query.title')}>
       {#if QueryPanel}
         <svelte:component this={QueryPanel} {index} bind:mode={queryMode} bind:query={advancedQuery} on:close={() => (leadsOpen = false)} on:show={showLead} />
+      {:else if queryPanelFailed}
+        <div class="panel-loading" role="alert">
+          <p>{$t('query.unavailable')}</p>
+          <button type="button" class="primary" on:click={() => location.reload()}>{$t('query.reload')}</button>
+        </div>
       {:else}
         <p class="panel-loading">{$t('leads.loading')}</p>
       {/if}

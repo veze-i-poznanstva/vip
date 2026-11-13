@@ -149,7 +149,8 @@ answer; `lib/advanced.ts` carries a query in `?upit=` (base64url); `lib/engine.t
 files once per page (`cachedEngine`). `QueryPanel.svelte` (tabs Leads (Tragovi) and Ask (Pitaj); Advanced
 (Napredno) becomes a tab only once an answer's "Edit the query" or a `?upit=` address has opened it;
 the views stay mounted, hidden, so their state survives a change of tab) is imported lazily by
-`App.svelte`, so the engine is a separate chunk; `scripts/write-prompts.ts` (vite-node) publishes the assistant brief as
+`App.svelte` through `lib/lazy.ts` (`loadPart`: null when the chunk cannot be fetched, as after a deploy;
+the panel then offers a reload), so the engine is a separate chunk; `scripts/write-prompts.ts` (vite-node) publishes the assistant brief as
 `dist/prompt.<language>.txt`, which the Ask links tell the assistant to read from the published site
 (`PUBLISHED_SITE` in `lib/ask.ts`, never the page the visitor is on); `scripts/check-bundle.mjs`
 fails the build when that chunk passes 400 KB gzipped. `lib/equivalence.test.ts` proves every rule gives the build's `red-flags.json` leads.

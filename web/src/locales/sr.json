@@ -44,6 +44,8 @@
   "path.swap": "Zameni od i do",
   "query.title": "Pitanja",
   "query.close": "Zatvori pitanja",
+  "query.unavailable": "Ovaj deo stranice nije mogao da se učita. Sajt je možda ažuriran otkako ste ga otvorili, ili je veza prekinuta. Učitajte stranicu ponovo da biste nastavili.",
+  "query.reload": "Učitaj stranicu ponovo",
   "leads": "Tragovi",
   "leads.hint": "Obrasci vredni novinarske pažnje, pronađeni u vašem pregledaču iz objavljenih podataka",
   "leads.loading": "Učitavanje pravila i podataka…",
