@@ -54,6 +54,7 @@ na čijoj ontologiji [PoderVocab](https://github.com/poderopedia/PoderVocabulary
 | [Vodič za podatke](docs/data-guide.sr.md) | Urednički standard, kako se beleže činjenice, rečnik, kako doprineti podacima |
 | [Alati](docs/tools.sr.md) | Validatori, pravila za crvene zastavice, pregledač, jezici i build |
 | [Privatnost](docs/privacy.sr.md) | Šta pregledač radi sa vašim podacima, a skup podataka sa podacima osoba u njemu |
+| [Česta pitanja](docs/faq.sr.md) | Prijavljivanje korupcije i šta možete bez naloga kod AI asistenta |
 | [Prompt za brzi početak](docs/agent-prompt.sr.md) | Doprinos uz pomoć AI agenta |
 | [Dizajn istraživača grafa](docs/ui-design.sr.md) | Kuda ide pregledač |
 

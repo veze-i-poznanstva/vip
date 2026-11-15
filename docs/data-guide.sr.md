@@ -25,6 +25,19 @@ njegovi izvori, sa njihovim pripisivanjem, i ništa više.
   ravnoteže: takve tvrdnje nisu veze i zastarevaju. Postupci (hapšenje, naredba o sprovođenju
   istrage) pominju se samo tamo gde od njih zavisi datum ili pripisivanje, i tada kao datirani
   izveštaj imenovane redakcije.
+- **Srodnici i saradnici, zbog onoga što rade.** Interes javnosti za nosioca javne funkcije
+  obuhvata i ljude koji su mu bliski, a to kaže i zakon.
+  [Zakon o sprečavanju korupcije](https://www.paragraf.rs/propisi/zakon-o-sprecavanju-korupcije.html) u lica povezana sa javnim funkcionerom ubraja člana
+  porodice, krvne srodnike u pravoj liniji i u pobočnoj liniji zaključno sa drugim stepenom
+  srodstva, što obuhvata braću i sestre, i svako lice koje se opravdano može smatrati interesno
+  povezanim sa njim (član 2). Po
+  [Zakonu o sprečavanju pranja novca i finansiranja terorizma](https://www.paragraf.rs/propisi/zakon_o_sprecavanju_pranja_novca_i_finansiranja_terorizma.html) banke i drugi obveznici
+  proveravaju članove uže porodice funkcionera (partnera, roditelje, braću i sestre, decu i
+  njihove partnere) i njegove bliže saradnike kao i samog funkcionera (čl. 3. i 38), a isto za
+  članove porodice i poznate bliske saradnike traži [Direktiva (EU) 2015/849](https://eur-lex.europa.eu/eli/dir/2015/849/oj) (čl. 3. i
+  23). VIP zaključuje na isti način, uz jednu granicu: srodnik ili saradnik beleži se zbog onoga
+  što je prema izvorima uradio ili dobio tamo gde bi ta veza mogla biti važna (zaposlenje, firma,
+  ugovor, imovina), nikada zbog same veze, i samo sa onim što je za to potrebno.
 
 ## Kako se beleže činjenice
 

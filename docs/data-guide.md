@@ -26,6 +26,19 @@ record says what its sources say, with their attribution, and nothing more.
   balancing sentences: such statements are not connections, and they go stale. Proceedings (an
   arrest, an investigation order) are mentioned only where a date or an attribution depends on
   them, and then as a dated report by a named outlet.
+- **Relatives and associates, for what they do.** The public interest in an office-holder reaches
+  the people close to them, and the law says so. Serbia's
+  [Law on the Prevention of Corruption](https://www.paragraf.rs/propisi/zakon-o-sprecavanju-korupcije.html) counts as a person associated with a public
+  official their family member, their blood relatives in the direct line and in the collateral
+  line up to the second degree, which takes in brothers and sisters, and anyone who can reasonably
+  be considered tied to them by interest (Article 2). Under the
+  [Law on the Prevention of Money Laundering and the Financing of Terrorism](https://www.paragraf.rs/propisi/zakon_o_sprecavanju_pranja_novca_i_finansiranja_terorizma.html) banks and
+  other obliged firms check an official's close family (partner, parents, brothers and sisters,
+  children, and their partners) and close associates as they check the official (Articles 3 and
+  38), and [EU Directive 2015/849](https://eur-lex.europa.eu/eli/dir/2015/849/oj) asks the same for family members and known close
+  associates (Articles 3 and 23). VIP reasons the same way, with one limit: a relative or associate
+  is recorded for what the sources report they did or received where that tie could matter (a job,
+  a company, a contract, an asset), never for the tie alone, and only with what that needs.
 
 ## How facts are recorded
 

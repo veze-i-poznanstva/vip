@@ -13,7 +13,7 @@ everything under `~/code/ghdl/`). THE `gh` TOOL MUST NEVER PUSH, COMMENT OR OPEN
 `danluddlum <350449005+danluddlum@users.noreply.github.com>`.**
 
 README.md is a short front page; detail
-lives in docs/ (`why-connections`, `data-guide`, `tools`, `privacy`). Keep this file in step with them.
+lives in docs/ (`why-connections`, `data-guide`, `tools`, `privacy`, `faq`). Keep this file in step with them.
 
 ## What this is
 
@@ -39,7 +39,10 @@ record must say what the source says, with its attribution, and nothing more. Qu
 with the source's own spelling and typos. An outlet carrying another's report is not a second
 source in substance, and the citation says whose report it carries. A record carries no notes of
 our own on guilt or investigation status; proceedings are mentioned only where a date or an
-attribution depends on them (`docs/data-guide.md`, "Editorial standard").
+attribution depends on them (`docs/data-guide.md`, "Editorial standard"). A relative or associate
+of an office-holder is recorded for what the sources report they did or received where the tie
+could matter (a job, a company, a contract, an asset), never for the tie alone; no minor is
+recorded (`docs/faq.md`, "Who should not be in the database?").
 The build proves form and reachability, not that: read each source before citing it, quote the
 passage on the document's `rdfs:comment` (the build enforces this for connections), and check that it means this person (same-named people
 get separate URIs, `rs:Ivan_Bosnjak_Milenijum_Tim` and `rs:Ivan_Bosnjak_Zrenjanin` are two men).

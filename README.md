@@ -54,6 +54,7 @@ The project is inspired by Chile's [Poderopedia](https://web.archive.org/web/202
 | [Data guide](docs/data-guide.md) | The editorial standard, how facts are recorded, the vocabulary, how to contribute data |
 | [Tools](docs/tools.md) | Validators, red-flag rules, the viewer, languages and the build |
 | [Privacy](docs/privacy.md) | What the viewer does with your data, and the dataset with the data of the people in it |
+| [Frequently asked questions](docs/faq.md) | Reporting corruption, and what you can do without an AI account |
 | [Agent quickstart prompt](docs/agent-prompt.md) | Contributing with an AI agent |
 | [Graph explorer design](docs/ui-design.md) | Where the viewer is going |
 
