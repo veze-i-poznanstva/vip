@@ -168,6 +168,41 @@
   },
   {
     "data": {
+      "id": "vise_javno_tuzilastvo_beograd",
+      "label": "Više javno tužilaštvo u Beogradu",
+      "type": "instance",
+      "nodeType": "organization",
+      "uri": "https://w3id.org/vip/rs/Vise_Javno_Tuzilastvo_Beograd",
+      "comment": "Beogradsko više javno tužilaštvo. U pročitanim izvorima njime rukovodi Nenad Stefanović.",
+      "aliases": [
+        "Higher Public Prosecutor’s Office in Belgrade"
+      ],
+      "file": "data/entities/vise-javno-tuzilastvo-beograd.ttl",
+      "line": 12,
+      "sources": [
+        {
+          "url": "https://www.danas.rs/vesti/drustvo/nenad-stefanovic-demantuje-pisanje-nin-a-nemam-afere-nikada-nisam-bio-clan-nijedne-stranke/",
+          "domain": "danas.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Danas, 14. mart 2023, prenosi biografiju koju je dostavilo Više javno tužilaštvo: \u00272022. – Viši javni tužilac u Beogradu\u0027.",
+          "archive": "http://web.archive.org/web/20261112223057/https://www.danas.rs/vesti/drustvo/nenad-stefanovic-demantuje-pisanje-nin-a-nemam-afere-nikada-nisam-bio-clan-nijedne-stranke/",
+          "archivedOn": "2026-11-12"
+        },
+        {
+          "url": "https://vreme.com/vesti/vrhovno-javno-tuzilastvo-nenad-stefanovic-vise-javno-tuzilastvo/",
+          "domain": "vreme.com",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Vreme, izveštaj o nalazima komisije od 10. novembra 2026: \u0027njegov glavni javni tužilac Nenad Stefanović\u0027. Citirano za funkciju, ne za zaključke komisije.",
+          "archive": "http://web.archive.org/web/20261111075658/https://vreme.com/vesti/vrhovno-javno-tuzilastvo-nenad-stefanovic-vise-javno-tuzilastvo/",
+          "archivedOn": "2026-11-11"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
       "id": "infomacva",
       "label": "Infomačva",
       "type": "instance",
@@ -746,6 +781,38 @@
   },
   {
     "data": {
+      "id": "betonjerka_aleksinac",
+      "label": "Betonjerka Aleksinac",
+      "type": "instance",
+      "nodeType": "organization",
+      "uri": "https://w3id.org/vip/rs/Betonjerka_Aleksinac",
+      "comment": "Preduzeće iz Aleksinca koje RSE i Forbes Srbija opisuju kao firmu u sastavu Inkopa.",
+      "file": "data/entities/betonjerka-aleksinac.ttl",
+      "line": 12,
+      "sources": [
+        {
+          "url": "https://forbes.n1info.rs/biznis/kako-su-poslovali-inkop-i-druge-firme-zvonka-veselinovica-u-2024-braci-bliskoj-sns-u-slabije-su-cvetale-ruze/",
+          "domain": "forbes.n1info.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Forbes Srbija, 14. maj 2025: \u0027I Betonjerka Aleksinac, još jedna od firmi u sastavu Inkopa imala je lošiju godinu.\u0027",
+          "archive": "http://web.archive.org/web/20260810231015/https://forbes.n1info.rs/biznis/kako-su-poslovali-inkop-i-druge-firme-zvonka-veselinovica-u-2024-braci-bliskoj-sns-u-slabije-su-cvetale-ruze/",
+          "archivedOn": "2026-08-10"
+        },
+        {
+          "url": "https://www.slobodnaevropa.org/a/zvonko-veselinovic-firme-srbija-putevi-kamenolom-novi-pazar/33752862.html",
+          "domain": "slobodnaevropa.org",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "RSE, 11. maj 2026: \u0027Jedna je \"Betonjerka Aleksinac\", nekada prezaduženo preduzeće sa juga Srbije, koju je \"Inkop\" kupio u oktobru 2019. godine.\u0027",
+          "archive": "http://web.archive.org/web/20261112090822/https://www.slobodnaevropa.org/a/zvonko-veselinovic-firme-srbija-putevi-kamenolom-novi-pazar/33752862.html",
+          "archivedOn": "2026-11-12"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
       "id": "nikola_petrovic_ems",
       "label": "Nikola Petrović (EMS)",
       "type": "instance",
@@ -989,6 +1056,70 @@
           "status": "published",
           "archive": "http://web.archive.org/web/20251019045732/https://sr.wikipedia.org/wiki/Nacionalna_alijansa_za_lokalni_ekonomski_razvoj",
           "archivedOn": "2025-10-19"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "nenad_stefanovic",
+      "label": "Nenad Stefanović",
+      "type": "instance",
+      "nodeType": "person",
+      "uri": "https://w3id.org/vip/rs/Nenad_Stefanovic",
+      "comment": "Glavni javni tužilac Višeg javnog tužilaštva u Beogradu, prema biografiji koju prenosi Danas i izveštaju Vremena.",
+      "file": "data/entities/nenad-stefanovic.ttl",
+      "line": 12,
+      "sources": [
+        {
+          "url": "https://www.danas.rs/vesti/drustvo/nenad-stefanovic-demantuje-pisanje-nin-a-nemam-afere-nikada-nisam-bio-clan-nijedne-stranke/",
+          "domain": "danas.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Danas, 14. mart 2023, prenosi biografiju koju je dostavilo Više javno tužilaštvo: \u00272022. – Viši javni tužilac u Beogradu\u0027.",
+          "archive": "http://web.archive.org/web/20261112223057/https://www.danas.rs/vesti/drustvo/nenad-stefanovic-demantuje-pisanje-nin-a-nemam-afere-nikada-nisam-bio-clan-nijedne-stranke/",
+          "archivedOn": "2026-11-12"
+        },
+        {
+          "url": "https://vreme.com/vesti/vrhovno-javno-tuzilastvo-nenad-stefanovic-vise-javno-tuzilastvo/",
+          "domain": "vreme.com",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Vreme, izveštaj o nalazima komisije od 10. novembra 2026: \u0027njegov glavni javni tužilac Nenad Stefanović\u0027. Citirano za funkciju, ne za zaključke komisije.",
+          "archive": "http://web.archive.org/web/20261111075658/https://vreme.com/vesti/vrhovno-javno-tuzilastvo-nenad-stefanovic-vise-javno-tuzilastvo/",
+          "archivedOn": "2026-11-11"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "miodrag_markovic",
+      "label": "Miodrag Marković",
+      "type": "instance",
+      "nodeType": "person",
+      "uri": "https://w3id.org/vip/rs/Miodrag_Markovic",
+      "comment": "Zamenik glavnog javnog tužioca Višeg javnog tužilaštva u Beogradu, prema Nova.rs i Vremenu. Reč je o beogradskom tužiocu.",
+      "file": "data/entities/miodrag-markovic.ttl",
+      "line": 12,
+      "sources": [
+        {
+          "url": "https://nova.rs/vesti/hronika/nova-baza-stefanovicev-covek-za-specijalne-operacije-tuzilac-zbog-kog-je-radoicic-izbegao-pritvor-ko-u-srbiji-deli-pravdu-3-deo/",
+          "domain": "nova.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Nova.rs, Ivan Milićević, 18. jun 2025: \u0027Kao prvi zamenik glavnog tužioca beogradskog Višeg javnog tužilaštva (VJT) Nenada Stefanovića\u0027. Citirano za funkciju Miodraga Markovića.",
+          "archive": "http://web.archive.org/web/20250618212655/https://nova.rs/vesti/hronika/nova-baza-stefanovicev-covek-za-specijalne-operacije-tuzilac-zbog-kog-je-radoicic-izbegao-pritvor-ko-u-srbiji-deli-pravdu-3-deo/",
+          "archivedOn": "2025-06-18"
+        },
+        {
+          "url": "https://vreme.com/vesti/vrhovno-javno-tuzilastvo-nenad-stefanovic-vise-javno-tuzilastvo/",
+          "domain": "vreme.com",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Vreme, izveštaj o nalazima komisije od 10. novembra 2026: \u0027zamenik glavnog tužioca Miodrag Marković\u0027. Citirano za funkciju, ne za zaključke komisije.",
+          "archive": "http://web.archive.org/web/20261111075658/https://vreme.com/vesti/vrhovno-javno-tuzilastvo-nenad-stefanovic-vise-javno-tuzilastvo/",
+          "archivedOn": "2026-11-11"
         }
       ]
     }
@@ -1316,6 +1447,38 @@
   },
   {
     "data": {
+      "id": "novi_pazar_put",
+      "label": "Novi Pazar-put",
+      "type": "instance",
+      "nodeType": "organization",
+      "uri": "https://w3id.org/vip/rs/Novi_Pazar_Put",
+      "comment": "Građevinsko preduzeće koje RSE i Forbes Srbija opisuju kao firmu u sastavu Inkopa.",
+      "file": "data/entities/novi-pazar-put.ttl",
+      "line": 12,
+      "sources": [
+        {
+          "url": "https://forbes.n1info.rs/biznis/kako-su-poslovali-inkop-i-druge-firme-zvonka-veselinovica-u-2024-braci-bliskoj-sns-u-slabije-su-cvetale-ruze/",
+          "domain": "forbes.n1info.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Forbes Srbija, 14. maj 2025: \u0027I dobit firme Novi Pazar put, koja posluje kao zavisno preduzeće u sastavu Inkopa, poslovalo je prošle godine lošije u odnosu na 2023.\u0027",
+          "archive": "http://web.archive.org/web/20260810231015/https://forbes.n1info.rs/biznis/kako-su-poslovali-inkop-i-druge-firme-zvonka-veselinovica-u-2024-braci-bliskoj-sns-u-slabije-su-cvetale-ruze/",
+          "archivedOn": "2026-08-10"
+        },
+        {
+          "url": "https://www.slobodnaevropa.org/a/zvonko-veselinovic-firme-srbija-putevi-kamenolom-novi-pazar/33752862.html",
+          "domain": "slobodnaevropa.org",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "RSE, 11. maj 2026: \u0027\"Novi Pazar-put\" je, kao nekada državna građevinska firma specijalizovana za izgradnju puteva, od 2020. godine u vlasništvu \"Inkopa\", odnosno braće Zvonka i Žarka Veselinovića.\u0027",
+          "archive": "http://web.archive.org/web/20261112090822/https://www.slobodnaevropa.org/a/zvonko-veselinovic-firme-srbija-putevi-kamenolom-novi-pazar/33752862.html",
+          "archivedOn": "2026-11-12"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
       "id": "alo_marketing",
       "label": "Alo Marketing",
       "type": "instance",
@@ -1342,6 +1505,38 @@
           "quote": "MOM navodi osnivanje u avgustu 2017; pod poslovnim interesima: \u0027Alo marketing (100%)\u0027.",
           "archive": "http://web.archive.org/web/20250915222803/https://serbia.mom-gmr.org/sr/vlasnik/individual-owners/detail/owner/owner/show/sasa-blagojevic-2/",
           "archivedOn": "2025-09-15"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "atlantic_incubation_partners",
+      "label": "Atlantic Incubation Partners LLC",
+      "type": "instance",
+      "nodeType": "organization",
+      "uri": "https://w3id.org/vip/rs/Atlantic_Incubation_Partners",
+      "comment": "Kompanija koju Guardian i Vreme opisuju kao firmu Džareda Kušnera, ugovornu stranu u projektu Generalštaba u Beogradu.",
+      "file": "data/entities/atlantic-incubation-partners.ttl",
+      "line": 12,
+      "sources": [
+        {
+          "url": "https://www.theguardian.com/world/2025/nov/13/serbia-and-jared-kushner-firm-fast-track-deal-to-develop-protected-belgrade-site",
+          "domain": "theguardian.com",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Guardian, 13. novembar 2025, prenosi Radarov nalaz ugovora: \u0027Kushner’s firm Atlantic Incubation Partners LLC\u0027.",
+          "archive": "https://web.archive.org/web/20261115213527/https://www.theguardian.com/world/2025/nov/13/serbia-and-jared-kushner-firm-fast-track-deal-to-develop-protected-belgrade-site",
+          "archivedOn": "2026-11-15"
+        },
+        {
+          "url": "https://vreme.com/vesti/generalstab-raskid-ugovor-dzared-kusner-srbija-penali/",
+          "domain": "vreme.com",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Vreme, 14. novembar 2026, sopstveni izvor iz Vlade: \u0027firmom Atlantic Incubation Partners LLC Džareda Kušnera\u0027.",
+          "archive": "https://web.archive.org/web/20261115213320/https://vreme.com/vesti/generalstab-raskid-ugovor-dzared-kusner-srbija-penali/",
+          "archivedOn": "2026-11-15"
         }
       ]
     }
@@ -1760,6 +1955,38 @@
           "quote": "Nova.rs, 23. novembar 2020: \u0027čiji član Asseco See d.o.o. Beograd\u0027.",
           "archive": "http://web.archive.org/web/20250214133248/https://nova.rs/vesti/politika/svi-poslovi-brata-ane-brnabic-od-grcicevog-eps-a-20-miliona-evra/",
           "archivedOn": "2025-02-14"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "indjija_put",
+      "label": "JP Inđija put",
+      "type": "instance",
+      "nodeType": "organization",
+      "uri": "https://w3id.org/vip/rs/Indjija_Put",
+      "comment": "Javno preduzeće za upravljanje putevima i parkiralištima u Inđiji. Opštinska biografija i Beta koju prenosi Insajder navode Marka Gašića kao ranijeg direktora.",
+      "file": "data/entities/indjija-put.ttl",
+      "line": 12,
+      "sources": [
+        {
+          "url": "https://www.indjija.rs/Page.aspx?id\u003d4",
+          "domain": "indjija.rs",
+          "type": "webPage",
+          "status": "published",
+          "quote": "Opština Inđija, biografija (pročitano 15. novembra 2026): \u0027Marko Gašić Predsednik opštine\u0027; \u00272021.godine imenovan je za direktora Javnog preduzeća za upravljanje putevima i parkiralištima „Inđija put“ Inđija.\u0027",
+          "archive": "https://web.archive.org/web/20261115213455/https://www.indjija.rs/Page.aspx?id\u003d4",
+          "archivedOn": "2026-11-15"
+        },
+        {
+          "url": "https://insajder.net/prenosimo/pritvor-i-zabrana-prilaska-za-preostalo-troje-uhapsenih-s-predsednikom-opstine-indija",
+          "domain": "insajder.net",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Insajder prenosi Betu, 10. novembar 2026: \u0027predsednik Opštine Inđija Marko Gašić\u0027; \u0027Gašić i Trifunović - bivši i sadašnji direktor \"Inđija puta\"\u0027.",
+          "archive": "https://web.archive.org/web/20261115213908/https://insajder.net/prenosimo/pritvor-i-zabrana-prilaska-za-preostalo-troje-uhapsenih-s-predsednikom-opstine-indija",
+          "archivedOn": "2026-11-15"
         }
       ]
     }
@@ -2327,6 +2554,41 @@
   },
   {
     "data": {
+      "id": "opstina_indjija",
+      "label": "Opština Inđija",
+      "type": "instance",
+      "nodeType": "organization",
+      "uri": "https://w3id.org/vip/rs/Opstina_Indjija",
+      "comment": "Jedinica lokalne samouprave čiji je predsednik u pročitanim izvorima Marko Gašić. Entitet predstavlja lokalnu samoupravu, a ne naseljeno mesto.",
+      "aliases": [
+        "Municipality of Inđija"
+      ],
+      "file": "data/entities/opstina-indjija.ttl",
+      "line": 12,
+      "sources": [
+        {
+          "url": "https://www.indjija.rs/Page.aspx?id\u003d4",
+          "domain": "indjija.rs",
+          "type": "webPage",
+          "status": "published",
+          "quote": "Opština Inđija, biografija (pročitano 15. novembra 2026): \u0027Marko Gašić Predsednik opštine\u0027; \u00272021.godine imenovan je za direktora Javnog preduzeća za upravljanje putevima i parkiralištima „Inđija put“ Inđija.\u0027",
+          "archive": "https://web.archive.org/web/20261115213455/https://www.indjija.rs/Page.aspx?id\u003d4",
+          "archivedOn": "2026-11-15"
+        },
+        {
+          "url": "https://insajder.net/prenosimo/pritvor-i-zabrana-prilaska-za-preostalo-troje-uhapsenih-s-predsednikom-opstine-indija",
+          "domain": "insajder.net",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Insajder prenosi Betu, 10. novembar 2026: \u0027predsednik Opštine Inđija Marko Gašić\u0027; \u0027Gašić i Trifunović - bivši i sadašnji direktor \"Inđija puta\"\u0027.",
+          "archive": "https://web.archive.org/web/20261115213908/https://insajder.net/prenosimo/pritvor-i-zabrana-prilaska-za-preostalo-troje-uhapsenih-s-predsednikom-opstine-indija",
+          "archivedOn": "2026-11-15"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
       "id": "deko_tim",
       "label": "Deko-tim d.o.o. Beška",
       "type": "instance",
@@ -2566,6 +2828,41 @@
   },
   {
     "data": {
+      "id": "republika_srbija",
+      "label": "Republika Srbija",
+      "type": "instance",
+      "nodeType": "organization",
+      "uri": "https://w3id.org/vip/rs/Republika_Srbija",
+      "comment": "Država kao pravno lice i ugovorna strana u projektu Generalštaba, prema Radaru i Vremenu. Ovaj entitet nije Vlada niti geografska lokacija.",
+      "aliases": [
+        "Republic of Serbia"
+      ],
+      "file": "data/entities/republika-srbija.ttl",
+      "line": 12,
+      "sources": [
+        {
+          "url": "https://radar.nova.rs/ekonomija/generalstab-ugovor-kusnera-i-vlade-srbije/",
+          "domain": "radar.nova.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Radar, 13. novembar 2025, uvid u Investicioni ugovor: \u0027Firma Atlantic Incubation Partners LLC\u0027; \u0027Republika Srbija u maju 2024. sklopili su Investicioni ugovor\u0027",
+          "archive": "http://web.archive.org/web/20260609181853/https://radar.nova.rs/ekonomija/generalstab-ugovor-kusnera-i-vlade-srbije/",
+          "archivedOn": "2026-06-09"
+        },
+        {
+          "url": "https://vreme.com/vesti/generalstab-raskid-ugovor-dzared-kusner-srbija-penali/",
+          "domain": "vreme.com",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Vreme, 14. novembar 2026: \u0027Država Srbija zvanično je raskinula ugovor sa firmom Atlantic Incubation Partners LLC\u0027; \u0027Ugovor o izgradnji hotela, kockarnice i stambenog kompleksa na mestu Generalštaba potpisao je u maju 2024. tadašnji ministar građevinarstva Goran Vesić\u0027.",
+          "archive": "https://web.archive.org/web/20261115213320/https://vreme.com/vesti/generalstab-raskid-ugovor-dzared-kusner-srbija-penali/",
+          "archivedOn": "2026-11-15"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
       "id": "kk_crvena_zvezda",
       "label": "Košarkaški klub Crvena zvezda",
       "type": "instance",
@@ -2642,6 +2939,38 @@
   },
   {
     "data": {
+      "id": "inkop",
+      "label": "Inkop d.o.o. Ćuprija",
+      "type": "instance",
+      "nodeType": "organization",
+      "uri": "https://w3id.org/vip/rs/Inkop",
+      "comment": "Građevinsko preduzeće iz Ćuprije. RSE i Forbes Srbija navode Zvonka i Žarka Veselinovića kao suvlasnike.",
+      "file": "data/entities/inkop.ttl",
+      "line": 12,
+      "sources": [
+        {
+          "url": "https://forbes.n1info.rs/biznis/kako-su-poslovali-inkop-i-druge-firme-zvonka-veselinovica-u-2024-braci-bliskoj-sns-u-slabije-su-cvetale-ruze/",
+          "domain": "forbes.n1info.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Forbes Srbija, 14. maj 2025: \u0027Inkop je u vlasništvu dvojice braće, Zvonka i Žarka Veselinovića. Zvonko je suvlasnik 60 odsto, a Žarko preostalih 40 odsto udela.\u0027",
+          "archive": "http://web.archive.org/web/20260810231015/https://forbes.n1info.rs/biznis/kako-su-poslovali-inkop-i-druge-firme-zvonka-veselinovica-u-2024-braci-bliskoj-sns-u-slabije-su-cvetale-ruze/",
+          "archivedOn": "2026-08-10"
+        },
+        {
+          "url": "https://www.slobodnaevropa.org/a/zvonko-veselinovic-firme-srbija-putevi-kamenolom-novi-pazar/33752862.html",
+          "domain": "slobodnaevropa.org",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "RSE, 11. maj 2026: \u0027Zvonko Veselinović u \"Inkopu\" i povezanim preduzećima od tada ima 60 odsto vlasništva, dok njegov brat Žarko ima 40 odsto.\u0027",
+          "archive": "http://web.archive.org/web/20261112090822/https://www.slobodnaevropa.org/a/zvonko-veselinovic-firme-srbija-putevi-kamenolom-novi-pazar/33752862.html",
+          "archivedOn": "2026-11-12"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
       "id": "baltazar",
       "label": "Baltazar",
       "type": "instance",
@@ -2668,6 +2997,38 @@
           "quote": "MOM, profil kompanije Maxim Media Plus, odeljak Biznis / Marketing: \u0027Baltazar (100%)\u0027.",
           "archive": "http://web.archive.org/web/20250915220442/https://serbia.mom-gmr.org/sr/vlasnik/companies/detail/company/company/show/maxim-media-plus-1/",
           "archivedOn": "2025-09-15"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "zvonko_veselinovic",
+      "label": "Zvonko Veselinović",
+      "type": "instance",
+      "nodeType": "person",
+      "uri": "https://w3id.org/vip/rs/Zvonko_Veselinovic",
+      "comment": "Suvlasnik Inkopa iz Ćuprije, prema RSE i Forbesu Srbija. RSE navodi da je u javnosti predstavljen kao biznismen sa severa Kosova.",
+      "file": "data/entities/zvonko-veselinovic.ttl",
+      "line": 12,
+      "sources": [
+        {
+          "url": "https://forbes.n1info.rs/biznis/kako-su-poslovali-inkop-i-druge-firme-zvonka-veselinovica-u-2024-braci-bliskoj-sns-u-slabije-su-cvetale-ruze/",
+          "domain": "forbes.n1info.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Forbes Srbija, 14. maj 2025: \u0027Inkop je u vlasništvu dvojice braće, Zvonka i Žarka Veselinovića. Zvonko je suvlasnik 60 odsto, a Žarko preostalih 40 odsto udela.\u0027",
+          "archive": "http://web.archive.org/web/20260810231015/https://forbes.n1info.rs/biznis/kako-su-poslovali-inkop-i-druge-firme-zvonka-veselinovica-u-2024-braci-bliskoj-sns-u-slabije-su-cvetale-ruze/",
+          "archivedOn": "2026-08-10"
+        },
+        {
+          "url": "https://www.slobodnaevropa.org/a/zvonko-veselinovic-firme-srbija-putevi-kamenolom-novi-pazar/33752862.html",
+          "domain": "slobodnaevropa.org",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "RSE, 11. maj 2026: \u0027Zvonko Veselinović u \"Inkopu\" i povezanim preduzećima od tada ima 60 odsto vlasništva, dok njegov brat Žarko ima 40 odsto.\u0027",
+          "archive": "http://web.archive.org/web/20261112090822/https://www.slobodnaevropa.org/a/zvonko-veselinovic-firme-srbija-putevi-kamenolom-novi-pazar/33752862.html",
+          "archivedOn": "2026-11-12"
         }
       ]
     }
@@ -2945,6 +3306,38 @@
   },
   {
     "data": {
+      "id": "marko_gasic",
+      "label": "Marko Gašić",
+      "type": "instance",
+      "nodeType": "person",
+      "uri": "https://w3id.org/vip/rs/Marko_Gasic",
+      "comment": "Predsednik opštine Inđija i raniji direktor JP Inđija put, prema opštinskoj biografiji i Beti koju prenosi Insajder. Reč je o funkcioneru iz Inđije.",
+      "file": "data/entities/marko-gasic.ttl",
+      "line": 12,
+      "sources": [
+        {
+          "url": "https://www.indjija.rs/Page.aspx?id\u003d4",
+          "domain": "indjija.rs",
+          "type": "webPage",
+          "status": "published",
+          "quote": "Opština Inđija, biografija (pročitano 15. novembra 2026): \u0027Marko Gašić Predsednik opštine\u0027; \u00272021.godine imenovan je za direktora Javnog preduzeća za upravljanje putevima i parkiralištima „Inđija put“ Inđija.\u0027",
+          "archive": "https://web.archive.org/web/20261115213455/https://www.indjija.rs/Page.aspx?id\u003d4",
+          "archivedOn": "2026-11-15"
+        },
+        {
+          "url": "https://insajder.net/prenosimo/pritvor-i-zabrana-prilaska-za-preostalo-troje-uhapsenih-s-predsednikom-opstine-indija",
+          "domain": "insajder.net",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Insajder prenosi Betu, 10. novembar 2026: \u0027predsednik Opštine Inđija Marko Gašić\u0027; \u0027Gašić i Trifunović - bivši i sadašnji direktor \"Inđija puta\"\u0027.",
+          "archive": "https://web.archive.org/web/20261115213908/https://insajder.net/prenosimo/pritvor-i-zabrana-prilaska-za-preostalo-troje-uhapsenih-s-predsednikom-opstine-indija",
+          "archivedOn": "2026-11-15"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
       "id": "vlada_srbije",
       "label": "Vlada Republike Srbije",
       "type": "instance",
@@ -2983,6 +3376,41 @@
           "quote": "Zvanični sajt Vlade, strana \u0027Састав Владе\u0027 (adresa na koju preusmerava srbija.gov.rs/vlada/sastav-vlade): članovi Vlade sa biografijama.",
           "archive": "http://web.archive.org/web/20261110191536/https://www.srbija.gov.rs/templates/vlada/sastav.php?id\u003d177",
           "archivedOn": "2026-11-10"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "jared_kushner",
+      "label": "Džared Kušner",
+      "type": "instance",
+      "nodeType": "person",
+      "uri": "https://w3id.org/vip/rs/Jared_Kushner",
+      "comment": "Američki poslovni čovek čiju kompaniju Atlantic Incubation Partners LLC Guardian i Vreme povezuju sa projektom Generalštaba u Beogradu.",
+      "aliases": [
+        "Jared Kushner"
+      ],
+      "file": "data/entities/jared-kushner.ttl",
+      "line": 12,
+      "sources": [
+        {
+          "url": "https://www.theguardian.com/world/2025/nov/13/serbia-and-jared-kushner-firm-fast-track-deal-to-develop-protected-belgrade-site",
+          "domain": "theguardian.com",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Guardian, 13. novembar 2025, prenosi Radarov nalaz ugovora: \u0027Kushner’s firm Atlantic Incubation Partners LLC\u0027.",
+          "archive": "https://web.archive.org/web/20261115213527/https://www.theguardian.com/world/2025/nov/13/serbia-and-jared-kushner-firm-fast-track-deal-to-develop-protected-belgrade-site",
+          "archivedOn": "2026-11-15"
+        },
+        {
+          "url": "https://vreme.com/vesti/generalstab-raskid-ugovor-dzared-kusner-srbija-penali/",
+          "domain": "vreme.com",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Vreme, 14. novembar 2026, sopstveni izvor iz Vlade: \u0027firmom Atlantic Incubation Partners LLC Džareda Kušnera\u0027.",
+          "archive": "https://web.archive.org/web/20261115213320/https://vreme.com/vesti/generalstab-raskid-ugovor-dzared-kusner-srbija-penali/",
+          "archivedOn": "2026-11-15"
         }
       ]
     }
@@ -4044,6 +4472,76 @@
     "data": {
       "id": "edge23",
       "label": "ownership connection",
+      "source": "inkop",
+      "target": "betonjerka_aleksinac",
+      "uri": "https://w3id.org/vip/rs/Inkop_BetonjerkaAleksinac",
+      "comment": "RSE i Forbes Srbija opisuju Betonjerka Aleksinac kao preduzeće u sastavu Inkopa. Datum sticanja navodi RSE. Vlasnički udeo i datum prestanka nisu zabeleženi.",
+      "kind": "OwnershipConnection",
+      "typeLabel": "Ownership connection",
+      "start": "2019-10",
+      "file": "data/cases/inkop.ttl",
+      "line": 49,
+      "sources": [
+        {
+          "url": "https://forbes.n1info.rs/biznis/kako-su-poslovali-inkop-i-druge-firme-zvonka-veselinovica-u-2024-braci-bliskoj-sns-u-slabije-su-cvetale-ruze/",
+          "domain": "forbes.n1info.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Forbes Srbija, 14. maj 2025: \u0027I Betonjerka Aleksinac, još jedna od firmi u sastavu Inkopa imala je lošiju godinu.\u0027",
+          "archive": "http://web.archive.org/web/20260810231015/https://forbes.n1info.rs/biznis/kako-su-poslovali-inkop-i-druge-firme-zvonka-veselinovica-u-2024-braci-bliskoj-sns-u-slabije-su-cvetale-ruze/",
+          "archivedOn": "2026-08-10"
+        },
+        {
+          "url": "https://www.slobodnaevropa.org/a/zvonko-veselinovic-firme-srbija-putevi-kamenolom-novi-pazar/33752862.html",
+          "domain": "slobodnaevropa.org",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "RSE, 11. maj 2026: \u0027Jedna je \"Betonjerka Aleksinac\", nekada prezaduženo preduzeće sa juga Srbije, koju je \"Inkop\" kupio u oktobru 2019. godine.\u0027",
+          "archive": "http://web.archive.org/web/20261112090822/https://www.slobodnaevropa.org/a/zvonko-veselinovic-firme-srbija-putevi-kamenolom-novi-pazar/33752862.html",
+          "archivedOn": "2026-11-12"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "edge24",
+      "label": "ownership connection",
+      "source": "inkop",
+      "target": "novi_pazar_put",
+      "uri": "https://w3id.org/vip/rs/Inkop_NoviPazarPut",
+      "comment": "RSE i Forbes Srbija opisuju Novi Pazar-put kao preduzeće u sastavu Inkopa. Datum sticanja navodi RSE. Vlasnički udeo i datum prestanka nisu zabeleženi.",
+      "kind": "OwnershipConnection",
+      "typeLabel": "Ownership connection",
+      "start": "2020",
+      "file": "data/cases/inkop.ttl",
+      "line": 31,
+      "sources": [
+        {
+          "url": "https://forbes.n1info.rs/biznis/kako-su-poslovali-inkop-i-druge-firme-zvonka-veselinovica-u-2024-braci-bliskoj-sns-u-slabije-su-cvetale-ruze/",
+          "domain": "forbes.n1info.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Forbes Srbija, 14. maj 2025: \u0027I dobit firme Novi Pazar put, koja posluje kao zavisno preduzeće u sastavu Inkopa, poslovalo je prošle godine lošije u odnosu na 2023.\u0027",
+          "archive": "http://web.archive.org/web/20260810231015/https://forbes.n1info.rs/biznis/kako-su-poslovali-inkop-i-druge-firme-zvonka-veselinovica-u-2024-braci-bliskoj-sns-u-slabije-su-cvetale-ruze/",
+          "archivedOn": "2026-08-10"
+        },
+        {
+          "url": "https://www.slobodnaevropa.org/a/zvonko-veselinovic-firme-srbija-putevi-kamenolom-novi-pazar/33752862.html",
+          "domain": "slobodnaevropa.org",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "RSE, 11. maj 2026: \u0027\"Novi Pazar-put\" je, kao nekada državna građevinska firma specijalizovana za izgradnju puteva, od 2020. godine u vlasništvu \"Inkopa\", odnosno braće Zvonka i Žarka Veselinovića.\u0027",
+          "archive": "http://web.archive.org/web/20261112090822/https://www.slobodnaevropa.org/a/zvonko-veselinovic-firme-srbija-putevi-kamenolom-novi-pazar/33752862.html",
+          "archivedOn": "2026-11-12"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "edge25",
+      "label": "ownership connection",
       "source": "insajder_tim",
       "target": "best_media_team",
       "uri": "https://w3id.org/vip/rs/InsajderTim_BestMediaTeam",
@@ -4078,7 +4576,7 @@
   },
   {
     "data": {
-      "id": "edge24",
+      "id": "edge26",
       "label": "ownership connection",
       "source": "ivan_bosnjak_milenijum_tim",
       "target": "kbv_datacom",
@@ -4122,7 +4620,7 @@
   },
   {
     "data": {
-      "id": "edge25",
+      "id": "edge27",
       "label": "board member",
       "source": "ivan_bosnjak_milenijum_tim",
       "target": "kk_crvena_zvezda",
@@ -4174,7 +4672,7 @@
   },
   {
     "data": {
-      "id": "edge26",
+      "id": "edge28",
       "label": "political connection",
       "source": "ivan_bosnjak_zrenjanin",
       "target": "sns",
@@ -4208,7 +4706,7 @@
   },
   {
     "data": {
-      "id": "edge27",
+      "id": "edge29",
       "label": "ownership connection",
       "source": "ivan_bosnjak_milenijum_tim",
       "target": "milenijum_tim",
@@ -4244,7 +4742,7 @@
   },
   {
     "data": {
-      "id": "edge28",
+      "id": "edge30",
       "label": "executive board member",
       "source": "ivan_bosnjak_milenijum_tim",
       "target": "naled",
@@ -4285,7 +4783,45 @@
   },
   {
     "data": {
-      "id": "edge29",
+      "id": "edge31",
+      "label": "Poslovna veza sa kompanijom",
+      "labels": {
+        "en": "Business connection to company",
+        "sr": "Poslovna veza sa kompanijom"
+      },
+      "source": "jared_kushner",
+      "target": "atlantic_incubation_partners",
+      "uri": "https://w3id.org/vip/rs/JaredKushner_AtlanticIncubationPartners_PoslovnaVeza",
+      "comment": "Guardian, koji prenosi Radarov nalaz ugovora, i Vreme, koje navodi sopstveni izvor iz Vlade, opisuju Atlantic Incubation Partners LLC kao firmu Džareda Kušnera. Izvori ne razjašnjavaju pravni lanac vlasništva; ova veza ne određuje neposredno vlasništvo niti udeo.",
+      "kind": "Connection",
+      "typeLabel": "Generic connection",
+      "file": "data/cases/generalstab.ttl",
+      "line": 12,
+      "sources": [
+        {
+          "url": "https://www.theguardian.com/world/2025/nov/13/serbia-and-jared-kushner-firm-fast-track-deal-to-develop-protected-belgrade-site",
+          "domain": "theguardian.com",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Guardian, 13. novembar 2025, prenosi Radarov nalaz ugovora: \u0027Kushner’s firm Atlantic Incubation Partners LLC\u0027.",
+          "archive": "https://web.archive.org/web/20261115213527/https://www.theguardian.com/world/2025/nov/13/serbia-and-jared-kushner-firm-fast-track-deal-to-develop-protected-belgrade-site",
+          "archivedOn": "2026-11-15"
+        },
+        {
+          "url": "https://vreme.com/vesti/generalstab-raskid-ugovor-dzared-kusner-srbija-penali/",
+          "domain": "vreme.com",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Vreme, 14. novembar 2026, sopstveni izvor iz Vlade: \u0027firmom Atlantic Incubation Partners LLC Džareda Kušnera\u0027.",
+          "archive": "https://web.archive.org/web/20261115213320/https://vreme.com/vesti/generalstab-raskid-ugovor-dzared-kusner-srbija-penali/",
+          "archivedOn": "2026-11-15"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "edge32",
       "label": "služba Vlade",
       "labels": {
         "en": "service of the Government",
@@ -4333,7 +4869,7 @@
   },
   {
     "data": {
-      "id": "edge30",
+      "id": "edge33",
       "label": "ownership connection",
       "source": "ljiljana_tripkovic",
       "target": "starting",
@@ -4377,7 +4913,7 @@
   },
   {
     "data": {
-      "id": "edge31",
+      "id": "edge34",
       "label": "director",
       "source": "malisa_nedeljkovic",
       "target": "starting",
@@ -4428,7 +4964,94 @@
   },
   {
     "data": {
-      "id": "edge32",
+      "id": "edge35",
+      "label": "director",
+      "source": "marko_gasic",
+      "target": "indjija_put",
+      "uri": "https://w3id.org/vip/rs/MarkoGasic_IndjijaPut_Direktor",
+      "comment": "Prema opštinskoj biografiji, Marko Gašić je 2021. imenovan za direktora JP Inđija put; Beta, koju prenosi Insajder, 10. novembra 2026. naziva ga bivšim direktorom. Prethodna funkcija vršioca dužnosti iz 2020. nije početak ovog direktorskog mandata. Datum prestanka nije naveden.",
+      "kind": "WorkConnection",
+      "typeLabel": "Work Connection",
+      "roles": [
+        {
+          "en": "Director",
+          "es": "Director",
+          "sr": "Direktor"
+        }
+      ],
+      "start": "2021",
+      "file": "data/cases/indjija.ttl",
+      "line": 31,
+      "sources": [
+        {
+          "url": "https://www.indjija.rs/Page.aspx?id\u003d4",
+          "domain": "indjija.rs",
+          "type": "webPage",
+          "status": "published",
+          "quote": "Opština Inđija, biografija (pročitano 15. novembra 2026): \u0027Marko Gašić Predsednik opštine\u0027; \u00272021.godine imenovan je za direktora Javnog preduzeća za upravljanje putevima i parkiralištima „Inđija put“ Inđija.\u0027",
+          "archive": "https://web.archive.org/web/20261115213455/https://www.indjija.rs/Page.aspx?id\u003d4",
+          "archivedOn": "2026-11-15"
+        },
+        {
+          "url": "https://insajder.net/prenosimo/pritvor-i-zabrana-prilaska-za-preostalo-troje-uhapsenih-s-predsednikom-opstine-indija",
+          "domain": "insajder.net",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Insajder prenosi Betu, 10. novembar 2026: \u0027predsednik Opštine Inđija Marko Gašić\u0027; \u0027Gašić i Trifunović - bivši i sadašnji direktor \"Inđija puta\"\u0027.",
+          "archive": "https://web.archive.org/web/20261115213908/https://insajder.net/prenosimo/pritvor-i-zabrana-prilaska-za-preostalo-troje-uhapsenih-s-predsednikom-opstine-indija",
+          "archivedOn": "2026-11-15"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "edge36",
+      "label": "Predsednik opštine",
+      "labels": {
+        "en": "Municipal president",
+        "sr": "Predsednik opštine"
+      },
+      "source": "marko_gasic",
+      "target": "opstina_indjija",
+      "uri": "https://w3id.org/vip/rs/MarkoGasic_OpstinaIndjija_Predsednik",
+      "comment": "Opštinska biografija i Beta koju prenosi Insajder navode Marka Gašića kao predsednika opštine Inđija. Datumi početka i prestanka funkcije nisu navedeni u citiranim pasusima.",
+      "kind": "WorkConnection",
+      "typeLabel": "Work Connection",
+      "roles": [
+        {
+          "en": "Mayor",
+          "es": "Alcalde",
+          "sr": "Gradonačelnik"
+        }
+      ],
+      "file": "data/cases/indjija.ttl",
+      "line": 12,
+      "sources": [
+        {
+          "url": "https://www.indjija.rs/Page.aspx?id\u003d4",
+          "domain": "indjija.rs",
+          "type": "webPage",
+          "status": "published",
+          "quote": "Opština Inđija, biografija (pročitano 15. novembra 2026): \u0027Marko Gašić Predsednik opštine\u0027; \u00272021.godine imenovan je za direktora Javnog preduzeća za upravljanje putevima i parkiralištima „Inđija put“ Inđija.\u0027",
+          "archive": "https://web.archive.org/web/20261115213455/https://www.indjija.rs/Page.aspx?id\u003d4",
+          "archivedOn": "2026-11-15"
+        },
+        {
+          "url": "https://insajder.net/prenosimo/pritvor-i-zabrana-prilaska-za-preostalo-troje-uhapsenih-s-predsednikom-opstine-indija",
+          "domain": "insajder.net",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Insajder prenosi Betu, 10. novembar 2026: \u0027predsednik Opštine Inđija Marko Gašić\u0027; \u0027Gašić i Trifunović - bivši i sadašnji direktor \"Inđija puta\"\u0027.",
+          "archive": "https://web.archive.org/web/20261115213908/https://insajder.net/prenosimo/pritvor-i-zabrana-prilaska-za-preostalo-troje-uhapsenih-s-predsednikom-opstine-indija",
+          "archivedOn": "2026-11-15"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "edge37",
       "label": "ownership connection",
       "source": "maxim_media_plus",
       "target": "baltazar",
@@ -4463,7 +5086,7 @@
   },
   {
     "data": {
-      "id": "edge33",
+      "id": "edge38",
       "label": "ownership connection",
       "source": "maxim_media_plus",
       "target": "bis_komerc",
@@ -4498,7 +5121,7 @@
   },
   {
     "data": {
-      "id": "edge34",
+      "id": "edge39",
       "label": "ownership connection",
       "source": "maxim_media_plus",
       "target": "new_agency",
@@ -4533,7 +5156,7 @@
   },
   {
     "data": {
-      "id": "edge35",
+      "id": "edge40",
       "label": "director",
       "source": "mihailo_jovanovic",
       "target": "kancelarija_za_it_i_eupravu",
@@ -4664,7 +5287,7 @@
   },
   {
     "data": {
-      "id": "edge36",
+      "id": "edge41",
       "label": "alumni",
       "source": "mihailo_jovanovic",
       "target": "peta_beogradska_gimnazija",
@@ -4700,7 +5323,7 @@
   },
   {
     "data": {
-      "id": "edge37",
+      "id": "edge42",
       "label": "minister",
       "source": "mihailo_jovanovic",
       "target": "vlada_srbije",
@@ -4770,7 +5393,7 @@
   },
   {
     "data": {
-      "id": "edge38",
+      "id": "edge43",
       "label": "ownership connection",
       "source": "milan_vukovljak",
       "target": "bob_novi_sad",
@@ -4804,7 +5427,7 @@
   },
   {
     "data": {
-      "id": "edge39",
+      "id": "edge44",
       "label": "ownership connection",
       "source": "milenijum_tim",
       "target": "mt_gastel",
@@ -4857,7 +5480,7 @@
   },
   {
     "data": {
-      "id": "edge40",
+      "id": "edge45",
       "label": "ownership connection",
       "source": "milenijum_tim",
       "target": "mv_investment",
@@ -4911,7 +5534,7 @@
   },
   {
     "data": {
-      "id": "edge41",
+      "id": "edge46",
       "label": "ownership connection",
       "source": "milenijum_tim",
       "target": "milenijum_adria",
@@ -4956,7 +5579,7 @@
   },
   {
     "data": {
-      "id": "edge42",
+      "id": "edge47",
       "label": "ownership connection",
       "source": "milenijum_tim",
       "target": "milenijum_resorts",
@@ -4991,7 +5614,7 @@
   },
   {
     "data": {
-      "id": "edge43",
+      "id": "edge48",
       "label": "ownership connection",
       "source": "milenijum_tim",
       "target": "milenijum_propertiz",
@@ -5035,7 +5658,7 @@
   },
   {
     "data": {
-      "id": "edge44",
+      "id": "edge49",
       "label": "ownership connection",
       "source": "milenijum_tim",
       "target": "mostogradnja_ing",
@@ -5079,7 +5702,7 @@
   },
   {
     "data": {
-      "id": "edge45",
+      "id": "edge50",
       "label": "ownership connection",
       "source": "milenijum_tim",
       "target": "pizzarotti_millennium",
@@ -5114,7 +5737,7 @@
   },
   {
     "data": {
-      "id": "edge46",
+      "id": "edge51",
       "label": "Ustupljen automobil",
       "labels": {
         "en": "Car provided",
@@ -5162,7 +5785,7 @@
   },
   {
     "data": {
-      "id": "edge47",
+      "id": "edge52",
       "label": "Ustupljen stan",
       "labels": {
         "en": "Flat provided",
@@ -5210,7 +5833,7 @@
   },
   {
     "data": {
-      "id": "edge48",
+      "id": "edge53",
       "label": "ownership connection",
       "source": "milenijum_tim",
       "target": "roberts_milenijum",
@@ -5307,7 +5930,52 @@
   },
   {
     "data": {
-      "id": "edge49",
+      "id": "edge54",
+      "label": "Zamenik glavnog javnog tužioca",
+      "labels": {
+        "en": "Deputy chief public prosecutor",
+        "sr": "Zamenik glavnog javnog tužioca"
+      },
+      "source": "miodrag_markovic",
+      "target": "vise_javno_tuzilastvo_beograd",
+      "uri": "https://w3id.org/vip/rs/MiodragMarkovic_ViseJavnoTuzilastvoBeograd",
+      "comment": "Miodrag Marković: zamenik glavnog javnog tužioca Višeg javnog tužilaštva u Beogradu prema citiranim izvorima. Datum početka nije naveden. Datum prestanka nije naveden.",
+      "kind": "WorkConnection",
+      "typeLabel": "Work Connection",
+      "roles": [
+        {
+          "en": "Employee",
+          "es": "Empleado",
+          "sr": "Zaposleni"
+        }
+      ],
+      "file": "data/cases/javne-funkcije/vise-javno-tuzilastvo-beograd.ttl",
+      "line": 32,
+      "sources": [
+        {
+          "url": "https://nova.rs/vesti/hronika/nova-baza-stefanovicev-covek-za-specijalne-operacije-tuzilac-zbog-kog-je-radoicic-izbegao-pritvor-ko-u-srbiji-deli-pravdu-3-deo/",
+          "domain": "nova.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Nova.rs, Ivan Milićević, 18. jun 2025: \u0027Kao prvi zamenik glavnog tužioca beogradskog Višeg javnog tužilaštva (VJT) Nenada Stefanovića\u0027. Citirano za funkciju Miodraga Markovića.",
+          "archive": "http://web.archive.org/web/20250618212655/https://nova.rs/vesti/hronika/nova-baza-stefanovicev-covek-za-specijalne-operacije-tuzilac-zbog-kog-je-radoicic-izbegao-pritvor-ko-u-srbiji-deli-pravdu-3-deo/",
+          "archivedOn": "2025-06-18"
+        },
+        {
+          "url": "https://vreme.com/vesti/vrhovno-javno-tuzilastvo-nenad-stefanovic-vise-javno-tuzilastvo/",
+          "domain": "vreme.com",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Vreme, izveštaj o nalazima komisije od 10. novembra 2026: \u0027zamenik glavnog tužioca Miodrag Marković\u0027. Citirano za funkciju, ne za zaključke komisije.",
+          "archive": "http://web.archive.org/web/20261111075658/https://vreme.com/vesti/vrhovno-javno-tuzilastvo-nenad-stefanovic-vise-javno-tuzilastvo/",
+          "archivedOn": "2026-11-11"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "edge55",
       "label": "ownership connection",
       "source": "nenad_ignjatovic_deko_tim",
       "target": "deko_tim",
@@ -5341,7 +6009,53 @@
   },
   {
     "data": {
-      "id": "edge50",
+      "id": "edge56",
+      "label": "Glavni javni tužilac",
+      "labels": {
+        "en": "Chief public prosecutor",
+        "sr": "Glavni javni tužilac"
+      },
+      "source": "nenad_stefanovic",
+      "target": "vise_javno_tuzilastvo_beograd",
+      "uri": "https://w3id.org/vip/rs/NenadStefanovic_ViseJavnoTuzilastvoBeograd",
+      "comment": "Nenad Stefanović: glavni javni tužilac Višeg javnog tužilaštva u Beogradu prema citiranim izvorima. Biografija koju je dostavilo tužilaštvo navodi početak 2022. Datum prestanka nije naveden.",
+      "kind": "WorkConnection",
+      "typeLabel": "Work Connection",
+      "roles": [
+        {
+          "en": "Employee",
+          "es": "Empleado",
+          "sr": "Zaposleni"
+        }
+      ],
+      "start": "2022",
+      "file": "data/cases/javne-funkcije/vise-javno-tuzilastvo-beograd.ttl",
+      "line": 12,
+      "sources": [
+        {
+          "url": "https://www.danas.rs/vesti/drustvo/nenad-stefanovic-demantuje-pisanje-nin-a-nemam-afere-nikada-nisam-bio-clan-nijedne-stranke/",
+          "domain": "danas.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Danas, 14. mart 2023, prenosi biografiju koju je dostavilo Više javno tužilaštvo: \u00272022. – Viši javni tužilac u Beogradu\u0027.",
+          "archive": "http://web.archive.org/web/20261112223057/https://www.danas.rs/vesti/drustvo/nenad-stefanovic-demantuje-pisanje-nin-a-nemam-afere-nikada-nisam-bio-clan-nijedne-stranke/",
+          "archivedOn": "2026-11-12"
+        },
+        {
+          "url": "https://vreme.com/vesti/vrhovno-javno-tuzilastvo-nenad-stefanovic-vise-javno-tuzilastvo/",
+          "domain": "vreme.com",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Vreme, izveštaj o nalazima komisije od 10. novembra 2026: \u0027njegov glavni javni tužilac Nenad Stefanović\u0027. Citirano za funkciju, ne za zaključke komisije.",
+          "archive": "http://web.archive.org/web/20261111075658/https://vreme.com/vesti/vrhovno-javno-tuzilastvo-nenad-stefanovic-vise-javno-tuzilastvo/",
+          "archivedOn": "2026-11-11"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "edge57",
       "label": "ownership connection",
       "source": "nikola_petrovic_ems",
       "target": "arkshore_international",
@@ -5376,7 +6090,7 @@
   },
   {
     "data": {
-      "id": "edge51",
+      "id": "edge58",
       "label": "ownership connection",
       "source": "nikola_trivic",
       "target": "starting",
@@ -5420,7 +6134,7 @@
   },
   {
     "data": {
-      "id": "edge52",
+      "id": "edge59",
       "label": "director",
       "source": "nikola_trivic",
       "target": "starting",
@@ -5471,7 +6185,7 @@
   },
   {
     "data": {
-      "id": "edge53",
+      "id": "edge60",
       "label": "friendship",
       "source": "darko_tamindzic",
       "target": "novica_toncev",
@@ -5505,7 +6219,7 @@
   },
   {
     "data": {
-      "id": "edge54",
+      "id": "edge61",
       "label": "ownership connection",
       "source": "novica_toncev",
       "target": "service_for_efficient_energy",
@@ -5540,7 +6254,7 @@
   },
   {
     "data": {
-      "id": "edge55",
+      "id": "edge62",
       "label": "friendship",
       "source": "andrej_vucic",
       "target": "predrag_mali",
@@ -5592,7 +6306,7 @@
   },
   {
     "data": {
-      "id": "edge56",
+      "id": "edge63",
       "label": "schoolmate (same school)",
       "source": "andrej_vucic",
       "target": "predrag_mali",
@@ -5635,7 +6349,7 @@
   },
   {
     "data": {
-      "id": "edge57",
+      "id": "edge64",
       "label": "employee",
       "source": "predrag_mali",
       "target": "kbv_datacom",
@@ -5676,7 +6390,7 @@
   },
   {
     "data": {
-      "id": "edge58",
+      "id": "edge65",
       "label": "board member",
       "source": "predrag_mali",
       "target": "kk_crvena_zvezda",
@@ -5737,7 +6451,7 @@
   },
   {
     "data": {
-      "id": "edge59",
+      "id": "edge66",
       "label": "siblings",
       "source": "predrag_mali",
       "target": "sinisa_mali",
@@ -5771,7 +6485,64 @@
   },
   {
     "data": {
-      "id": "edge60",
+      "id": "edge67",
+      "label": "Investicioni ugovor za kompleks Generalštaba",
+      "labels": {
+        "en": "Investment agreement for the Generalštab complex",
+        "sr": "Investicioni ugovor za kompleks Generalštaba"
+      },
+      "source": "atlantic_incubation_partners",
+      "target": "republika_srbija",
+      "uri": "https://w3id.org/vip/rs/RepublikaSrbija_AtlanticIncubationPartners_Generalstab",
+      "comment": "Prema Radaru i Vremenu, Republika Srbija i Atlantic Incubation Partners LLC sklopili su investicioni ugovor u maju 2024. za projekat na prostoru Generalštaba u Beogradu; Guardian, koji prenosi Radarov nalaz, navodi da ugovor potiče iz februara 2024, pa je početak zabeležen samo kao godina. Radar navodi formiranje zajedničke kompanije i besplatan zakup zemljišta na 99 godina. Datum prestanka nije zabeležen: Vreme 14. novembra 2026. navodi da je ugovor raskinut, dok Ministarstvo građevinarstva istog dana saopštava RTS-u da je formalizacija raskida još u toku.",
+      "kind": "Connection",
+      "typeLabel": "Generic connection",
+      "start": "2024",
+      "file": "data/cases/generalstab.ttl",
+      "line": 29,
+      "sources": [
+        {
+          "url": "https://radar.nova.rs/ekonomija/generalstab-ugovor-kusnera-i-vlade-srbije/",
+          "domain": "radar.nova.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Radar, 13. novembar 2025, uvid u Investicioni ugovor: \u0027Firma Atlantic Incubation Partners LLC\u0027; \u0027Republika Srbija u maju 2024. sklopili su Investicioni ugovor\u0027",
+          "archive": "http://web.archive.org/web/20260609181853/https://radar.nova.rs/ekonomija/generalstab-ugovor-kusnera-i-vlade-srbije/",
+          "archivedOn": "2026-06-09"
+        },
+        {
+          "url": "https://rts.rs/lat/vesti/politika/6083647/mgsi-raskidom-ugovora-sa-firmom-dzerada-kusnera-o-generalstabu-nece-biti-potrazivanja-formalizacija-sledece-nedelje-.html",
+          "domain": "rts.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "RTS, 14. novembar 2026, sopstveni odgovor Ministarstva građevinarstva: \u0027raskid Ugovora o revitalizaciji kompleksa za Generalštab je u proceduri formalizacije i očekuje se završetak početkom iduće nedelje\u0027. Deo o ranijem pisanju Vremena prenosi Vreme.",
+          "archive": "https://web.archive.org/web/20261115213236/https://rts.rs/lat/vesti/politika/6083647/mgsi-raskidom-ugovora-sa-firmom-dzerada-kusnera-o-generalstabu-nece-biti-potrazivanja-formalizacija-sledece-nedelje-.html",
+          "archivedOn": "2026-11-15"
+        },
+        {
+          "url": "https://www.theguardian.com/world/2025/nov/13/serbia-and-jared-kushner-firm-fast-track-deal-to-develop-protected-belgrade-site",
+          "domain": "theguardian.com",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Guardian, 13. novembar 2025, prenosi Radarov nalaz ugovora: \u0027the agreement dates back to February 2024\u0027.",
+          "archive": "https://web.archive.org/web/20261115213527/https://www.theguardian.com/world/2025/nov/13/serbia-and-jared-kushner-firm-fast-track-deal-to-develop-protected-belgrade-site",
+          "archivedOn": "2026-11-15"
+        },
+        {
+          "url": "https://vreme.com/vesti/generalstab-raskid-ugovor-dzared-kusner-srbija-penali/",
+          "domain": "vreme.com",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Vreme, 14. novembar 2026: \u0027Država Srbija zvanično je raskinula ugovor sa firmom Atlantic Incubation Partners LLC\u0027; \u0027Ugovor o izgradnji hotela, kockarnice i stambenog kompleksa na mestu Generalštaba potpisao je u maju 2024. tadašnji ministar građevinarstva Goran Vesić\u0027.",
+          "archive": "https://web.archive.org/web/20261115213320/https://vreme.com/vesti/generalstab-raskid-ugovor-dzared-kusner-srbija-penali/",
+          "archivedOn": "2026-11-15"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "edge68",
       "label": "ownership connection",
       "source": "sasa_blagojevic",
       "target": "alo_marketing",
@@ -5807,7 +6578,7 @@
   },
   {
     "data": {
-      "id": "edge61",
+      "id": "edge69",
       "label": "ownership connection",
       "source": "sasa_blagojevic",
       "target": "alo_media_system",
@@ -5879,7 +6650,7 @@
   },
   {
     "data": {
-      "id": "edge62",
+      "id": "edge70",
       "label": "ownership connection",
       "source": "sasa_blagojevic",
       "target": "global_media_technology",
@@ -5914,7 +6685,7 @@
   },
   {
     "data": {
-      "id": "edge63",
+      "id": "edge71",
       "label": "alumni",
       "source": "sasa_blagojevic",
       "target": "peta_beogradska_gimnazija",
@@ -5975,7 +6746,7 @@
   },
   {
     "data": {
-      "id": "edge64",
+      "id": "edge72",
       "label": "classmate (same class)",
       "source": "sasa_blagojevic",
       "target": "sinisa_mali",
@@ -6045,7 +6816,7 @@
   },
   {
     "data": {
-      "id": "edge65",
+      "id": "edge73",
       "label": "ownership connection",
       "source": "sasa_blagojevic",
       "target": "trilenium",
@@ -6080,7 +6851,7 @@
   },
   {
     "data": {
-      "id": "edge66",
+      "id": "edge74",
       "label": "ownership connection",
       "source": "sinisa_mali",
       "target": "brigham_holding_finance",
@@ -6116,7 +6887,7 @@
   },
   {
     "data": {
-      "id": "edge67",
+      "id": "edge75",
       "label": "alumni",
       "source": "sinisa_mali",
       "target": "ekonomski_fakultet_university_of_belgrade",
@@ -6151,7 +6922,7 @@
   },
   {
     "data": {
-      "id": "edge68",
+      "id": "edge76",
       "label": "ownership connection",
       "source": "sinisa_mali",
       "target": "etham_invest_finance",
@@ -6187,7 +6958,7 @@
   },
   {
     "data": {
-      "id": "edge69",
+      "id": "edge77",
       "label": "mayor",
       "source": "sinisa_mali",
       "target": "grad_beograd",
@@ -6239,7 +7010,7 @@
   },
   {
     "data": {
-      "id": "edge70",
+      "id": "edge78",
       "label": "alumni",
       "source": "sinisa_mali",
       "target": "peta_beogradska_gimnazija",
@@ -6275,7 +7046,7 @@
   },
   {
     "data": {
-      "id": "edge71",
+      "id": "edge79",
       "label": "political connection",
       "source": "sinisa_mali",
       "target": "sns",
@@ -6310,7 +7081,7 @@
   },
   {
     "data": {
-      "id": "edge72",
+      "id": "edge80",
       "label": "minister",
       "source": "sinisa_mali",
       "target": "vlada_srbije",
@@ -6361,7 +7132,7 @@
   },
   {
     "data": {
-      "id": "edge73",
+      "id": "edge81",
       "label": "ownership connection",
       "source": "srdjan_davidovic",
       "target": "vista_rica_ad",
@@ -6406,7 +7177,7 @@
   },
   {
     "data": {
-      "id": "edge74",
+      "id": "edge82",
       "label": "Poslovni saradnici",
       "labels": {
         "en": "Business associates",
@@ -6444,7 +7215,7 @@
   },
   {
     "data": {
-      "id": "edge75",
+      "id": "edge83",
       "label": "Svedok osnivanja",
       "labels": {
         "en": "Formation witness",
@@ -6484,7 +7255,7 @@
   },
   {
     "data": {
-      "id": "edge76",
+      "id": "edge84",
       "label": "podizvođenje obnove stanice",
       "labels": {
         "en": "station renovation subcontract",
@@ -6523,7 +7294,7 @@
   },
   {
     "data": {
-      "id": "edge77",
+      "id": "edge85",
       "label": "podizvođenje obnove stanice",
       "labels": {
         "en": "station renovation subcontract",
@@ -6571,7 +7342,7 @@
   },
   {
     "data": {
-      "id": "edge78",
+      "id": "edge86",
       "label": "podizvođenje obnove stanice",
       "labels": {
         "en": "station renovation subcontract",
@@ -6609,7 +7380,7 @@
   },
   {
     "data": {
-      "id": "edge79",
+      "id": "edge87",
       "label": "ownership connection",
       "source": "stojan_vujko",
       "target": "kbv_datacom",
@@ -6653,7 +7424,7 @@
   },
   {
     "data": {
-      "id": "edge80",
+      "id": "edge88",
       "label": "ownership connection",
       "source": "stojan_vujko",
       "target": "milenijum_tim",
@@ -6689,7 +7460,7 @@
   },
   {
     "data": {
-      "id": "edge81",
+      "id": "edge89",
       "label": "ownership connection",
       "source": "tatjana_vukic",
       "target": "vista_rica_ad",
@@ -6792,7 +7563,7 @@
   },
   {
     "data": {
-      "id": "edge82",
+      "id": "edge90",
       "label": "upravlja fondom",
       "labels": {
         "en": "manages fund",
@@ -6830,7 +7601,7 @@
   },
   {
     "data": {
-      "id": "edge83",
+      "id": "edge91",
       "label": "upravlja fondom",
       "labels": {
         "en": "manages fund",
@@ -6868,7 +7639,7 @@
   },
   {
     "data": {
-      "id": "edge84",
+      "id": "edge92",
       "label": "ownership connection",
       "source": "vojislav_nedic",
       "target": "vista_rica_ad",
@@ -6906,6 +7677,42 @@
           "quote": "Prospekt Vista Rica Invest, ažuriran 18.09.2026: \u0027Vojislav Nedić, osnivač i akcionar koji poseduje kvalifikovano učešće od 25%\u0027.",
           "archive": "https://web.archive.org/web/20261111190825/https://vistarica.rs/wp-content/uploads/2026/09/Prospekt-VR-Invest-2026-final-potpisan.pdf",
           "archivedOn": "2026-11-11"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "edge93",
+      "label": "ownership connection",
+      "source": "zvonko_veselinovic",
+      "target": "inkop",
+      "uri": "https://w3id.org/vip/rs/ZvonkoVeselinovic_Inkop_60",
+      "comment": "RSE i Forbes Srbija navode Zvonka Veselinovića kao vlasnika 60 odsto Inkopa. RSE datira ovu strukturu od izlaska Milana Radoičića iz vlasništva u oktobru 2023. Datum prestanka nije naveden.",
+      "kind": "OwnershipConnection",
+      "typeLabel": "Ownership connection",
+      "share": 60.0,
+      "start": "2023-10",
+      "file": "data/cases/inkop.ttl",
+      "line": 12,
+      "sources": [
+        {
+          "url": "https://forbes.n1info.rs/biznis/kako-su-poslovali-inkop-i-druge-firme-zvonka-veselinovica-u-2024-braci-bliskoj-sns-u-slabije-su-cvetale-ruze/",
+          "domain": "forbes.n1info.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Forbes Srbija, 14. maj 2025: \u0027Inkop je u vlasništvu dvojice braće, Zvonka i Žarka Veselinovića. Zvonko je suvlasnik 60 odsto, a Žarko preostalih 40 odsto udela.\u0027",
+          "archive": "http://web.archive.org/web/20260810231015/https://forbes.n1info.rs/biznis/kako-su-poslovali-inkop-i-druge-firme-zvonka-veselinovica-u-2024-braci-bliskoj-sns-u-slabije-su-cvetale-ruze/",
+          "archivedOn": "2026-08-10"
+        },
+        {
+          "url": "https://www.slobodnaevropa.org/a/zvonko-veselinovic-firme-srbija-putevi-kamenolom-novi-pazar/33752862.html",
+          "domain": "slobodnaevropa.org",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "RSE, 11. maj 2026: \u0027Zvonko Veselinović u \"Inkopu\" i povezanim preduzećima od tada ima 60 odsto vlasništva, dok njegov brat Žarko ima 40 odsto.\u0027; \u0027Suvlasnik \"Inkopa\" do oktobra 2023. bio je Milan Radoičić.\u0027",
+          "archive": "http://web.archive.org/web/20261112090822/https://www.slobodnaevropa.org/a/zvonko-veselinovic-firme-srbija-putevi-kamenolom-novi-pazar/33752862.html",
+          "archivedOn": "2026-11-12"
         }
       ]
     }

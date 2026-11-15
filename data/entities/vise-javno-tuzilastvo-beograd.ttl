@@ -1,0 +1,26 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rs: <https://w3id.org/vip/rs/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio: <http://purl.org/vocab/bio/0.1/> .
+@prefix : <http://poderopedia.com/vocab/> .
+@prefix vip: <https://w3id.org/vip/vocab#> .
+
+# Matična datoteka entiteta; veze su u data/cases/.
+# Entity home file; connections are in data/cases/.
+
+rs:Vise_Javno_Tuzilastvo_Beograd a :GovernmentOrganization ;
+    foaf:name "Više javno tužilaštvo u Beogradu"@sr, "Higher Public Prosecutor’s Office in Belgrade"@en ;
+    rdfs:comment "Beogradsko više javno tužilaštvo. U pročitanim izvorima njime rukovodi Nenad Stefanović."@sr ;
+    rdfs:comment "The higher public prosecutor’s office in Belgrade. The sources read identify Nenad Stefanović as its head."@en ;
+    :hasDocumentation
+        [ a :Documentation ;
+          :hasDocumentURL <https://www.danas.rs/vesti/drustvo/nenad-stefanovic-demantuje-pisanje-nin-a-nemam-afere-nikada-nisam-bio-clan-nijedne-stranke/> ;
+          :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Danas, 14. mart 2023, prenosi biografiju koju je dostavilo Više javno tužilaštvo: '2022. – Viši javni tužilac u Beogradu'."@sr ;
+          rdfs:comment "Danas, 14 March 2023, reproduces the biography supplied by the Higher Public Prosecutor’s Office: '2022. – Viši javni tužilac u Beogradu'."@en ] ,
+        [ a :Documentation ;
+          :hasDocumentURL <https://vreme.com/vesti/vrhovno-javno-tuzilastvo-nenad-stefanovic-vise-javno-tuzilastvo/> ;
+          :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Vreme, izveštaj o nalazima komisije od 10. novembra 2026: 'njegov glavni javni tužilac Nenad Stefanović'. Citirano za funkciju, ne za zaključke komisije."@sr ;
+          rdfs:comment "Vreme, report on the commission findings of 10 November 2026: 'njegov glavni javni tužilac Nenad Stefanović'. Cited for the office, rather than the commission’s conclusions."@en ] .

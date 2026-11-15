@@ -1,0 +1,55 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rs: <https://w3id.org/vip/rs/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio: <http://purl.org/vocab/bio/0.1/> .
+@prefix : <http://poderopedia.com/vocab/> .
+@prefix vip: <https://w3id.org/vip/vocab#> .
+
+# Slučaj: Generalštab — investicioni ugovor i poslovna veza sa Kušnerom.
+# Case: Generalštab — investment agreement and business connection to Kushner.
+
+rs:JaredKushner_AtlanticIncubationPartners_PoslovnaVeza a :Connection ;
+    bio:participant rs:Jared_Kushner, rs:Atlantic_Incubation_Partners ;
+    rdfs:label "Poslovna veza sa kompanijom"@sr, "Business connection to company"@en ;
+    rdfs:comment "Guardian, koji prenosi Radarov nalaz ugovora, i Vreme, koje navodi sopstveni izvor iz Vlade, opisuju Atlantic Incubation Partners LLC kao firmu Džareda Kušnera. Izvori ne razjašnjavaju pravni lanac vlasništva; ova veza ne određuje neposredno vlasništvo niti udeo."@sr ;
+    rdfs:comment "The Guardian, reporting Radar’s discovery of the agreement, and Vreme, citing its own government source, describe Atlantic Incubation Partners LLC as Jared Kushner’s firm. The sources do not clarify the legal ownership chain; this connection does not assign direct ownership or a share."@en ;
+    :hasDocumentation
+        [ a :Documentation ;
+          :hasDocumentURL <https://www.theguardian.com/world/2025/nov/13/serbia-and-jared-kushner-firm-fast-track-deal-to-develop-protected-belgrade-site> ;
+          :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Guardian, 13. novembar 2025, prenosi Radarov nalaz ugovora: 'Kushner’s firm Atlantic Incubation Partners LLC'."@sr ;
+          rdfs:comment "The Guardian, 13 November 2025, reporting Radar’s discovery of the agreement: 'Kushner’s firm Atlantic Incubation Partners LLC'."@en ] ,
+        [ a :Documentation ;
+          :hasDocumentURL <https://vreme.com/vesti/generalstab-raskid-ugovor-dzared-kusner-srbija-penali/> ;
+          :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Vreme, 14. novembar 2026, sopstveni izvor iz Vlade: 'firmom Atlantic Incubation Partners LLC Džareda Kušnera'."@sr ;
+          rdfs:comment "Vreme, 14 November 2026, its own government source: 'firmom Atlantic Incubation Partners LLC Džareda Kušnera'."@en ] .
+
+rs:RepublikaSrbija_AtlanticIncubationPartners_Generalstab a :Connection ;
+    bio:participant rs:Republika_Srbija, rs:Atlantic_Incubation_Partners ;
+    rdfs:label "Investicioni ugovor za kompleks Generalštaba"@sr, "Investment agreement for the Generalštab complex"@en ;
+    :connectionStartDate "2024"^^xsd:gYear ;
+    rdfs:comment "Prema Radaru i Vremenu, Republika Srbija i Atlantic Incubation Partners LLC sklopili su investicioni ugovor u maju 2024. za projekat na prostoru Generalštaba u Beogradu; Guardian, koji prenosi Radarov nalaz, navodi da ugovor potiče iz februara 2024, pa je početak zabeležen samo kao godina. Radar navodi formiranje zajedničke kompanije i besplatan zakup zemljišta na 99 godina. Datum prestanka nije zabeležen: Vreme 14. novembra 2026. navodi da je ugovor raskinut, dok Ministarstvo građevinarstva istog dana saopštava RTS-u da je formalizacija raskida još u toku."@sr ;
+    rdfs:comment "According to Radar and Vreme, the Republic of Serbia and Atlantic Incubation Partners LLC concluded an investment agreement in May 2024 for the Generalštab site in Belgrade; the Guardian, reporting Radar’s discovery, says the agreement dates back to February 2024, so the start is recorded as the year only. Radar reports plans for a joint company and a free 99-year land lease. No end date is recorded: Vreme reports termination on 14 November 2026, while the construction ministry tells RTS the same day that formalisation of termination is still pending."@en ;
+    :hasDocumentation
+        [ a :Documentation ;
+          :hasDocumentURL <https://radar.nova.rs/ekonomija/generalstab-ugovor-kusnera-i-vlade-srbije/> ;
+          :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Radar, 13. novembar 2025, uvid u Investicioni ugovor: 'Firma Atlantic Incubation Partners LLC'; 'Republika Srbija u maju 2024. sklopili su Investicioni ugovor'"@sr ;
+          rdfs:comment "Radar, 13 November 2025, examination of the investment agreement: 'Firma Atlantic Incubation Partners LLC'; 'Republika Srbija u maju 2024. sklopili su Investicioni ugovor'"@en ] ,
+        [ a :Documentation ;
+          :hasDocumentURL <https://www.theguardian.com/world/2025/nov/13/serbia-and-jared-kushner-firm-fast-track-deal-to-develop-protected-belgrade-site> ;
+          :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Guardian, 13. novembar 2025, prenosi Radarov nalaz ugovora: 'the agreement dates back to February 2024'."@sr ;
+          rdfs:comment "The Guardian, 13 November 2025, reporting Radar’s discovery of the agreement: 'the agreement dates back to February 2024'."@en ] ,
+        [ a :Documentation ;
+          :hasDocumentURL <https://vreme.com/vesti/generalstab-raskid-ugovor-dzared-kusner-srbija-penali/> ;
+          :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Vreme, 14. novembar 2026: 'Država Srbija zvanično je raskinula ugovor sa firmom Atlantic Incubation Partners LLC'; 'Ugovor o izgradnji hotela, kockarnice i stambenog kompleksa na mestu Generalštaba potpisao je u maju 2024. tadašnji ministar građevinarstva Goran Vesić'."@sr ;
+          rdfs:comment "Vreme, 14 November 2026: 'Država Srbija zvanično je raskinula ugovor sa firmom Atlantic Incubation Partners LLC'; 'Ugovor o izgradnji hotela, kockarnice i stambenog kompleksa na mestu Generalštaba potpisao je u maju 2024. tadašnji ministar građevinarstva Goran Vesić'."@en ] ,
+        [ a :Documentation ;
+          :hasDocumentURL <https://rts.rs/lat/vesti/politika/6083647/mgsi-raskidom-ugovora-sa-firmom-dzerada-kusnera-o-generalstabu-nece-biti-potrazivanja-formalizacija-sledece-nedelje-.html> ;
+          :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "RTS, 14. novembar 2026, sopstveni odgovor Ministarstva građevinarstva: 'raskid Ugovora o revitalizaciji kompleksa za Generalštab je u proceduri formalizacije i očekuje se završetak početkom iduće nedelje'. Deo o ranijem pisanju Vremena prenosi Vreme."@sr ;
+          rdfs:comment "RTS, 14 November 2026, its own response from the construction ministry: 'raskid Ugovora o revitalizaciji kompleksa za Generalštab je u proceduri formalizacije i očekuje se završetak početkom iduće nedelje'. The section about Vreme’s earlier report reproduces Vreme."@en ] .

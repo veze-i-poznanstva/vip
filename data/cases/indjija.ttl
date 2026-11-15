@@ -1,0 +1,48 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rs: <https://w3id.org/vip/rs/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio: <http://purl.org/vocab/bio/0.1/> .
+@prefix : <http://poderopedia.com/vocab/> .
+@prefix vip: <https://w3id.org/vip/vocab#> .
+
+# Slučaj: Inđija — dokumentovane funkcije Marka Gašića.
+# Case: Inđija — documented offices of Marko Gašić.
+
+rs:MarkoGasic_OpstinaIndjija_Predsednik a :WorkConnection ;
+    bio:participant rs:Marko_Gasic ;
+    :hasEconomicOrganizationParticipant rs:Opstina_Indjija ;
+    :hasWorkRole vip:mayor ;
+    rdfs:label "Predsednik opštine"@sr, "Municipal president"@en ;
+    rdfs:comment "Opštinska biografija i Beta koju prenosi Insajder navode Marka Gašića kao predsednika opštine Inđija. Datumi početka i prestanka funkcije nisu navedeni u citiranim pasusima."@sr ;
+    rdfs:comment "The municipal biography and Beta, reproduced by Insajder, identify Marko Gašić as president of the municipality of Inđija. The quoted passages do not give the start or end of the office."@en ;
+    :hasDocumentation
+        [ a :Documentation ;
+          :hasDocumentURL <https://www.indjija.rs/Page.aspx?id=4> ;
+          :hasDocumentType vip:webPage ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Opština Inđija, biografija (pročitano 15. novembra 2026): 'Marko Gašić Predsednik opštine'; '2021.godine imenovan je za direktora Javnog preduzeća za upravljanje putevima i parkiralištima „Inđija put“ Inđija.'"@sr ;
+          rdfs:comment "Municipality of Inđija, biography (read 15 November 2026): 'Marko Gašić Predsednik opštine'; '2021.godine imenovan je za direktora Javnog preduzeća za upravljanje putevima i parkiralištima „Inđija put“ Inđija.'"@en ] ,
+        [ a :Documentation ;
+          :hasDocumentURL <https://insajder.net/prenosimo/pritvor-i-zabrana-prilaska-za-preostalo-troje-uhapsenih-s-predsednikom-opstine-indija> ;
+          :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Insajder prenosi Betu, 10. novembar 2026: 'predsednik Opštine Inđija Marko Gašić'; 'Gašić i Trifunović - bivši i sadašnji direktor \"Inđija puta\"'."@sr ;
+          rdfs:comment "Insajder reproduces Beta, 10 November 2026: 'predsednik Opštine Inđija Marko Gašić'; 'Gašić i Trifunović - bivši i sadašnji direktor \"Inđija puta\"'."@en ] .
+
+rs:MarkoGasic_IndjijaPut_Direktor a :WorkConnection ;
+    bio:participant rs:Marko_Gasic ;
+    :hasEconomicOrganizationParticipant rs:Indjija_Put ;
+    :hasWorkRole :director ;
+    :connectionStartDate "2021"^^xsd:gYear ;
+    rdfs:comment "Prema opštinskoj biografiji, Marko Gašić je 2021. imenovan za direktora JP Inđija put; Beta, koju prenosi Insajder, 10. novembra 2026. naziva ga bivšim direktorom. Prethodna funkcija vršioca dužnosti iz 2020. nije početak ovog direktorskog mandata. Datum prestanka nije naveden."@sr ;
+    rdfs:comment "According to the municipal biography, Marko Gašić was appointed director of JP Inđija put in 2021; Beta, reproduced by Insajder, calls him the former director on 10 November 2026. His earlier acting appointment in 2020 is not the start of this directorial term. No end date is stated."@en ;
+    :hasDocumentation
+        [ a :Documentation ;
+          :hasDocumentURL <https://www.indjija.rs/Page.aspx?id=4> ;
+          :hasDocumentType vip:webPage ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Opština Inđija, biografija (pročitano 15. novembra 2026): 'Marko Gašić Predsednik opštine'; '2021.godine imenovan je za direktora Javnog preduzeća za upravljanje putevima i parkiralištima „Inđija put“ Inđija.'"@sr ;
+          rdfs:comment "Municipality of Inđija, biography (read 15 November 2026): 'Marko Gašić Predsednik opštine'; '2021.godine imenovan je za direktora Javnog preduzeća za upravljanje putevima i parkiralištima „Inđija put“ Inđija.'"@en ] ,
+        [ a :Documentation ;
+          :hasDocumentURL <https://insajder.net/prenosimo/pritvor-i-zabrana-prilaska-za-preostalo-troje-uhapsenih-s-predsednikom-opstine-indija> ;
+          :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Insajder prenosi Betu, 10. novembar 2026: 'predsednik Opštine Inđija Marko Gašić'; 'Gašić i Trifunović - bivši i sadašnji direktor \"Inđija puta\"'."@sr ;
+          rdfs:comment "Insajder reproduces Beta, 10 November 2026: 'predsednik Opštine Inđija Marko Gašić'; 'Gašić i Trifunović - bivši i sadašnji direktor \"Inđija puta\"'."@en ] .

@@ -1,0 +1,50 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rs: <https://w3id.org/vip/rs/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio: <http://purl.org/vocab/bio/0.1/> .
+@prefix : <http://poderopedia.com/vocab/> .
+@prefix vip: <https://w3id.org/vip/vocab#> .
+
+# Slučaj: Javne funkcije — Više javno tužilaštvo u Beogradu.
+# Case: Public offices — Higher Public Prosecutor’s Office in Belgrade.
+
+rs:NenadStefanovic_ViseJavnoTuzilastvoBeograd a :WorkConnection ;
+    bio:participant rs:Nenad_Stefanovic ;
+    :hasEconomicOrganizationParticipant rs:Vise_Javno_Tuzilastvo_Beograd ;
+    :hasWorkRole :employee ;
+    rdfs:label "Glavni javni tužilac"@sr, "Chief public prosecutor"@en ;
+    :connectionStartDate "2022"^^xsd:gYear ;
+    rdfs:comment "Nenad Stefanović: glavni javni tužilac Višeg javnog tužilaštva u Beogradu prema citiranim izvorima. Biografija koju je dostavilo tužilaštvo navodi početak 2022. Datum prestanka nije naveden."@sr ;
+    rdfs:comment "Nenad Stefanović: chief public prosecutor of the Higher Public Prosecutor’s Office in Belgrade, according to the cited sources. The biography supplied by the office dates the start to 2022. No end date is stated."@en ;
+    :hasDocumentation
+        [ a :Documentation ;
+          :hasDocumentURL <https://www.danas.rs/vesti/drustvo/nenad-stefanovic-demantuje-pisanje-nin-a-nemam-afere-nikada-nisam-bio-clan-nijedne-stranke/> ;
+          :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Danas, 14. mart 2023, prenosi biografiju koju je dostavilo Više javno tužilaštvo: '2022. – Viši javni tužilac u Beogradu'."@sr ;
+          rdfs:comment "Danas, 14 March 2023, reproduces the biography supplied by the Higher Public Prosecutor’s Office: '2022. – Viši javni tužilac u Beogradu'."@en ] ,
+        [ a :Documentation ;
+          :hasDocumentURL <https://vreme.com/vesti/vrhovno-javno-tuzilastvo-nenad-stefanovic-vise-javno-tuzilastvo/> ;
+          :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Vreme, izveštaj o nalazima komisije od 10. novembra 2026: 'njegov glavni javni tužilac Nenad Stefanović'. Citirano za funkciju, ne za zaključke komisije."@sr ;
+          rdfs:comment "Vreme, report on the commission findings of 10 November 2026: 'njegov glavni javni tužilac Nenad Stefanović'. Cited for the office, rather than the commission’s conclusions."@en ] .
+
+rs:MiodragMarkovic_ViseJavnoTuzilastvoBeograd a :WorkConnection ;
+    bio:participant rs:Miodrag_Markovic ;
+    :hasEconomicOrganizationParticipant rs:Vise_Javno_Tuzilastvo_Beograd ;
+    :hasWorkRole :employee ;
+    rdfs:label "Zamenik glavnog javnog tužioca"@sr, "Deputy chief public prosecutor"@en ;
+    rdfs:comment "Miodrag Marković: zamenik glavnog javnog tužioca Višeg javnog tužilaštva u Beogradu prema citiranim izvorima. Datum početka nije naveden. Datum prestanka nije naveden."@sr ;
+    rdfs:comment "Miodrag Marković: deputy chief public prosecutor of the Higher Public Prosecutor’s Office in Belgrade, according to the cited sources. No start date is stated. No end date is stated."@en ;
+    :hasDocumentation
+        [ a :Documentation ;
+          :hasDocumentURL <https://nova.rs/vesti/hronika/nova-baza-stefanovicev-covek-za-specijalne-operacije-tuzilac-zbog-kog-je-radoicic-izbegao-pritvor-ko-u-srbiji-deli-pravdu-3-deo/> ;
+          :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Nova.rs, Ivan Milićević, 18. jun 2025: 'Kao prvi zamenik glavnog tužioca beogradskog Višeg javnog tužilaštva (VJT) Nenada Stefanovića'. Citirano za funkciju Miodraga Markovića."@sr ;
+          rdfs:comment "Nova.rs, Ivan Milićević, 18 June 2025: 'Kao prvi zamenik glavnog tužioca beogradskog Višeg javnog tužilaštva (VJT) Nenada Stefanovića'. Cited for Miodrag Marković’s office."@en ] ,
+        [ a :Documentation ;
+          :hasDocumentURL <https://vreme.com/vesti/vrhovno-javno-tuzilastvo-nenad-stefanovic-vise-javno-tuzilastvo/> ;
+          :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Vreme, izveštaj o nalazima komisije od 10. novembra 2026: 'zamenik glavnog tužioca Miodrag Marković'. Citirano za funkciju, ne za zaključke komisije."@sr ;
+          rdfs:comment "Vreme, report on the commission findings of 10 November 2026: 'zamenik glavnog tužioca Miodrag Marković'. Cited for the office, rather than the commission’s conclusions."@en ] .
+

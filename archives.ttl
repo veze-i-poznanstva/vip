@@ -93,6 +93,10 @@
         vip:archivedOn     "2026-10-30"^^xsd:date;
         vip:hasArchiveURL  <http://web.archive.org/web/20261030111957/https://radar.nova.rs/ekonomija/investicioni-fond-nedic-tatjana-vukic/> .
 
+<https://radar.nova.rs/ekonomija/generalstab-ugovor-kusnera-i-vlade-srbije/>
+        vip:archivedOn     "2026-06-09"^^xsd:date;
+        vip:hasArchiveURL  <http://web.archive.org/web/20260609181853/https://radar.nova.rs/ekonomija/generalstab-ugovor-kusnera-i-vlade-srbije/> .
+
 <https://nova.rs/emisije/zasto-se-radnik-kovnice-novca-pominje-u-skoro-svim-sumnjivim-poslovima-vlasti/>
         vip:archivedOn     "2021-10-06"^^xsd:date;
         vip:hasArchiveURL  <http://web.archive.org/web/20211006214711/https://nova.rs/emisije/zasto-se-radnik-kovnice-novca-pominje-u-skoro-svim-sumnjivim-poslovima-vlasti/> .
@@ -164,6 +168,14 @@
 <https://anem.org.rs/en/strane/cilj-je-zastrasivanje-na-lokalu-i-spaljena-zemlja-kakvu-ulogu-imaju-ispostave-klonovi-informera-i-aloa>
         vip:archivedOn     "2026-11-01"^^xsd:date;
         vip:hasArchiveURL  <https://web.archive.org/web/20261101142227/https://anem.org.rs/en/strane/cilj-je-zastrasivanje-na-lokalu-i-spaljena-zemlja-kakvu-ulogu-imaju-ispostave-klonovi-informera-i-aloa> .
+
+<https://nova.rs/vesti/hronika/nova-baza-stefanovicev-covek-za-specijalne-operacije-tuzilac-zbog-kog-je-radoicic-izbegao-pritvor-ko-u-srbiji-deli-pravdu-3-deo/>
+        vip:archivedOn     "2025-06-18"^^xsd:date;
+        vip:hasArchiveURL  <http://web.archive.org/web/20250618212655/https://nova.rs/vesti/hronika/nova-baza-stefanovicev-covek-za-specijalne-operacije-tuzilac-zbog-kog-je-radoicic-izbegao-pritvor-ko-u-srbiji-deli-pravdu-3-deo/> .
+
+<https://www.danas.rs/vesti/drustvo/nenad-stefanovic-demantuje-pisanje-nin-a-nemam-afere-nikada-nisam-bio-clan-nijedne-stranke/>
+        vip:archivedOn     "2026-11-12"^^xsd:date;
+        vip:hasArchiveURL  <http://web.archive.org/web/20261112223057/https://www.danas.rs/vesti/drustvo/nenad-stefanovic-demantuje-pisanje-nin-a-nemam-afere-nikada-nisam-bio-clan-nijedne-stranke/> .
 
 <https://montenegro.mom-gmr.org/cg/vlasnici/pojedinci/detail/owner/owner/show/sasa-blagojevic-3/>
         vip:archivedOn     "2025-07-10"^^xsd:date;
@@ -285,6 +297,10 @@
         vip:archivedOn     "2026-01-27"^^xsd:date;
         vip:hasArchiveURL  <http://web.archive.org/web/20260127051217/https://nova.rs/vesti/politika/brat-sinise-malog-zaposlen-u-firmi-vlasnika-milenijum-tima-radi-tamo-duze-od-10-godina/> .
 
+<https://www.slobodnaevropa.org/a/zvonko-veselinovic-firme-srbija-putevi-kamenolom-novi-pazar/33752862.html>
+        vip:archivedOn     "2026-11-12"^^xsd:date;
+        vip:hasArchiveURL  <http://web.archive.org/web/20261112090822/https://www.slobodnaevropa.org/a/zvonko-veselinovic-firme-srbija-putevi-kamenolom-novi-pazar/33752862.html> .
+
 <https://mit.gov.rs/vest/sr/4938/primopredaja-duznosti-u-ministarstvu-informisanja-i-telekomunikacija.php>
         vip:archivedOn     "2025-02-20"^^xsd:date;
         vip:hasArchiveURL  <http://web.archive.org/web/20250220202734/https://mit.gov.rs/vest/sr/4938/primopredaja-duznosti-u-ministarstvu-informisanja-i-telekomunikacija.php> .
@@ -305,9 +321,17 @@
         vip:archivedOn     "2026-11-10"^^xsd:date;
         vip:hasArchiveURL  <https://web.archive.org/web/20261110213853/https://kbvdatacom.rs/> .
 
+<https://www.indjija.rs/Page.aspx?id=4>
+        vip:archivedOn     "2026-11-15"^^xsd:date;
+        vip:hasArchiveURL  <https://web.archive.org/web/20261115213455/https://www.indjija.rs/Page.aspx?id=4> .
+
 <https://sr.wikipedia.org/wiki/Економски_факултет_Универзитета_у_Београду>
         vip:archivedOn     "2025-12-06"^^xsd:date;
         vip:hasArchiveURL  <http://web.archive.org/web/20251206182607/https://sr.wikipedia.org/wiki/%D0%95%D0%BA%D0%BE%D0%BD%D0%BE%D0%BC%D1%81%D0%BA%D0%B8_%D1%84%D0%B0%D0%BA%D1%83%D0%BB%D1%82%D0%B5%D1%82_%D0%A3%D0%BD%D0%B8%D0%B2%D0%B5%D1%80%D0%B7%D0%B8%D1%82%D0%B5%D1%82%D0%B0_%D1%83_%D0%91%D0%B5%D0%BE%D0%B3%D1%80%D0%B0%D0%B4%D1%83> .
+
+<https://www.theguardian.com/world/2025/nov/13/serbia-and-jared-kushner-firm-fast-track-deal-to-develop-protected-belgrade-site>
+        vip:archivedOn     "2026-11-15"^^xsd:date;
+        vip:hasArchiveURL  <https://web.archive.org/web/20261115213527/https://www.theguardian.com/world/2025/nov/13/serbia-and-jared-kushner-firm-fast-track-deal-to-develop-protected-belgrade-site> .
 
 <https://www.krik.rs/barka-predsednikovog-kuma-petrovic-sakrio-ofsor-firmu-i-racun-u-svajcarskoj/>
         vip:archivedOn     "2026-11-02"^^xsd:date;
@@ -397,6 +421,10 @@
         vip:archivedOn     "2025-05-16"^^xsd:date;
         vip:hasArchiveURL  <http://web.archive.org/web/20250516231427/https://naled.rs/htdocs/Files/15388/II-Kvartalni-izvestaj_2024.pdf> .
 
+<https://insajder.net/prenosimo/pritvor-i-zabrana-prilaska-za-preostalo-troje-uhapsenih-s-predsednikom-opstine-indija>
+        vip:archivedOn     "2026-11-15"^^xsd:date;
+        vip:hasArchiveURL  <https://web.archive.org/web/20261115213908/https://insajder.net/prenosimo/pritvor-i-zabrana-prilaska-za-preostalo-troje-uhapsenih-s-predsednikom-opstine-indija> .
+
 <https://nova.rs/vesti/biznis/vlasnici-aloa-i-informera-vlasnici-skoro-25-medija-u-srbiji>
         vip:archivedOn     "2026-11-02"^^xsd:date;
         vip:hasArchiveURL  <http://web.archive.org/web/20261102131221/https://nova.rs/vesti/biznis/vlasnici-aloa-i-informera-vlasnici-skoro-25-medija-u-srbiji/> .
@@ -464,6 +492,10 @@
 <https://nova.rs/vesti/biznis/od-vinograda-preko-naucnih-instituta-do-banja-i-giganata-sfrj-sta-je-sve-za-male-pare-kupila-sns-firma-milenijum-tim/>
         vip:archivedOn     "2025-05-22"^^xsd:date;
         vip:hasArchiveURL  <http://web.archive.org/web/20250522100926/https://nova.rs/vesti/biznis/od-vinograda-preko-naucnih-instituta-do-banja-i-giganata-sfrj-sta-je-sve-za-male-pare-kupila-sns-firma-milenijum-tim/> .
+
+<https://vreme.com/vesti/vrhovno-javno-tuzilastvo-nenad-stefanovic-vise-javno-tuzilastvo/>
+        vip:archivedOn     "2026-11-11"^^xsd:date;
+        vip:hasArchiveURL  <http://web.archive.org/web/20261111075658/https://vreme.com/vesti/vrhovno-javno-tuzilastvo-nenad-stefanovic-vise-javno-tuzilastvo/> .
 
 <https://www.companywall.rs/firma/doo-matrix-d-beograd/MMkw3o1Y>
         vip:archivedOn     "2026-11-10"^^xsd:date;
@@ -556,6 +588,10 @@
 <https://en.wikipedia.org/wiki/Millennium_Team>
         vip:archivedOn     "2025-10-13"^^xsd:date;
         vip:hasArchiveURL  <http://web.archive.org/web/20251013140940/https://en.wikipedia.org/wiki/Millennium_Team> .
+
+<https://forbes.n1info.rs/biznis/kako-su-poslovali-inkop-i-druge-firme-zvonka-veselinovica-u-2024-braci-bliskoj-sns-u-slabije-su-cvetale-ruze/>
+        vip:archivedOn     "2026-08-10"^^xsd:date;
+        vip:hasArchiveURL  <http://web.archive.org/web/20260810231015/https://forbes.n1info.rs/biznis/kako-su-poslovali-inkop-i-druge-firme-zvonka-veselinovica-u-2024-braci-bliskoj-sns-u-slabije-su-cvetale-ruze/> .
 
 <https://www.beograd.rs/lat/gradska-vlast>
         vip:archivedOn     "2026-08-08"^^xsd:date;
@@ -677,9 +713,17 @@
         vip:archivedOn     "2026-10-28"^^xsd:date;
         vip:hasArchiveURL  <http://web.archive.org/web/20261028191643/https://www.parlament.gov.rs/narodna-skupstina-/organizacija-i-strucna-sluzba/predsednik-narodne-skupstine.914.html> .
 
+<https://vreme.com/vesti/generalstab-raskid-ugovor-dzared-kusner-srbija-penali/>
+        vip:archivedOn     "2026-11-15"^^xsd:date;
+        vip:hasArchiveURL  <https://web.archive.org/web/20261115213320/https://vreme.com/vesti/generalstab-raskid-ugovor-dzared-kusner-srbija-penali/> .
+
 <https://www.sns.org.rs/>
         vip:archivedOn     "2025-10-23"^^xsd:date;
         vip:hasArchiveURL  <http://web.archive.org/web/20251023082323/https://sns.org.rs/> .
+
+<https://rts.rs/lat/vesti/politika/6083647/mgsi-raskidom-ugovora-sa-firmom-dzerada-kusnera-o-generalstabu-nece-biti-potrazivanja-formalizacija-sledece-nedelje-.html>
+        vip:archivedOn     "2026-11-15"^^xsd:date;
+        vip:hasArchiveURL  <https://web.archive.org/web/20261115213236/https://rts.rs/lat/vesti/politika/6083647/mgsi-raskidom-ugovora-sa-firmom-dzerada-kusnera-o-generalstabu-nece-biti-potrazivanja-formalizacija-sledece-nedelje-.html> .
 
 <https://naled.rs/o-nama>
         vip:archivedOn     "2026-05-21"^^xsd:date;

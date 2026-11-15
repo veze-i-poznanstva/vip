@@ -1,0 +1,28 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rs: <https://w3id.org/vip/rs/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio: <http://purl.org/vocab/bio/0.1/> .
+@prefix : <http://poderopedia.com/vocab/> .
+@prefix vip: <https://w3id.org/vip/vocab#> .
+
+# Matična datoteka entiteta; veze su u data/cases/.
+# Entity home file; connections are in data/cases/.
+
+rs:Jared_Kushner a foaf:Person ;
+    foaf:firstName "Jared" ;
+    :firstLastName "Kushner" ;
+    foaf:name "Džared Kušner"@sr, "Jared Kushner"@en ;
+    rdfs:comment "Američki poslovni čovek čiju kompaniju Atlantic Incubation Partners LLC Guardian i Vreme povezuju sa projektom Generalštaba u Beogradu."@sr ;
+    rdfs:comment "American businessman whose company Atlantic Incubation Partners LLC is linked by the Guardian and Vreme to the Generalštab project in Belgrade."@en ;
+    :hasDocumentation
+        [ a :Documentation ;
+          :hasDocumentURL <https://www.theguardian.com/world/2025/nov/13/serbia-and-jared-kushner-firm-fast-track-deal-to-develop-protected-belgrade-site> ;
+          :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Guardian, 13. novembar 2025, prenosi Radarov nalaz ugovora: 'Kushner’s firm Atlantic Incubation Partners LLC'."@sr ;
+          rdfs:comment "The Guardian, 13 November 2025, reporting Radar’s discovery of the agreement: 'Kushner’s firm Atlantic Incubation Partners LLC'."@en ] ,
+        [ a :Documentation ;
+          :hasDocumentURL <https://vreme.com/vesti/generalstab-raskid-ugovor-dzared-kusner-srbija-penali/> ;
+          :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Vreme, 14. novembar 2026, sopstveni izvor iz Vlade: 'firmom Atlantic Incubation Partners LLC Džareda Kušnera'."@sr ;
+          rdfs:comment "Vreme, 14 November 2026, its own government source: 'firmom Atlantic Incubation Partners LLC Džareda Kušnera'."@en ] .

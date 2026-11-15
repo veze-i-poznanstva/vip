@@ -1,0 +1,65 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rs: <https://w3id.org/vip/rs/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bio: <http://purl.org/vocab/bio/0.1/> .
+@prefix : <http://poderopedia.com/vocab/> .
+@prefix vip: <https://w3id.org/vip/vocab#> .
+
+# Slučaj: Inkop — vlasništvo Zvonka Veselinovića i zavisna preduzeća.
+# Case: Inkop — Zvonko Veselinović’s ownership and subsidiary companies.
+
+rs:ZvonkoVeselinovic_Inkop_60 a vip:OwnershipConnection ;
+    vip:owner rs:Zvonko_Veselinovic ;
+    vip:ownedCompany rs:Inkop ;
+    vip:ownershipShare 60.0 ;
+    :connectionStartDate "2023-10"^^xsd:gYearMonth ;
+    rdfs:comment "RSE i Forbes Srbija navode Zvonka Veselinovića kao vlasnika 60 odsto Inkopa. RSE datira ovu strukturu od izlaska Milana Radoičića iz vlasništva u oktobru 2023. Datum prestanka nije naveden."@sr ;
+    rdfs:comment "RFE/RL and Forbes Srbija report Zvonko Veselinović owns 60 percent of Inkop. RFE/RL dates this structure from Milan Radoičić’s exit in October 2023. No end date is stated."@en ;
+    :hasDocumentation
+        [ a :Documentation ;
+          :hasDocumentURL <https://www.slobodnaevropa.org/a/zvonko-veselinovic-firme-srbija-putevi-kamenolom-novi-pazar/33752862.html> ;
+          :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "RSE, 11. maj 2026: 'Zvonko Veselinović u \"Inkopu\" i povezanim preduzećima od tada ima 60 odsto vlasništva, dok njegov brat Žarko ima 40 odsto.'; 'Suvlasnik \"Inkopa\" do oktobra 2023. bio je Milan Radoičić.'"@sr ;
+          rdfs:comment "RFE/RL, 11 May 2026: 'Zvonko Veselinović u \"Inkopu\" i povezanim preduzećima od tada ima 60 odsto vlasništva, dok njegov brat Žarko ima 40 odsto.'; 'Suvlasnik \"Inkopa\" do oktobra 2023. bio je Milan Radoičić.'"@en ] ,
+        [ a :Documentation ;
+          :hasDocumentURL <https://forbes.n1info.rs/biznis/kako-su-poslovali-inkop-i-druge-firme-zvonka-veselinovica-u-2024-braci-bliskoj-sns-u-slabije-su-cvetale-ruze/> ;
+          :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Forbes Srbija, 14. maj 2025: 'Inkop je u vlasništvu dvojice braće, Zvonka i Žarka Veselinovića. Zvonko je suvlasnik 60 odsto, a Žarko preostalih 40 odsto udela.'"@sr ;
+          rdfs:comment "Forbes Srbija, 14 May 2025: 'Inkop je u vlasništvu dvojice braće, Zvonka i Žarka Veselinovića. Zvonko je suvlasnik 60 odsto, a Žarko preostalih 40 odsto udela.'"@en ] .
+
+rs:Inkop_NoviPazarPut a vip:OwnershipConnection ;
+    vip:owner rs:Inkop ;
+    vip:ownedCompany rs:Novi_Pazar_Put ;
+    :connectionStartDate "2020"^^xsd:gYear ;
+    rdfs:comment "RSE i Forbes Srbija opisuju Novi Pazar-put kao preduzeće u sastavu Inkopa. Datum sticanja navodi RSE. Vlasnički udeo i datum prestanka nisu zabeleženi."@sr ;
+    rdfs:comment "RFE/RL and Forbes Srbija describe Novi Pazar-put as an Inkop subsidiary. RFE/RL supplies the acquisition date. No ownership percentage or end date is recorded."@en ;
+    :hasDocumentation
+        [ a :Documentation ;
+          :hasDocumentURL <https://www.slobodnaevropa.org/a/zvonko-veselinovic-firme-srbija-putevi-kamenolom-novi-pazar/33752862.html> ;
+          :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "RSE, 11. maj 2026: '\"Novi Pazar-put\" je, kao nekada državna građevinska firma specijalizovana za izgradnju puteva, od 2020. godine u vlasništvu \"Inkopa\", odnosno braće Zvonka i Žarka Veselinovića.'"@sr ;
+          rdfs:comment "RFE/RL, 11 May 2026: '\"Novi Pazar-put\" je, kao nekada državna građevinska firma specijalizovana za izgradnju puteva, od 2020. godine u vlasništvu \"Inkopa\", odnosno braće Zvonka i Žarka Veselinovića.'"@en ] ,
+        [ a :Documentation ;
+          :hasDocumentURL <https://forbes.n1info.rs/biznis/kako-su-poslovali-inkop-i-druge-firme-zvonka-veselinovica-u-2024-braci-bliskoj-sns-u-slabije-su-cvetale-ruze/> ;
+          :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Forbes Srbija, 14. maj 2025: 'I dobit firme Novi Pazar put, koja posluje kao zavisno preduzeće u sastavu Inkopa, poslovalo je prošle godine lošije u odnosu na 2023.'"@sr ;
+          rdfs:comment "Forbes Srbija, 14 May 2025: 'I dobit firme Novi Pazar put, koja posluje kao zavisno preduzeće u sastavu Inkopa, poslovalo je prošle godine lošije u odnosu na 2023.'"@en ] .
+
+rs:Inkop_BetonjerkaAleksinac a vip:OwnershipConnection ;
+    vip:owner rs:Inkop ;
+    vip:ownedCompany rs:Betonjerka_Aleksinac ;
+    :connectionStartDate "2019-10"^^xsd:gYearMonth ;
+    rdfs:comment "RSE i Forbes Srbija opisuju Betonjerka Aleksinac kao preduzeće u sastavu Inkopa. Datum sticanja navodi RSE. Vlasnički udeo i datum prestanka nisu zabeleženi."@sr ;
+    rdfs:comment "RFE/RL and Forbes Srbija describe Betonjerka Aleksinac as an Inkop subsidiary. RFE/RL supplies the acquisition date. No ownership percentage or end date is recorded."@en ;
+    :hasDocumentation
+        [ a :Documentation ;
+          :hasDocumentURL <https://www.slobodnaevropa.org/a/zvonko-veselinovic-firme-srbija-putevi-kamenolom-novi-pazar/33752862.html> ;
+          :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "RSE, 11. maj 2026: 'Jedna je \"Betonjerka Aleksinac\", nekada prezaduženo preduzeće sa juga Srbije, koju je \"Inkop\" kupio u oktobru 2019. godine.'"@sr ;
+          rdfs:comment "RFE/RL, 11 May 2026: 'Jedna je \"Betonjerka Aleksinac\", nekada prezaduženo preduzeće sa juga Srbije, koju je \"Inkop\" kupio u oktobru 2019. godine.'"@en ] ,
+        [ a :Documentation ;
+          :hasDocumentURL <https://forbes.n1info.rs/biznis/kako-su-poslovali-inkop-i-druge-firme-zvonka-veselinovica-u-2024-braci-bliskoj-sns-u-slabije-su-cvetale-ruze/> ;
+          :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Forbes Srbija, 14. maj 2025: 'I Betonjerka Aleksinac, još jedna od firmi u sastavu Inkopa imala je lošiju godinu.'"@sr ;
+          rdfs:comment "Forbes Srbija, 14 May 2025: 'I Betonjerka Aleksinac, još jedna od firmi u sastavu Inkopa imala je lošiju godinu.'"@en ] .
