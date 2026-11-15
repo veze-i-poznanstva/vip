@@ -104,9 +104,23 @@ function ownLabel(edge: ConnectionFields, language: string | undefined): string 
   return typeof own === 'string' && own !== '' ? own : edge.label ?? '';
 }
 
-/** What the tie is, in words: translated kind, else the type label, else the record's own label in the given language. */
+/** What the record itself says it is, in the given language, else in any language it has; undefined when it has no label of its own. */
+function recordLabel(edge: ConnectionFields, language: string | undefined): string | undefined {
+  const all = Object.values(edge.labels ?? {}).filter((l): l is string => typeof l === 'string' && l !== '');
+  const own = language !== undefined && edge.labels ? edge.labels[language] : undefined;
+  return typeof own === 'string' && own !== '' ? own : all[0];
+}
+
+/**
+ * What the tie is, in words: translated kind, else the type label, else the record's own label in
+ * the given language. A record of a known kind that also says something of its own, such as what a
+ * contract is for, reads "kind: own label".
+ */
 export function connectionKind(edge: ConnectionFields, t: Translate, language?: string): string {
-  return kindText(edge, t) ?? edge.typeLabel ?? ownLabel(edge, language);
+  const kind = kindText(edge, t);
+  if (kind === undefined) return edge.typeLabel ?? ownLabel(edge, language);
+  const own = recordLabel(edge, language);
+  return own === undefined ? kind : `${kind}: ${own}`;
 }
 
 const withShare = (text: string, share: number | undefined) => (typeof share === 'number' ? `${text} ${share}%` : text);

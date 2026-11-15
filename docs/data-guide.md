@@ -59,6 +59,13 @@ Seven conventions apply to every record. The validators enforce their form; whet
   `data/cases/porodicne-veze.ttl` with their own sources. The shapes refuse PoderVocab's bare
   family properties (`:hasSibling`, `:hasParent`) on a person, because they leave no place for
   the evidence.
+  A contract is a `vip:ContractConnection` from the party that orders (`vip:client`) to the party
+  that supplies (`vip:contractor`), with what the contract is for as the record's `rdfs:label` in
+  both languages; a subcontract is a contract whose client is itself a contractor on the same job,
+  and a consortium is one record per member. A body that answers to or belongs to another, such as
+  a service of the Government, is a `vip:SubordinationConnection` (`vip:subordinateBody`,
+  `vip:superiorBody`). Both name exactly one party on each side. A relationship no class fits is
+  a plain `:Connection` with `bio:participant` and its own bilingual label.
 - **Time is part of the claim.** A connection carries `:connectionStartDate` and
   `:connectionEndDate` as precisely as its source states them: `xsd:gYear`, `xsd:gYearMonth` or
   `xsd:date`, never an invented 1 January. A missing date means unknown, not ongoing. Roles held

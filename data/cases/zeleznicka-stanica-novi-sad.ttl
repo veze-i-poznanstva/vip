@@ -95,8 +95,9 @@ rs:NenadIgnjatovic_DekoTim a vip:OwnershipConnection ;
         [ a :Documentation ; :hasDocumentURL <https://www.bbc.com/serbian/articles/cn47xjzq395o/lat> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
           rdfs:comment "BBC na srpskom, objavljeno 1. avgusta 2025: 'Nenad Ignjatović, vlasnik „Deko tim\"'."@sr ] .
 
-rs:CCECCBalkan_Starting_Stanica a :Connection ;
-    bio:participant rs:CCECC_Balkan_Ogranak_Beograd, rs:Starting ;
+rs:CCECCBalkan_Starting_Stanica a vip:ContractConnection ;
+    vip:client rs:CCECC_Balkan_Ogranak_Beograd ;
+    vip:contractor rs:Starting ;
     rdfs:label "podizvođenje obnove stanice"@sr, "station renovation subcontract"@en ;
     :connectionStartDate "2021-11"^^xsd:gYearMonth ;
     rdfs:comment "Beogradski ogranak CCECC Balkan angažovao je Starting kao podizvođača za obnovu zgrade stanice u Novom Sadu. Spisak dokumentacije navodi Sporazum br. 209-2021 od 1. novembra 2021. (stavka 421) i Podizvođački ugovor od 20. jula 2022. (stavka 419) između njih. Vreme, prenoseći Forbes, piše da je sporazum potpisan u novembru 2021, a ugovor u julu 2022, i da su strane ušle u podizvođački ugovor 10. novembra 2021; Nova.rs, prenoseći naredbu o sprovođenju istrage, navodi da je Starting ponudu dao po pozivu tog ogranka, a ugovor zaključio 1. novembra 2021. sa konzorcijumom ogranaka CCECCB i „11th China Railway“. Početak je zabeležen na mesec jer se dan razlikuje među izvorima. Spisak opisuje dokumente; sami ugovori nisu pročitani."@sr ;
@@ -109,8 +110,9 @@ rs:CCECCBalkan_Starting_Stanica a :Connection ;
         [ a :Documentation ; :hasDocumentURL <https://nova.rs/vesti/biznis/firma-starting-postavila-novog-direktora-nakon-hapsenja-nikole-trivica> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
           rdfs:comment "Nova.rs, 8. avgust 2025, prenosi naredbu o sprovođenju istrage: 'po pozivu za davanje ponude od privrednog društva „China Civil Engineering Constuction Corporation Balkan – Ogranak Beograd“'; 'zaključio ugovor 1. novembra 2021.'"@sr ] .
 
-rs:Starting_BobNoviSad_Stanica a :Connection ;
-    bio:participant rs:Starting, rs:Bob_Novi_Sad ;
+rs:Starting_BobNoviSad_Stanica a vip:ContractConnection ;
+    vip:client rs:Starting ;
+    vip:contractor rs:Bob_Novi_Sad ;
     rdfs:label "podizvođenje obnove stanice"@sr, "station renovation subcontract"@en ;
     :connectionStartDate "2022"^^xsd:gYear ;
     rdfs:comment "Starting je angažovao firmu Bob za aluminarske i bravarske radove na stanici, uključujući svetlarnik nadstrešnice nad ulazom u krilo B (021.rs, prema ugovoru koji je objavilo Više javno tužilaštvo u Novom Sadu; 021.rs piše da je ugovor zaključen u julu 2022). Spisak (stavka 503) navodi broj Startinga od 28. jula 2022. i broj firme Bob od 3. avgusta 2022; početak je zabeležen na godinu jer se ta dva datuma razlikuju."@sr ;
@@ -121,8 +123,9 @@ rs:Starting_BobNoviSad_Stanica a :Connection ;
         [ a :Documentation ; :hasDocumentURL <https://www.021.rs/novi-sad/vesti/400000/objavljen-ugovor-startinga-sa-jos-jednim-podizvodjacem-ko-je-postavljao-staklo-na-nadstresnicu> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
           rdfs:comment "021.rs, 27. januar 2025: 'ugovor podizvođača, firme Starting sa firmom Bob doo iz Novog Sada'; 'Ugovor koji je zaključen u julu 2022. godine'; 'svetlarnik nadstrešnice nad ulazom u krilo B'."@sr ] .
 
-rs:Starting_DekoTim_Stanica a :Connection ;
-    bio:participant rs:Starting, rs:Deko_Tim ;
+rs:Starting_DekoTim_Stanica a vip:ContractConnection ;
+    vip:client rs:Starting ;
+    vip:contractor rs:Deko_Tim ;
     rdfs:label "podizvođenje obnove stanice"@sr, "station renovation subcontract"@en ;
     :connectionStartDate "2022-08-08"^^xsd:date ;
     rdfs:comment "Ugovor o kamenorezačkim i fasaderskim radovima br. 117-2022, Novi Sad, 8. avgust 2022, prema spisku dokumentacije (stavka 508); 021.rs i Nedeljnik navode da je Starting angažovao Deko-tim, 021.rs sa istim obimom radova; dan potiče samo iz spiska."@sr ;
@@ -135,8 +138,9 @@ rs:Starting_DekoTim_Stanica a :Connection ;
         [ a :Documentation ; :hasDocumentURL <https://www.nedeljnik.rs/od-trgovine-na-malo-do-rekonstrukcije-zeleznicke-stanice-u-roku-od-tri-godine-ko-je-firma-koja-se-spomenjinje-u-izvestaju-vestaka-ftn/> ; :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
           rdfs:comment "Nedeljnik, 20. decembar 2024: 'angažovan je kao jedan od podizvođača firme „Starting“'."@sr ] .
 
-rs:Starting_HidroTehna_Stanica a :Connection ;
-    bio:participant rs:Starting, rs:Hidro_Tehna_Novi_Sad ;
+rs:Starting_HidroTehna_Stanica a vip:ContractConnection ;
+    vip:client rs:Starting ;
+    vip:contractor rs:Hidro_Tehna_Novi_Sad ;
     rdfs:label "podizvođenje obnove stanice"@sr, "station renovation subcontract"@en ;
     rdfs:comment "Spisak dokumentacije (stavka 509) navodi ponudu br. 96 firme Hidro-tehna d.o.o. Novi Sad firmi Starting za hidroizolaciju zgrade stanice, od 29. septembra 2022, i dopunu te ponude za hidroizolaterske radove na krovu, od 8. decembra 2022; to su ponude, spisak ne navodi ugovor. Forbes Srbija (5. maj 2025) prenosi iskaz inženjera firme Starting da je hidroizolaciju radila „Hidrotehna“ kao podizvođač firme Starting. Forbes ne navodi grad, pa da je to novosadska firma zasniva se na imenu i vrsti posla. Kada su radovi počeli i završeni nije poznato."@sr ;
     rdfs:comment "The document index (item 509) lists offer no. 96 of Hidro-tehna d.o.o. Novi Sad to Starting for waterproofing the station building, dated 29 September 2022, and a supplement to it for waterproofing work on the roof, dated 8 December 2022; these are offers, the index lists no contract. Forbes Srbija (5 May 2025) reports the testimony of a Starting engineer that the waterproofing was done by \"Hidrotehna\" as Starting's subcontractor. Forbes names no town, so that this is the Novi Sad company rests on the name and the kind of work. When the work began and ended is unknown."@en ;

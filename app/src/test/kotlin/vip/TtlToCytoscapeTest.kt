@@ -684,6 +684,29 @@ class TtlToCytoscapeTest {
     }
 
     @Test
+    fun `a contract edge leaves the client, whatever the URIs sort to, and keeps what the contract is for`() {
+        val edge = convert("""
+            ex:Zavod a :GovernmentOrganization . ex:Acme a :Company .
+            ex:ZA a vip:ContractConnection ; vip:client ex:Zavod ; vip:contractor ex:Acme ; rdfs:label "Registar"@sr, "Register"@en .
+        """).edges().single()
+        assertEquals("zavod", edge.data.source)
+        assertEquals("acme", edge.data.target)
+        assertEquals("ContractConnection", edge.data.kind)
+        assertEquals(mapOf("en" to "Register", "sr" to "Registar"), edge.data.labels)
+    }
+
+    @Test
+    fun `a subordination edge leaves the subordinate body, whatever the URIs sort to`() {
+        val edge = convert("""
+            ex:Zavod a :GovernmentOrganization . ex:Agencija a :GovernmentOrganization .
+            ex:ZA a vip:SubordinationConnection ; vip:subordinateBody ex:Zavod ; vip:superiorBody ex:Agencija .
+        """).edges().single()
+        assertEquals("zavod", edge.data.source)
+        assertEquals("agencija", edge.data.target)
+        assertEquals("SubordinationConnection", edge.data.kind)
+    }
+
+    @Test
     fun `a connection's own label is exported in every language it has, the Serbian one drawn by default`() {
         val data = convert("""
             ex:A a foaf:Person . ex:B a :Company .

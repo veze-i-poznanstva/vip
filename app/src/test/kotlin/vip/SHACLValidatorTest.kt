@@ -376,4 +376,130 @@ class SHACLValidatorTest {
         """))
         assertTrue(report.conforms(), report.entries.joinToString { it.message() })
     }
+
+    private val contractParties = """
+        rs:Kancelarija a :GovernmentOrganization ; foaf:name "Kancelarija" ; $documented .
+        rs:Firma a :Company ; foaf:name "Firma" ; $documented .
+    """
+
+    @Test
+    fun `a contract that does not name its client is refused`() {
+        val report = validateShacl(schema, data("""
+            $contractParties
+            rs:Ugovor a vip:ContractConnection ; vip:contractor rs:Firma ; bio:participant rs:Kancelarija ; $quoted .
+        """))
+        assertFalse(report.conforms())
+        assertTrue(report.entries.any { it.message().contains("client") }, report.entries.joinToString { it.message() })
+    }
+
+    @Test
+    fun `a contract naming one client and one contractor conforms, both counted as participants`() {
+        val report = validateShacl(schema, data("""
+            $contractParties
+            rs:Ugovor a vip:ContractConnection ; vip:client rs:Kancelarija ; vip:contractor rs:Firma ; $quoted .
+        """))
+        assertTrue(report.conforms(), report.entries.joinToString { it.message() })
+    }
+
+    @Test
+    fun `a contract that does not name its contractor is refused`() {
+        val report = validateShacl(schema, data("""
+            $contractParties
+            rs:Ugovor a vip:ContractConnection ; vip:client rs:Kancelarija ; bio:participant rs:Firma ; $quoted .
+        """))
+        assertFalse(report.conforms())
+        assertTrue(report.entries.any { it.message().contains("contractor") }, report.entries.joinToString { it.message() })
+    }
+
+    @Test
+    fun `a contract with two contractors is refused, because a consortium is one record per member`() {
+        val report = validateShacl(schema, data("""
+            $contractParties
+            rs:Druga a :Company ; foaf:name "Druga" ; $documented .
+            rs:Ugovor a vip:ContractConnection ; vip:client rs:Kancelarija ; vip:contractor rs:Firma, rs:Druga ; $quoted .
+        """))
+        assertFalse(report.conforms())
+    }
+
+    @Test
+    fun `a contract with two clients is refused`() {
+        val report = validateShacl(schema, data("""
+            $contractParties
+            rs:Druga a :GovernmentOrganization ; foaf:name "Druga" ; $documented .
+            rs:Ugovor a vip:ContractConnection ; vip:client rs:Kancelarija, rs:Druga ; vip:contractor rs:Firma ; $quoted .
+        """))
+        assertFalse(report.conforms())
+    }
+
+    @Test
+    fun `a contract whose client is also its contractor is refused`() {
+        val report = validateShacl(schema, data("""
+            $contractParties
+            rs:Ugovor a vip:ContractConnection ; vip:client rs:Firma ; vip:contractor rs:Firma ; bio:participant rs:Kancelarija ; $quoted .
+        """))
+        assertFalse(report.conforms())
+    }
+
+    private val bodies = """
+        rs:Vlada a :GovernmentOrganization ; foaf:name "Vlada" ; $documented .
+        rs:Sluzba a :GovernmentOrganization ; foaf:name "Sluzba" ; $documented .
+    """
+
+    @Test
+    fun `a subordination that does not name the superior body is refused`() {
+        val report = validateShacl(schema, data("""
+            $bodies
+            rs:Pod a vip:SubordinationConnection ; vip:subordinateBody rs:Sluzba ; bio:participant rs:Vlada ; $quoted .
+        """))
+        assertFalse(report.conforms())
+        assertTrue(report.entries.any { it.message().contains("superior") }, report.entries.joinToString { it.message() })
+    }
+
+    @Test
+    fun `a subordination naming one subordinate and one superior body conforms`() {
+        val report = validateShacl(schema, data("""
+            $bodies
+            rs:Pod a vip:SubordinationConnection ; vip:subordinateBody rs:Sluzba ; vip:superiorBody rs:Vlada ; $quoted .
+        """))
+        assertTrue(report.conforms(), report.entries.joinToString { it.message() })
+    }
+
+    @Test
+    fun `a subordination that does not name the subordinate body is refused`() {
+        val report = validateShacl(schema, data("""
+            $bodies
+            rs:Pod a vip:SubordinationConnection ; vip:superiorBody rs:Vlada ; bio:participant rs:Sluzba ; $quoted .
+        """))
+        assertFalse(report.conforms())
+        assertTrue(report.entries.any { it.message().contains("subordinate body") }, report.entries.joinToString { it.message() })
+    }
+
+    @Test
+    fun `a body recorded as subordinate to itself is refused`() {
+        val report = validateShacl(schema, data("""
+            $bodies
+            rs:Pod a vip:SubordinationConnection ; vip:subordinateBody rs:Vlada ; vip:superiorBody rs:Vlada ; bio:participant rs:Sluzba ; $quoted .
+        """))
+        assertFalse(report.conforms())
+    }
+
+    @Test
+    fun `a subordination with two superior bodies is refused, one record per pair`() {
+        val report = validateShacl(schema, data("""
+            $bodies
+            rs:Treca a :GovernmentOrganization ; foaf:name "Treca" ; $documented .
+            rs:Pod a vip:SubordinationConnection ; vip:subordinateBody rs:Sluzba ; vip:superiorBody rs:Vlada, rs:Treca ; $quoted .
+        """))
+        assertFalse(report.conforms())
+    }
+
+    @Test
+    fun `a subordination with two subordinate bodies is refused, one record per pair`() {
+        val report = validateShacl(schema, data("""
+            $bodies
+            rs:Treca a :GovernmentOrganization ; foaf:name "Treca" ; $documented .
+            rs:Pod a vip:SubordinationConnection ; vip:subordinateBody rs:Sluzba, rs:Treca ; vip:superiorBody rs:Vlada ; $quoted .
+        """))
+        assertFalse(report.conforms())
+    }
 }

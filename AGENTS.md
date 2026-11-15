@@ -65,6 +65,13 @@ dashed. A company's shares that may apply at the same time total at most 100
 (`:OwnershipTotalShape`); a share is a decimal in (0, 100]. Rules drop known non-overlap and
 report `overlapping` or `unknown`.
 
+A contract is a `vip:ContractConnection` from `vip:client` (who orders) to `vip:contractor` (who
+supplies), its `rdfs:label` saying what for; a subcontract is a contract whose client is a contractor,
+a consortium one record per member. A body under another is a `vip:SubordinationConnection`
+(`vip:subordinateBody`, `vip:superiorBody`). The shapes ask for exactly one party on each side; the
+viewer words a typed record with its own label as "kind: label". Anything else is a plain
+`:Connection` with a bilingual label.
+
 ## Data layout
 
 - `data/entities/<slug>.ttl`: one file per person or organisation, named after the URI local name

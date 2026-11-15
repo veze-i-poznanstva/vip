@@ -57,6 +57,13 @@ Sedam pravila važi za svaki zapis. Validatori sprovode njihov oblik; da li izvo
   `data/cases/porodicne-veze.ttl` sa sopstvenim izvorima. Oblici odbijaju gola porodična
   svojstva PoderVocab-a (`:hasSibling`, `:hasParent`) na osobi, jer ne ostavljaju mesta za
   dokaz.
+  Ugovor je `vip:ContractConnection` od strane koja naručuje (`vip:client`) ka strani koja
+  isporučuje (`vip:contractor`), a na šta se ugovor odnosi stoji u `rdfs:label` zapisa na oba
+  jezika; podizvođenje je ugovor čiji je naručilac i sam izvođač na istom poslu, a konzorcijum je
+  po jedan zapis za svakog člana. Organ koji odgovara drugom organu ili mu pripada, na primer
+  služba Vlade, je `vip:SubordinationConnection` (`vip:subordinateBody`, `vip:superiorBody`). Obe
+  veze navode tačno jednu stranu sa svake strane. Odnos kojem nijedna klasa ne odgovara je obična
+  `:Connection` sa `bio:participant` i sopstvenim dvojezičnim nazivom.
 - **Vreme je deo tvrdnje.** Veza nosi `:connectionStartDate` i `:connectionEndDate` onoliko
   precizno koliko izvor navodi: `xsd:gYear`, `xsd:gYearMonth` ili `xsd:date`, nikad izmišljeni
   1. januar. Datum koji nedostaje znači da je nepoznat, a ne da veza još traje. Uloge obavljane u

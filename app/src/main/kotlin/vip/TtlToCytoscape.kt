@@ -294,9 +294,9 @@ private class GraphBuilder(
         return types.firstOrNull { t -> types.all { o -> o == t || inferred.contains(t, RDFS.subClassOf, o) } } ?: types.firstOrNull()
     }
 
-    /** A directed tie leaves its origin, the owner or the parent, whatever the two URIs sort to. */
+    /** A directed tie leaves its origin (the owner, the parent, the client, the subordinate body), whatever the two URIs sort to. */
     private fun isOriginIn(connection: Resource, participant: Resource): Boolean =
-        listOf(Vocab.OWNER, Vocab.PARENT).any { data.contains(connection, data.createProperty(it), participant) }
+        listOf(Vocab.OWNER, Vocab.PARENT, Vocab.CLIENT, Vocab.SUBORDINATE_BODY).any { data.contains(connection, data.createProperty(it), participant) }
 
     /** Only properties the vocabulary declares become edges: a made-up predicate is not a fact. */
     private fun directEdges(): List<CytoscapeElement> =

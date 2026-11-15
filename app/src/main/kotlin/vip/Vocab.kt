@@ -28,6 +28,8 @@ object Vocab {
     const val REMOVED = VIP + "removed"
     const val OWNER = VIP + "owner"
     const val PARENT = VIP + "parent"
+    const val CLIENT = VIP + "client"
+    const val SUBORDINATE_BODY = VIP + "subordinateBody"
     const val WIKIPEDIA_ARTICLE = VIP + "wikipediaArticle"
     const val WIKIDATA_ITEM = VIP + "wikidataItem"
 

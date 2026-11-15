@@ -1105,6 +1105,48 @@ vip:child a rdf:Property, owl:ObjectProperty;
     rdfs:domain vip:ParentChildConnection;
     rdfs:range foaf:Person.
 
+# Contracts: who ordered work, goods or services from whom. PoderVocab has no term for it.
+# A subcontract is a contract whose client is itself a contractor on the same job.
+vip:ContractConnection a owl:Class;
+    rdfs:subClassOf :Connection;
+    rdfs:label "Contract"@en, "Contrato"@es, "Ugovor"@sr;
+    rdfs:comment "Connection between the party that orders work, goods or services (vip:client) and the party that supplies them (vip:contractor). The record's own label says what the contract is for. A subcontract is a contract whose client is itself a contractor on the same job."@en, "Conexión entre la parte que encarga obras, bienes o servicios (vip:client) y la parte que los suministra (vip:contractor). La etiqueta propia del registro dice para qué es el contrato. Un subcontrato es un contrato cuyo cliente es a su vez contratista en la misma obra."@es, "Veza između strane koja naručuje radove, dobra ili usluge (vip:client) i strane koja ih isporučuje (vip:contractor). Sopstveni naziv zapisa kaže na šta se ugovor odnosi. Podizvođenje je ugovor čiji je naručilac i sam izvođač na istom poslu."@sr.
+
+vip:client a rdf:Property, owl:ObjectProperty;
+    rdfs:subPropertyOf bio:participant;
+    rdfs:label "Client"@en, "Cliente"@es, "Naručilac"@sr;
+    rdfs:comment "The party that orders and pays for the work, goods or services of a contract"@en, "La parte que encarga y paga las obras, bienes o servicios de un contrato"@es, "Strana koja naručuje i plaća radove, dobra ili usluge iz ugovora"@sr;
+    rdfs:domain vip:ContractConnection;
+    rdfs:range foaf:Agent.
+
+vip:contractor a rdf:Property, owl:ObjectProperty;
+    rdfs:subPropertyOf bio:participant;
+    rdfs:label "Contractor"@en, "Contratista"@es, "Izvođač ili dobavljač"@sr;
+    rdfs:comment "The party that supplies the work, goods or services of a contract"@en, "La parte que suministra las obras, bienes o servicios de un contrato"@es, "Strana koja isporučuje radove, dobra ili usluge iz ugovora"@sr;
+    rdfs:domain vip:ContractConnection;
+    rdfs:range foaf:Agent.
+
+# Bodies under bodies: an office, service or agency and the body it answers to. PoderVocab's
+# :subsidiaryCompanyOf is about companies and, as a bare property, has no place for evidence or dates.
+vip:SubordinationConnection a owl:Class;
+    rdfs:subClassOf :Connection;
+    rdfs:label "Subordination"@en, "Subordinación"@es, "Podređenost"@sr;
+    rdfs:comment "Connection between a body (vip:subordinateBody) and the body it answers to or belongs to (vip:superiorBody), such as a service of the Government and the Government. The record's own label says what the subordinate body is to the superior one. Ownership is a vip:OwnershipConnection, not this."@en, "Conexión entre un órgano (vip:subordinateBody) y el órgano del que depende o al que pertenece (vip:superiorBody), como un servicio del Gobierno y el Gobierno. La etiqueta propia del registro dice qué es el órgano subordinado respecto del superior. La propiedad es una vip:OwnershipConnection, no esto."@es, "Veza između organa (vip:subordinateBody) i organa kojem odgovara ili pripada (vip:superiorBody), na primer službe Vlade i Vlade. Sopstveni naziv zapisa kaže šta je podređeni organ nadređenom. Vlasništvo je vip:OwnershipConnection, a ne ovo."@sr.
+
+vip:subordinateBody a rdf:Property, owl:ObjectProperty;
+    rdfs:subPropertyOf bio:participant;
+    rdfs:label "Subordinate body"@en, "Órgano subordinado"@es, "Podređeni organ"@sr;
+    rdfs:comment "The body that answers to or belongs to the other"@en, "El órgano que depende del otro o le pertenece"@es, "Organ koji odgovara drugom ili mu pripada"@sr;
+    rdfs:domain vip:SubordinationConnection;
+    rdfs:range foaf:Organization.
+
+vip:superiorBody a rdf:Property, owl:ObjectProperty;
+    rdfs:subPropertyOf bio:participant;
+    rdfs:label "Superior body"@en, "Órgano superior"@es, "Nadređeni organ"@sr;
+    rdfs:comment "The body the other answers to or belongs to"@en, "El órgano del que el otro depende o al que pertenece"@es, "Organ kojem drugi odgovara ili pripada"@sr;
+    rdfs:domain vip:SubordinationConnection;
+    rdfs:range foaf:Organization.
+
 # Tells same-named people apart with a public identifier; a page merely cited as evidence does
 # not say it is about the entity.
 vip:wikipediaArticle a rdf:Property, owl:ObjectProperty;
@@ -1321,6 +1363,41 @@ vip:removed a :DocumentStatus;
                 FILTER (SUBSTR(?e, 1, ?common) < SUBSTR(?s, 1, ?common))
             }
         """
+    ].
+
+# A contract always says who ordered and who supplies, so its direction is never a guess. One
+# contractor per record: the export draws an edge between every two participants, and consortium
+# members are not each other's contractors.
+:ContractConnectionShape a sh:NodeShape;
+    sh:targetClass vip:ContractConnection;
+    sh:property [
+        sh:path vip:client;
+        sh:minCount 1;
+        sh:maxCount 1;
+        sh:disjoint vip:contractor;
+        sh:message "A contract names one client (vip:client), who is not also its contractor"@en, "Un contrato nombra un cliente (vip:client), que no es también su contratista"@es, "Ugovor navodi jednog naručioca (vip:client), koji nije ujedno i izvođač"@sr
+    ];
+    sh:property [
+        sh:path vip:contractor;
+        sh:minCount 1;
+        sh:maxCount 1;
+        sh:message "A contract names one contractor (vip:contractor); a consortium is one record per member"@en, "Un contrato nombra un contratista (vip:contractor); un consorcio es un registro por miembro"@es, "Ugovor navodi jednog izvođača ili dobavljača (vip:contractor); konzorcijum je po jedan zapis za svakog člana"@sr
+    ].
+
+:SubordinationConnectionShape a sh:NodeShape;
+    sh:targetClass vip:SubordinationConnection;
+    sh:property [
+        sh:path vip:superiorBody;
+        sh:minCount 1;
+        sh:maxCount 1;
+        sh:message "A subordination names one superior body (vip:superiorBody); one record per pair of bodies"@en, "Una subordinación nombra un órgano superior (vip:superiorBody); un registro por par de órganos"@es, "Podređenost navodi jedan nadređeni organ (vip:superiorBody); po jedan zapis za svaki par organa"@sr
+    ];
+    sh:property [
+        sh:path vip:subordinateBody;
+        sh:minCount 1;
+        sh:maxCount 1;
+        sh:disjoint vip:superiorBody;
+        sh:message "A subordination names one subordinate body (vip:subordinateBody), which is not also the superior one"@en, "Una subordinación nombra un órgano subordinado (vip:subordinateBody), que no es también el superior"@es, "Podređenost navodi jedan podređeni organ (vip:subordinateBody), koji nije ujedno i nadređeni"@sr
     ].
 
 :OwnershipConnectionShape a sh:NodeShape;

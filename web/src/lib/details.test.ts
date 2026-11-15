@@ -97,6 +97,17 @@ describe('edgeLabel', () => {
     expect(edgeLabel({ kind: 'Connection', label: 'Ustupljen automobil', labels }, t, 'de')).toBe('Ustupljen automobil');
     expect(connectionTitle({ kind: 'Connection', label: 'Ustupljen automobil', labels }, t, 'en')).toBe('Car provided');
   });
+  it('adds what a typed record says about itself to the title, and draws only the kind', () => {
+    const contract = { ...dictionary, 'edge.ContractConnection': 'contract' };
+    const tc = (key: string) => contract[key] ?? key;
+    const labels = { en: 'Population register', sr: 'Registar stanovništva' };
+    const edge = { kind: 'ContractConnection', label: 'Registar stanovništva', labels };
+    expect(connectionTitle(edge, tc, 'en')).toBe('contract: Population register');
+    expect(connectionTitle(edge, tc, 'sr')).toBe('contract: Registar stanovništva');
+    expect(edgeLabel(edge, tc, 'en')).toBe('contract');
+    expect(connectionTitle(edge, tc, 'de')).toBe('contract: Population register');
+    expect(connectionTitle({ kind: 'ContractConnection', label: 'contract' }, tc, 'en')).toBe('contract');
+  });
   it('does not add roles to the drawn label', () => {
     expect(edgeLabel({ kind: 'WorkConnection', roles: [{ en: 'chair' }], label: 'x' }, t)).toBe('works at');
   });

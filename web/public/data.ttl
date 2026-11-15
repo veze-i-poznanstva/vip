@@ -845,7 +845,7 @@ rs:NikolaPetrovicEMS_ArkshoreInternational
         vip:owner             rs:Nikola_Petrovic_EMS .
 
 rs:CCECCBalkan_Starting_Stanica
-        rdf:type              bio:Relationship , :Connection , :SourcedEntity;
+        rdf:type              vip:ContractConnection , bio:Relationship , :Connection , :SourcedEntity;
         rdfs:comment          "Beogradski ogranak CCECC Balkan angažovao je Starting kao podizvođača za obnovu zgrade stanice u Novom Sadu. Spisak dokumentacije navodi Sporazum br. 209-2021 od 1. novembra 2021. (stavka 421) i Podizvođački ugovor od 20. jula 2022. (stavka 419) između njih. Vreme, prenoseći Forbes, piše da je sporazum potpisan u novembru 2021, a ugovor u julu 2022, i da su strane ušle u podizvođački ugovor 10. novembra 2021; Nova.rs, prenoseći naredbu o sprovođenju istrage, navodi da je Starting ponudu dao po pozivu tog ogranka, a ugovor zaključio 1. novembra 2021. sa konzorcijumom ogranaka CCECCB i „11th China Railway“. Početak je zabeležen na mesec jer se dan razlikuje među izvorima. Spisak opisuje dokumente; sami ugovori nisu pročitani."@sr , "CCECC Balkan's Belgrade branch engaged Starting as subcontractor for the renovation of the Novi Sad station building. The document index lists an Agreement no. 209-2021 dated 1 November 2021 (item 421) and a Subcontract dated 20 July 2022 (item 419) between them. Vreme, relaying Forbes, writes that the agreement was signed in November 2021 and the contract in July 2022, and that the parties entered into the subcontract on 10 November 2021; Nova.rs, relaying the order to conduct an investigation, says that Starting made its offer at that branch's invitation and concluded the contract on 1 November 2021 with a consortium of the branches of CCECCB and \"11th China Railway\". The start is recorded to the month because the day differs between the sources. The index describes documents; the contracts themselves were not read."@en;
         rdfs:label            "podizvođenje obnove stanice"@sr , "station renovation subcontract"@en;
         :connectionStartDate  "2021-11"^^xsd:gYearMonth;
@@ -868,7 +868,9 @@ rs:CCECCBalkan_Starting_Stanica
                                 :hasDocumentURL     <https://mss.jt.rs/wp-content/uploads/2025/01/%D0%A1%D0%BF%D0%B8%D1%81%D0%B0%D0%BA-%D0%BE%D0%B1%D1%98%D0%B0%D0%B2%D1%99%D0%B5%D0%BD%D0%B5-%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D1%98%D0%B5-1.pdf>
                               ];
         bio:participant       rs:CCECC_Balkan_Ogranak_Beograd , rs:Starting;
-        owl:differentFrom     rs:CCECC_Balkan_Ogranak_Beograd , rs:Starting .
+        owl:differentFrom     rs:CCECC_Balkan_Ogranak_Beograd , rs:Starting;
+        vip:client            rs:CCECC_Balkan_Ogranak_Beograd;
+        vip:contractor        rs:Starting .
 
 rs:MilenijumTim_RobertsMillennium_Vlasnistvo
         rdf:type              bio:Relationship , :Connection , :SourcedEntity , vip:OwnershipConnection;
@@ -1027,7 +1029,7 @@ rs:Nenad_Ignjatovic_Deko_Tim
         foaf:name          "Nenad Ignjatović (Deko-tim)"@sr .
 
 rs:Starting_HidroTehna_Stanica
-        rdf:type           bio:Relationship , :Connection , :SourcedEntity;
+        rdf:type           vip:ContractConnection , bio:Relationship , :Connection , :SourcedEntity;
         rdfs:comment       "Spisak dokumentacije (stavka 509) navodi ponudu br. 96 firme Hidro-tehna d.o.o. Novi Sad firmi Starting za hidroizolaciju zgrade stanice, od 29. septembra 2022, i dopunu te ponude za hidroizolaterske radove na krovu, od 8. decembra 2022; to su ponude, spisak ne navodi ugovor. Forbes Srbija (5. maj 2025) prenosi iskaz inženjera firme Starting da je hidroizolaciju radila „Hidrotehna“ kao podizvođač firme Starting. Forbes ne navodi grad, pa da je to novosadska firma zasniva se na imenu i vrsti posla. Kada su radovi počeli i završeni nije poznato."@sr , "The document index (item 509) lists offer no. 96 of Hidro-tehna d.o.o. Novi Sad to Starting for waterproofing the station building, dated 29 September 2022, and a supplement to it for waterproofing work on the roof, dated 8 December 2022; these are offers, the index lists no contract. Forbes Srbija (5 May 2025) reports the testimony of a Starting engineer that the waterproofing was done by \"Hidrotehna\" as Starting's subcontractor. Forbes names no town, so that this is the Novi Sad company rests on the name and the kind of work. When the work began and ended is unknown."@en;
         rdfs:label         "podizvođenje obnove stanice"@sr , "station renovation subcontract"@en;
         :hasDocumentation  [ rdf:type            :RelatedData , :Documentation;
@@ -1043,7 +1045,9 @@ rs:Starting_HidroTehna_Stanica
                              :hasDocumentURL     <https://mss.jt.rs/wp-content/uploads/2025/01/%D0%A1%D0%BF%D0%B8%D1%81%D0%B0%D0%BA-%D0%BE%D0%B1%D1%98%D0%B0%D0%B2%D1%99%D0%B5%D0%BD%D0%B5-%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D1%98%D0%B5-1.pdf>
                            ];
         bio:participant    rs:Hidro_Tehna_Novi_Sad , rs:Starting;
-        owl:differentFrom  rs:Hidro_Tehna_Novi_Sad , rs:Starting .
+        owl:differentFrom  rs:Hidro_Tehna_Novi_Sad , rs:Starting;
+        vip:client         rs:Starting;
+        vip:contractor     rs:Hidro_Tehna_Novi_Sad .
 
 rs:AloMediaSystem_INIMedia
         rdf:type            :SourcedEntity , vip:OwnershipConnection , bio:Relationship , :Connection;
@@ -2025,7 +2029,7 @@ rs:MihailoJovanovic_VladaSrbije_MinistarInformisanja
         owl:differentFrom     rs:Mihailo_Jovanovic , rs:Vlada_Srbije .
 
 rs:Starting_DekoTim_Stanica
-        rdf:type              :SourcedEntity , :Connection , bio:Relationship;
+        rdf:type              :SourcedEntity , :Connection , vip:ContractConnection , bio:Relationship;
         rdfs:comment          "Contract for stonecutting and facade work, no. 117-2022, Novi Sad, 8 August 2022, per the document index (item 508); 021.rs and Nedeljnik report Deko-tim as engaged by Starting, 021.rs with the same scope; the day comes from the index alone."@en , "Ugovor o kamenorezačkim i fasaderskim radovima br. 117-2022, Novi Sad, 8. avgust 2022, prema spisku dokumentacije (stavka 508); 021.rs i Nedeljnik navode da je Starting angažovao Deko-tim, 021.rs sa istim obimom radova; dan potiče samo iz spiska."@sr;
         rdfs:label            "podizvođenje obnove stanice"@sr , "station renovation subcontract"@en;
         :connectionStartDate  "2022-08-08"^^xsd:date;
@@ -2048,7 +2052,9 @@ rs:Starting_DekoTim_Stanica
                                 :hasDocumentURL     <https://www.nedeljnik.rs/od-trgovine-na-malo-do-rekonstrukcije-zeleznicke-stanice-u-roku-od-tri-godine-ko-je-firma-koja-se-spomenjinje-u-izvestaju-vestaka-ftn/>
                               ];
         bio:participant       rs:Starting , rs:Deko_Tim;
-        owl:differentFrom     rs:Deko_Tim , rs:Starting .
+        owl:differentFrom     rs:Deko_Tim , rs:Starting;
+        vip:client            rs:Starting;
+        vip:contractor        rs:Deko_Tim .
 
 rs:Ivan_Bosnjak_Zrenjanin
         rdf:type              foaf:Agent , foaf:Person;
@@ -2554,9 +2560,9 @@ rs:INI_Media  rdf:type     foaf:Organization , foaf:Agent , :Company;
         foaf:name          "INI Media"@sr .
 
 rs:AssecoSEE_KancelarijaIT_RegistarStanovnistva
-        rdf:type           :SourcedEntity , :Connection , bio:Relationship;
+        rdf:type           :SourcedEntity , :Connection , vip:ContractConnection , bio:Relationship;
         rdfs:comment       "Na tenderu Kancelarije za IT i eUpravu za izradu Centralnog registra stanovništva, Asseco SEE je dobio ugovor vredan 180 miliona dinara (Radio Slobodna Evropa, Danas). Direktor Kancelarije Mihailo Jovanović rekao je 23. septembra 2020. da je Asseco dao najbolju od dve ispravne ponude i da je Kancelarija, znajući da je Igor Brnabić jedan od direktora kompanije, 14. novembra 2019. zatražila od Uprave za javne nabavke da se izjasni da li se ugovor može zaključiti. Izvori se ne slažu o datumu ugovora, pa nijedan nije zabeležen."@sr , "On a tender of the Office for IT and eGovernment for building the Central Population Register, Asseco SEE won a contract worth 180 million dinars (Radio Slobodna Evropa, Danas). The Office's director Mihailo Jovanović said on 23 September 2020 that Asseco gave the best of two valid bids, and that, knowing that Igor Brnabić was one of the company's directors, the Office had asked the Public Procurement Office on 14 November 2019 whether the contract could be concluded. The sources do not agree on the date of the contract, so none is recorded."@en;
-        rdfs:label         "contract: Central Population Register"@en , "ugovor: Centralni registar stanovništva"@sr;
+        rdfs:label         "Centralni registar stanovništva"@sr , "Central Population Register"@en;
         :hasDocumentation  [ rdf:type            :RelatedData , :Documentation;
                              rdfs:comment        "Radio Slobodna Evropa, 23. septembar 2020, prenosi izjavu direktora Kancelarije Mihaila Jovanovića: 'kompanija Asseco na tenderu za izradu Centralnog registra stanovništva dala najbolju ponudu'; 'imamo samo dve ispravne ponude i da je najpovoljniju dala kompanija Asseco'; '14. novembra 2019. godine zatraženo da se izjasni da li može sa kompanijom Asseco da se zaključi ugovor'."@sr;
                              :hasDocumentStatus  vip:published;
@@ -2576,7 +2582,9 @@ rs:AssecoSEE_KancelarijaIT_RegistarStanovnistva
                              :hasDocumentURL     <https://www.danas.rs/vesti/ekonomija/ugovori-aseka-s-18-miliona-evra-skocili-na-16-miliona/>
                            ];
         bio:participant    rs:Asseco_SEE , rs:Kancelarija_za_IT_i_eUpravu;
-        owl:differentFrom  rs:Kancelarija_za_IT_i_eUpravu , rs:Asseco_SEE .
+        owl:differentFrom  rs:Kancelarija_za_IT_i_eUpravu , rs:Asseco_SEE;
+        vip:client         rs:Kancelarija_za_IT_i_eUpravu;
+        vip:contractor     rs:Asseco_SEE .
 
 rs:AloMediaSystem_BestMediaTeam_Initial
         rdf:type              vip:OwnershipConnection , bio:Relationship , :SourcedEntity , :Connection;
@@ -3681,7 +3689,7 @@ rs:Insajder_Tim  rdf:type  foaf:Organization , foaf:Agent , :Company;
         foaf:name          "Insajder Tim"@sr .
 
 rs:Starting_BobNoviSad_Stanica
-        rdf:type              :SourcedEntity , bio:Relationship , :Connection;
+        rdf:type              :SourcedEntity , bio:Relationship , :Connection , vip:ContractConnection;
         rdfs:comment          "Starting engaged Bob for aluminium joinery and metalwork on the station, including the skylight of the canopy over the entrance to wing B (021.rs, from the contract published by the Higher Public Prosecutor's Office in Novi Sad; 021.rs says the contract was concluded in July 2022). The index (item 503) gives Starting's number dated 28 July 2022 and Bob's dated 3 August 2022; the start is recorded to the year because the two dates differ."@en , "Starting je angažovao firmu Bob za aluminarske i bravarske radove na stanici, uključujući svetlarnik nadstrešnice nad ulazom u krilo B (021.rs, prema ugovoru koji je objavilo Više javno tužilaštvo u Novom Sadu; 021.rs piše da je ugovor zaključen u julu 2022). Spisak (stavka 503) navodi broj Startinga od 28. jula 2022. i broj firme Bob od 3. avgusta 2022; početak je zabeležen na godinu jer se ta dva datuma razlikuju."@sr;
         rdfs:label            "station renovation subcontract"@en , "podizvođenje obnove stanice"@sr;
         :connectionStartDate  "2022"^^xsd:gYear;
@@ -3698,7 +3706,9 @@ rs:Starting_BobNoviSad_Stanica
                                 :hasDocumentURL     <https://mss.jt.rs/wp-content/uploads/2025/01/%D0%A1%D0%BF%D0%B8%D1%81%D0%B0%D0%BA-%D0%BE%D0%B1%D1%98%D0%B0%D0%B2%D1%99%D0%B5%D0%BD%D0%B5-%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D1%98%D0%B5-1.pdf>
                               ];
         bio:participant       rs:Bob_Novi_Sad , rs:Starting;
-        owl:differentFrom     rs:Bob_Novi_Sad , rs:Starting .
+        owl:differentFrom     rs:Bob_Novi_Sad , rs:Starting;
+        vip:client            rs:Starting;
+        vip:contractor        rs:Bob_Novi_Sad .
 
 rs:IvanBosnjak_NALED  rdf:type  bio:Relationship , :WorkConnection , :SourcedEntity , :Connection;
         rdfs:comment       "Ivan Bošnjak, suvlasnik Milenijum tima, bio je član Izvršnog odbora NALED-a. Period nije poznat, osim da je članstvo završeno pre jula 2019. Izvor je jedan: Nova.rs preuzima navod KRIK-a."@sr;
@@ -3762,7 +3772,7 @@ rs:DarkoTamindzic_ServiceForEfficientEnergy_Formation
         owl:differentFrom     rs:Service_for_Efficient_Energy , rs:Darko_Tamindzic .
 
 rs:KancelarijaIT_VladaSrbije_SluzbaVlade
-        rdf:type              :Connection , bio:Relationship , :SourcedEntity;
+        rdf:type              :Connection , vip:SubordinationConnection , bio:Relationship , :SourcedEntity;
         rdfs:comment          "Kancelarija je obrazovana kao služba Vlade 5. avgusta 2017. (sajt Kancelarije); Vlada ju je najavila kao centralnu funkciju u Vladi koja direktno odgovara premijeru (N1, prenosi Betu); Danas navodi rešenje o imenovanju njenog direktora: odgovoran je Vladi i predsedniku Vlade. Kraj nije zabeležen: sajt Kancelarije navodi da danas nastavlja rad kao posebna organizacija, bez datuma."@sr , "The Office was formed as a service of the Government on 5 August 2017 (the Office's site); the Government announced it as a central function in the Government that answers directly to the Prime Minister (N1 carrying Beta); Danas quotes the decision appointing its director: he answers to the Government and the Prime Minister. No end is recorded: the Office's site says it now continues as a special organisation, without a date."@en;
         rdfs:label            "služba Vlade"@sr , "service of the Government"@en;
         :connectionStartDate  "2017-08-05"^^xsd:date;
@@ -3785,7 +3795,9 @@ rs:KancelarijaIT_VladaSrbije_SluzbaVlade
                                 :hasDocumentURL     <https://www.danas.rs/vesti/ekonomija/ugovori-aseka-s-18-miliona-evra-skocili-na-16-miliona/>
                               ];
         bio:participant       rs:Vlada_Srbije , rs:Kancelarija_za_IT_i_eUpravu;
-        owl:differentFrom     rs:Vlada_Srbije , rs:Kancelarija_za_IT_i_eUpravu .
+        owl:differentFrom     rs:Vlada_Srbije , rs:Kancelarija_za_IT_i_eUpravu;
+        vip:subordinateBody   rs:Kancelarija_za_IT_i_eUpravu;
+        vip:superiorBody      rs:Vlada_Srbije .
 
 rs:Srdjan_Davidovic  rdf:type  foaf:Agent , foaf:Person;
         rdfs:comment       "Osnivač i nekadašnji akcionar društva Vista Rica AD Beograd sa udelom od 25%; Nova Ekonomija izveštava o njegovom izlasku iz vlasništva."@sr , "Founder and former 25% shareholder of Vista Rica AD Beograd; Nova Ekonomija reports his exit from ownership."@en;
