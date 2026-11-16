@@ -6,8 +6,8 @@
 @prefix : <http://poderopedia.com/vocab/> .
 @prefix vip: <https://w3id.org/vip/vocab#> .
 
-# Slučaj: Inkop — vlasništvo Zvonka Veselinovića i zavisna preduzeća.
-# Case: Inkop — Zvonko Veselinović’s ownership and subsidiary companies.
+# Slučaj: Inkop — vlasništvo braće Zvonka i Žarka Veselinovića i zavisna preduzeća.
+# Case: Inkop — the ownership of the brothers Zvonko and Žarko Veselinović, and subsidiary companies.
 
 rs:ZvonkoVeselinovic_Inkop_60 a vip:OwnershipConnection ;
     vip:owner rs:Zvonko_Veselinovic ;
@@ -16,6 +16,25 @@ rs:ZvonkoVeselinovic_Inkop_60 a vip:OwnershipConnection ;
     :connectionStartDate "2023-10"^^xsd:gYearMonth ;
     rdfs:comment "RSE i Forbes Srbija navode Zvonka Veselinovića kao vlasnika 60 odsto Inkopa. RSE datira ovu strukturu od izlaska Milana Radoičića iz vlasništva u oktobru 2023. Datum prestanka nije naveden."@sr ;
     rdfs:comment "RFE/RL and Forbes Srbija report Zvonko Veselinović owns 60 percent of Inkop. RFE/RL dates this structure from Milan Radoičić’s exit in October 2023. No end date is stated."@en ;
+    :hasDocumentation
+        [ a :Documentation ;
+          :hasDocumentURL <https://www.slobodnaevropa.org/a/zvonko-veselinovic-firme-srbija-putevi-kamenolom-novi-pazar/33752862.html> ;
+          :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "RSE, 11. maj 2026: 'Zvonko Veselinović u \"Inkopu\" i povezanim preduzećima od tada ima 60 odsto vlasništva, dok njegov brat Žarko ima 40 odsto.'; 'Suvlasnik \"Inkopa\" do oktobra 2023. bio je Milan Radoičić.'"@sr ;
+          rdfs:comment "RFE/RL, 11 May 2026: 'Zvonko Veselinović u \"Inkopu\" i povezanim preduzećima od tada ima 60 odsto vlasništva, dok njegov brat Žarko ima 40 odsto.'; 'Suvlasnik \"Inkopa\" do oktobra 2023. bio je Milan Radoičić.'"@en ] ,
+        [ a :Documentation ;
+          :hasDocumentURL <https://forbes.n1info.rs/biznis/kako-su-poslovali-inkop-i-druge-firme-zvonka-veselinovica-u-2024-braci-bliskoj-sns-u-slabije-su-cvetale-ruze/> ;
+          :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Forbes Srbija, 14. maj 2025: 'Inkop je u vlasništvu dvojice braće, Zvonka i Žarka Veselinovića. Zvonko je suvlasnik 60 odsto, a Žarko preostalih 40 odsto udela.'"@sr ;
+          rdfs:comment "Forbes Srbija, 14 May 2025: 'Inkop je u vlasništvu dvojice braće, Zvonka i Žarka Veselinovića. Zvonko je suvlasnik 60 odsto, a Žarko preostalih 40 odsto udela.'"@en ] .
+
+rs:ZarkoVeselinovic_Inkop_40 a vip:OwnershipConnection ;
+    vip:owner rs:Zarko_Veselinovic ;
+    vip:ownedCompany rs:Inkop ;
+    vip:ownershipShare 40.0 ;
+    :connectionStartDate "2023-10"^^xsd:gYearMonth ;
+    rdfs:comment "RSE i Forbes Srbija navode Žarka Veselinovića kao vlasnika 40 odsto Inkopa. RSE datira ovu strukturu od izlaska Milana Radoičića iz vlasništva u oktobru 2023. Datum prestanka nije naveden."@sr ;
+    rdfs:comment "RFE/RL and Forbes Srbija report Žarko Veselinović owns 40 percent of Inkop. RFE/RL dates this structure from Milan Radoičić’s exit in October 2023. No end date is stated."@en ;
     :hasDocumentation
         [ a :Documentation ;
           :hasDocumentURL <https://www.slobodnaevropa.org/a/zvonko-veselinovic-firme-srbija-putevi-kamenolom-novi-pazar/33752862.html> ;

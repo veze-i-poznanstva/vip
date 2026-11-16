@@ -441,7 +441,7 @@ rs:NenadStefanovic_ViseJavnoTuzilastvoBeograd
                               ];
         :hasEconomicOrganizationParticipant
                 rs:Vise_Javno_Tuzilastvo_Beograd;
-        :hasWorkRole          :employee;
+        :hasWorkRole          vip:chiefPublicProsecutor;
         bio:participant       rs:Nenad_Stefanovic , rs:Vise_Javno_Tuzilastvo_Beograd;
         owl:differentFrom     rs:Vise_Javno_Tuzilastvo_Beograd , rs:Nenad_Stefanovic .
 
@@ -822,7 +822,7 @@ rs:MiodragMarkovic_ViseJavnoTuzilastvoBeograd
                            ];
         :hasEconomicOrganizationParticipant
                 rs:Vise_Javno_Tuzilastvo_Beograd;
-        :hasWorkRole       :employee;
+        :hasWorkRole       vip:publicProsecutor;
         bio:participant    rs:Miodrag_Markovic , rs:Vise_Javno_Tuzilastvo_Beograd;
         owl:differentFrom  rs:Vise_Javno_Tuzilastvo_Beograd , rs:Miodrag_Markovic .
 
@@ -906,6 +906,28 @@ rs:PredragMali_AndrejVucic_Schoolmates
                            ];
         bio:participant    rs:Predrag_Mali , rs:Andrej_Vucic;
         owl:differentFrom  rs:Predrag_Mali , rs:Andrej_Vucic .
+
+rs:ZarkoVeselinovic_Inkop_40
+        rdf:type              :SourcedEntity , bio:Relationship , vip:OwnershipConnection , :Connection;
+        rdfs:comment          "RSE i Forbes Srbija navode Žarka Veselinovića kao vlasnika 40 odsto Inkopa. RSE datira ovu strukturu od izlaska Milana Radoičića iz vlasništva u oktobru 2023. Datum prestanka nije naveden."@sr , "RFE/RL and Forbes Srbija report Žarko Veselinović owns 40 percent of Inkop. RFE/RL dates this structure from Milan Radoičić’s exit in October 2023. No end date is stated."@en;
+        :connectionStartDate  "2023-10"^^xsd:gYearMonth;
+        :hasDocumentation     [ rdf:type            :RelatedData , :Documentation;
+                                rdfs:comment        "RSE, 11. maj 2026: 'Zvonko Veselinović u \"Inkopu\" i povezanim preduzećima od tada ima 60 odsto vlasništva, dok njegov brat Žarko ima 40 odsto.'; 'Suvlasnik \"Inkopa\" do oktobra 2023. bio je Milan Radoičić.'"@sr , "RFE/RL, 11 May 2026: 'Zvonko Veselinović u \"Inkopu\" i povezanim preduzećima od tada ima 60 odsto vlasništva, dok njegov brat Žarko ima 40 odsto.'; 'Suvlasnik \"Inkopa\" do oktobra 2023. bio je Milan Radoičić.'"@en;
+                                :hasDocumentStatus  vip:published;
+                                :hasDocumentType    vip:newsArticle;
+                                :hasDocumentURL     <https://www.slobodnaevropa.org/a/zvonko-veselinovic-firme-srbija-putevi-kamenolom-novi-pazar/33752862.html>
+                              ];
+        :hasDocumentation     [ rdf:type            :RelatedData , :Documentation;
+                                rdfs:comment        "Forbes Srbija, 14. maj 2025: 'Inkop je u vlasništvu dvojice braće, Zvonka i Žarka Veselinovića. Zvonko je suvlasnik 60 odsto, a Žarko preostalih 40 odsto udela.'"@sr , "Forbes Srbija, 14 May 2025: 'Inkop je u vlasništvu dvojice braće, Zvonka i Žarka Veselinovića. Zvonko je suvlasnik 60 odsto, a Žarko preostalih 40 odsto udela.'"@en;
+                                :hasDocumentStatus  vip:published;
+                                :hasDocumentType    vip:newsArticle;
+                                :hasDocumentURL     <https://forbes.n1info.rs/biznis/kako-su-poslovali-inkop-i-druge-firme-zvonka-veselinovica-u-2024-braci-bliskoj-sns-u-slabije-su-cvetale-ruze/>
+                              ];
+        bio:participant       rs:Inkop , rs:Zarko_Veselinovic;
+        owl:differentFrom     rs:Zarko_Veselinovic , rs:Inkop;
+        vip:ownedCompany      rs:Inkop;
+        vip:owner             rs:Zarko_Veselinovic;
+        vip:ownershipShare    40.0 .
 
 rs:Inkop  rdf:type         foaf:Organization , foaf:Agent , :Company;
         rdfs:comment       "Građevinsko preduzeće iz Ćuprije. RSE i Forbes Srbija navode Zvonka i Žarka Veselinovića kao suvlasnike."@sr , "Construction company in Ćuprija. RFE/RL and Forbes Srbija identify Zvonko and Žarko Veselinović as co-owners."@en;
@@ -2571,6 +2593,24 @@ rs:Andrej_Vucic  rdf:type     foaf:Agent , foaf:Person;
         vip:wikidataItem      <http://www.wikidata.org/entity/Q61746836>;
         vip:wikipediaArticle  <https://sr.wikipedia.org/wiki/Андреј_Вучић> .
 
+rs:ZarkoVeselinovic_ZvonkoVeselinovic
+        rdf:type           vip:FamilyConnection , vip:SiblingConnection , :SocialConnection , :Connection , bio:Relationship , :SourcedEntity;
+        rdfs:comment       "Žarko i Zvonko Veselinović su braća, prema RSE i Forbesu Srbija, koji ih navode kao suvlasnike Inkopa."@sr , "Žarko and Zvonko Veselinović are brothers, according to RFE/RL and Forbes Srbija, which name them as the co-owners of Inkop."@en;
+        :hasDocumentation  [ rdf:type            :RelatedData , :Documentation;
+                             rdfs:comment        "Forbes Srbija, 14. maj 2025: 'Inkop je u vlasništvu dvojice braće, Zvonka i Žarka Veselinovića. Zvonko je suvlasnik 60 odsto, a Žarko preostalih 40 odsto udela.'"@sr , "Forbes Srbija, 14 May 2025: 'Inkop je u vlasništvu dvojice braće, Zvonka i Žarka Veselinovića. Zvonko je suvlasnik 60 odsto, a Žarko preostalih 40 odsto udela.'"@en;
+                             :hasDocumentStatus  vip:published;
+                             :hasDocumentType    vip:newsArticle;
+                             :hasDocumentURL     <https://forbes.n1info.rs/biznis/kako-su-poslovali-inkop-i-druge-firme-zvonka-veselinovica-u-2024-braci-bliskoj-sns-u-slabije-su-cvetale-ruze/>
+                           ];
+        :hasDocumentation  [ rdf:type            :RelatedData , :Documentation;
+                             rdfs:comment        "RSE, 11. maj 2026: 'Zvonko Veselinović u \"Inkopu\" i povezanim preduzećima od tada ima 60 odsto vlasništva, dok njegov brat Žarko ima 40 odsto.'"@sr , "RFE/RL, 11 May 2026: 'Zvonko Veselinović u \"Inkopu\" i povezanim preduzećima od tada ima 60 odsto vlasništva, dok njegov brat Žarko ima 40 odsto.'"@en;
+                             :hasDocumentStatus  vip:published;
+                             :hasDocumentType    vip:newsArticle;
+                             :hasDocumentURL     <https://www.slobodnaevropa.org/a/zvonko-veselinovic-firme-srbija-putevi-kamenolom-novi-pazar/33752862.html>
+                           ];
+        bio:participant    rs:Zarko_Veselinovic , rs:Zvonko_Veselinovic;
+        owl:differentFrom  rs:Zvonko_Veselinovic , rs:Zarko_Veselinovic .
+
 rs:Maxim_Media_Plus  rdf:type  foaf:Organization , foaf:Agent , :Company;
         rdfs:comment       "Kompanija za komunikacije, medije i marketing; MOM opisuje vlasništvo Global Media Technology i porodice Krdžić."@sr , "Communications, media and marketing company; MOM describes its ownership by Global Media Technology and the Krdžić family."@en;
         :hasDocumentation  [ rdf:type            :RelatedData , :Documentation;
@@ -2834,6 +2874,25 @@ rs:Etham_Invest_Finance
                              :hasDocumentURL     <https://www.krik.rs/nova-dokumenta-sa-devicanskih-ostrva-mali-je-definitivno-bio-vlasnik-24-stana/>
                            ];
         foaf:name          "Etham Invest & Finance Corp."@sr .
+
+rs:Zarko_Veselinovic  rdf:type  foaf:Agent , foaf:Person;
+        rdfs:comment       "Suvlasnik Inkopa iz Ćuprije i brat Zvonka Veselinovića, prema RSE i Forbesu Srbija."@sr , "Co-owner of Inkop in Ćuprija and brother of Zvonko Veselinović, according to RFE/RL and Forbes Srbija."@en;
+        :firstLastName     "Veselinović";
+        :hasDocumentation  [ rdf:type            :RelatedData , :Documentation;
+                             rdfs:comment        "Forbes Srbija, 14. maj 2025: 'Inkop je u vlasništvu dvojice braće, Zvonka i Žarka Veselinovića. Zvonko je suvlasnik 60 odsto, a Žarko preostalih 40 odsto udela.'"@sr , "Forbes Srbija, 14 May 2025: 'Inkop je u vlasništvu dvojice braće, Zvonka i Žarka Veselinovića. Zvonko je suvlasnik 60 odsto, a Žarko preostalih 40 odsto udela.'"@en;
+                             :hasDocumentStatus  vip:published;
+                             :hasDocumentType    vip:newsArticle;
+                             :hasDocumentURL     <https://forbes.n1info.rs/biznis/kako-su-poslovali-inkop-i-druge-firme-zvonka-veselinovica-u-2024-braci-bliskoj-sns-u-slabije-su-cvetale-ruze/>
+                           ];
+        :hasDocumentation  [ rdf:type            :RelatedData , :Documentation;
+                             rdfs:comment        "RSE, 11. maj 2026: 'Zvonko Veselinović u \"Inkopu\" i povezanim preduzećima od tada ima 60 odsto vlasništva, dok njegov brat Žarko ima 40 odsto.'"@sr , "RFE/RL, 11 May 2026: 'Zvonko Veselinović u \"Inkopu\" i povezanim preduzećima od tada ima 60 odsto vlasništva, dok njegov brat Žarko ima 40 odsto.'"@en;
+                             :hasDocumentStatus  vip:published;
+                             :hasDocumentType    vip:newsArticle;
+                             :hasDocumentURL     <https://www.slobodnaevropa.org/a/zvonko-veselinovic-firme-srbija-putevi-kamenolom-novi-pazar/33752862.html>
+                           ];
+        foaf:familyName    "Veselinović";
+        foaf:firstName     "Žarko";
+        foaf:name          "Žarko Veselinović"@en , "Žarko Veselinović"@sr .
 
 rs:MilenijumTim_PredragMali_Automobil
         rdf:type              bio:Relationship , :SourcedEntity , :Connection;
@@ -4062,6 +4121,27 @@ rs:MilenijumTim_MVInvestment
         vip:ownedCompany      rs:MV_Investment;
         vip:owner             rs:Milenijum_Tim;
         vip:ownershipShare    100.0 .
+
+rs:VladaSrbije_RepublikaSrbija_IzvrsnaVlast
+        rdf:type             :Connection , :SourcedEntity , vip:SubordinationConnection , bio:Relationship;
+        rdfs:comment         "The Government is the holder of executive power in the Republic of Serbia, according to Article 122 of the Constitution and the encyclopedia article on the Government. Recorded so that the state’s agreements are seen next to the body that approves them on its behalf; no dates are recorded."@en , "Vlada je nosilac izvršne vlasti u Republici Srbiji, prema članu 122. Ustava i enciklopedijskom članku o Vladi. Zabeleženo da bi se ugovori države videli uz organ koji ih u njeno ime odobrava; datumi se ne beleže."@sr;
+        rdfs:label           "holder of executive power"@en , "nosilac izvršne vlasti"@sr;
+        :hasDocumentation    [ rdf:type            :RelatedData , :Documentation;
+                               rdfs:comment        "Encyclopedia article: 'Влада Републике Србије је носилац извршне власти у Републици Србији.'"@en , "Enciklopedijski članak: 'Влада Републике Србије је носилац извршне власти у Републици Србији.'"@sr;
+                               :hasDocumentStatus  vip:published;
+                               :hasDocumentType    vip:encyclopediaArticle;
+                               :hasDocumentURL     <https://sr.wikipedia.org/wiki/Влада_Републике_Србије>
+                             ];
+        :hasDocumentation    [ rdf:type            :RelatedData , :Documentation;
+                               rdfs:comment        "Ustav Republike Srbije, član 122, tekst u bazi propisa Paragraf: 'Vlada je nosilac izvršne vlasti u Republici Srbiji.'"@sr , "Constitution of the Republic of Serbia, Article 122, text in the Paragraf legal database: 'Vlada je nosilac izvršne vlasti u Republici Srbiji.'"@en;
+                               :hasDocumentStatus  vip:published;
+                               :hasDocumentType    vip:officialDocument;
+                               :hasDocumentURL     <https://www.paragraf.rs/propisi/ustav_republike_srbije.html>
+                             ];
+        bio:participant      rs:Vlada_Srbije , rs:Republika_Srbija;
+        owl:differentFrom    rs:Vlada_Srbije , rs:Republika_Srbija;
+        vip:subordinateBody  rs:Vlada_Srbije;
+        vip:superiorBody     rs:Republika_Srbija .
 
 rs:Best_Media_Team  rdf:type  foaf:Organization , foaf:Agent , :Company;
         rdfs:comment       "Kompanija osnovana 24. decembra 2025. koja kupuje i osniva lokalne medijske kompanije. Alo Media System je prvobitni vlasnik; Insajder Tim ulazi u vlasništvo u februaru 2026."@sr , "Company established on 24 December 2025 that acquires and establishes local media companies. Initially owned by Alo Media System; Insajder Tim acquired a stake in February 2026."@en;

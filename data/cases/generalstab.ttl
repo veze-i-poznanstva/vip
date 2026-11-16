@@ -53,3 +53,21 @@ rs:RepublikaSrbija_AtlanticIncubationPartners_Generalstab a :Connection ;
           :hasDocumentType vip:newsArticle ; :hasDocumentStatus vip:published ;
           rdfs:comment "RTS, 14. novembar 2026, sopstveni odgovor Ministarstva građevinarstva: 'raskid Ugovora o revitalizaciji kompleksa za Generalštab je u proceduri formalizacije i očekuje se završetak početkom iduće nedelje'. Deo o ranijem pisanju Vremena prenosi Vreme."@sr ;
           rdfs:comment "RTS, 14 November 2026, its own response from the construction ministry: 'raskid Ugovora o revitalizaciji kompleksa za Generalštab je u proceduri formalizacije i očekuje se završetak početkom iduće nedelje'. The section about Vreme’s earlier report reproduces Vreme."@en ] .
+
+rs:VladaSrbije_RepublikaSrbija_IzvrsnaVlast a vip:SubordinationConnection ;
+    vip:subordinateBody rs:Vlada_Srbije ;
+    vip:superiorBody rs:Republika_Srbija ;
+    rdfs:label "nosilac izvršne vlasti"@sr, "holder of executive power"@en ;
+    rdfs:comment "Vlada je nosilac izvršne vlasti u Republici Srbiji, prema članu 122. Ustava i enciklopedijskom članku o Vladi. Zabeleženo da bi se ugovori države videli uz organ koji ih u njeno ime odobrava; datumi se ne beleže."@sr ;
+    rdfs:comment "The Government is the holder of executive power in the Republic of Serbia, according to Article 122 of the Constitution and the encyclopedia article on the Government. Recorded so that the state’s agreements are seen next to the body that approves them on its behalf; no dates are recorded."@en ;
+    :hasDocumentation
+        [ a :Documentation ;
+          :hasDocumentURL <https://www.paragraf.rs/propisi/ustav_republike_srbije.html> ;
+          :hasDocumentType vip:officialDocument ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Ustav Republike Srbije, član 122, tekst u bazi propisa Paragraf: 'Vlada je nosilac izvršne vlasti u Republici Srbiji.'"@sr ;
+          rdfs:comment "Constitution of the Republic of Serbia, Article 122, text in the Paragraf legal database: 'Vlada je nosilac izvršne vlasti u Republici Srbiji.'"@en ] ,
+        [ a :Documentation ;
+          :hasDocumentURL <https://sr.wikipedia.org/wiki/Влада_Републике_Србије> ;
+          :hasDocumentType vip:encyclopediaArticle ; :hasDocumentStatus vip:published ;
+          rdfs:comment "Enciklopedijski članak: 'Влада Републике Србије је носилац извршне власти у Републици Србији.'"@sr ;
+          rdfs:comment "Encyclopedia article: 'Влада Републике Србије је носилац извршне власти у Републици Србији.'"@en ] .

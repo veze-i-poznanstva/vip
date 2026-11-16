@@ -1,6 +1,38 @@
 [
   {
     "data": {
+      "id": "zarko_veselinovic",
+      "label": "Žarko Veselinović",
+      "type": "instance",
+      "nodeType": "person",
+      "uri": "https://w3id.org/vip/rs/Zarko_Veselinovic",
+      "comment": "Suvlasnik Inkopa iz Ćuprije i brat Zvonka Veselinovića, prema RSE i Forbesu Srbija.",
+      "file": "data/entities/zarko-veselinovic.ttl",
+      "line": 12,
+      "sources": [
+        {
+          "url": "https://forbes.n1info.rs/biznis/kako-su-poslovali-inkop-i-druge-firme-zvonka-veselinovica-u-2024-braci-bliskoj-sns-u-slabije-su-cvetale-ruze/",
+          "domain": "forbes.n1info.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Forbes Srbija, 14. maj 2025: \u0027Inkop je u vlasništvu dvojice braće, Zvonka i Žarka Veselinovića. Zvonko je suvlasnik 60 odsto, a Žarko preostalih 40 odsto udela.\u0027",
+          "archive": "http://web.archive.org/web/20260810231015/https://forbes.n1info.rs/biznis/kako-su-poslovali-inkop-i-druge-firme-zvonka-veselinovica-u-2024-braci-bliskoj-sns-u-slabije-su-cvetale-ruze/",
+          "archivedOn": "2026-08-10"
+        },
+        {
+          "url": "https://www.slobodnaevropa.org/a/zvonko-veselinovic-firme-srbija-putevi-kamenolom-novi-pazar/33752862.html",
+          "domain": "slobodnaevropa.org",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "RSE, 11. maj 2026: \u0027Zvonko Veselinović u \"Inkopu\" i povezanim preduzećima od tada ima 60 odsto vlasništva, dok njegov brat Žarko ima 40 odsto.\u0027",
+          "archive": "http://web.archive.org/web/20261112090822/https://www.slobodnaevropa.org/a/zvonko-veselinovic-firme-srbija-putevi-kamenolom-novi-pazar/33752862.html",
+          "archivedOn": "2026-11-12"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
       "id": "kbv_datacom",
       "label": "KBV Datacom d.o.o. Beograd",
       "type": "instance",
@@ -4480,7 +4512,7 @@
       "typeLabel": "Ownership connection",
       "start": "2019-10",
       "file": "data/cases/inkop.ttl",
-      "line": 49,
+      "line": 68,
       "sources": [
         {
           "url": "https://forbes.n1info.rs/biznis/kako-su-poslovali-inkop-i-druge-firme-zvonka-veselinovica-u-2024-braci-bliskoj-sns-u-slabije-su-cvetale-ruze/",
@@ -4515,7 +4547,7 @@
       "typeLabel": "Ownership connection",
       "start": "2020",
       "file": "data/cases/inkop.ttl",
-      "line": 31,
+      "line": 50,
       "sources": [
         {
           "url": "https://forbes.n1info.rs/biznis/kako-su-poslovali-inkop-i-druge-firme-zvonka-veselinovica-u-2024-braci-bliskoj-sns-u-slabije-su-cvetale-ruze/",
@@ -5944,9 +5976,9 @@
       "typeLabel": "Work Connection",
       "roles": [
         {
-          "en": "Employee",
-          "es": "Empleado",
-          "sr": "Zaposleni"
+          "en": "Public prosecutor",
+          "es": "Fiscal",
+          "sr": "Javni tužilac"
         }
       ],
       "file": "data/cases/javne-funkcije/vise-javno-tuzilastvo-beograd.ttl",
@@ -6023,9 +6055,9 @@
       "typeLabel": "Work Connection",
       "roles": [
         {
-          "en": "Employee",
-          "es": "Empleado",
-          "sr": "Zaposleni"
+          "en": "Chief public prosecutor",
+          "es": "Fiscal jefe",
+          "sr": "Glavni javni tužilac"
         }
       ],
       "start": "2022",
@@ -7640,6 +7672,44 @@
   {
     "data": {
       "id": "edge92",
+      "label": "nosilac izvršne vlasti",
+      "labels": {
+        "en": "holder of executive power",
+        "sr": "nosilac izvršne vlasti"
+      },
+      "source": "vlada_srbije",
+      "target": "republika_srbija",
+      "uri": "https://w3id.org/vip/rs/VladaSrbije_RepublikaSrbija_IzvrsnaVlast",
+      "comment": "Vlada je nosilac izvršne vlasti u Republici Srbiji, prema članu 122. Ustava i enciklopedijskom članku o Vladi. Zabeleženo da bi se ugovori države videli uz organ koji ih u njeno ime odobrava; datumi se ne beleže.",
+      "kind": "SubordinationConnection",
+      "typeLabel": "Subordination",
+      "file": "data/cases/generalstab.ttl",
+      "line": 57,
+      "sources": [
+        {
+          "url": "https://www.paragraf.rs/propisi/ustav_republike_srbije.html",
+          "domain": "paragraf.rs",
+          "type": "officialDocument",
+          "status": "published",
+          "quote": "Ustav Republike Srbije, član 122, tekst u bazi propisa Paragraf: \u0027Vlada je nosilac izvršne vlasti u Republici Srbiji.\u0027",
+          "archive": "http://web.archive.org/web/20261105001934/https://www.paragraf.rs/propisi/ustav_republike_srbije.html",
+          "archivedOn": "2026-11-05"
+        },
+        {
+          "url": "https://sr.wikipedia.org/wiki/Влада_Републике_Србије",
+          "domain": "sr.wikipedia.org",
+          "type": "encyclopediaArticle",
+          "status": "published",
+          "quote": "Enciklopedijski članak: \u0027Влада Републике Србије је носилац извршне власти у Републици Србији.\u0027",
+          "archive": "http://web.archive.org/web/20261028162352/https://sr.wikipedia.org/wiki/%D0%92%D0%BB%D0%B0%D0%B4%D0%B0_%D0%A0%D0%B5%D0%BF%D1%83%D0%B1%D0%BB%D0%B8%D0%BA%D0%B5_%D0%A1%D1%80%D0%B1%D0%B8%D1%98%D0%B5",
+          "archivedOn": "2026-10-28"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "edge93",
       "label": "ownership connection",
       "source": "vojislav_nedic",
       "target": "vista_rica_ad",
@@ -7683,7 +7753,77 @@
   },
   {
     "data": {
-      "id": "edge93",
+      "id": "edge94",
+      "label": "ownership connection",
+      "source": "zarko_veselinovic",
+      "target": "inkop",
+      "uri": "https://w3id.org/vip/rs/ZarkoVeselinovic_Inkop_40",
+      "comment": "RSE i Forbes Srbija navode Žarka Veselinovića kao vlasnika 40 odsto Inkopa. RSE datira ovu strukturu od izlaska Milana Radoičića iz vlasništva u oktobru 2023. Datum prestanka nije naveden.",
+      "kind": "OwnershipConnection",
+      "typeLabel": "Ownership connection",
+      "share": 40.0,
+      "start": "2023-10",
+      "file": "data/cases/inkop.ttl",
+      "line": 31,
+      "sources": [
+        {
+          "url": "https://forbes.n1info.rs/biznis/kako-su-poslovali-inkop-i-druge-firme-zvonka-veselinovica-u-2024-braci-bliskoj-sns-u-slabije-su-cvetale-ruze/",
+          "domain": "forbes.n1info.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Forbes Srbija, 14. maj 2025: \u0027Inkop je u vlasništvu dvojice braće, Zvonka i Žarka Veselinovića. Zvonko je suvlasnik 60 odsto, a Žarko preostalih 40 odsto udela.\u0027",
+          "archive": "http://web.archive.org/web/20260810231015/https://forbes.n1info.rs/biznis/kako-su-poslovali-inkop-i-druge-firme-zvonka-veselinovica-u-2024-braci-bliskoj-sns-u-slabije-su-cvetale-ruze/",
+          "archivedOn": "2026-08-10"
+        },
+        {
+          "url": "https://www.slobodnaevropa.org/a/zvonko-veselinovic-firme-srbija-putevi-kamenolom-novi-pazar/33752862.html",
+          "domain": "slobodnaevropa.org",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "RSE, 11. maj 2026: \u0027Zvonko Veselinović u \"Inkopu\" i povezanim preduzećima od tada ima 60 odsto vlasništva, dok njegov brat Žarko ima 40 odsto.\u0027; \u0027Suvlasnik \"Inkopa\" do oktobra 2023. bio je Milan Radoičić.\u0027",
+          "archive": "http://web.archive.org/web/20261112090822/https://www.slobodnaevropa.org/a/zvonko-veselinovic-firme-srbija-putevi-kamenolom-novi-pazar/33752862.html",
+          "archivedOn": "2026-11-12"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "edge95",
+      "label": "siblings",
+      "source": "zarko_veselinovic",
+      "target": "zvonko_veselinovic",
+      "uri": "https://w3id.org/vip/rs/ZarkoVeselinovic_ZvonkoVeselinovic",
+      "comment": "Žarko i Zvonko Veselinović su braća, prema RSE i Forbesu Srbija, koji ih navode kao suvlasnike Inkopa.",
+      "kind": "SiblingConnection",
+      "typeLabel": "Siblings",
+      "file": "data/cases/porodicne-veze.ttl",
+      "line": 38,
+      "sources": [
+        {
+          "url": "https://forbes.n1info.rs/biznis/kako-su-poslovali-inkop-i-druge-firme-zvonka-veselinovica-u-2024-braci-bliskoj-sns-u-slabije-su-cvetale-ruze/",
+          "domain": "forbes.n1info.rs",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "Forbes Srbija, 14. maj 2025: \u0027Inkop je u vlasništvu dvojice braće, Zvonka i Žarka Veselinovića. Zvonko je suvlasnik 60 odsto, a Žarko preostalih 40 odsto udela.\u0027",
+          "archive": "http://web.archive.org/web/20260810231015/https://forbes.n1info.rs/biznis/kako-su-poslovali-inkop-i-druge-firme-zvonka-veselinovica-u-2024-braci-bliskoj-sns-u-slabije-su-cvetale-ruze/",
+          "archivedOn": "2026-08-10"
+        },
+        {
+          "url": "https://www.slobodnaevropa.org/a/zvonko-veselinovic-firme-srbija-putevi-kamenolom-novi-pazar/33752862.html",
+          "domain": "slobodnaevropa.org",
+          "type": "newsArticle",
+          "status": "published",
+          "quote": "RSE, 11. maj 2026: \u0027Zvonko Veselinović u \"Inkopu\" i povezanim preduzećima od tada ima 60 odsto vlasništva, dok njegov brat Žarko ima 40 odsto.\u0027",
+          "archive": "http://web.archive.org/web/20261112090822/https://www.slobodnaevropa.org/a/zvonko-veselinovic-firme-srbija-putevi-kamenolom-novi-pazar/33752862.html",
+          "archivedOn": "2026-11-12"
+        }
+      ]
+    }
+  },
+  {
+    "data": {
+      "id": "edge96",
       "label": "ownership connection",
       "source": "zvonko_veselinovic",
       "target": "inkop",

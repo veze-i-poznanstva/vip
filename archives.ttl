@@ -557,6 +557,10 @@
         vip:archivedOn     "2026-01-15"^^xsd:date;
         vip:hasArchiveURL  <http://web.archive.org/web/20260115000320/https://sr.wikipedia.org/wiki/%D0%90%D0%BD%D0%B4%D1%80%D0%B5%D1%98_%D0%92%D1%83%D1%87%D0%B8%D1%9B> .
 
+<https://www.paragraf.rs/propisi/ustav_republike_srbije.html>
+        vip:archivedOn     "2026-11-05"^^xsd:date;
+        vip:hasArchiveURL  <http://web.archive.org/web/20261105001934/https://www.paragraf.rs/propisi/ustav_republike_srbije.html> .
+
 <https://www.companywall.rs/firma/alo-media-system/MMfsPqfD>
         vip:archivedOn     "2026-11-01"^^xsd:date;
         vip:hasArchiveURL  <https://web.archive.org/web/20261101142418/https://www.companywall.rs/firma/alo-media-system/MMfsPqfD> .

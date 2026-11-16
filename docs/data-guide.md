@@ -63,7 +63,8 @@ Seven conventions apply to every record. The validators enforce their form; whet
   office is a `:WorkConnection` too: a mayor's with the city (`rs:Grad_Beograd`, a
   `:GovernmentOrganization`), a minister's or the prime minister's with the Government
   (`rs:Vlada_Srbije`), with the role `vip:mayor`, `vip:minister` or `vip:primeMinister` and the
-  portfolio in the comment; the owner-in-office rule
+  portfolio in the comment, a prosecutor's with the prosecutor's office
+  (`vip:chiefPublicProsecutor` for its head, `vip:publicProsecutor` otherwise); the owner-in-office rule
   reads exactly these. Schooling is an `:AlumniEducationalConnection`. Company ownership is a `vip:OwnershipConnection` with an
   optional share (a decimal percentage, 0 to 100). Each connection carries its own documentation,
   so the evidence for "X sits on the board of Y" is separate from the evidence that X and Y exist.

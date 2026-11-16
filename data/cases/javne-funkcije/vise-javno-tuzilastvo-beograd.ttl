@@ -12,7 +12,7 @@
 rs:NenadStefanovic_ViseJavnoTuzilastvoBeograd a :WorkConnection ;
     bio:participant rs:Nenad_Stefanovic ;
     :hasEconomicOrganizationParticipant rs:Vise_Javno_Tuzilastvo_Beograd ;
-    :hasWorkRole :employee ;
+    :hasWorkRole vip:chiefPublicProsecutor ;
     rdfs:label "Glavni javni tužilac"@sr, "Chief public prosecutor"@en ;
     :connectionStartDate "2022"^^xsd:gYear ;
     rdfs:comment "Nenad Stefanović: glavni javni tužilac Višeg javnog tužilaštva u Beogradu prema citiranim izvorima. Biografija koju je dostavilo tužilaštvo navodi početak 2022. Datum prestanka nije naveden."@sr ;
@@ -32,7 +32,7 @@ rs:NenadStefanovic_ViseJavnoTuzilastvoBeograd a :WorkConnection ;
 rs:MiodragMarkovic_ViseJavnoTuzilastvoBeograd a :WorkConnection ;
     bio:participant rs:Miodrag_Markovic ;
     :hasEconomicOrganizationParticipant rs:Vise_Javno_Tuzilastvo_Beograd ;
-    :hasWorkRole :employee ;
+    :hasWorkRole vip:publicProsecutor ;
     rdfs:label "Zamenik glavnog javnog tužioca"@sr, "Deputy chief public prosecutor"@en ;
     rdfs:comment "Miodrag Marković: zamenik glavnog javnog tužioca Višeg javnog tužilaštva u Beogradu prema citiranim izvorima. Datum početka nije naveden. Datum prestanka nije naveden."@sr ;
     rdfs:comment "Miodrag Marković: deputy chief public prosecutor of the Higher Public Prosecutor’s Office in Belgrade, according to the cited sources. No start date is stated. No end date is stated."@en ;

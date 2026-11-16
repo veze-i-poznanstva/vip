@@ -1196,6 +1196,12 @@ vip:minister a :WorkRole;
 vip:primeMinister a :WorkRole;
     rdfs:label "Prime minister"@en, "Primer ministro"@es, "Predsednik Vlade"@sr.
 
+vip:chiefPublicProsecutor a :WorkRole;
+    rdfs:label "Chief public prosecutor"@en, "Fiscal jefe"@es, "Glavni javni tužilac"@sr.
+
+vip:publicProsecutor a :WorkRole;
+    rdfs:label "Public prosecutor"@en, "Fiscal"@es, "Javni tužilac"@sr.
+
 vip:boardMember a :WorkRole;
     rdfs:label "Board member"@en, "Miembro del directorio"@es, "Član upravnog odbora"@sr.
 

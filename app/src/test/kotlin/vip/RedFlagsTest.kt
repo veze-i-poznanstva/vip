@@ -238,4 +238,16 @@ class RedFlagsTest {
             """; :connectionStartDate "2005"^^xsd:gYear ; :connectionEndDate "2008"^^xsd:gYear"""
         ).single()["overlap"])
     }
+
+
+    @Test
+    fun `nepotism matches a sibling of a chief public prosecutor employed in the same office`() {
+        val found = matches("nepotism", """
+            ex:A a foaf:Person . ex:S a foaf:Person . ex:Office a :GovernmentOrganization .
+            ex:A_Office a :WorkConnection ; bio:participant ex:A ; :hasEconomicOrganizationParticipant ex:Office ; :hasWorkRole vip:chiefPublicProsecutor .
+            ex:S_Office a :WorkConnection ; bio:participant ex:S ; :hasEconomicOrganizationParticipant ex:Office ; :hasWorkRole vip:publicProsecutor .
+            ex:AS a vip:SiblingConnection ; bio:participant ex:A, ex:S .
+        """)
+        assertEquals(listOf("https://w3id.org/vip/rs/S" to "https://w3id.org/vip/vocab#chiefPublicProsecutor"), found.map { it["relative"] to it["leaderRole"] })
+    }
 }
